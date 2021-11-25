@@ -20,16 +20,16 @@ import { groq } from '@nuxtjs/sanity';
 export default {
   head() {
       return {
-        title: 'Title undp-year-ahead English',
-       meta: [
-          { hid: 'description', name: 'description', content: 'this is the content in en'},
-          // Open Graph
-          { hid: 'og:title', property: 'og:title', content: 'Title undp-year-ahead en'},
-          { hid: 'og:description', property: 'og:description', content: 'og description' },
-          // Twitter Card
-          { hid: 'twitter:title', name: 'twitter:title', content: 'Title undp-year-ahead en' },
-          { hid: 'twitter:description', name: 'twitter:description', content: 'Title undp-year-ahead en' }
-        ]
+        title: 'UNDP Year Ahead English',
+        meta: [
+            { hid: 'description', name: 'description', content: 'UNDP Year Ahead Description'},
+            // Open Graph
+            { hid: 'og:title', property: 'og:title', content: 'Title undp-year-ahead en'},
+            { hid: 'og:description', property: 'og:description', content: 'og description' },
+            // Twitter Card
+            { hid: 'twitter:title', name: 'twitter:title', content: 'Title undp-year-ahead en' },
+            { hid: 'twitter:description', name: 'twitter:description', content: 'Title undp-year-ahead en' }
+          ]
       }
   },
   data: () => ({

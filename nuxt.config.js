@@ -9,7 +9,7 @@ export default {
     ]
   },
   head: {
-    // title: 's',
+    title: 'UNDP Year Ahead',
     htmlAttrs: {
       lang: 'en'
     },
