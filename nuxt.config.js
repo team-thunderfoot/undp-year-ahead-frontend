@@ -9,7 +9,7 @@ export default {
     ]
   },
   head: {
-    title: 'virgai-frontend-nuxt',
+    title: 'UNDP Year Ahead',
     htmlAttrs: {
       lang: 'en'
     },
