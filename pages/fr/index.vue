@@ -19,14 +19,24 @@ export default {
   head() {
       return {
         title: 'Title undp-year-ahead FR',
+        // meta: [
+        //   // { name: 'description', content: 'this is the content in fr' },
+        //   // { name: 'og:title', content: 'blablaf'},
+        //   // { name: 'og:site_name', content: 'site name example' },
+        //   // { name: 'og:url', content: 'test.com' },
+        //   // { name: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg' },
+        //   // { name: 'og:description', content: 'french description' },
+          
+        // ],
         meta: [
-          { name: 'description', content: 'this is the content in fr' },
-          { name: 'og:title', content: this.title},
-          { name: 'og:site_name', content: 'site name example' },
-          { name: 'og:url', content: 'test.com' },
-          { name: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg' },
-          { name: 'og:description', content: 'french description' },
-        ],
+          { hid: 'description', name: 'description', content: 'this is the content in fr'},
+          // Open Graph
+          { hid: 'og:title', property: 'og:title', content: 'Title undp-year-ahead FR'},
+          { hid: 'og:description', property: 'og:description', content: 'og description' },
+          // Twitter Card
+          { hid: 'twitter:title', name: 'twitter:title', content: 'Title undp-year-ahead FR' },
+          { hid: 'twitter:description', name: 'twitter:description', content: 'Title undp-year-ahead FR' }
+        ]
       }
   },
   data: () => ({
@@ -39,3 +49,4 @@ export default {
 <style lang="scss">
   @import '@/sass/style.scss';
 </style>
+

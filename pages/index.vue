@@ -4,7 +4,7 @@
     <h2>hey undp!</h2>
     <p>this is working in github?</p>
     <p>and another test</p>
-    <p>this feels  strange</p>
+    <p>last chance</p>
 
   </div>
 </template>
@@ -21,14 +21,15 @@ export default {
   head() {
       return {
         title: 'Title undp-year-ahead English',
-        meta: [
-          { name: 'description', content: 'this is the content in en' },
-          { name: 'og:title', content: this.title},
-          { name: 'og:site_name', content: 'site name example' },
-          { name: 'og:url', content: 'test.com' },
-          { name: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg' },
-          { name: 'og:description', content: 'english description' },
-        ],
+       meta: [
+          { hid: 'description', name: 'description', content: 'this is the content in en'},
+          // Open Graph
+          { hid: 'og:title', property: 'og:title', content: 'Title undp-year-ahead en'},
+          { hid: 'og:description', property: 'og:description', content: 'og description' },
+          // Twitter Card
+          { hid: 'twitter:title', name: 'twitter:title', content: 'Title undp-year-ahead en' },
+          { hid: 'twitter:description', name: 'twitter:description', content: 'Title undp-year-ahead en' }
+        ]
       }
   },
   data: () => ({

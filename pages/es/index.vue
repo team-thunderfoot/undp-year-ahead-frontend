@@ -17,15 +17,16 @@ import { groq } from '@nuxtjs/sanity';
 export default {
   head() {
       return {
-        title: 'Title undp-year-ahead Spanish',
+        title: 'Title undp-year-ahead es',
         meta: [
-          { name: 'description', content: 'this is the content in es' },
-          { name: 'og:title', content: this.title},
-          { name: 'og:site_name', content: 'site name example es' },
-          { name: 'og:url', content: 'test.com' },
-          { name: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg' },
-          { name: 'og:description', content: 'spanish description' },
-        ],
+          { hid: 'description', name: 'description', content: 'this is the content in es'},
+          // Open Graph
+          { hid: 'og:title', property: 'og:title', content: 'Title undp-year-ahead es'},
+          { hid: 'og:description', property: 'og:description', content: 'og description' },
+          // Twitter Card
+          { hid: 'twitter:title', name: 'twitter:title', content: 'Title undp-year-ahead es' },
+          { hid: 'twitter:description', name: 'twitter:description', content: 'Title undp-year-ahead es' }
+        ]
       }
   },
   data: () => ({
