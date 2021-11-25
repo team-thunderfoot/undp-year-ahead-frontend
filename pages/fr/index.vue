@@ -18,7 +18,7 @@ import { groq } from '@nuxtjs/sanity';
 export default {
   head() {
       return {
-        title: this.title,
+        title: 'Title undp-year-ahead FR',
         meta: [
           { name: 'description', content: 'this is the content in fr' },
           { name: 'og:title', content: this.title},
