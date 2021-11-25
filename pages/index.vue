@@ -5,6 +5,7 @@
     <p>this is working in github?</p>
     <p>and another test</p>
     <p>last chance</p>
+    <p>this is strange</p>
 
   </div>
 </template>
