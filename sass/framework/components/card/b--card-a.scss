@@ -1,0 +1,26 @@
+.b--card-a{
+    text-align: left;
+    position:absolute;
+    left:0;
+    top:0;
+    right: 0;
+    opacity: 0;
+    &__title{
+        color:white;
+        @include make-font-b();
+        margin-bottom: $measure;
+    }
+    &__content{
+        color:white;
+        @include make-font-d();
+    }
+    &__artwork{
+        font-size: 200px;
+        position:absolute;
+        right:0;
+        top: 0;
+        transform:translateY(-$measure*12);
+        opacity: .05;
+        color:white;
+    }
+}

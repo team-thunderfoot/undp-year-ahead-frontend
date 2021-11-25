@@ -1,0 +1,54 @@
+.b--footer-a {
+  padding: $measure * 3 0;
+  // background: map-get($color-options, a);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 10;
+  &__item-left{
+    text-align: left;
+    @media (hover: none) {
+      display: none;
+    }
+    &__icon{
+      position: relative;
+      height: $measure*4;
+      path, circle{
+        fill: map-get($color-options, b);
+      }
+      circle{
+        animation: 1.5s scroll cubic-bezier(0.65, -0.55, 0.25, 1.5) infinite;
+        position: relative;
+        left: 50%;
+        transform: translateX(50%) translateY(8px);
+      }
+    }
+    @media all and ($viewport-type: $mobile) {
+      margin-bottom: $measure * 3;
+    }
+  }
+  &__item-right {
+    text-align: right;
+    @media all and ($viewport-type: $mobile) {
+      text-align: center;
+    }
+  }
+}
+
+// scroll animation
+@keyframes scroll {
+  0% {
+      opacity: 0;
+      transform: translateX(50%) translateY(8px) scale(0.5);
+  }
+  10% {
+      opacity: 1;
+      transform: translateX(50%) translateY(8px) scale(1);
+  }
+  100% {
+      opacity: 0;
+      transform: translateX(50%) translateY(24px) scale(0.5);
+  }
+}

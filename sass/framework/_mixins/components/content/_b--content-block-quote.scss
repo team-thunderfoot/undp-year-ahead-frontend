@@ -1,0 +1,31 @@
+@mixin block-quote(){
+    blockquote{
+        padding: $measure*3 $measure*7;
+        margin-bottom: $measure*3;
+        @media all and ($viewport-type: $tabletm){
+            padding: $measure*3 $measure*0;
+        }
+        p{
+            @include make-font-f();
+            font-style: italic;
+            margin-bottom: $measure*2;
+        }
+        cite{
+            @include make-font-f();
+            opacity: 0.7;
+        }
+    }
+}
+
+@mixin block-quote-color($_color-a){
+    blockquote{
+        border-top:1px solid rgba($_color-a, 0.7); 
+        border-bottom:1px solid rgba($_color-a, 0.7);
+        p{
+            color: $_color-a;
+        }
+        cite{
+            color: $_color-a;
+        }
+    }
+}

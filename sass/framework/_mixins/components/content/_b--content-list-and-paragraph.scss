@@ -1,0 +1,105 @@
+@mixin lists-and-paragraphs() {
+  ul,
+  ol {
+    margin-bottom: $measure * 3;
+    li {
+      margin-bottom: $measure;
+      @include make-font-f();
+      padding-left: $measure * 3;
+    }
+  }
+  ul {
+    @include make-font-f();
+    // list-style-type: disc;
+    list-style: none; /* Remove default bullets */
+    margin-left: $measure * 6;
+    @media all and ($viewport-type: $mobile) {
+      margin-left: $measure * 3;
+    }
+    li {
+      position: relative;
+      padding-left: 0px;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        margin-bottom: 2px;
+        margin-left: -1em;
+        margin-right: 10px;
+      }
+      @media all and ($viewport-type: $mobile) {
+        &:before {
+          width: 2px;
+          height: 2px;
+          margin-bottom: 3.5px;
+        }
+      }
+      //Nested ul
+      ul {
+        margin-top: $measure;
+        margin-bottom: $measure;
+        margin-left: $measure * 3;
+        @media all and ($viewport-type: $mobile) {
+          margin-left: $measure * 4;
+        }
+        li {
+          margin-left: 0px;
+          //   list-style-type: circle;
+          &:before {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+  ol {
+    @include make-font-f();
+    margin-left: $measure * 4;
+    list-style-type: decimal;
+    @media all and ($viewport-type: $mobile) {
+      margin-left: $measure * 3;
+    }
+    li {
+      padding-left: 0px;
+    }
+  }
+  p {
+    @include make-font-f();
+    margin-bottom: $measure * 3;
+  }
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-weight: bold;
+  }
+}
+
+@mixin lists-and-paragraphs-color($_color-a) {
+  ul,
+  ol {
+    li {
+      color: $_color-a;
+    }
+  }
+  ul {
+    li {
+      &:before {
+        background-color: $_color-a;
+      }
+      //Nested ul
+      ul {
+        li {
+          &:before {
+            border: 1px solid $_color-a;
+          }
+        }
+      }
+    }
+  }
+  p {
+    color: $_color-a;
+  }
+}

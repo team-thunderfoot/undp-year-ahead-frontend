@@ -1,0 +1,20 @@
+@import './../../_mixins/components/content/b--content-heading.scss'; // Headings from h2 to h4.
+@import './../../_mixins/components/content/b--content-list-and-paragraph.scss';
+@import './../../_mixins/components/content/b--content-links.scss';
+@import './../../_mixins/components/content/b--content-block-quote.scss';
+ 
+.b--content-a {
+    p{color:red}
+    // @include headings ();
+    // @include lists-and-paragraphs ();
+    // @include links();
+    // @include block-quote();
+
+    // @include headings-color ( $_color-a: map-get($color-options, b) );
+    // @include lists-and-paragraphs-color ( $_color-a: map-get($color-options, b) );
+    // @include links-color($_color-a: b);
+    // @include block-quote-color($_color-a:map-get($color-options, b));
+    // *:last-child{
+    //     margin-bottom: 0px;
+    // }
+}

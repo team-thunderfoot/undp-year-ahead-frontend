@@ -1,0 +1,99 @@
+/*
+    Foundations
+*/
+
+/* Colors */
+
+/* Core Colors */
+$color-a:#2D2D2D;
+$color-b:#ffffff;
+
+/* Secondary Colors */
+$color-c:#0B2545;
+$color-d:#13315C;
+$color-e:#134074;
+$color-f:#8DA9C4;
+
+/* Accent Colors */
+$color-g:#9CEEE8;
+$color-h:#EEF4ED;
+
+
+
+$color-options: (
+  a: $color-a,
+  b: $color-b,
+  c: $color-c,
+  d: $color-d,
+  e: $color-e,
+  f: $color-f,
+  g: $color-g,
+  h: $color-h,
+);
+
+//needs to be defined
+$colorbg-options: (
+  a: $color-c,
+);
+
+/* Typography */
+$type-a : 'Inter', sans-serif;
+$type-b : 'Jost', sans-serif;
+
+// body default
+$font-body-size: 16px; /* 1rem = 16px */
+$line-height: 1.5;
+
+/* Grid */
+//Container
+$g-container-width: 1300px;
+
+$all: 0;
+$laptop: 1440px;
+$tabletl: 1200px;
+$tabletm: 992px;
+$tablets: 768px;
+$mobile: 600px;
+$viewport-type: max-width;
+$viewport-layouts: (
+  'all': $all,
+  'laptop': $laptop,
+  'tabletl': $tabletl,
+  'tabletm': $tabletm,
+  'tablets': $tablets,
+  'mobile': $mobile,
+);
+$columns: 12;
+$gutter-width: 2rem;
+$half-gutter-width: $gutter-width * 0.5;
+$gutter-compensation: -1 * $half-gutter-width;
+
+// Use for almost all Uitlities:
+// Display, Aspect Ratio, Flex, Float, Justify, Spacing, Text-align
+$breakpoints-grid: (
+  all: $all,
+  laptop: $laptop,
+  tabletl: $tabletl,
+  tabletm: $tabletm,
+  mobile: $mobile,
+) !default;
+
+/*
+    End Foundations
+*/
+
+// Measure
+$measure: 0.5rem; /* 0.5rem = 8px */
+
+// border
+$border-radius-a: 1px;
+
+// time
+$time-a: 0.3s;
+
+// header height
+$header-height: 92px;
+$header-height-mobile: 88px;
+
+// footer height
+$footer-height: 87px;

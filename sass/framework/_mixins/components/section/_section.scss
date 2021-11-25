@@ -1,0 +1,45 @@
+@mixin make-section-a {
+  padding: $measure*20 0;
+  @media all and ($viewport-type: $tabletm){
+      padding: $measure*16 0;
+  } 
+}
+
+@mixin make-section-b {
+  padding: $measure*20 0 $measure*11;
+  @media all and ($viewport-type: $tabletm){
+      padding: $measure*16 0 $measure*11;
+  } 
+}
+
+@mixin make-section-c {
+  padding: $measure*7 0 $measure*11;
+  @media all and ($viewport-type: $tabletm){
+      padding: $measure*5 0 $measure*11;
+  } 
+}
+
+@mixin make-section-d {
+  padding-top: $measure*20;
+  @media all and ($viewport-type: $tabletm){
+      padding-top: $measure*16;
+  } 
+}
+
+@mixin make-section-e {
+  padding-bottom: $measure*11;
+}
+
+@mixin make-section-f {
+  padding-top: $measure*5;
+  @media all and ($viewport-type: $mobile){
+      padding-top: 0;
+  }
+}
+
+@mixin make-section-g {
+  padding: $measure*7 0;
+  @media all and ($viewport-type: $tabletm){
+      padding: $measure*5 0;
+  }
+}

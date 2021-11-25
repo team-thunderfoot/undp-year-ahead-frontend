@@ -1,0 +1,11 @@
+.b--header-a{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    &__content{
+        background:#0B2545;
+        color:magenta;
+        padding:10px;
+    }
+}
