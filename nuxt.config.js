@@ -1,15 +1,16 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  // target: 'static',
+  target: 'static',
   ssr: false ,
   generate: {
     routes:[
+      '/',
       '/fr',
       '/es'
     ]
   },
   head: {
-    title: 'UNDP Year Ahead',
+    title: 'General Site Title',
     htmlAttrs: {
       lang: 'en'
     },
