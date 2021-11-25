@@ -21,12 +21,13 @@ export default {
       return {
         title: this.title,
         meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: 'UNDP undp-year-ahead resolution'
-          }
-        ]
+          { name: 'description', content: 'this is the content in en' },
+          { name: 'og:title', content: this.title},
+          { name: 'og:site_name', content: 'site name example' },
+          { name: 'og:url', content: 'test.com' },
+          { name: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg' },
+          { name: 'og:description', content: 'english description' },
+        ],
       }
   },
   data: () => ({

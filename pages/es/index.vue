@@ -19,13 +19,13 @@ export default {
       return {
         title: this.title,
         meta: [
-          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-          {
-            hid: 'description',
-            name: 'description',
-            content: 'UNDP undp-year-ahead resolution'
-          }
-        ]
+          { name: 'description', content: 'this is the content in es' },
+          { name: 'og:title', content: this.title},
+          { name: 'og:site_name', content: 'site name example es' },
+          { name: 'og:url', content: 'test.com' },
+          { name: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg' },
+          { name: 'og:description', content: 'spanish description' },
+        ],
       }
   },
   data: () => ({
