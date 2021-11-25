@@ -6,8 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "heroku-postbuild": "npm run build"
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/sanity": "^0.10.0",
@@ -23,6 +22,7 @@
     "node-sass": "^6.0.1",
     "nuxt-gsap-module": "^1.5.0",
     "prettier": "^2.3.2",
+    "push-dir": "^0.4.1",
     "sass": "^1.43.2",
     "sass-loader": "^10.2.0"
   }
