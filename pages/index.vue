@@ -1,12 +1,6 @@
 <template>
   <div>
-
-    <h2>hey undp!</h2>
-    <p>this is working in github?</p>
-    <p>and another test</p>
-    <p>last chance</p>
-    <p>this is strange</p>
-
+    <h2>Project Example</h2>
   </div>
 </template>
 

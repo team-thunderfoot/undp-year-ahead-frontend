@@ -1,8 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target: 'static',
-  ssr: false ,
-  mode: 'universal',
+  // ssr: false ,
   generate: {
     routes:[
       '/',
