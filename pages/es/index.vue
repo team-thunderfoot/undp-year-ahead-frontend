@@ -14,7 +14,6 @@
 /* Queries */
 import { groq } from '@nuxtjs/sanity';
 
-
 export default {
   head() {
       return {
