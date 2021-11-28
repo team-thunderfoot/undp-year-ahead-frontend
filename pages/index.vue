@@ -1,37 +1,67 @@
 <template>
-  <div id="HorizontalWrapper">
+  <div id="HorizontalWrapper" class="b--site-a">
 
-  <section id="SectionA"><img class="SectionAImag" src="https://source.unsplash.com/Pd8tLVGx2O4/1600x900" alt="">
-    <h1>SectionA<br>width: 120vw;</h1>
+  <section class="b--site-a__item b--ss-a b--ss-a--second">
+    <img src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/foreground.png" alt="">
+    <h1>SectionA width: 120vw;</h1>
   </section>
 
-  <section id="SectionB">
+  <section class="b--site-a__item">
+    <div class="item-slide">
+      <h3>Narrow Section</h3>
+      <p>hola mundo desde un ancho particular</p>
+      <p>otro mas</p>
+    </div>
+    <div class="item-slide">
+      <h3>Narrow Section</h3>
+      <p>hola mundo desde un ancho particular</p>
+      <p>otro mas</p>
+    </div>
+  </section>
+
+  <section class="b--site-a__item b--ss-a b--ss-a--third">
+    <div class="item-slide">
+      <img src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/background.png" alt="">
+    </div>
+    <div class="text-position">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia asperiores magni fuga minima excepturi vitae! Voluptatem non odio suscipit molestias quo ullam alias odit assumenda facilis magni, doloribus dolor soluta.</p>
+    </div>
+  </section>
+
+   <!-- <section class="b--site-a__item">
+    <div class="item-slide">
+      <h3>Narrow Section</h3>
+      <p>hola mundo desde un ancho particular</p>
+      <p>otro mas</p>
+    </div>
+    <div class="item-slide">
+      <h3>Narrow Section</h3>
+      <p>hola mundo desde un ancho particular</p>
+      <p>otro mas</p>
+    </div>
+  </section> -->
+
+<!-- <section class="b--site-a__item">
+    <div class="b--site-a__item__ft-item">
+      <img src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/foreground.png" alt="">
+    </div>
+     <div class="b--site-a__item__bg-item">
+      <img src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/background.png" alt="">
+    </div>
+  </section> -->
+
+
+  <!-- <section class="b--site-a__item" id="SectionB">
     <div id="SectionBLeftBox">
       <h1>SectionB<br>width: 150vw;</h1>
     </div><img class="SectionBImag" src="https://source.unsplash.com/CudNrzbsyZw/1600x900" alt="">
   </section>
 
-  <section id="SectionC">
+  <section class="b--site-a__item" id="SectionC">
     <div id="ImageWrap"><img src="https://source.unsplash.com/uEFombN3J5U/1600x900" alt=""></div>
     <h1>SectionC<br>width: 210vw;</h1>
-  </section>
+  </section> -->
 
-  <section id="SectionD">
-    <div id="SectionWrap">
-      <div id="ImageWrap"><img src="https://source.unsplash.com/BjJP2TN8WoI/900x1600" alt=""></div>
-      <div id="TextWrap">
-        <h1>SectionD<br>width: 200vw;</h1>
-      </div>
-    </div>
-  </section>
-
-  <section id="SectionE">
-    <div id="SectionWrap">
-      <div id="TextWrap">
-        <h1>SectionE de Andres<br>width: 200vw;</h1>
-      </div>
-    </div>
-  </section>
   
 </div>
 </template>
@@ -112,60 +142,15 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import '@/sass/style.scss';
+  @import '@/sass/index.scss';
   :root {
-	font-family: Helvetica;
-}
+	  font-family: Helvetica;
+  }
 
-::-webkit-scrollbar {
-	display: none;
-}
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	color: white;
-	font-weight: 400;
-	font-size: 5vw;
-	text-align: center;
-	color: #000000;
-}
-
-body {
-	background: greenyellow;
-}
-
-#HorizontalWrapper {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-}
-
-section {
-	position: relative;
-	height: 100vh;
-	overflow: hidden;
-	flex-shrink: 0;
-	display: flex;
-	color: var(--ColorWhiteA);
-	border-right: 5px solid blue;
-}
-
-#HorizontalWrapper #SectionA {
-	justify-content: center;
-	align-items: center;
-	width: 120vw;
-}
-
-#HorizontalWrapper #SectionA h1 {
-	position: absolute;
-}
-
-#HorizontalWrapper #SectionA img {
-	position: absolute;
-	width: 100%;
-}
 
 #HorizontalWrapper #SectionB {
 	justify-content: flex-start;
@@ -260,8 +245,5 @@ section {
 #HorizontalWrapper #SectionD #SectionWrap #TextWrap h1 {
 	font-size: 5vw;
 }
-#HorizontalWrapper #SectionE {
-		width: 600px;
-    background:magenta
-}
+
 </style>

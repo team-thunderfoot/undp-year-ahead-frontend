@@ -1,0 +1,55 @@
+// include foundation
+@import './framework/foundation/foundation.scss';
+
+// // include utilities
+@import './framework/utilities/utilities.scss';
+::-webkit-scrollbar {
+    display: none;
+  }
+
+.b--site-a{
+    width: 100%;
+	height: 100vh;
+	display: flex;
+    background:magenta;
+    &__item{
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex; 
+    }
+}
+.item-slide{
+    // position:relative
+    // width: 120vw;
+    // background:grey;
+}
+.text-position{
+    background:red;
+    color:#fff;
+    position:absolute;
+    top:20%;
+    left:23%;
+    z-index: 50;
+    width: 300px;
+}
+// single story
+.b--ss-a{
+    position:relative
+    &--second{
+        justify-content: center;
+        align-items: center;
+        width: 120vw; 
+        h1{	position: absolute;}
+        img{
+            position: absolute;
+            width: 100%;  
+        }
+    }
+    &--third{
+        .top{
+            
+        }
+    }
+}
