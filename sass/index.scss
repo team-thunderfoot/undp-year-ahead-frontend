@@ -73,6 +73,7 @@
         position: absolute;
         left: 0;
         z-index: 5;
+        height: 100%;
         &__artwork{ // needed to see it with amaia
             position: relative;
             z-index: -1;
