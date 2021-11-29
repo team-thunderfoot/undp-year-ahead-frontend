@@ -3,7 +3,7 @@
 
   <section class="b--site-a__item b--ss-a b--ss-a--second">
     <div>
-        <h1 class="f--font-a">This is the Project Title Test</h1>
+        <h1 class="f--font-a">This is the Project Title</h1>
         <h2 class="f--font-b">A year ahead</h2>
     </div>
   </section>
