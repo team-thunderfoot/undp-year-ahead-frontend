@@ -13,6 +13,11 @@
           <img class="b--ss-a__ft-items__artwork" src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/foreground.png" alt="">
     </div>
     <div class="b--ss-a__bg-items">
+       <div class="b--marker-b">
+      <div class="b--marker-b__item">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia asperiores magni fuga minima excepturi vitae! Voluptatem non odio suscipit molestias quo ullam alias odit assumenda facilis magni, doloribus dolor soluta.</p>
+      </div>
+    </div>
       <img class="b--ss-a__bg-items__artwork" src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/background.png" alt="">
       <img class="b--ss-a__bg-items__flag" src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/flag-1.gif" alt="">
     </div>
@@ -23,11 +28,7 @@
       </div>
     </div>
 
-    <div class="b--marker-b">
-      <div class="b--marker-b__item">
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia asperiores magni fuga minima excepturi vitae! Voluptatem non odio suscipit molestias quo ullam alias odit assumenda facilis magni, doloribus dolor soluta.</p>
-      </div>
-    </div>
+   
   </section>
 
   <section class="b--site-a__item b--ss-a b--ss-a--third">
