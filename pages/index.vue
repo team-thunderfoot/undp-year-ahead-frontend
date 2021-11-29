@@ -3,12 +3,12 @@
 
   <section class="b--site-a__item b--ss-a b--ss-a--second">
     <div>
-        <h1 class="f--font-a">This is the UNDP Project</h1>
+        <h1 class="f--font-a">This is the Project Title</h1>
         <h2 class="f--font-b">A year ahead</h2>
     </div>
   </section>
 
-  <section class="b--site-a__item b--ss-a">
+  <section class="b--site-a__item b--ss-a" id="Scene1">
     <div class="b--ss-a__ft-items">
           <img class="b--ss-a__ft-items__artwork" src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/foreground.png" alt="">
     </div>
@@ -31,53 +31,16 @@
    
   </section>
 
-  <section class="b--site-a__item b--ss-a b--ss-a--third">
+  <section class="b--site-a__item b--ss-a b--ss-a--third" id="Scene2">
     <div class="item-slide">
       <h3>Narrow Section 1 </h3>
-      <p>hola mundo desde un ancho particular</p>
+      <p>Hello World</p>
     </div>
     <div class="item-slide">
       <h3>Narrow Section 2 </h3>
-      <p>hola mundo desde un ancho particular</p>
-      <p>otro mas</p>
+      <p>Hello World</p>
     </div>
   </section>
-
-  
-
-   <!-- <section class="b--site-a__item">
-    <div class="item-slide">
-      <h3>Narrow Section</h3>
-      <p>hola mundo desde un ancho particular</p>
-      <p>otro mas</p>
-    </div>
-    <div class="item-slide">
-      <h3>Narrow Section</h3>
-      <p>hola mundo desde un ancho particular</p>
-      <p>otro mas</p>
-    </div>
-  </section> -->
-
-<!-- <section class="b--site-a__item">
-    <div class="b--site-a__item__ft-item">
-      <img src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/foreground.png" alt="">
-    </div>
-     <div class="b--site-a__item__bg-item">
-      <img src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/background.png" alt="">
-    </div>
-  </section> -->
-
-
-  <!-- <section class="b--site-a__item" id="SectionB">
-    <div id="SectionBLeftBox">
-      <h1>SectionB<br>width: 150vw;</h1>
-    </div><img class="SectionBImag" src="https://source.unsplash.com/CudNrzbsyZw/1600x900" alt="">
-  </section>
-
-  <section class="b--site-a__item" id="SectionC">
-    <div id="ImageWrap"><img src="https://source.unsplash.com/uEFombN3J5U/1600x900" alt=""></div>
-    <h1>SectionC<br>width: 210vw;</h1>
-  </section> -->
 
   
 </div>
@@ -118,7 +81,6 @@ export default {
   created(){
       if(process.client){
         this.$nextTick(() => {
-          console.log(this.getTotalWidth())
           gsap.to(document.querySelectorAll(".b--site-a__item"), { 
             x: () => -this.getTotalWidth() + window.innerWidth, 
             ease: "none", 
@@ -130,21 +92,6 @@ export default {
                   invalidateOnRefresh: true,
                   scrub: true,
                   markers: "true",
-                  // onRefresh() {
-                  //   let totalWidth = getTotalWidth(),
-                  //       accumulatedWidth = 0,
-                  //       progressArray = Sections.map(el => {
-                  //         accumulatedWidth += el.offsetWidth;
-                  //         return accumulatedWidth / totalWidth;
-                  //       });
-                  //   progressArray.unshift(0);
-                  //   snap = gsap.utils.snap(progressArray);
-                  // },
-                  // snap: {
-                  //     snapTo: value => snap(value),
-                  //     duration: { min: 0.40, max: 0.70 },
-                  //     delay: 0.01, ease: "sine.inOut",
-                  // }
               }
           });
 
