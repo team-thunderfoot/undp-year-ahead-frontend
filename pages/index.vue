@@ -10,10 +10,10 @@
 
   <section class="b--site-a__item b--ss-a">
     <div class="b--ss-a__ft-items">
-          <img src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/foreground.png" alt="">
+          <img class="b--ss-a__ft-items__artwork" src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/foreground.png" alt="">
     </div>
     <div class="b--ss-a__bg-items">
-      <img src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/background.png" alt="">
+      <img class="b--ss-a__bg-items__artwork" src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/background.png" alt="">
       <img class="b--ss-a__bg-items__flag" src="https://mailchimp.com/annual-report/assets/brooklyn-community-foundation/flag-1.gif" alt="">
     </div>
    
@@ -22,20 +22,25 @@
          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia asperiores magni fuga minima excepturi vitae! Voluptatem non odio suscipit molestias quo ullam alias odit assumenda facilis magni, doloribus dolor soluta.</p>
       </div>
     </div>
+
+    <div class="b--marker-b">
+      <div class="b--marker-b__item">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia asperiores magni fuga minima excepturi vitae! Voluptatem non odio suscipit molestias quo ullam alias odit assumenda facilis magni, doloribus dolor soluta.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- <section class="b--site-a__item">
+  <section class="b--site-a__item b--ss-a b--ss-a--third">
     <div class="item-slide">
-      <h3>Narrow Section</h3>
+      <h3>Narrow Section 1 </h3>
+      <p>hola mundo desde un ancho particular</p>
+    </div>
+    <div class="item-slide">
+      <h3>Narrow Section 2 </h3>
       <p>hola mundo desde un ancho particular</p>
       <p>otro mas</p>
     </div>
-    <div class="item-slide">
-      <h3>Narrow Section</h3>
-      <p>hola mundo desde un ancho particular</p>
-      <p>otro mas</p>
-    </div>
-  </section> -->
+  </section>
 
   
 

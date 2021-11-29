@@ -33,6 +33,19 @@
     }
 }
 
+.b--marker-b{
+    position:absolute;
+    top:20%;
+    left:33%;
+    z-index: 5;
+    &__item{
+        background:red;
+        color:#fff;
+        padding:$measure*2;
+        width: 300px;
+    }
+}
+
 // single story
 .b--ss-a{
     position:relative;
@@ -42,6 +55,12 @@
         left: 0;
         z-index: 3;
         width: auto;
+        &__artwork{ // needed to see it with amaia
+            position: relative;
+            z-index: -1;
+            display: block;
+            height: 100%;
+        }
         &__flag{ // demo example
             position: absolute;
             top: 0;
@@ -54,10 +73,19 @@
         position: absolute;
         left: 0;
         z-index: 5;
+        &__artwork{ // needed to see it with amaia
+            position: relative;
+            z-index: -1;
+            display: block;
+            height: 100%;
+        }
     }
     &--second{
         justify-content: center;
         align-items: center;
         width: 100%; 
+    }
+    &--third{
+        background:rgba(222, 148, 148, 0.502)
     }
 }
