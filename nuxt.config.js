@@ -8,9 +8,6 @@ export default {
       '/es'
     ]
   },
-  router : {
-    base : '/undp-year-ahead-frontend/'
-  },
   head: {
     title: 'General Site Title',
     htmlAttrs: {
