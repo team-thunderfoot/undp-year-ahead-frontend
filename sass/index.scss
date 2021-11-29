@@ -12,6 +12,7 @@
 	height: 100vh;
 	display: flex;
     background:rgba(252, 229, 252, 0.749);
+    overflow: hidden;
     &__item{
         position: relative;
         height: 100vh;

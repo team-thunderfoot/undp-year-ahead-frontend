@@ -82,7 +82,7 @@ export default {
       if(process.client){
         this.$nextTick(() => {
           gsap.to(document.querySelectorAll(".b--site-a__item"), { 
-            x: () => -this.getTotalWidth() + window.innerWidth, 
+            x: () => - this.getTotalWidth() + window.innerWidth, 
             ease: "none", 
             scrollTrigger: {
                   trigger: ".b--site-a",
