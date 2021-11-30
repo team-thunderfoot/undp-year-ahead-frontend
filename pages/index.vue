@@ -41,7 +41,8 @@
       <p>Hello World</p>
     </div>
   </section>
-
+	
+	<div class="b--progress-a"></div>
   
 </div>
 </template>
@@ -79,28 +80,27 @@ export default {
     }
   },
   created(){
-      if(process.client){
-        this.$nextTick(() => {
-          gsap.to(document.querySelectorAll(".b--site-a__item"), { 
-            x: () => - this.getTotalWidth() + window.innerWidth, 
-            ease: "none", 
-            scrollTrigger: {
-                  trigger: ".b--site-a",
-                  pin: true,
-                  start: 0,
-                  end: () => "+=" + (document.querySelector('.b--site-a').scrollWidth - window.innerWidth),
-                  invalidateOnRefresh: true,
-                  scrub: true,
-                  markers: "true",
-              }
-          });
-
-
-
+    if(process.client){
+      this.$nextTick(() => {
+        gsap.to(document.querySelectorAll(".b--site-a__item"), { 
+          x: () => - this.getTotalWidth() + window.innerWidth, 
+          ease: "none", 
+          scrollTrigger: {
+            trigger: ".b--site-a",
+            pin: true,
+            start: 0,
+            end: () => "+=" + (document.querySelector('.b--site-a').scrollWidth - window.innerWidth),
+            invalidateOnRefresh: true,
+            scrub: true,
+            markers: "true",
+			onUpdate: (self) => {
+				var widhtProgress = self.progress.toFixed(2) * 100;
+				document.querySelector(".b--progress-a").style.width = widhtProgress + '%';
+			}
+          }
         });
-      }
-
-      
+      });
+    }
   }
 }
 </script>
@@ -109,5 +109,11 @@ export default {
   ::-webkit-scrollbar {
     display: none;
   }
-
+	.b--progress-a {
+		height: 10px;
+		width: 0%;
+		position: absolute;
+		bottom: 0rem;
+		background-color: red;
+	}
 </style>
