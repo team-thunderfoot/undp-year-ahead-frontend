@@ -49,7 +49,9 @@
 
 <script>
 /* Components */
-import gsap from 'gsap';
+// import gsap from 'gsap';
+// import ScrollTrigger from "gsap/ScrollTrigger";
+
 export default {
   head() {
       return {
@@ -81,11 +83,14 @@ export default {
   },
   created(){
     if(process.client){
+      // gsap.registerPlugin(ScrollTrigger);
+
       this.$nextTick(() => {
-        gsap.to(document.querySelectorAll(".b--site-a__item"), { 
-          x: () => - this.getTotalWidth() + window.innerWidth, 
-          ease: "none", 
-          scrollTrigger: {
+        const tl = this.$gsap.timeline();
+        tl.to(document.querySelectorAll(".b--site-a__item"), { x: () => - this.getTotalWidth() + window.innerWidth, ease: "none", });
+
+        this.$ScrollTrigger.create({
+            animation: tl,
             trigger: ".b--site-a",
             pin: true,
             start: 0,
@@ -93,15 +98,20 @@ export default {
             invalidateOnRefresh: true,
             scrub: true,
             markers: "true",
-			onUpdate: (self) => {
-				var widhtProgress = self.progress.toFixed(2) * 100;
-				document.querySelector(".b--progress-a").style.width = widhtProgress + '%';
-			}
-          }
-        });
+            onUpdate: (self) => {
+              var widhtProgress = self.progress.toFixed(2) * 100;
+              document.querySelector(".b--progress-a").style.width = widhtProgress + '%';
+            }
+        }) 
+
+        this.$ScrollTrigger.create({
+            trigger: "#Scene2",
+            start:  "#Scene2",
+            onEnter: () => alert('entro'),
+        }) 
       });
     }
-  }
+  },
 }
 </script>
 <style lang="scss">
