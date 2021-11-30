@@ -122,13 +122,14 @@ export default {
 
 				this.$ScrollTrigger.create({
 					animation: tl,
-					trigger: ".b--site-a",
+					trigger: ".b--site-a__wrapper",
 					pin: true,
 					start: 0,
 					end: () => "+=" + (document.querySelector('.b--site-a__wrapper').scrollWidth - window.innerWidth),
 					invalidateOnRefresh: true,
 					scrub: true,
 					markers: "true",
+					onEnter: () => console.log("sdfsfd"),
 					onUpdate: (self) => {
 						var widhtProgress = self.progress.toFixed(2) * 100;
 						document.querySelector(".b--progress-a").style.width = widhtProgress + '%';
@@ -137,8 +138,9 @@ export default {
 
 				this.$ScrollTrigger.create({
 					trigger: "#Scene2",
-					start:  "#Scene2",
-					// onEnter: () => alert('entro'),
+					start: "left",
+					horizontal: true,
+					onEnter: () => alert('entro'),
 				}) 
 
 				setTimeout(() => {
