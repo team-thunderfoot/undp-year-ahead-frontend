@@ -1,6 +1,6 @@
 <template>
     <div class="b--page-a">
-        <div class="b--noise-a"></div>
+        <!-- <div class="b--noise-a"></div> -->
         <div class="b--header-a">
             Sticky!
         </div>
