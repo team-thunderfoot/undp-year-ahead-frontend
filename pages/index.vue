@@ -113,19 +113,21 @@ export default {
 						let scene1  = document.querySelector("#Scene1");
 						if(scene1){
 							var pos =  scene1.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos }); 
-							this.$refs.processA.$refs.first.classList.add("is-current");
+							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.first.classList.add("is-current");
+
+							}}); 
 						}
-						
 						break;
 				
 					case '#chapter2':
 						let scene2  = document.querySelector("#Scene2");
 						if(scene2){
 							var pos =  scene2.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos });
-							this.$refs.processA.$refs.first.classList.add("is-complete");
-							this.$refs.processA.$refs.second.classList.add("is-current");
+							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.first.classList.add("is-complete");
+								this.$refs.processA.$refs.second.classList.add("is-current");
+							}});
 						}
 						break;
 					case '#chapter3':
@@ -133,11 +135,11 @@ export default {
 						let scene3  = document.querySelector("#Scene3");
 						if(scene3){
 							var pos =  scene3.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos }); 
-							this.$refs.processA.$refs.second.classList.add("is-complete");
-							this.$refs.processA.$refs.third.classList.add("is-current");
+							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.second.classList.add("is-complete");	
+								this.$refs.processA.$refs.third.classList.add("is-current");
+							}}); 
 						}
-						
 						break;
 
 					case '#chapter4':
@@ -145,19 +147,12 @@ export default {
 						let scene4  = document.querySelector("#Scene4");
 						if(scene4){
 							var pos =  scene4.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos }); 
-							this.$refs.processA.$refs.third.classList.add("is-complete");
-							this.$refs.processA.$refs.fourth.classList.add("is-current");
+							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.third.classList.add("is-complete");
+								this.$refs.processA.$refs.fourth.classList.add("is-current");
+							}}); 
 						}
-						
 						break;
-					default:
-						let sceneDefault  = document.querySelector("#Scene2");
-						if(sceneDefault){
-							var pos =  sceneDefault.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos });
-						}
-						break; 
 				}
 			}
 		},
@@ -189,7 +184,6 @@ export default {
 							(document.querySelector("#Scene1").offsetLeft - window.innerWidth),
 						end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
 						onEnter: () => {
-							console.log('entro a peces');
 							this.$refs.processA.$refs.first.classList.add("is-current");
 						},
 						onEnterBack: () => {
@@ -208,7 +202,6 @@ export default {
 							(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
 						end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
 						onEnter: () => {
-							console.log('entro a peces');
 							this.$refs.processA.$refs.first.classList.add("is-complete");
 							this.$refs.processA.$refs.second.classList.add("is-current");
 						},
