@@ -59,15 +59,23 @@ export default {
 			if(pathname[pathname.length-1].includes("chapter")){
 				var chapter = pathname[pathname.length-1];
 				switch (chapter) {
+					case '#chapter1':
+						console.log('voy al 1');
+						this.$gsap.to(window, {duration: 2, scrollTo: {y:0, x: "#Scene1"}}); 
+						break;
+				
 					case '#chapter2':
-						this.$gsap.to(window, {duration: 2, scrollTo: {y:0, x: "#Scene2"}});
+						console.log('voy al 2');
+						this.$gsap.to(document.querySelector('.b--page-a__wrapper'), {duration: 2, scrollTo: {x: "#Scene2"}});
+						//ya estoy probando de todo, asi que no asustarse
 						break;
 				
 					default:
-						break;
+						this.$gsap.to(window, {duration: 2, scrollTo: {y:0, x: "#Scene2"}}); 
+						break; 
 				}
 			}
-		}
+		},
     },
     created(){
         if(process.client){
@@ -85,9 +93,25 @@ export default {
                   scrub: true,
                   markers: "true",
               }
-		  });
-		  
-		this.goToChapter();
+		});
+		
+		let tlSection2 = this.$gsap.timeline({
+			scrollTrigger: {
+				trigger: "#Scene2",
+				scrub: 0,
+				start: () =>
+					"top top-=" +
+					(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
+				end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
+				onEnter: () => {
+					alert('entro a peces')
+				},
+			}
+		});
+
+		setTimeout(() => {
+			this.goToChapter();
+		}, 3000);
 
         });
       }
