@@ -1,0 +1,165 @@
+// include foundation
+@import './framework/foundation/foundation.scss';
+
+// // include utilities
+@import './framework/utilities/utilities.scss';
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+.b--page-a{
+    background:magenta;
+    height: 100vh;
+    // overflow: hidden;
+    &__wrapper{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        background:rgba(252, 229, 252, 0.749);
+        &__item{
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex; 
+            &--second{
+                background:blue;
+            }
+        }
+    }
+}
+
+// single story
+.b--ss-a{
+    position:relative;
+    &__bg-items{
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        width: auto;
+        height: 100%;
+        &__artwork{ // needed to see it with amaia
+            position: relative;
+            z-index: -1;
+            display: block;
+            height: 100%;
+        }
+        &__flag{ // demo example
+            position: absolute;
+            top: 0;
+            height: 100%;
+            pointer-events: none;
+            left: 14%;
+        }
+    }  
+    &__content{
+        // here goes hole content
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        width: auto;
+        height: 100%; 
+    } 
+    &__ft-items{
+        position: absolute;
+        left: 0;
+        z-index: 5;
+        height: 100%;
+        &__artwork{ // needed to see it with amaia
+            position: relative;
+            z-index: -1;
+            display: block;
+            height: 100%;
+        }
+    }
+    &--second{
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+    }
+    &--third{
+        background:rgba(222, 148, 148, 0.502)
+    }
+}
+.b--header-a{
+    position: fixed;
+    background:white;
+    padding:$measure *2;
+    left:$measure*3; top:$measure*3;
+    right:$measure*3;
+    z-index: 50;
+}
+.b--card-a{
+    padding:10px;
+    background:magenta;
+    top:50%;
+    position:relative;
+    left:150px;
+    &__hd{
+        background: linear-gradient(0deg, rgba(112, 28, 24, 1) 0%, rgba(170, 62, 57, 1)100%) ;
+        padding:$measure*3;
+        &__title{
+            color:#fff;
+            text-align:center;
+            @include make-font-b();
+            
+        }
+
+    }
+}
+
+.b--bird-a{
+    position: absolute;
+    left:45%;
+    bottom:0;
+    z-index: 3;
+    border:1px solid red;
+    
+}
+
+.b--noise-a{
+    position: fixed;
+    left:0;
+    top:0;
+    height: 100vh;
+    width:100%;
+    z-index: 50;
+    background-image: url('@/assets/img/noise.png');
+    background-position: 0 0;
+    pointer-events: none;
+    opacity: .4;
+    animation: scratchy .253s  linear forwards infinite ;
+
+}
+@keyframes scratchy {
+	0% {
+		background-position: 0 0;
+	}
+	25% {
+		background-position: 0 0;
+	}
+	26% {
+		background-position: 20px -20px;
+	}
+	50% {
+		background-position: 20px -20px;
+	}
+	51% {
+		background-position: 40px -40px;
+	}
+	75% {
+		background-position: 40px -40px;
+	}
+	76% {
+		background-position: 60px -60px;
+	}
+	99% {
+		background-position: 60px -60px;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
