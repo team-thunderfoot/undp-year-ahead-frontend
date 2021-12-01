@@ -166,33 +166,52 @@ export default {
 						invalidateOnRefresh: true,
 						scrub: true,
 						markers: "true",
-						onUpdate: (self) => {
-							var widhtProgress = self.progress.toFixed(2) * 100;
-							document.querySelector('.b--progress-a').classList.syle = widhtProgress + 'px';
-							if(widhtProgress > 0 && widhtProgress <= 50){
-								this.$refs.processA.$refs.first.classList.add("is-current");
+						// onUpdate: (self) => {
+						// 	var widhtProgress = self.progress.toFixed(2) * 100;
+						// 	document.querySelector('.b--progress-a').classList.syle = widhtProgress + 'px';
+						// 	if(widhtProgress > 0 && widhtProgress <= 50){
+						// 		this.$refs.processA.$refs.first.classList.add("is-current");
 
-								this.$refs.processA.$refs.second.classList.remove("is-current");
-								this.$refs.processA.$refs.second.classList.remove("is-complete");
-							}
-							if(widhtProgress > 50 && widhtProgress <= 70 ){
-								this.$refs.processA.$refs.first.classList.add("is-complete");
-								this.$refs.processA.$refs.second.classList.add("is-current");
+						// 		this.$refs.processA.$refs.second.classList.remove("is-current");
+						// 		this.$refs.processA.$refs.second.classList.remove("is-complete");
+						// 	}
+						// 	if(widhtProgress > 50 && widhtProgress <= 70 ){
+						// 		this.$refs.processA.$refs.first.classList.add("is-complete");
+						// 		this.$refs.processA.$refs.second.classList.add("is-current");
 
-								this.$refs.processA.$refs.third.classList.remove("is-current");
-								this.$refs.processA.$refs.third.classList.remove("is-complete");
-							}
-							if(widhtProgress > 70 && widhtProgress <= 99 ){
-								this.$refs.processA.$refs.second.classList.add("is-complete");
-								this.$refs.processA.$refs.third.classList.add("is-current");
+						// 		this.$refs.processA.$refs.third.classList.remove("is-current");
+						// 		this.$refs.processA.$refs.third.classList.remove("is-complete");
+						// 	}
+						// 	if(widhtProgress > 70 && widhtProgress <= 99 ){
+						// 		this.$refs.processA.$refs.second.classList.add("is-complete");
+						// 		this.$refs.processA.$refs.third.classList.add("is-current");
 
-								this.$refs.processA.$refs.fourth.classList.remove("is-current");
-								this.$refs.processA.$refs.fourth.classList.remove("is-complete");
-							}
-							if(widhtProgress > 99){
-								this.$refs.processA.$refs.third.classList.add("is-complete");
-								this.$refs.processA.$refs.fourth.classList.add("is-complete");
-							}
+						// 		this.$refs.processA.$refs.fourth.classList.remove("is-current");
+						// 		this.$refs.processA.$refs.fourth.classList.remove("is-complete");
+						// 	}
+						// 	if(widhtProgress > 99){
+						// 		this.$refs.processA.$refs.third.classList.add("is-complete");
+						// 		this.$refs.processA.$refs.fourth.classList.add("is-complete");
+						// 	}
+						// }
+					}
+				});
+
+				let tlSection1 = this.$gsap.timeline({
+					scrollTrigger: {
+						trigger: "#Scene1",
+						scrub: 0,
+						start: () =>
+							"top top-=" +
+							(document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+						end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+						onEnter: () => {
+							console.log('entro a peces');
+							this.$refs.processA.$refs.first.classList.add("is-current");
+						},
+						onEnterBack: () => {
+							this.$refs.processA.$refs.first.classList.remove("is-complete");
+							this.$refs.processA.$refs.second.classList.remove("is-current");
 						}
 					}
 				});
@@ -206,9 +225,49 @@ export default {
 							(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
 						end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
 						onEnter: () => {
-							// alert('entro a peces')
 							console.log('entro a peces');
+							this.$refs.processA.$refs.first.classList.add("is-complete");
+							this.$refs.processA.$refs.second.classList.add("is-current");
 						},
+						onEnterBack: () => {
+							this.$refs.processA.$refs.second.classList.remove("is-complete");
+							this.$refs.processA.$refs.third.classList.remove("is-current");
+						}
+					}
+				});
+
+				let tlSection3 = this.$gsap.timeline({
+					scrollTrigger: {
+						trigger: "#Scene3",
+						scrub: 0,
+						start: () =>
+							"top top-=" +
+							(document.querySelector("#Scene3").offsetLeft - window.innerWidth),
+						end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
+						onEnter: () => {
+							this.$refs.processA.$refs.second.classList.add("is-complete");
+							this.$refs.processA.$refs.third.classList.add("is-current");
+						},
+						onEnterBack: () => {
+							this.$refs.processA.$refs.third.classList.remove("is-complete");
+							this.$refs.processA.$refs.fourth.classList.remove("is-current");
+						}
+					}
+				});
+
+				let tlSection4 = this.$gsap.timeline({
+					scrollTrigger: {
+						trigger: "#Scene4",
+						scrub: 0,
+						start: () =>
+							"top top-=" +
+							(document.querySelector("#Scene4").offsetLeft - window.innerWidth),
+						end: () => "+=" + document.querySelector("#Scene4").offsetWidth,
+						onEnter: () => {
+							this.$refs.processA.$refs.third.classList.add("is-complete");
+							this.$refs.processA.$refs.fourth.classList.add("is-current");
+						},
+						
 					}
 				});
 
