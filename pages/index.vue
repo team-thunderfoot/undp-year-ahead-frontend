@@ -5,7 +5,7 @@
             Sticky!
         </div>
         <div class="b--page-a__wrapper">
-            <div class="b--page-a__wrapper__item b--ss-a">
+            <div class="b--page-a__wrapper__item b--ss-a" id="Scene1"> 
                 <div class="b--ss-a__ft-items">
                     <div class="b--bird-a">
                         <img src="@/assets/img/bird.png" alt="">
@@ -26,7 +26,7 @@
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
                 </div>
             </div>
-            <div class="b--page-a__wrapper__item b--page-a__wrapper__item--second">
+            <div class="b--page-a__wrapper__item b--page-a__wrapper__item--second" id="Scene2">
                 <div class="b--ss-a__ft-items">
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt=""> 
                 </div>
@@ -58,8 +58,15 @@ export default {
 			var pathname = currentURL.split('/');
 			if(pathname[pathname.length-1].includes("chapter")){
 				var chapter = pathname[pathname.length-1];
+				switch (chapter) {
+					case '#chapter2':
+						this.$gsap.to(window, {duration: 2, scrollTo: {y:0, x: "#Scene2"}});
+						break;
+				
+					default:
+						break;
+				}
 			}
-
 		}
     },
     created(){
