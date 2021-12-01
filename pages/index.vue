@@ -48,11 +48,19 @@
 export default {
     methods:{
         getTotalWidth(){
-        let width = 0;
-        let Sections = document.querySelectorAll(".b--page-a__wrapper__item");
-        Sections.forEach(el => width += el.offsetWidth);
-        return width;
-        }
+			let width = 0;
+			let Sections = document.querySelectorAll(".b--page-a__wrapper__item");
+			Sections.forEach(el => width += el.offsetWidth);
+			return width;
+		},
+		goToChapter(){
+			var currentURL = window.location.href;
+			var pathname = currentURL.split('/');
+			if(pathname[pathname.length-1].includes("chapter")){
+				var chapter = pathname[pathname.length-1];
+			}
+
+		}
     },
     created(){
         if(process.client){
@@ -70,9 +78,9 @@ export default {
                   scrub: true,
                   markers: "true",
               }
-          });
-
-
+		  });
+		  
+		this.goToChapter();
 
         });
       }
