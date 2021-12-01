@@ -54,6 +54,7 @@ export default {
 			return width;
 		},
 		goToChapter(){
+			console.log("Sfsd");
 			var currentURL = window.location.href;
 			var pathname = currentURL.split('/');
 			if(pathname[pathname.length-1].includes("chapter")){
@@ -66,7 +67,12 @@ export default {
 				
 					case '#chapter2':
 						console.log('voy al 2');
-						this.$gsap.to(document.querySelector('.b--page-a__wrapper'), {duration: 2, scrollTo: {x: "#Scene2"}});
+						let scene2  = document.querySelector("#Scene2");
+						// Get the element
+					// Get the scroll position
+						const pos =  scene2.offsetLeft;
+						console.log(pos);
+						this.$gsap.to(window, {duration: 2, scrollTo: pos });
 						//ya estoy probando de todo, asi que no asustarse
 						break;
 				
@@ -79,43 +85,45 @@ export default {
     },
     created(){
         if(process.client){
-        this.$nextTick(() => {
+			this.$nextTick(() => {
 
-        this.$gsap.to(document.querySelectorAll(".b--page-a__wrapper"), { 
-            x: () => -this.getTotalWidth() + window.innerWidth, 
-            ease: "none", 
-            scrollTrigger: {
-                  trigger: ".b--page-a",
-                  pin: true,
-                  start: 0,
-                  end: () => "+=" + (document.querySelector('.b--page-a__wrapper').scrollWidth - window.innerWidth),
-                  invalidateOnRefresh: true,
-                  scrub: true,
-                  markers: "true",
-              }
-		});
-		
-		let tlSection2 = this.$gsap.timeline({
-			scrollTrigger: {
-				trigger: "#Scene2",
-				scrub: 0,
-				start: () =>
-					"top top-=" +
-					(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
-				end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
-				onEnter: () => {
-					alert('entro a peces')
-				},
-			}
-		});
+				this.$gsap.to(document.querySelectorAll(".b--page-a__wrapper"), { 
+					x: () => -this.getTotalWidth() + window.innerWidth, 
+					ease: "none", 
+					scrollTrigger: {
+						trigger: ".b--page-a",
+						pin: true,
+						start: 0,
+						end: () => "+=" + (document.querySelector('.b--page-a__wrapper').scrollWidth - window.innerWidth),
+						invalidateOnRefresh: true,
+						scrub: true,
+						markers: "true",
+					}
+				});
+				
+				let tlSection2 = this.$gsap.timeline({
+					scrollTrigger: {
+						trigger: "#Scene2",
+						scrub: 0,
+						start: () =>
+							"top top-=" +
+							(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
+						end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
+						onEnter: () => {
+							alert('entro a peces')
+						},
+					}
+				});
 
+			});
+		}
+    },
+	mounted(){
 		setTimeout(() => {
 			this.goToChapter();
-		}, 3000);
 
-        });
-      }
-    }
+		}, 1000);
+	}
 }
 </script>
 
