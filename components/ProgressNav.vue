@@ -22,7 +22,6 @@ export default {
         
     },
     props : [
-        'refID',
         'refValue'
     ],
 }

@@ -7,7 +7,7 @@
         <div class="b--page-a__wrapper">
             <div class="b--page-a__wrapper__item b--ss-a" id="Scene1"> 
                 <div class="b--ss-a__ft-items">
-                    <div class="b--bird-a">
+                    <div class="b--bird-a" v-rellax="rellax">
                         <img src="@/assets/img/bird.png" alt="">
                     </div>
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
@@ -41,8 +41,8 @@
             </div>
             
         </div>
-		{{refID}} ++  {{refValue}}
-		<v-progress-nav :refID="refID" :refValue="refValue"/>
+		{refValue}}
+		<v-progress-nav :refValue="refValue"/>
     </div>
 </template>
 
@@ -50,15 +50,13 @@
 import ProgressNav from '@/components/ProgressNav.vue';
 
 export default {
-	data: () => {
-		return {
-			refID : 'firstP',
-			refValue : 0
-		}
-	},
 	components : {
-		'v-progress-nav' : ProgressNav
+		'v-progress-nav' : ProgressNav,
 	},
+	data: () => ({
+		rellax: {speed: -2},
+		refValue : 0
+	}),
     methods:{
         getTotalWidth(){
 			let width = 0;
