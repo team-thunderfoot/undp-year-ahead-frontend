@@ -42,7 +42,7 @@
             
         </div>
 		{refValue}}
-		<v-progress-nav :refValue="refValue"/>
+		<v-progress-nav :refValue="refValue" ref="processA"  @goToChapter="goToChapter"/>
     </div>
 </template>
 
@@ -64,11 +64,15 @@ export default {
 			Sections.forEach(el => width += el.offsetWidth);
 			return width;
 		},
-		goToChapter(){
-			var currentURL = window.location.href;
-			var pathname = currentURL.split('/');
-			if(pathname[pathname.length-1].includes("chapter")){
-				var chapter = pathname[pathname.length-1];
+		goToChapter(payload){
+			if(!payload){
+				var currentURL = window.location.href;
+				var pathname = currentURL.split('/');	
+				var payload = pathname[pathname.length-1].includes("chapter");		
+			}
+			
+			if(payload){
+				var chapter = (payload) ?  "#" + payload.section : pathname[pathname.length-1];
 				switch (chapter) {
 					case '#chapter1':
 						// Get the element
@@ -117,13 +121,31 @@ export default {
 						markers: "true",
 						onUpdate: (self) => {
 							var widhtProgress = self.progress.toFixed(2) * 100;
-							if(widhtProgress > 0 && widhtProgress < 50){
-								this.refValue = Math.round(widhtProgress);
+							document.querySelector('.b--progress-a').classList.syle = widhtProgress + 'px';
+							if(widhtProgress > 0 && widhtProgress <= 50){
+								this.$refs.processA.$refs.first.classList.add("is-current");
+
+								this.$refs.processA.$refs.second.classList.remove("is-current");
+								this.$refs.processA.$refs.second.classList.remove("is-complete");
 							}
-							if(widhtProgress > 50){
-								this.refValue = Math.round(widhtProgress);
+							if(widhtProgress > 50 && widhtProgress <= 70 ){
+								this.$refs.processA.$refs.first.classList.add("is-complete");
+								this.$refs.processA.$refs.second.classList.add("is-current");
+
+								this.$refs.processA.$refs.third.classList.remove("is-current");
+								this.$refs.processA.$refs.third.classList.remove("is-complete");
 							}
-							
+							if(widhtProgress > 70 && widhtProgress <= 99 ){
+								this.$refs.processA.$refs.second.classList.add("is-complete");
+								this.$refs.processA.$refs.third.classList.add("is-current");
+
+								this.$refs.processA.$refs.fourth.classList.remove("is-current");
+								this.$refs.processA.$refs.fourth.classList.remove("is-complete");
+							}
+							if(widhtProgress > 99){
+								this.$refs.processA.$refs.third.classList.add("is-complete");
+								this.$refs.processA.$refs.fourth.classList.add("is-complete");
+							}
 						}
 					}
 				});
