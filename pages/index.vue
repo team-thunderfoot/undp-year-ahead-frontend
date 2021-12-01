@@ -62,22 +62,31 @@ export default {
 				switch (chapter) {
 					case '#chapter1':
 						console.log('voy al 1');
-						this.$gsap.to(window, {duration: 2, scrollTo: {y:0, x: "#Scene1"}}); 
+						// Get the element
+						let scene1  = document.querySelector("#Scene1");
+						if(scene1){
+							var pos =  scene1.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos }); 
+						}
+						
 						break;
 				
 					case '#chapter2':
 						console.log('voy al 2');
 						let scene2  = document.querySelector("#Scene2");
-						// Get the element
-					// Get the scroll position
-						const pos =  scene2.offsetLeft;
-						console.log(pos);
-						this.$gsap.to(window, {duration: 2, scrollTo: pos });
+						if(scene2){
+							var pos =  scene2.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos });
+						}
 						//ya estoy probando de todo, asi que no asustarse
 						break;
 				
 					default:
-						this.$gsap.to(window, {duration: 2, scrollTo: {y:0, x: "#Scene2"}}); 
+						let sceneDefault  = document.querySelector("#Scene2");
+						if(sceneDefault){
+							var pos =  sceneDefault.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos });
+						}
 						break; 
 				}
 			}
@@ -110,7 +119,8 @@ export default {
 							(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
 						end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
 						onEnter: () => {
-							alert('entro a peces')
+							// alert('entro a peces')
+							console.log('entro a peces');
 						},
 					}
 				});
@@ -119,10 +129,7 @@ export default {
 		}
     },
 	mounted(){
-		setTimeout(() => {
-			this.goToChapter();
-
-		}, 1000);
+		this.goToChapter();
 	}
 }
 </script>
