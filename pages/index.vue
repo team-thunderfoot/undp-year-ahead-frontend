@@ -40,6 +40,35 @@
                 </div>
             </div>
             
+			<div class="b--page-a__wrapper__item b--ss-a" id="Scene3"> 
+                <div class="b--ss-a__ft-items">
+                    <div class="b--bird-a" v-rellax="rellax">
+                        <img src="@/assets/img/bird.png" alt="">
+                    </div>
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
+                </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Towards living in harmony with nature
+                            </h3> 
+                        </div>
+                
+                    </div>
+                </div>
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
+                </div>
+            </div>
+			<div class="b--page-a__wrapper__item b--page-a__wrapper__item--second" id="Scene4">
+                <div class="b--ss-a__ft-items">
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt=""> 
+                </div>
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="">    
+                </div>
+            </div>
         </div>
 		{refValue}}
 		<v-progress-nav :refValue="refValue" ref="processA"  @goToChapter="goToChapter"/>
@@ -92,7 +121,25 @@ export default {
 						}
 						//ya estoy probando de todo, asi que no asustarse
 						break;
-				
+					case '#chapter3':
+						// Get the element
+						let scene3  = document.querySelector("#Scene3");
+						if(scene3){
+							var pos =  scene3.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos }); 
+						}
+						
+						break;
+
+					case '#chapter4':
+						// Get the element
+						let scene4  = document.querySelector("#Scene4");
+						if(scene4){
+							var pos =  scene4.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos }); 
+						}
+						
+						break;
 					default:
 						let sceneDefault  = document.querySelector("#Scene2");
 						if(sceneDefault){
