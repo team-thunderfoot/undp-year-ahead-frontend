@@ -41,11 +41,24 @@
             </div>
             
         </div>
+		{{refID}} ++  {{refValue}}
+		<v-progress-nav :refID="refID" :refValue="refValue"/>
     </div>
 </template>
 
 <script>
+import ProgressNav from '@/components/ProgressNav.vue';
+
 export default {
+	data: () => {
+		return {
+			refID : 'firstP',
+			refValue : 0
+		}
+	},
+	components : {
+		'v-progress-nav' : ProgressNav
+	},
     methods:{
         getTotalWidth(){
 			let width = 0;
@@ -54,14 +67,12 @@ export default {
 			return width;
 		},
 		goToChapter(){
-			console.log("Sfsd");
 			var currentURL = window.location.href;
 			var pathname = currentURL.split('/');
 			if(pathname[pathname.length-1].includes("chapter")){
 				var chapter = pathname[pathname.length-1];
 				switch (chapter) {
 					case '#chapter1':
-						console.log('voy al 1');
 						// Get the element
 						let scene1  = document.querySelector("#Scene1");
 						if(scene1){
@@ -72,7 +83,6 @@ export default {
 						break;
 				
 					case '#chapter2':
-						console.log('voy al 2');
 						let scene2  = document.querySelector("#Scene2");
 						if(scene2){
 							var pos =  scene2.offsetLeft;
@@ -107,6 +117,16 @@ export default {
 						invalidateOnRefresh: true,
 						scrub: true,
 						markers: "true",
+						onUpdate: (self) => {
+							var widhtProgress = self.progress.toFixed(2) * 100;
+							if(widhtProgress > 0 && widhtProgress < 50){
+								this.refValue = Math.round(widhtProgress);
+							}
+							if(widhtProgress > 50){
+								this.refValue = Math.round(widhtProgress);
+							}
+							
+						}
 					}
 				});
 				
