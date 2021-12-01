@@ -7,7 +7,7 @@
         <div class="b--page-a__wrapper">
             <div class="b--page-a__wrapper__item b--ss-a" id="Scene1"> 
                 <div class="b--ss-a__ft-items">
-                    <div class="b--bird-a">
+                    <div class="b--bird-a" v-rellax="rellax">
                         <img src="@/assets/img/bird.png" alt="">
                     </div>
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
@@ -46,6 +46,9 @@
 
 <script>
 export default {
+	data: () => ({
+		rellax: {speed: -2}
+	}),
     methods:{
         getTotalWidth(){
 			let width = 0;
