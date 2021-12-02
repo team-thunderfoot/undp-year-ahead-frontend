@@ -7,7 +7,7 @@
         <div class="b--page-a__wrapper">
             <div class="b--page-a__wrapper__item b--ss-a" id="Scene1"> 
                 <div class="b--ss-a__ft-items">
-                    <div class="b--bird-a" v-rellax="rellax">
+                    <div class="b--bird-a">
                         <img src="@/assets/img/bird.png" alt="">
                     </div>
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
@@ -42,7 +42,7 @@
             
 			<div class="b--page-a__wrapper__item b--ss-a" id="Scene3"> 
                 <div class="b--ss-a__ft-items">
-                    <div class="b--bird-a" v-rellax="rellax">
+                    <div class="b--bird-a">
                         <img src="@/assets/img/bird.png" alt="">
                     </div>
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
@@ -82,10 +82,6 @@ export default {
 	components : {
 		'v-progress-nav' : ProgressNav,
 	},
-	data: () => ({
-		rellax: {speed: -2},
-		refValue : 0
-	}),
     methods:{
         getTotalWidth(){
 			let width = 0;
