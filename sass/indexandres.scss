@@ -95,6 +95,9 @@
             pointer-events: none;
             left: 14%;
         }
+        & img {
+            min-width: 500px;
+        }
     }  
     &__content{
         // here goes hole content
@@ -204,4 +207,47 @@
 	100% {
 		background-position: 0 0;
 	}
+}
+
+.b--progress-a {
+    height: 40px;
+    width: 0%;
+    position: absolute;
+    bottom: 3rem;
+    // background-color: red;
+}
+.b--progress-a--button { 
+    height: 50px;
+    width: 50px;
+    // background-color: red;
+    // border: 1px solid red;
+    border-radius: 50%;
+}
+
+.progress-bar-vertical {
+    // position: relative;
+    display: inline-block;
+    height: 200px;
+    // width: 400px;
+    background: linear-gradient(to right, #8fe4bf 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #8fe4bf 25%, transparent 30%);
+    background-position: 0% 50%, 0% 50%;
+    background-size: 100% 5px, 50px 50px;
+    /* 5px is the thickness of the bar, 50px is 1/8th of the height */
+    
+    background-repeat: no-repeat, repeat-x;
+}
+
+.progress-now-vertical {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(to right, #00b164 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #00b164 25%, transparent 30%);
+    background-position: 0% 50%, 0% 50%;
+    background-size: 100% 5px, 50px 50px;
+    background-repeat: no-repeat, repeat-x;
+    z-index: 1;
+}
+
+.progress-now-vertical.right {
+    right: 0px;
+    background-position: 100% 50%, 100% 50%;
 }
