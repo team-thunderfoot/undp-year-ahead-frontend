@@ -48,7 +48,7 @@
             </div>
         </section>
         <v-progress-nav ref="processA"  @goToChapter="goToChapter"/>
-        </div>
+    </div>
 </template>
 
 <script>
