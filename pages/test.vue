@@ -4,31 +4,31 @@
         <div class="b--header-a">
             Sticky!
         </div>
-        <section class="" id="SectionA"><img class="SectionAImag" src="https://source.unsplash.com/Pd8tLVGx2O4/1600x900" alt="">
+        <section class="" id="SectionA"><img class="SectionAImag" src="@/assets/img/ft-chapter-1.png" alt="">
             <h1>SectionA<br>width: 120vw;</h1>
         </section>
 
         <section id="SectionB">
             <div id="SectionBLeftBox">
             <h1>SectionB<br>width: 150vw;</h1>
-            </div><img class="SectionBImag" src="https://source.unsplash.com/CudNrzbsyZw/1600x900" alt="">
+            </div><img class="SectionBImag" src="@/assets/img/ft-chapter-2.png" alt="">
         </section>
 
         <section id="SectionC">
-            <div id="ImageWrap"><img src="https://source.unsplash.com/uEFombN3J5U/1600x900" alt=""></div>
+            <div id="ImageWrap"><img src="@/assets/img/ft-chapter-1.png" alt=""></div>
             <h1>SectionC<br>width: 210vw;</h1>
         </section>
 
         <section id="SectionD">
             <div id="SectionWrap">
-            <div id="ImageWrap"><img src="https://source.unsplash.com/BjJP2TN8WoI/900x1600" alt=""></div>
+            <div id="ImageWrap"><img src="@/assets/img/bg-chapter-1.png" alt=""></div>
             <div id="TextWrap">
                 <h1>SectionD<br>width: 200vw;</h1>
             </div>
             </div>
         </section>
         
-        </div>
+    </div>
 </template>
 
 <script>
@@ -103,6 +103,8 @@ section {
 	display: flex;
 	color: var(--ColorWhiteA);
 	border-right: 5px solid blue;
+	width: fit-content;
+    min-width: 100vw;
 }
 
 #HorizontalWrapper #SectionA {
