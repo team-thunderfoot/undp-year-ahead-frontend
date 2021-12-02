@@ -1,7 +1,10 @@
 <template>
-    <div id="HorizontalWrapper">
-
-        <section id="SectionA"><img class="SectionAImag" src="https://source.unsplash.com/Pd8tLVGx2O4/1600x900" alt="">
+    <div id="HorizontalWrapper" class="b--wrapper-a">
+        <div class="b--noise-a"></div>
+        <div class="b--header-a">
+            Sticky!
+        </div>
+        <section class="" id="SectionA"><img class="SectionAImag" src="https://source.unsplash.com/Pd8tLVGx2O4/1600x900" alt="">
             <h1>SectionA<br>width: 120vw;</h1>
         </section>
 
@@ -61,7 +64,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 :root {
 	font-family: Helvetica;
 }
@@ -209,5 +212,57 @@ section {
 
 #HorizontalWrapper #SectionD #SectionWrap #TextWrap h1 {
 	font-size: 5vw;
+}
+
+.b--header-a{
+    position: fixed;
+    background:white;
+    padding:$measure *2;
+    left:$measure*3; top:$measure*3;
+    right:$measure*3;
+    z-index: 50;
+}
+.b--noise-a{
+    position: fixed;
+    left:0;
+    top:0;
+    height: 100vh;
+    width:100%;
+    z-index: 50;
+    background-image: url('@/assets/img/noise.png');
+    background-position: 0 0;
+    pointer-events: none;
+    // opacity: .4;
+    animation: scratchy .253s  linear forwards infinite ;
+
+}
+@keyframes scratchy {
+	0% {
+		background-position: 0 0;
+	}
+	25% {
+		background-position: 0 0;
+	}
+	26% {
+		background-position: 20px -20px;
+	}
+	50% {
+		background-position: 20px -20px;
+	}
+	51% {
+		background-position: 40px -40px;
+	}
+	75% {
+		background-position: 40px -40px;
+	}
+	76% {
+		background-position: 60px -60px;
+	}
+	99% {
+		background-position: 60px -60px;
+	}
+	100% {
+		background-position: 0 0;
+	}
 }
 </style>

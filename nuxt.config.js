@@ -5,7 +5,8 @@ export default {
     routes:[
       '/',
       '/fr',
-      '/es'
+      '/es',
+      '/test'
     ]
   },
   // router: {
