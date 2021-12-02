@@ -29,3 +29,39 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.b--progress-a {
+    position: fixed;
+    bottom: 10%;
+    width: 100%;
+    &__wrapper{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        background-color: #be564b;
+        border-radius: 100px;
+        padding: 8px 16px;
+        width: fit-content;
+        margin: 0 auto;
+        &__item{
+            background-color: #f1cdbb;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            &:not(:last-child){
+                margin-right: 32px;
+            }
+            &:hover{
+                transform: scale(1.2);
+            }
+            &.is-current{
+               transform: scale(2);
+
+            }
+        }
+    }
+}
+
+
+</style>
