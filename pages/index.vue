@@ -76,7 +76,6 @@ export default {
 			} else {
 				var chapter =   "#" + payload.section;
             }
-            alert(chapter)
 			
 			if(chapter){
 				switch (chapter) {
