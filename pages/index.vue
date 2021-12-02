@@ -4,12 +4,9 @@
         <div class="b--header-a">
             Sticky!
         </div>
-        <section class="b--page-a__item" id="SectionA">
-            <div class="b--ss-a" id="Scene1"> 
+        <section class="b--page-a__item" id="Scene1">
+            <div class="b--ss-a"> 
                 <div class="b--ss-a__ft-items">
-                    <div class="b--bird-a">
-                        <img src="@/assets/img/bird.png" alt="">
-                    </div>
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
                 </div>
                 <div class="b--ss-a__content">
@@ -28,10 +25,62 @@
             </div>
         </section>
 
-        <section class="b--page-a__item" id="SectionB">
-            <div id="Scene2">
+        <section class="b--page-a__item" id="Scene2">
+            <div class="b--ss-a">
                 <div class="b--ss-a__ft-items">
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt=""> 
+                </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Contenido del 2
+                            </h3> 
+                        </div>
+                
+                    </div>
+                </div>
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="">    
+                </div>
+            </div>
+        </section>
+
+         <section class="b--page-a__item" id="Scene3">
+            <div class="b--ss-a"> 
+                <div class="b--ss-a__ft-items">
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
+                </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Towards living in harmony with nature
+                            </h3> 
+                        </div>
+                
+                    </div>
+                </div>
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
+                </div>
+            </div>
+        </section>
+
+        <section class="b--page-a__item" id="Scene4">
+            <div class="b--ss-a">
+                <div class="b--ss-a__ft-items">
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt=""> 
+                </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Contenido del 2
+                            </h3> 
+                        </div>
+                
+                    </div>
                 </div>
                 <div class="b--ss-a__bg-items">
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="">    
@@ -113,56 +162,16 @@ section {
 	flex-shrink: 0;
 	display: flex;
 	color: magenta;
-	border-right: 5px solid blue;
+    border-right: 5px solid blue;
+    width: fit-content;
+    min-width: 100vw;
 }
 
-.b--page-a #SectionA {
+.b--page-a .b--page-a__item {
 	justify-content: center;
-	align-items: center;
-	width: 100%;
+    align-items: center;
 }
 
-.b--page-a #Scene1{
-    width: 100%;
-    height: 100%;
-}
-
-.b--page-a #Scene1 img{
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-}
-
-.b--page-a #SectionA h1 {
-	position: absolute;
-}
-
-.b--page-a #SectionA img {
-	position: absolute;
-	width: 100%;
-}
-
-.b--page-a #SectionB {
-	justify-content: flex-start;
-	width: 150vw;
-}
-
-.b--page-a #SectionB #SectionBLeftBox {
-	display: flex;
-	position: absolute;
-	z-index: 1;
-	justify-content: center;
-	align-items: center;
-	background: #f8efe6;
-	height: 100vh;
-	width: 70vw;
-}
-
-.b--page-a #SectionB img {
-	position: absolute;
-	right: 0;
-	height: 100vh;
-}
 
 .b--header-a{
     position: fixed;
@@ -187,10 +196,10 @@ section {
 
 }
 
-
 // single story
 .b--ss-a{
     position:relative;
+    height: 100%;
     &__bg-items{
         position: relative;
         top: 0;
@@ -203,6 +212,7 @@ section {
             z-index: -1;
             display: block;
             height: 100%;
+            width: auto;
         }
         &__flag{ // demo example
             position: absolute;
@@ -230,21 +240,16 @@ section {
         left: 0;
         z-index: 5;
         height: 100%;
+        width: 100%;
+        top: 0;
         &__artwork{ // needed to see it with amaia
             position: relative;
             z-index: -1;
             display: block;
             height: 100%;
+            width: 100%;
         }
-    }
-    &--second{
-        justify-content: center;
-        align-items: center;
-        width: 100%; 
-    }
-    &--third{
-        background:rgba(222, 148, 148, 0.502)
-    }
+    } 
 } 
 @keyframes scratchy {
 	0% {
