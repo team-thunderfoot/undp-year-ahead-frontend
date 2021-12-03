@@ -2,12 +2,21 @@
     <div id="HorizontalWrapper" class="b--page-a">
         <!-- <div class="b--noise-a"></div> -->
         <div class="b--header-a">
-            Sticky2!
+            Sticky3!
         </div>
         <section class="b--page-a__item" id="Scene1">
             <div class="b--ss-a"> 
                 <div class="b--ss-a__ft-items">
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt="" @load="onImgLoad"> 
+                </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Ch1 Towards living in harmony with nature
+                            </h3> 
+                        </div>
+                    </div>
                 </div>
                 <div class="b--ss-a__bg-items">
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="" @load="onImgLoad">    
@@ -20,6 +29,15 @@
                 <div class="b--ss-a__ft-items">
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt="" @load="onImgLoad"> 
                 </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Ch2 Towards living in harmony with nature
+                            </h3> 
+                        </div>
+                    </div>
+                </div>
                 <div class="b--ss-a__bg-items">
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="" @load="onImgLoad">    
                 </div>
@@ -31,6 +49,15 @@
                 <div class="b--ss-a__ft-items">
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt="" @load="onImgLoad"> 
                 </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Ch3 Towards living in harmony with nature
+                            </h3> 
+                        </div>
+                    </div>
+                </div>
                 <div class="b--ss-a__bg-items">
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="" @load="onImgLoad">    
                 </div>
@@ -41,6 +68,15 @@
             <div class="b--ss-a">
                 <div class="b--ss-a__ft-items">
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt="" @load="onImgLoad"> 
+                </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Ch4 Towards living in harmony with nature
+                            </h3> 
+                        </div>
+                    </div>
                 </div>
                 <div class="b--ss-a__bg-items">
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="" @load="onImgLoad">    

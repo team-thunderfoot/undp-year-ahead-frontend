@@ -77,13 +77,43 @@ section {
     width: auto;
     height: 100%;
   }
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: auto;
+    height: 100%;
+  }
   &__ft-items {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 4;
     height: 100%;
     width: 100%;
+    pointer-events: none;
+  }
+}
+
+.b--card-a {
+  padding: 10px;
+  background: magenta;
+  top: 50%;
+  position: relative;
+  left: 150px;
+  &__hd {
+    background: linear-gradient(
+      0deg,
+      rgba(112, 28, 24, 1) 0%,
+      rgba(170, 62, 57, 1) 100%
+    );
+    padding: $measure * 3;
+    &__title {
+      color: #fff;
+      text-align: center;
+      @include make-font-b();
+    }
   }
 }
 
