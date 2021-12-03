@@ -47,8 +47,10 @@
                 </div>
             </div>
         </section>
-        <v-progress-nav ref="processA"  @goToChapter="goToChapter"/>
-    </div>
+        <a href="#" id="prev" @click.prevent="goToChapter('prev')"> Prev </a>
+        <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
+        <a href="#" id="next" @click.prevent="goToChapter('next')"> Next </a>
+        </div>
 </template>
 
 <script>
@@ -74,7 +76,11 @@ export default {
 					var chapter = false;
 				}
 			} else {
-				var chapter =   "#" + payload.section;
+                if(payload == "prev" || payload == "next"){
+                    
+                } else {
+				    var chapter =   "#" + payload.section;
+                }
             }
 			
 			if(chapter){
