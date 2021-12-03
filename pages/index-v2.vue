@@ -57,21 +57,22 @@ export default {
         if(process.client){
             this.$nextTick(() => {
 
-                this.$gsap.to(document.querySelectorAll("section"), { 
-                x: () => -this.getTotalWidth() + window.innerWidth, 
-                ease: "none", 
-                scrollTrigger: {
-                        trigger: '.b--page-a',
-                        pin: true,
-                        start: 0,
-                        end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
-                        scrub: true,
-                        markers: "true",
-                    }
-                });
-
-				
-
+                    setTimeout(() => {
+                        alert('start scrolling')
+                            this.$gsap.to(document.querySelectorAll("section"), { 
+                        x: () => -this.getTotalWidth() + window.innerWidth, 
+                        ease: "none", 
+                        scrollTrigger: {
+                                trigger: '.b--page-a',
+                                pin: true,
+                                start: 0,
+                                end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
+                                scrub: true,
+                                markers: "true",
+                            }
+                        });
+                    }, 1300);
+                
             });    
         }
     }
