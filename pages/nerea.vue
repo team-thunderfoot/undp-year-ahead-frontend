@@ -1,54 +1,121 @@
 <template>
-    <div id="HorizontalWrapper" class="b--wrapper-a">
-        <div class="b--noise-a"></div>
+    <div id="HorizontalWrapper" class="b--page-a">
+        <!-- <div class="b--noise-a"></div> -->
         <div class="b--header-a">
             Sticky!
         </div>
-        <section class="" id="SectionA">
-			<div class="b--ss-a"> 
-                <div class="b--ss-a__ft-items">
-                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
-                </div>
-                <div class="b--ss-a__bg-items">
-                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
-                </div>
-            </div>
-        </section>
+		<!-- SECTIONS -->
+		<v-section refName="Scene1"/>
+		<v-section refName="Scene2" />
+		<v-section refName="Scene3" />
+		<v-section refName="Scene4"/>
 
-        <section id="SectionB">
-            <div id="SectionBLeftBox">
-            <h1>SectionB<br>width: 150vw;</h1>
-            </div><img class="SectionBImag" src="https://source.unsplash.com/CudNrzbsyZw/1600x900" alt="">
-        </section>
-
-        <section id="SectionC">
-            <div id="ImageWrap"><img src="https://source.unsplash.com/uEFombN3J5U/1600x900" alt=""></div>
-            <h1>SectionC<br>width: 210vw;</h1>
-        </section>
-
-        <section id="SectionD">
-            <div id="SectionWrap">
-            <div id="ImageWrap"><img src="https://source.unsplash.com/BjJP2TN8WoI/900x1600" alt=""></div>
-            <div id="TextWrap">
-                <h1>SectionD<br>width: 200vw;</h1>
-            </div>
-            </div>
-        </section>
-        
-    </div>
+        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev </a>
+        <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
+        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next </a>
+        </div>
 </template>
 
 <script>
+import ProgressNav from '@/components/ProgressNav.vue';
+import Section from '@/components/Section.vue';
+
 export default {
+	data:()=>{
+		return{
+			currentItem : 0
+		}
+	},
+    components : {
+		'v-progress-nav' : ProgressNav,
+		'v-section' : Section
+	},
     methods:{
         getTotalWidth(){
-        let width = 0;
-        let Sections = document.querySelectorAll("section");
-        Sections.forEach(el => width += el.offsetWidth);
-        return width;
-        }
+            let width = 0;
+            let Sections = document.querySelectorAll("section");
+            Sections.forEach(el => width += el.offsetWidth);
+            return width;
+        },
+		changeURL(chapter) {
+			window.location.hash = chapter;
+		},
+        goToChapter(payload){
+			if(!payload){
+				var currentURL = window.location.href;
+				var pathname = currentURL.split('/');	
+				if(pathname[pathname.length-1].includes("chapter")){
+					var chapter =  pathname[pathname.length-1];
+					var chart = chapter.substring(chapter.length - 1); 
+					if(Number.isInteger(chart)){
+						this.currentItem = chart;
+					}else{
+						this.currentItem = 1;
+					}
+				} else {
+					var chapter = false;
+				}
+			} else {
+                if(payload == "prev" || payload == "next"){
+                    if(payload == 'next'){
+						var chapter =   "#chapter" + parseInt(this.currentItem + 1);
+					}else if(payload == 'prev'){
+						var chapter =   "#chapter" + parseInt(this.currentItem - 1);
+					}
+                } else {
+				    var chapter =   "#" + payload.section;
+                }
+            }
+			console.log(chapter);
+			if(chapter){
+				switch (chapter) {
+					case '#chapter1':
+						// Get the element
+						let scene1  = document.querySelector("#Scene1");
+						if(scene1){
+							var pos =  scene1.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.first.classList.add("is-current");
+							}}); 
+						}
+						break;
+				
+					case '#chapter2':
+						let scene2  = document.querySelector("#Scene2");
+						if(scene2){
+							var pos =  scene2.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.second.classList.add("is-current");
+							}});
+						}
+						break;
+					case '#chapter3':
+						// Get the element
+						let scene3  = document.querySelector("#Scene3");
+						if(scene3){
+							var pos =  scene3.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.third.classList.add("is-current");
+							}}); 
+						}
+						break;
+
+					case '#chapter4':
+						// Get the element
+						let scene4  = document.querySelector("#Scene4");
+						if(scene4){
+							var pos =  scene4.offsetLeft;
+							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.third.classList.add("is-complete");
+								this.$refs.processA.$refs.fourth.classList.add("is-current");
+							}}); 
+						}
+						break;
+				}
+			}
+		},
     },
-    created(){
+    mounted(){
         if(process.client){
             this.$nextTick(() => {
 
@@ -56,14 +123,102 @@ export default {
                 x: () => -this.getTotalWidth() + window.innerWidth, 
                 ease: "none", 
                 scrollTrigger: {
-                        trigger: "#HorizontalWrapper",
+                        trigger: '.b--page-a',
                         pin: true,
                         start: 0,
-                        end: () => "+=" + (document.querySelector('#HorizontalWrapper').scrollWidth - window.innerWidth),
+                        end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
                         scrub: true,
                         markers: "true",
                     }
                 });
+
+                let tlSection1 = this.$gsap.timeline({
+					scrollTrigger: {
+						trigger: "#Scene1",
+						scrub: 0,
+						start: () =>
+							"top top-=" +
+							(document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+						end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+						onEnter: () => {
+							this.$refs.processA.$refs.first.classList.add("is-current");
+							this.currentItem = 1;
+							this.changeURL('chapter1');
+							this.$refs.prev.classList.add('disabled');
+						},
+						onEnterBack: () => {
+							this.$refs.processA.$refs.second.classList.remove("is-current");
+							this.currentItem = 1;
+							this.changeURL('chapter1');
+							this.$refs.prev.classList.add('disabled');
+						}
+					}
+				});
+				
+				let tlSection2 = this.$gsap.timeline({
+					scrollTrigger: {
+						trigger: "#Scene2",
+						scrub: 0,
+						start: () =>
+							"top top-=" +
+							(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
+						end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
+						onEnter: () => {
+							this.$refs.processA.$refs.second.classList.add("is-current");
+							this.currentItem = 2;
+							this.changeURL('chapter2');
+							this.$refs.prev.classList.remove('disabled');
+						},
+						onEnterBack: () => {
+							this.$refs.processA.$refs.third.classList.remove("is-current");
+							this.currentItem = 2;
+							this.changeURL('chapter2');
+						}
+					}
+				});
+
+				let tlSection3 = this.$gsap.timeline({
+					scrollTrigger: {
+						trigger: "#Scene3",
+						scrub: 0,
+						start: () =>
+							"top top-=" +
+							(document.querySelector("#Scene3").offsetLeft - window.innerWidth),
+						end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
+						onEnter: () => {
+							this.$refs.processA.$refs.third.classList.add("is-current");
+							this.currentItem = 3;
+							this.changeURL('chapter3');
+						},
+						onEnterBack: () => {
+							this.currentItem = 3;
+							this.$refs.processA.$refs.fourth.classList.remove("is-current");
+							this.changeURL('chapter3');
+							this.$refs.next.classList.remove('disabled');
+						}
+					}
+				});
+
+				let tlSection4 = this.$gsap.timeline({
+					scrollTrigger: {
+						trigger: "#Scene4",
+						scrub: 0,
+						start: () =>
+							"top top-=" +
+							(document.querySelector("#Scene4").offsetLeft - window.innerWidth),
+						end: () => "+=" + document.querySelector("#Scene4").offsetWidth,
+						onEnter: () => {
+							this.$refs.processA.$refs.third.classList.add("is-complete");
+							this.$refs.processA.$refs.fourth.classList.add("is-current");
+							this.currentItem = 4;
+							this.changeURL('chapter4');
+							this.$refs.next.classList.add('disabled');
+						},
+						
+					}
+                });
+                
+                this.goToChapter();
 
             });    
         }
@@ -71,205 +226,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-:root {
-	font-family: Helvetica;
-}
-
-::-webkit-scrollbar {
-	display: none;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	color: white;
-	font-weight: 400;
-	font-size: 5vw;
-	text-align: center;
-	color: #000000;
-}
-
-body {
-	background: greenyellow;
-}
-
-#HorizontalWrapper {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-  overflow: hidden;
-}
-
-section {
-	position: relative;
-	height: 100vh;
-	overflow: hidden;
-	flex-shrink: 0;
-	display: flex;
-	color: var(--ColorWhiteA);
-	border-right: 5px solid blue;
-}
-
-#HorizontalWrapper #SectionA {
-	justify-content: center;
-	align-items: center;
-	width: 120vw;
-}
-
-#HorizontalWrapper #SectionA h1 {
-	position: absolute;
-}
-
-#HorizontalWrapper #SectionA img {
-	// position: absolute;
-	// width: 100%;
-}
-
-#HorizontalWrapper #SectionB {
-	justify-content: flex-start;
-	width: 150vw;
-}
-
-#HorizontalWrapper #SectionB #SectionBLeftBox {
-	display: flex;
-	position: absolute;
-	z-index: 1;
-	justify-content: center;
-	align-items: center;
-	background: #f8efe6;
-	height: 100vh;
-	width: 70vw;
-}
-
-#HorizontalWrapper #SectionB img {
-	position: absolute;
-	right: 0;
-	height: 100vh;
-}
-
-#HorizontalWrapper #SectionC {
-	justify-content: center;
-	align-items: center;
-	background: #f8efe6;
-	width: 210vw;
-}
-
-#HorizontalWrapper #SectionC h1 {
-	position: absolute;
-}
-
-#HorizontalWrapper #SectionC #ImageWrap {
-	position: absolute;
-	overflow: hidden;
-	width: 60vw;
-	height: 70vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#HorizontalWrapper #SectionC #ImageWrap img {
-	height: 100%;
-}
-
-#HorizontalWrapper #SectionD {
-	justify-content: center;
-	align-items: center;
-	background: #f00000;
-	width: 200vw;
-}
-
-#HorizontalWrapper #SectionD #SectionWrap {
-	position: relative;
-	width: calc(100vw - 10vw);
-	height: calc(100vh - 10vw);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: white;
-}
-
-#HorizontalWrapper #SectionD #SectionWrap #ImageWrap {
-	position: absolute;
-	left: 0;
-	overflow: hidden;
-	width: 40%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#HorizontalWrapper #SectionD #SectionWrap #ImageWrap img {
-	width: 100%;
-}
-
-#HorizontalWrapper #SectionD #SectionWrap #TextWrap {
-	position: absolute;
-	right: 0;
-	width: 60%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #f8efe6;
-}
-
-#HorizontalWrapper #SectionD #SectionWrap #TextWrap h1 {
-	font-size: 5vw;
-}
-
-.b--header-a{
-    position: fixed;
-    background:white;
-    padding:$measure *2;
-    left:$measure*3; top:$measure*3;
-    right:$measure*3;
-    z-index: 50;
-}
-.b--noise-a{
-    position: fixed;
-    left:0;
-    top:0;
-    height: 100vh;
-    width:100%;
-    z-index: 50;
-    background-image: url('@/assets/img/noise.png');
-    background-position: 0 0;
-    pointer-events: none;
-    // opacity: .4;
-    animation: scratchy .253s  linear forwards infinite ;
-
-}
-@keyframes scratchy {
-	0% {
-		background-position: 0 0;
-	}
-	25% {
-		background-position: 0 0;
-	}
-	26% {
-		background-position: 20px -20px;
-	}
-	50% {
-		background-position: 20px -20px;
-	}
-	51% {
-		background-position: 40px -40px;
-	}
-	75% {
-		background-position: 40px -40px;
-	}
-	76% {
-		background-position: 60px -60px;
-	}
-	99% {
-		background-position: 60px -60px;
-	}
-	100% {
-		background-position: 0 0;
-	}
-}
+<style lang="scss">
+  @import '@/sass/index.scss';
 </style>

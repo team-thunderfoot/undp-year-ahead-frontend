@@ -47,10 +47,9 @@
                 </div>
             </div>
         </section>
-		{{currentItem}}
-        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev {{currentItem}} </a>
+        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev </a>
         <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
-        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next  {{currentItem}}</a>
+        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next </a>
         </div>
 </template>
 
@@ -74,10 +73,7 @@ export default {
         },
 		changeURL(chapter) {
 			var currentURL = window.location.href;
-			console.log('chapter',chapter);
 			window.location.hash = chapter;
-			// history.pushState({page: 1}, "title 1", "?page=1")
-			// window.history.replaceState('chapter3', 'title', currentURL);
 		},
         goToChapter(payload){
 			if(!payload){
@@ -230,8 +226,8 @@ export default {
 							this.changeURL('chapter3');
 						},
 						onEnterBack: () => {
-							this.$refs.processA.$refs.fourth.classList.remove("is-current");
 							this.currentItem = 3;
+							this.$refs.processA.$refs.fourth.classList.remove("is-current");
 							this.changeURL('chapter3');
 							this.$refs.next.classList.remove('disabled');
 						}
