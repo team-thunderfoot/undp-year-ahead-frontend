@@ -123,8 +123,8 @@ section {
 }
 
 #HorizontalWrapper #SectionA img {
-	position: absolute;
-	width: 100%;
+	// position: absolute;
+	// width: 100%;
 }
 
 #HorizontalWrapper #SectionB {
