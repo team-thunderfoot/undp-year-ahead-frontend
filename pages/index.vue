@@ -126,7 +126,21 @@ export default {
 								scrub: true,
 								markers: "true",
 							}
-						});
+                        });
+                        
+
+                    let tlBird = this.$gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".b--bird-a",
+                            scrub: true,
+                            start: () =>
+                                "top top-=" +
+                                (document.querySelector(".b--bird-a").offsetLeft - window.innerWidth),
+                            end: () => "+=" + document.querySelector(".b--bird-a").offsetWidth,
+                        }
+                    });
+
+                    tlBird.to(document.querySelector('.b--bird-a'), {duration: 40, x:-100});
 
 					});    
 				}
