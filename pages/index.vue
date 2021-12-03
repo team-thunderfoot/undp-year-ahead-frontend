@@ -78,6 +78,12 @@ export default {
 				var pathname = currentURL.split('/');	
 				if(pathname[pathname.length-1].includes("chapter")){
 					var chapter =  pathname[pathname.length-1];
+					var chart = chapter.substring(chapter.length - 1); 
+					if(Number.isInteger(chart)){
+						this.currentItem = chart;
+					}else{
+						this.currentItem = 1;
+					}
 				} else {
 					var chapter = false;
 				}
