@@ -32,22 +32,22 @@
   overflow: hidden;
   &__item#Scene1 {
     height: 100%;
-    flex: 0 0 100vw;
+    flex: 0 0 auto;
     background-color: blue;
   }
   &__item#Scene2 {
     height: 100%;
-    flex: 0 0 100vw;
+    flex: 0 0 auto;
     background-color: pink;
   }
   &__item#Scene3 {
     height: 100%;
-    flex: 0 0 100vw;
+    flex: 0 0 auto;
     background-color: grey;
   }
   &__item#Scene4 {
     height: 100%;
-    flex: 0 0 100vw;
+    flex: 0 0 auto;
     background-color: violet;
   }
 }
