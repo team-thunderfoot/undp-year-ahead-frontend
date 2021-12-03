@@ -10,9 +10,9 @@
 		<v-section refName="Scene3" />
 		<v-section refName="Scene4"/>
 
-        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev {{currentItem}}</a>
+        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev </a>
         <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
-        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next {{currentItem}}</a>
+        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next </a>
         </div>
 </template>
 
@@ -23,7 +23,7 @@ import Section from '@/components/Section.vue';
 export default {
 	data:()=>{
 		return{
-			currentItem : 0
+			currentItem : 1
 		}
 	},
     components : {
