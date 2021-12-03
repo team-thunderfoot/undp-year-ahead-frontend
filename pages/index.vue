@@ -47,15 +47,21 @@
                 </div>
             </div>
         </section>
-        <a href="#" id="prev" @click.prevent="goToChapter('prev')"> Prev </a>
+		{{currentItem}}
+        <a href="#" id="prev" @click.prevent="goToChapter('prev')"> Prev {{currentItem}} </a>
         <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
-        <a href="#" id="next" @click.prevent="goToChapter('next')"> Next </a>
+        <a href="#" id="next" @click.prevent="goToChapter('next')"> Next  {{currentItem}}</a>
         </div>
 </template>
 
 <script>
 import ProgressNav from '@/components/ProgressNav.vue';
 export default {
+	data:()=>{
+		return{
+			currentItem : 0
+		}
+	},
     components : {
 		'v-progress-nav' : ProgressNav,
 	},
@@ -77,12 +83,16 @@ export default {
 				}
 			} else {
                 if(payload == "prev" || payload == "next"){
-                    
+                    if(payload == 'next'){
+						var chapter =   "#chapter" + parseInt(this.currentItem + 1);
+					}else if(payload == 'prev'){
+						var chapter =   "#chapter" + parseInt(this.currentItem - 1);
+					}
                 } else {
 				    var chapter =   "#" + payload.section;
                 }
             }
-			
+			console.log(chapter);
 			if(chapter){
 				switch (chapter) {
 					case '#chapter1':
@@ -159,9 +169,11 @@ export default {
 						end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
 						onEnter: () => {
 							this.$refs.processA.$refs.first.classList.add("is-current");
+							this.currentItem = 1;
 						},
 						onEnterBack: () => {
 							this.$refs.processA.$refs.second.classList.remove("is-current");
+							this.currentItem = 1;
 						}
 					}
 				});
@@ -176,9 +188,11 @@ export default {
 						end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
 						onEnter: () => {
 							this.$refs.processA.$refs.second.classList.add("is-current");
+							this.currentItem = 2;
 						},
 						onEnterBack: () => {
 							this.$refs.processA.$refs.third.classList.remove("is-current");
+							this.currentItem = 2;
 						}
 					}
 				});
@@ -193,9 +207,11 @@ export default {
 						end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
 						onEnter: () => {
 							this.$refs.processA.$refs.third.classList.add("is-current");
+							this.currentItem = 3;
 						},
 						onEnterBack: () => {
 							this.$refs.processA.$refs.fourth.classList.remove("is-current");
+							this.currentItem = 3;
 						}
 					}
 				});
@@ -211,6 +227,7 @@ export default {
 						onEnter: () => {
 							this.$refs.processA.$refs.third.classList.add("is-complete");
 							this.$refs.processA.$refs.fourth.classList.add("is-current");
+							this.currentItem = 4;
 						},
 						
 					}
