@@ -5,15 +5,13 @@
             Sticky!
         </div>
 		<!-- SECTIONS -->
-		<v-section refName="Scene1"/>
+		<v-section refName="Scene1" />
 		<v-section refName="Scene2" />
 		<v-section refName="Scene3" />
-		<v-section refName="Scene4"/>
+		<v-section refName="Scene4" />
 
-        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev </a>
         <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
-        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next </a>
-        </div>
+    </div>
 </template>
 
 <script>
@@ -84,9 +82,9 @@ export default {
 					this.currentItem = (Number.isInteger(chart)) ? chart : 1;// last character of the string is an integer
 				}
 			} else {
-                if(payload == "next"){
+                if(payload.section == "next"){
 					var chapter = "#chapter" + parseInt(this.currentItem + 1); // NEXT
-                } else if(payload == 'prev'){
+                } else if(payload.section == 'prev'){
 					var chapter = "#chapter" + parseInt(this.currentItem - 1); // PREV
 				}else {
 				    var chapter =  "#" + payload.section; // click on DOTs
@@ -131,13 +129,15 @@ export default {
 								this.changeURL('chapter' + indexName);
 								if(indexName == 1){//Scene1
 									this.$refs.processA.$refs.first.classList.add("is-current");
-									this.$refs.prev.classList.add('disabled');
+									this.$refs.processA.$refs.prev.classList.add('disabled');
 								}else if(indexName == 2){//Scene2
 									this.$refs.processA.$refs.second.classList.add("is-current");
+									this.$refs.processA.$refs.prev.classList.remove('disabled');
 								}else if(indexName == 3){//Scene3
 									this.$refs.processA.$refs.third.classList.add("is-current");
 								}else if(indexName == 4){//Scene4
 									this.$refs.processA.$refs.fourth.classList.add("is-current");
+									this.$refs.processA.$refs.next.classList.add('disabled');
 								}
 							},
 							onEnterBack: () => {
@@ -145,11 +145,12 @@ export default {
 								this.changeURL('chapter' + indexName);
 								if(indexName == 1){//Scene1
 									this.$refs.processA.$refs.second.classList.remove("is-current");
-									this.$refs.prev.classList.add('disabled');
+									this.$refs.processA.$refs.prev.classList.add('disabled');
 								}else if(indexName == 2){//Scene2
 									this.$refs.processA.$refs.third.classList.remove("is-current");
 								}else if(indexName == 3){//Scene3
 									this.$refs.processA.$refs.fourth.classList.remove("is-current");
+									this.$refs.processA.$refs.next.classList.remove('disabled');
 								}
 							}
 						}
@@ -166,4 +167,5 @@ export default {
 
 <style lang="scss">
   @import '@/sass/index.scss';
+  @import '@/sass/framework/components/progress/progress-a.scss';
 </style>

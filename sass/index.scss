@@ -4,6 +4,9 @@
 // // // include utilities
 // @import './framework/utilities/utilities.scss';
 
+@import './framework/components/progress/progress-a.scss';
+
+
 :root {
   font-family: Helvetica;
 }
@@ -192,23 +195,23 @@ section {
   }
 }
 
-#next {
-  background-color: yellow;
-  position: absolute;
-  bottom: 10%;
-  left: 60%;
-  margin-right: 5px;
-  z-index: 10000;
-}
+// #next {
+//   background-color: yellow;
+//   position: absolute;
+//   bottom: 10%;
+//   left: 60%;
+//   margin-right: 5px;
+//   z-index: 10000;
+// }
 
-#prev {
-  background-color: yellow;
-  position: absolute;
-  bottom: 10%;
-  right: 60%;
-  margin-right: 5px;
-  z-index: 10000;
-}
+// #prev {
+//   background-color: yellow;
+//   position: absolute;
+//   bottom: 10%;
+//   right: 60%;
+//   margin-right: 5px;
+//   z-index: 10000;
+// }
 
 .disabled {
   pointer-events: none;

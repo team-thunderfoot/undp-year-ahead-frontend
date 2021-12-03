@@ -91,10 +91,10 @@ export default {
 					var chapter = false;
 				}
 			} else {
-                if(payload == "prev" || payload == "next"){
-                    if(payload == 'next'){
+                if(payload.section == "prev" || payload.section == "next"){
+                    if(payload.section == 'next'){
 						var chapter =   "#chapter" + parseInt(this.currentItem + 1);
-					}else if(payload == 'prev'){
+					}else if(payload.section == 'prev'){
 						var chapter =   "#chapter" + parseInt(this.currentItem - 1);
 					}
                 } else {
