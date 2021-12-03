@@ -26,6 +26,7 @@
     }
     &__item#Scene2 {
       justify-content: flex-start;
+      align-items: center;
       background:rgb(66, 40, 40);
     }
   }
@@ -39,10 +40,10 @@
     color: magenta;
     // border-right: 5px solid blue;
   }
-  .b--ss-a {
-      position: relative;
-      height: 100%;
-}
+//   .b--ss-a {
+//       position: relative;
+//       height: 100%;
+// }
 
   // single story
   // .b--ss-a {
