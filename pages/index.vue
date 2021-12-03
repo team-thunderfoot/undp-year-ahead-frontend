@@ -2,7 +2,7 @@
     <div id="HorizontalWrapper" class="b--page-a">
         <!-- <div class="b--noise-a"></div> -->
         <div class="b--header-a">
-            Sticky4!
+            Sticky5!
         </div>
         <section class="b--page-a__item" id="Scene1">
             <div class="b--ss-a"> 
@@ -19,6 +19,9 @@
                                 Ch1 Towards living in harmony with nature
                             </h3> 
                         </div>
+						<div class="b--card-a__bd">
+							<p class="b--card-a__bd__content">At the UN Biodiversity Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
+						</div>
                     </div>
                 </div>
                 <div class="b--ss-a__bg-items">
@@ -55,9 +58,7 @@
                 <div class="b--ss-a__content">
                     <div class="b--card-a">
                         <div class="b--card-a__hd">
-                            <h3 class="b--card-a__hd__title">
-                                Ch3 Towards living in harmony with nature
-                            </h3> 
+                            <h3 class="b--card-a__hd__title">Towards living in harmony with nature</h3> 
                         </div>
                     </div>
                 </div>
@@ -163,5 +164,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/sass/test2.scss';
+  @import '@/sass/index.scss';
 </style>
