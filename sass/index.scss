@@ -61,6 +61,9 @@ section {
     z-index: 2;
     width: auto;
     height: 100%;
+    display: flex; // elements horizontlly
+    justify-content: center;
+    align-items: center;
   }
   &__ft-items {
     position: absolute;
@@ -76,8 +79,6 @@ section {
 .b--card-a {
   position: relative;
   margin-left: 150px;
-  margin-top: 50%;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +115,7 @@ section {
   &::after {
     content: '';
     position: absolute;
-    top: 0;
+    top: 29%;
     width: 20px;
     height: 700px;
     background-color: #1c0c06;
@@ -125,6 +126,37 @@ section {
   }
   &::before {
     right: 130px;
+  }
+}
+
+.b--card-b {
+  position: relative;
+  display: block;
+  margin-left: 100px;
+  height: fit-content;
+  max-width: 200px;
+  padding: $measure * 5 $measure * 4;
+  border: 10px solid #f9ddbf;
+  background-color: #f1cdba;
+  &__content {
+    margin: 0px;
+    font-size: 25px;
+    font-weight: 100;
+    margin: 0px;
+  }
+  &::before {
+    content: 'i';
+    position: absolute;
+    top: -32px;
+    left: -32px;
+    background-color: #802621;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 10px solid #f9ddbf;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
   }
 }
 

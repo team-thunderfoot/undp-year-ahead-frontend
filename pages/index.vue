@@ -23,6 +23,10 @@
 							<p class="b--card-a__bd__content">At the UN Biodiversity Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
 						</div>
                     </div>
+					<div class="b--card-b">
+						<p class="b--card-b__content"><strong>UN Biodiversity Conference (COP15)</strong> <br>
+						25 April - 8 May, Kunming, China</p>
+					</div>
                 </div>
                 <div class="b--ss-a__bg-items">
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="" @load="onImgLoad">    
