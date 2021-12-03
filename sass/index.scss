@@ -4,9 +4,6 @@
 // // // include utilities
 // @import './framework/utilities/utilities.scss';
 
-@import './framework/components/progress/progress-a.scss';
-
-
 :root {
   font-family: Helvetica;
 }
@@ -31,34 +28,101 @@
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-wrap: nowrap;
   overflow: hidden;
-  &__item #Scene1 {
-    justify-content: center;
-    align-items: center;
+  &__item#Scene1 {
+    height: 100%;
+    flex: 0 0 auto;
+    background-color: blue;
   }
-  &__item #Scene2 {
-    justify-content: flex-start;
+  &__item#Scene2 {
+    height: 100%;
+    flex: 0 0 auto;
+    background-color: pink;
   }
-  &__item #Scene3 {
-    justify-content: center;
-    align-items: center;
-    // width: 210vw;
+  &__item#Scene3 {
+    height: 100%;
+    flex: 0 0 auto;
+    background-color: grey;
   }
-  &__item #Scene4 {
-    justify-content: center;
-    align-items: center;
-    // width: 200vw;
+  &__item#Scene4 {
+    height: 100%;
+    flex: 0 0 auto;
+    background-color: violet;
   }
 }
 
 section {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  flex-shrink: 0;
+  //   position: relative;
+  //   height: 100vh;
+  //   overflow: hidden;
+  //   flex-shrink: 0;
+  //   display: flex;
+  //   color: magenta;
+  //   border-right: 5px solid blue;
   display: flex;
-  color: magenta;
-  border-right: 5px solid blue;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.b--ss-a {
+  position: relative;
+  &__bg-items {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: auto;
+    height: 100%;
+  }
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: auto;
+    height: 100%;
+  }
+  &__ft-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+  }
+}
+
+.b--card-a {
+  padding: 10px;
+  background: magenta;
+  top: 50%;
+  position: relative;
+  left: 150px;
+  &__hd {
+    background: linear-gradient(
+      0deg,
+      rgba(112, 28, 24, 1) 0%,
+      rgba(170, 62, 57, 1) 100%
+    );
+    padding: $measure * 3;
+    &__title {
+      color: #fff;
+      text-align: center;
+      @include make-font-b();
+    }
+  }
+}
+
+.b--bird-a {
+  position: absolute;
+  left: 45%;
+  bottom: 0;
+  z-index: 3;
+  border: 1px solid red;
 }
 
 .b--noise-a {
@@ -74,67 +138,6 @@ section {
   // opacity: .4;
   animation: scratchy 0.253s linear forwards infinite;
 }
-
-// single story
-// .b--ss-a {
-//   //   position: relative;
-//   //   height: 100%;
-//   &__bg-items {
-//     position: relative;
-//     top: 0;
-//     left: 0;
-//     z-index: 3;
-//     width: auto;
-//     height: 100%;
-//     &__artwork {
-//       // needed to see it with amaia
-//       position: relative;
-//       z-index: -1;
-//       display: block;
-//       //   height: 100%;
-//       //   width: auto;
-//       min-width: 500px;
-//       height: auto;
-//     }
-//     // &__flag {
-//     //   // demo example
-//     //   position: absolute;
-//     //   top: 0;
-//     //   height: 100%;
-//     //   pointer-events: none;
-//     //   left: 14%;
-//     // }
-//     // & img {
-//     //   min-width: 500px;
-//     //   height: auto;
-//     // }
-//   }
-//   //   &__content {
-//   //     // here goes hole content
-//   //     position: absolute;
-//   //     top: 0;
-//   //     left: 0;
-//   //     z-index: 4;
-//   //     width: auto;
-//   //     height: 100%;
-//   //   }
-//   &__ft-items {
-//     position: absolute;
-//     left: 0;
-//     z-index: 5;
-//     height: 100%;
-//     width: 100%;
-//     top: 0;
-//     &__artwork {
-//       // needed to see it with amaia
-//       position: relative;
-//       z-index: -1;
-//       display: block;
-//       height: 100%;
-//       width: 100%;
-//     }
-//   }
-// }
 
 @keyframes scratchy {
   0% {
@@ -197,23 +200,23 @@ section {
   }
 }
 
-// #next {
-//   background-color: yellow;
-//   position: absolute;
-//   bottom: 10%;
-//   left: 60%;
-//   margin-right: 5px;
-//   z-index: 10000;
-// }
+#next {
+  background-color: yellow;
+  position: absolute;
+  bottom: 10%;
+  left: 60%;
+  margin-right: 5px;
+  z-index: 10000;
+}
 
-// #prev {
-//   background-color: yellow;
-//   position: absolute;
-//   bottom: 10%;
-//   right: 60%;
-//   margin-right: 5px;
-//   z-index: 10000;
-// }
+#prev {
+  background-color: yellow;
+  position: absolute;
+  bottom: 10%;
+  right: 60%;
+  margin-right: 5px;
+  z-index: 10000;
+}
 
 .disabled {
   pointer-events: none;
