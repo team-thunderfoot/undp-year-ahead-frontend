@@ -10,9 +10,9 @@
 		<v-section refName="Scene3" />
 		<v-section refName="Scene4"/>
 
-        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev </a>
+        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev {{currentItem}}</a>
         <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
-        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next </a>
+        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next {{currentItem}}</a>
         </div>
 </template>
 
@@ -40,89 +40,72 @@ export default {
 		changeURL(chapter) {
 			window.location.hash = chapter;
 		},
-        goToChapter(payload){
-			if(!payload){
-				var currentURL = window.location.href;
-				var pathname = currentURL.split('/');	
-				if(pathname[pathname.length-1].includes("chapter")){
-					var chapter =  pathname[pathname.length-1];
-					var chart = chapter.substring(chapter.length - 1); 
-					if(Number.isInteger(chart)){
-						this.currentItem = chart;
-					}else{
-						this.currentItem = 1;
-					}
-				} else {
-					var chapter = false;
-				}
-			} else {
-                if(payload == "prev" || payload == "next"){
-                    if(payload == 'next'){
-						var chapter =   "#chapter" + parseInt(this.currentItem + 1);
-					}else if(payload == 'prev'){
-						var chapter =   "#chapter" + parseInt(this.currentItem - 1);
-					}
-                } else {
-				    var chapter =   "#" + payload.section;
-                }
-            }
-			console.log(chapter);
+		switchScenes(chapter) {
 			if(chapter){
 				switch (chapter) {
 					case '#chapter1':
 						// Get the element
-						let scene1  = document.querySelector("#Scene1");
-						if(scene1){
-							var pos =  scene1.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-								this.$refs.processA.$refs.first.classList.add("is-current");
-							}}); 
-						}
+						this.sceneID = "#Scene1";
+						this.refTitle = 'first';
 						break;
 				
 					case '#chapter2':
-						let scene2  = document.querySelector("#Scene2");
-						if(scene2){
-							var pos =  scene2.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-								this.$refs.processA.$refs.second.classList.add("is-current");
-							}});
-						}
+						this.sceneID = "#Scene2";
+						this.refTitle = 'second';
 						break;
 					case '#chapter3':
-						// Get the element
-						let scene3  = document.querySelector("#Scene3");
-						if(scene3){
-							var pos =  scene3.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-								this.$refs.processA.$refs.third.classList.add("is-current");
-							}}); 
-						}
+						this.sceneID = "#Scene3";
+						this.refTitle = 'third';
 						break;
 
 					case '#chapter4':
-						// Get the element
-						let scene4  = document.querySelector("#Scene4");
-						if(scene4){
-							var pos =  scene4.offsetLeft;
-							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-								this.$refs.processA.$refs.third.classList.add("is-complete");
-								this.$refs.processA.$refs.fourth.classList.add("is-current");
-							}}); 
-						}
+						this.sceneID = "#Scene4";
+						this.refTitle = 'fourth';
 						break;
+				}
+
+				let sceneName  = document.querySelector(this.sceneID);
+				if(sceneName){
+					var pos =  sceneName.offsetLeft;
+					this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+						this.$refs.processA.$refs[this.refTitle].classList.add("is-current");
+					}}); 
 				}
 			}
 		},
+        goToChapter(payload){
+			if(!payload){
+				var currentURL = window.location.href;
+				var pathname = currentURL.split('/');	
+				var chapter = false;
+				if(pathname[pathname.length-1].includes("chapter")){
+					var chapter =  pathname[pathname.length-1];
+					var chart = chapter.substring(chapter.length - 1); // get Last number of the string
+					this.currentItem = (Number.isInteger(chart)) ? chart : 1;// last character of the string is an integer
+				}
+			} else {
+                if(payload == "next"){
+					var chapter = "#chapter" + parseInt(this.currentItem + 1); // NEXT
+                } else if(payload == 'prev'){
+					var chapter = "#chapter" + parseInt(this.currentItem - 1); // PREV
+				}else {
+				    var chapter =  "#" + payload.section; // click on DOTs
+                }
+            }
+			this.switchScenes(chapter);
+		},
+		swicthCurrentClassEnter() {
+			
+		}
     },
     mounted(){
         if(process.client){
             this.$nextTick(() => {
-
+				//  Animation Page a
                 this.$gsap.to(document.querySelectorAll("section"), { 
-                x: () => -this.getTotalWidth() + window.innerWidth, 
-                ease: "none", 
-                scrollTrigger: {
+					x: () => -this.getTotalWidth() + window.innerWidth, 
+					ease: "none", 
+					scrollTrigger: {
                         trigger: '.b--page-a',
                         pin: true,
                         start: 0,
@@ -132,92 +115,47 @@ export default {
                     }
                 });
 
-                let tlSection1 = this.$gsap.timeline({
-					scrollTrigger: {
-						trigger: "#Scene1",
-						scrub: 0,
-						start: () =>
-							"top top-=" +
-							(document.querySelector("#Scene1").offsetLeft - window.innerWidth),
-						end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
-						onEnter: () => {
-							this.$refs.processA.$refs.first.classList.add("is-current");
-							this.currentItem = 1;
-							this.changeURL('chapter1');
-							this.$refs.prev.classList.add('disabled');
-						},
-						onEnterBack: () => {
-							this.$refs.processA.$refs.second.classList.remove("is-current");
-							this.currentItem = 1;
-							this.changeURL('chapter1');
-							this.$refs.prev.classList.add('disabled');
+				//Animation Sections
+				document.querySelectorAll("section").forEach( (element, index) => { 
+					var indexName = parseInt(index + 1);
+					let tlSection = this.$gsap.timeline({
+						scrollTrigger: {
+							trigger: "#Scene" + index,
+							scrub: 0,
+							start: () =>
+								"top top-=" +
+								(document.querySelector("#Scene" + indexName).offsetLeft - window.innerWidth),
+							end: () => "+=" + document.querySelector("#Scene" + indexName).offsetWidth,
+							onEnter: () => {
+								this.currentItem = indexName;
+								this.changeURL('chapter' + indexName);
+								if(indexName == 1){//Scene1
+									this.$refs.processA.$refs.first.classList.add("is-current");
+									this.$refs.prev.classList.add('disabled');
+								}else if(indexName == 2){//Scene2
+									this.$refs.processA.$refs.second.classList.add("is-current");
+								}else if(indexName == 3){//Scene3
+									this.$refs.processA.$refs.third.classList.add("is-current");
+								}else if(indexName == 4){//Scene4
+									this.$refs.processA.$refs.fourth.classList.add("is-current");
+								}
+							},
+							onEnterBack: () => {
+								this.currentItem = indexName;
+								this.changeURL('chapter' + indexName);
+								if(indexName == 1){//Scene1
+									this.$refs.processA.$refs.second.classList.remove("is-current");
+									this.$refs.prev.classList.add('disabled');
+								}else if(indexName == 2){//Scene2
+									this.$refs.processA.$refs.third.classList.remove("is-current");
+								}else if(indexName == 3){//Scene3
+									this.$refs.processA.$refs.fourth.classList.remove("is-current");
+								}
+							}
 						}
-					}
-				});
-				
-				let tlSection2 = this.$gsap.timeline({
-					scrollTrigger: {
-						trigger: "#Scene2",
-						scrub: 0,
-						start: () =>
-							"top top-=" +
-							(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
-						end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
-						onEnter: () => {
-							this.$refs.processA.$refs.second.classList.add("is-current");
-							this.currentItem = 2;
-							this.changeURL('chapter2');
-							this.$refs.prev.classList.remove('disabled');
-						},
-						onEnterBack: () => {
-							this.$refs.processA.$refs.third.classList.remove("is-current");
-							this.currentItem = 2;
-							this.changeURL('chapter2');
-						}
-					}
+					});
 				});
 
-				let tlSection3 = this.$gsap.timeline({
-					scrollTrigger: {
-						trigger: "#Scene3",
-						scrub: 0,
-						start: () =>
-							"top top-=" +
-							(document.querySelector("#Scene3").offsetLeft - window.innerWidth),
-						end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
-						onEnter: () => {
-							this.$refs.processA.$refs.third.classList.add("is-current");
-							this.currentItem = 3;
-							this.changeURL('chapter3');
-						},
-						onEnterBack: () => {
-							this.currentItem = 3;
-							this.$refs.processA.$refs.fourth.classList.remove("is-current");
-							this.changeURL('chapter3');
-							this.$refs.next.classList.remove('disabled');
-						}
-					}
-				});
-
-				let tlSection4 = this.$gsap.timeline({
-					scrollTrigger: {
-						trigger: "#Scene4",
-						scrub: 0,
-						start: () =>
-							"top top-=" +
-							(document.querySelector("#Scene4").offsetLeft - window.innerWidth),
-						end: () => "+=" + document.querySelector("#Scene4").offsetWidth,
-						onEnter: () => {
-							this.$refs.processA.$refs.third.classList.add("is-complete");
-							this.$refs.processA.$refs.fourth.classList.add("is-current");
-							this.currentItem = 4;
-							this.changeURL('chapter4');
-							this.$refs.next.classList.add('disabled');
-						},
-						
-					}
-                });
-                
                 this.goToChapter();
 
             });    
