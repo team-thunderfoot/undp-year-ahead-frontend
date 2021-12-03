@@ -7,6 +7,9 @@
         <section class="b--page-a__item" id="Scene1">
             <div class="b--ss-a"> 
                 <div class="b--ss-a__ft-items">
+                    <div class="b--bird-a">
+                        <img src="@/assets/img/bird.png" alt="">
+                    </div>
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt="" @load="onImgLoad"> 
                 </div>
                 <div class="b--ss-a__content">

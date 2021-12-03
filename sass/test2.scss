@@ -117,6 +117,14 @@ section {
   }
 }
 
+.b--bird-a {
+  position: absolute;
+  left: 45%;
+  bottom: 0;
+  z-index: 3;
+  border: 1px solid red;
+}
+
 // single story
 // .b--ss-a {
 //   //   position: relative;
