@@ -197,3 +197,7 @@ section {
     margin-right: 5px;
     z-index: 10000;
 }
+
+.disabled {
+    pointer-events: none;
+}

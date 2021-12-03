@@ -48,9 +48,9 @@
             </div>
         </section>
 		{{currentItem}}
-        <a href="#" id="prev" @click.prevent="goToChapter('prev')"> Prev {{currentItem}} </a>
+        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev {{currentItem}} </a>
         <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
-        <a href="#" id="next" @click.prevent="goToChapter('next')"> Next  {{currentItem}}</a>
+        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next  {{currentItem}}</a>
         </div>
 </template>
 
@@ -170,10 +170,12 @@ export default {
 						onEnter: () => {
 							this.$refs.processA.$refs.first.classList.add("is-current");
 							this.currentItem = 1;
+							this.$refs.prev.classList.add('disabled');
 						},
 						onEnterBack: () => {
 							this.$refs.processA.$refs.second.classList.remove("is-current");
 							this.currentItem = 1;
+							this.$refs.prev.classList.add('disabled');
 						}
 					}
 				});
@@ -189,6 +191,7 @@ export default {
 						onEnter: () => {
 							this.$refs.processA.$refs.second.classList.add("is-current");
 							this.currentItem = 2;
+							this.$refs.prev.classList.remove('disabled');
 						},
 						onEnterBack: () => {
 							this.$refs.processA.$refs.third.classList.remove("is-current");
@@ -212,6 +215,7 @@ export default {
 						onEnterBack: () => {
 							this.$refs.processA.$refs.fourth.classList.remove("is-current");
 							this.currentItem = 3;
+							this.$refs.next.classList.remove('disabled');
 						}
 					}
 				});
@@ -228,6 +232,7 @@ export default {
 							this.$refs.processA.$refs.third.classList.add("is-complete");
 							this.$refs.processA.$refs.fourth.classList.add("is-current");
 							this.currentItem = 4;
+							this.$refs.next.classList.add('disabled');
 						},
 						
 					}
