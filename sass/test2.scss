@@ -68,7 +68,23 @@ section {
 }
 
 .b--ss-a {
-  padding: 80px;
+  position: relative;
+  &__bg-items {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: auto;
+    height: 100%;
+  }
+  &__ft-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 // single story

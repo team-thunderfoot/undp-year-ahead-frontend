@@ -6,13 +6,23 @@
         </div>
         <section class="b--page-a__item" id="Scene1">
             <div class="b--ss-a"> 
-                <h2>Irti Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo dignissimos libero adipisci aperiam earum distinctio maiores magnam suscipit vero possimus quos, repellendus sapiente temporibus qui illo nemo maxime consequuntur?</h2>
+                <div class="b--ss-a__ft-items">
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
+                </div>
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
+                </div>
             </div>
         </section>
 
         <section class="b--page-a__item" id="Scene2">
             <div class="b--ss-a">
-                <h3>Andres lorem lorem lorem</h3>
+                <div class="b--ss-a__ft-items">
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt=""> 
+                </div>
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="">    
+                </div>
             </div>
         </section>
 
