@@ -1,22 +1,67 @@
 <template>
-    <div id="HorizontalWrapper" class="b--page-a">
+    <div class="b--page-a">
         <!-- <div class="b--noise-a"></div> -->
         <div class="b--header-a">
             Sticky!
         </div>
-        <section class="b--page-a__item" id="Scene1">
-            <div class="b--ss-a"> 
+        <div class="b--page-a__wrapper">
+            <div class="b--page-a__wrapper__item b--ss-a" id="Scene1"> 
                 <div class="b--ss-a__ft-items">
+                    <div class="b--bird-a">
+                        <img src="@/assets/img/bird.png" alt="">
+                    </div>
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
+                </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Towards living in harmony with nature
+                            </h3> 
+                        </div>
+                
+                    </div>
                 </div>
                 <div class="b--ss-a__bg-items">
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
                 </div>
             </div>
-        </section>
-
-        <section class="b--page-a__item" id="Scene2">
-            <div class="b--ss-a">
+            <div class="b--page-a__wrapper__item b--page-a__wrapper__item--second" id="Scene2">
+                <div class="b--ss-a__ft-items">
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt=""> 
+                </div>
+                <!-- <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <h3 class="b--card-a__title">Lorem</h3>
+                    </div>
+                </div> -->
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="">    
+                </div>
+            </div>
+            
+			<div class="b--page-a__wrapper__item b--ss-a" id="Scene3"> 
+                <div class="b--ss-a__ft-items">
+                    <div class="b--bird-a">
+                        <img src="@/assets/img/bird.png" alt="">
+                    </div>
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
+                </div>
+                <div class="b--ss-a__content">
+                    <div class="b--card-a">
+                        <div class="b--card-a__hd">
+                            <h3 class="b--card-a__hd__title">
+                                Towards living in harmony with nature
+                            </h3> 
+                        </div>
+                
+                    </div>
+                </div>
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
+                </div>
+            </div>
+			<div class="b--page-a__wrapper__item b--page-a__wrapper__item--second" id="Scene4">
                 <div class="b--ss-a__ft-items">
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt=""> 
                 </div>
@@ -24,88 +69,39 @@
                     <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="">    
                 </div>
             </div>
-        </section>
-
-         <section class="b--page-a__item" id="Scene3">
-            <div class="b--ss-a"> 
-                <div class="b--ss-a__ft-items">
-                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
-                </div>
-                <div class="b--ss-a__bg-items">
-                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
-                </div>
-            </div>
-        </section>
-
-        <section class="b--page-a__item" id="Scene4">
-            <div class="b--ss-a">
-                <div class="b--ss-a__ft-items">
-                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-2.png" alt=""> 
-                </div>
-                <div class="b--ss-a__bg-items">
-                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-2.png" alt="">    
-                </div>
-            </div>
-        </section>
-		{{currentItem}}
-        <a href="#" id="prev" ref="prev" @click.prevent="goToChapter('prev')"> Prev {{currentItem}} </a>
-        <v-progress-nav ref="processA" @goToChapter="goToChapter"/>
-        <a href="#" id="next" ref="next" @click.prevent="goToChapter('next')"> Next  {{currentItem}}</a>
         </div>
+		{refValue}}
+		<v-progress-nav :refValue="refValue" ref="processA"  @goToChapter="goToChapter"/>
+    </div>
 </template>
 
 <script>
 import ProgressNav from '@/components/ProgressNav.vue';
+
 export default {
-	data:()=>{
-		return{
-			currentItem : 0
-		}
-	},
-    components : {
+	components : {
 		'v-progress-nav' : ProgressNav,
 	},
     methods:{
         getTotalWidth(){
-            let width = 0;
-            let Sections = document.querySelectorAll("section");
-            Sections.forEach(el => width += el.offsetWidth);
-            return width;
-        },
-		changeURL(chapter) {
-			var currentURL = window.location.href;
-			console.log('chapter',chapter);
-			window.location.hash = chapter;
-			// history.pushState({page: 1}, "title 1", "?page=1")
-			// window.history.replaceState('chapter3', 'title', currentURL);
+			let width = 0;
+			let Sections = document.querySelectorAll(".b--page-a__wrapper__item");
+			Sections.forEach(el => width += el.offsetWidth);
+			return width;
 		},
-        goToChapter(payload){
+		goToChapter(payload){
 			if(!payload){
 				var currentURL = window.location.href;
 				var pathname = currentURL.split('/');	
 				if(pathname[pathname.length-1].includes("chapter")){
 					var chapter =  pathname[pathname.length-1];
-					var chart = chapter.substring(chapter.length - 1); 
-					if(Number.isInteger(chart)){
-						this.currentItem = chart;
-					}else{
-						this.currentItem = 1;
-					}
 				} else {
 					var chapter = false;
 				}
 			} else {
-                if(payload == "prev" || payload == "next"){
-                    if(payload == 'next'){
-						var chapter =   "#chapter" + parseInt(this.currentItem + 1);
-					}else if(payload == 'prev'){
-						var chapter =   "#chapter" + parseInt(this.currentItem - 1);
-					}
-                } else {
-				    var chapter =   "#" + payload.section;
-                }
-            }
-			console.log(chapter);
+				var chapter =   "#" + payload.section;
+			}
+			
 			if(chapter){
 				switch (chapter) {
 					case '#chapter1':
@@ -115,6 +111,7 @@ export default {
 							var pos =  scene1.offsetLeft;
 							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
 								this.$refs.processA.$refs.first.classList.add("is-current");
+
 							}}); 
 						}
 						break;
@@ -124,6 +121,7 @@ export default {
 						if(scene2){
 							var pos =  scene2.offsetLeft;
 							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.first.classList.add("is-complete");
 								this.$refs.processA.$refs.second.classList.add("is-current");
 							}});
 						}
@@ -134,6 +132,7 @@ export default {
 						if(scene3){
 							var pos =  scene3.offsetLeft;
 							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+								this.$refs.processA.$refs.second.classList.add("is-complete");	
 								this.$refs.processA.$refs.third.classList.add("is-current");
 							}}); 
 						}
@@ -156,22 +155,23 @@ export default {
     },
     created(){
         if(process.client){
-            this.$nextTick(() => {
+			this.$nextTick(() => {
 
-                this.$gsap.to(document.querySelectorAll("section"), { 
-                x: () => -this.getTotalWidth() + window.innerWidth, 
-                ease: "none", 
-                scrollTrigger: {
-                        trigger: '.b--page-a',
-                        pin: true,
-                        start: 0,
-                        end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
-                        scrub: true,
-                        markers: "true",
-                    }
-                });
+				this.$gsap.to(document.querySelectorAll(".b--page-a__wrapper"), { 
+					x: () => -this.getTotalWidth() + window.innerWidth, 
+					ease: "none", 
+					scrollTrigger: {
+						trigger: ".b--page-a",
+						pin: true,
+						start: 0,
+						end: () => "+=" + (document.querySelector('.b--page-a__wrapper').scrollWidth - window.innerWidth),
+						invalidateOnRefresh: true,
+						scrub: true,
+						markers: "true",
+					}
+				});
 
-                let tlSection1 = this.$gsap.timeline({
+				let tlSection1 = this.$gsap.timeline({
 					scrollTrigger: {
 						trigger: "#Scene1",
 						scrub: 0,
@@ -181,15 +181,10 @@ export default {
 						end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
 						onEnter: () => {
 							this.$refs.processA.$refs.first.classList.add("is-current");
-							this.currentItem = 1;
-							this.changeURL('chapter1');
-							this.$refs.prev.classList.add('disabled');
 						},
 						onEnterBack: () => {
+							this.$refs.processA.$refs.first.classList.remove("is-complete");
 							this.$refs.processA.$refs.second.classList.remove("is-current");
-							this.currentItem = 1;
-							this.changeURL('chapter1');
-							this.$refs.prev.classList.add('disabled');
 						}
 					}
 				});
@@ -203,15 +198,12 @@ export default {
 							(document.querySelector("#Scene2").offsetLeft - window.innerWidth),
 						end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
 						onEnter: () => {
+							this.$refs.processA.$refs.first.classList.add("is-complete");
 							this.$refs.processA.$refs.second.classList.add("is-current");
-							this.currentItem = 2;
-							this.changeURL('chapter2');
-							this.$refs.prev.classList.remove('disabled');
 						},
 						onEnterBack: () => {
+							this.$refs.processA.$refs.second.classList.remove("is-complete");
 							this.$refs.processA.$refs.third.classList.remove("is-current");
-							this.currentItem = 2;
-							this.changeURL('chapter2');
 						}
 					}
 				});
@@ -225,15 +217,12 @@ export default {
 							(document.querySelector("#Scene3").offsetLeft - window.innerWidth),
 						end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
 						onEnter: () => {
+							this.$refs.processA.$refs.second.classList.add("is-complete");
 							this.$refs.processA.$refs.third.classList.add("is-current");
-							this.currentItem = 3;
-							this.changeURL('chapter3');
 						},
 						onEnterBack: () => {
+							this.$refs.processA.$refs.third.classList.remove("is-complete");
 							this.$refs.processA.$refs.fourth.classList.remove("is-current");
-							this.currentItem = 3;
-							this.changeURL('chapter3');
-							this.$refs.next.classList.remove('disabled');
 						}
 					}
 				});
@@ -249,22 +238,24 @@ export default {
 						onEnter: () => {
 							this.$refs.processA.$refs.third.classList.add("is-complete");
 							this.$refs.processA.$refs.fourth.classList.add("is-current");
-							this.currentItem = 4;
-							this.changeURL('chapter4');
-							this.$refs.next.classList.add('disabled');
 						},
 						
 					}
-                });
-                
-                this.goToChapter();
+				});
 
-            });    
-        }
-    }
+			});
+		}
+    },
+	mounted(){
+		this.goToChapter();
+	}
 }
 </script>
 
 <style lang="scss">
-  @import '@/sass/index.scss';
+  @import '@/sass/indexandres.scss';
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
 </style>

@@ -1,17 +1,24 @@
 <template>
     <div id="HorizontalWrapper" class="b--wrapper-a">
         <div class="b--noise-a"></div>
-        <!-- <div class="b--header-a">
+        <div class="b--header-a">
             Sticky!
-        </div> -->
-        <section class="b--wrapper-a" id="SectionA">
-            <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, harum dicta. Modi autem dignissimos architecto cum id sunt nihil sapiente officia commodi eos? Ipsam delectus sapiente sit, fugiat in autem.</h2>
-            <!-- <img class="SectionAImag" src="https://source.unsplash.com/Pd8tLVGx2O4/1600x900" alt="">
-            <h1>SectionA<br>width: 120vw;</h1> -->
+        </div>
+        <section class="" id="SectionA">
+			<div class="b--ss-a"> 
+                <div class="b--ss-a__ft-items">
+                    <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt=""> 
+                </div>
+                <div class="b--ss-a__bg-items">
+                    <img class="b--ss-a__bg-items__artwork" src="@/assets/img/bg-chapter-1.png" alt="">    
+                </div>
+            </div>
         </section>
 
         <section id="SectionB">
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsa eius vel ducimus illum nam repellat quidem, sequi, ullam ipsam vero deserunt labore culpa cupiditate itaque repellendus deleniti. Non, iste?</h2>
+            <div id="SectionBLeftBox">
+            <h1>SectionB<br>width: 150vw;</h1>
+            </div><img class="SectionBImag" src="https://source.unsplash.com/CudNrzbsyZw/1600x900" alt="">
         </section>
 
         <section id="SectionC">
@@ -108,7 +115,7 @@ section {
 #HorizontalWrapper #SectionA {
 	justify-content: center;
 	align-items: center;
-	// width: 120vw;
+	width: 120vw;
 }
 
 #HorizontalWrapper #SectionA h1 {
@@ -116,13 +123,13 @@ section {
 }
 
 #HorizontalWrapper #SectionA img {
-	position: absolute;
-	width: 100%;
+	// position: absolute;
+	// width: 100%;
 }
 
 #HorizontalWrapper #SectionB {
 	justify-content: flex-start;
-	// width: 150vw;
+	width: 150vw;
 }
 
 #HorizontalWrapper #SectionB #SectionBLeftBox {
