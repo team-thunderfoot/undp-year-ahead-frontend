@@ -147,7 +147,7 @@ export default {
 		// 	}
 		// },
     },
-    created(){
+    mounted(){
         if(process.client){
             this.$nextTick(() => {
 
