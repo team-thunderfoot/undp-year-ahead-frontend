@@ -72,6 +72,13 @@ export default {
             Sections.forEach(el => width += el.offsetWidth);
             return width;
         },
+		changeURL(chapter) {
+			var currentURL = window.location.href;
+			console.log('chapter',chapter);
+			window.location.hash = chapter;
+			// history.pushState({page: 1}, "title 1", "?page=1")
+			// window.history.replaceState('chapter3', 'title', currentURL);
+		},
         goToChapter(payload){
 			if(!payload){
 				var currentURL = window.location.href;
@@ -108,7 +115,6 @@ export default {
 							var pos =  scene1.offsetLeft;
 							this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
 								this.$refs.processA.$refs.first.classList.add("is-current");
-
 							}}); 
 						}
 						break;
@@ -176,11 +182,13 @@ export default {
 						onEnter: () => {
 							this.$refs.processA.$refs.first.classList.add("is-current");
 							this.currentItem = 1;
+							this.changeURL('chapter1');
 							this.$refs.prev.classList.add('disabled');
 						},
 						onEnterBack: () => {
 							this.$refs.processA.$refs.second.classList.remove("is-current");
 							this.currentItem = 1;
+							this.changeURL('chapter1');
 							this.$refs.prev.classList.add('disabled');
 						}
 					}
@@ -197,11 +205,13 @@ export default {
 						onEnter: () => {
 							this.$refs.processA.$refs.second.classList.add("is-current");
 							this.currentItem = 2;
+							this.changeURL('chapter2');
 							this.$refs.prev.classList.remove('disabled');
 						},
 						onEnterBack: () => {
 							this.$refs.processA.$refs.third.classList.remove("is-current");
 							this.currentItem = 2;
+							this.changeURL('chapter2');
 						}
 					}
 				});
@@ -217,10 +227,12 @@ export default {
 						onEnter: () => {
 							this.$refs.processA.$refs.third.classList.add("is-current");
 							this.currentItem = 3;
+							this.changeURL('chapter3');
 						},
 						onEnterBack: () => {
 							this.$refs.processA.$refs.fourth.classList.remove("is-current");
 							this.currentItem = 3;
+							this.changeURL('chapter3');
 							this.$refs.next.classList.remove('disabled');
 						}
 					}
@@ -238,6 +250,7 @@ export default {
 							this.$refs.processA.$refs.third.classList.add("is-complete");
 							this.$refs.processA.$refs.fourth.classList.add("is-current");
 							this.currentItem = 4;
+							this.changeURL('chapter4');
 							this.$refs.next.classList.add('disabled');
 						},
 						
