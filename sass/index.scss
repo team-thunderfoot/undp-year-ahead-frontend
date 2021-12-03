@@ -73,65 +73,65 @@ section {
 }
 
 // single story
-.b--ss-a {
-  //   position: relative;
-  //   height: 100%;
-  &__bg-items {
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    width: auto;
-    height: 100%;
-    &__artwork {
-      // needed to see it with amaia
-      position: relative;
-      z-index: -1;
-      display: block;
-      //   height: 100%;
-      //   width: auto;
-      min-width: 500px;
-      height: auto;
-    }
-    // &__flag {
-    //   // demo example
-    //   position: absolute;
-    //   top: 0;
-    //   height: 100%;
-    //   pointer-events: none;
-    //   left: 14%;
-    // }
-    // & img {
-    //   min-width: 500px;
-    //   height: auto;
-    // }
-  }
-  //   &__content {
-  //     // here goes hole content
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     z-index: 4;
-  //     width: auto;
-  //     height: 100%;
-  //   }
-  &__ft-items {
-    position: absolute;
-    left: 0;
-    z-index: 5;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    &__artwork {
-      // needed to see it with amaia
-      position: relative;
-      z-index: -1;
-      display: block;
-      height: 100%;
-      width: 100%;
-    }
-  }
-}
+// .b--ss-a {
+//   //   position: relative;
+//   //   height: 100%;
+//   &__bg-items {
+//     position: relative;
+//     top: 0;
+//     left: 0;
+//     z-index: 3;
+//     width: auto;
+//     height: 100%;
+//     &__artwork {
+//       // needed to see it with amaia
+//       position: relative;
+//       z-index: -1;
+//       display: block;
+//       //   height: 100%;
+//       //   width: auto;
+//       min-width: 500px;
+//       height: auto;
+//     }
+//     // &__flag {
+//     //   // demo example
+//     //   position: absolute;
+//     //   top: 0;
+//     //   height: 100%;
+//     //   pointer-events: none;
+//     //   left: 14%;
+//     // }
+//     // & img {
+//     //   min-width: 500px;
+//     //   height: auto;
+//     // }
+//   }
+//   //   &__content {
+//   //     // here goes hole content
+//   //     position: absolute;
+//   //     top: 0;
+//   //     left: 0;
+//   //     z-index: 4;
+//   //     width: auto;
+//   //     height: 100%;
+//   //   }
+//   &__ft-items {
+//     position: absolute;
+//     left: 0;
+//     z-index: 5;
+//     height: 100%;
+//     width: 100%;
+//     top: 0;
+//     &__artwork {
+//       // needed to see it with amaia
+//       position: relative;
+//       z-index: -1;
+//       display: block;
+//       height: 100%;
+//       width: 100%;
+//     }
+//   }
+// }
 
 @keyframes scratchy {
   0% {
