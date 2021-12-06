@@ -1,8 +1,14 @@
 <template>
-    <section class="b--page-a__item" id="Scene2">
+    <section class="b--page-a__item" id="Scene1">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/front.png"> 
+                <div class="b--bird-a">
+                    <img src="@/assets/img/bird.png" alt="">
+                </div>
+                <div class="b--test-a">
+                   
+                </div>
+                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/ft-chapter-1.png" alt=""> 
             </div>
             <div class="b--ss-a__content">
                 <div class="b--card-a">
@@ -21,7 +27,7 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back.png">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/bg-chapter-1.png" alt="">    
             </div>
         </div>
     </section>

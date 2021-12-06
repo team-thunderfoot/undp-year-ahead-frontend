@@ -1,14 +1,17 @@
 <template>
-    <section class="b--page-a__item" id="Scene2">
+    <section class="b--page-a__item" id="Scene0">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/front.png"> 
+                <div class="b--bird-a">
+                    <img src="@/assets/img/bird.png" alt="">
+                </div>
+                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/ft-chapter-2.png" alt=""> 
             </div>
             <div class="b--ss-a__content">
                 <div class="b--card-a">
                     <div class="b--card-a__hd">
                         <h3 class="b--card-a__hd__title">
-                            chapter1
+                            chapter2
                         </h3> 
                     </div>
                     <div class="b--card-a__bd">
@@ -21,7 +24,7 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back.png">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/bg-chapter-2.png" alt="">    
             </div>
         </div>
     </section>
@@ -31,15 +34,15 @@
 export default {
     data:()=>{
 		return{
-            totalAssets:2,
-			imgLoaded : 0
+			 imgLoaded : 0
 		}
 	},
     methods: {
-        handleLoad: function(){
+        handleLoad: function(todo){
             this.imgLoaded++;
-            if(this.imgLoaded == this.totalAssets) {
+            if(this.imgLoaded === 2) {
                 $nuxt.$emit('assetLoaded')
+                // alert('all image loaded')   
             }
         }
     }

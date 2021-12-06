@@ -1,0 +1,13 @@
+.b--chapter1-a{
+
+    &__artwork{
+        position: absolute;
+        // width: 120px;
+        // height: 120px;
+        // background: red;
+        // background: url('@/assets/img/chapter-1/bubble.svg');
+        left: 70.5%;
+        top: 51%;
+        z-index: 150;
+    }
+}

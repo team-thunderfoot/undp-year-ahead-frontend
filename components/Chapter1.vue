@@ -1,16 +1,14 @@
 <template>
-    <section class="b--page-a__item" id="Scene1">
+    <section class="b--page-a__item b--chapter1-a" id="Scene1">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <div class="b--bird-a">
-                    <img src="@/assets/img/bird.png" alt="">
+                <div class="b--chapter1-a__artwork">
+                    <img src="@/assets/img/chapter-1/bubble.svg" alt="">
                 </div>
-                <div class="b--test-a">
-                   
-                </div>
-                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/ft-chapter-1.png" alt=""> 
+                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/front.png" alt=""> 
             </div>
             <div class="b--ss-a__content">
+
                 <div class="b--card-a">
                     <div class="b--card-a__hd">
                         <h3 class="b--card-a__hd__title">
@@ -21,13 +19,9 @@
                         <p class="b--card-a__bd__content">chapter 0 Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
                     </div>
                 </div>
-                <div class="b--card-b">
-                    <p class="b--card-b__content"><strong>UN Biodiversity Conference (COP15)</strong> <br>
-                    25 April - 8 May, Kunming, China</p>
-                </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/bg-chapter-1.png" alt="">    
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/back.png" alt="">    
             </div>
         </div>
     </section>
