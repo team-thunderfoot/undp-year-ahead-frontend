@@ -8,15 +8,15 @@
                 <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/front.png" alt=""> 
             </div>
             <div class="b--ss-a__content">
-
-                <div class="b--card-a">
-                    <div class="b--card-a__hd">
-                        <h3 class="b--card-a__hd__title">
-                            chapter1
-                        </h3> 
-                    </div>
-                    <div class="b--card-a__bd">
-                        <p class="b--card-a__bd__content">chapter 0 Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
+                <div class="b--chapter1-a__content">
+                    <div class="b--card-a">
+                        <h1 class="b--card-a__title">
+                            sustainable Development
+                        </h1>
+                        <h2 class="b--card-a__badge">
+                            in 2022
+                        </h2>
+                        <h3 class="b--card-a__subtitle">What to watch in the year ahead</h3>
                     </div>
                 </div>
             </div>
@@ -41,6 +41,11 @@ export default {
             if(this.imgLoaded == this.totalAssets) {
                 $nuxt.$emit('assetLoaded')
             }
+        }
+    },
+    created(){
+        if(process.client){
+
         }
     }
 }

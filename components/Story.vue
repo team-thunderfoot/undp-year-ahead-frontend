@@ -3,7 +3,7 @@
         <v-chapter-1 />
         <v-chapter-2 />
         <div class="element">
-            Chapter Status {{this.statusChapter}}
+            Chapter Status {{this.chapterOneContent}}
         </div>
 
     </div>
@@ -19,6 +19,7 @@ export default {
 			statusChapter : 0
 		}
 	},
+    props:['chapterOneContent'],
     components:{
         'v-chapter-1':Chapter1,
         'v-chapter-2':Chapter2

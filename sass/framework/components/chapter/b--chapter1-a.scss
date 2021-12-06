@@ -1,5 +1,11 @@
 .b--chapter1-a{
-
+    // intro position only
+    &__content{
+        position:absolute;
+        bottom:0px;
+        left:150px
+    }
+    //buble
     &__artwork{
         position: absolute;
         // width: 120px;
