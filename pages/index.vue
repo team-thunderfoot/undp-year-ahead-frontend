@@ -1,29 +1,26 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-        <!-- <div class="b--noise-a"></div>
-        <div class="b--nav-a"></div>
-        <div class="b--lang-a">
-            Lang
+        <div class="b--noise-a"></div>
+        <!-- <div class="b--header-a">
+            Sticky5!
         </div> -->
-        
-
         <section class="b--page-a__item" id="Scene1">
             <div class="b--ss-a"> 
                 <div class="b--ss-a__ft-items">
-                    <!-- <div class="b--bird-a">
+                    <div class="b--bird-a">
                         <img src="@/assets/img/bird.png" alt="">
-                    </div> -->
+                    </div>
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt="" @load="onImgLoad"> 
                 </div>
                 <div class="b--ss-a__content">
                     <div class="b--card-a">
                         <div class="b--card-a__hd">
                             <h3 class="b--card-a__hd__title">
-                                tweak 3 Towards living in harmony with nature
+                                Ch1 Towards living in harmony with nature
                             </h3> 
                         </div>
 						<div class="b--card-a__bd">
-							<p class="b--card-a__bd__content">tweak 5 the UN Biodiversity Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
+							<p class="b--card-a__bd__content">At the UN Biodiversity Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
 						</div>
                     </div>
 					<div class="b--card-b">
@@ -122,7 +119,6 @@ export default {
 				console.log("loadee");
 				if(process.client){
 					this.$nextTick(() => {
-
 						this.$gsap.to(document.querySelectorAll("section"), { 
 						x: () => -this.getTotalWidth() + window.innerWidth, 
 						ease: "none", 
@@ -132,24 +128,21 @@ export default {
 								start: 0,
 								end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
 								scrub: true,
-								// markers: "true",
+								markers: "true",
 							}
                         });
                         
-
-                    // let tlBird = this.$gsap.timeline({
-                    //     scrollTrigger: {
-                    //         trigger: ".b--bird-a",
-                    //         scrub: true,
-                    //         start: () =>
-                    //             "top top-=" +
-                    //             (document.querySelector(".b--bird-a").offsetLeft - window.innerWidth),
-                    //         end: () => "+=" + document.querySelector(".b--bird-a").offsetWidth,
-                    //     }
-                    // });
-
-                    // tlBird.to(document.querySelector('.b--bird-a'), {duration: 40, x:-100});
-
+                    let tlBird = this.$gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".b--bird-a",
+                            scrub: true,
+                            start: () =>
+                                "top top-=" +
+                                (document.querySelector(".b--bird-a").offsetLeft - window.innerWidth),
+                            end: () => "+=" + document.querySelector(".b--bird-a").offsetWidth,
+                        }
+                    });
+                    tlBird.to(document.querySelector('.b--bird-a'), {duration: 40, x:-100});
 					});    
 				}
 			}
