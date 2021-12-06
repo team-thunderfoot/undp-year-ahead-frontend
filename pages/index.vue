@@ -16,7 +16,7 @@
                     <div class="b--card-a">
                         <div class="b--card-a__hd">
                             <h3 class="b--card-a__hd__title">
-                                b--page Towards living in harmony with nature
+                                 Towards living in harmony with nature
                             </h3> 
                         </div>
 						<div class="b--card-a__bd">
