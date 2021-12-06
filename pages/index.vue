@@ -16,7 +16,7 @@
                     <div class="b--card-a">
                         <div class="b--card-a__hd">
                             <h3 class="b--card-a__hd__title">
-                                test without foundation Towards living in harmony with nature
+                                test without overflow Towards living in harmony with nature
                             </h3> 
                         </div>
 						<div class="b--card-a__bd">
