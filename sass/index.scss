@@ -1,13 +1,13 @@
 // include foundation
-// @import './framework/foundation/foundation.scss';
+@import './framework/foundation/foundation.scss';
 
 // // include utilities
-// @import './framework/utilities/utilities.scss';
+@import './framework/utilities/utilities.scss';
 
 
-// ::-webkit-scrollbar {
-//   display: none;
-// }
+::-webkit-scrollbar {
+  display: none;
+}
 
 // /* Structure */
 // // it contains pin elements and single story slide
