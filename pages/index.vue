@@ -23,7 +23,7 @@
                             </h3> 
                         </div>
 						<div class="b--card-a__bd">
-							<p class="b--card-a__bd__content">At the UN Biodiversity Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
+							<p class="b--card-a__bd__content">tweak 4 the UN Biodiversity Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
 						</div>
                     </div>
 					<div class="b--card-b">
