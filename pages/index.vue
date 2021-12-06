@@ -1,9 +1,7 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
         <div class="b--noise-a"></div>
-        <div class="b--nav-a">
-            Navbar
-        </div>
+        <v-nav />
          <div class="b--lang-a">
             Lang
         </div>
@@ -99,6 +97,7 @@
 
 <script>
 // import ProgressNav from '@/components/ProgressNav.vue';
+import Nav from '@/components/Nav'
 export default {
 	data:()=>{
 		return{
@@ -107,6 +106,7 @@ export default {
 		}
 	},
     components : {
+        'v-nav':Nav
 		// 'v-progress-nav' : ProgressNav,
 	},
     methods:{
@@ -154,8 +154,6 @@ export default {
 			this.isLoaded = this.isLoaded + 1;
 			this.imagesAreLoaded();
 		}
-		
-		
     },
     mounted(){
  

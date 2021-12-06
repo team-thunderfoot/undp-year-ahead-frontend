@@ -7,4 +7,21 @@
     background: #8e705f;
     z-index: 50;
     height: 100%;
+    &__hd{
+        // empty for now
+    }
+    &__bd{
+        transform: rotate(-90deg) translateY(22px) translateX(-50%);
+        width: 500px;
+        text-align: center;
+        transform-origin: center left;
+        top: 50%;
+        position: absolute;
+    }
+    &__ft{
+        position:absolute;
+        bottom:0;
+        left:0;
+        background:rgba(197, 168, 168, 0.627);
+    }
 }
