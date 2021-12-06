@@ -13,8 +13,8 @@
 // // it contains pin elements and single story slide
 // // there is an error reported here 
 // // https://teamthunderfoot.slack.com/archives/C02PJM5UXMW/p1638804753000700
-// @import './framework/components/page/b--page-a.scss';
-// @import './framework/components/single-story/b--ss-a.scss';
+@import './framework/components/page/b--page-a.scss';
+@import './framework/components/single-story/b--ss-a.scss';
 // /* Structure */
 
 // // Nav & Lang
@@ -201,48 +201,48 @@
   font-size: 20px;
 }
 
-.b--page-a {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  &__item#Scene1 {
-    height: 100%;
-    flex: 0 0 auto;
-    background-color: blue;
-  }
-  &__item#Scene2 {
-    height: 100%;
-    flex: 0 0 auto;
-    background-color: pink;
-  }
-  &__item#Scene3 {
-    height: 100%;
-    flex: 0 0 auto;
-    background-color: grey;
-  }
-  &__item#Scene4 {
-    height: 100%;
-    flex: 0 0 auto;
-    background-color: violet;
-  }
-}
+// .b--page-a {
+//   width: 100%;
+//   height: 100vh;
+//   display: flex;
+//   flex-wrap: nowrap;
+//   overflow: hidden;
+//   &__item#Scene1 {
+//     height: 100%;
+//     flex: 0 0 auto;
+//     background-color: blue;
+//   }
+//   &__item#Scene2 {
+//     height: 100%;
+//     flex: 0 0 auto;
+//     background-color: pink;
+//   }
+//   &__item#Scene3 {
+//     height: 100%;
+//     flex: 0 0 auto;
+//     background-color: grey;
+//   }
+//   &__item#Scene4 {
+//     height: 100%;
+//     flex: 0 0 auto;
+//     background-color: violet;
+//   }
+// }
 
-section {
-  //   position: relative;
-  //   height: 100vh;
-  //   overflow: hidden;
-  //   flex-shrink: 0;
-  //   display: flex;
-  //   color: magenta;
-  //   border-right: 5px solid blue;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
+// section {
+//   //   position: relative;
+//   //   height: 100vh;
+//   //   overflow: hidden;
+//   //   flex-shrink: 0;
+//   //   display: flex;
+//   //   color: magenta;
+//   //   border-right: 5px solid blue;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   align-content: center;
+//   justify-content: center;
+// }
 
 .b--ss-a {
   position: relative;
