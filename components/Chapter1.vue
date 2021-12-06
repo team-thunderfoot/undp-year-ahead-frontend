@@ -5,6 +5,9 @@
                 <div class="b--bird-a">
                     <img src="@/assets/img/bird.png" alt="">
                 </div>
+                <div class="b--test-a">
+                   
+                </div>
                 <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/ft-chapter-1.png" alt=""> 
             </div>
             <div class="b--ss-a__content">

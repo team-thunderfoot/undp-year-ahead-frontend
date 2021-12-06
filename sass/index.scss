@@ -117,6 +117,25 @@
 }
 
 
+// 188 × 194
+.b--test-a {
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  z-index: 3;
+  width: 188px;
+  height: 194px;
+  // border: 1px solid red;
+  background: url('@/assets/img/test4.png');
+  animation-name: sprite; 
+  animation-duration: .2s;
+  animation-timing-function: steps(16);
+  animation-iteration-count: infinite;
+}
 
+@keyframes sprite {
+  from { background-position: 0px; }
+  to { background-position: -3008px; }
+}
 
 
