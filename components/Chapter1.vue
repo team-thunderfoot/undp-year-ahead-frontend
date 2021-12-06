@@ -34,15 +34,15 @@
 export default {
     data:()=>{
 		return{
-			 imgLoaded : 0
+            totalAssets:2,
+			imgLoaded : 0
 		}
 	},
     methods: {
         handleLoad: function(){
             this.imgLoaded++;
-            if(this.imgLoaded == 2) {
+            if(this.imgLoaded == this.totalAssets) {
                 $nuxt.$emit('assetLoaded')
-                // alert('all image loaded')   
             }
         }
     }

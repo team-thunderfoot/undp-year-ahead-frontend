@@ -3,7 +3,7 @@
         <v-chapter-1 />
         <v-chapter-2 />
         <div class="element">
-            {{this.statusChapter}}
+            Chapter Status {{this.statusChapter}}
         </div>
 
     </div>
@@ -28,7 +28,7 @@ export default {
             if(newValue == this.totalChapters){
                 setTimeout(() => {
                     this.asambleStory()
-                }, 200);
+                }, 1200);
             }
         },
     },
@@ -42,7 +42,7 @@ export default {
         asambleStory(){
            	this.$nextTick(() => {
 
-                   this.$gsap.to(document.querySelectorAll("section"), { 
+                    this.$gsap.to(document.querySelectorAll("section"), { 
 						x: () => -this.getTotalWidth() + window.innerWidth, 
 						ease: "none", 
 						scrollTrigger: {
@@ -52,18 +52,18 @@ export default {
 								end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
 								scrub: true,
 								markers: "true",
-							}
-                        });
+						}
+                    });
+                    $nuxt.$emit('siteLoaded')
 
             })
         } 
     },
     created(){
         if(process.client){
+            // event
             this.$nuxt.$on('assetLoaded', () => {
-                // Do Something
                 this.statusChapter++;
-                console.log('va')
             })
         }
        
