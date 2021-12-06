@@ -1,10 +1,10 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-        <div class="b--noise-a"></div>
+        <!-- <div class="b--noise-a"></div>
         <div class="b--nav-a"></div>
         <div class="b--lang-a">
             Lang
-        </div>
+        </div> -->
         
 
         <section class="b--page-a__item" id="Scene1">

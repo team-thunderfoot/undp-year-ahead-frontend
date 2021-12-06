@@ -1,253 +1,253 @@
-// include foundation
-@import './framework/foundation/foundation.scss';
+// // include foundation
+// @import './framework/foundation/foundation.scss';
 
-// // include utilities
-@import './framework/utilities/utilities.scss';
+// // // include utilities
+// @import './framework/utilities/utilities.scss';
 
-// // include utilities
-@import './framework/components/progress/progress-a.scss';
+// // // include utilities
+// @import './framework/components/progress/progress-a.scss';
 
-:root {
-	font-family: Helvetica;
-}
+// :root {
+// 	font-family: Helvetica;
+// }
 
-::-webkit-scrollbar {
-	display: none;
-}
+// ::-webkit-scrollbar {
+// 	display: none;
+// }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	color: white;
-	font-weight: 400;
-	font-size: 16px;
-	text-align: center;
-	color: #000000;
-}
+// * {
+// 	margin: 0;
+// 	padding: 0;
+// 	box-sizing: border-box;
+// 	color: white;
+// 	font-weight: 400;
+// 	font-size: 16px;
+// 	text-align: center;
+// 	color: #000000;
+// }
 
-.b--page-a{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    &__item{
-        position: relative;
-        height: 100vh;
-        overflow: hidden;
-        flex-shrink: 0;
-        display: flex;
-        color: magenta;
-        border-right: 5px solid blue;
-    }
-}
+// .b--page-a{
+//     width: 100%;
+//     height: 100vh;
+//     display: flex;
+//     &__item{
+//         position: relative;
+//         height: 100vh;
+//         overflow: hidden;
+//         flex-shrink: 0;
+//         display: flex;
+//         color: magenta;
+//         border-right: 5px solid blue;
+//     }
+// }
 
-#Scene1{
-    justify-content: center;
-	align-items: center;
-    width: 120vw;
-    background-color: green;
-}
+// #Scene1{
+//     justify-content: center;
+// 	align-items: center;
+//     width: 120vw;
+//     background-color: green;
+// }
 
-#Scene2 {
-	justify-content: flex-start;
-    width: 150vw;
-    background-color: red;
-}
+// #Scene2 {
+// 	justify-content: flex-start;
+//     width: 150vw;
+//     background-color: red;
+// }
 
-#Scene3 {
-	justify-content: center;
-	align-items: center;
-	background: #f8efe6;
-    width: 210vw;
-    background-color: yellow;
+// #Scene3 {
+// 	justify-content: center;
+// 	align-items: center;
+// 	background: #f8efe6;
+//     width: 210vw;
+//     background-color: yellow;
     
-}
+// }
 
-#Scene4 {
-	justify-content: center;
-	align-items: center;
-	background: #f00000;
-    width: 200vw;
-    background-color: blue;
+// #Scene4 {
+// 	justify-content: center;
+// 	align-items: center;
+// 	background: #f00000;
+//     width: 200vw;
+//     background-color: blue;
     
-}
+// }
 
-// single story
-.b--ss-a{
-    position:relative;
-    &__bg-items{
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 3;
-        width: auto;
-        height: 100%;
-        &__artwork{ // needed to see it with amaia
-            position: relative;
-            z-index: -1;
-            display: block;
-            height: 100%;
-        }
-        &__flag{ // demo example
-            position: absolute;
-            top: 0;
-            height: 100%;
-            pointer-events: none;
-            left: 14%;
-        }
-        & img {
-            min-width: 500px;
-        }
-    }  
-    &__content{
-        // here goes hole content
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 4;
-        width: auto;
-        height: 100%; 
-    } 
-    &__ft-items{
-        position: absolute;
-        left: 0;
-        z-index: 5;
-        height: 100%;
-        &__artwork{ // needed to see it with amaia
-            position: relative;
-            z-index: -1;
-            display: block;
-            height: 100%;
-        }
-    }
-    &--second{
-        justify-content: center;
-        align-items: center;
-        width: 100%; 
-    }
-    &--third{
-        background:rgba(222, 148, 148, 0.502)
-    }
-}
-.b--header-a{
-    position: fixed;
-    background:white;
-    padding:$measure *2;
-    left:$measure*3; top:$measure*3;
-    right:$measure*3;
-    z-index: 50;
-}
-.b--card-a{
-    padding:10px;
-    background:magenta;
-    top:50%;
-    position:relative;
-    left:150px;
-    &__hd{
-        background: linear-gradient(0deg, rgba(112, 28, 24, 1) 0%, rgba(170, 62, 57, 1)100%) ;
-        padding:$measure*3;
-        &__title{
-            color:#fff;
-            text-align:center;
-            @include make-font-b();
+// // single story
+// .b--ss-a{
+//     position:relative;
+//     &__bg-items{
+//         position: relative;
+//         top: 0;
+//         left: 0;
+//         z-index: 3;
+//         width: auto;
+//         height: 100%;
+//         &__artwork{ // needed to see it with amaia
+//             position: relative;
+//             z-index: -1;
+//             display: block;
+//             height: 100%;
+//         }
+//         &__flag{ // demo example
+//             position: absolute;
+//             top: 0;
+//             height: 100%;
+//             pointer-events: none;
+//             left: 14%;
+//         }
+//         & img {
+//             min-width: 500px;
+//         }
+//     }  
+//     &__content{
+//         // here goes hole content
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         z-index: 4;
+//         width: auto;
+//         height: 100%; 
+//     } 
+//     &__ft-items{
+//         position: absolute;
+//         left: 0;
+//         z-index: 5;
+//         height: 100%;
+//         &__artwork{ // needed to see it with amaia
+//             position: relative;
+//             z-index: -1;
+//             display: block;
+//             height: 100%;
+//         }
+//     }
+//     &--second{
+//         justify-content: center;
+//         align-items: center;
+//         width: 100%; 
+//     }
+//     &--third{
+//         background:rgba(222, 148, 148, 0.502)
+//     }
+// }
+// .b--header-a{
+//     position: fixed;
+//     background:white;
+//     padding:$measure *2;
+//     left:$measure*3; top:$measure*3;
+//     right:$measure*3;
+//     z-index: 50;
+// }
+// .b--card-a{
+//     padding:10px;
+//     background:magenta;
+//     top:50%;
+//     position:relative;
+//     left:150px;
+//     &__hd{
+//         background: linear-gradient(0deg, rgba(112, 28, 24, 1) 0%, rgba(170, 62, 57, 1)100%) ;
+//         padding:$measure*3;
+//         &__title{
+//             color:#fff;
+//             text-align:center;
+//             @include make-font-b();
             
-        }
+//         }
 
-    }
-}
+//     }
+// }
 
-.b--bird-a{
-    position: absolute;
-    left:45%;
-    bottom:0;
-    z-index: 3;
-    border:1px solid red;
+// .b--bird-a{
+//     position: absolute;
+//     left:45%;
+//     bottom:0;
+//     z-index: 3;
+//     border:1px solid red;
     
-}
+// }
 
-.b--noise-a{
-    position: fixed;
-    left:0;
-    top:0;
-    height: 100vh;
-    width:100%;
-    z-index: 50;
-    background-image: url('@/assets/img/noise.png');
-    background-position: 0 0;
-    pointer-events: none;
-    opacity: .4;
-    animation: scratchy .253s  linear forwards infinite ;
+// .b--noise-a{
+//     position: fixed;
+//     left:0;
+//     top:0;
+//     height: 100vh;
+//     width:100%;
+//     z-index: 50;
+//     background-image: url('@/assets/img/noise.png');
+//     background-position: 0 0;
+//     pointer-events: none;
+//     opacity: .4;
+//     animation: scratchy .253s  linear forwards infinite ;
 
-}
-@keyframes scratchy {
-	0% {
-		background-position: 0 0;
-	}
-	25% {
-		background-position: 0 0;
-	}
-	26% {
-		background-position: 20px -20px;
-	}
-	50% {
-		background-position: 20px -20px;
-	}
-	51% {
-		background-position: 40px -40px;
-	}
-	75% {
-		background-position: 40px -40px;
-	}
-	76% {
-		background-position: 60px -60px;
-	}
-	99% {
-		background-position: 60px -60px;
-	}
-	100% {
-		background-position: 0 0;
-	}
-}
+// }
+// @keyframes scratchy {
+// 	0% {
+// 		background-position: 0 0;
+// 	}
+// 	25% {
+// 		background-position: 0 0;
+// 	}
+// 	26% {
+// 		background-position: 20px -20px;
+// 	}
+// 	50% {
+// 		background-position: 20px -20px;
+// 	}
+// 	51% {
+// 		background-position: 40px -40px;
+// 	}
+// 	75% {
+// 		background-position: 40px -40px;
+// 	}
+// 	76% {
+// 		background-position: 60px -60px;
+// 	}
+// 	99% {
+// 		background-position: 60px -60px;
+// 	}
+// 	100% {
+// 		background-position: 0 0;
+// 	}
+// }
 
-.b--progress-a {
-    height: 40px;
-    width: 0%;
-    position: absolute;
-    bottom: 3rem;
-    // background-color: red;
-}
-.b--progress-a--button { 
-    height: 50px;
-    width: 50px;
-    // background-color: red;
-    // border: 1px solid red;
-    border-radius: 50%;
-}
+// .b--progress-a {
+//     height: 40px;
+//     width: 0%;
+//     position: absolute;
+//     bottom: 3rem;
+//     // background-color: red;
+// }
+// .b--progress-a--button { 
+//     height: 50px;
+//     width: 50px;
+//     // background-color: red;
+//     // border: 1px solid red;
+//     border-radius: 50%;
+// }
 
-.progress-bar-vertical {
-    // position: relative;
-    display: inline-block;
-    height: 200px;
-    // width: 400px;
-    background: linear-gradient(to right, #8fe4bf 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #8fe4bf 25%, transparent 30%);
-    background-position: 0% 50%, 0% 50%;
-    background-size: 100% 5px, 50px 50px;
-    /* 5px is the thickness of the bar, 50px is 1/8th of the height */
+// .progress-bar-vertical {
+//     // position: relative;
+//     display: inline-block;
+//     height: 200px;
+//     // width: 400px;
+//     background: linear-gradient(to right, #8fe4bf 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #8fe4bf 25%, transparent 30%);
+//     background-position: 0% 50%, 0% 50%;
+//     background-size: 100% 5px, 50px 50px;
+//     /* 5px is the thickness of the bar, 50px is 1/8th of the height */
     
-    background-repeat: no-repeat, repeat-x;
-}
+//     background-repeat: no-repeat, repeat-x;
+// }
 
-.progress-now-vertical {
-    position: absolute;
-    height: 100%;
-    background: linear-gradient(to right, #00b164 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #00b164 25%, transparent 30%);
-    background-position: 0% 50%, 0% 50%;
-    background-size: 100% 5px, 50px 50px;
-    background-repeat: no-repeat, repeat-x;
-    z-index: 1;
-}
+// .progress-now-vertical {
+//     position: absolute;
+//     height: 100%;
+//     background: linear-gradient(to right, #00b164 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #00b164 25%, transparent 30%);
+//     background-position: 0% 50%, 0% 50%;
+//     background-size: 100% 5px, 50px 50px;
+//     background-repeat: no-repeat, repeat-x;
+//     z-index: 1;
+// }
 
-.progress-now-vertical.right {
-    right: 0px;
-    background-position: 100% 50%, 100% 50%;
-}
+// .progress-now-vertical.right {
+//     right: 0px;
+//     background-position: 100% 50%, 100% 50%;
+// }
