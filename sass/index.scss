@@ -26,7 +26,13 @@
 @import './framework/components/noise/b--noise-a';
 
 
-
+section{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
 
 .b--card-a {
   position: relative;
