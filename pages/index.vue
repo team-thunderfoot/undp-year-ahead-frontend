@@ -1,15 +1,18 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-        <!-- <div class="b--noise-a"></div> -->
-        <div class="b--header-a">
-            Sticky5!
+        <div class="b--noise-a"></div>
+        <div class="b--nav-a"></div>
+        <div class="b--lang-a">
+            Lang
         </div>
+        
+
         <section class="b--page-a__item" id="Scene1">
             <div class="b--ss-a"> 
                 <div class="b--ss-a__ft-items">
-                    <div class="b--bird-a">
+                    <!-- <div class="b--bird-a">
                         <img src="@/assets/img/bird.png" alt="">
-                    </div>
+                    </div> -->
                     <img class="b--ss-a__ft-items__artwork" src="@/assets/img/ft-chapter-1.png" alt="" @load="onImgLoad"> 
                 </div>
                 <div class="b--ss-a__content">
@@ -129,23 +132,23 @@ export default {
 								start: 0,
 								end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
 								scrub: true,
-								markers: "true",
+								// markers: "true",
 							}
                         });
                         
 
-                    let tlBird = this.$gsap.timeline({
-                        scrollTrigger: {
-                            trigger: ".b--bird-a",
-                            scrub: true,
-                            start: () =>
-                                "top top-=" +
-                                (document.querySelector(".b--bird-a").offsetLeft - window.innerWidth),
-                            end: () => "+=" + document.querySelector(".b--bird-a").offsetWidth,
-                        }
-                    });
+                    // let tlBird = this.$gsap.timeline({
+                    //     scrollTrigger: {
+                    //         trigger: ".b--bird-a",
+                    //         scrub: true,
+                    //         start: () =>
+                    //             "top top-=" +
+                    //             (document.querySelector(".b--bird-a").offsetLeft - window.innerWidth),
+                    //         end: () => "+=" + document.querySelector(".b--bird-a").offsetWidth,
+                    //     }
+                    // });
 
-                    tlBird.to(document.querySelector('.b--bird-a'), {duration: 40, x:-100});
+                    // tlBird.to(document.querySelector('.b--bird-a'), {duration: 40, x:-100});
 
 					});    
 				}

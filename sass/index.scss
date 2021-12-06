@@ -1,80 +1,32 @@
-// // include foundation
-// @import './framework/foundation/foundation.scss';
+// include foundation
+@import './framework/foundation/foundation.scss';
 
-// // // include utilities
-// @import './framework/utilities/utilities.scss';
+// include utilities
+@import './framework/utilities/utilities.scss';
 
-:root {
-  font-family: Helvetica;
-}
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-.b--header-a {
-  position: fixed;
-  background: white;
-  padding: $measure * 2;
-  left: $measure * 3;
-  top: $measure * 3;
-  right: $measure * 3;
-  z-index: 50;
-  text-align: center;
-  font-size: 20px;
-}
+/* Structure */
+// it contains pin elements and single story slide
+// there is an error reported here 
+// https://teamthunderfoot.slack.com/archives/C02PJM5UXMW/p1638804753000700
+@import './framework/components/page/b--page-a.scss';
+@import './framework/components/single-story/b--ss-a.scss';
+/* Structure */
 
-.b--page-a {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  &__item {
-    height: 100%;
-    flex: 0 0 auto;
-  }
-}
+// Nav & Lang
+@import './framework/components/nav/b--nav-a';
+@import './framework/components/lang/b--lang-a';
 
-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
+// Noise
+// Decorative Pattern Moving
+@import './framework/components/noise/b--noise-a';
 
-.b--ss-a {
-  position: relative;
-  &__bg-items {
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: auto;
-    height: 100%;
-  }
-  &__content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    width: auto;
-    height: 100%;
-    display: flex; // elements horizontlly
-    justify-content: center;
-    align-items: center;
-  }
-  &__ft-items {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 4;
-    height: 100%;
-    width: 100%;
-    pointer-events: none;
-  }
-}
+
+
 
 .b--card-a {
   position: relative;
@@ -168,49 +120,7 @@ section {
   border: 1px solid red;
 }
 
-.b--noise-a {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: 50;
-  background-image: url('@/assets/img/noise.png');
-  background-position: 0 0;
-  pointer-events: none;
-  // opacity: .4;
-  animation: scratchy 0.253s linear forwards infinite;
-}
 
-@keyframes scratchy {
-  0% {
-    background-position: 0 0;
-  }
-  25% {
-    background-position: 0 0;
-  }
-  26% {
-    background-position: 20px -20px;
-  }
-  50% {
-    background-position: 20px -20px;
-  }
-  51% {
-    background-position: 40px -40px;
-  }
-  75% {
-    background-position: 40px -40px;
-  }
-  76% {
-    background-position: 60px -60px;
-  }
-  99% {
-    background-position: 60px -60px;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
 
 .b--progress-a {
   position: fixed;
