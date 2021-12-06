@@ -1,9 +1,12 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
         <div class="b--noise-a"></div>
-        <!-- <div class="b--header-a">
-            Sticky5!
-        </div> -->
+        <div class="b--nav-a">
+            Navbar
+        </div>
+         <div class="b--lang-a">
+            Lang
+        </div>
         <section class="b--page-a__item" id="Scene1">
             <div class="b--ss-a"> 
                 <div class="b--ss-a__ft-items">
@@ -16,7 +19,7 @@
                     <div class="b--card-a">
                         <div class="b--card-a__hd">
                             <h3 class="b--card-a__hd__title">
-                                test without overflow Towards living in harmony with nature
+                                V5 Towards living in harmony with nature
                             </h3> 
                         </div>
 						<div class="b--card-a__bd">
