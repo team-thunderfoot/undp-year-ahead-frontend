@@ -4,8 +4,8 @@
     when we changed it on mobile it's easier to see.*/
   letter-spacing: 2px;
   font-weight: 700; // CHECK WEIGHT
-  font-size: 100px; // FONTS SHOULD BE IN REM
-  line-height: 88.9px;
+  font-size: 6.25rem; // FONTS SHOULD BE IN REM
+  line-height: 5.55px;
   // @media all and ($viewport-type: $tabletl) {
   //   // ASK MECHE - NOT EVEN DESIGNED
   // }
@@ -16,8 +16,8 @@
   font-family: $type-b;
   letter-spacing: 2px;
   font-weight: 700;
-  font-size: 49px; // FONTS SHOULD BE IN REM
-  line-height: 53.56px;
+  font-size: 3.06rem; // FONTS SHOULD BE IN REM
+  line-height: 3.34rem;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -26,8 +26,8 @@
 @mixin make-font-c {
   font-family: $type-b;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 43,56px;
+  font-size: 2.5rem;
+  line-height: 2.72rem;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -36,8 +36,8 @@
 @mixin make-font-d {
   font-family: $type-a;
   font-weight: 700;
-  font-size: 35px;
-  line-height: 40px;
+  font-size: 2.18rem;
+  line-height: 2.5rem;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -46,8 +46,8 @@
 @mixin make-font-e {
   font-family: $type-a;
   font-weight: 400;
-  font-size: 25px;
-  line-height: 27.22px;;
+  font-size: 1.56rem;
+  line-height: 1.7rem;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -56,8 +56,8 @@
 @mixin make-font-f {
   font-family: $type-a;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 27.43px;;
+  font-size: 1.5rem;
+  line-height: 1.71rem;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -65,8 +65,8 @@
 @mixin make-font-g {
   font-family: $type-a;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 15.75px;
+  font-size: 0.87rem;
+  line-height: 0.98rem;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
