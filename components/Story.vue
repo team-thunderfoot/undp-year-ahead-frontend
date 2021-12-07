@@ -2,6 +2,8 @@
     <div id="HorizontalWrapper" class="b--page-a">
         <v-chapter-1 @changeURL="changeURL" />
         <v-chapter-2 @changeURL="changeURL" />
+        <v-progress-nav ref="progress" />
+        <v-progress ref="progress" />
         <div class="element">
             Chapter Status {{this.chapterOneContent}}
         </div>
@@ -11,6 +13,9 @@
 <script>
 import Chapter1 from '~/components/Chapter1.vue';
 import Chapter2 from '~/components/Chapter2.vue';
+import Progress from '@/components/Progress/Progress.vue';
+import ProgressNav from '@/components/Progress/ProgProgressNavress.vue';
+
 export default {
     data:()=>{
 		return{
@@ -22,6 +27,8 @@ export default {
     components:{
         'v-chapter-1':Chapter1,
         'v-chapter-2':Chapter2,
+        'v-progress' : Progress,
+        'v-progress-nav' : ProgressNav
     },
     watch: {
         statusChapter(newValue, oldValue) {
