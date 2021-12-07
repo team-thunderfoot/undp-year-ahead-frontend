@@ -109,9 +109,7 @@ export default {
             return width;
         },
 		imagesAreLoaded () {
-			console.log(this.isLoaded);
 			if(this.isLoaded == 8) {
-				console.log("loadee");
 				if(process.client){
 					this.$nextTick(() => {
 

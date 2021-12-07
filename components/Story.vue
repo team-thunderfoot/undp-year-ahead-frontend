@@ -58,6 +58,7 @@ export default {
         },
         changeURL(payload){
             // window.location.hash = payload.url;
+            
         }
     },
     created(){
@@ -65,6 +66,7 @@ export default {
             // event
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
+
             })
         }
     }

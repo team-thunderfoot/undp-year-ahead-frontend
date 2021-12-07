@@ -7,16 +7,16 @@
                 </div>
                 <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/front.png" alt=""> 
             </div>
-            <div class="b--ss-a__content">
+            <div class="b--ss-a__content"  v-if="chapter">
                 <div class="b--chapter1-a__content">
                     <div class="b--card-a">
                         <h1 class="b--card-a__title">
-                            sustainable Development
+                            {{chapter.title['en']}}
                         </h1>
                         <h2 class="b--card-a__badge">
-                            in 2022
+                            {{chapter.date['en']}}
                         </h2>
-                        <h3 class="b--card-a__subtitle">What to watch in the year ahead</h3>
+                        <h3 class="b--card-a__subtitle">{{chapter.description['en']}}</h3>
                     </div>
                 </div>
             </div>
@@ -28,23 +28,31 @@
 </template>
 
 <script>
+// Data import
+import { groq } from '@nuxtjs/sanity';
+
 export default {
     data:()=>{
 		return{
-            totalAssets:2,
-			imgLoaded : 0
+            totalContent:3,
+			contentLoaded : 0,
+            chapter : null,
 		}
 	},
     methods: {
-        handleLoad: function(){
-            this.imgLoaded++;
-            if(this.imgLoaded == this.totalAssets) {
-                $nuxt.$emit('assetLoaded')
-            }
-        }
-    },
-    created(){
-        if(process.client){
+        async getContent(){
+            const query_content = groq`*[_type == "chapterOne"][0]{
+                title,
+                date,
+                description
+            }`;
+            this.chapter = await this.$sanity.fetch(query_content);
+            this.contentLoaded++;
+        },
+        handleLoad(){
+            this.contentLoaded++;
+        },
+        createAnimation(){
             let tlSection = this.$gsap.timeline({
                 scrollTrigger: {
                     trigger: "#Scene1",
@@ -66,6 +74,19 @@ export default {
                     }
                 }
             });
+        }
+    },
+    watch: {
+        contentLoaded(newValue, oldValue) {
+            if(newValue == this.totalContent ) {
+                $nuxt.$emit('assetLoaded')
+                this.createAnimation()
+            }
+        }
+    },
+    created(){
+        if(process.client){
+            this.getContent();
         }
     }
 }

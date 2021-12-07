@@ -28,23 +28,29 @@
 </template>
 
 <script>
+import { groq } from '@nuxtjs/sanity';
 export default {
     data:()=>{
 		return{
-            totalAssets:2,
-			imgLoaded : 0
+            totalContent: 3,
+			contentLoaded : 0,
+            chapter: null
 		}
 	},
     methods: {
-        handleLoad: function(){
-            this.imgLoaded++;
-            if(this.imgLoaded == this.totalAssets) {
-                $nuxt.$emit('assetLoaded')
-            }
-        }
-    },
-     created(){
-        if(process.client){
+        async getContent(){
+            const query_content = groq`*[_type == "chapterOne"][0]{
+                title,
+                date,
+                description
+            }`;
+            this.chapter = await this.$sanity.fetch(query_content);
+            this.contentLoaded++;
+        },
+        handleLoad(){
+            this.contentLoaded++;
+        },
+        createAnimation(){
             let tlSection = this.$gsap.timeline({
                 scrollTrigger: {
                     trigger: "#Scene2",
@@ -67,6 +73,19 @@ export default {
                     }
                 }
             });
+        }
+    },
+    watch: {
+        contentLoaded(newValue, oldValue) {
+            if(newValue == this.totalContent ) {
+                $nuxt.$emit('assetLoaded');
+                this.createAnimation();
+            }
+        }
+    },
+    created(){
+        if(process.client){
+            this.getContent();
         }
     }
 }
