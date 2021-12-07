@@ -2,9 +2,9 @@
     <section class="b--page-a__item b--chapter1-a" id="Scene1" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <div class="b--chapter1-a__artwork">
+                <!-- <div class="b--chapter1-a__artwork">
                     <img src="@/assets/img/chapter-1/bubble.svg" alt="">
-                </div>
+                </div> -->
                 <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/front.png" alt=""> 
             </div>
             <div class="b--ss-a__content">

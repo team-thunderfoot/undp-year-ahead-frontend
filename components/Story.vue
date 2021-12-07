@@ -2,10 +2,11 @@
     <div id="HorizontalWrapper" class="b--page-a">
         <v-chapter-1 @changeURL="changeURL" />
         <v-chapter-2 @changeURL="changeURL" />
-        <v-progress-nav ref="progress" />
-        <v-progress ref="progress" />
+        <v-chapter-3 @changeURL="changeURL" />
+        <!-- <v-progress-nav ref="progress" />
+        <v-progress ref="progress" /> -->
         <div class="element">
-            Chapter Status {{this.chapterOneContent}}
+            Chapter Status | {{this.chapterOneContent}}
         </div>
     </div>
 </template>
@@ -13,22 +14,23 @@
 <script>
 import Chapter1 from '~/components/Chapter1.vue';
 import Chapter2 from '~/components/Chapter2.vue';
+import Chapter3 from '~/components/Chapter3.vue';
 import Progress from '@/components/Progress/Progress.vue';
 import ProgressNav from '@/components/Progress/ProgressNav.vue';
 
 export default {
     data:()=>{
 		return{
-            totalChapters:2,
+            totalChapters:3,
 			statusChapter : 0
 		}
 	},
-    props:['chapterOneContent'],
     components:{
         'v-chapter-1':Chapter1,
         'v-chapter-2':Chapter2,
-        'v-progress' : Progress,
-        'v-progress-nav' : ProgressNav
+        'v-chapter-3':Chapter3,
+        // 'v-progress' : Progress,
+        // 'v-progress-nav' : ProgressNav
     },
     watch: {
         statusChapter(newValue, oldValue) {
@@ -58,19 +60,15 @@ export default {
                         end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
                         scrub: true,
                         markers: "true",
-                        onUpdate: (self) => {
-                            var widhtProgress = self.progress.toFixed(2) * 100;
-                            this.$refs.progress.$refs.progress.style.width = widhtProgress + '%';
-                        }
+                        // onUpdate: (self) => {
+                        //     var widhtProgress = self.progress.toFixed(2) * 100;
+                        //     this.$refs.progress.$refs.progress.style.width = widhtProgress + '%';
+                        // }
                     }
                 });
                 $nuxt.$emit('siteLoaded')
             })
         },
-        changeURL(payload){
-            // window.location.hash = payload.url;
-            
-        }
     },
     created(){
         if(process.client){

@@ -1,49 +1,71 @@
 <template>
-    <section class="b--page-a__item" id="Scene0">
+    <section class="b--page-a__item" id="Scene3" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <div class="b--bird-a">
-                    <img src="@/assets/img/bird.png" alt="">
-                </div>
-                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/ft-chapter-2.png" alt=""> 
+                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-3/front.png"> 
             </div>
             <div class="b--ss-a__content">
                 <div class="b--card-a">
                     <div class="b--card-a__hd">
                         <h3 class="b--card-a__hd__title">
-                            chapter2
+                            {{chapter.title}}
                         </h3> 
                     </div>
                     <div class="b--card-a__bd">
-                        <p class="b--card-a__bd__content">chapter 0 Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
+                        <p class="b--card-a__bd__content">
+                            <SanityContent :blocks="chapter.description" />
+                        </p>
                     </div>
                 </div>
                 <div class="b--card-b">
-                    <p class="b--card-b__content"><strong>UN Biodiversity Conference (COP15)</strong> <br>
-                    25 April - 8 May, Kunming, China</p>
+                    <p class="b--card-b__content">
+                        <SanityContent :blocks="chapter.content" />
+                    </p>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/bg-chapter-2.png" alt="">    
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-3/back.png">        
             </div>
         </div>
     </section>
 </template>
 
 <script>
+import { groq } from '@nuxtjs/sanity';
 export default {
     data:()=>{
 		return{
-			 imgLoaded : 0
+            totalContent: 3,
+			contentLoaded : 0,
+            chapter: null
 		}
 	},
     methods: {
-        handleLoad: function(todo){
-            this.imgLoaded++;
-            if(this.imgLoaded === 2) {
-                $nuxt.$emit('assetLoaded')
-                // alert('all image loaded')   
+        async getContent(){
+            this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
+            const query_content = groq`*[_type == "chapterTwo"][0]{
+                "title" : title['`+this.lang+`'],
+                "content" : content['`+this.lang+`'],
+                "description" : description['`+this.lang+`']
+            }`;
+            this.chapter = await this.$sanity.fetch(query_content);
+            this.contentLoaded++;
+            console.log('chapterTwo',this.chapter);
+        },
+        handleLoad(){
+            this.contentLoaded++;
+        },
+    },
+    watch: {
+        contentLoaded(newValue, oldValue) {
+            if(newValue == this.totalContent ) {
+                $nuxt.$emit('assetLoaded');
             }
+        }
+    },
+    created(){
+        if(process.client){
+            this.getContent();
         }
     }
 }

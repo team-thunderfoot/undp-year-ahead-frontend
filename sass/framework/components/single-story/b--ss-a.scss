@@ -8,7 +8,7 @@
       z-index: 0;
       width: auto;
       height: 100%;
-      img{
+      &__artwork{
         height: 100%;
       }
     }
@@ -31,7 +31,7 @@
       height: 100%;
       width: 100%;
       pointer-events: none;
-      img{
+      &__artwork{
         height: 100%;
       }
     }
