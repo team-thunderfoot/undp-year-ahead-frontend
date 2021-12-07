@@ -15,24 +15,26 @@ export default {
     methods :  {
         goTo(payload) {
 			if(payload == 'next'){
-				var sceneName  = document.querySelector("#Scene" + parseInt(this.currentItem + 1));
+                this.currentItem++;
+                console.log(this.currentItem);
+				var sceneName  = document.querySelector("#Scene" + this.currentItem);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-                    this.currentItem++;
-                    if(this.currentItem == 1){
-                        this.$refs.prev.classList.add("disabled");
-                        this.$refs.next.classList.remove("disabled");
+                    if(this.currentItem == 2){
+                        this.$refs.prev.classList.remove("disabled");
+                        this.$refs.next.classList.add("disabled");
                     }
                 }});
 			}
             if(payload == 'prev'){
-				var sceneName  = document.querySelector("#Scene" + parseInt(this.currentItem - 1));
+                this.currentItem--;
+                console.log(this.currentItem);
+				var sceneName  = document.querySelector("#Scene" + this.currentItem);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-                    this.currentItem++;
-                    if(this.currentItem == 2){
-                        this.$refs.next.classList.add("disabled");
-                        this.$refs.prev.classList.remove("disabled");
+                    if(this.currentItem == 1){
+                        this.$refs.next.classList.remove("disabled");
+                        this.$refs.prev.classList.add("disabled");
                     }
                 }});
 			}
