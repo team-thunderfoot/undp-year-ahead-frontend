@@ -1,6 +1,5 @@
 <template>
     <div class="b--lang-a" v-if="page">
-            Lang
         <a href="/">
             EN
         </a>
