@@ -2,7 +2,7 @@
     <div id="HorizontalWrapper" class="b--page-a">
         <v-chapter-1 @changeURL="changeURL" />
         <v-chapter-2 @changeURL="changeURL" />
-        <v-progress-nav ref="progress" />
+        <!-- <v-progress-nav ref="progress" /> -->
         <v-progress ref="progress" />
         <div class="element">
             Chapter Status {{this.chapterOneContent}}
@@ -58,6 +58,10 @@ export default {
                         end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
                         scrub: true,
                         markers: "true",
+                        onUpdate: (self) => {
+                            var widhtProgress = self.progress.toFixed(2) * 100;
+                            this.$refs.progress.$refs.progress.style.width = widhtProgress + '%';
+                        }
                     }
                 });
                 $nuxt.$emit('siteLoaded')

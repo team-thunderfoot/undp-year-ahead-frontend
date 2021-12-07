@@ -1,5 +1,5 @@
 <template>
-    <div class="b--progress-a" ref="progress">
+    <div class="b--progress-b" ref="progress">
         
     </div>
 </template>
@@ -44,5 +44,5 @@ export default {
 }
 </script>
 <style lang="scss">
-    @import '@/sass/framework/components/progress/progress-a.scss';
+    @import '@/sass/framework/components/progress/progress-b.scss';
 </style>
