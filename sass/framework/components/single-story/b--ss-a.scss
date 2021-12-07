@@ -1,6 +1,6 @@
 .b--ss-a {
     position: relative;
-    // height: 100vh;
+    height: 100vh;
     &__bg-items {
       position: relative;
       top: 0;
@@ -8,6 +8,9 @@
       z-index: 0;
       width: auto;
       height: 100%;
+      img{
+        height: 100%;
+      }
     }
     &__content {
       position: absolute;
@@ -28,5 +31,8 @@
       height: 100%;
       width: 100%;
       pointer-events: none;
+      img{
+        height: 100%;
+      }
     }
   }
