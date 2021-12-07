@@ -4,12 +4,12 @@
 
 /* Colors */
 
-/* Core Colors */
+/* core Colors */
 $color-a:#421C0E;
 $color-b:#ffffff;
 $color-c:#FDF2E4;
 
-/* red gradient, start to end */
+/* red gradient */
 $color-d:#AA3E39;
 $color-e:#701C18;
 
@@ -25,8 +25,9 @@ $color-i: #0A1432;
 $color-j:#454E3F;
 $color-k: #21241F;
 
-/* secondary color */
+/* secondary colors */
 $color-l: #F99746;
+$color-m: #FFEC34;
 
 
 $color-options: (
@@ -41,7 +42,8 @@ $color-options: (
   i: $color-i,
   j: $color-j,
   k: $color-k,
-  l: $color-l
+  l: $color-l,
+  m: $color-m
 );
 
 //needs to be defined
