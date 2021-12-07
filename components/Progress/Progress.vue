@@ -1,5 +1,5 @@
 <template>
-    <div class="b--progress-a">
+    <div class="b--progress-a" ref="progress">
         
     </div>
 </template>
