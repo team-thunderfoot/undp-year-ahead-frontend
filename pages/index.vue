@@ -4,7 +4,7 @@
             <div class="b--noise-a"></div>
             <v-nav />
             <v-lang />
-            <v-progress ref="progressA" />
+            <!-- <v-progress ref="progress" /> -->
             <v-story />
         </div>
 
@@ -18,7 +18,7 @@
 
 <script>
 // Components
-import Progress from '@/components/Progress/Progress.vue';
+// import Progress from '@/components/Progress/Progress.vue';
 import Nav from '@/components/Nav';
 import Lang from '@/components/Lang';
 import Story from '~/components/Story';
@@ -33,7 +33,7 @@ export default {
         'v-nav':Nav,
         'v-lang':Lang,
         'v-story':Story,
-        'v-progress' : Progress
+        // 'v-progress' : Progress
 	},
     created(){
         if(process.client){

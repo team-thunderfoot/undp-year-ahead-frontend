@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter1-a" id="Scene1">
+    <section class="b--page-a__item b--chapter1-a" id="Scene1" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <div class="b--chapter1-a__artwork">
@@ -7,16 +7,16 @@
                 </div>
                 <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/front.png" alt=""> 
             </div>
-            <div class="b--ss-a__content"  v-if="chapter">
+            <div class="b--ss-a__content">
                 <div class="b--chapter1-a__content">
                     <div class="b--card-a">
                         <h1 class="b--card-a__title">
-                            {{chapter.title['en']}}
+                            {{chapter.title}}
                         </h1>
                         <h2 class="b--card-a__badge">
-                            {{chapter.date['en']}}
+                            {{chapter.date}}
                         </h2>
-                        <h3 class="b--card-a__subtitle">{{chapter.description['en']}}</h3>
+                        <h3 class="b--card-a__subtitle">{{chapter.description}}</h3>
                     </div>
                 </div>
             </div>
@@ -41,46 +41,24 @@ export default {
 	},
     methods: {
         async getContent(){
+            this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
             const query_content = groq`*[_type == "chapterOne"][0]{
-                title,
-                date,
-                description
+                "title" : title['`+this.lang+`'],
+                "date" : date['`+this.lang+`'],
+                "description" : description['`+this.lang+`']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
+            console.log(this.chapter);
         },
         handleLoad(){
             this.contentLoaded++;
         },
-        createAnimation(){
-            let tlSection = this.$gsap.timeline({
-                scrollTrigger: {
-                    trigger: "#Scene1",
-                    scrub: 0,
-                    start: () =>
-                        "top top-=" +
-                        (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
-                    end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
-                    onEnter: () => {
-                        this.$emit('changeURL', { 'url'  : 'Scene1'})
-                        document.querySelector(".js--one").classList.add("is-current");
-                        // document.querySelector("#prev").classList.add("disabled");
-                        
-                    },
-                    onEnterBack: () => {
-                        this.$emit('changeURL', { 'url'  : 'Scene1'})
-                        document.querySelector(".js--two").classList.remove("is-current");
-                        // document.querySelector("#prev").classList.add("disabled");
-                    }
-                }
-            });
-        }
     },
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
                 $nuxt.$emit('assetLoaded')
-                this.createAnimation()
             }
         }
     },
