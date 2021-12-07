@@ -5,19 +5,28 @@
 /* Colors */
 
 /* Core Colors */
-$color-a:#2D2D2D;
+$color-a:#421C0E;
 $color-b:#ffffff;
+$color-c:#FDF2E4;
 
-/* Secondary Colors */
-$color-c:#0B2545;
-$color-d:#13315C;
-$color-e:#134074;
-$color-f:#8DA9C4;
+/* red gradient, start to end */
+$color-d:#AA3E39;
+$color-e:#701C18;
 
-/* Accent Colors */
-$color-g:#9CEEE8;
-$color-h:#EEF4ED;
+/* cream gradient */
+$color-f:#F98968;
+$color-g:#F98968;
 
+/* blue gradient */
+$color-h: #2C3A64;
+$color-i: #0A1432;
+
+/* green gradient */
+$color-j:#454E3F;
+$color-k: #21241F;
+
+/* secondary color */
+$color-l: #F99746;
 
 
 $color-options: (
@@ -29,6 +38,10 @@ $color-options: (
   f: $color-f,
   g: $color-g,
   h: $color-h,
+  i: $color-i,
+  j: $color-j,
+  k: $color-k,
+  l: $color-l
 );
 
 //needs to be defined
