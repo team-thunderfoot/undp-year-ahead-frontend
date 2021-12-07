@@ -1,28 +1,39 @@
 <template>
     <div class="b--progress-b">
-        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-a__arrow b--progress-a__arrow--prev"> </a>
-        <!-- <ul class="b--progress-a__wrapper">
-            <li class="b--progress-a__wrapper__item" :class="'js--' + item" :ref="item" @click.prevent="goTo('Scene' + parseInt(i + 1), item)" v-for="(item, i) in progressItems" :key="i">
-                <span class="b--progress-a__wrapper__item__label"></span>
-            </li>
-        </ul> -->
-        <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-a__arrow b--progress-a__arrow--next"> </a>
+        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-b__arrow b--progress-b__arrow--prev"> </a>
+        <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-b__arrow b--progress-b__arrow--next"> </a>
     </div>
 </template>
 <script>
 export default {
     data:()=>{
 		return{
-           progressItems : []
+           progressItems : [],
+           currentItem : 1
 		}
 	},
     methods :  {
-        goTo(scene, reference) {
-			if(scene){
-				var sceneName  = document.querySelector("#" + scene);
+        goTo(payload) {
+			if(payload == 'next'){
+				var sceneName  = document.querySelector("#Scene" + parseInt(this.currentItem + 1));
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-                    this.$refs[reference][0].classList.add("is-current");
+                    this.currentItem++;
+                    if(this.currentItem == 1){
+                        this.$refs.prev.classList.add("disabled");
+                        this.$refs.next.classList.remove("disabled");
+                    }
+                }});
+			}
+            if(payload == 'prev'){
+				var sceneName  = document.querySelector("#Scene" + parseInt(this.currentItem - 1));
+                var pos =  sceneName.offsetLeft;
+                this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+                    this.currentItem++;
+                    if(this.currentItem == 2){
+                        this.$refs.next.classList.add("disabled");
+                        this.$refs.prev.classList.remove("disabled");
+                    }
                 }});
 			}
         },
@@ -45,7 +56,7 @@ export default {
         this.goToChapter();
     },
     afterMounted() {
-        this.$refs.one.classList.add("is-current");
+        this.$refs.prev.classList.add("disabled");
     }
 }
 </script>

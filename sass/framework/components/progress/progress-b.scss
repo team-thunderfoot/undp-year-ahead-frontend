@@ -1,20 +1,20 @@
 .b--progress-b {
   position: fixed;
   bottom: 10%;
-  width: 700px;
-  left: 0;
+  width: 200px;
+  right: 0;
   z-index: 100;
   &__wrapper {
     list-style: none;
     display: flex;
     align-items: center;
-    background-color: #be564b;
+    background-color: #2D2D2D;
     border-radius: 100px;
     padding: 8px 16px;
     width: fit-content;
     margin: 0 auto;
     &__item {
-      background-color: #f1cdbb;
+      background-color: #2D2D2D;
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -31,13 +31,13 @@
     }
   }
   &__arrow{
-      background-color: #be564b;
+      background-color: #2D2D2D;
       position: absolute;
       bottom: 0;
       margin-right: 5px;
       z-index: 10000;
-      height: 26px;
-      width: 26px;
+      height: 32px;
+      width: 32px;
       border-radius: 50%;
       &--next {
           left: 60%;
