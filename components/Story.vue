@@ -46,12 +46,12 @@ export default {
 						x: () => -this.getTotalWidth() + window.innerWidth, 
 						ease: "none", 
 						scrollTrigger: {
-								trigger: '.b--page-a',
-								pin: true,
-								start: 0,
-								end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
-								scrub: true,
-								markers: "true",
+                            trigger: '.b--page-a',
+                            pin: true,
+                            start: 0,
+                            end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
+                            scrub: true,
+                            markers: "true",
 						}
                     });
                     $nuxt.$emit('siteLoaded')
