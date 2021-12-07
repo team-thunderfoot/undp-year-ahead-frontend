@@ -2,7 +2,7 @@
     <div id="HorizontalWrapper" class="b--page-a">
         <v-chapter-1 @changeURL="changeURL" />
         <v-chapter-2 @changeURL="changeURL" />
-        <!-- <v-progress-nav ref="progress" /> -->
+        <v-progress-nav ref="progress" />
         <v-progress ref="progress" />
         <div class="element">
             Chapter Status {{this.chapterOneContent}}
