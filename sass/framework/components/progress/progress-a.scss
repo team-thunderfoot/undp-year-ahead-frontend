@@ -2,6 +2,7 @@
     position: fixed;
     bottom: 10%;
     width: 100%;
+    z-index: 100;
     &__wrapper {
       list-style: none;
       display: flex;
@@ -16,6 +17,7 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
+        cursor: pointer;
         &:not(:last-child) {
           margin-right: 32px;
         }

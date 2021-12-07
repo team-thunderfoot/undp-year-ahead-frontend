@@ -5,7 +5,6 @@
         <div class="element">
             Chapter Status {{this.chapterOneContent}}
         </div>
-
     </div>
 </template>
 
