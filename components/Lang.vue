@@ -1,14 +1,13 @@
 <template>
     <div class="b--lang-a" v-if="page">
-            Lang
         <a href="/">
-            {{page.en}}
+            EN
         </a>
         <a href="/fr/">
-            {{page.fr}}
+            FR
         </a>
         <a href="/es/">
-            {{page.es}}
+            ES
         </a>
     </div>
 </template>

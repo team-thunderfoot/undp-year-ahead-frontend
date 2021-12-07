@@ -8,16 +8,19 @@
                 <div class="b--card-a">
                     <div class="b--card-a__hd">
                         <h3 class="b--card-a__hd__title">
-                            chapter1
+                            {{chapter.title}}
                         </h3> 
                     </div>
                     <div class="b--card-a__bd">
-                        <p class="b--card-a__bd__content">chapter 0 Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>
+                        <p class="b--card-a__bd__content">
+                            <SanityContent :blocks="chapter.description" />
+                        </p>
                     </div>
                 </div>
                 <div class="b--card-b">
-                    <p class="b--card-b__content"><strong>UN Biodiversity Conference (COP15)</strong> <br>
-                    25 April - 8 May, Kunming, China</p>
+                    <p class="b--card-b__content">
+                        <SanityContent :blocks="chapter.content" />
+                    </p>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -39,13 +42,15 @@ export default {
 	},
     methods: {
         async getContent(){
-            const query_content = groq`*[_type == "chapterOne"][0]{
-                title,
-                date,
-                description
+            this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
+            const query_content = groq`*[_type == "chapterTwo"][0]{
+                "title" : title['`+this.lang+`'],
+                "content" : content['`+this.lang+`'],
+                "description" : description['`+this.lang+`']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
+            console.log('chapterTwo',this.chapter);
         },
         handleLoad(){
             this.contentLoaded++;
