@@ -55,13 +55,13 @@ export default {
                     end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
                     onEnter: () => {
                         this.$emit('changeURL', { 'url'  : 'Scene1'})
-                        document.querySelector(".js--first").classList.add("is-current");
+                        document.querySelector(".js--one").classList.add("is-current");
                         // document.querySelector("#prev").classList.add("disabled");
                         
                     },
                     onEnterBack: () => {
                         this.$emit('changeURL', { 'url'  : 'Scene1'})
-                        document.querySelector(".js--second").classList.remove("is-current");
+                        document.querySelector(".js--two").classList.remove("is-current");
                         // document.querySelector("#prev").classList.add("disabled");
                     }
                 }

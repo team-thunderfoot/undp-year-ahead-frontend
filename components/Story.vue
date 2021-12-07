@@ -9,8 +9,6 @@
 </template>
 
 <script>
-
-
 import Chapter1 from '~/components/Chapter1.vue';
 import Chapter2 from '~/components/Chapter2.vue';
 export default {
