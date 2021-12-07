@@ -3,8 +3,8 @@
         <div v-if="this.isLoaded =! false">
             <div class="b--noise-a"></div>
             <v-nav />
-            <v-progress />
             <v-lang />
+            <v-progress ref="progressA" />
             <v-story />
         </div>
 
@@ -17,13 +17,11 @@
 </template>
 
 <script>
-
-
 // Components
+import Progress from '@/components/Progress/Progress.vue';
 import Nav from '@/components/Nav';
 import Lang from '@/components/Lang';
 import Story from '~/components/Story';
-import Progress from '@/components/Progress/Progress.vue';
 
 export default {
 	data:()=>{

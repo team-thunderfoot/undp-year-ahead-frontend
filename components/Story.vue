@@ -9,6 +9,8 @@
 </template>
 
 <script>
+
+
 import Chapter1 from '~/components/Chapter1.vue';
 import Chapter2 from '~/components/Chapter2.vue';
 export default {
@@ -21,7 +23,7 @@ export default {
     props:['chapterOneContent'],
     components:{
         'v-chapter-1':Chapter1,
-        'v-chapter-2':Chapter2
+        'v-chapter-2':Chapter2,
     },
     watch: {
         statusChapter(newValue, oldValue) {
@@ -41,23 +43,24 @@ export default {
         },
         asambleStory(){
            	this.$nextTick(() => {
-
-                    this.$gsap.to(document.querySelectorAll("section"), { 
-						x: () => -this.getTotalWidth() + window.innerWidth, 
-						ease: "none", 
-						scrollTrigger: {
-                            trigger: '.b--page-a',
-                            pin: true,
-                            start: 0,
-                            end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
-                            scrub: true,
-                            markers: "true",
-						}
-                    });
-                    $nuxt.$emit('siteLoaded')
-
+                this.$gsap.to(document.querySelectorAll("section"), { 
+                    x: () => -this.getTotalWidth() + window.innerWidth, 
+                    ease: "none", 
+                    scrollTrigger: {
+                        trigger: '.b--page-a',
+                        pin: true,
+                        start: 0,
+                        end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
+                        scrub: true,
+                        markers: "true",
+                    }
+                });
+                $nuxt.$emit('siteLoaded')
             })
-        } 
+        },
+        changeURL(payload){
+            console.log('payload',payload);
+        }
     },
     created(){
         if(process.client){
@@ -66,7 +69,6 @@ export default {
                 this.statusChapter++;
             })
         }
-       
     }
 }
 </script>

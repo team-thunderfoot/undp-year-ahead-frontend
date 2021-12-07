@@ -45,7 +45,27 @@ export default {
     },
     created(){
         if(process.client){
-
+            let tlSection = this.$gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#Scene1",
+                    scrub: 0,
+                    start: () =>
+                        "top top-=" +
+                        (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+                    end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+                    onEnter: () => {
+                        this.$emit('changeURL', { 'url'  : 'Scene1'})
+                        document.querySelector(".js--first").classList.add("is-current");
+                        // document.querySelector("#prev").classList.add("disabled");
+                        
+                    },
+                    onEnterBack: () => {
+                        this.$emit('changeURL', { 'url'  : 'Scene2'})
+                        document.querySelector(".js--second").classList.remove("is-current");
+                        // document.querySelector("#prev").classList.add("disabled");
+                    }
+                }
+            });
         }
     }
 }

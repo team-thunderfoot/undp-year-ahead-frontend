@@ -42,6 +42,33 @@ export default {
                 $nuxt.$emit('assetLoaded')
             }
         }
+    },
+     created(){
+        if(process.client){
+            let tlSection = this.$gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#Scene2",
+                    scrub: 0,
+                    start: () =>
+                        "top top-=" +
+                        (document.querySelector("#Scene2").offsetLeft - window.innerWidth),
+                    end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
+                    onEnter: () => {
+                        this.$emit('changeURL', { 'url'  : 'Scene2'})
+                        console.log("Adadas");
+                        document.querySelector(".js--second").classList.add("is-current");
+                        // document.querySelector("#prev").classList.remove("disabled");
+                        // document.querySelector("#next").classList.add("disabled");
+                        
+                    },
+                    onEnterBack: () => {
+                        this.$emit('changeURL', { 'url'  : 'Scene2'})
+                        // document.querySelector("#prev").classList.add("disabled");
+                        // document.querySelector("#next").classList.remove("disabled");
+                    }
+                }
+            });
+        }
     }
 }
 </script>
