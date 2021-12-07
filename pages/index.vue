@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="this.isLoaded =! false">
+        <div>
             <div class="b--noise-a"></div>
             <v-nav />
             <v-lang />
