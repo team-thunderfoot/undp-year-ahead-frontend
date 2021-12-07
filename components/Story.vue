@@ -1,7 +1,7 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-        <v-chapter-1 />
-        <v-chapter-2 />
+        <v-chapter-1 @changeURL="changeURL" />
+        <v-chapter-2 @changeURL="changeURL" />
         <div class="element">
             Chapter Status {{this.chapterOneContent}}
         </div>
@@ -59,7 +59,7 @@ export default {
             })
         },
         changeURL(payload){
-            console.log('payload',payload);
+            // window.location.hash = payload.url;
         }
     },
     created(){

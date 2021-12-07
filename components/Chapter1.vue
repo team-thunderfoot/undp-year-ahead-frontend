@@ -60,7 +60,7 @@ export default {
                         
                     },
                     onEnterBack: () => {
-                        this.$emit('changeURL', { 'url'  : 'Scene2'})
+                        this.$emit('changeURL', { 'url'  : 'Scene1'})
                         document.querySelector(".js--second").classList.remove("is-current");
                         // document.querySelector("#prev").classList.add("disabled");
                     }

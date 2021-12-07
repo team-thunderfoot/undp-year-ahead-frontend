@@ -55,7 +55,6 @@ export default {
                     end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
                     onEnter: () => {
                         this.$emit('changeURL', { 'url'  : 'Scene2'})
-                        console.log("Adadas");
                         document.querySelector(".js--second").classList.add("is-current");
                         // document.querySelector("#prev").classList.remove("disabled");
                         // document.querySelector("#next").classList.add("disabled");
