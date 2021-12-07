@@ -9,7 +9,7 @@
                 <span class="b--progress-a__wrapper__item__label"></span>
             </li> -->
 
-            <li class="b--progress-a__wrapper__item" :class="'js--' + item" :ref="item" @click.prevent="goTo('Scene' + i++, item)" v-for="(item, i) in progressItems" :key="i">
+            <li class="b--progress-a__wrapper__item" :class="'js--' + item" :ref="item" @click.prevent="goTo('Scene' + parseInt(i + 1), item)" v-for="(item, i) in progressItems" :key="i">
                 <span class="b--progress-a__wrapper__item__label"></span>
             </li>
         </ul>
@@ -25,13 +25,11 @@ export default {
 	},
     methods :  {
         goTo(scene, reference) {
-            console.log('scene',scene);
-            console.log('reference',reference);
 			if(scene){
 				var sceneName  = document.querySelector("#" + scene);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-                    this.$refs[reference].classList.add("is-current");
+                    this.$refs[reference][0].classList.add("is-current");
                 }});
 			}
         }
