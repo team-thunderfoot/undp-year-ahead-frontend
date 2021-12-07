@@ -7,7 +7,7 @@
 /* core Colors */
 $color-a:#421C0E;
 $color-b:#ffffff;
-$color-c:#FDF2E4;
+$color-c:#F3BAA3;
 
 /* red gradient */
 $color-d:#AA3E39;
@@ -18,16 +18,17 @@ $color-f:#F98968;
 $color-g:#F98968;
 
 /* blue gradient */
-$color-h: #2C3A64;
-$color-i: #0A1432;
+$color-h:#2C3A64;
+$color-i:#0A1432;
 
 /* green gradient */
 $color-j:#454E3F;
-$color-k: #21241F;
+$color-k:#21241F;
 
 /* secondary colors */
-$color-l: #F99746;
-$color-m: #FFEC34;
+$color-l:#F99746;
+$color-m:#FFEC34;
+$color-n:#84C7FC;
 
 
 $color-options: (
@@ -43,12 +44,15 @@ $color-options: (
   j: $color-j,
   k: $color-k,
   l: $color-l,
-  m: $color-m
+  m: $color-m,
+  n: $color-n
 );
 
-//needs to be defined
+// needs to be defined
 $colorbg-options: (
-  a: $color-c,
+  a: $color-d,
+  b: $color-e,
+  c: $color-c
 );
 
 /* Typography */
