@@ -49,7 +49,6 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-            console.log(this.chapter);
         },
         handleLoad(){
             this.contentLoaded++;

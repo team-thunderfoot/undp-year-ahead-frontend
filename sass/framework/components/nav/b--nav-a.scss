@@ -4,24 +4,90 @@
     top: 0;
     right: 0;
     width: 50px;
-    background: #8e705f;
+    background: linear-gradient(180deg, rgba(249,137,104,1) 0%, rgba(239,188,162,1) 62%, rgba(240,200,179,1) 81%, rgba(222,161,140,1) 100%);
     z-index: 50;
     height: 100%;
-    &__hd{
-        // empty for now
-    }
-    &__bd{
-        transform: rotate(-90deg) translateY(22px) translateX(-50%);
-        width: 500px;
-        text-align: center;
-        transform-origin: center left;
-        top: 50%;
+    &__bg-items{
         position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        filter: blur(2px);
+        height: 100%;
+        overflow: hidden;
     }
-    &__ft{
-        position:absolute;
-        bottom:0;
-        left:0;
-        background:rgba(197, 168, 168, 0.627);
+    &__ft-items{
+        position: relative;
+        z-index: 10;
+        height: 100%;
+        &__artwork{
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background:rgb(212, 156, 156);
+            top:0;
+            right:-4px;
+            &__item{
+                position: absolute;
+                width: 100%;
+                top:0;
+                height: 0%;
+                background-color: red;
+            }
+        }
+        &__hd{
+            // empty for now
+        }
+        &__bd{
+            transform: rotate(-90deg) translateY(22px) translateX(-50%);
+            width: 500px;
+            text-align: center;
+            transform-origin: center left;
+            top: 50%;
+            position: absolute;
+        }
+        &__ft{
+            position:absolute;
+            bottom:0;
+            left:0;
+            background:rgba(197, 168, 168, 0.627);
+        }
+        
     }
+    // &__hd{
+    //     // empty for now
+    // }
+    // &__bd{
+    //     transform: rotate(-90deg) translateY(22px) translateX(-50%);
+    //     width: 500px;
+    //     text-align: center;
+    //     transform-origin: center left;
+    //     top: 50%;
+    //     position: absolute;
+    // }
+    // &__ft{
+    //     position:absolute;
+    //     bottom:0;
+    //     left:0;
+    //     background:map-get($color-options, a )
+    // }
+    // &__item{
+    //     position:absolute;
+    //     width: 2px;
+    //     height: 100vh;
+    //     background:map-get($color-options, a );
+    //     top:0;
+    //     right:0;
+    //     z-index: 49;
+    //     &__artwork{
+    //         position:absolute;
+    //         width: 100%;
+    //         top:0;
+    //         right:0;
+    //         z-index: 49;
+    //         background:map-get($color-options, c );
+    //         height: 30%;
+    //     }
+    // }
 }

@@ -5,9 +5,7 @@
         <v-chapter-3 @changeURL="changeURL" />
         <!-- <v-progress-nav ref="progress" />
         <v-progress ref="progress" /> -->
-        <div class="element">
-            Chapter Status | {{this.chapterOneContent}}
-        </div>
+     
     </div>
 </template>
 
@@ -60,10 +58,11 @@ export default {
                         end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
                         scrub: true,
                         markers: "true",
-                        // onUpdate: (self) => {
-                        //     var widhtProgress = self.progress.toFixed(2) * 100;
-                        //     this.$refs.progress.$refs.progress.style.width = widhtProgress + '%';
-                        // }
+                        onUpdate: (self) => {
+                            // Update Progress in Nav.vue 
+                            var widthProgress = self.progress.toFixed(2) * 100;
+                            $nuxt.$emit('updateProgressNav',{value:widthProgress})
+                        }
                     }
                 });
                 $nuxt.$emit('siteLoaded')
@@ -75,18 +74,8 @@ export default {
             // event
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
-
             })
         }
     }
 }
 </script>
-<style scoped>
-    .element{
-        position:fixed;
-        left:120px;
-        top:200px;
-        background:red;
-        z-index: 60;
-    }
-</style>
