@@ -2,13 +2,14 @@
     // intro position only
     &__content{
         position:absolute;
-        bottom:90px;
-        left:5%;
+        top: 46%;
+        left: 3%;
 
         // intro second box
         &--second{
-            left:18%;
-            bottom:21%
+            top: 14%;
+            left: 16%;
+            
         }
     }
    
@@ -24,14 +25,20 @@
 
         // Browser
         &--third{
-            top: 17%;
-            left: 24.2%;
+            top: 6%;
+            left: 31.2%;            
         }
 
         // TV
         &--fourth{
             top: 32%;
             left: 31.8%;
+        }
+
+         // TV
+         &--fifth{
+            top: 32%;
+            left: 61.8%;
         }
     }
    

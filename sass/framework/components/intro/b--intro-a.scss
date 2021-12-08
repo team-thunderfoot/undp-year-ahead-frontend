@@ -6,12 +6,16 @@
     padding: $measure * 2 $measure * 3;
     max-width: 539px;
     margin-bottom: 30px;
+    text-align: center;
     z-index: 2;
     &__title{
         font-size: 60px;
+        text-transform: uppercase;
+        line-height: 1;
     }
     &__badge{
         font-size: 100px;
+        text-transform: uppercase;
     }
     &__subtitle{
         font-size:25px;

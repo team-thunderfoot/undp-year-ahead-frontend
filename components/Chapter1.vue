@@ -42,14 +42,23 @@
                     </div>
                 </div>
 
-                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third test1" ref="initalContent">
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third">
                     <img src="@/assets/img/chapter-1/browser.gif" alt="">
                 </div>
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
-                    <div class="b--card-a">
-                        <div class="b--card-a__artwork"></div>
-                        <div class="b--card-a__wrapper">
+                    <div class="b--card-c">
+                        <div class="b--card-c__artwork"></div>
+                        <div class="b--card-c__wrapper">
+                           <img src="@/assets/img/chapter-1/tv.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
+                    <div class="b--card-c">
+                        <div class="b--card-c__artwork"></div>
+                        <div class="b--card-c__wrapper">
                            <img src="@/assets/img/chapter-1/tv.gif" alt="">
                         </div>
                     </div>
