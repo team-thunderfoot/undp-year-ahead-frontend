@@ -4,7 +4,6 @@
           <div class="b--noise-a"></div>
           <v-nav />
           <v-lang />
-          <!-- <v-progress ref="progress" /> -->
           <v-story />
       </div>
 
@@ -59,6 +58,6 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import '@/sass/style.scss';
+//   @import '@/sass/style.scss';
   @import '@/sass/index.scss';
 </style>

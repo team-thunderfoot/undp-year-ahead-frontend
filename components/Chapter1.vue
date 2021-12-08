@@ -9,14 +9,14 @@
             </div>
             <div class="b--ss-a__content">
                 <div class="b--chapter1-a__content">
-                    <div class="b--card-a">
-                        <h1 class="b--card-a__title">
+                    <div class="b--intro-a">
+                        <h1 class="b--intro-a__title">
                             {{chapter.title}}
                         </h1>
-                        <h2 class="b--card-a__badge">
+                        <h2 class="b--intro-a__badge">
                             {{chapter.date}}
                         </h2>
-                        <h3 class="b--card-a__subtitle">{{chapter.description}}</h3>
+                        <h3 class="b--intro-a__subtitle">{{chapter.description}}</h3>
                     </div>
                 </div>
             </div>

@@ -59,6 +59,6 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import '@/sass/style.scss';
+//   @import '@/sass/style.scss';
   @import '@/sass/index.scss';
 </style>
