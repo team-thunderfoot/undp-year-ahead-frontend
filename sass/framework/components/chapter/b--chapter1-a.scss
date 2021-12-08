@@ -33,13 +33,20 @@
         &--fourth{
             top: 32%;
             left: 31.8%;
+            
+            &__artwork{
+               position:relative;
+               top:-10px;
+               z-index: 19;
+            }
         }
 
-         // TV
-         &--fifth{
-            top: 32%;
-            left: 61.8%;
-        }
+    }
+    &__item{
+        position: absolute;
+        z-index: 150;
+        top: 12%;
+        left: 44.8%;
     }
    
 }

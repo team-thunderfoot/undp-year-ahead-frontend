@@ -53,16 +53,23 @@
                            <img src="@/assets/img/chapter-1/tv.gif" alt="">
                         </div>
                     </div>
+                    <img class="b--chapter1-a__artwork--fourth__artwork" src="@/assets/img/chapter-1/tv-set.png" alt="">
                 </div>
 
-                  <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
-                    <div class="b--card-c">
-                        <div class="b--card-c__artwork"></div>
-                        <div class="b--card-c__wrapper">
-                           <img src="@/assets/img/chapter-1/tv.gif" alt="">
+
+                <div class="b--chapter1-a__item">
+                    <div class="b--quote-a">
+                        <div class="b--quote-a__content">
+                            "To make a difference to people's"
+                        </div>
+                        <div class="b--quote-a__meta">
+                            <h3 class="b--quote-a__meta__title">Title</h3>
+                            <h4 class="b--quote-a__meta__subtitle">Director of INDP Bureau for Policy and Programe Support</h4>
                         </div>
                     </div>
                 </div>
+
+
 
             </div>
             <div class="b--ss-a__bg-items">

@@ -1,5 +1,14 @@
 .b--quote-a{
+    max-width: 450px;
     &__content{
         font-size: 40px;
+    }
+    &__meta{
+        &__title{
+            display: inline;
+        }
+        &__subtitle{
+            display: inline;
+        }
     }
 }
