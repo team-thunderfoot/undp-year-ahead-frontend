@@ -11,7 +11,7 @@
 
                 <!-- Intro Story -->
                 <!-- first div position element -->
-                <div class="b--chapter1-a__content">
+                <div class="b--chapter1-a__content " >
                     <div class="b--intro-a">
                         <h1 class="b--intro-a__title">
                             {{chapter.title}}
@@ -27,7 +27,7 @@
                 <div class="b--chapter1-a__content b--chapter1-a__content--second">
                     <div class="b--card-a">
                         <div class="b--card-a__artwork"></div>
-                        <div class="b--card-a__wrapper">
+                        <div class="b--card-a__wrapper b--content-a">
                             <SanityContent :blocks="chapter.content"  />
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third">
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third test1" ref="initalContent">
                     <img src="@/assets/img/chapter-1/browser.gif" alt="">
                 </div>
 
@@ -89,7 +89,11 @@ export default {
                 "content" : content['`+this.lang+`']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
+            this.$nextTick(() => {
+                // if we want to animate something later 
+            })
             this.contentLoaded++;
+
         },
         handleLoad(){
             this.contentLoaded++;
@@ -104,9 +108,9 @@ export default {
     },
     created(){
         if(process.client){
-            this.getContent();
+            this.getContent();   
         }
-    }
+    },
 }
 </script>
 
