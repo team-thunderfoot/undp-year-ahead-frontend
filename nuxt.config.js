@@ -6,7 +6,6 @@ export default {
       '/',
       '/fr',
       '/es',
-      '/test'
     ]
   },
   // router: {
@@ -31,7 +30,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
-
   gsap: {
     extraPlugins: {
       scrollTo: true,
@@ -49,17 +47,6 @@ export default {
       ],
   },
 
-  googleFonts: {
-    /* module options */
-    families: {
-      Inter: [400, 700,900],
-    },
-    display: 'swap',
-    preload: true,
-    useStylesheet: true,
-    subsets: 'latin',
-    download:true
-  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -71,7 +58,6 @@ export default {
   buildModules: [
     '@nuxtjs/sanity/module',
     'nuxt-gsap-module',
-    '@nuxtjs/google-fonts'
   ],
 
   sanity: {

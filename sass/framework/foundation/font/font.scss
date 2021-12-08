@@ -28,33 +28,27 @@
 }
 
 
-// PROXIMA NOVA
 
+// Proxima Nova
 @font-face {
   font-family: 'Proxima Nova';
-  src: url('~assets/fonts/ProximaNova/ProximaNova-regular-webfont.woff') format('woff');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-regular-webfont.woff2') format('woff2');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-regular.otf') format('opentype');
-  font-weight: 300;
+  src: url('~assets/fonts/ProximaNova/ProximaNova-Regular.eot');
+  src: url('~assets/fonts/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Proxima Nova';
-  src: url('~assets/fonts/ProximaNova/ProximaNova-regularit-webfont.woff') format('woff');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-regularit-webfont.woff2') format('woff2');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-regularit.otf') format('opentype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('~assets/fonts/ProximaNova/ProximaNova-semibold-webfont.woff') format('woff');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-semibold-webfont.woff2') format('woff2');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-semibold.otf') format('opentype');
+  src: url('~assets/fonts/ProximaNova/ProximaNova-Semibold.eot');
+  src: url('~assets/fonts/ProximaNova/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Semibold.woff') format('woff'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Semibold.ttf') format('truetype'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Semibold.svg#ProximaNova-Semibold') format('svg');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -62,72 +56,63 @@
 
 @font-face {
   font-family: 'Proxima Nova';
-  src: url('~assets/fonts/ProximaNova/ProximaNova-semiboldit-webfont.woff') format('woff');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-semiboldit-webfont.woff2') format('woff2');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-semiboldit.otf') format('opentype');
-  font-weight: 600;
-  font-style: italic;
+  src: url('~assets/fonts/ProximaNova/ProximaNova-Bold.eot');
+  src: url('~assets/fonts/ProximaNova/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype'),
+      url('~assets/fonts/ProximaNova/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
   font-display: swap;
 }
 
+
+// Sohne Breit
 @font-face {
-  font-family: 'Proxima Nova';
-  src: url('~assets/fonts/ProximaNova/ProximaNova-bold-webfont.woff') format('woff');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-bold-webfont.woff2') format('woff2');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-bold.otf') format('opentype');
-  font-weight: 700;
+  font-family: 'Sohne Breit';
+  src: url('~assets/fonts/SohneBreit/SohneBreit-Fett.eot');
+  src: url('~assets/fonts/SohneBreit/SohneBreit-Fett.eot?#iefix') format('embedded-opentype'),
+      url('~assets/fonts/SohneBreit/SohneBreit-Fett.woff') format('woff'),
+      url('~assets/fonts/SohneBreit/SohneBreit-Fett.ttf') format('truetype'),
+      url('~assets/fonts/SohneBreit/SohneBreit-Fett.svg#SohneBreit-Fett') format('svg');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Proxima Nova';
-  src: url('~assets/fonts/ProximaNova/ProximaNova-boldit-webfont.woff') format('woff');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-boldit-webfont.woff2') format('woff2');
-  src: url('~assets/fonts/ProximaNova/ProximaNova-boldit.otf') format('opentype');
-  font-weight: 700;
+  font-family: 'Sohne Breit';
+  src: url('~assets/fonts/SohneBreit/SohneBreit-FettKursiv.eot');
+  src: url('~assets/fonts/SohneBreit/SohneBreit-FettKursiv.eot?#iefix') format('embedded-opentype'),
+      url('~assets/fonts/SohneBreit/SohneBreit-FettKursiv.woff') format('woff'),
+      url('~assets/fonts/SohneBreit/SohneBreit-FettKursiv.ttf') format('truetype'),
+      url('~assets/fonts/SohneBreit/SohneBreit-FettKursiv.svg#SohneBreit-FettKursiv') format('svg');
+  font-weight: 900;
   font-style: italic;
   font-display: swap;
 }
 
-// SOEHNE BREIT
+@font-face {
+  font-family: 'Sohne Breit';
+  src: url('~assets/fonts/SohneBreit/SohneBreit-DreiviertelfettKurs.eot');
+  src: url('~assets/fonts/SohneBreit/SohneBreit-DreiviertelfettKurs.eot?#iefix') format('embedded-opentype'),
+      url('~assets/fonts/SohneBreit/SohneBreit-DreiviertelfettKurs.woff') format('woff'),
+      url('~assets/fonts/SohneBreit/SohneBreit-DreiviertelfettKurs.ttf') format('truetype'),
+      url('~assets/fonts/SohneBreit/SohneBreit-DreiviertelfettKurs.svg#SohneBreit-DreiviertelfettKurs') format('svg');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
 
 @font-face {
-  font-family: 'Soehne Breit';
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-semibold.woff') format('woff');
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-semibold.woff2') format('woff2');
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-semibold.otf') format('opentype');
-  font-weight: 600;
+  font-family: 'Sohne Breit';
+  src: url('~assets/fonts/SohneBreit/SohneBreit-Dreiviertelfett.eot');
+  src: url('~assets/fonts/SohneBreit/SohneBreit-Dreiviertelfett.eot?#iefix') format('embedded-opentype'),
+      url('~assets/fonts/SohneBreit/SohneBreit-Dreiviertelfett.woff') format('woff'),
+      url('~assets/fonts/SohneBreit/SohneBreit-Dreiviertelfett.ttf') format('truetype'),
+      url('~assets/fonts/SohneBreit/SohneBreit-Dreiviertelfett.svg#SohneBreit-Dreiviertelfett') format('svg');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Soehne Breit';
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-semiboldit.woff') format('woff');
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-semiboldit.woff2') format('woff2');
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-semiboldit.otf') format('opentype');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Soehne Breit';
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-bold.woff') format('woff');
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-bold.woff2') format('woff2');
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Soehne Breit';
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-boldit.woff') format('woff');
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-boldit.woff2') format('woff2');
-  src: url('~assets/fonts/SoehneBreit/SoehneBreit-boldit.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
