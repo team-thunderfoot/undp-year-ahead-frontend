@@ -35,15 +35,24 @@
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second">
                     <div class="b--card-b">
-                        <div class="b--card-a__artwork"></div>
-                        <div class="b--card-a__wrapper">
+                        <div class="b--card-b__artwork"></div>
+                        <div class="b--card-b__wrapper">
                            <img src="@/assets/img/chapter-1/frame.gif" alt="">
                         </div>
                     </div>
                 </div>
 
-                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third">
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third">
                     <img src="@/assets/img/chapter-1/browser.gif" alt="">
+                </div>
+
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
+                    <div class="b--card-a">
+                        <div class="b--card-a__artwork"></div>
+                        <div class="b--card-a__wrapper">
+                           <img src="@/assets/img/chapter-1/tv.gif" alt="">
+                        </div>
+                    </div>
                 </div>
 
             </div>

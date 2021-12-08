@@ -8,6 +8,7 @@
         // intro second box
         &--second{
             left:18%;
+            bottom:21%
         }
     }
    
@@ -20,10 +21,17 @@
             top: 7%;
             left: 2%;
         }
+
         // Browser
         &--third{
-            top: 7%;
-            left: 19%;
+            top: 17%;
+            left: 24.2%;
+        }
+
+        // TV
+        &--fourth{
+            top: 32%;
+            left: 31.2%;
         }
     }
    
