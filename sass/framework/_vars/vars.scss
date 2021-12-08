@@ -3,35 +3,42 @@
 */
 
 
+// BROWNS
+$color-a:#421C0E;
+$color-b:#AA3E39;
+$color-c:#DC8E7A;
+$color-d:#744A45;
+$color-b:#B36148;
 
-$color-a:#0a1432;
-$color-b:#2c3a64;
-$color-c:#421c0e;
-$color-d:#aa3e39;
+// WHITE & "BLACK"
+$color-c:#FFFFFF;
+$color-c:#2F2929;
 
-$color-b:#F98968;
-$color-c:#FFF2E4;
+// CREAM
+$color-d:#FFF2E4;
+$color-e:#F1CDBA;
+$color-f:#F9DDBF;
 
+// GREY
+$color-g:#C7C7C7;
+$color-h:#B4BFD1;
+$color-i:#A4B0C6;
 
-$color-d:#AA3E39;
-$color-e:#701C18;
+// ORANGE
+$color-j:#F99746;
+$color-k:#E8945B;
+$color-l:#F98968;
 
+// GREEN
+$color-m:#57624F;
+$color-n:#79B27F;
+$color-o:#3D4538;
 
-$color-f:#F98968;
-$color-g:#F98968;
-
-
-$color-h:#2C3A64;
-$color-i:#0A1432;
-
-
-$color-j:#454E3F;
-$color-k:#21241F;
-
-$color-l:#F99746;
-$color-m:#FFEC34;
-$color-n:#84C7FC;
-
+// BLUE
+$color-p:#2C3A64;
+$color-q:#33579E;
+$color-r:#35488B;
+$color-s:#33579E;
 
 $color-options: (
   a: $color-a,
@@ -47,10 +54,39 @@ $color-options: (
   k: $color-k,
   l: $color-l,
   m: $color-m,
-  n: $color-n
+  n: $color-n,
+  o: $color-o,
+  p: $color-p,
+  q: $color-q,
+  r: $color-r,
+  s: $color-s,
 );
 
 // needs to be defined
+// Gradient Brown1
+// linear-gradient(180deg, #B84C42 0%, rgba(184, 76, 66, 0) 100%)
+// Gradient Brown2
+// linear-gradient(180deg, #E1BEB1 0%, rgba(225, 190, 177, 0) 100%)
+// Gradient Brown3
+// linear-gradient(156.66deg, #B84C42 -7.55%, #57201B 101.54%)
+// Gradient Cream1
+// linear-gradient(180deg, #F1CDBA 0%, rgba(241, 205, 186, 0) 100%)
+// Gradient Cream2
+// linear-gradient(180deg, #F9DDBF 3.39%, rgba(249, 221, 191, 0) 91.93%)
+// Gradient White
+// linear-gradient(180deg, #FAFAFA 24.56%, rgba(250, 250, 250, 0) 161.83%)
+// Gradient White2
+// linear-gradient(180deg, #FFF3E9 0%, rgba(255, 243, 233, 0.6) 100%)
+// Gradient Orange1
+// linear-gradient(180deg, #F98968 0%, rgba(249, 137, 104, 0) 100%)
+// Gradient Orange2
+// linear-gradient(180deg, #FCA56B 0%, rgba(252, 165, 107, 0) 100%)
+// Gradient Green 1
+// linear-gradient(180deg, #454E3F 0%, rgba(33, 36, 31, 0.45) 100%)
+// Gradient Blue1
+// linear-gradient(218.3deg, #2C3A64 22.06%, #0A1432 74.88%)
+// Gradient Blue2
+// linear-gradient(360deg, #33579E 47.51%, #A6C4FF 147.8%)
 $colorbg-options: (
   a: $color-d,
   b: $color-e,

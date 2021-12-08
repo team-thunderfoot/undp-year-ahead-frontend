@@ -3,17 +3,28 @@
     &__content{
         position:absolute;
         bottom:90px;
-        left:150px
+        left:5%;
+
+        // intro second box
+        &--second{
+            left:18%;
+        }
     }
-    //buble
+   
     &__artwork{
         position: absolute;
-        // width: 120px;
-        // height: 120px;
-        // background: red;
-        // background: url('@/assets/img/chapter-1/bubble.svg');
-        left: 70.5%;
-        top: 51%;
         z-index: 150;
+
+        // Gif top left
+        &--second{
+            top: 7%;
+            left: 2%;
+        }
+        // Browser
+        &--third{
+            top: 7%;
+            left: 19%;
+        }
     }
+   
 }

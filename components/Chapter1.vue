@@ -8,6 +8,9 @@
                 <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/front.png" alt=""> 
             </div>
             <div class="b--ss-a__content">
+
+                <!-- Intro Story -->
+                <!-- first div position element -->
                 <div class="b--chapter1-a__content">
                     <div class="b--intro-a">
                         <h1 class="b--intro-a__title">
@@ -19,6 +22,30 @@
                         <h3 class="b--intro-a__subtitle">{{chapter.description}}</h3>
                     </div>
                 </div>
+                <!-- Intro Story -->
+
+                <div class="b--chapter1-a__content b--chapter1-a__content--second">
+                    <div class="b--card-a">
+                        <div class="b--card-a__artwork"></div>
+                        <div class="b--card-a__wrapper">
+                            <SanityContent :blocks="chapter.content"  />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second">
+                    <div class="b--card-b">
+                        <div class="b--card-a__artwork"></div>
+                        <div class="b--card-a__wrapper">
+                           <img src="@/assets/img/chapter-1/frame.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third">
+                    <img src="@/assets/img/chapter-1/browser.gif" alt="">
+                </div>
+
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/back.png" alt="">    
@@ -30,6 +57,7 @@
 <script>
 // Data import
 import { groq } from '@nuxtjs/sanity';
+import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
 
 export default {
     data:()=>{
@@ -39,13 +67,17 @@ export default {
             chapter : null,
 		}
 	},
+    components:{
+        SanityContent
+    },
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
             const query_content = groq`*[_type == "chapterOne"][0]{
                 "title" : title['`+this.lang+`'],
                 "date" : date['`+this.lang+`'],
-                "description" : description['`+this.lang+`']
+                "description" : description['`+this.lang+`'],
+                "content" : content['`+this.lang+`']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
