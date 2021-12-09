@@ -2,7 +2,8 @@
   font-family: $type-a;
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 6.25rem; // FONTS SHOULD BE IN REM
+  // font-size: 6.25rem; // FONTS SHOULD BE IN REM
+  font-size: 9.766vh;
   line-height: 0.889;
   @media all and ($viewport-type: $tabletl) {
   //   // ASK MECHE - NOT EVEN DESIGNED
@@ -14,7 +15,8 @@
   font-family: $type-a;
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 3.06rem; // FONTS SHOULD BE IN REM
+  // font-size: 3.06rem; // FONTS SHOULD BE IN REM
+  font-size: 4.785vh;
   line-height: 1.089;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
@@ -44,7 +46,8 @@
 @mixin make-font-e {
   font-family: $type-b;
   font-weight: 600;
-  font-size: 2rem;
+  // font-size: 2rem;
+  font-size: 3.125vh;
   line-height: 1.089;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED

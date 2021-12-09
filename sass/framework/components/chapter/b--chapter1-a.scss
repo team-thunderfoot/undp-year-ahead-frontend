@@ -2,14 +2,19 @@
     // intro position only
     &__content{
         position:absolute;
-        top: 46%;
-        left: 3%;
+        // top: 46%;
+        // left: 3%;
 
+        top: 48.63%;
+        left: 2.81%;
+        width: 11.91%;
+        height: 100%;
         // intro second box
         &--second{
             top: 14%;
             left: 16%;
-            
+
+            width: auto;
         }
     }
    
