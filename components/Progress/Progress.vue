@@ -63,10 +63,12 @@ export default {
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
                 }}); 
+            }else{
+                this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
             }
 		},
     },
-    created(){
+    mounted(){
         this.goToChapter();
     }
 }
