@@ -11,7 +11,7 @@
                 <div class="b--chapter1-a__content " >
                     <div class="b--intro-a">
                         <h1 class="b--intro-a__title">
-                            {{chapter.title}} ++ {{positionBaseOnURL}}
+                            {{chapter.title}}
                         </h1>
                         <h2 class="b--intro-a__badge">
                             {{chapter.date}}
