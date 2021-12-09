@@ -74,6 +74,19 @@
                     </div>
                 </div>
 
+                <div class="b--chapter1-a__info">
+                    <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
+                        <div class="b--info-chapter-a__icon">
+                            i
+                        </div>
+                    </div>
+                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}">
+                        <div class="b--info-window-a__content">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio quis eius tempora rem, recusandae nulla reprehenderit officia dolore sint, inventore in facilis tempore quas deserunt omnis enim nam ullam vel.</p>
+                        </div>
+                    </div>
+                </div>
+
                 
             </div>
             <div class="b--ss-a__bg-items">
@@ -88,7 +101,12 @@
 import { groq } from '@nuxtjs/sanity';
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
 
+import Vue from 'vue';
+import infoWindow from '@/mixins/infoChapter.js';
+Vue.mixin(infoWindow)
+
 export default {
+    mixins:['infoWindow'],
     data:()=>{
 		return{
             totalContent:3,
@@ -135,18 +153,7 @@ export default {
                     }
                 });
 
-                let tlBird = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".b--tv-a",
-                        scrub: true,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector(".b--tv-a").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector(".b--tv-a").offsetWidth,
-                    }
-                });
-                tlBird.to(document.querySelector('.b--tv-a'), {duration: 40, x:-100});
-
+               
             })
             this.contentLoaded++;
 

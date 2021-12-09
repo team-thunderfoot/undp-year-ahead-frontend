@@ -1,0 +1,19 @@
+.b--info-window-a{
+    position:relative;
+    top:-$measure *2;
+    left:$measure*2;
+    z-index: 29;
+    background:magenta;
+    padding:10px;
+    border:5px solid orange;
+    max-width: 250px;
+    transition: all 0.5s 0s ease;
+    opacity: 0;
+    &--is-visible{
+        opacity: 1;
+        pointer-events: all;
+    }
+    &__content{
+        padding:10px;
+    }
+}

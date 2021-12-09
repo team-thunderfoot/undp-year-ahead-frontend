@@ -44,6 +44,10 @@
 // Motion
 @import './framework/components/motion/b--motion-a.scss';
 
+// Chapter Information
+@import './framework/components/info-chapter/b--info-chapter-a.scss';
+@import './framework/components/info-window/b--info-window-a.scss';
+
 .b--bird-a {
   position: absolute;
   left: 45%;
