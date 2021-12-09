@@ -137,17 +137,32 @@ export default {
                 });
 
                 let tlBird = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".b--tv-a",
+                        scrollTrigger: {
+                        trigger: ".b--card-c__bd__media",
                         scrub: true,
+                        markers : true,
                         start: () =>
-                            "top top" +
+                            "top top-500" +
                             (document.querySelector(".b--tv-a").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector(".b--tv-a").offsetWidth,
                     }
                 });
-                console.log(tlBird);
-                tlBird.to(document.querySelector('.b--tv-a'), {duration: 2, x: 100});
+
+                tlBird.to(document.querySelector('.b--tv-a'), {duration: 40, x:-100});
+
+
+                // let tlBird = this.$gsap.timeline({
+                //     scrollTrigger: {
+                //         trigger: ".b--tv-a",
+                //         scrub: true,
+                //         start: () =>
+                //             "top top" +
+                //             (document.querySelector(".b--tv-a").offsetLeft - window.innerWidth),
+                //         end: () => "+=" + document.querySelector(".b--tv-a").offsetWidth,
+                //     }
+                // });
+                // console.log(tlBird);
+                // tlBird.to(document.querySelector('.b--tv-a'), {duration: 2, x: 100});
             })
             this.contentLoaded++;
 
