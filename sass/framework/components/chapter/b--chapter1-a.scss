@@ -2,18 +2,18 @@
     // intro position only
     &__content{
         position:absolute;
-
-        top: 48.63%;
+        top: 48%;
         left: 2.81%;
         width: 11.91%;
-        height: 100%;
+        max-width: calc(100vw - 60px);
+        max-height: calc(100vh - 12.23vh - 48vh);
+        // height: 100%;
         // intro second box
         &--second{
             top: 14%;
             left: 16%;
-
-            width: auto;
-            height: auto;
+            width: 12.09%;
+            max-height: calc(100vh - 12.23vh - 14vh);
         }
     }
    
@@ -45,11 +45,6 @@
             }
         }
 
-        // bubble
-        &--fifth{
-            left: 71.5%;
-            bottom: 35%;       
-        }
     }
     &__item{
         position: absolute;

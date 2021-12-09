@@ -125,10 +125,13 @@ export default {
                             (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
                         onEnter: () => {
+                            // emit in story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
                         },
                         onEnterBack: () => {
+                            // emit in story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+
                         }
                     }
                 });

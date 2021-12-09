@@ -2,24 +2,29 @@
 
 .b--card-a{
     position: relative;
+    padding: $measure * 3 $measure * 6;
+    border: 15px solid map-get($color-options , b);
+    box-shadow: 12px 0px 0px map-get($color-options , a);
+    background: $gradient-g;
+    max-height: calc(100vh - 12.23vh - 14vh - 30px);
+    overflow: auto;
+    @media all and ($viewport-type: $mobile) {
+        padding: $measure * 3;
+        border: 8px solid map-get($color-options , b);
+        box-shadow: 6px 0px 0px map-get($color-options , a);
+        max-height: calc(100vh - 12.23vh - 14vh - 16px);
+    }
+    &::before{
+        content:'';
+        position:absolute;
+        left:0;top:0;
+        width: 100%;
+        height: 100%;
+        background:  url('@/assets/img/pattern.png') ;
+        background-size: cover;
+        opacity: 0.2;
+    }
     &__wrapper{
-        background: $gradient-g;
-        padding: $measure * 3 $measure * 6;
-        max-width: 539px;
-        // margin-bottom: 30px;
-        // z-index: 2;
-        border: 15px solid map-get($color-options , b);
-        box-shadow: 12px 0px 0px map-get($color-options , a);
-        &::before{
-            content:'';
-            position:absolute;
-            left:0;top:0;
-            width: 100%;
-            height: 100%;
-            background:  url('@/assets/img/pattern.png') ;
-            background-size: cover;
-            opacity: 0.2;
-        }
     }
     
 }

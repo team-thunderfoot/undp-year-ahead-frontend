@@ -6,7 +6,7 @@
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />
-        <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded"/>
+        <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" :isLoadedURLParam="isLoadedURLParam" />
     </div>
 </template>
 
@@ -26,7 +26,8 @@ export default {
             totalChapters:6,
 			statusChapter : 0,
             urlWithParams :false,
-            urlName : false
+            urlName : false,
+            isLoadedURLParam : false
 		}
 	},
     props : [
@@ -79,27 +80,32 @@ export default {
                 $nuxt.$emit('siteLoaded');
             })
         },
-        positionBasedURL(){
+        checkURL(){
             if(process.client){
                 var currentURL = window.location.href;
-                var pathname = currentURL.split('/');	
-                if(pathname[pathname.length-1].includes("Scene")){
-                    this.urlWithParams = true;
-                    this.urlName = pathname[pathname.length-1];
+                var pathname = currentURL.split('/');	// split url in array
+                if(pathname[pathname.length-1].includes("Scene")){ // check if url contains Scene string
+                    this.urlWithParams = true; // Url with param inside
+                    this.urlName = pathname[pathname.length-1]; // ID in the url param
                 }
             }
 		},
     },
-    created(){
-        this.positionBasedURL();
+    mounted(){
         if(process.client){
-            // event
+            this.checkURL();
+            // event in Index.vue
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
             });
+            this.$nuxt.$on('isLoadedURL', (payload) => {
+                this.isLoadedURLParam = true
+            });
             this.$nuxt.$on('changeURL', (payload) => {
-                // window.location.hash = payload.url;
-            })
+                if(this.isLoadedURLParam){
+                    window.location.href =  this.$route.path  + '#' + payload.url;
+                }
+            });
         }
     }
 }
