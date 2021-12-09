@@ -6,6 +6,7 @@
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />
+        <v-progress :positionBaseOnURL="positionBaseOnURL" :urlName="urlName" v-if="isLoaded"/>
     </div>
 </template>
 
@@ -17,16 +18,20 @@ import Chapter4 from '~/components/Chapter4.vue';
 import Chapter5 from '~/components/Chapter5.vue';
 import Chapter6 from '~/components/Chapter6.vue';
 
+import Progress from '@/components/Progress/Progress.vue';
 
 export default {
     data:()=>{
 		return{
             totalChapters:6,
 			statusChapter : 0,
+            positionBaseOnURL :false,
+            urlName : false
 		}
 	},
     props : [
-        'positionBaseOnURL'
+        // 'positionBaseOnURL',
+        'isLoaded'
     ],
     components:{
         'v-chapter-1':Chapter1,
@@ -35,6 +40,7 @@ export default {
         'v-chapter-4':Chapter4,
         'v-chapter-5':Chapter5,
         'v-chapter-6':Chapter6,
+        'v-progress' : Progress
     },
     watch: {
         statusChapter(newValue, oldValue) {
@@ -74,12 +80,24 @@ export default {
                 $nuxt.$emit('siteLoaded');
             })
         },
+        positionBasedURL(payload){
+            if(process.client){
+                var currentURL = window.location.href;
+                var pathname = currentURL.split('/');	
+                if(pathname[pathname.length-1].includes("Scene")){
+                    this.positionBaseOnURL = true;
+                    this.urlName =  pathname[pathname.length-1];
+                }
+            }
+		},
         changeURL(payload){
+            console.log('payload',payload);
             window.location.hash = payload.url;
         },
         
     },
     created(){
+        this.positionBasedURL();
         if(process.client){
             // event
             this.$nuxt.$on('assetLoaded', () => {

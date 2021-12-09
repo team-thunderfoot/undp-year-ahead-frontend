@@ -13,6 +13,10 @@ export default {
            maxStories : 6
 		}
 	},
+    props : [
+        'urlName',
+        'positionBaseOnURL',
+    ],
     methods :  {
         goTo(payload) {
 			if(payload == 'next'){
@@ -41,12 +45,9 @@ export default {
 			}
         },
         goToChapter(){
-            var currentURL = window.location.href;
-            var pathname = currentURL.split('/');	
-            var chapter = false;
-            if(pathname[pathname.length-1].includes("Scene")){
-                var chapter =  pathname[pathname.length-1];
-                var sceneName  = document.querySelector(chapter);
+            if(this.positionBaseOnURL){
+                console.log("asads",this.urlName);
+                var sceneName  = document.querySelector(this.urlName);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
                     //do something after going to section
@@ -58,6 +59,9 @@ export default {
     mounted() {
         this.progressItems = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' , 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen'];
         this.$refs.prev.classList.add("disabled");
+     
+    },
+    created(){
         this.goToChapter();
     }
 }
