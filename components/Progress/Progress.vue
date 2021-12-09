@@ -62,7 +62,7 @@ export default {
                     if(words[1] == this.maxStories){
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
-                    $nuxt.$emit('isLoadedURL', { 'url'  : 'GOTO'})
+                    $nuxt.$emit('isLoadedURL');
                 }}); 
             }else{
                 this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining

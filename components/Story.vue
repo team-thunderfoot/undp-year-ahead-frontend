@@ -6,7 +6,7 @@
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />
-        <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" :isLoadedURLParam="isLoadedURLParam" />
+        <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" />
     </div>
 </template>
 
