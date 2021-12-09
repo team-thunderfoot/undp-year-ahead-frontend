@@ -23,7 +23,6 @@
 
                 <div class="b--chapter1-a__content b--chapter1-a__content--second">
                     <div class="b--card-a">
-                        <div class="b--card-a__artwork"></div>
                         <div class="b--card-a__wrapper b--content-a">
                             <SanityContent :blocks="chapter.content"  />
                         </div>

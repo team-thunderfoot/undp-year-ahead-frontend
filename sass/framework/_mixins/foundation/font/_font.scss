@@ -2,9 +2,9 @@
   font-family: $type-a;
   font-weight: 800;
   text-transform: uppercase;
-  // font-size: 6.25rem; // FONTS SHOULD BE IN REM
-  font-size: 9.766vh;
   line-height: 0.889;
+  font-size: 6.25rem;
+  font-size: clamp(80px, 9.766vh, 6.25rem);
   @media all and ($viewport-type: $tabletl) {
   //   // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -15,9 +15,9 @@
   font-family: $type-a;
   font-weight: 800;
   text-transform: uppercase;
-  // font-size: 3.06rem; // FONTS SHOULD BE IN REM
-  font-size: 4.785vh;
   line-height: 1.089;
+  font-size: 3.06rem;
+  font-size: clamp(40px, 4.785vh, 3.06rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -26,8 +26,9 @@
 @mixin make-font-c {
   font-family: $type-a;
   font-weight: 700;
-  font-size: 2.5rem;
   line-height: 1.089;
+  font-size: 2.5rem;
+  font-size: clamp(30px, 3.9vh, 2.5rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -36,8 +37,9 @@
 @mixin make-font-d {
   font-family: $type-b;
   font-weight: 600;
-  font-size: 2.1875rem;
   line-height: 1.14;
+  font-size: 2.1875rem;
+  font-size: clamp(28px, 3.42vh, 2.1875rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -46,9 +48,9 @@
 @mixin make-font-e {
   font-family: $type-b;
   font-weight: 600;
-  // font-size: 2rem;
-  font-size: 3.125vh;
   line-height: 1.089;
+  font-size: 2rem;
+  font-size: clamp(28px, 3.125vh, 2rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -57,8 +59,9 @@
 @mixin make-font-f {
   font-family: $type-b;
   // font-weight: 400;
-  font-size: 1.5625rem;
   line-height: 1.09;
+  font-size: 1.5625rem;
+  font-size: clamp(16px, 2.44vh, 1.5625rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -67,8 +70,9 @@
 @mixin make-font-g {
   font-family: $type-b;
   // font-weight: 400;
-  font-size: 1.5rem;
   line-height: 1.1429;
+  font-size: 1.5rem;
+  font-size: clamp(16px, 2.34vh, 1.5rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -81,6 +85,7 @@
   line-height: 1.125;
   text-transform: uppercase;
   font-size: 1rem;
+  font-size: clamp(14px, 1.56vh, 1rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -91,6 +96,7 @@
   font-weight: 400;
   line-height: 1.0887;
   font-size: 0.9375rem;
+  font-size: clamp(13px, 1.46vh, 0.9375rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -103,6 +109,7 @@
   letter-spacing: 3%;
   text-transform: uppercase;
   font-size: 0.875rem;
+  font-size: clamp(12px, 1.37vh, 0.875rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
@@ -113,6 +120,7 @@
   font-weight: 400;
   line-height: 1.0887;
   font-size: 0.838125rem;
+  font-size: clamp(10px, 1.31vh, 0.838125rem);
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }

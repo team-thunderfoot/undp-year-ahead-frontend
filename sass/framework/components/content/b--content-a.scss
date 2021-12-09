@@ -4,7 +4,10 @@
 @import './../../_mixins/components/content/b--content-block-quote.scss';
  
 .b--content-a {
-    p{ font-size: 24px;}
+    p{
+        @include make-font-f();
+        margin-bottom: $measure*3;
+    }
     // @include headings ();
     // @include lists-and-paragraphs ();
     // @include links();
