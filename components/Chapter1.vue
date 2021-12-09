@@ -108,7 +108,7 @@ export default {
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
                 // if we want to animate something later 
-                let tlSection = this.$gsap.timeline({
+                var tlSection = this.$gsap.timeline({
                     scrollTrigger: {
                         trigger: "#Scene1",
                         scrub: 0,
