@@ -4,10 +4,7 @@
             <div class="b--noise-a"></div>
             <v-nav />
             <v-lang />
-            <v-story :isLoaded="isLoaded"/>
-
-            <!-- <v-story :positionBaseOnURL="positionBaseOnURL"/> -->
-            <!-- <v-progress v-if="isLoaded" @positionBasedURL="positionBasedURL"/> -->
+            <v-story :isLoaded="isLoaded" />
         </div>
 
         <div class="b--preloader-a" :class="{'b--preloader-a--is-hidden':isLoaded}">
@@ -23,39 +20,23 @@
 import Nav from '@/components/Nav';
 import Lang from '@/components/Lang';
 import Story from '~/components/Story';
-// import Progress from '@/components/Progress/Progress.vue';
 
 export default {
 	data:()=>{
 		return{
 			isLoaded : false,
-            // positionBaseOnURL :false
 		}
 	},
     components : {
         'v-nav':Nav,
         'v-lang':Lang,
         'v-story':Story,
-        // 'v-progress' : Progress
 	},
-    methods : {
-        // positionBasedURL(payload){
-        //     console.log('positionBaseOnURL',this.positionBaseOnURL);
-        //     if(process.client){
-        //         var currentURL = window.location.href;
-        //         var pathname = currentURL.split('/');	
-        //         if(pathname[pathname.length-1].includes("Scene")){
-        //             this.positionBaseOnURL = true;
-        //         }
-        //     }
-		// },
-    },
     created(){
         if(process.client){
             this.$nuxt.$on('siteLoaded', () => {
                 setTimeout(() => {
                     this.isLoaded = true;
-                    // this.positionBasedURL();
                 }, 300);
             })
         }

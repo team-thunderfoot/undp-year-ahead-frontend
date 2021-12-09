@@ -1,7 +1,7 @@
 <template>
-    <div class="b--progress-b">
-        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-b__arrow b--progress-b__arrow--prev"> </a>
-        <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-b__arrow b--progress-b__arrow--next"> </a>
+    <div class="b--progress-a">
+        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-a__arrow b--progress-a__arrow--prev"> </a>
+        <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-a__arrow b--progress-a__arrow--next"> </a>
     </div>
 </template>
 <script>
@@ -14,7 +14,7 @@ export default {
 	},
     props : [
         'urlName',
-        'positionBaseOnURL',
+        'urlWithParams',
     ],
     methods :  {
         goTo(payload) {
@@ -48,7 +48,7 @@ export default {
 			}
         },
         goToChapter(){
-            if(this.positionBaseOnURL){
+            if(this.urlWithParams){
                 var sceneName  = document.querySelector(this.urlName);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
@@ -72,5 +72,5 @@ export default {
 }
 </script>
 <style lang="scss">
-    @import '@/sass/framework/components/progress/progress-b.scss';
+    @import '@/sass/framework/components/progress/progress-a.scss';
 </style>
