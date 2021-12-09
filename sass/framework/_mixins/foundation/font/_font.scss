@@ -1,9 +1,7 @@
 @mixin make-font-a {
   font-family: $type-a;
-  /* font size should be last element if possible, so 
-    when we changed it on mobile it's easier to see.*/
-  // letter-spacing: 2px;
   font-weight: 800;
+  text-transform: uppercase;
   font-size: 6.25rem; // FONTS SHOULD BE IN REM
   line-height: 0.889;
   @media all and ($viewport-type: $tabletl) {
@@ -14,8 +12,8 @@
 
 @mixin make-font-b {
   font-family: $type-a;
-  // letter-spacing: 2px;
   font-weight: 800;
+  text-transform: uppercase;
   font-size: 3.06rem; // FONTS SHOULD BE IN REM
   line-height: 1.089;
   @media all and ($viewport-type: $tabletl) {

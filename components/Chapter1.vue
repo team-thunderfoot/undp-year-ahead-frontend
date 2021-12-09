@@ -10,13 +10,13 @@
                 <!-- first div position element -->
                 <div class="b--chapter1-a__content " >
                     <div class="b--intro-a">
-                        <h1 class="b--intro-a__title">
-                            {{chapter.title}}
-                        </h1>
-                        <h2 class="b--intro-a__badge">
-                            {{chapter.date}}
-                        </h2>
-                        <h3 class="b--intro-a__subtitle">{{chapter.description}}</h3>
+                        <div class="b--intro-a__wrapper">
+                            <h1 class="b--intro-a__wrapper__title">
+                                {{chapter.title}}
+                                <span class="b--intro-a__wrapper__title__badge">{{chapter.date}}</span>
+                            </h1>
+                            <h2 class="b--intro-a__wrapper__subtitle">{{chapter.description}}</h2>
+                        </div>
                     </div>
                 </div>
                 <!-- Intro Story -->
