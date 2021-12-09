@@ -3,15 +3,10 @@
     position: relative;
     padding: $measure * 3 $measure * 6;
     border: 15px solid map-get($color-options , b);
-    box-shadow: 12px 0px 0px map-get($color-options , a);
     background: $gradient-g;
-    max-height: calc(100vh - 12.23vh - 27.15vh - 30px);
-    overflow: auto;
     @media all and ($viewport-type: $mobile) {
         padding: $measure * 3;
         border: 8px solid map-get($color-options , b);
-        box-shadow: 6px 0px 0px map-get($color-options , a);
-        max-height: calc(100vh - 12.23vh - 27.15vh - 16px);
     }
     &::before{
         content:'';
@@ -23,5 +18,26 @@
         background-size: cover;
         opacity: 0.2;
     }
-    &__wrapper{}
+    &__artwork{
+        position: absolute;
+        top: -15px;
+        left: calc(100% + 15px);
+        width: 12px;
+        height: calc(100% + 30px);
+        background-color: map-get($color-options , a);
+        @media all and ($viewport-type: $mobile) {
+            top: -8px;
+            left: calc(100% + 8px);
+            width: 6px;
+            height: calc(100% + 16px);
+        }
+    }
+    &__wrapper{
+        max-height: calc(100vh - 18.85vh - 17.77vh - $measure*4 - 30px - $measure * 6);
+        overflow: auto;
+        position: relative;
+        @media all and ($viewport-type: $mobile) {
+            max-height: calc(100vh - 18.85vh - 17.77vh - $measure*4 - 16px - $measure * 6);
+        }
+    }
 }

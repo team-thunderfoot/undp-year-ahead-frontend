@@ -2,7 +2,7 @@
     // intro position only
     &__content{
         position:absolute;
-        top: 46%;
+        bottom: 16.79%;
         left: 2.81%;
         width: 11.91%;
         max-width: calc(100vw - 60px);
@@ -10,10 +10,10 @@
         // height: 100%;
         // intro second box
         &--second{
-            top: 27.15%;
+            bottom: 17.77%;
             left: 17.5%;
             width: 12.09%;
-            max-height: calc(100vh - 12.23vh - 27.15vh);
+            max-height: calc(100vh - 18.85vh - 17.77vh - $measure*4);
         }
     }
    
