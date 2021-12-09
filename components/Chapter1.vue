@@ -25,6 +25,8 @@
                     <div class="b--card-a">
                         <div class="b--card-a__wrapper b--content-a">
                             <SanityContent :blocks="chapter.content"  />
+                            <SanityContent :blocks="chapter.content"  />
+                            <SanityContent :blocks="chapter.content"  />
                         </div>
                     </div>
                 </div>

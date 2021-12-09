@@ -6,14 +6,14 @@
         left: 2.81%;
         width: 11.91%;
         max-width: calc(100vw - 60px);
+        max-height: calc(100vh - 12.23vh - 48vh);
         // height: 100%;
         // intro second box
         &--second{
             top: 14%;
             left: 16%;
-
-            width: auto;
-            height: auto;
+            width: 12.09%;
+            max-height: calc(100vh - 12.23vh - 14vh);
         }
     }
    
