@@ -31,7 +31,6 @@
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second">
                     <div class="b--card-b">
-                        <div class="b--card-b__artwork"></div>
                         <div class="b--card-b__wrapper">
                            <img v-lazy="require(`@/assets/img/chapter-1/frame.gif`)"  alt="frame" title="frame">
                         </div>
