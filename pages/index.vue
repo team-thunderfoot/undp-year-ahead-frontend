@@ -5,6 +5,7 @@
             <v-nav />
             <v-lang />
             <v-story />
+            <v-progress />
         </div>
 
         <div class="b--preloader-a" :class="{'b--preloader-a--is-hidden':isLoaded}">
@@ -20,6 +21,7 @@
 import Nav from '@/components/Nav';
 import Lang from '@/components/Lang';
 import Story from '~/components/Story';
+import Progress from '@/components/Progress/Progress.vue';
 
 export default {
 	data:()=>{
@@ -31,6 +33,7 @@ export default {
         'v-nav':Nav,
         'v-lang':Lang,
         'v-story':Story,
+        'v-progress' : Progress
 	},
     created(){
         if(process.client){

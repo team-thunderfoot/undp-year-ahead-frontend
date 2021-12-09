@@ -68,9 +68,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/back.png" alt="">    

@@ -1,20 +1,41 @@
 <template>
-    <div class="b--progress-a" ref="progress"></div>
+    <div class="b--progress-b">
+        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-b__arrow b--progress-b__arrow--prev"> </a>
+        <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-b__arrow b--progress-b__arrow--next"> </a>
+    </div>
 </template>
 <script>
 export default {
     data:()=>{
 		return{
-           progressItems : []
+           progressItems : [],
+           currentItem : 1
 		}
 	},
     methods :  {
-        goTo(scene, reference) {
-			if(scene){
-				var sceneName  = document.querySelector("#" + scene);
+        goTo(payload) {
+			if(payload == 'next'){
+                this.currentItem++;
+                console.log(this.currentItem);
+				var sceneName  = document.querySelector("#Scene" + this.currentItem);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
-                    this.$refs[reference][0].classList.add("is-current");
+                    if(this.currentItem == 2){
+                        this.$refs.prev.classList.remove("disabled");
+                        this.$refs.next.classList.add("disabled");
+                    }
+                }});
+			}
+            if(payload == 'prev'){
+                this.currentItem--;
+                console.log(this.currentItem);
+				var sceneName  = document.querySelector("#Scene" + this.currentItem);
+                var pos =  sceneName.offsetLeft;
+                this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+                    if(this.currentItem == 1){
+                        this.$refs.next.classList.remove("disabled");
+                        this.$refs.prev.classList.add("disabled");
+                    }
                 }});
 			}
         },
@@ -37,10 +58,10 @@ export default {
         this.goToChapter();
     },
     afterMounted() {
-        this.$refs.one.classList.add("is-current");
+        this.$refs.prev.classList.add("disabled");
     }
 }
 </script>
 <style lang="scss">
-    @import '@/sass/framework/components/progress/progress-a.scss';
+    @import '@/sass/framework/components/progress/progress-b.scss';
 </style>
