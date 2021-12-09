@@ -2,8 +2,6 @@
     // intro position only
     &__content{
         position:absolute;
-        // top: 46%;
-        // left: 3%;
 
         top: 48.63%;
         left: 2.81%;
@@ -47,6 +45,11 @@
             }
         }
 
+        // bubble
+        &--fifth{
+            left: 71.5%;
+            bottom: 35%;       
+        }
     }
     &__item{
         position: absolute;
