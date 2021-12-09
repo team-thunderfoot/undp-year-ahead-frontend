@@ -1,5 +1,4 @@
 // Used in several chapters
-
 .b--card-a{
     position: relative;
     padding: $measure * 3 $measure * 6;
@@ -24,7 +23,5 @@
         background-size: cover;
         opacity: 0.2;
     }
-    &__wrapper{
-    }
-    
+    &__wrapper{}
 }

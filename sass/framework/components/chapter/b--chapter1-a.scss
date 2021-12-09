@@ -11,7 +11,7 @@
         // intro second box
         &--second{
             top: 27.15%;
-            left: 16%;
+            left: 17.5%;
             width: 12.09%;
             max-height: calc(100vh - 12.23vh - 27.15vh);
         }
@@ -20,11 +20,14 @@
     &__artwork{
         position: absolute;
         z-index: 150;
+        max-width: calc(100vw - 60px);
 
         // Gif top left
         &--second{
-            top: 7%;
-            left: 2%;
+            top: 10.93%;
+            left: 2.17%;
+            width: 4.19%;
+            max-height: calc(46vh - 10.93vh - 32px);
         }
 
         // Browser
