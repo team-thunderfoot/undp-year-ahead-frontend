@@ -60,11 +60,11 @@
                 <div class="b--chapter1-a__item">
                     <div class="b--quote-a">
                         <div class="b--quote-a__content">
-                            "To make a difference to people's"
+                            <SanityContent :blocks="chapter.quote"  />
                         </div>
                         <div class="b--quote-a__meta">
-                            <h3 class="b--quote-a__meta__title">Title</h3>
-                            <h4 class="b--quote-a__meta__subtitle">Director of INDP Bureau for Policy and Programe Support</h4>
+                            <h3 class="b--quote-a__meta__title">{{chapter.quotetitle}}</h3>
+                            <h4 class="b--quote-a__meta__subtitle">{{chapter.quotedirector}}</h4>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,12 @@ export default {
                 "title" : title['`+this.lang+`'],
                 "date" : date['`+this.lang+`'],
                 "description" : description['`+this.lang+`'],
-                "content" : content['`+this.lang+`']
+                "content" : content['`+this.lang+`'],
+                "quote" :  quote['`+this.lang+`'],
+                "quotetitle" :  quotetitle['`+this.lang+`'],
+                "quotedirector" :  quotedirector['`+this.lang+`'],
+                "panel" :  panel['`+this.lang+`'],
+                "info" : info['`+this.lang+`']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
