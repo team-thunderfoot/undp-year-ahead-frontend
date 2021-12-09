@@ -8,7 +8,6 @@
 export default {
     data:()=>{
 		return{
-           progressItems : [],
            currentItem : 1,
            maxStories : 6
 		}
@@ -21,7 +20,6 @@ export default {
         goTo(payload) {
 			if(payload == 'next'){
                 this.currentItem++;
-                console.log(this.currentItem);
 				var sceneName  = document.querySelector("#Scene" + this.currentItem);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
@@ -29,11 +27,13 @@ export default {
                         this.$refs.prev.classList.remove("disabled");
                         this.$refs.next.classList.add("disabled");
                     }
+                    if(this.currentItem > 1 ){
+                        this.$refs.prev.classList.remove("disabled");
+                    }
                 }});
 			}
             if(payload == 'prev'){
                 this.currentItem--;
-                console.log(this.currentItem);
 				var sceneName  = document.querySelector("#Scene" + this.currentItem);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
@@ -41,25 +41,30 @@ export default {
                         this.$refs.next.classList.remove("disabled");
                         this.$refs.prev.classList.add("disabled");
                     }
+                    if(this.currentItem < 6 ){
+                        this.$refs.next.classList.remove("disabled");
+                    }
                 }});
 			}
         },
         goToChapter(){
             if(this.positionBaseOnURL){
-                console.log("asads",this.urlName);
                 var sceneName  = document.querySelector(this.urlName);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
                     //do something after going to section
                     this.$emit("positionBasedURL", true);
+                    const words = this.urlName.split('Scene');
+                    this.currentItem = words[1]; // gets number of the url name (from #Scene2 takes the number 2)
+                    if(words[1] == 1){
+                        this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                    }
+                    if(words[1] == this.maxStories){
+                        this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                    }
                 }}); 
             }
 		},
-    },
-    mounted() {
-        this.progressItems = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' , 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen'];
-        this.$refs.prev.classList.add("disabled");
-     
     },
     created(){
         this.goToChapter();

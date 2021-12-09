@@ -30,7 +30,6 @@ export default {
 		}
 	},
     props : [
-        // 'positionBaseOnURL',
         'isLoaded'
     ],
     components:{
@@ -80,18 +79,20 @@ export default {
                 $nuxt.$emit('siteLoaded');
             })
         },
-        positionBasedURL(payload){
+        positionBasedURL(){
             if(process.client){
                 var currentURL = window.location.href;
                 var pathname = currentURL.split('/');	
                 if(pathname[pathname.length-1].includes("Scene")){
                     this.positionBaseOnURL = true;
-                    this.urlName =  pathname[pathname.length-1];
+                    this.urlName = pathname[pathname.length-1];
                 }
             }
 		},
         changeURL(payload){
-            // window.location.hash = payload.url;
+            if(this.isLoaded){
+                // window.location.hash = payload.url;
+            }
         },
         
     },

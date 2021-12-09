@@ -121,13 +121,11 @@ export default {
                             (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
                         onEnter: () => {
-                            console.log(this.positionBaseOnURL);
                             if(this.positionBaseOnURL){
                                 this.$emit('changeURL', { 'url'  : 'Scene1'})
                             }
                         },
                         onEnterBack: () => {
-                            console.log(this.positionBaseOnURL);
                             if(this.positionBaseOnURL){
                                 this.$emit('changeURL', { 'url'  : 'Scene1'})
                             }
