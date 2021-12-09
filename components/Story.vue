@@ -91,8 +91,7 @@ export default {
             }
 		},
         changeURL(payload){
-            console.log('payload',payload);
-            window.location.hash = payload.url;
+            // window.location.hash = payload.url;
         },
         
     },
