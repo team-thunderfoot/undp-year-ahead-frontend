@@ -1,21 +1,27 @@
 .b--card-c{
     position: relative;
     z-index: 20;
-    &__artwork{
-        content:'';
-        position:absolute;
-        top:0;
-        right:-10px;
-        width:10px;
-        background:red;
-        height: 100%;
-    }
-    &__wrapper{
-        background: linear-gradient(0deg, #feedec, #ae8f8d);
-        z-index: 2;
-        border-top: 10px solid #771f1b;
-        border-bottom: 10px solid #771f1b;
-        border-left: 10px solid #771f1b;
-        border-right: 10px solid #771f1b;
+    &__bd{
+        position:relative;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+        top: 10px;
+        &__artwork{
+            content:'';
+            position:absolute;
+            top:0;
+            right:-10px;
+            width:10px;
+            background:red;
+            height: 100%;
+        }
+        &__media{
+            border-top: 10px solid #771f1b;
+            border-bottom: 10px solid #771f1b;
+            border-left: 10px solid #771f1b;
+            border-right: 10px solid #771f1b;
+            display: inline-flex;
+        }
     }
 }

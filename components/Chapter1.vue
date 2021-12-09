@@ -2,9 +2,6 @@
     <section class="b--page-a__item b--chapter1-a" id="Scene1" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <!-- <div class="b--chapter1-a__artwork">
-                    <img src="@/assets/img/chapter-1/bubble.svg" alt="">
-                </div> -->
                 <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-1/front.png" alt=""> 
             </div>
             <div class="b--ss-a__content">
@@ -48,14 +45,17 @@
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
                     <div class="b--card-c">
-                        <div class="b--card-c__artwork"></div>
-                        <div class="b--card-c__wrapper">
-                           <img src="@/assets/img/chapter-1/tv.gif" alt="">
+                        <div class="b--card-c__bd">
+                            <div class="b--card-c__bd__artwork"></div>
+                            <div class="b--card-c__bd__media">
+                                <img src="@/assets/img/chapter-1/tv.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="b--card-c__ft">
+                            <img src="@/assets/img/chapter-1/tv-set.png">
                         </div>
                     </div>
-                    <img class="b--chapter1-a__artwork--fourth__artwork" src="@/assets/img/chapter-1/tv-set.png" alt="">
                 </div>
-
 
                 <div class="b--chapter1-a__item">
                     <div class="b--quote-a">
@@ -104,6 +104,7 @@ export default {
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
                 // if we want to animate something later 
+              
             })
             this.contentLoaded++;
 

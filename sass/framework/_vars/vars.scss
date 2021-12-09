@@ -87,6 +87,7 @@ $color-options: (
 // linear-gradient(218.3deg, #2C3A64 22.06%, #0A1432 74.88%)
 // Gradient Blue2
 // linear-gradient(360deg, #33579E 47.51%, #A6C4FF 147.8%)
+
 $colorbg-options: (
   a: $color-d,
   b: $color-e,
@@ -94,8 +95,8 @@ $colorbg-options: (
 );
 
 /* Typography */
-$type-a : 'Proxima Nova', sans-serif;
-$type-b : 'Soehne Breit', sans-serif;
+$type-a: 'Sohne Breit', sans-serif;
+$type-b: 'Proxima Nova', sans-serif;
 
 // body default
 $font-body-size: 16px; /* 1rem = 16px */
