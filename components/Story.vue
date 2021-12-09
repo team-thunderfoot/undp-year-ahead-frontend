@@ -1,8 +1,8 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-        <v-chapter-1  />
-        <v-chapter-2  />
-        <v-chapter-3  />
+        <v-chapter-1  @changeURL="changeURL" :positionBaseOnURL="positionBaseOnURL"/>
+        <v-chapter-2  @changeURL="changeURL" :positionBaseOnURL="positionBaseOnURL"/>
+        <v-chapter-3  @changeURL="changeURL" :positionBaseOnURL="positionBaseOnURL"/>
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />
@@ -22,9 +22,12 @@ export default {
     data:()=>{
 		return{
             totalChapters:6,
-			statusChapter : 0
+			statusChapter : 0,
 		}
 	},
+    props : [
+        'positionBaseOnURL'
+    ],
     components:{
         'v-chapter-1':Chapter1,
         'v-chapter-2':Chapter2,
@@ -68,9 +71,13 @@ export default {
                         }
                     }
                 });
-                $nuxt.$emit('siteLoaded')
+                $nuxt.$emit('siteLoaded');
             })
         },
+        changeURL(payload){
+            window.location.hash = payload.url;
+        },
+        
     },
     created(){
         if(process.client){

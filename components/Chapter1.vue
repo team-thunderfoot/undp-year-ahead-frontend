@@ -11,7 +11,7 @@
                 <div class="b--chapter1-a__content " >
                     <div class="b--intro-a">
                         <h1 class="b--intro-a__title">
-                            {{chapter.title}}
+                            {{chapter.title}} ++ {{positionBaseOnURL}}
                         </h1>
                         <h2 class="b--intro-a__badge">
                             {{chapter.date}}
@@ -89,6 +89,9 @@ export default {
             chapter : null,
 		}
 	},
+    props : [
+        'positionBaseOnURL'
+    ],
     components:{
         SanityContent
     },
@@ -104,7 +107,26 @@ export default {
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
                 // if we want to animate something later 
-              
+                let tlSection = this.$gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#Scene1",
+                        scrub: 0,
+                        start: () =>
+                            "top top-=" +
+                            (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+                        end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+                        onEnter: () => {
+                            if(this.positionBaseOnURL){
+                                this.$emit('changeURL', { 'url'  : 'Scene1'})
+                            }
+                        },
+                        onEnterBack: () => {
+                            if(this.positionBaseOnURL){
+                                this.$emit('changeURL', { 'url'  : 'Scene1'})
+                            }
+                        }
+                    }
+                });
             })
             this.contentLoaded++;
 

@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item" id="Scene3" v-if="chapter">
+    <section class="b--page-a__item" id="Scene4" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/front.png"> 

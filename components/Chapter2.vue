@@ -40,6 +40,9 @@ export default {
             chapter: null
 		}
 	},
+    props : [
+        'positionBaseOnURL'
+    ],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -49,6 +52,29 @@ export default {
                 "description" : description['`+this.lang+`']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
+            this.$nextTick(() => {
+                // if we want to animate something later 
+                let tlSection = this.$gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#Scene2",
+                        scrub: 0,
+                        start: () =>
+                            "top top-=" +
+                            (document.querySelector("#Scene2").offsetLeft - window.innerWidth),
+                        end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
+                        onEnter: () => {
+                            if(this.positionBaseOnURL){
+                                this.$emit('changeURL', { 'url'  : 'Scene2'})
+                            }
+                        },
+                        onEnterBack: () => {
+                            if(this.positionBaseOnURL){
+                                this.$emit('changeURL', { 'url'  : 'Scene2'})
+                            }
+                        }
+                    }
+                });
+            })
             this.contentLoaded++;
         },
         handleLoad(){
