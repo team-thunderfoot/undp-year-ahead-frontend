@@ -5,8 +5,8 @@
   line-height: 0.889;
   font-size: 6.25rem;
   font-size: clamp(80px, 9.766vh, 6.25rem);
-  @media all and ($viewport-type: $tabletl) {
-  //   // ASK MECHE - NOT EVEN DESIGNED
+  @media all and ($viewport-type: $mobile) {
+    font-size: clamp(38px, 13vw, 4rem);
   }
 
 }
@@ -18,8 +18,8 @@
   line-height: 1.089;
   font-size: 3.06rem;
   font-size: clamp(40px, 4.785vh, 3.06rem);
-  @media all and ($viewport-type: $tabletl) {
-    // ASK MECHE - NOT EVEN DESIGNED
+  @media all and ($viewport-type: $mobile) {
+    font-size: clamp(20px, 6.3vw, 2.5rem);
   }
 }
 
@@ -51,8 +51,8 @@
   line-height: 1.089;
   font-size: 2rem;
   font-size: clamp(28px, 3.125vh, 2rem);
-  @media all and ($viewport-type: $tabletl) {
-    // ASK MECHE - NOT EVEN DESIGNED
+  @media all and ($viewport-type: $mobile) {
+    font-size: clamp(16px, 6vw, 1.5rem);
   }
 }
 
