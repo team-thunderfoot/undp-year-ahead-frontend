@@ -101,6 +101,11 @@ export default {
             this.$nuxt.$on('isLoadedURL', (payload) => {
                 this.isLoadedURLParam = true
             });
+            this.$nuxt.$on('changeURL', (payload) => {
+                if(this.isLoadedURLParam){
+                    window.location.href =  this.$route.path  + '#' + payload.url;
+                }
+            });
         }
     }
 }

@@ -51,7 +51,7 @@ export default {
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
                 // if we want to animate something later 
-                var tlSection = this.$gsap.timeline({
+                var tlSection2 = this.$gsap.timeline({
                     scrollTrigger: {
                         trigger: "#Scene2",
                         scrub: 0,
@@ -60,14 +60,12 @@ export default {
                             (document.querySelector("#Scene2").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
                         onEnter: () => {
-                            console.log(this.isLoadedURLParam);
-
-                            window.location.href =  this.$route.path  + '#Scene2';
+                            // window.location.href =  this.$route.path  + '#Scene2';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
                         },
                         onEnterBack: () => {
-                            console.log(this.isLoadedURLParam);
-
-                            window.location.href =  this.$route.path  + '#Scene2';
+                            // window.location.href =  this.$route.path  + '#Scene2';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
                         }
                     }
                 });
