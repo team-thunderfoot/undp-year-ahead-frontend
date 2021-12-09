@@ -89,9 +89,6 @@ export default {
             chapter : null,
 		}
 	},
-    props : [
-        'positionBaseOnURL'
-    ],
     components:{
         SanityContent
     },
@@ -121,14 +118,10 @@ export default {
                             (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
                         onEnter: () => {
-                            if(this.positionBaseOnURL){
-                                this.$emit('changeURL', { 'url'  : 'Scene1'})
-                            }
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
                         },
                         onEnterBack: () => {
-                            if(this.positionBaseOnURL){
-                                this.$emit('changeURL', { 'url'  : 'Scene1'})
-                            }
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
                         }
                     }
                 });

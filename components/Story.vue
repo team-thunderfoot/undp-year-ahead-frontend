@@ -1,12 +1,12 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-        <v-chapter-1  @changeURL="changeURL" :positionBaseOnURL="positionBaseOnURL"/>
-        <v-chapter-2  @changeURL="changeURL" :positionBaseOnURL="positionBaseOnURL"/>
-        <v-chapter-3  @changeURL="changeURL" :positionBaseOnURL="positionBaseOnURL"/>
+        <v-chapter-1  />
+        <v-chapter-2  />
+        <v-chapter-3  />
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />
-        <v-progress :positionBaseOnURL="positionBaseOnURL" :urlName="urlName" v-if="isLoaded"/>
+        <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded"/>
     </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
 		return{
             totalChapters:6,
 			statusChapter : 0,
-            positionBaseOnURL :false,
+            urlWithParams :false,
             urlName : false
 		}
 	},
@@ -84,17 +84,11 @@ export default {
                 var currentURL = window.location.href;
                 var pathname = currentURL.split('/');	
                 if(pathname[pathname.length-1].includes("Scene")){
-                    this.positionBaseOnURL = true;
+                    this.urlWithParams = true;
                     this.urlName = pathname[pathname.length-1];
                 }
             }
 		},
-        changeURL(payload){
-            if(this.isLoaded){
-                // window.location.hash = payload.url;
-            }
-        },
-        
     },
     created(){
         this.positionBasedURL();
@@ -102,6 +96,9 @@ export default {
             // event
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
+            });
+            this.$nuxt.$on('changeURL', (payload) => {
+                // window.location.hash = payload.url;
             })
         }
     }

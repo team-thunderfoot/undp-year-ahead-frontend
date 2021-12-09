@@ -40,9 +40,6 @@ export default {
             chapter: null
 		}
 	},
-    props : [
-        'positionBaseOnURL'
-    ],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -63,14 +60,10 @@ export default {
                             (document.querySelector("#Scene2").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
                         onEnter: () => {
-                            if(this.positionBaseOnURL){
-                                this.$emit('changeURL', { 'url'  : 'Scene2'})
-                            }
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
                         },
                         onEnterBack: () => {
-                            if(this.positionBaseOnURL){
-                                this.$emit('changeURL', { 'url'  : 'Scene2'})
-                            }
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
                         }
                     }
                 });
