@@ -6,7 +6,7 @@
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />
-        <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" />
+        <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
 
@@ -27,7 +27,9 @@ export default {
 			statusChapter : 0,
             urlWithParams :false,
             urlName : false,
-            isLoadedURLParam : false
+            isLoadedURLParam : false,
+            currentItem : 1,
+            loadedNew : false
 		}
 	},
     props : [
@@ -78,6 +80,7 @@ export default {
                     }
                 });
                 $nuxt.$emit('siteLoaded');
+                this.loadedNew = true;
             })
         },
         checkURL(){
@@ -98,9 +101,11 @@ export default {
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
             });
+            // event in Progress.vue
             this.$nuxt.$on('isLoadedURL', (payload) => {
                 this.isLoadedURLParam = true
             });
+            // event in ChapterX.vue
             this.$nuxt.$on('changeURL', (payload) => {
                 if(this.isLoadedURLParam){
                     window.location.href =  this.$route.path  + '#' + payload.url;

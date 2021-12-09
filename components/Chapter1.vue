@@ -131,38 +131,22 @@ export default {
                         onEnterBack: () => {
                             // emit in story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
-
                         }
                     }
                 });
 
                 let tlBird = this.$gsap.timeline({
-                        scrollTrigger: {
-                        trigger: ".b--card-c__bd__media",
+                    scrollTrigger: {
+                        trigger: ".b--tv-a",
                         scrub: true,
-                        markers : true,
                         start: () =>
-                            "top top-500" +
+                            "top top-=" +
                             (document.querySelector(".b--tv-a").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector(".b--tv-a").offsetWidth,
                     }
                 });
-
                 tlBird.to(document.querySelector('.b--tv-a'), {duration: 40, x:-100});
 
-
-                // let tlBird = this.$gsap.timeline({
-                //     scrollTrigger: {
-                //         trigger: ".b--tv-a",
-                //         scrub: true,
-                //         start: () =>
-                //             "top top" +
-                //             (document.querySelector(".b--tv-a").offsetLeft - window.innerWidth),
-                //         end: () => "+=" + document.querySelector(".b--tv-a").offsetWidth,
-                //     }
-                // });
-                // console.log(tlBird);
-                // tlBird.to(document.querySelector('.b--tv-a'), {duration: 2, x: 100});
             })
             this.contentLoaded++;
 
