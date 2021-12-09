@@ -25,7 +25,7 @@
         border: 15px solid map-get($color-options , b);
         box-shadow: 12px 0px 0px map-get($color-options , a);
         background: $gradient-g;
-        padding: $measure * 6;
+        padding: 8%;
         text-align: center;
         @media all and ($viewport-type: $mobile) {
             padding: $measure * 3;
