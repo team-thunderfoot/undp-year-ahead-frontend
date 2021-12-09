@@ -1,72 +1,117 @@
 @mixin make-font-a {
-  font-family: $type-b;
+  font-family: $type-a;
   /* font size should be last element if possible, so 
     when we changed it on mobile it's easier to see.*/
-  letter-spacing: 2px;
-  font-weight: 700; // CHECK WEIGHT
+  // letter-spacing: 2px;
+  font-weight: 800;
   font-size: 6.25rem; // FONTS SHOULD BE IN REM
-  line-height: 5.55px;
-  // @media all and ($viewport-type: $tabletl) {
+  line-height: 0.889;
+  @media all and ($viewport-type: $tabletl) {
   //   // ASK MECHE - NOT EVEN DESIGNED
-  // }
+  }
 
 }
 
 @mixin make-font-b {
-  font-family: $type-b;
-  letter-spacing: 2px;
-  font-weight: 700;
+  font-family: $type-a;
+  // letter-spacing: 2px;
+  font-weight: 800;
   font-size: 3.06rem; // FONTS SHOULD BE IN REM
-  line-height: 3.34rem;
+  line-height: 1.089;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
 }
 
 @mixin make-font-c {
-  font-family: $type-b;
+  font-family: $type-a;
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 2.72rem;
+  line-height: 1.089;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
 }
 
 @mixin make-font-d {
-  font-family: $type-a;
-  font-weight: 700;
-  font-size: 2.18rem;
-  line-height: 2.5rem;
+  font-family: $type-b;
+  font-weight: 600;
+  font-size: 2.1875rem;
+  line-height: 1.14;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
 }
 
 @mixin make-font-e {
-  font-family: $type-a;
-  font-weight: 400;
-  font-size: 1.56rem;
-  line-height: 1.7rem;
+  font-family: $type-b;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.089;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
 }
 
 @mixin make-font-f {
-  font-family: $type-a;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.71rem;
+  font-family: $type-b;
+  // font-weight: 400;
+  font-size: 1.5625rem;
+  line-height: 1.09;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
 }
+
 @mixin make-font-g {
-  font-family: $type-a;
+  font-family: $type-b;
+  // font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.1429;
+  @media all and ($viewport-type: $tabletl) {
+    // ASK MECHE - NOT EVEN DESIGNED
+  }
+}
+
+@mixin make-font-h {
+  font-family: $type-b;
+  // font-weight: 400;
+  letter-spacing: 3%;
+  line-height: 1.125;
+  text-transform: uppercase;
+  font-size: 1rem;
+  @media all and ($viewport-type: $tabletl) {
+    // ASK MECHE - NOT EVEN DESIGNED
+  }
+}
+
+@mixin make-font-i {
+  font-family: $type-b;
   font-weight: 400;
-  font-size: 0.87rem;
-  line-height: 0.98rem;
+  line-height: 1.0887;
+  font-size: 0.9375rem;
+  @media all and ($viewport-type: $tabletl) {
+    // ASK MECHE - NOT EVEN DESIGNED
+  }
+}
+
+@mixin make-font-j {
+  font-family: $type-b;
+  font-weight: 600;
+  line-height: 1.125;
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  @media all and ($viewport-type: $tabletl) {
+    // ASK MECHE - NOT EVEN DESIGNED
+  }
+}
+
+@mixin make-font-k {
+  font-family: $type-b;
+  font-weight: 400;
+  line-height: 1.0887;
+  font-size: 0.838125rem;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED
   }
