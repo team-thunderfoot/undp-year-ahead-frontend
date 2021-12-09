@@ -33,13 +33,13 @@
                     <div class="b--card-b">
                         <div class="b--card-b__artwork"></div>
                         <div class="b--card-b__wrapper">
-                           <img src="@/assets/img/chapter-1/frame.gif" alt="">
+                           <img v-lazy="require(`@/assets/img/chapter-1/frame.gif`)"  alt="frame" title="frame">
                         </div>
                     </div>
                 </div>
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third">
-                    <img src="@/assets/img/chapter-1/browser.gif" alt="">
+                    <img v-lazy="require(`@/assets/img/chapter-1/browser.gif`)"  alt="browser" title="browser">
                 </div>
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
@@ -47,11 +47,11 @@
                         <div class="b--card-c__bd">
                             <div class="b--card-c__bd__artwork"></div>
                             <div class="b--card-c__bd__media">
-                                <img src="@/assets/img/chapter-1/tv.gif" alt="">
+                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv">
                             </div>
                         </div>
                         <div class="b--card-c__ft">
-                            <img src="@/assets/img/chapter-1/tv-set.png">
+                            <img v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"  alt="tvset" title="tvset">
                         </div>
                     </div>
                 </div>

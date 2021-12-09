@@ -2,7 +2,7 @@
     <section class="b--page-a__item" id="Scene6" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img class="b--ss-a__ft-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-6/front.png"> 
+                <img v-lazy="require(`@/assets/img/chapter-6/front.png`)" alt="front" />
             </div>
             <!-- <div class="b--ss-a__content">
                 <div class="b--card-a">
@@ -35,7 +35,7 @@ import { groq } from '@nuxtjs/sanity';
 export default {
     data:()=>{
 		return{
-            totalContent: 3,
+            totalContent: 2,
 			contentLoaded : 0,
             chapter: null
 		}
