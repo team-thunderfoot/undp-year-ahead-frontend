@@ -74,6 +74,13 @@
                     </div>
                 </div>
 
+
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--sixth">
+                   <div class="b--motion-b">
+                        <!-- Plant -->
+                    </div>
+                </div>
+
                 <div class="b--chapter1-a__info">
                     <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
                         <div class="b--info-chapter-a__icon">

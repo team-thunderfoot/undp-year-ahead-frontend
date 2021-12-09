@@ -20,7 +20,7 @@
     &__artwork{
         position: absolute;
         z-index: 150;
-        max-width: calc(100vw - 60px);
+        // max-width: calc(100vw - 60px); // Amaia esto debes aplicarlo donde sea necesario
 
         // Gif top left
         &--second{
@@ -45,6 +45,11 @@
         &--fifth{
             top: 47%;
             left: 70.8%;
+        }
+
+        &--sixth{
+            top: 27%;
+            left: 80.8%;
         }
     }
     &__item{
