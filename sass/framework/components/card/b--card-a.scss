@@ -6,13 +6,13 @@
     border: 15px solid map-get($color-options , b);
     box-shadow: 12px 0px 0px map-get($color-options , a);
     background: $gradient-g;
-    max-height: calc(100vh - 12.23vh - 14vh - 30px);
+    max-height: calc(100vh - 12.23vh - 27.15vh - 30px);
     overflow: auto;
     @media all and ($viewport-type: $mobile) {
         padding: $measure * 3;
         border: 8px solid map-get($color-options , b);
         box-shadow: 6px 0px 0px map-get($color-options , a);
-        max-height: calc(100vh - 12.23vh - 14vh - 16px);
+        max-height: calc(100vh - 12.23vh - 27.15vh - 16px);
     }
     &::before{
         content:'';

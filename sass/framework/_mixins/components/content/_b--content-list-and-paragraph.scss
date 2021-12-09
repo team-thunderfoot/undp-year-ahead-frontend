@@ -67,7 +67,7 @@
   }
   p {
     @include make-font-f();
-    margin-bottom: $measure * 3;
+    margin-bottom: $measure*3;
   }
   em {
     font-style: italic;

@@ -4,18 +4,15 @@
 @import './../../_mixins/components/content/b--content-block-quote.scss';
  
 .b--content-a {
-    p{
-        @include make-font-f();
-        margin-bottom: $measure*3;
-    }
+    @include lists-and-paragraphs ();
     // @include headings ();
     // @include lists-and-paragraphs ();
-    // @include links();
+    @include links();
     // @include block-quote();
 
     // @include headings-color ( $_color-a: map-get($color-options, b) );
-    // @include lists-and-paragraphs-color ( $_color-a: map-get($color-options, b) );
-    // @include links-color($_color-a: b);
+    @include lists-and-paragraphs-color ( $_color-a: map-get($color-options, a) );
+    @include links-color($_color-a: a);
     // @include block-quote-color($_color-a:map-get($color-options, b));
     *:last-child{
         margin-bottom: 0px;

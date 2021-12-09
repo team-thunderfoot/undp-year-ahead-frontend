@@ -2,18 +2,18 @@
     // intro position only
     &__content{
         position:absolute;
-        top: 48%;
+        top: 46%;
         left: 2.81%;
         width: 11.91%;
         max-width: calc(100vw - 60px);
-        max-height: calc(100vh - 12.23vh - 48vh);
+        max-height: calc(100vh - 12.23vh - 46vh);
         // height: 100%;
         // intro second box
         &--second{
-            top: 14%;
+            top: 27.15%;
             left: 16%;
             width: 12.09%;
-            max-height: calc(100vh - 12.23vh - 14vh);
+            max-height: calc(100vh - 12.23vh - 27.15vh);
         }
     }
    
