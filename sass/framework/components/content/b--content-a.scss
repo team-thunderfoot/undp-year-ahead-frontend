@@ -17,7 +17,7 @@
     // @include lists-and-paragraphs-color ( $_color-a: map-get($color-options, b) );
     // @include links-color($_color-a: b);
     // @include block-quote-color($_color-a:map-get($color-options, b));
-    // *:last-child{
-    //     margin-bottom: 0px;
-    // }
+    *:last-child{
+        margin-bottom: 0px;
+    }
 }
