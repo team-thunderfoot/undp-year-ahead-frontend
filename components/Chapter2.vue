@@ -60,10 +60,14 @@ export default {
                             (document.querySelector("#Scene2").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
                         onEnter: () => {
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
+                            console.log(this.isLoadedURLParam);
+
+                            window.location.href =  this.$route.path  + '#Scene2';
                         },
                         onEnterBack: () => {
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
+                            console.log(this.isLoadedURLParam);
+
+                            window.location.href =  this.$route.path  + '#Scene2';
                         }
                     }
                 });
