@@ -60,12 +60,16 @@ export default {
                             (document.querySelector("#Scene2").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
                         onEnter: () => {
-                            // window.location.href =  this.$route.path  + '#Scene2';
+                            // emit in story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
+
+                            // window.location.href =  this.$route.path  + '#Scene2';
                         },
                         onEnterBack: () => {
-                            // window.location.href =  this.$route.path  + '#Scene2';
+                            // emit in story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
+
+                            // window.location.href =  this.$route.path  + '#Scene2';
                         }
                     }
                 });
