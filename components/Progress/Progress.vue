@@ -1,6 +1,6 @@
 <template>
     <div class="b--progress-a">
-        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-a__arrow b--progress-a__arrow--prev"> </a>
+        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-a__arrow b--progress-a__arrow--prev">{{currentItem}} </a>
         <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-a__arrow b--progress-a__arrow--next"> </a>
     </div>
 </template>
@@ -8,13 +8,14 @@
 export default {
     data:()=>{
 		return{
-           currentItem : 1,
+        //    currentItem : 1,
            maxStories : 6
 		}
 	},
     props : [
         'urlName',
         'urlWithParams',
+        'currentItem'
     ],
     methods :  {
         goTo(payload) {
@@ -65,7 +66,16 @@ export default {
                     $nuxt.$emit('isLoadedURL');
                 }}); 
             }else{
-                this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                if(this.currentItem > 1 && this.currentItem < 6 ){
+                    this.$refs.prev.classList.remove("disabled");
+                    this.$refs.next.classList.remove("disabled");
+                }
+                if(this.currentItem == 1 ){
+                    this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                }
+                if(this.currentItem == 6 ){
+                    this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                }
             }
 		},
     },

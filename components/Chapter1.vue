@@ -130,7 +130,6 @@ export default {
                         onEnterBack: () => {
                             // emit in story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
-
                         }
                     }
                 });

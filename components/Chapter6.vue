@@ -50,7 +50,6 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-            console.log('chapterTwo',this.chapter);
         },
         handleLoad(){
             this.contentLoaded++;
