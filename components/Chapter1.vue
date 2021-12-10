@@ -48,8 +48,8 @@
                     <div class="b--card-c">
                         <div class="b--card-c__bd">
                             <div class="b--card-c__bd__artwork"></div>
-                            <div class="b--card-c__bd__media">
-                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--tv-a">
+                            <div class="b--card-c__bd__media-wrapper">
+                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--card-c__bd__media-wrapper__media">
                             </div>
                         </div>
                         <div class="b--card-c__ft">
@@ -89,9 +89,20 @@
                     <div class="b--card-e">
                         <h4 class="b--card-e__title">“Working Together, Restoring Trust”</h4>
                     </div>
+                </div>
+
+                <!-- content-fourth position -->
+                <div class="b--chapter1-a__content b--chapter1-a__content--fourth">
                     <!-- text with bg -->
-                    <div class="">
-                        <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
+                    <div class="b--card-d">
+                        <div class="b--card-d__wrapper">
+                             <div class="b--card-d__wrapper__content b--content-a">
+                                <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
+                            </div>
+                        </div>
+                        <div class="b--card-d__media-wrapper">
+                            <img class="b--card-d__media-wrapper__media" v-lazy="require(`@/assets/img/chapter-1/graphics.png`)"  alt="graphic" title="graphic">
+                        </div>
                     </div>
                 </div>
 
@@ -101,7 +112,7 @@
                             i
                         </div>
                     </div>
-                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}" @click.prevent="this.infoWindowStatus == !this.infoWindowStatus">
+                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}">
                         <div class="b--info-window-a__content">
                             <SanityContent :blocks="chapter.info"  />
                         </div>
@@ -154,45 +165,68 @@ export default {
                 "info" : info['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
-            this.$nextTick(() => {
-                setTimeout(() => {
-                    // if we want to animate something later 
-                    let tlSection = this.$gsap.timeline({
-                        scrollTrigger: {
-                            trigger: "#Scene1",
-                            scrub: 0,
-                            start: () =>
-                                "top top-=" +
-                                (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
-                            end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
-                            onEnter: () => {
-                                // emits on in Story.vue
-                                $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
-                                $nuxt.$emit('changeCurrent', { 'item'  : 1})
-                            },
-                            onEnterBack: () => {
-                                // emits on in Story.vue
-                                $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
-                                $nuxt.$emit('changeCurrent', { 'item'  : 1})
-                            }
-                        }
-                    });
-
-                    this.contentLoaded++;
-                }, 1000);
-               
-            })
+            this.contentLoaded++;
+            // this.$nextTick(() => {
+            //     // if we want to animate something later 
+            //     let tlSection = this.$gsap.timeline({
+            //         scrollTrigger: {
+            //             trigger: "#Scene1",
+            //             scrub: 0,
+            //             start: () =>
+            //                 "top top-=" +
+            //                 (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+            //             end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+            //             onEnter: () => {
+            //                 // emits on in Story.vue
+            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+            //                 $nuxt.$emit('changeCurrent', { 'item'  : 1})
+            //             },
+            //             onEnterBack: () => {
+            //                 // emits on in Story.vue
+            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+            //                 $nuxt.$emit('changeCurrent', { 'item'  : 1})
+            //             }
+            //         }
+            //     });
+            //     this.contentLoaded++;
+            // })
 
         },
         handleLoad(){
             this.contentLoaded++;
         },
+        animate(){
+            this.$nextTick(() => {
+                // if we want to animate something later 
+                let tlSection = this.$gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#Scene1",
+                        scrub: 0,
+                        start: () =>
+                            "top top-=" +
+                            (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+                        end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+                        onEnter: () => {
+                            // emits on in Story.vue
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 1})
+                        },
+                        onEnterBack: () => {
+                            // emits on in Story.vue
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 1})
+                        }
+                    }
+                });
+            })
+        }
     },
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
-                $nuxt.$emit('assetLoaded')
+                $nuxt.$emit('assetLoaded');
+                this.animate();
             }
         }
     },

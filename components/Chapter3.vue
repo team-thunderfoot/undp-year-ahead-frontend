@@ -49,44 +49,71 @@ export default {
                 "description" : description['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
-            this.$nextTick(() => {
-                setTimeout(() => {
-                    // if we want to animate something later 
-                    var tlSection3 = this.$gsap.timeline({
-                        scrollTrigger: {
-                            trigger: "#Scene3",
-                            scrub: 0,
-                            start: () =>
-                                "top top-=" +
-                                (document.querySelector("#Scene3").offsetLeft - window.innerWidth),
-                            end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
-                            onEnter: () => {
-                                // emits on in Story.vue
-                                // window.location.href =  this.$route.path  + '#Scene3';
-                                $nuxt.$emit('changeURL', { 'url'  : 'Scene3'})
-                                $nuxt.$emit('changeCurrent', { 'item'  : 3})
-                            },
-                            onEnterBack: () => {
-                                // emits on in Story.vue
-                                // window.location.href =  this.$route.path  + '#Scene3';
-                                $nuxt.$emit('changeURL', { 'url'  : 'Scene3'})
-                                $nuxt.$emit('changeCurrent', { 'item'  : 3})
-                            }
-                        }
-                    });
-                    this.contentLoaded++;
-                }, 3000);
-            })
+            this.contentLoaded++;
+
+            // this.$nextTick(() => {
+            //     // if we want to animate something later 
+            //     var tlSection3 = this.$gsap.timeline({
+            //         scrollTrigger: {
+            //             trigger: "#Scene3",
+            //             scrub: 0,
+            //             start: () =>
+            //                 "top top-=" +
+            //                 (document.querySelector("#Scene3").offsetLeft - window.innerWidth),
+            //             end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
+            //             onEnter: () => {
+            //                 // emits on in Story.vue
+            //                 // window.location.href =  this.$route.path  + '#Scene3';
+            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene3'})
+            //                 $nuxt.$emit('changeCurrent', { 'item'  : 3})
+            //             },
+            //             onEnterBack: () => {
+            //                 // emits on in Story.vue
+            //                 // window.location.href =  this.$route.path  + '#Scene3';
+            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene3'})
+            //                 $nuxt.$emit('changeCurrent', { 'item'  : 3})
+            //             }
+            //         }
+            //     });
+            // })
         },
         handleLoad(){
             this.contentLoaded++;
         },
+        animate(){
+            this.$nextTick(() => {
+                // if we want to animate something later 
+                var tlSection3 = this.$gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#Scene3",
+                        scrub: 0,
+                        start: () =>
+                            "top top-=" +
+                            (document.querySelector("#Scene3").offsetLeft - window.innerWidth),
+                        end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
+                        onEnter: () => {
+                            // emits on in Story.vue
+                            // window.location.href =  this.$route.path  + '#Scene3';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene3'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 3})
+                        },
+                        onEnterBack: () => {
+                            // emits on in Story.vue
+                            // window.location.href =  this.$route.path  + '#Scene3';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene3'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 3})
+                        }
+                    }
+                });
+            })
+        }
     },
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
+                this.animate();
             }
         }
     },

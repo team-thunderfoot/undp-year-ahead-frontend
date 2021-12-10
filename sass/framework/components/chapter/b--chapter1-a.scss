@@ -1,24 +1,32 @@
 .b--chapter1-a {
   // intro position only
   &__content {
-    position:absolute;
-        bottom: 16.79%;
-        left: 2.81%;
-        width: 11.91%;
-        max-width: calc(100vw - 60px);
-        max-height: calc(60.25vh - 16.79vh - $measure*4);
+    position: absolute;
+    bottom: 16.79%;
+    left: 2.81%;
+    width: 11.91%;
+    max-width: calc(100vw - 60px);
+    max-height: calc(60.25vh - 16.79vh - $measure * 4);
     // intro second box
     &--second {
-        bottom: 17.77%;
-        left: 17.5%;
-        width: 12.09%;
-        max-height: calc(100vh - 19.04vh - 17.77vh - $measure*4);
+      bottom: 17.77%;
+      left: 17.5%;
+      width: 12.09%;
+      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
     }
-    // intro third box
+    // card-e
     &--third {
-      bottom: 28.32%;
+      bottom: 76.4%;
       left: 57.46%;
       width: 12.09%;
+      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
+    }
+    // card-d
+    &--fourth {
+      bottom: 31.48%;
+      left: 63.75%;
+      width: 17.48%;
+      height: 85.15%;
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
     }
   }
@@ -30,10 +38,10 @@
 
     // Gif top left
     &--second {
-        bottom: 60.25%;
-        left: 2.17%;
-        width: 4.19%;
-        max-height: calc(100vh - 60.25vh - $measure*4);
+      bottom: 60.25%;
+      left: 2.17%;
+      width: 4.19%;
+      max-height: calc(100vh - 60.25vh - $measure * 4);
     }
 
     // Browser
@@ -44,10 +52,10 @@
 
     // TV
     &--fourth {
-        bottom: 27.44%;
-        left: 31.09%;
-        width: 10.20%;
-        max-height: calc(100vh - 27.44vh - $measure*4);
+      bottom: 27.44%;
+      left: 31.09%;
+      width: 10.2%;
+      max-height: calc(100vh - 27.44vh - $measure * 4);
     }
 
     &--fifth {
