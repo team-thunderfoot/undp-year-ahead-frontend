@@ -1,9 +1,9 @@
 .b--card-d {
   position: relative;
-  border: 40px solid map-get($color-options, h);
+  border: 3.9vh solid map-get($color-options, h);
   background: map-get($color-options, h);
   height: 85.15%;
-  width: 872px;
+  //   width: 872px;
   z-index: 0;
   @media all and ($viewport-type: $mobile) {
     padding: $measure * 3;
@@ -13,7 +13,7 @@
   &::after {
     content: '';
     position: absolute;
-    top: calc(100% + 40px);
+    top: calc(100% + 3.9vh);
     width: 23px;
     height: 99px;
     background-color: map-get($color-options, t);
@@ -35,18 +35,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: $measure * 3 $measure * 10;
+    // padding: $measure * 3 $measure * 10;
     background: $gradient-d;
     height: 100%;
     &__content {
-      width: 314px;
+      //   width: 314px;
+      width: calc(37.97% + $measure * 20);
+      padding: 0 $measure * 10;
     }
   }
   &__media-wrapper {
     position: absolute;
     top: 55px;
-    left: 455px;
-    width: 540px;
+    // left: 455px;
+    left: calc(53.89% + 3.9vh);
+    // width: 540px;
+    width: 66.95%;
     &__media {
       display: block;
     }
