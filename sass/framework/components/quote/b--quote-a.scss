@@ -1,8 +1,6 @@
 .b--quote-a{
-    // max-width: 450px;
     &__content{
         @include make-font-d();
-        // margin-bottom: $measure*3;
         margin-bottom: 2.34vh;
     }
     &__meta{
@@ -23,6 +21,16 @@
         &__subtitle{
             @include make-font-g();
             display: inline;
+        }
+    }
+    &--second{
+        color: map-get($color-options , f);
+    }
+    &--second &{
+        &__meta{
+            &__title{
+                @include link-a-color($colortext: f);
+            }
         }
     }
 }
