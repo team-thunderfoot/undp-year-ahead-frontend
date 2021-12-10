@@ -129,15 +129,15 @@ export default {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
             const query_content = groq`*[_type == "chapterOne"][0]{
-                "title" : title['`+this.lang+`'],
-                "date" : date['`+this.lang+`'],
-                "description" : description['`+this.lang+`'],
-                "content" : content['`+this.lang+`'],
-                "quote" :  quote['`+this.lang+`'],
-                "quotetitle" :  quotetitle['`+this.lang+`'],
-                "quotedirector" :  quotedirector['`+this.lang+`'],
-                "panel" :  panel['`+this.lang+`'],
-                "info" : info['`+this.lang+`']
+                "title" : title['${this.lang}'],
+                "date" : date['${this.lang}'],
+                "description" : description['${this.lang}'],
+                "content" : content['${this.lang}'],
+                "quote" :  quote['${this.lang}'],
+                "quotetitle" :  quotetitle['${this.lang}'],
+                "quotedirector" :  quotedirector['${this.lang}'],
+                "panel" :  panel['${this.lang}'],
+                "info" : info['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
