@@ -4,7 +4,7 @@
   text-transform: uppercase;
   line-height: 0.889;
   font-size: 6.25rem;
-  font-size: clamp(60px, 9.5vh, 6.25rem);
+  font-size: clamp(16px, 9.5vh, 6.25rem);
   @media all and ($viewport-type: $mobile) {
     font-size: clamp(24px, 13vw, 4rem);
   }
@@ -17,7 +17,7 @@
   text-transform: uppercase;
   line-height: 1.089;
   font-size: 3.06rem;
-  font-size: clamp(30px, 4.785vh, 3.06rem);
+  font-size: clamp(16px, 4.785vh, 3.06rem);
   @media all and ($viewport-type: $mobile) {
     font-size: clamp(20px, 6.3vw, 2.5rem);
   }
