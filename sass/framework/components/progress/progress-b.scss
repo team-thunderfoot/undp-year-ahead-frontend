@@ -8,13 +8,13 @@
     list-style: none;
     display: flex;
     align-items: center;
-    background-color: #2D2D2D;
+    background-color: map-get($colorbg-options , h );
     border-radius: 100px;
     padding: 8px 16px;
     width: fit-content;
     margin: 0 auto;
     &__item {
-      background-color: #2D2D2D;
+      background-color: map-get($colorbg-options , h );
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -31,7 +31,7 @@
     }
   }
   &__arrow{
-      background-color: #2D2D2D;
+      background-color: map-get($colorbg-options , h );
       position: absolute;
       bottom: 0;
       margin-right: 5px;

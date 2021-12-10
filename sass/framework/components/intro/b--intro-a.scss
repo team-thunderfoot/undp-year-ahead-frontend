@@ -9,7 +9,7 @@
         top: 100%;
         width: 20px;
         height: 50vh;
-        background-color: map-get($color-options , a);
+        background-color: map-get($colorbg-options , d);
         @media all and (max-height: $mobile) {
             width: 12px;
         }
@@ -29,7 +29,7 @@
         left: 100%;
         width: 12px;
         height: 100%;
-        background-color: map-get($color-options , a);
+        background-color: map-get($colorbg-options , d);
         @media all and (max-height: $mobile) {
             width: 1.5vh;
         }

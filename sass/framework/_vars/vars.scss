@@ -39,6 +39,7 @@ $color-t:#2C3A64;
 $color-u:#33579E;
 $color-v:#35488B;
 $color-w:#33579E;
+$color-x: #232E3d;
 
 $color-options: (
   a: $color-a,
@@ -64,6 +65,7 @@ $color-options: (
   u: $color-u,
   v: $color-v,
   w: $color-w,
+  x: $color-x
 );
 
 // gradients
@@ -86,7 +88,10 @@ $colorbg-options: (
   b: $color-e,
   c: $color-c,
   d: $color-a,
-  e: $color-i
+  e: $color-i,
+  f: $color-f,
+  g: $color-b,
+  h: $color-x
 );
 
 /* Typography */
