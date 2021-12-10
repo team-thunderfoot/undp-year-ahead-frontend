@@ -1,6 +1,5 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-     
         <v-chapter-1  />
         <v-chapter-2  />
         <v-chapter-3  />

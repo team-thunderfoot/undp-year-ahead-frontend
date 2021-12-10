@@ -3,7 +3,7 @@
         <div class="b--noise-a"></div>
         <v-nav />
         <v-lang />
-        <v-story :isLoaded="isLoaded" />
+        <v-lang v-if="isLoaded" />
         <div class="b--preloader-a" :class="{'b--preloader-a--is-hidden':isLoaded}">
             <div class="b--preloader-a__wrapper">
                 <div class="b--preloader-a__wrapper__artwork"></div>
