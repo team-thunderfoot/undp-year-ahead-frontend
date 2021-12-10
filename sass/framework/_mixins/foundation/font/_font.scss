@@ -41,10 +41,7 @@
   font-weight: 600;
   line-height: 1.14;
   font-size: 3.42vh;
-  font-size: clamp(28px, 3.42vh, 2.1875rem);
-  @media all and ($viewport-type: $tabletl) {
-    // ASK MECHE - NOT EVEN DESIGNED
-  }
+  font-size: clamp(24px, 3.42vh, 2.1875rem);
 }
 
 @mixin make-font-e {
@@ -68,7 +65,7 @@
 
 @mixin make-font-g {
   font-family: $type-b;
-  // font-weight: 400;
+  font-weight: 400;
   line-height: 1.1429;
   font-size: 2.34vh;
   font-size: clamp(16px, 2.34vh, 1.5rem);
