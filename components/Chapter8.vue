@@ -1,14 +1,14 @@
 <template>
-    <section class="b--page-a__item" id="Scene7" v-if="chapter">
+    <section class="b--page-a__item" id="Scene8" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-7/front.png`)" alt="front" />
+                <img v-lazy="require(`@/assets/img/chapter-8/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 7</h3>
+                <h3>chapter 8</h3>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-7/back.png">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-8/back.png">        
             </div>
         </div>
     </section>
@@ -45,23 +45,23 @@ export default {
                 // if we want to animate something later 
                 var tlSection6 = this.$gsap.timeline({
                     scrollTrigger: {
-                        trigger: "#Scene7",
+                        trigger: "#Scene8",
                         scrub: 0,
                         start: () =>
                             "top top-=" +
-                            (document.querySelector("#Scene7").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene7").offsetWidth,
+                            (document.querySelector("#Scene8").offsetLeft - window.innerWidth),
+                        end: () => "+=" + document.querySelector("#Scene8").offsetWidth,
                         onEnter: () => {
                             // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene7';
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene7'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 7})
+                            // window.location.href =  this.$route.path  + '#Scene6';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene8'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 8})
                         },
                         onEnterBack: () => {
                             // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene7';
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene7'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 7})
+                            // window.location.href =  this.$route.path  + '#Scene6';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene8'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 8})
                         }
                     }
                 });
