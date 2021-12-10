@@ -60,12 +60,12 @@ export default {
                             (document.querySelector("#Scene3").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
                         onEnter: () => {
-                            // emit in story.vue
+                            // emits on in Story.vue
                             // window.location.href =  this.$route.path  + '#Scene3';
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene3'})
                         },
                         onEnterBack: () => {
-                            // emit in story.vue
+                            // emits on in Story.vue
                             // window.location.href =  this.$route.path  + '#Scene3';
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene3'})
                         }
@@ -81,6 +81,7 @@ export default {
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
+                // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
             }
         }

@@ -28,7 +28,7 @@ export default {
 	},
     created(){
         if(process.client){
-            // Emit in Story.vue
+            // emits on Story.vue
             this.$nuxt.$on('updateProgressNav', (payload) => {
                 this.progressValue = payload.value;
             })
