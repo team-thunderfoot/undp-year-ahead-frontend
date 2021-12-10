@@ -1,11 +1,10 @@
 .b--info-window-a{
-    position:relative;
-    top:-$measure *2;
-    left:$measure*2;
-    z-index: 29;
+    position: relative;
+    left: $measure*3;
+    z-index:29;
     background: map-get($colorbg-options , e );
-    padding:10px;
-    border:5px solid map-get($color-options , j );
+    padding: 10px;
+    border: 5px solid map-get($color-options , j );
     max-width: 250px;
     transition: all 0.5s 0s ease;
     opacity: 0;
@@ -14,6 +13,7 @@
         pointer-events: all;
     }
     &__content{
+        @include make-font-f();
         padding:10px;
     }
 }
