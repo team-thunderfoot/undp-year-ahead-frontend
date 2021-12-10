@@ -49,7 +49,34 @@ export default {
                 "description" : description['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
-            this.contentLoaded++;
+             this.$nextTick(() => {
+                setTimeout(() => {
+                    // if we want to animate something later 
+                    var tlSection6 = this.$gsap.timeline({
+                        scrollTrigger: {
+                            trigger: "#Scene6",
+                            scrub: 0,
+                            start: () =>
+                                "top top-=" +
+                                (document.querySelector("#Scene6").offsetLeft - window.innerWidth),
+                            end: () => "+=" + document.querySelector("#Scene6").offsetWidth,
+                            onEnter: () => {
+                                // emits on in Story.vue
+                                // window.location.href =  this.$route.path  + '#Scene6';
+                                $nuxt.$emit('changeURL', { 'url'  : 'Scene6'})
+                                $nuxt.$emit('changeCurrent', { 'item'  : 6})
+                            },
+                            onEnterBack: () => {
+                                // emits on in Story.vue
+                                // window.location.href =  this.$route.path  + '#Scene6';
+                                $nuxt.$emit('changeURL', { 'url'  : 'Scene6'})
+                                $nuxt.$emit('changeCurrent', { 'item'  : 6})
+                            }
+                        }
+                    });
+                     this.contentLoaded++;
+                }, 6000);
+            })
         },
         handleLoad(){
             this.contentLoaded++;
