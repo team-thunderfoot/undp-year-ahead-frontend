@@ -1,0 +1,33 @@
+.b--card-d {
+  position: relative;
+  border: 40px solid map-get($color-options, h);
+  background: map-get($color-options, h);
+  height: 85.15%;
+  width: 872px;
+  z-index: 0;
+  @media all and ($viewport-type: $mobile) {
+    padding: $measure * 3;
+    border: 8px solid map-get($color-options, b);
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: $measure * 3 $measure * 10;
+    background: $gradient-d;
+    height: 100%;
+    &__content {
+      width: 314px;
+    }
+  }
+  &__media-wrapper {
+    position: absolute;
+    top: 55px;
+    left: 455px;
+    width: 540px;
+    &__media {
+      display: block;
+    }
+  }
+}
