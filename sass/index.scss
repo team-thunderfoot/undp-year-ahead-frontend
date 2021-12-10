@@ -23,6 +23,7 @@
 
 /* Chapter 1 */
 @import './framework/components/chapter/b--chapter1-a.scss';
+@import './framework/components/chapter/b--chapter13-a.scss';
 
 // Intro
 @import './framework/components/intro/b--intro-a.scss';
@@ -43,6 +44,7 @@
 // Motion
 @import './framework/components/motion/b--motion-a.scss';
 @import './framework/components/motion/b--motion-b.scss';
+@import './framework/components/motion/b--motion-test.scss';
 
 // Chapter Information
 @import './framework/components/info-chapter/b--info-chapter-a.scss';

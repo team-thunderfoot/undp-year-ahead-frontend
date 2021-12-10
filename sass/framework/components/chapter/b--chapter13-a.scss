@@ -1,0 +1,9 @@
+.b--chapter13-a{
+    &__artwork {
+        position: absolute;
+        &--second{
+            bottom:0;
+            left:34%;
+        }
+    }
+}

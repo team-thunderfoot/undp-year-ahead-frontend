@@ -5,7 +5,15 @@
                 <img v-lazy="require(`@/assets/img/chapter-13/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 13</h3>
+                <div class="b--chapter13-a__content">
+
+                       <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second">
+                            <div class="b--motion-test">
+                                <!-- Plant -->
+                            </div>
+                        </div>
+                </div>
+                
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-13/back.png">        
