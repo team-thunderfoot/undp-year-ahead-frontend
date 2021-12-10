@@ -1,13 +1,9 @@
 // Used in several chapters
 .b--card-a{
     position: relative;
-    padding: $measure * 3 $measure * 6;
-    border: 15px solid map-get($color-options , b);
+    padding: $measure*3 8%;
+    border: 1.46vh solid map-get($color-options , b);
     background: $gradient-g;
-    @media all and (max-height: $mobile) {
-        padding: 8%;
-        border: 2vh solid map-get($color-options , b);
-    }
     @media all and ($viewport-type: $mobile) {
         padding: $measure * 3;
         border: 8px solid map-get($color-options , b);
@@ -24,17 +20,11 @@
     }
     &__artwork{
         position: absolute;
-        top: -15px;
-        left: calc(100% + 15px);
-        width: 12px;
-        height: calc(100% + 30px);
+        top: -1.46vh;
+        left: calc(100% + 1.46vh);
+        width: 1.17vh;
+        height: calc(100% + 1.46vh*2);
         background-color: map-get($colorbg-options , d);
-        @media all and (max-height: $mobile) {
-            top: -2vh;
-            left: calc(100% + 2vh);
-            width: 1.5vh;
-            height: calc(100% + 4vh);
-        }
         @media all and ($viewport-type: $mobile) {
             top: -8px;
             left: calc(100% + 8px);
@@ -43,7 +33,7 @@
         }
     }
     &__wrapper{
-        max-height: calc(100vh - 18.85vh - 17.77vh - $measure*4 - 30px - $measure * 6);
+        max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4 - (1.46vh*2) - $measure*6 - 2px);
         overflow: auto;
         position: relative;
         @media all and ($viewport-type: $mobile) {
