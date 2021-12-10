@@ -12,7 +12,8 @@
         }
     }
     &__wrapper{
-        background: linear-gradient(0deg, #feedec, #ae8f8d);
+        //background: linear-gradient(0deg, #feedec, #ae8f8d);
+        background: $gradient-f; // not ok
         padding: $measure * 4;
         z-index: 2;
         border-top: 6px solid map-get($color-options , b);
