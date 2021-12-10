@@ -90,7 +90,7 @@
                         <h4 class="b--card-e__title">“Working Together, Restoring Trust”</h4>
                     </div>
                     <!-- text with bg -->
-                    <div>
+                    <div class="">
                         <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
                     </div>
                 </div>
