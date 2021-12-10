@@ -83,6 +83,18 @@
                     </div>
                 </div>
 
+                <!-- content-third position -->
+                <div class="b--chapter1-a__content b--chapter1-a__content--third">
+                    <!-- card-e -->
+                    <div class="b--card-e">
+                        <h4 class="b--card-e__title">“Working Together, Restoring Trust”</h4>
+                    </div>
+                    <!-- text with bg -->
+                    <div class="">
+                        <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
+                    </div>
+                </div>
+
                 <div class="b--chapter1-a__info">
                     <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
                         <div class="b--info-chapter-a__icon">
@@ -143,29 +155,33 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
-                // if we want to animate something later 
-                let tlSection = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene1",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                setTimeout(() => {
+                    // if we want to animate something later 
+                    let tlSection = this.$gsap.timeline({
+                        scrollTrigger: {
+                            trigger: "#Scene1",
+                            scrub: 0,
+                            start: () =>
+                                "top top-=" +
+                                (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+                            end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+                            onEnter: () => {
+                                // emits on in Story.vue
+                                $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                                $nuxt.$emit('changeCurrent', { 'item'  : 1})
+                            },
+                            onEnterBack: () => {
+                                // emits on in Story.vue
+                                $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                                $nuxt.$emit('changeCurrent', { 'item'  : 1})
+                            }
                         }
-                    }
-                });
+                    });
 
+                    this.contentLoaded++;
+                }, 1000);
                
             })
-            this.contentLoaded++;
 
         },
         handleLoad(){

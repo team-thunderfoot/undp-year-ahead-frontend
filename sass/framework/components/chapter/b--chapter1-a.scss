@@ -1,58 +1,64 @@
-.b--chapter1-a{
-    // intro position only
-    &__content{
-        position:absolute;
+.b--chapter1-a {
+  // intro position only
+  &__content {
+    position:absolute;
         bottom: 16.79%;
         left: 2.81%;
         width: 11.91%;
         max-width: calc(100vw - 60px);
         max-height: calc(60.25vh - 16.79vh - $measure*4);
-        // intro second box
-        &--second{
-            bottom: 17.77%;
-            left: 17.5%;
-            width: 12.09%;
-            max-height: calc(100vh - 19.04vh - 17.77vh - $measure*4);
-        }
+    // intro second box
+    &--second {
+        bottom: 17.77%;
+        left: 17.5%;
+        width: 12.09%;
+        max-height: calc(100vh - 19.04vh - 17.77vh - $measure*4);
     }
-   
-    &__artwork{
-        position: absolute;
-        z-index: 150;
-        max-width: calc(100vw - 60px);
-
-        // Gif top left
-        &--second{
-            bottom: 60.25%;
-            left: 2.17%;
-            width: 4.19%;
-            max-height: calc(100vh - 60.25vh - $measure*4);
-        }
-
-        // Browser
-        &--third{
-            top: 6%;
-            left: 31.2%;            
-        }
-
-        // TV
-        &--fourth{
-            bottom: 27.44%;
-            left: 31.09%;
-            width: 10.20%;
-            max-height: calc(100vh - 27.44vh - $measure*4);
-        }
-
-        &--fifth{
-            top: 47%;
-            left: 70.8%;
-        }
+    // intro third box
+    &--third {
+      bottom: 28.32%;
+      left: 57.46%;
+      width: 12.09%;
+      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
     }
-    &__item{
-        position: absolute;
-        z-index: 150;
-        top: 12%;
-        left: 44.8%;
+  }
+
+  &__artwork {
+    position: absolute;
+    z-index: 150;
+    max-width: calc(100vw - 60px);
+
+    // Gif top left
+    &--second {
+        bottom: 60.25%;
+        left: 2.17%;
+        width: 4.19%;
+        max-height: calc(100vh - 60.25vh - $measure*4);
     }
-   
+
+    // Browser
+    &--third {
+      top: 6%;
+      left: 31.2%;
+    }
+
+    // TV
+    &--fourth {
+        bottom: 27.44%;
+        left: 31.09%;
+        width: 10.20%;
+        max-height: calc(100vh - 27.44vh - $measure*4);
+    }
+
+    &--fifth {
+      top: 47%;
+      left: 70.8%;
+    }
+  }
+  &__item {
+    position: absolute;
+    z-index: 150;
+    top: 12%;
+    left: 44.8%;
+  }
 }
