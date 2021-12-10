@@ -10,6 +10,9 @@
         width: 20px;
         height: 50vh;
         background-color: map-get($color-options , a);
+        @media all and (max-height: $mobile) {
+            width: 12px;
+        }
         @media all and ($viewport-type: $mobile) {
             width: 12px;
         }
@@ -27,6 +30,9 @@
         width: 12px;
         height: 100%;
         background-color: map-get($color-options , a);
+        @media all and (max-height: $mobile) {
+            width: 1.5vh;
+        }
         @media all and ($viewport-type: $mobile) {
             width: 6px;
         }
@@ -37,6 +43,9 @@
         background: $gradient-g;
         padding: 8%;
         text-align: center;
+        @media all and (max-height: $mobile) {
+            border: 2vh solid map-get($color-options , b);
+        }
         @media all and ($viewport-type: $mobile) {
             padding: $measure * 3;
             border: 8px solid map-get($color-options , b);
