@@ -112,6 +112,9 @@ export default {
                     window.location.href =  this.$route.path  + '#' + payload.url;
                 }
             });
+            this.$nuxt.$on('changeCurrent', (payload) => {
+                this.currentItem = payload.item;
+            });
         }
     }
 }
