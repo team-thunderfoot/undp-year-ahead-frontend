@@ -48,8 +48,8 @@
                     <div class="b--card-c">
                         <div class="b--card-c__bd">
                             <div class="b--card-c__bd__artwork"></div>
-                            <div class="b--card-c__bd__media">
-                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--tv-a">
+                            <div class="b--card-c__bd__media-wrapper">
+                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--card-c__bd__media-wrapper__media">
                             </div>
                         </div>
                         <div class="b--card-c__ft">
@@ -89,9 +89,18 @@
                     <div class="b--card-e">
                         <h4 class="b--card-e__title">“Working Together, Restoring Trust”</h4>
                     </div>
+                </div>
+
+                <!-- content-fourth position -->
+                <div class="b--chapter1-a__content b--chapter1-a__content--fourth">
                     <!-- text with bg -->
-                    <div class="">
-                        <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
+                    <div class="b--info-graphic-a">
+                        <div class="b--info-graphic-a__content b--content-a">
+                            <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
+                        </div>
+                        <div class="b--info-graphic-a__media-wrapper">
+                            <img class="b--info-graphic-a__media-wrapper__media" src="@/assets/img/chapter-1/graphics.png" alt="">
+                        </div>
                     </div>
                 </div>
 

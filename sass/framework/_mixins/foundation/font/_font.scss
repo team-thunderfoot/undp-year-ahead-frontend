@@ -62,9 +62,6 @@
   line-height: 1.09;
   font-size: 1.5625rem;
   font-size: clamp(18px, 2.44vh, 1.5625rem);
-  @media all and ($viewport-type: $tabletl) {
-    // ASK MECHE - NOT EVEN DESIGNED
-  }
 }
 
 @mixin make-font-g {
