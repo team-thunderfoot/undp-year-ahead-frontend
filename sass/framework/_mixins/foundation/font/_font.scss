@@ -50,7 +50,7 @@
   font-weight: 600;
   line-height: 1.089;
   font-size: 2rem;
-  font-size: clamp(28px, 3.125vh, 2rem);
+  font-size: clamp(16px, 3.125vh, 2rem);
   @media all and ($viewport-type: $mobile) {
     font-size: clamp(16px, 6vw, 1.5rem);
   }
