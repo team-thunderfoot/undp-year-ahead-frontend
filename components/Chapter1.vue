@@ -96,8 +96,8 @@
                     <!-- text with bg -->
                     <div class="b--card-d">
                         <div class="b--card-d__wrapper">
-                             <div class="b--card-d__wrapper__content b--content-a">
-                                <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
+                             <div class="b--card-d__wrapper__content b--content-a"> 
+                                <p>Business, government and civil society leaders meet at the <strong>World Economic Forum</strong> to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
                             </div>
                         </div>
                         <div class="b--card-d__media-wrapper">
@@ -188,9 +188,7 @@ export default {
             //             }
             //         }
             //     });
-            //     this.contentLoaded++;
             // })
-
         },
         handleLoad(){
             this.contentLoaded++;
