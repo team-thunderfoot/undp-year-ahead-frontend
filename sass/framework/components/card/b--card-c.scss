@@ -13,7 +13,7 @@
             left: 100%;
             width: 6px;
             height: 100%;
-            background-color: map-get($color-options , a);
+            background-color: map-get($colorbg-options , d);
             @media all and ($viewport-type: $mobile) {
                 width: 4px;
             }

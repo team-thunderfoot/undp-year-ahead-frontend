@@ -79,11 +79,14 @@ $gradient-i:linear-gradient(180deg, #FCA56B 0%, rgba(252, 165, 107, 0) 100%); //
 $gradient-j:linear-gradient(180deg, #454E3F 0%, rgba(33, 36, 31, 0.45) 100%); // Gradient Green 1
 $gradient-k:linear-gradient(218.3deg, #2C3A64 22.06%, #0A1432 74.88%); // Gradient Blue1
 $gradient-l:linear-gradient(360deg, #33579E 47.51%, #A6C4FF 147.8%); // Gradient Blue2
+$gradient-m: linear-gradient(180deg, #AA3E39 0%, #701C18 100%); // Gradient Brown Linear Gradient
 
 $colorbg-options: (
   a: $color-d,
   b: $color-e,
-  c: $color-c
+  c: $color-c,
+  d: $color-a,
+  e: $color-i
 );
 
 /* Typography */
