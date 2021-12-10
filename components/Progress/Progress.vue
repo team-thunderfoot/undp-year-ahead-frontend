@@ -20,6 +20,7 @@ export default {
     methods :  {
         goTo(payload) {
 			if(payload == 'next'){
+                console.log(this.currentItemMenu);
                 this.currentItemMenu = this.currentItemMenu + 1;
 				var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
                 var pos =  sceneName.offsetLeft;
@@ -34,6 +35,7 @@ export default {
                 }});
 			}
             if(payload == 'prev'){
+                console.log(this.currentItemMenu);
                 this.currentItemMenu = this.currentItemMenu - 1;
 				var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
                 var pos =  sceneName.offsetLeft;
@@ -68,14 +70,14 @@ export default {
                     $nuxt.$emit('isLoadedURL');
                 }}); 
             }else{
-                if(this.currentItem > 1 && this.currentItem < 6 ){
+                if(this.currentItemMenu > 1 && this.currentItemMenu < 6 ){
                     this.$refs.prev.classList.remove("disabled");
                     this.$refs.next.classList.remove("disabled");
                 }
-                if(this.currentItem == 1 ){
+                if(this.currentItemMenu == 1 ){
                     this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
                 }
-                if(this.currentItem == 6 ){
+                if(this.currentItemMenu == 6 ){
                     this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                 }
             }
@@ -83,7 +85,7 @@ export default {
     },
     watch: {
         currentItem(newValue, oldValue) {
-            if(newValue >  1 && this.currentItem < 6 ){
+            if(newValue >  1 && newValue < 6 ){
                 this.$refs.prev.classList.remove("disabled");
                 this.$refs.next.classList.remove("disabled");
             }
@@ -93,6 +95,7 @@ export default {
             if(newValue == 6 ){
                 this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
             }
+            this.currentItemMenu = newValue;
         },
     },
     mounted(){
