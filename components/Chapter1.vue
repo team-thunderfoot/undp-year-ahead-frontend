@@ -48,12 +48,12 @@
                     <div class="b--card-c">
                         <div class="b--card-c__bd">
                             <div class="b--card-c__bd__artwork"></div>
-                            <div class="b--card-c__bd__media">
-                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--tv-a">
+                            <div class="b--card-c__bd__media-wrapper">
+                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--card-c__bd__media-wrapper__media">
                             </div>
                         </div>
                         <div class="b--card-c__ft">
-                            <img v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"  alt="tvset" title="tvset">
+                            <img class="b--card-c__ft__media" v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"  alt="tvset" title="tvset">
                         </div>
                     </div>
                 </div>
@@ -164,29 +164,33 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
-                // if we want to animate something later 
-                let tlSection = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene1",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                setTimeout(() => {
+                    // if we want to animate something later 
+                    let tlSection = this.$gsap.timeline({
+                        scrollTrigger: {
+                            trigger: "#Scene1",
+                            scrub: 0,
+                            start: () =>
+                                "top top-=" +
+                                (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+                            end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+                            onEnter: () => {
+                                // emits on in Story.vue
+                                $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                                $nuxt.$emit('changeCurrent', { 'item'  : 1})
+                            },
+                            onEnterBack: () => {
+                                // emits on in Story.vue
+                                $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                                $nuxt.$emit('changeCurrent', { 'item'  : 1})
+                            }
                         }
-                    }
-                });
+                    });
 
+                    this.contentLoaded++;
+                }, 1000);
                
             })
-            this.contentLoaded++;
 
         },
         handleLoad(){
