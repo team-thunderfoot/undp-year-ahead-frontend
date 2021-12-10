@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
-                   <div class="b--motion-a">
+                   <div class="b--motion-a" v-lazy:background-image="require(`@/assets/img/chapter-1/bubble-motion.png`)">
                         <!-- bubble -->
                     </div>
                 </div>
