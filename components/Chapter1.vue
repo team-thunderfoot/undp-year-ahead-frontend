@@ -61,7 +61,7 @@
                 <div class="b--chapter1-a__item">
                     <div class="b--quote-a">
                         <div class="b--quote-a__content">
-                            <SanityContent :blocks="chapter.quote"  />
+                            {{chapter.quote}}
                         </div>
                         <div class="b--quote-a__meta">
                             <h3 class="b--quote-a__meta__title">{{chapter.quotetitle}}</h3>
