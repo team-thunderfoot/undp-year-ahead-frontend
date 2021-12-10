@@ -10,6 +10,7 @@
                 <!-- first div position element -->
                 <div class="b--chapter1-a__content " >
                     <div class="b--intro-a">
+                        <div class="b--intro-a__artwork"></div>
                         <div class="b--intro-a__wrapper">
                             <h1 class="b--intro-a__wrapper__title">
                                 {{chapter.title}}
