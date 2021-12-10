@@ -5,6 +5,7 @@
   border: 8px solid map-get($color-options, j);
   background: $gradient-c;
   width: auto;
+  z-index: 1;
   @media all and ($viewport-type: $mobile) {
     padding: $measure * 3;
     border: 8px solid map-get($color-options, j);

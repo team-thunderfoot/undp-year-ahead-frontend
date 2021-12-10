@@ -14,10 +14,17 @@
       width: 12.09%;
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
     }
-    // intro third box
+    // card-e
     &--third {
-      bottom: 28.32%;
+      bottom: 75.39%;
       left: 57.46%;
+      width: 12.09%;
+      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
+    }
+    // infographics
+    &--fourth {
+      bottom: 28.32%;
+      left: 63.75%;
       width: 12.09%;
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
     }
