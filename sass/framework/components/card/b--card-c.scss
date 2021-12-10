@@ -1,8 +1,8 @@
-.b--card-c{
+.b--card-c {
     position: relative;
     z-index: 20;
-    &__bd{
-        position:relative;
+    &__bd {
+        position: relative;
         text-align: center;
         width: 80%;
         margin: 0 auto;
@@ -11,33 +11,33 @@
         @media all and ($viewport-type: $mobile) {
             top: 6px;
         }
-        &__artwork{
+        &__artwork {
             position: absolute;
             top: 0;
             left: 100%;
             width: 6px;
             height: 100%;
-            background-color: map-get($colorbg-options , d);
+            background-color: map-get($colorbg-options, d);
             @media all and ($viewport-type: $mobile) {
                 width: 4px;
             }
         }
-        &__media-wrapper{
-            border: 8px solid map-get($color-options , b);
+        &__media-wrapper {
+            border: 8px solid map-get($color-options, b);
             overflow: hidden;
             @media all and ($viewport-type: $mobile) {
-                border: 6px solid map-get($color-options , b);
+                border: 6px solid map-get($color-options, b);
             }
-            &__media{
+            &__media {
                 display: block;
                 width: 100%;
                 height: 100%;
             }
         }
     }
-    &__ft{
+    &__ft {
         height: 29.48%;
-        &__media{
+        &__media {
             display: block;
             width: 100%;
         }

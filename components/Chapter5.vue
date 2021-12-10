@@ -1,10 +1,10 @@
 <template>
-    <section class="b--page-a__item" id="Scene5" v-if="chapter">
-        <div class="b--ss-a"> 
-            <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-5/front.png`)" alt="front" />
-            </div>
-            <!-- <div class="b--ss-a__content">
+  <section class="b--page-a__item" id="Scene5" v-if="chapter">
+    <div class="b--ss-a">
+      <div class="b--ss-a__ft-items">
+        <img v-lazy="require(`@/assets/img/chapter-5/front.png`)" alt="front" />
+      </div>
+      <!-- <div class="b--ss-a__content">
                 <div class="b--card-a">
                     <div class="b--card-a__hd">
                         <h3 class="b--card-a__hd__title">
@@ -23,105 +23,111 @@
                     </p>
                 </div>
             </div> -->
-            <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-5/back.png">        
-            </div>
-        </div>
-    </section>
+      <div class="b--ss-a__bg-items">
+        <img
+          class="b--ss-a__bg-items__artwork"
+          @load="handleLoad"
+          @error="handleLoad"
+          src="@/assets/img/chapter-5/back.png"
+        />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity';
+import { groq } from '@nuxtjs/sanity'
 export default {
-    data:()=>{
-		return{
-            totalContent: 2,
-			contentLoaded : 0,
-            chapter: null
-		}
-	},
-    methods: {
-        async getContent(){
-            this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+  data: () => {
+    return {
+      totalContent: 2,
+      contentLoaded: 0,
+      chapter: null,
+    }
+  },
+  methods: {
+    async getContent() {
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
+      const query_content = groq`*[_type == "chapterTwo"][0]{
                 "title" : title['${this.lang}'],
                 "content" : content['${this.lang}'],
                 "description" : description['${this.lang}']
-            }`;
-            this.chapter = await this.$sanity.fetch(query_content);
-            this.contentLoaded++;
+            }`
+      this.chapter = await this.$sanity.fetch(query_content)
+      this.contentLoaded++
 
-            // this.$nextTick(() => {
-            //     // if we want to animate something later 
-            //     var tlSection5 = this.$gsap.timeline({
-            //         scrollTrigger: {
-            //             trigger: "#Scene5",
-            //             scrub: 0,
-            //             start: () =>
-            //                 "top top-=" +
-            //                 (document.querySelector("#Scene5").offsetLeft - window.innerWidth),
-            //             end: () => "+=" + document.querySelector("#Scene5").offsetWidth,
-            //             onEnter: () => {
-            //                 // emits on in Story.vue
-            //                 // window.location.href =  this.$route.path  + '#Scene5';
-            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
-            //                 $nuxt.$emit('changeCurrent', { 'item'  : 5})
-            //             },
-            //             onEnterBack: () => {
-            //                 // emits on in Story.vue
-            //                 // window.location.href =  this.$route.path  + '#Scene5';
-            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
-            //                 $nuxt.$emit('changeCurrent', { 'item'  : 5})
-            //             }
-            //         }
-            //     });
-            // })
-        },
-        handleLoad(){
-            this.contentLoaded++;
-        },
-        animate(){
-            this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection5 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene5",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene5").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene5").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene5';
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 5})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene5';
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 5})
-                        }
-                    }
-                });
-            })
-        }
+      // this.$nextTick(() => {
+      //     // if we want to animate something later
+      //     var tlSection5 = this.$gsap.timeline({
+      //         scrollTrigger: {
+      //             trigger: "#Scene5",
+      //             scrub: 0,
+      //             start: () =>
+      //                 "top top-=" +
+      //                 (document.querySelector("#Scene5").offsetLeft - window.innerWidth),
+      //             end: () => "+=" + document.querySelector("#Scene5").offsetWidth,
+      //             onEnter: () => {
+      //                 // emits on in Story.vue
+      //                 // window.location.href =  this.$route.path  + '#Scene5';
+      //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
+      //                 $nuxt.$emit('changeCurrent', { 'item'  : 5})
+      //             },
+      //             onEnterBack: () => {
+      //                 // emits on in Story.vue
+      //                 // window.location.href =  this.$route.path  + '#Scene5';
+      //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
+      //                 $nuxt.$emit('changeCurrent', { 'item'  : 5})
+      //             }
+      //         }
+      //     });
+      // })
     },
-    watch: {
-        contentLoaded(newValue, oldValue) {
-            if(newValue == this.totalContent ) {
-                // emits on in Story.vue
-                $nuxt.$emit('assetLoaded');
-                this.animate();
-            }
-        }
+    handleLoad() {
+      this.contentLoaded++
     },
-    created(){
-        if(process.client){
-            this.getContent();
-        }
+    animate() {
+      this.$nextTick(() => {
+        // if we want to animate something later
+        var tlSection5 = this.$gsap.timeline({
+          scrollTrigger: {
+            trigger: '#Scene5',
+            scrub: 0,
+            start: () =>
+              'top top-=' +
+              (document.querySelector('#Scene5').offsetLeft -
+                window.innerWidth),
+            end: () => '+=' + document.querySelector('#Scene5').offsetWidth,
+            onEnter: () => {
+              // emits on in Story.vue
+              // window.location.href =  this.$route.path  + '#Scene5';
+              $nuxt.$emit('changeURL', { url: 'Scene5' })
+              $nuxt.$emit('changeCurrent', { item: 5 })
+            },
+            onEnterBack: () => {
+              // emits on in Story.vue
+              // window.location.href =  this.$route.path  + '#Scene5';
+              $nuxt.$emit('changeURL', { url: 'Scene5' })
+              $nuxt.$emit('changeCurrent', { item: 5 })
+            },
+          },
+        })
+      })
+    },
+  },
+  watch: {
+    contentLoaded(newValue, oldValue) {
+      if (newValue == this.totalContent) {
+        // emits on in Story.vue
+        $nuxt.$emit('assetLoaded')
+        this.animate()
+      }
+    },
+  },
+  created() {
+    if (process.client) {
+      this.getContent()
     }
+  },
 }
 </script>
 

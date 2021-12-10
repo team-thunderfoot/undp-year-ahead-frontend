@@ -1,0 +1,33 @@
+<template>
+    <div class="b--card-f">
+        <div class="b--card-f__hd">
+            <!-- card-e -->
+            <div class="b--card-e">
+                <h4 class="b--card-e__title">{{title}}</h4>
+            </div>
+        </div>
+        <div class="b--card-f__bd">
+            <!-- card-a -->
+            <div class="b--card-a">
+                <div class="b--card-a__artwork"></div>
+                <div class="b--card-a__wrapper b--content-a">
+                    <SanityContent :blocks="description" />
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
+export default {
+    props:['title','description'],
+    components: {
+        SanityContent,
+    },
+}
+</script>
+
+<style>
+
+</style>

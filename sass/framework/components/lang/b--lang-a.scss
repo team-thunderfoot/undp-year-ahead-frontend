@@ -1,22 +1,23 @@
-.b--lang-a{
+.b--lang-a {
     position: fixed;
     z-index: 302;
-    top: $measure*7;
-    right: $measure*7;
-    &__btn{
+    top: $measure * 7;
+    right: $measure * 7;
+    transition: all 0.5s 0s ease;
+    &__btn {
         color: $color-f;
         display: flex;
         align-items: center;
         transition: all $time-a ease-in-out;
-        &__artwork{
-            height: $measure*3;
+        &__artwork {
+            height: $measure * 3;
             margin-right: $measure;
-            path{
+            path {
                 stroke: $color-f;
                 transition: all $time-a ease-in-out;
             }
         }
-        &__title{
+        &__title {
             @include make-font-j();
             text-transform: uppercase;
             padding-right: $measure;
@@ -24,29 +25,34 @@
                 display: none;
             }
         }
-        &__icon{
-            height: $measure*0.75;
+        &__icon {
+            height: $measure * 0.75;
             transition: all $time-a ease-in-out;
             @media all and ($viewport-type: $mobile) {
                 display: none;
             }
-            path{
+            path {
                 stroke: $color-f;
                 transition: all $time-a ease-in-out;
             }
         }
-        &:hover, &:focus, &:active{
+        &:hover,
+        &:focus,
+        &:active {
             color: map-get($color-options, f);
         }
-        &:hover &, &:focus &, &:active &{
-            &__artwork, &__icon{
-                path{
+        &:hover &,
+        &:focus &,
+        &:active & {
+            &__artwork,
+            &__icon {
+                path {
                     stroke: map-get($color-options, f);
                 }
             }
         }
     }
-    &__wrapper{
+    &__wrapper {
         position: absolute;
         top: calc(100% + 20px);
         left: 0;
@@ -58,39 +64,41 @@
             left: auto;
             right: 0;
         }
-        &__list-group{
-            padding: $measure*4 $measure*3;
+        &__list-group {
+            padding: $measure * 4 $measure * 3;
             background-color: $color-f;
             box-shadow: 0px 3px 6px 0px rgba(map-get($color-options, a), 0.16);
-            &__list-item{
-                &:not(:last-child){
-                    margin-bottom: $measure*3.75;
+            &__list-item {
+                &:not(:last-child) {
+                    margin-bottom: $measure * 3.75;
                 }
-                &__link{
+                &__link {
                     @include make-font-k();
                     text-transform: uppercase;
                     color: map-get($color-options, g);
                     text-decoration: none;
                     display: block;
                     transition: all $time-a ease-in-out;
-                    &:hover, &:focus, &:active{
+                    &:hover,
+                    &:focus,
+                    &:active {
                         color: map-get($color-options, a);
                     }
                 }
             }
         }
     }
-    &--is-active &{
-        &__btn{
-            &__icon{
+    &--is-active & {
+        &__btn {
+            &__icon {
                 transform: rotate(180deg);
             }
         }
-        &__wrapper{
+        &__wrapper {
             overflow: initial;
             height: auto;
             pointer-events: all;
-            &__list-group{
+            &__list-group {
                 // opacity: 1;
             }
         }

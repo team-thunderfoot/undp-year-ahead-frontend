@@ -1,10 +1,10 @@
+
 .b--motion-b {
-    width: 235px;
-    height: 353px;
-    background: url('@/assets/img/chapter-1/plant-1.png');
+    width: 172px;
+    height: 542px;
     animation-name: motionB; 
-    animation-duration: 3.5s;
-    animation-timing-function: steps(79);
+    animation-duration: 2.06s;
+    animation-timing-function: steps(102);
     animation-iteration-count: infinite;
     @media all and ($viewport-type: $tabletl) {
         // ASK MECHE - NOT EVEN DESIGNED
@@ -16,5 +16,6 @@
   }
   @keyframes motionB {
     from { background-position: 0px; }
-    to { background-position: -18565px; }
+    to { background-position: -17544px; }
   }
+
