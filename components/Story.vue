@@ -10,6 +10,10 @@
         <v-chapter-8  />
         <v-chapter-9  />
         <v-chapter-10  />
+        <v-chapter-11  />
+        <v-chapter-12  />
+        <v-chapter-13  />
+        <v-chapter-14  />
         <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" :currentItem="currentItem" ref="progress" />
         <div style="position:absolute;bottom : 0; background-color: red;width: 400px; text-align: center">
            ++++++++++  {{loadedNew}} ---
@@ -28,13 +32,17 @@ import Chapter7 from '~/components/Chapter7.vue';
 import Chapter8 from '~/components/Chapter8.vue';
 import Chapter9 from '~/components/Chapter9.vue';
 import Chapter10 from '~/components/Chapter10.vue';
+import Chapter11 from '~/components/Chapter11.vue';
+import Chapter12 from '~/components/Chapter12.vue';
+import Chapter13 from '~/components/Chapter13.vue';
+import Chapter14 from '~/components/Chapter14.vue';
 
 import Progress from '@/components/Progress/Progress.vue';
 
 export default {
     data:()=>{
 		return{
-            totalChapters:8,
+            totalChapters:14,
 			statusChapter : 0,
             urlWithParams :false,
             urlName : false,
@@ -56,6 +64,11 @@ export default {
         'v-chapter-8':Chapter8,
         'v-chapter-9':Chapter9,
         'v-chapter-10':Chapter10,
+        'v-chapter-11':Chapter11,
+        'v-chapter-12':Chapter12,
+        'v-chapter-13':Chapter13,
+        'v-chapter-14':Chapter14,
+
         'v-progress' : Progress
     },
     watch: {
