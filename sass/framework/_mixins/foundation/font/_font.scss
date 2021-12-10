@@ -68,7 +68,7 @@
 
 @mixin make-font-g {
   font-family: $type-b;
-  // font-weight: 400;
+  font-weight: 400;
   line-height: 1.1429;
   font-size: 2.34vh;
   font-size: clamp(16px, 2.34vh, 1.5rem);

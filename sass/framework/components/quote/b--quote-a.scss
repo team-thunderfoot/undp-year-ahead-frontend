@@ -1,13 +1,24 @@
 .b--quote-a{
     // max-width: 450px;
     &__content{
-        // font-size: 40px;
+        @include make-font-d();
+        // margin-bottom: $measure*3;
+        margin-bottom: 2.34vh;
     }
     &__meta{
+        width: 63.48%;
         &__title{
+            @include make-font-g();
             display: inline;
+            font-weight: 600;
+            @include link-a();
+            @include link-a-color($colortext: a);
+            &:hover, &:focus, &:active{
+            @include link-a-interaction();
+            }
         }
         &__subtitle{
+            @include make-font-g();
             display: inline;
         }
     }
