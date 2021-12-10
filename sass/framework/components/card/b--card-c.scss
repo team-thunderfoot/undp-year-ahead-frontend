@@ -8,13 +8,15 @@
         margin: 0 auto;
         top: 10px;
         &__artwork{
-            content:'';
-            position:absolute;
-            top:0;
-            right:-10px;
-            width:10px;
-            background: map-get($color-options , a);
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 6px;
             height: 100%;
+            background-color: map-get($color-options , a);
+            @media all and ($viewport-type: $mobile) {
+                width: 4px;
+            }
         }
         &__media{
             // border-top: 10px solid #771f1b;
@@ -27,5 +29,8 @@
             border-right: 10px solid map-get($color-options , b );
             display: inline-flex;
         }
+    }
+    &__ft{
+        &__media{}
     }
 }
