@@ -9,6 +9,27 @@
     padding: $measure * 3;
     border: 8px solid map-get($color-options, b);
   }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 40px);
+    width: 23px;
+    height: 99px;
+    background-color: map-get($color-options, t);
+    @media all and (max-height: $mobile) {
+      width: 12px;
+    }
+    @media all and ($viewport-type: $mobile) {
+      width: 12px;
+    }
+  }
+  &::before {
+    left: 5%;
+  }
+  &::after {
+    right: 5%;
+  }
   &__wrapper {
     position: relative;
     display: flex;
