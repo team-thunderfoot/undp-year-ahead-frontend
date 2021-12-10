@@ -112,7 +112,7 @@
                             i
                         </div>
                     </div>
-                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}" @click.prevent="this.infoWindowStatus == !this.infoWindowStatus">
+                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}">
                         <div class="b--info-window-a__content">
                             <SanityContent :blocks="chapter.info"  />
                         </div>

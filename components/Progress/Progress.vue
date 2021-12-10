@@ -66,8 +66,6 @@ export default {
                     if(this.currentItemMenu == this.maxStories){
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
-                    // emits on in Story.vue
-                    $nuxt.$emit('isLoadedURL');
                 }}); 
             }else{
                 console.log(this.currentItemMenu);
