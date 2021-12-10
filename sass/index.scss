@@ -4,7 +4,6 @@
 // include utilities
 @import './framework/utilities/utilities';
 
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -15,14 +14,12 @@
 @import './framework/components/page/b--page-a.scss';
 @import './framework/components/single-story/b--ss-a.scss';
 
-
 // Navbar
 @import './framework/components/nav/b--nav-a.scss';
 @import './framework/components/lang/b--lang-a.scss';
 
 // Preloader
 @import './framework/components/preloader/b--preloader-a.scss';
-
 
 /* Chapter 1 */
 @import './framework/components/chapter/b--chapter1-a.scss';
@@ -34,6 +31,7 @@
 @import './framework/components/card/b--card-a.scss';
 @import './framework/components/card/b--card-b.scss';
 @import './framework/components/card/b--card-c.scss';
+@import './framework/components/card/b--card-e.scss';
 
 // Content
 @import './framework/components/content/b--content-a.scss';
@@ -56,8 +54,3 @@
   z-index: 3;
   border: 1px solid red;
 }
-
-
-
-
-
