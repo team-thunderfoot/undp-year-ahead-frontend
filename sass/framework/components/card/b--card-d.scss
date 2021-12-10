@@ -4,6 +4,7 @@
   background: map-get($color-options, h);
   height: 85.15%;
   //   width: 872px;
+  box-shadow: 0px 16px 21px -7px map-get($color-options, b);
   z-index: 0;
   @media all and ($viewport-type: $mobile) {
     padding: $measure * 3;
