@@ -34,7 +34,7 @@ import Chapter12 from '~/components/Chapter12.vue';
 import Chapter13 from '~/components/Chapter13.vue';
 import Chapter14 from '~/components/Chapter14.vue';
 
-import Progress from '@/components/Progress/Progress.vue';
+import Progress from '~/components/NavControls.vue';
 
 export default {
     data:()=>{
