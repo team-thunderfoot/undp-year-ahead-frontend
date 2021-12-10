@@ -95,8 +95,8 @@
                 <div class="b--chapter1-a__content b--chapter1-a__content--fourth">
                     <!-- text with bg -->
                     <div class="b--card-d">
-                        <div class="b--card-d__wrapper">
-                             <div class="b--card-d__wrapper__content b--content-a"> 
+                        <div class="b--card-d__bd">
+                             <div class="b--card-d__bd__content b--content-a"> 
                                 <p>Business, government and civil society leaders meet at the <strong>World Economic Forum</strong> to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
                             </div>
                         </div>
