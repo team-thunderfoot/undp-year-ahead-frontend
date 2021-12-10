@@ -49,6 +49,38 @@ export default {
                 "description" : description['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
+            this.contentLoaded++;
+
+            // this.$nextTick(() => {
+            //     // if we want to animate something later 
+            //     var tlSection5 = this.$gsap.timeline({
+            //         scrollTrigger: {
+            //             trigger: "#Scene5",
+            //             scrub: 0,
+            //             start: () =>
+            //                 "top top-=" +
+            //                 (document.querySelector("#Scene5").offsetLeft - window.innerWidth),
+            //             end: () => "+=" + document.querySelector("#Scene5").offsetWidth,
+            //             onEnter: () => {
+            //                 // emits on in Story.vue
+            //                 // window.location.href =  this.$route.path  + '#Scene5';
+            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
+            //                 $nuxt.$emit('changeCurrent', { 'item'  : 5})
+            //             },
+            //             onEnterBack: () => {
+            //                 // emits on in Story.vue
+            //                 // window.location.href =  this.$route.path  + '#Scene5';
+            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
+            //                 $nuxt.$emit('changeCurrent', { 'item'  : 5})
+            //             }
+            //         }
+            //     });
+            // })
+        },
+        handleLoad(){
+            this.contentLoaded++;
+        },
+        animate(){
             this.$nextTick(() => {
                 // if we want to animate something later 
                 var tlSection5 = this.$gsap.timeline({
@@ -73,18 +105,15 @@ export default {
                         }
                     }
                 });
-                this.contentLoaded++;
             })
-        },
-        handleLoad(){
-            this.contentLoaded++;
-        },
+        }
     },
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
+                this.animate();
             }
         }
     },

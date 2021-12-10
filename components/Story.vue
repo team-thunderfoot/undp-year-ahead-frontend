@@ -108,7 +108,7 @@ export default {
             });
             // event in ChapterX.vue
             this.$nuxt.$on('changeURL', (payload) => {
-                if(this.isLoadedURLParam){
+                if(this.urlWithParams){
                     window.location.href =  this.$route.path  + '#' + payload.url;
                 }
             });
