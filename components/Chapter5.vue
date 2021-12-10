@@ -50,34 +50,30 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
-                setTimeout(() => {
-                    // if we want to animate something later 
-                    var tlSection5 = this.$gsap.timeline({
-                        scrollTrigger: {
-                            trigger: "#Scene5",
-                            scrub: 0,
-                            start: () =>
-                                "top top-=" +
-                                (document.querySelector("#Scene5").offsetLeft - window.innerWidth),
-                            end: () => "+=" + document.querySelector("#Scene5").offsetWidth,
-                            onEnter: () => {
-                                // emits on in Story.vue
-                                // window.location.href =  this.$route.path  + '#Scene5';
-                                $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
-                                $nuxt.$emit('changeCurrent', { 'item'  : 5})
-                            },
-                            onEnterBack: () => {
-                                // emits on in Story.vue
-                                // window.location.href =  this.$route.path  + '#Scene5';
-                                $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
-                                $nuxt.$emit('changeCurrent', { 'item'  : 5})
-                            }
+                // if we want to animate something later 
+                var tlSection5 = this.$gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#Scene5",
+                        scrub: 0,
+                        start: () =>
+                            "top top-=" +
+                            (document.querySelector("#Scene5").offsetLeft - window.innerWidth),
+                        end: () => "+=" + document.querySelector("#Scene5").offsetWidth,
+                        onEnter: () => {
+                            // emits on in Story.vue
+                            // window.location.href =  this.$route.path  + '#Scene5';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 5})
+                        },
+                        onEnterBack: () => {
+                            // emits on in Story.vue
+                            // window.location.href =  this.$route.path  + '#Scene5';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 5})
                         }
-                    });
-                    this.contentLoaded++;
-
-                }, 5000);
-                
+                    }
+                });
+                this.contentLoaded++;
             })
         },
         handleLoad(){
