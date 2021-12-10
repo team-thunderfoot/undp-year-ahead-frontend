@@ -1,18 +1,16 @@
 <template>
-    <section class="b--page-a__item" id="Scene13" v-if="chapter">
+    <section class="b--page-a__item b--chapter13-a" id="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
+                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second">
+                    <div class="b--motion-test">
+                        <!-- Plant -->
+                    </div>
+                </div>
                 <img v-lazy="require(`@/assets/img/chapter-13/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <div class="b--chapter13-a__content">
-
-                       <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second">
-                            <div class="b--motion-test">
-                                <!-- Plant -->
-                            </div>
-                        </div>
-                </div>
+          
                 
             </div>
             <div class="b--ss-a__bg-items">
