@@ -23,6 +23,20 @@
 
 /* Chapter 1 */
 @import './framework/components/chapter/b--chapter1-a.scss';
+@import './framework/components/chapter/b--chapter2-a.scss';
+@import './framework/components/chapter/b--chapter3-a.scss';
+@import './framework/components/chapter/b--chapter4-a.scss';
+@import './framework/components/chapter/b--chapter5-a.scss';
+@import './framework/components/chapter/b--chapter6-a.scss';
+@import './framework/components/chapter/b--chapter7-a.scss';
+@import './framework/components/chapter/b--chapter8-a.scss';
+@import './framework/components/chapter/b--chapter9-a.scss';
+@import './framework/components/chapter/b--chapter10-a.scss';
+@import './framework/components/chapter/b--chapter11-a.scss';
+@import './framework/components/chapter/b--chapter12-a.scss';
+@import './framework/components/chapter/b--chapter13-a.scss';
+@import './framework/components/chapter/b--chapter14-a.scss';
+
 
 // Intro
 @import './framework/components/intro/b--intro-a.scss';
@@ -43,6 +57,7 @@
 // Motion
 @import './framework/components/motion/b--motion-a.scss';
 @import './framework/components/motion/b--motion-b.scss';
+@import './framework/components/motion/b--motion-test.scss';
 
 // Chapter Information
 @import './framework/components/info-chapter/b--info-chapter-a.scss';
