@@ -31,6 +31,14 @@
     }
   }
 
+  &__info {
+    position: absolute;
+    bottom: 67.08%;
+    left: 84.4%;
+    width: 5.62%;
+    max-width: calc(100vw - 60px);
+  }
+
   &__artwork {
     position: absolute;
     z-index: 150;

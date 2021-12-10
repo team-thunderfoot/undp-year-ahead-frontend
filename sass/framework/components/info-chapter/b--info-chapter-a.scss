@@ -1,13 +1,18 @@
 .b--info-chapter-a{
-    width:30px;
-    height:30px;
-    background: $gradient-m;
-    border-radius: 50%;
-    display: block;
-    color:#fff;
-    z-index: 30;
-    text-align: center;
     position:relative;
-    line-height: 30px;
+    top: $measure*3;
+    display: block;
+    cursor: pointer;
+    z-index: 30;
+    width: $measure*6;
+    height: $measure*6;
+    background: $gradient-m;
+    outline: $measure solid map-get($color-options , j );
+    border-radius: 50%;
+    color: map-get($color-options , f );
+    text-align: center;
+    line-height: 1.1;
+    font-family: $type-a;
+    font-size: $measure*5;
 
 }
