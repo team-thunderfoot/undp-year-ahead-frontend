@@ -108,9 +108,7 @@
 
                 <div class="b--chapter1-a__info">
                     <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
-                        <div class="b--info-chapter-a__icon">
-                            i
-                        </div>
+                        <div class="b--info-chapter-a__icon">i</div>
                     </div>
                     <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}">
                         <div class="b--info-window-a__content">
