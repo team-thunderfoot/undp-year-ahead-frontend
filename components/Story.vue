@@ -9,6 +9,7 @@
         <v-chapter-7  />
         <v-chapter-8  />
         <v-chapter-9  />
+        <v-chapter-10  />
         <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" :currentItem="currentItem" ref="progress" />
         <div style="position:absolute;bottom : 0; background-color: red;width: 400px; text-align: center">
            ++++++++++  {{loadedNew}} ---
@@ -26,6 +27,7 @@ import Chapter6 from '~/components/Chapter6.vue';
 import Chapter7 from '~/components/Chapter7.vue';
 import Chapter8 from '~/components/Chapter8.vue';
 import Chapter9 from '~/components/Chapter9.vue';
+import Chapter10 from '~/components/Chapter10.vue';
 
 import Progress from '@/components/Progress/Progress.vue';
 
@@ -53,6 +55,7 @@ export default {
         'v-chapter-7':Chapter7,
         'v-chapter-8':Chapter8,
         'v-chapter-9':Chapter9,
+        'v-chapter-10':Chapter10,
         'v-progress' : Progress
     },
     watch: {
