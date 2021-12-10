@@ -91,7 +91,7 @@
                     </div>
                     <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}">
                         <div class="b--info-window-a__content">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio quis eius tempora rem, recusandae nulla reprehenderit officia dolore sint, inventore in facilis tempore quas deserunt omnis enim nam ullam vel.</p>
+                            <SanityContent :blocks="chapter.info"  />
                         </div>
                     </div>
                 </div>
@@ -152,11 +152,11 @@ export default {
                             (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
                         onEnter: () => {
-                            // emit in story.vue
+                            // emits on in Story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
                         },
                         onEnterBack: () => {
-                            // emit in story.vue
+                            // emits on in Story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
                         }
                     }
@@ -174,6 +174,7 @@ export default {
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
+                // emits on in Story.vue
                 $nuxt.$emit('assetLoaded')
             }
         }

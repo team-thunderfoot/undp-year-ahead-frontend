@@ -36,6 +36,7 @@ export default {
 	},
   created(){
       if(process.client){
+          // Event from Story.vue
           this.$nuxt.$on('siteLoaded', () => {
               setTimeout(() => {
                   this.isLoaded = true;

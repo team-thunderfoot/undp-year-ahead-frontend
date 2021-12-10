@@ -73,12 +73,13 @@ export default {
                         scrub: true,
                         markers: "true",
                         onUpdate: (self) => {
-                            // Update Progress in Nav.vue 
+                            // Emits on Update Progress in Nav.vue 
                             var widthProgress = self.progress.toFixed(2) * 100;
                             $nuxt.$emit('updateProgressNav',{value:widthProgress})
                         }
                     }
                 });
+                // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
                 this.loadedNew = true;
             })

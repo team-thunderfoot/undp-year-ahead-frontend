@@ -58,6 +58,7 @@ export default {
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
+                // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
             }
         }

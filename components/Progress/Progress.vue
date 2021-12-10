@@ -54,6 +54,7 @@ export default {
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
                     //do something after going to section
+                    // emits on in Story.vue
                     this.$emit("positionBasedURL", true);
                     const words = this.urlName.split('Scene');
                     this.currentItem = words[1]; // gets number of the url name (from #Scene2 takes the number 2)
@@ -63,6 +64,7 @@ export default {
                     if(words[1] == this.maxStories){
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
+                    // emits on in Story.vue
                     $nuxt.$emit('isLoadedURL');
                 }}); 
             }else{
