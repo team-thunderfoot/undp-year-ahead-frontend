@@ -44,12 +44,37 @@ export default {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
             const query_content = groq`*[_type == "chapterTwo"][0]{
-                "title" : title['`+this.lang+`'],
-                "content" : content['`+this.lang+`'],
-                "description" : description['`+this.lang+`']
+                "title" : title['${this.lang}'],
+                "content" : content['${this.lang}'],
+                "description" : description['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
-            this.contentLoaded++;
+            this.$nextTick(() => {
+                // if we want to animate something later 
+                var tlSection4 = this.$gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#Scene4",
+                        scrub: 0,
+                        start: () =>
+                            "top top-=" +
+                            (document.querySelector("#Scene4").offsetLeft - window.innerWidth),
+                        end: () => "+=" + document.querySelector("#Scene4").offsetWidth,
+                        onEnter: () => {
+                            // emits on in Story.vue
+                            // window.location.href =  this.$route.path  + '#Scene4';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene4'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 4})
+                        },
+                        onEnterBack: () => {
+                            // emits on in Story.vue
+                            // window.location.href =  this.$route.path  + '#Scene4';
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene4'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 4})
+                        }
+                    }
+                });
+                this.contentLoaded++;
+            })
         },
         handleLoad(){
             this.contentLoaded++;
@@ -58,6 +83,7 @@ export default {
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
+                // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
             }
         }

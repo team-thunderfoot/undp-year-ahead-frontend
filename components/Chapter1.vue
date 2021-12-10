@@ -10,6 +10,7 @@
                 <!-- first div position element -->
                 <div class="b--chapter1-a__content " >
                     <div class="b--intro-a">
+                        <div class="b--intro-a__artwork"></div>
                         <div class="b--intro-a__wrapper">
                             <h1 class="b--intro-a__wrapper__title">
                                 {{chapter.title}}
@@ -32,6 +33,7 @@
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second">
                     <div class="b--card-b">
+                        <div class="b--card-b__artwork"></div>
                         <div class="b--card-b__wrapper">
                            <img class="b--card-b__wrapper__media" v-lazy="require(`@/assets/img/chapter-1/frame.gif`)"  alt="frame" title="frame">
                         </div>
@@ -46,12 +48,12 @@
                     <div class="b--card-c">
                         <div class="b--card-c__bd">
                             <div class="b--card-c__bd__artwork"></div>
-                            <div class="b--card-c__bd__media">
-                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--tv-a">
+                            <div class="b--card-c__bd__media-wrapper">
+                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--card-c__bd__media-wrapper__media">
                             </div>
                         </div>
                         <div class="b--card-c__ft">
-                            <img v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"  alt="tvset" title="tvset">
+                            <img class="b--card-c__ft__media" v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"  alt="tvset" title="tvset">
                         </div>
                     </div>
                 </div>
@@ -68,25 +70,40 @@
                     </div>
                 </div>
 
-          
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
+                   <div class="b--motion-a">
+                        <!-- bubble -->
+                    </div>
+                </div>
 
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--sixth">
                    <div class="b--motion-b">
                         <!-- Plant -->
-                        <!-- only for test  -->
                     </div>
                 </div>
 
-                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--seventh">
+                <!-- content-third position -->
+                <div class="b--chapter1-a__content b--chapter1-a__content--third">
+                    <!-- card-e -->
+                    <div class="b--card-e">
+                        <h4 class="b--card-e__title">“Working Together, Restoring Trust”</h4>
+                    </div>
+                </div>
+
+                <!-- content-fourth position -->
+                <div class="b--chapter1-a__content b--chapter1-a__content--fourth">
+                    <!-- text with bg -->
                     <div class="b--card-d">
-                        <div class="b--card-d__ft-items">
-                            <p>this is a test</p>
+                        <div class="b--card-d__wrapper">
+                             <div class="b--card-d__wrapper__content b--content-a">
+                                <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
+                            </div>
                         </div>
-                        <div class="b--card-d__bg-items">
-                             <img v-lazy="require(`@/assets/img/chapter-1/board.svg`)"  alt="board" title="board">
+                        <div class="b--card-d__media-wrapper">
+                            <img class="b--card-d__media-wrapper__media" src="@/assets/img/chapter-1/graphics.png" alt="">
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
                 <div class="b--chapter1-a__info">
@@ -95,19 +112,12 @@
                             i
                         </div>
                     </div>
-                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}">
+                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}" @click.prevent="this.infoWindowStatus == !this.infoWindowStatus">
                         <div class="b--info-window-a__content">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio quis eius tempora rem, recusandae nulla reprehenderit officia dolore sint, inventore in facilis tempore quas deserunt omnis enim nam ullam vel.</p>
+                            <SanityContent :blocks="chapter.info"  />
                         </div>
                     </div>
                 </div>
-
-                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
-                   <div class="b--motion-a">
-                        <!-- bubble -->
-                    </div>
-                </div>
-
 
                 
             </div>
@@ -134,6 +144,7 @@ export default {
             totalContent:3,
 			contentLoaded : 0,
             chapter : null,
+            infoWindowStatus: false
 		}
 	},
     components:{
@@ -143,15 +154,15 @@ export default {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
             const query_content = groq`*[_type == "chapterOne"][0]{
-                "title" : title['`+this.lang+`'],
-                "date" : date['`+this.lang+`'],
-                "description" : description['`+this.lang+`'],
-                "content" : content['`+this.lang+`'],
-                "quote" :  quote['`+this.lang+`'],
-                "quotetitle" :  quotetitle['`+this.lang+`'],
-                "quotedirector" :  quotedirector['`+this.lang+`'],
-                "panel" :  panel['`+this.lang+`'],
-                "info" : info['`+this.lang+`']
+                "title" : title['${this.lang}'],
+                "date" : date['${this.lang}'],
+                "description" : description['${this.lang}'],
+                "content" : content['${this.lang}'],
+                "quote" :  quote['${this.lang}'],
+                "quotetitle" :  quotetitle['${this.lang}'],
+                "quotedirector" :  quotedirector['${this.lang}'],
+                "panel" :  panel['${this.lang}'],
+                "info" : info['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
@@ -165,19 +176,19 @@ export default {
                             (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
                         end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
                         onEnter: () => {
-                            // emit in story.vue
+                            // emits on in Story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 1})
                         },
                         onEnterBack: () => {
-                            // emit in story.vue
+                            // emits on in Story.vue
                             $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 1})
                         }
                     }
                 });
-
-               
+                this.contentLoaded++;
             })
-            this.contentLoaded++;
 
         },
         handleLoad(){
@@ -187,6 +198,7 @@ export default {
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
+                // emits on in Story.vue
                 $nuxt.$emit('assetLoaded')
             }
         }

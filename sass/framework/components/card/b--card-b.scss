@@ -1,29 +1,46 @@
 .b--card-b{
     position: relative;
+    &__artwork{
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 8px;
+        height: 100%;
+        background-color: map-get($color-options , a);
+        @media all and (max-height: $mobile) {
+            width: 1vh;
+        }
+        @media all and ($viewport-type: $mobile) {
+            width: 5px;
+        }
+    }
     &__wrapper{
-        background: linear-gradient(0deg, #feedec, #ae8f8d);
-        padding: $measure * 4;
-        // max-width: 539px;
-        // margin-bottom: 30px;
+        //background: linear-gradient(0deg, #feedec, #ae8f8d);
+        background: $gradient-f; // not ok
+        padding: 20%;
         z-index: 2;
         border-top: 6px solid map-get($color-options , b);
         border-bottom: 6px solid map-get($color-options , b);
         border-left: 10px solid map-get($color-options , b);
         border-right: 10px solid map-get($color-options , b);
-        box-shadow: 8px 0px 0px map-get($color-options , a);
+        @media all and (max-height: $mobile) {
+            border-top: 1vh solid map-get($color-options , b);
+            border-bottom: 1vh solid map-get($color-options , b);
+            border-left: 1.5vh solid map-get($color-options , b);
+            border-right: 1.5vh solid map-get($color-options , b);
+        }
         @media all and ($viewport-type: $mobile) {
-            padding: $measure * 2;
             border-top: 4px solid map-get($color-options , b);
             border-bottom: 4px solid map-get($color-options , b);
             border-left: 6px solid map-get($color-options , b);
             border-right: 6px solid map-get($color-options , b);
-            box-shadow: 5px 0px 0px map-get($color-options , a);
         }
-    }
-    &__media{
-        width: 100%;
-        max-height: 100%;
-        object-fit: cover;
+        &__media{
+            display: block;
+            width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
     }
     
 }
