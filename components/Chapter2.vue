@@ -5,6 +5,25 @@
                 <img v-lazy="require(`@/assets/img/chapter-2/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
+                <!-- card-f -->
+                <div class="b--card-f">
+                    <div class="b--card-f__hd">
+                        <!-- card-e -->
+                        <div class="b--card-e">
+                            <h4 class="b--card-e__title">“Working Together, Restoring Trust”</h4>
+                        </div>
+                    </div>
+                    <div class="b--card-f__bd">
+                        <!-- card-a -->
+                        <div class="b--card-a">
+                            <div class="b--card-a__artwork"></div>
+                            <div class="b--card-a__wrapper b--content-a">
+                                <p><a href="">Frankie the Dinosaur</a> brings his climate action appeal to Davos at a high-level event on fossil fuel subsidies reform.</p>
+                                <p><a href="">Watch Frankie’s message to humanity</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="b--card-a">
                     <div class="b--card-a__hd">
                         <h3 class="b--card-a__hd__title">

@@ -3,7 +3,6 @@
   border: 3.9vh solid map-get($color-options, h);
   background: map-get($color-options, h);
   height: 85.15%;
-  //   width: 872px;
   box-shadow: 0px 16px 21px -7px map-get($color-options, b);
   z-index: 0;
   @media all and ($viewport-type: $mobile) {
@@ -29,16 +28,14 @@
   &::after {
     right: 5%;
   }
-  &__wrapper {
+  &__bd {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // padding: $measure * 3 $measure * 10;
     background: $gradient-d;
     height: 100%;
     &__content {
-      //   width: 314px;
       width: calc(37.97% + $measure * 20);
       padding: 0 $measure * 10;
       @media all and (max-height: $mobile) {
@@ -49,9 +46,7 @@
   &__media-wrapper {
     position: absolute;
     top: 55px;
-    // left: 455px;
     left: calc(53.89% + 3.9vh);
-    // width: 540px;
     width: 66.95%;
     @media all and (max-height: $mobile) {
       left: calc(78.89% + 3.9vh);

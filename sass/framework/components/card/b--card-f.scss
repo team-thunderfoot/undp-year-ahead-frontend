@@ -1,0 +1,36 @@
+.b--card-f {
+  position: relative;
+  width: 100%;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 1.95vh;
+    height: 50vh;
+    background-color: map-get($colorbg-options, d);
+    @media all and (max-height: $mobile) {
+      width: 12px;
+    }
+  }
+  &::before {
+    left: 8%;
+  }
+  &::after {
+    right: 8%;
+  }
+  &__artwork {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 1.17vh;
+    height: 100%;
+    background-color: map-get($color-options, a);
+    @media all and ($viewport-type: $mobile) {
+      width: 6px;
+    }
+  }
+  &__hd {
+    margin-bottom: 47px;
+  }
+}
