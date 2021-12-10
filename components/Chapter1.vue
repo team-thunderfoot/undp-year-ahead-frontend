@@ -144,7 +144,7 @@ export default {
             totalContent:3,
 			contentLoaded : 0,
             chapter : null,
-            infoWindowStatus: false
+            infoWindowStatus: true
 		}
 	},
     components:{
