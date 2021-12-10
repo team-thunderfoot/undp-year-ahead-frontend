@@ -7,8 +7,7 @@
   box-shadow: 0px 16px 21px -7px map-get($color-options, b);
   z-index: 0;
   @media all and ($viewport-type: $mobile) {
-    padding: $measure * 3;
-    border: 8px solid map-get($color-options, b);
+    border: 1.5vh solid map-get($color-options, h);
   }
   &::before,
   &::after {
@@ -19,10 +18,9 @@
     height: 99px;
     background-color: map-get($color-options, t);
     @media all and (max-height: $mobile) {
-      width: 12px;
-    }
-    @media all and ($viewport-type: $mobile) {
-      width: 12px;
+      top: calc(100% + 1.5vh);
+      width: 16px;
+      height: 72px;
     }
   }
   &::before {
@@ -43,6 +41,9 @@
       //   width: 314px;
       width: calc(37.97% + $measure * 20);
       padding: 0 $measure * 10;
+      @media all and (max-height: $mobile) {
+        padding: 0 $measure * 2;
+      }
     }
   }
   &__media-wrapper {
@@ -52,6 +53,10 @@
     left: calc(53.89% + 3.9vh);
     // width: 540px;
     width: 66.95%;
+    @media all and (max-height: $mobile) {
+      left: calc(78.89% + 3.9vh);
+      width: 79.95%;
+    }
     &__media {
       display: block;
     }
