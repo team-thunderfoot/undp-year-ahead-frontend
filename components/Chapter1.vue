@@ -101,7 +101,7 @@
                             </div>
                         </div>
                         <div class="b--card-d__media-wrapper">
-                            <img class="b--card-d__media-wrapper__media" src="@/assets/img/chapter-1/graphics.png" alt="">
+                            <img class="b--card-d__media-wrapper__media" v-lazy="require(`@/assets/img/chapter-1/graphics.png`)"  alt="graphic" title="graphic">
                         </div>
                     </div>
                 </div>
