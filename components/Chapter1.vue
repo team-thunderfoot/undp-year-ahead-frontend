@@ -112,7 +112,7 @@
                             i
                         </div>
                     </div>
-                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}" @click.prevent="this.infoWindowStatus == !this.infoWindowStatus">
+                    <div class="b--info-window-a" :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus}">
                         <div class="b--info-window-a__content">
                             <SanityContent :blocks="chapter.info"  />
                         </div>
@@ -165,6 +165,37 @@ export default {
                 "info" : info['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
+            this.contentLoaded++;
+            // this.$nextTick(() => {
+            //     // if we want to animate something later 
+            //     let tlSection = this.$gsap.timeline({
+            //         scrollTrigger: {
+            //             trigger: "#Scene1",
+            //             scrub: 0,
+            //             start: () =>
+            //                 "top top-=" +
+            //                 (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+            //             end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+            //             onEnter: () => {
+            //                 // emits on in Story.vue
+            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+            //                 $nuxt.$emit('changeCurrent', { 'item'  : 1})
+            //             },
+            //             onEnterBack: () => {
+            //                 // emits on in Story.vue
+            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+            //                 $nuxt.$emit('changeCurrent', { 'item'  : 1})
+            //             }
+            //         }
+            //     });
+            //     this.contentLoaded++;
+            // })
+
+        },
+        handleLoad(){
+            this.contentLoaded++;
+        },
+        animate(){
             this.$nextTick(() => {
                 // if we want to animate something later 
                 let tlSection = this.$gsap.timeline({
@@ -187,19 +218,15 @@ export default {
                         }
                     }
                 });
-                this.contentLoaded++;
             })
-
-        },
-        handleLoad(){
-            this.contentLoaded++;
-        },
+        }
     },
     watch: {
         contentLoaded(newValue, oldValue) {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
-                $nuxt.$emit('assetLoaded')
+                $nuxt.$emit('assetLoaded');
+                this.animate();
             }
         }
     },

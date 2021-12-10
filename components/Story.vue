@@ -7,6 +7,9 @@
         <v-chapter-5  />
         <v-chapter-6  />
         <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" :currentItem="currentItem" ref="progress" />
+        <div style="position:absolute;bottom : 0; background-color: red;width: 400px; text-align: center">
+           ++++++++++  {{loadedNew}} ---
+        </div>
     </div>
 </template>
 
@@ -27,7 +30,6 @@ export default {
 			statusChapter : 0,
             urlWithParams :false,
             urlName : false,
-            isLoadedURLParam : false,
             currentItem : 1,
             loadedNew : false
 		}
@@ -49,6 +51,7 @@ export default {
             if(newValue == this.totalChapters){
                 setTimeout(() => {
                     this.asambleStory()
+                    this.loadedNew = true;
                 }, 1200);
             }
         },
@@ -81,7 +84,6 @@ export default {
                 });
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
-                this.loadedNew = true;
             })
         },
         checkURL(){
@@ -102,14 +104,11 @@ export default {
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
             });
-            // event in Progress.vue
-            this.$nuxt.$on('isLoadedURL', (payload) => {
-                this.isLoadedURLParam = true
-            });
             // event in ChapterX.vue
             this.$nuxt.$on('changeURL', (payload) => {
-                if(this.isLoadedURLParam){
-                    window.location.href =  this.$route.path  + '#' + payload.url;
+                if(this.urlWithParams && this.loadedNew){
+                    console.log("das");
+                    // window.location.href =  this.$route.path  + '#' + payload.url;
                 }
             });
             this.$nuxt.$on('changeCurrent', (payload) => {
