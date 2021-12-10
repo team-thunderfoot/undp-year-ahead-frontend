@@ -188,9 +188,7 @@ export default {
             //             }
             //         }
             //     });
-            //     this.contentLoaded++;
             // })
-
         },
         handleLoad(){
             this.contentLoaded++;
