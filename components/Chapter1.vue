@@ -48,8 +48,8 @@
                     <div class="b--card-c">
                         <div class="b--card-c__bd">
                             <div class="b--card-c__bd__artwork"></div>
-                            <div class="b--card-c__bd__media">
-                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--tv-a">
+                            <div class="b--card-c__bd__media-wrapper">
+                                 <img v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"  alt="tv" title="tv" class="b--card-c__bd__media-wrapper__media">
                             </div>
                         </div>
                         <div class="b--card-c__ft">
