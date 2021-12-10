@@ -1,7 +1,98 @@
 .b--lang-a{
-    position: fixed;
-    right:$measure * 3;
-    top: $measure *3;
-    background:magenta;
-    z-index: 51;
+    position: absolute;
+    z-index: 100;
+    top: $measure*7;
+    right: $measure*7;
+    &__btn{
+        color: $color-f;
+        display: flex;
+        align-items: center;
+        transition: all $time-a ease-in-out;
+        &__artwork{
+            height: $measure*3;
+            margin-right: $measure;
+            path{
+                stroke: $color-f;
+                transition: all $time-a ease-in-out;
+            }
+        }
+        &__title{
+            @include make-font-j();
+            text-transform: uppercase;
+            padding-right: $measure;
+            @media all and ($viewport-type: $mobile) {
+                display: none;
+            }
+        }
+        &__icon{
+            height: $measure*0.75;
+            transition: all $time-a ease-in-out;
+            @media all and ($viewport-type: $mobile) {
+                display: none;
+            }
+            path{
+                stroke: $color-f;
+                transition: all $time-a ease-in-out;
+            }
+        }
+        &:hover, &:focus, &:active{
+            color: map-get($color-options, f);
+        }
+        &:hover &, &:focus &, &:active &{
+            &__artwork, &__icon{
+                path{
+                    stroke: map-get($color-options, f);
+                }
+            }
+        }
+    }
+    &__wrapper{
+        position: absolute;
+        top: calc(100% + 20px);
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        transition: all $time-a ease-in-out;
+        @media all and ($viewport-type: $mobile) {
+            left: auto;
+            right: 0;
+        }
+        &__list-group{
+            padding: $measure*4 $measure*3;
+            background-color: $color-f;
+            box-shadow: 0px 3px 6px 0px rgba(map-get($color-options, a), 0.16);
+            &__list-item{
+                &:not(:last-child){
+                    margin-bottom: $measure*3.75;
+                }
+                &__link{
+                    @include make-font-k();
+                    text-transform: uppercase;
+                    color: map-get($color-options, g);
+                    text-decoration: none;
+                    display: block;
+                    transition: all $time-a ease-in-out;
+                    &:hover, &:focus, &:active{
+                        color: map-get($color-options, a);
+                    }
+                }
+            }
+        }
+    }
+    &--is-active &{
+        &__btn{
+            &__icon{
+                transform: rotate(180deg);
+            }
+        }
+        &__wrapper{
+            overflow: initial;
+            height: auto;
+            pointer-events: all;
+            &__list-group{
+                // opacity: 1;
+            }
+        }
+    }
 }

@@ -16,9 +16,6 @@
         <v-chapter-13  />
         <v-chapter-14  />
         <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" :currentItem="currentItem" ref="progress" />
-        <div style="position:absolute;bottom : 0; background-color: red;width: 400px; text-align: center">
-           ++++++++++  {{loadedNew}} ---
-        </div>
     </div>
 </template>
 
