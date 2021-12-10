@@ -68,17 +68,25 @@
                     </div>
                 </div>
 
-                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
-                   <div class="b--motion-a">
-                        <!-- bubble -->
-                    </div>
-                </div>
+          
 
 
                 <div class="b--chapter1-a__artwork b--chapter1-a__artwork--sixth">
                    <div class="b--motion-b">
                         <!-- Plant -->
+                        <!-- only for test  -->
                     </div>
+                </div>
+
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--seventh">
+                    <div class="b--card-d">
+                        <div class="b--card-d__ft-items">
+                            <p>this is a test</p>
+                        </div>
+                        <div class="b--card-d__bg-items">
+                             <img v-lazy="require(`@/assets/img/chapter-1/board.svg`)"  alt="board" title="board">
+                        </div>
+                    </div> 
                 </div>
 
                 <div class="b--chapter1-a__info">
@@ -93,6 +101,13 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
+                   <div class="b--motion-a">
+                        <!-- bubble -->
+                    </div>
+                </div>
+
 
                 
             </div>
