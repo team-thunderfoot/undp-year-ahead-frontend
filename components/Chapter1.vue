@@ -83,6 +83,18 @@
                     </div>
                 </div>
 
+                <!-- content-third position -->
+                <div class="b--chapter1-a__content b--chapter1-a__content--third">
+                    <!-- card-e -->
+                    <div class="b--card-e">
+                        <h4 class="b--card-e__title">“Working Together, Restoring Trust”</h4>
+                    </div>
+                    <!-- text with bg -->
+                    <div>
+                        <p>Business, government and civil society leaders meet at the World Economic Forum to address economic, environmental, political and social challenges and the impact of COVID-19.</p>
+                    </div>
+                </div>
+
                 <div class="b--chapter1-a__info">
                     <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
                         <div class="b--info-chapter-a__icon">
