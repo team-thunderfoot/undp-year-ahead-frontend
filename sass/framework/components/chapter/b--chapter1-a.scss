@@ -31,6 +31,14 @@
     }
   }
 
+  &__info {
+    position: absolute;
+    bottom: 67.08%;
+    left: 84.4%;
+    width: 5.62%;
+    max-width: calc(100vw - 60px);
+  }
+
   &__artwork {
     position: absolute;
     z-index: 150;
@@ -66,7 +74,10 @@
   &__item {
     position: absolute;
     z-index: 150;
-    top: 12%;
-    left: 44.8%;
+    bottom: 51.07%;
+    left: 43.92%;
+    width: 11.31%;
+    max-width: calc(100vw - 60px);
+    max-height: calc(100vh - 51.07vh - $measure * 4);
   }
 }
