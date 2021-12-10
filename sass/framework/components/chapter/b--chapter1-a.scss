@@ -74,10 +74,10 @@
   &__item {
     position: absolute;
     z-index: 150;
-    bottom: 51.07%;
+    bottom: 55.08%;
     left: 43.92%;
     width: 11.31%;
     max-width: calc(100vw - 60px);
-    max-height: calc(100vh - 51.07vh - $measure * 4);
+    max-height: calc(100vh - 55.08vh - $measure * 4);
   }
 }

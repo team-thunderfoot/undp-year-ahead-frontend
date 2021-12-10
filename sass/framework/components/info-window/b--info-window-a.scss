@@ -2,17 +2,29 @@
     position: relative;
     left: $measure*3;
     z-index:29;
-    background: map-get($colorbg-options , e );
+    background-color: map-get($colorbg-options , e );
     padding: 10px;
     border: 5px solid map-get($color-options , j );
     max-width: 250px;
     transition: all 0.5s 0s ease;
     opacity: 0;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url('@/assets/img/chapter-1/texture-calendar.png');
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+    }
     &--is-visible{
         opacity: 1;
         pointer-events: all;
     }
-    &__content{
+    &__content {
+        position: relative;
+        z-index: 30;
         @include make-font-f();
         padding:10px;
     }
