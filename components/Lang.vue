@@ -72,8 +72,7 @@ export default {
             document.querySelector(".b--lang-a").classList.toggle("b--lang-a--is-active");
         },
         handleScroll (event) {
-        // Any code to be executed when the window is scrolled
-            console.log(window.pageYOffset);
+            // Any code to be executed when the window is scrolled
             if(window.pageYOffset > 80){
                 this.langIsVisible = false;
             }else{
