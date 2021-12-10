@@ -5,8 +5,8 @@
     height: 150px;
     background: url('@/assets/img/chapter-1/bubble-motion.png');
     animation-name: motionA; 
-    animation-duration: 2.6s;
-    animation-timing-function: steps(99);
+    animation-duration: 3.13s;
+    animation-timing-function: steps(193);
     animation-iteration-count: infinite;
     @media all and ($viewport-type: $tabletl) {
         // ASK MECHE - NOT EVEN DESIGNED
@@ -18,6 +18,6 @@
   }
   @keyframes motionA {
     from { background-position: 0px; }
-    to { background-position: -14850px; }
+    to { background-position: -28950px; }
   }
   
