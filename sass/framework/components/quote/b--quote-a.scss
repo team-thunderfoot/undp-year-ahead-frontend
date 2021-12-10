@@ -7,6 +7,9 @@
     }
     &__meta{
         width: 63.48%;
+        @media all and ($viewport-type: $mobile) {
+            width: 90%;
+        }
         &__title{
             @include make-font-g();
             display: inline;
