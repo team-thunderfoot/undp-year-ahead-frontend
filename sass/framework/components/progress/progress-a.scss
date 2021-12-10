@@ -36,14 +36,25 @@
       bottom: 0;
       margin-right: 5px;
       z-index: 10000;
-      height: 32px;
-      width: 32px;
+      height: 45px;
+      width: 45px;
       border-radius: 50%;
       &--next {
           left: 60%;
+          img {
+            left: 16px;
+            top: 12px;
+            position: absolute;
+          }
+          
       }
       &--prev{
           right: 60%;
+          img {
+            left: 16px;
+            top: 12px;
+            position: absolute;
+          }
       }
   }
 }

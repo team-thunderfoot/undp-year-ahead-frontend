@@ -164,32 +164,28 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.$nextTick(() => {
-                setTimeout(() => {
-                    // if we want to animate something later 
-                    let tlSection = this.$gsap.timeline({
-                        scrollTrigger: {
-                            trigger: "#Scene1",
-                            scrub: 0,
-                            start: () =>
-                                "top top-=" +
-                                (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
-                            end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
-                            onEnter: () => {
-                                // emits on in Story.vue
-                                $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
-                                $nuxt.$emit('changeCurrent', { 'item'  : 1})
-                            },
-                            onEnterBack: () => {
-                                // emits on in Story.vue
-                                $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
-                                $nuxt.$emit('changeCurrent', { 'item'  : 1})
-                            }
+                // if we want to animate something later 
+                let tlSection = this.$gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#Scene1",
+                        scrub: 0,
+                        start: () =>
+                            "top top-=" +
+                            (document.querySelector("#Scene1").offsetLeft - window.innerWidth),
+                        end: () => "+=" + document.querySelector("#Scene1").offsetWidth,
+                        onEnter: () => {
+                            // emits on in Story.vue
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 1})
+                        },
+                        onEnterBack: () => {
+                            // emits on in Story.vue
+                            $nuxt.$emit('changeURL', { 'url'  : 'Scene1'})
+                            $nuxt.$emit('changeCurrent', { 'item'  : 1})
                         }
-                    });
-
-                    this.contentLoaded++;
-                }, 1000);
-               
+                    }
+                });
+                this.contentLoaded++;
             })
 
         },
