@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="b--card-c__ft">
-                            <img v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"  alt="tvset" title="tvset">
+                            <img class="b--card-c__ft__media" v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"  alt="tvset" title="tvset">
                         </div>
                     </div>
                 </div>
