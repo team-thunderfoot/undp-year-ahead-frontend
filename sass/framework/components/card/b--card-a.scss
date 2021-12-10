@@ -24,7 +24,7 @@
         left: calc(100% + 1.46vh);
         width: 1.17vh;
         height: calc(100% + 1.46vh*2);
-        background-color: map-get($color-options , a);
+        background-color: map-get($colorbg-options , d);
         @media all and ($viewport-type: $mobile) {
             top: -8px;
             left: calc(100% + 8px);
