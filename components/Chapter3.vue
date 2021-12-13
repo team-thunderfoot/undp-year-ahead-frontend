@@ -6,7 +6,6 @@
                     <div class="b--motion-b" v-lazy:background-image="
                         require(`@/assets/img/chapter-3/flag.png`)
                         ">
-
                     </div>
                 </div>
                 <img v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
@@ -16,6 +15,14 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.content"
+                    />
+                </div>
+                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--second">
+                    <img
+                        class="b--card-b__wrapper__media"
+                        v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
+                        alt="frame"
+                        title="frame"
                     />
                 </div>
             </div>
