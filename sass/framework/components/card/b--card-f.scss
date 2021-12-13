@@ -38,7 +38,6 @@
   }
   &__bd {
     position: relative;
-    background-color: map-get($color-options, i);
     &::before,
     &::after {
       content: '';
@@ -59,6 +58,7 @@
     }
     .b--card-a {
       background: $gradient-n;
+      background-color: map-get($color-options, i);
       // max-width: 462px;
       max-width: 30vw;
       margin: 0 auto;
