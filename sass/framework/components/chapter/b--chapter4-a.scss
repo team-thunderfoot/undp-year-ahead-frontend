@@ -4,6 +4,7 @@
         position: absolute;
         bottom: 19.99%;
         left: 4.99%;
+        max-width: calc(100vw - 60px);
         // update card size and pseudo elements
         .b--card-f {
             &__hd {

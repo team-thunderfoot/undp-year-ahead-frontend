@@ -1,5 +1,6 @@
 <template>
     <section class="b--page-a__item b--chapter4-a" id="Scene4" v-if="chapter">
+        <!-- content is second to be above the front items with a bigger z-indez -->
         <div class="b--ss-a b--ss-a--second"> 
             <div class="b--ss-a__ft-items">
                 <img 
