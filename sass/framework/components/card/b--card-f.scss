@@ -1,7 +1,8 @@
 .b--card-f {
   position: relative;
   width: 100%;
-  max-width: 572px;
+  // max-width: 572px;
+  max-width: 36vw;
   &__artwork {
     position: absolute;
     top: 0;
@@ -15,14 +16,14 @@
   }
   &__hd {
     position: relative;
-    margin-bottom: 41px;
+    margin-bottom: $measure * 5;
     &::before,
     &::after {
       content: '';
       position: absolute;
       top: 100%;
       width: 1.95vh;
-      height: 47px;
+      height: $measure * 5;
       background-color: map-get($colorbg-options, d);
       @media all and (max-height: $mobile) {
         width: 12px;
@@ -57,7 +58,8 @@
     }
     .b--card-a {
       background: $gradient-n;
-      max-width: 462px;
+      // max-width: 462px;
+      max-width: 30vw;
       margin: 0 auto;
       &::before {
         content: '';
