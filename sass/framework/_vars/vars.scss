@@ -40,6 +40,9 @@ $color-v: #35488b;
 $color-w: #33579e;
 $color-x: #232e3d;
 
+// BLACK TEXT COLOR
+$color-y: #000;
+
 $color-options: (
   a: $color-a,
   b: $color-b,
@@ -65,6 +68,7 @@ $color-options: (
   v: $color-v,
   w: $color-w,
   x: $color-x,
+  y: $color-y,
 );
 
 // gradients

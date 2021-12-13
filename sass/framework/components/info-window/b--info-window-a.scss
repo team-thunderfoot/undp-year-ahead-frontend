@@ -24,8 +24,13 @@
     }
     &__content {
         position: relative;
-        z-index: 30;
+        padding: 10px;
         @include make-font-f();
-        padding:10px;
+        color: map-get($color-options , y );
+        z-index: 30;
+        & a {
+            color: map-get($color-options , y );
+        }
+
     }
 }
