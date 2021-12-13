@@ -1,4 +1,4 @@
-.b--info-window-a{
+.b--info-window-a {
     position: relative;
     left: $measure*3;
     z-index:29;
@@ -30,7 +30,8 @@
         z-index: 30;
         & a {
             color: map-get($color-options , y );
+            font-weight: bold;
+            display: block;
         }
-
     }
 }
