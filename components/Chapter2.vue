@@ -23,9 +23,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="b--chapter2-a__artwork">
+                    <img
+                        v-lazy="require(`@/assets/img/chapter-2/dino-orange.png`)"
+                        alt="browser"
+                        title="browser"
+                    />
+                </div>
+                <div class="b--chapter2-a__artwork b--chapter2-a__artwork--second">
+                    <img
+                        v-lazy="require(`@/assets/img/chapter-2/dino-green.png`)"
+                        alt="browser"
+                        title="browser"
+                    />
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back.png">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back-2.png">        
             </div>
         </div>
     </section>

@@ -3,12 +3,22 @@
     position: absolute;
     bottom: 26.79%;
     left: 2.81%;
-    // intro second box
+    // tv
     &--second {
       bottom: 43%;
-      left: 47.41%;
-      width: 26.36%;
-      height: 40.01%;
+      left: 48.24%;
+      width: 24.36%;
+      height: 39.02%;
+    }
+  }
+  &__artwork {
+    position: absolute;
+    z-index: 150;
+    bottom: 38.6%;
+    left: 42.01%;
+    &--second {
+      bottom: 38.5%;
+      left: 72.91%;
     }
   }
 }
