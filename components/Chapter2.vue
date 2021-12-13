@@ -11,8 +11,18 @@
                         :description="chapter.description"
                     />
                 </div>
-              
-                
+                <div class="b--chapter2-a__content b--chapter2-a__content--second">
+                    <div class="b--card-g">
+                        <div class="b--card-g__media-wrapper">
+                            <img
+                            v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"
+                            alt="tv"
+                            title="tv"
+                            class="b--card-g__media-wrapper__media"
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back.png">        
