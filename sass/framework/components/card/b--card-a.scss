@@ -1,43 +1,50 @@
 // Used in several chapters
-.b--card-a{
-    position: relative;
-    padding: $measure*3 8%;
-    border: 1.46vh solid map-get($color-options , b);
-    background: $gradient-g;
+.b--card-a {
+  position: relative;
+  padding: $measure * 3 8%;
+  border: 1.46vh solid map-get($color-options, b);
+  background: $gradient-g;
+  background-color: $gradient-k;
+  @media all and ($viewport-type: $mobile) {
+    padding: $measure * 3;
+    border: 8px solid map-get($color-options, b);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('@/assets/img/pattern.png');
+    background-size: cover;
+    opacity: 0.2;
+  }
+  &__artwork {
+    position: absolute;
+    top: -1.46vh;
+    left: calc(100% + 1.46vh);
+    width: 1.17vh;
+    height: calc(100% + 1.46vh * 2);
+    background-color: map-get($colorbg-options, d);
     @media all and ($viewport-type: $mobile) {
-        padding: $measure * 3;
-        border: 8px solid map-get($color-options , b);
+      top: -8px;
+      left: calc(100% + 8px);
+      width: 6px;
+      height: calc(100% + 16px);
     }
-    &::before{
-        content:'';
-        position:absolute;
-        left:0;top:0;
-        width: 100%;
-        height: 100%;
-        background:  url('@/assets/img/pattern.png') ;
-        background-size: cover;
-        opacity: 0.2;
+  }
+  &__wrapper {
+    max-height: calc(
+      100vh - 19.04vh - 17.77vh - $measure * 4 - (1.46vh * 2) - $measure * 6 -
+        2px
+    );
+    overflow: auto;
+    position: relative;
+    @media all and ($viewport-type: $mobile) {
+      max-height: calc(
+        100vh - 18.85vh - 17.77vh - $measure * 4 - 16px - $measure * 6
+      );
     }
-    &__artwork{
-        position: absolute;
-        top: -1.46vh;
-        left: calc(100% + 1.46vh);
-        width: 1.17vh;
-        height: calc(100% + 1.46vh*2);
-        background-color: map-get($colorbg-options , d);
-        @media all and ($viewport-type: $mobile) {
-            top: -8px;
-            left: calc(100% + 8px);
-            width: 6px;
-            height: calc(100% + 16px);
-        }
-    }
-    &__wrapper{
-        max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4 - (1.46vh*2) - $measure*6 - 2px);
-        overflow: auto;
-        position: relative;
-        @media all and ($viewport-type: $mobile) {
-            max-height: calc(100vh - 18.85vh - 17.77vh - $measure*4 - 16px - $measure * 6);
-        }
-    }
+  }
 }
