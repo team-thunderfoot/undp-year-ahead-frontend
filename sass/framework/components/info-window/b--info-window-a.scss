@@ -1,11 +1,10 @@
 .b--info-window-a {
     position: relative;
-    left: $measure*3;
+    left: $measure*4;
     z-index:29;
     background-color: map-get($colorbg-options , e );
-    padding: 10px;
-    border: 5px solid map-get($color-options , j );
-    max-width: 250px;
+    padding: $measure $measure*2;
+    border: $measure solid map-get($color-options , j );
     transition: all 0.5s 0s ease;
     opacity: 0;
     &::before {
@@ -24,7 +23,6 @@
     }
     &__content {
         position: relative;
-        padding: 10px;
         @include make-font-f();
         color: map-get($color-options , y );
         z-index: 30;
