@@ -10,7 +10,7 @@
 export default {
     data:()=>{
 		return{
-           maxStories : 6,
+           maxStories : 14,
            currentItemMenu : false
 		}
 	},
@@ -46,7 +46,7 @@ export default {
                         this.$refs.next.classList.remove("disabled");
                         this.$refs.prev.classList.add("disabled");
                     }
-                    if(this.currentItemMenu < 6 ){
+                    if(this.currentItemMenu < this.maxStories ){
                         this.$refs.next.classList.remove("disabled");
                     }
                 }});
@@ -69,14 +69,14 @@ export default {
                 }}); 
             }else{
                 console.log(this.currentItemMenu);
-                if(this.currentItemMenu > 1 && this.currentItemMenu < 6 ){
+                if(this.currentItemMenu > 1 && this.currentItemMenu < this.maxStories ){
                     this.$refs.prev.classList.remove("disabled");
                     this.$refs.next.classList.remove("disabled");
                 }
                 if(this.currentItemMenu == 1 ){
                     this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
                 }
-                if(this.currentItemMenu == 6 ){
+                if(this.currentItemMenu == this.maxStories ){
                     this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                 }
             }
@@ -84,14 +84,14 @@ export default {
     },
     watch: {
         currentItem(newValue, oldValue) {
-            if(newValue >  1 && newValue < 6 ){
+            if(newValue >  1 && newValue < this.maxStories ){
                 this.$refs.prev.classList.remove("disabled");
                 this.$refs.next.classList.remove("disabled");
             }
             if(newValue == 1 ){
                 this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
             }
-            if(newValue == 6 ){
+            if(newValue == this.maxStories ){
                 this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
             }
             this.currentItemMenu = newValue;
