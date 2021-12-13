@@ -3,7 +3,7 @@
     left: $measure*4;
     z-index:29;
     background-color: map-get($colorbg-options , e );
-    padding: $measure $measure*2;
+    padding: $measure*1.6 $measure*2;
     border: $measure solid map-get($color-options , j );
     transition: all 0.5s 0s ease;
     opacity: 0;
