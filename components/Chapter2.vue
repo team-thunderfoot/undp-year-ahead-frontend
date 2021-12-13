@@ -15,7 +15,7 @@
                     <div class="b--card-g">
                         <div class="b--card-g__media-wrapper">
                             <img
-                            v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"
+                            v-lazy="require(`@/assets/img/chapter-2/dino.gif`)"
                             alt="tv"
                             title="tv"
                             class="b--card-g__media-wrapper__media"
