@@ -115,7 +115,7 @@ export default {
                 if(pathname[pathname.length-1].includes("Scene")){ // check if url contains Scene string
                     this.urlWithParams = true; // Url with param inside
                     this.urlName = pathname[pathname.length-1]; // ID in the url param
-                }
+                } 
             }
 		},
     },
@@ -128,10 +128,9 @@ export default {
             });
             // event in ChapterX.vue
             this.$nuxt.$on('changeURL', (payload) => {
-                if(this.urlWithParams && this.loadedNew){
-                    console.log("das");
-                    // window.location.href =  this.$route.path  + '#' + payload.url;
-                }
+                if(this.loadedNew){
+                    window.location.href =  this.$route.path  + '#' + payload.url;
+                } 
             });
             this.$nuxt.$on('changeCurrent', (payload) => {
                 this.currentItem = payload.item;
