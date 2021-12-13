@@ -1,7 +1,7 @@
 .b--card-f {
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 572px;
   &__artwork {
     position: absolute;
     top: 0;
@@ -15,7 +15,7 @@
   }
   &__hd {
     position: relative;
-    margin-bottom: 47px;
+    margin-bottom: 41px;
     &::before,
     &::after {
       content: '';
@@ -29,10 +29,10 @@
       }
     }
     &::before {
-      left: 15%;
+      left: 27%;
     }
     &::after {
-      right: 15%;
+      right: 27%;
     }
   }
   &__bd {
@@ -50,10 +50,26 @@
       }
     }
     &::before {
-      left: 8%;
+      left: 19%;
     }
     &::after {
-      right: 8%;
+      right: 19%;
+    }
+    .b--card-a {
+      background: $gradient-n;
+      max-width: 462px;
+      margin: 0 auto;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url('@/assets/img/card-f-bg.png');
+        background-size: cover;
+        opacity: 0.2;
+      }
     }
   }
 }

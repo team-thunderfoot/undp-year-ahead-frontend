@@ -2,44 +2,43 @@
     Foundations
 */
 
-
 // BROWNS
-$color-a:#421C0E;
-$color-b:#AA3E39;
-$color-c:#DC8E7A;
-$color-d:#744A45;
-$color-e:#B36148;
+$color-a: #421c0e;
+$color-b: #aa3e39;
+$color-c: #dc8e7a;
+$color-d: #744a45;
+$color-e: #b36148;
 
 // WHITE & "BLACK"
-$color-f:#FFFFFF;
-$color-g:#2F2929;
+$color-f: #ffffff;
+$color-g: #2f2929;
 
 // CREAM
-$color-h:#FFF2E4;
-$color-i:#F1CDBA;
-$color-j:#F9DDBF;
+$color-h: #fff2e4;
+$color-i: #f1cdba;
+$color-j: #f9ddbf;
 
 // GREY
-$color-k:#C7C7C7;
-$color-l:#B4BFD1;
-$color-m:#A4B0C6;
+$color-k: #c7c7c7;
+$color-l: #b4bfd1;
+$color-m: #a4b0c6;
 
 // ORANGE
-$color-n:#F99746;
-$color-o:#E8945B;
-$color-p:#F98968;
+$color-n: #f99746;
+$color-o: #e8945b;
+$color-p: #f98968;
 
 // GREEN
-$color-q:#57624F;
-$color-r:#79B27F;
-$color-s:#3D4538;
+$color-q: #57624f;
+$color-r: #79b27f;
+$color-s: #3d4538;
 
 // BLUE
-$color-t:#2C3A64;
-$color-u:#33579E;
-$color-v:#35488B;
-$color-w:#33579E;
-$color-x: #232E3d;
+$color-t: #2c3a64;
+$color-u: #33579e;
+$color-v: #35488b;
+$color-w: #33579e;
+$color-x: #232e3d;
 
 $color-options: (
   a: $color-a,
@@ -65,23 +64,80 @@ $color-options: (
   u: $color-u,
   v: $color-v,
   w: $color-w,
-  x: $color-x
+  x: $color-x,
 );
 
 // gradients
-$gradient-a:linear-gradient(180deg, #B84C42 0%, rgba(184, 76, 66, 0) 100%); // Gradient Brown1
-$gradient-b:linear-gradient(180deg, #E1BEB1 0%, rgba(225, 190, 177, 0) 100%); // Gradient Brown2
-$gradient-c:linear-gradient(156.66deg, #B84C42 -7.55%, #57201B 101.54%); // Gradient Brown3
-$gradient-d:linear-gradient(180deg, #F1CDBA 0%, rgba(241, 205, 186, 0) 100%); // Gradient Cream1
-$gradient-e:linear-gradient(180deg, #F9DDBF 3.39%, rgba(249, 221, 191, 0) 91.93%); // Gradient Cream2
-$gradient-f:linear-gradient(180deg, #FAFAFA 24.56%, rgba(250, 250, 250, 0) 161.83%); // Gradient White
-$gradient-g:linear-gradient(180deg, #FFF3E9 100%, rgba(255, 243, 233, 0.6) 100%); // Gradient White2
-$gradient-h:linear-gradient(180deg, #F98968 0%, rgba(249, 137, 104, 0) 100%); // Gradient Orange1
-$gradient-i:linear-gradient(180deg, #FCA56B 0%, rgba(252, 165, 107, 0) 100%); // Gradient Orange2
-$gradient-j:linear-gradient(180deg, #454E3F 0%, rgba(33, 36, 31, 0.45) 100%); // Gradient Green 1
-$gradient-k:linear-gradient(218.3deg, #2C3A64 22.06%, #0A1432 74.88%); // Gradient Blue1
-$gradient-l:linear-gradient(360deg, #33579E 47.51%, #A6C4FF 147.8%); // Gradient Blue2
-$gradient-m: linear-gradient(180deg, #AA3E39 0%, #701C18 100%); // Gradient Brown Linear Gradient
+$gradient-a: linear-gradient(
+  180deg,
+  #b84c42 0%,
+  rgba(184, 76, 66, 0) 100%
+); // Gradient Brown1
+$gradient-b: linear-gradient(
+  180deg,
+  #e1beb1 0%,
+  rgba(225, 190, 177, 0) 100%
+); // Gradient Brown2
+$gradient-c: linear-gradient(
+  156.66deg,
+  #b84c42 -7.55%,
+  #57201b 101.54%
+); // Gradient Brown3
+$gradient-d: linear-gradient(
+  180deg,
+  #f1cdba 0%,
+  rgba(241, 205, 186, 0) 100%
+); // Gradient Cream1
+$gradient-e: linear-gradient(
+  180deg,
+  #f9ddbf 3.39%,
+  rgba(249, 221, 191, 0) 91.93%
+); // Gradient Cream2
+$gradient-f: linear-gradient(
+  180deg,
+  #fafafa 24.56%,
+  rgba(250, 250, 250, 0) 161.83%
+); // Gradient White
+$gradient-g: linear-gradient(
+  180deg,
+  #fff3e9 100%,
+  rgba(255, 243, 233, 0.6) 100%
+); // Gradient White2
+$gradient-h: linear-gradient(
+  180deg,
+  #f98968 0%,
+  rgba(249, 137, 104, 0) 100%
+); // Gradient Orange1
+$gradient-i: linear-gradient(
+  180deg,
+  #fca56b 0%,
+  rgba(252, 165, 107, 0) 100%
+); // Gradient Orange2
+$gradient-j: linear-gradient(
+  180deg,
+  #454e3f 0%,
+  rgba(33, 36, 31, 0.45) 100%
+); // Gradient Green 1
+$gradient-k: linear-gradient(
+  218.3deg,
+  #2c3a64 22.06%,
+  #0a1432 74.88%
+); // Gradient Blue1
+$gradient-l: linear-gradient(
+  360deg,
+  #33579e 47.51%,
+  #a6c4ff 147.8%
+); // Gradient Blue2
+$gradient-m: linear-gradient(
+  180deg,
+  #aa3e39 0%,
+  #701c18 100%
+); // Gradient Brown Linear Gradient
+$gradient-n: linear-gradient(
+  180deg,
+  rgba(#fff3e9, 1) 0%,
+  rgba(#aa3e39, 0.4) 100%
+); // Gradient Brown Linear Gradient Card-f
 
 $colorbg-options: (
   a: $color-d,
@@ -91,7 +147,7 @@ $colorbg-options: (
   e: $color-i,
   f: $color-f,
   g: $color-b,
-  h: $color-x
+  h: $color-x,
 );
 
 /* Typography */
