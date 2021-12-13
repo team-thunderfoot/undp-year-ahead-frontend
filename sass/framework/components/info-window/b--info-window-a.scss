@@ -27,9 +27,10 @@
         color: map-get($color-options , y );
         z-index: 30;
         & a {
+            display: block;
             color: map-get($color-options , y );
             font-weight: bold;
-            display: block;
+            text-underline-offset: .1em;
         }
     }
 }
