@@ -2,8 +2,21 @@
     &__content {
         // cards
         position: absolute;
-        bottom: 20,99%;
-        left: 9.95%;
+        bottom: 19.99%;
+        left: 4.99%;
+        // update card size and pseudo elements
+        .b--card-f {
+            &__hd {
+                margin-bottom: $measure*3;
+                &::after, &::before {
+                    height: $measure*3;
+                }
+            }
+            &__bd {
+                width: 81.28%;
+                margin: 0 auto;
+            }
+        }
 
         // quote
         &__second {
@@ -22,5 +35,7 @@
         bottom: 0.5%;
         //transform: rotate(-2.81deg);
     }
+
+
     
 }
