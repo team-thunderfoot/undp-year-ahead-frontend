@@ -23,6 +23,8 @@
                     </p>
                 </div>
             </div> -->
+            <!-- content first position -->
+            <!-- content second position -->
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.png">        
             </div>
