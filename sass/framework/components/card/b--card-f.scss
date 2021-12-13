@@ -38,6 +38,7 @@
   }
   &__bd {
     position: relative;
+    background-color: map-get($color-options, i);
     &::before,
     &::after {
       content: '';

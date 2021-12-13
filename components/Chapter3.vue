@@ -2,28 +2,98 @@
     <section class="b--page-a__item b--chapter3-a" id="Scene3" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <div class="b--chapter3-a__artwork">
+                <img v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
+            </div>
+            <div class="b--ss-a__content">
+                <!-- flag 5 -->
+                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fifth">
                     <div class="b--motion-b" v-lazy:background-image="
                         require(`@/assets/img/chapter-3/flag.png`)
                         ">
                     </div>
                 </div>
-                <img v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
-            </div>
-            <div class="b--ss-a__content">
+
+                <!-- chapter title -->
                 <div class="b--chapter3-a__content">
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.content"
                     />
                 </div>
+
+                <!-- flag 4 -->
+                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fourth">
+                    <div class="b--motion-b" v-lazy:background-image="
+                        require(`@/assets/img/chapter-3/flag.png`)
+                        ">
+                    </div>
+                </div>
+                <!-- flag 3 -->
+                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--third">
+                    <div class="b--motion-b" v-lazy:background-image="
+                        require(`@/assets/img/chapter-3/flag.png`)
+                        ">
+                    </div>
+                </div>
+                <!-- flag 2 -->
                 <div class="b--chapter3-a__artwork b--chapter3-a__artwork--second">
+                    <div class="b--motion-b" v-lazy:background-image="
+                        require(`@/assets/img/chapter-3/flag.png`)
+                        ">
+                    </div>
+                </div>
+                <!-- flag 1 -->
+                <div class="b--chapter3-a__artwork">
+                    <div class="b--motion-b" v-lazy:background-image="
+                        require(`@/assets/img/chapter-3/flag.png`)
+                        ">
+                    </div>
+                </div>
+
+                <!-- info chart -->
+                <div class="b--chapter3-a__content b--chapter3-a__content--second">
+                    <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
+                    <div class="b--info-chapter-a__icon">i</div>
+                </div>
+                <div
+                    class="b--info-window-a"
+                    :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
+                >
+                    <div class="b--info-window-a__content"> 
+                        <p><a href="">5th UN Conference on the Least Developed Countries</a> 23-27 January, Doha, Qatar</p>
+                    </div>
+                </div>
+                </div>
+                <!-- wheel -->
+                <div class="b--chapter3-a__content b--chapter3-a__content--third">
                     <img
                         class="b--card-b__wrapper__media"
                         v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
                         alt="frame"
                         title="frame"
                     />
+                </div>
+
+                <!-- flag 8 -->
+                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--eight">
+                    <div class="b--motion-b" v-lazy:background-image="
+                        require(`@/assets/img/chapter-3/flag.png`)
+                        ">
+                    </div>
+                </div>
+                <!-- flag 7 -->
+                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--seventh">
+                    <div class="b--motion-b" v-lazy:background-image="
+                        require(`@/assets/img/chapter-3/flag.png`)
+                        ">
+                    </div>
+                </div>
+                <!-- flag 6 -->
+                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--sixth">
+                    <div class="b--motion-b" v-lazy:background-image="
+                        require(`@/assets/img/chapter-3/flag.png`)
+                        ">
+                    </div>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
