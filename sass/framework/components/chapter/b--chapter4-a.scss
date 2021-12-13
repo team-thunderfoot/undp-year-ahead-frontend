@@ -7,19 +7,20 @@
 
         // quote
         &__second {
-            bottom: 52.92%;
+            bottom: 57.92%;
             left: 73.92%;
             width: 16.51%;
             max-width: calc(100vw - 60px);
             max-height: calc(100vh - 55.08vh - $measure * 4);
-
         }
     }
     // tent
     &__artwork {
         position: absolute;
-        left: 70.04%;
-        bottom: 0;
+        width: 21.05%;
+        left: 70.31%;
+        bottom: 0.5%;
+        //transform: rotate(-2.81deg);
     }
     
 }

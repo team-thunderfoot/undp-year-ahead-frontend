@@ -53,7 +53,13 @@
                 </div>
                 <!-- third position element, tent -->
                 <div class="b--chapter4-a__artwork">
-                    tent
+                <img 
+                    v-lazy="require(`@/assets/img/chapter-4/tent.svg`)"
+                    class="b--chapter4-a__artwork__media"
+                    @load="handleLoad"
+                    @error="handleLoad" 
+                    alt="tent" 
+                />
                 </div>
             </div>
             <div class="b--ss-a__bg-items">

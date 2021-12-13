@@ -36,6 +36,7 @@
         height: 100%;
       }
     }
+    // for elements that needs to be shoen above the front items
     &--second & {
       &__content {
         z-index: 10;
