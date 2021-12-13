@@ -2,19 +2,57 @@
   &__content {
     position: absolute;
     bottom: 26.79%;
-    left: 2.81%;
-  }
-  &__artwork {
-    position: absolute;
-    left: 30px;
-    top: 30px;
-    // wheel
+    left: 6.75%;
+    z-index: 1;
+    // info chart
     &--second {
+      bottom: 46.87%;
+      left: 27.15%;
+      width: 8.21%;
+    }
+    // wheel
+    &--third {
       left: 49.5%;
       top: 17.5%;
-      //   width: 109px;
-      width: 10vh;
+      height: 10vh;
       animation: rotate 5s linear infinite;
+    }
+  }
+  // flags
+  &__artwork {
+    position: absolute;
+    left: 24.29%;
+    top: 9.53%;
+    z-index: 0;
+    &--second {
+      left: 18.71%;
+      top: 9.53%;
+    }
+    &--third {
+      left: 12.36%;
+      top: 9.53%;
+    }
+    &--fourth {
+      left: 3.94%;
+      top: 11.13%;
+    }
+    &--fifth {
+      left: 0%;
+      top: 32.12%;
+      z-index: 1;
+    }
+    //right group
+    &--sixth {
+      left: 91.11%;
+      top: 9.53%;
+    }
+    &--seventh {
+      left: 85.51%;
+      top: 9.53%;
+    }
+    &--eight {
+      left: 79.94%;
+      top: 9.53%;
     }
   }
 }
