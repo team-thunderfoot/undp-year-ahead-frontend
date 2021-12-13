@@ -1,11 +1,9 @@
 .b--info-chapter-a {
-    position:relative;
-    top: $measure*3;
+    position: relative;
     display: block;
-    cursor: pointer;
-    z-index: 50;
     width: $measure*7;
     height: $measure*7;
+    top: $measure*4;
     background: $gradient-m;
     border: $measure solid map-get($color-options , j );
     border-radius: 50%;
@@ -14,5 +12,7 @@
     line-height: 1.2;
     font-family: $type-a;
     font-size: $measure*4;
+    cursor: pointer;
+    z-index: 50;
 
 }

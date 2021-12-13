@@ -1,11 +1,10 @@
-.b--info-window-a{
+.b--info-window-a {
     position: relative;
-    left: $measure*3;
+    left: $measure*4;
     z-index:29;
     background-color: map-get($colorbg-options , e );
-    padding: 10px;
-    border: 5px solid map-get($color-options , j );
-    max-width: 250px;
+    padding: $measure*1.6 $measure*2;
+    border: $measure solid map-get($color-options , j );
     transition: all 0.5s 0s ease;
     opacity: 0;
     &::before {
@@ -24,13 +23,21 @@
     }
     &__content {
         position: relative;
-        padding: 10px;
         @include make-font-f();
         color: map-get($color-options , y );
         z-index: 30;
         & a {
+            display: block;
             color: map-get($color-options , y );
+            font-weight: bold;
+            text-underline-offset: .15em;
+            transition: all $time-a ease-in-out;
+            &:hover {
+                opacity: .7;
+            }
+            @-moz-document url-prefix() {
+                text-underline-offset: .25em;
+              }
         }
-
     }
 }

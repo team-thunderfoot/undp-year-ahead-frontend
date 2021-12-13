@@ -1,7 +1,24 @@
 .b--chapter2-a {
-    &__content{
-        position: absolute;
-        bottom: 26.79%;
-        left: 2.81%;
+  &__content {
+    position: absolute;
+    bottom: 26.79%;
+    left: 2.81%;
+    // tv
+    &--second {
+      bottom: 43%;
+      left: 48.24%;
+      width: 24.36%;
+      height: 39.02%;
     }
+  }
+  &__artwork {
+    position: absolute;
+    z-index: 150;
+    bottom: 38.6%;
+    left: 42.01%;
+    &--second {
+      bottom: 38.5%;
+      left: 72.91%;
+    }
+  }
 }
