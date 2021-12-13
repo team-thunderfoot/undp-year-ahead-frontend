@@ -30,7 +30,14 @@
             display: block;
             color: map-get($color-options , y );
             font-weight: bold;
-            text-underline-offset: .1em;
+            text-underline-offset: .15em;
+            transition: all $time-a ease-in-out;
+            &:hover {
+                opacity: .7;
+            }
+            @-moz-document url-prefix() {
+                text-underline-offset: .25em;
+              }
         }
     }
 }
