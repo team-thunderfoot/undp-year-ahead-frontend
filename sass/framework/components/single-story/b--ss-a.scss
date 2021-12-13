@@ -36,4 +36,9 @@
         height: 100%;
       }
     }
+    &--second & {
+      &__content {
+        z-index: 10;
+      }
+    }
   }

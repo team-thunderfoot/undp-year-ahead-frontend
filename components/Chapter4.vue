@@ -1,11 +1,17 @@
 <template>
-    <section class="b--page-a__item" id="Scene4" v-if="chapter">
-        <div class="b--ss-a"> 
+    <section class="b--page-a__item b--chapter4-a" id="Scene4" v-if="chapter">
+        <div class="b--ss-a b--ss-a--second"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-4/front.png`)" alt="front" />
+                <img 
+                v-lazy="require(`@/assets/img/chapter-4/front.png`)"
+                class="b--ss-a__ft-items__artwork"
+                @load="handleLoad"
+                @error="handleLoad" 
+                alt="front" 
+                />
             </div>
-            <!-- <div class="b--ss-a__content">
-                <div class="b--card-a">
+            <div class="b--ss-a__content">
+                <!-- <div class="b--card-a">
                     <div class="b--card-a__hd">
                         <h3 class="b--card-a__hd__title">
                             {{chapter.title}}
@@ -21,10 +27,35 @@
                     <p class="b--card-b__content">
                         <SanityContent :blocks="chapter.content" />
                     </p>
+                </div> -->
+                <!-- first position element, card -->
+                <div class="b--chapter4-a__content">
+                    <v-card-f 
+                        :title="chapter.title" 
+                        :description="chapter.description"
+                    />
                 </div>
-            </div> -->
-            <!-- content first position -->
-            <!-- content second position -->
+                <!-- second position element, quote -->
+                <div class="b--chapter4-a__content b--chapter4-a__content__second">
+                <div class="b--quote-a b--quote-a--second">
+                    <div class="b--quote-a__content">
+                        <!-- {{ chapter.quote }} -->
+                        “In a world where complex and multidimensional crisis has become the norm, the status quo for crisis response no longer an option.”  
+                    </div>
+                    <div class="b--quote-a__meta">
+                    <h3 class="b--quote-a__meta__title">{{ chapter.quotetitle }}</h3>
+                    <h4 class="b--quote-a__meta__subtitle">
+                        <!-- {{ chapter.quotedirector }} -->
+                         - Asako Okai, UNDP Crisis Bureau Director
+                    </h4>
+                    </div>
+                </div>
+                </div>
+                <!-- third position element, tent -->
+                <div class="b--chapter4-a__artwork">
+                    tent
+                </div>
+            </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.png">        
             </div>
@@ -34,7 +65,12 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import CardF from './cards/CardF';
+
 export default {
+        components:{
+        'v-card-f':CardF
+    },
     data:()=>{
 		return{
             totalContent: 2,
@@ -48,7 +84,7 @@ export default {
             const query_content = groq`*[_type == "chapterTwo"][0]{
                 "title" : title['${this.lang}'],
                 "content" : content['${this.lang}'],
-                "description" : description['${this.lang}']
+                "description" : description['${this.lang}'],
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;

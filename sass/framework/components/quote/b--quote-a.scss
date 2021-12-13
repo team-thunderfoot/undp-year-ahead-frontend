@@ -1,34 +1,38 @@
-.b--quote-a{
-    &__content{
+.b--quote-a {
+    &__content {
         @include make-font-d();
         margin-bottom: 2.34vh;
     }
-    &__meta{
+    &__meta {
         width: 63.48%;
         @media all and ($viewport-type: $mobile) {
             width: 90%;
         }
-        &__title{
+        &__title {
             @include make-font-g();
             display: inline;
             font-weight: 600;
             @include link-a();
             @include link-a-color($colortext: a);
-            &:hover, &:focus, &:active{
-            @include link-a-interaction();
+            &:hover, &:focus, &:active {
+                @include link-a-interaction();
             }
         }
-        &__subtitle{
+        &__subtitle {
             @include make-font-g();
             display: inline;
         }
     }
-    &--second{
+    &--second {
+        text-align: right;
         color: map-get($color-options , f);
     }
-    &--second &{
-        &__meta{
-            &__title{
+    &--second & {
+        &__meta {
+            width: 55.87%;
+            text-align: right;
+            float: right;
+            &__title {
                 @include link-a-color($colortext: f);
             }
         }
