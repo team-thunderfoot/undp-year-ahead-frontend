@@ -36,10 +36,4 @@
         height: 100%;
       }
     }
-    // for elements that needs to be shown above the front items of the scene
-    &--second & {
-      &__content {
-        z-index: 10;
-      }
-    }
-  }
+}

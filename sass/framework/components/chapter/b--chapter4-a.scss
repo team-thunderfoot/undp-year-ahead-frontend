@@ -1,4 +1,12 @@
 .b--chapter4-a {
+
+    .b--ss-a {
+        // bigger z-index to be shown above ft items
+        &__content {
+            z-index: 10;
+        }
+    }
+
     &__content {
         // cards
         position: absolute;
