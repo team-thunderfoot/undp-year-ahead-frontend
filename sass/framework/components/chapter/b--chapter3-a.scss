@@ -1,12 +1,25 @@
 .b--chapter3-a {
-    &__content{
-        position: absolute;
-        bottom: 26.79%;
-        left: 2.81%;
+  &__content {
+    position: absolute;
+    bottom: 26.79%;
+    left: 2.81%;
+  }
+  &__artwork {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    // wheel
+    &--second {
+      left: 49.5%;
+      top: 17.5%;
+      //   width: 109px;
+      width: 10vh;
+      animation: rotate 5s linear infinite;
     }
-    &__artwork{
-        position:absolute;
-        left:30px;
-        top:30px
-    }
+  }
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
