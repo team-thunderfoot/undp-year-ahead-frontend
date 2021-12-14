@@ -12,6 +12,20 @@
                 :description="chapter.content"
             />
         </div>
+        <!-- info chart -->
+        <div class="b--chapter5-a__content b--chapter5-a__content--second">
+          <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
+              <div class="b--info-chapter-a__icon">i</div>
+          </div>
+          <div
+              class="b--info-window-a"
+              :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
+          >
+              <div class="b--info-window-a__content"> 
+                  <p><a href="">Commission on the Status of Women</a> 14-25 March, New York, USA</p>
+              </div>
+          </div>
+        </div>
       </div>
       <div class="b--ss-a__bg-items">
         <img
@@ -94,13 +108,13 @@ export default {
             onEnter: () => {
               // emits on in Story.vue
               // window.location.href =  this.$route.path  + '#Scene5';
-              $nuxt.$emit('changeURL', { url: 'Scene5' })
+              $nuxt.$emit('changeURL', { url: '5' })
               $nuxt.$emit('changeCurrent', { item: 5 })
             },
             onEnterBack: () => {
               // emits on in Story.vue
               // window.location.href =  this.$route.path  + '#Scene5';
-              $nuxt.$emit('changeURL', { url: 'Scene5' })
+              $nuxt.$emit('changeURL', { url: '5' })
               $nuxt.$emit('changeCurrent', { item: 5 })
             },
           },

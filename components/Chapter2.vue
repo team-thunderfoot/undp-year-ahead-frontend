@@ -86,13 +86,13 @@ export default {
                         end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
                         onEnter: () => {
                             // emits on in Story.vue
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
+                            $nuxt.$emit('changeURL', { 'url'  : '2'})
                             $nuxt.$emit('changeCurrent', { 'item'  : 2})
                             // window.location.href =  this.$route.path  + '#Scene2';
                         },
                         onEnterBack: () => {
                             // emits on in Story.vue
-                            $nuxt.$emit('changeURL', { 'url'  : 'Scene2'})
+                            $nuxt.$emit('changeURL', { 'url'  : '2'})
                             $nuxt.$emit('changeCurrent', { 'item'  : 2})
                             // window.location.href =  this.$route.path  + '#Scene2';
                         }

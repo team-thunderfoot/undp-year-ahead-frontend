@@ -14,8 +14,9 @@
     &--third {
       left: 49.5%;
       top: 17.5%;
+      width: 10vh;
       height: 10vh;
-      animation: rotate 5s linear infinite;
+      @include make-wheel();
     }
   }
   // flags
@@ -54,10 +55,5 @@
       left: 79.94%;
       top: 9.53%;
     }
-  }
-}
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
   }
 }
