@@ -1,0 +1,8 @@
+@mixin make-wheel {
+  animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

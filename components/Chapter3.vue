@@ -53,24 +53,23 @@
                 <!-- info chart -->
                 <div class="b--chapter3-a__content b--chapter3-a__content--second">
                     <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
-                    <div class="b--info-chapter-a__icon">i</div>
-                </div>
-                <div
-                    class="b--info-window-a"
-                    :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
-                >
-                    <div class="b--info-window-a__content"> 
-                        <p><a href="">5th UN Conference on the Least Developed Countries</a> 23-27 January, Doha, Qatar</p>
+                        <div class="b--info-chapter-a__icon">i</div>
                     </div>
-                </div>
+                    <div
+                        class="b--info-window-a"
+                        :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
+                    >
+                        <div class="b--info-window-a__content"> 
+                            <p><a href="">5th UN Conference on the Least Developed Countries</a> 23-27 January, Doha, Qatar</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- wheel -->
                 <div class="b--chapter3-a__content b--chapter3-a__content--third">
                     <img
-                        class="b--card-b__wrapper__media"
                         v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
-                        alt="frame"
-                        title="frame"
+                        alt="wheel"
+                        title="wheel"
                     />
                 </div>
 

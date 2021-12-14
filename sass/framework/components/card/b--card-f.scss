@@ -1,7 +1,6 @@
 .b--card-f {
   position: relative;
   width: 100%;
-  // max-width: 572px;
   max-width: 36vw;
   &__artwork {
     position: absolute;
@@ -59,7 +58,6 @@
     .b--card-a {
       background: $gradient-n;
       background-color: map-get($color-options, i);
-      // max-width: 462px;
       max-width: 30vw;
       margin: 0 auto;
       &::before {
@@ -74,5 +72,14 @@
         opacity: 0.2;
       }
     }
+  }
+  // scene 3
+  &--second {
+  }
+  // scene 4
+  &--third {
+  }
+  // scene 5
+  &--fourth {
   }
 }

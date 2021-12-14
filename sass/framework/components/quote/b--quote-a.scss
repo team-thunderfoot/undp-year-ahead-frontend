@@ -5,6 +5,10 @@
     }
     &__meta {
         width: 63.48%;
+        &::before{
+            content: "— ";
+            @include make-font-g();
+        }
         @media all and ($viewport-type: $mobile) {
             width: 90%;
         }

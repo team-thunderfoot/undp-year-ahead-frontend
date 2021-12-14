@@ -59,6 +59,7 @@
             opacity: .8;
             &__badge{
                 @include make-font-a();
+                display: block;
             }
         }
         &__subtitle{

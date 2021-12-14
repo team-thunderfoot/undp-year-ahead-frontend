@@ -4,25 +4,29 @@
       <div class="b--ss-a__ft-items">
         <img v-lazy="require(`@/assets/img/chapter-5/front.png`)" alt="front" />
       </div>
-      <!-- <div class="b--ss-a__content">
-                <div class="b--card-a">
-                    <div class="b--card-a__hd">
-                        <h3 class="b--card-a__hd__title">
-                            {{chapter.title}}
-                        </h3> 
-                    </div>
-                    <div class="b--card-a__bd">
-                        <p class="b--card-a__bd__content">
-                            <SanityContent :blocks="chapter.description" />
-                        </p>
-                    </div>
-                </div>
-                <div class="b--card-b">
-                    <p class="b--card-b__content">
-                        <SanityContent :blocks="chapter.content" />
-                    </p>
-                </div>
-            </div> -->
+      <div class="b--ss-a__content">
+        <!-- chapter title -->
+        <div class="b--chapter5-a__content">
+            <v-card-f 
+                :title="chapter.title"
+                :description="chapter.content"
+            />
+        </div>
+        <!-- info chart -->
+        <div class="b--chapter5-a__content b--chapter5-a__content--second">
+          <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
+              <div class="b--info-chapter-a__icon">i</div>
+          </div>
+          <div
+              class="b--info-window-a"
+              :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
+          >
+              <div class="b--info-window-a__content"> 
+                  <p><a href="">Commission on the Status of Women</a> 14-25 March, New York, USA</p>
+              </div>
+          </div>
+        </div>
+      </div>
       <div class="b--ss-a__bg-items">
         <img
           class="b--ss-a__bg-items__artwork"
@@ -36,8 +40,12 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
+import { groq } from '@nuxtjs/sanity';
+import CardF from './cards/CardF';
 export default {
+  components:{
+    'v-card-f':CardF
+  },
   data: () => {
     return {
       totalContent: 2,
