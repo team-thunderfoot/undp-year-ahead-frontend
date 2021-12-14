@@ -1,11 +1,11 @@
 .b--motion-a {
   z-index: 3;
-  width: 1000px;
-  height: 800px;
+  width: 150px;
+  height: 150px;
   // background: url('@/assets/img/chapter-1/bubble-motion.png');
   animation-name: motionA;
-  animation-duration: 2s;
-  animation-timing-function: steps(96);
+  animation-duration: 3.13s;
+  animation-timing-function: steps(193);
   animation-iteration-count: infinite;
   @media all and ($viewport-type: $tabletl) {
     // ASK MECHE - NOT EVEN DESIGNED

@@ -7,7 +7,7 @@
             <div class="b--ss-a__content">
                 <!-- flags left -->
                 <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fifth">
-                    <div class="b--motion-a" v-lazy:background-image="
+                    <div class="b--motion-b" v-lazy:background-image="
                         require(`@/assets/img/chapter-3/flags-left_spritesheet.png`)
                         ">
                     </div>
@@ -46,7 +46,7 @@
 
                 <!-- flags right -->
                 <div class="b--chapter3-a__artwork b--chapter3-a__artwork--eight">
-                    <div class="b--motion-b" v-lazy:background-image="
+                    <div class="b--motion-c" v-lazy:background-image="
                         require(`@/assets/img/chapter-3/flags-right_spritesheet.png`)
                         ">
                     </div>
