@@ -1,0 +1,20 @@
+.b--card-h {
+  &__back-items{
+    &__media{}
+  }
+  &__front-items{
+    background-color: map-get($color-options , b);
+    border: .39vh solid map-get($color-options , i);
+    &::after {
+      right: 0;
+      border-top: 10px solid lightpink;
+      border-right: 10px solid white;
+      border-left: 10px solid lightpink;
+      border-bottom: 10px solid white;
+    }
+    &__content{
+      @include make-font-f();
+      color: map-get($color-options , j);
+    }
+  }
+}
