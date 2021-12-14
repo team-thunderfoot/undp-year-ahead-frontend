@@ -33,7 +33,7 @@
   font-size: clamp(1.5625rem, 3.9vh, 2.5rem);
   @media all and ($viewport-type: $mobile) {
     font-size: 13vw;
-    font-size: clamp(.8rem, 4.8vw, 2.5rem);
+    font-size: clamp(1rem, 5vw, 2.5rem);
   }
 }
 
