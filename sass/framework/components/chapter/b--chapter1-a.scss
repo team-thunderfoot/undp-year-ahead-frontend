@@ -37,6 +37,12 @@
     left: 84.4%;
     width: 5.01%;
     max-width: calc(100vw - 60px);
+    @media all and ($viewport-type: $mobile) {
+      bottom: 51.08%;
+      left: 83.4%;
+      width: 6.01%;
+      max-width: calc(100vw - 60px);
+    }
   }
 
   &__artwork {
