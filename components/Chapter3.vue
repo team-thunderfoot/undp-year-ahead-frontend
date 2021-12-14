@@ -5,10 +5,10 @@
                 <img v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <!-- flag 5 -->
+                <!-- flags left -->
                 <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fifth">
-                    <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flag.png`)
+                    <div class="b--motion-a" v-lazy:background-image="
+                        require(`@/assets/img/chapter-3/flags-left_spritesheet.png`)
                         ">
                     </div>
                 </div>
@@ -19,35 +19,6 @@
                         :title="chapter.title"
                         :description="chapter.content"
                     />
-                </div>
-
-                <!-- flag 4 -->
-                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fourth">
-                    <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flag.png`)
-                        ">
-                    </div>
-                </div>
-                <!-- flag 3 -->
-                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--third">
-                    <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flag.png`)
-                        ">
-                    </div>
-                </div>
-                <!-- flag 2 -->
-                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--second">
-                    <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flag.png`)
-                        ">
-                    </div>
-                </div>
-                <!-- flag 1 -->
-                <div class="b--chapter3-a__artwork">
-                    <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flag.png`)
-                        ">
-                    </div>
                 </div>
 
                 <!-- info chart -->
@@ -73,24 +44,10 @@
                     />
                 </div>
 
-                <!-- flag 8 -->
+                <!-- flags right -->
                 <div class="b--chapter3-a__artwork b--chapter3-a__artwork--eight">
                     <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flag.png`)
-                        ">
-                    </div>
-                </div>
-                <!-- flag 7 -->
-                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--seventh">
-                    <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flag.png`)
-                        ">
-                    </div>
-                </div>
-                <!-- flag 6 -->
-                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--sixth">
-                    <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flag.png`)
+                        require(`@/assets/img/chapter-3/flags-right_spritesheet.png`)
                         ">
                     </div>
                 </div>

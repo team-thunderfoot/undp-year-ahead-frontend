@@ -1,21 +1,23 @@
-
 .b--motion-b {
-    width: 172px;
-    height: 542px;
-    animation-name: motionB; 
-    animation-duration: 2.06s;
-    animation-timing-function: steps(102);
-    animation-iteration-count: infinite;
-    @media all and ($viewport-type: $tabletl) {
-        // ASK MECHE - NOT EVEN DESIGNED
-        // border:1px solid red;
-        // width:75px;
-        // height: 75px;
-        // transform: translate(-25%, -25%) scale(0.5);
-    }
+  width: 650px;
+  height: 600px;
+  animation-name: motionB;
+  animation-duration: 2s;
+  animation-timing-function: steps(96);
+  animation-iteration-count: infinite;
+  @media all and ($viewport-type: $tabletl) {
+    // ASK MECHE - NOT EVEN DESIGNED
+    // border:1px solid red;
+    // width:75px;
+    // height: 75px;
+    // transform: translate(-25%, -25%) scale(0.5);
   }
-  @keyframes motionB {
-    from { background-position: 0px; }
-    to { background-position: -17544px; }
+}
+@keyframes motionB {
+  from {
+    background-position: 0px;
   }
-
+  to {
+    background-position: -17544px;
+  }
+}
