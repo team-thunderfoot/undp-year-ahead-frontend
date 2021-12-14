@@ -40,14 +40,14 @@
                 <div class="b--chapter4-a__content b--chapter4-a__content--second">
                     <div class="b--quote-a b--quote-a--second">
                         <div class="b--quote-a__content">
-                            <!-- {{ chapter.quote }} -->
-                            “In a world where complex and multidimensional crisis has become the norm, the status quo for crisis response no longer an option.”  
+                            {{ chapter.quote }}
+                            <!-- “In a world where complex and multidimensional crisis has become the norm, the status quo for crisis response no longer an option.”   -->
                         </div>
                         <div class="b--quote-a__meta">
                         <h3 class="b--quote-a__meta__title">{{ chapter.quotetitle }}</h3>
                         <h4 class="b--quote-a__meta__subtitle">
-                            <!-- {{ chapter.quotedirector }} -->
-                            <u>Asako Okai</u>, UNDP Crisis Bureau Director
+                            {{ chapter.quotedirector }} 
+                            <!-- <u>Asako Okai</u>, UNDP Crisis Bureau Director -->
                         </h4>
                         </div>
                     </div>
@@ -92,6 +92,9 @@ export default {
                 "title" : title['${this.lang}'],
                 "content" : content['${this.lang}'],
                 "description" : description['${this.lang}'],
+                "quote" :  quote['${this.lang}'],
+                "quotetitle" :  quotetitle['${this.lang}'],
+                "quotedirector" :  quotedirector['${this.lang}'],
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
