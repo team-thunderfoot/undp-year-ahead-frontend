@@ -14,7 +14,7 @@
         <v-chapter-12  />
         <v-chapter-13  />
         <v-chapter-14  />
-        <v-progress :urlWithParams="urlWithParams" :urlName="urlName" v-if="isLoaded" :currentItem="currentItem" ref="progress" />
+        <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="isLoaded" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
             totalChapters:14,
 			statusChapter : 0,
             urlWithParams :false,
-            urlName : false,
+            sceneNumber : false,
             currentItem : 1,
             loadedNew : false
 		}
@@ -112,9 +112,11 @@ export default {
             if(process.client){
                 var currentURL = window.location.href;
                 var pathname = currentURL.split('/');	// split url in array
-                if(pathname[pathname.length-1].includes("Scene")){ // check if url contains Scene string
+                
+                if(pathname[pathname.length-1].includes("?scene")){ // check if url contains Scene string
                     this.urlWithParams = true; // Url with param inside
-                    this.urlName = pathname[pathname.length-1]; // ID in the url param
+                    var sceneNo = pathname[pathname.length-1].split('?scene=');
+                    this.sceneNumber = sceneNo[1];
                 } 
             }
 		},
@@ -126,15 +128,20 @@ export default {
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
             });
-            // event in ChapterX.vue
-            this.$nuxt.$on('changeURL', (payload) => {
-                if(this.loadedNew){
-                    window.location.href =  this.$route.path  + '#' + payload.url;
-                } 
-            });
             this.$nuxt.$on('changeCurrent', (payload) => {
                 this.currentItem = payload.item;
             });
+            // event in ChapterX.vue
+            this.$nuxt.$on('changeURL', (payload) => {
+                if(this.loadedNew){
+                    var queryString = window.location.search;
+                    this.urlParams = new URLSearchParams(queryString);
+                    this.urlParams.set("scene", payload.url );
+                    this.urlParams.toString(); 
+                    window.history.replaceState({}, '', `?${this.urlParams}`);
+                } 
+            });
+            
         }
     }
 }

@@ -258,12 +258,12 @@ export default {
             end: () => '+=' + document.querySelector('#Scene1').offsetWidth,
             onEnter: () => {
               // emits on in Story.vue
-              $nuxt.$emit('changeURL', { url: 'Scene1' })
+              $nuxt.$emit('changeURL', { url: '1' })
               $nuxt.$emit('changeCurrent', { item: 1 })
             },
             onEnterBack: () => {
               // emits on in Story.vue
-              $nuxt.$emit('changeURL', { url: 'Scene1' })
+              $nuxt.$emit('changeURL', { url: '1' })
               $nuxt.$emit('changeCurrent', { item: 1 })
             },
           },

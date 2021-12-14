@@ -100,13 +100,13 @@ export default {
             onEnter: () => {
               // emits on in Story.vue
               // window.location.href =  this.$route.path  + '#Scene5';
-              $nuxt.$emit('changeURL', { url: 'Scene5' })
+              $nuxt.$emit('changeURL', { url: '5' })
               $nuxt.$emit('changeCurrent', { item: 5 })
             },
             onEnterBack: () => {
               // emits on in Story.vue
               // window.location.href =  this.$route.path  + '#Scene5';
-              $nuxt.$emit('changeURL', { url: 'Scene5' })
+              $nuxt.$emit('changeURL', { url: '5' })
               $nuxt.$emit('changeCurrent', { item: 5 })
             },
           },
