@@ -16,6 +16,9 @@
     width: 23px;
     height: 99px;
     background-color: map-get($color-options, t);
+    @media all and (max-height: $tabletm) {
+      top: calc(100% + 1.6vh);
+    }
     @media all and (max-height: $mobile) {
       top: calc(100% + 1.5vh);
       width: 16px;
@@ -38,6 +41,9 @@
     &__content {
       width: calc(37.97% + $measure * 20);
       padding: 0 $measure * 10;
+      @media all and ($viewport-type: $tabletm) {
+        width: calc(50% + $measure * 20);
+      }
       @media all and (max-height: $mobile) {
         padding: 0 $measure * 2;
       }
@@ -48,6 +54,9 @@
     top: 55px;
     left: calc(53.89% + 3.9vh);
     width: 66.95%;
+    @media all and ($viewport-type: $tabletm) {
+      left: calc(62% + 3.9vh);
+    }
     @media all and (max-height: $mobile) {
       left: calc(78.89% + 3.9vh);
       width: 79.95%;
