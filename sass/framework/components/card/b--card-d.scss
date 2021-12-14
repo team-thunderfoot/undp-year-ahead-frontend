@@ -7,6 +7,8 @@
   z-index: 0;
   @media all and ($viewport-type: $mobile) {
     border: 1.5vh solid map-get($color-options, h);
+    max-width: none !important;
+    width: calc(100vw - 60px);
   }
   &::before,
   &::after {
@@ -16,10 +18,10 @@
     width: 23px;
     height: 99px;
     background-color: map-get($color-options, t);
-    @media all and (max-height: $tabletm) {
+    @media all and ($viewport-type: $tabletm) {
       top: calc(100% + 1.6vh);
     }
-    @media all and (max-height: $mobile) {
+    @media all and ($viewport-type: $mobile) {
       top: calc(100% + 1.5vh);
       width: 16px;
       height: 72px;
@@ -44,7 +46,9 @@
       @media all and ($viewport-type: $tabletm) {
         width: calc(50% + $measure * 20);
       }
-      @media all and (max-height: $mobile) {
+      @media all and ($viewport-type: $mobile) {
+        width: calc(87% + $measure * 4);
+        max-width: calc(100vh - 60px);
         padding: 0 $measure * 2;
       }
     }
@@ -57,9 +61,10 @@
     @media all and ($viewport-type: $tabletm) {
       left: calc(62% + 3.9vh);
     }
-    @media all and (max-height: $mobile) {
-      left: calc(78.89% + 3.9vh);
-      width: 79.95%;
+    @media all and ($viewport-type: $mobile) {
+      left: calc(80% + 4vh);
+      width: 65%;
+      top: 72px;
     }
     &__media {
       display: block;
