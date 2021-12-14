@@ -13,20 +13,7 @@
         bottom: 19.99%;
         left: 4.99%;
         max-width: calc(100vw - 60px);
-        // update card size and pseudo elements
-        .b--card-f {
-            &__hd {
-                margin-bottom: $measure*3;
-                &::after, &::before {
-                    height: $measure*3;
-                }
-            }
-            &__bd {
-                width: 81.28%;
-                margin: 0 auto;
-            }
-        }
-
+        
         // quote
         &__second {
             bottom: 57.92%;
