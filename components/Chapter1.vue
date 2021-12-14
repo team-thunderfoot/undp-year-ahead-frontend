@@ -92,9 +92,9 @@
               {{ chapter.quote }}
             </div>
             <div class="b--quote-a__meta">
-              <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="b--quote-a__meta__title">{{ chapter.quotetitle }}</a>
+              <a :href="chapter.quote_author_link" target="_blank" rel="noopener noreferrer" class="b--quote-a__meta__title">{{ chapter.quote_author }}</a>
               <h4 class="b--quote-a__meta__subtitle">
-                {{ chapter.quotedirector }}
+                {{ chapter.quote_author_description }}
               </h4>
             </div>
           </div>
@@ -122,7 +122,7 @@
           <!-- card-e -->
           <div class="b--card-e">
             <h4 class="b--card-e__title">
-              “Working Together, Restoring Trust”
+             {{chapter.panel_title}}
             </h4>
           </div>
         </div>
@@ -133,12 +133,7 @@
           <div class="b--card-d">
             <div class="b--card-d__bd">
               <div class="b--card-d__bd__content b--content-a">
-                <p>
-                  Business, government and civil society leaders meet at the
-                  <strong>World Economic Forum</strong> to address economic,
-                  environmental, political and social challenges and the impact
-                  of COVID-19.
-                </p>
+                <SanityContent :blocks="chapter.blackboard_content" />
               </div>
             </div>
             <div class="b--card-d__media-wrapper">
@@ -161,7 +156,7 @@
             :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
           >
             <div class="b--info-window-a__content">
-              <SanityContent :blocks="chapter.info" />
+             <p><a :href="chapter.tooltip_link" target="_blank">{{chapter.tooltip_label}}</a> {{chapter.tooltip_date}}</p>
             </div>
           </div>
         </div>
@@ -208,12 +203,21 @@ export default {
                 "title" : title['${this.lang}'],
                 "date" : date['${this.lang}'],
                 "description" : description['${this.lang}'],
+
                 "content" : content['${this.lang}'],
+
                 "quote" :  quote['${this.lang}'],
-                "quotetitle" :  quotetitle['${this.lang}'],
-                "quotedirector" :  quotedirector['${this.lang}'],
-                "panel" :  panel['${this.lang}'],
-                "info" : info['${this.lang}']
+                "quote_author" :  quote_author['${this.lang}'],
+                "quote_author_link" :  quote_author_link['${this.lang}'],
+                "quote_author_description" :  quote_author_description['${this.lang}'],
+
+                "panel_title" :  panel_title['${this.lang}'],
+                "blackboard_content" : blackboard_content['${this.lang}'],
+
+                "tooltip_label" : tooltip_label['${this.lang}'],
+                "tooltip_link" : tooltip_link['${this.lang}'],
+                "tooltip_date" : tooltip_date['${this.lang}']
+
             }`
       this.chapter = await this.$sanity.fetch(query_content)
       this.contentLoaded++
