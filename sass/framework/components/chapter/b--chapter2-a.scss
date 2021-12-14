@@ -12,6 +12,9 @@
       left: 48.24%;
       width: 24.36%;
       height: 39.02%;
+      @media all and ($viewport-type: $mobile) {
+        left: 51.44%;
+      }
     }
   }
   &__artwork {

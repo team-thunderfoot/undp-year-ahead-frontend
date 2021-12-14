@@ -7,7 +7,7 @@
   width: auto;
   z-index: 1;
   @media all and ($viewport-type: $mobile) {
-    padding: $measure * 3;
+    padding: $measure * 2;
     border: 8px solid map-get($color-options, j);
   }
   &::before {
