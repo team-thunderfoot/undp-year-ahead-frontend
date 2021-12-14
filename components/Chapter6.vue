@@ -32,7 +32,8 @@
                 <!-- second positin element, wheel -->
                 <div class="b--chapter6-a__content b--chapter6-a__content--second">
                     <img
-                        v-lazy="require(`@/assets/img/chapter-6/wheel.svg`)"
+                        class="b--chapter6-a__content--second__media"
+                        v-lazy="require(`@/assets/img/chapter-6/wheel.png`)"
                         alt="wheel"
                         title="wheel"
                     />
@@ -48,7 +49,7 @@
                         <h3 class="b--quote-a__meta__title">{{ chapter.quotetitle }}</h3>
                         <h4 class="b--quote-a__meta__subtitle">
                             <!-- {{ chapter.quotedirector }} -->
-                            - Asako Okai, UNDP Crisis Bureau Director
+                            <u>Asako Okai</u>, UNDP Crisis Bureau Director
                         </h4>
                         </div>
                     </div>

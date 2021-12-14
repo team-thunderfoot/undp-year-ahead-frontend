@@ -3,17 +3,32 @@
     &__content {
         // cards
         position: absolute;
-        bottom: 13.28%;
-        left: 4.32%;
+        bottom: 11.8%;
+        left: 4.62%;
+        width: 23.22%;
         max-width: calc(100vw - 60px);
+        @media all and ($viewport-type: $tabletm) {
+            width: 100%;
+            max-width: calc(100vw - 60px);
+        }
         
         // wheel
         &--second {
-            left: 66.44%;
-            bottom: 60.75%;
-            width: 10vh;
-            height: 10vh;
-            @include make-wheel();
+            left: 66.04%;
+            bottom: 58.55%;
+            width: 12.5vh;
+            height: 12.5vh;
+            background: map-get($colorbg-options , j );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            &__media {
+                width: 10vh;
+                height: 10vh;
+                @include make-wheel();
+            }
+
         }
 
         // quote
