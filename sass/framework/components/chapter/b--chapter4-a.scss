@@ -12,7 +12,12 @@
         position: absolute;
         bottom: 19.99%;
         left: 4.99%;
+        width: 19.09%;
         max-width: calc(100vw - 60px);
+        @media all and ($viewport-type: $tabletm) {
+            width: 100%;
+            max-width: calc(100vw - 60px);
+        }
 
         // quote
         &--second {
