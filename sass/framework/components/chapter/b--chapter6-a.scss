@@ -1,3 +1,31 @@
 .b--chapter6-a {
+
+    &__content {
+        // cards
+        position: absolute;
+        bottom: 13.28%;
+        left: 4.32%;
+        max-width: calc(100vw - 60px);
+        
+        // wheel
+        &--second {
+            left: 66.44%;
+            bottom: 60.75%;
+            width: 10vh;
+            height: 10vh;
+            @include make-wheel();
+        }
+
+        // quote
+        &--third {
+            position: absolute;
+            width: 18.07%;
+            left: 69.16%;
+            bottom: 11.4%;
+        }
+    }
+
+
+
     
 }

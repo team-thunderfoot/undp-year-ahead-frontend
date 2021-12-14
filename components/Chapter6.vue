@@ -4,8 +4,8 @@
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-6/front.png`)" alt="front" />
             </div>
-            <!-- <div class="b--ss-a__content">
-                <div class="b--card-a">
+            <div class="b--ss-a__content">
+                <!-- <div class="b--card-a">
                     <div class="b--card-a__hd">
                         <h3 class="b--card-a__hd__title">
                             {{chapter.title}}
@@ -21,8 +21,39 @@
                     <p class="b--card-b__content">
                         <SanityContent :blocks="chapter.content" />
                     </p>
+                </div> -->
+                <!-- first position element, card -->
+                <div class="b--chapter6-a__content">
+                    <v-card-f 
+                        :title="chapter.title" 
+                        :description="chapter.description"
+                    />
                 </div>
-            </div> -->
+                <!-- second positin element, wheel -->
+                <div class="b--chapter6-a__content b--chapter6-a__content--second">
+                    <img
+                        v-lazy="require(`@/assets/img/chapter-6/wheel.svg`)"
+                        alt="wheel"
+                        title="wheel"
+                    />
+                </div>
+                <!-- third position element, quote -->
+                <div class="b--chapter6-a__content b--chapter6-a__content--third">
+                    <div class="b--quote-a b--quote-a--second">
+                        <div class="b--quote-a__content">
+                            <!-- {{ chapter.quote }} -->
+                            “In a world where complex and multidimensional crisis has become the norm, the status quo for crisis response no longer an option.”  
+                        </div>
+                        <div class="b--quote-a__meta">
+                        <h3 class="b--quote-a__meta__title">{{ chapter.quotetitle }}</h3>
+                        <h4 class="b--quote-a__meta__subtitle">
+                            <!-- {{ chapter.quotedirector }} -->
+                            - Asako Okai, UNDP Crisis Bureau Director
+                        </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-6/back.png">        
             </div>
@@ -32,7 +63,12 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import CardF from './cards/CardF';
+
 export default {
+    components:{
+        'v-card-f':CardF
+    },
     data:()=>{
 		return{
             totalContent: 2,
