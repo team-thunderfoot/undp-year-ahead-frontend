@@ -34,7 +34,8 @@
     &__wrapper{
         position: relative;
         border: 1.46vh solid map-get($color-options , b);
-        background: $gradient-g;
+        background: $gradient-n;
+        background-color: map-get($color-options, i);
         padding: 8%;
         text-align: center;
         @media all and ($viewport-type: $mobile) {

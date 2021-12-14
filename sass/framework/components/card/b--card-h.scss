@@ -1,20 +1,51 @@
 .b--card-h {
+  position: relative;
   &__back-items{
-    &__media{}
+    position: absolute;
+    z-index: -1;
+    height: 88%;
+    left: -24.92%;
+    top: 17.67%;
+    &__media{
+      height: 100%;
+      width: auto;
+    }
   }
   &__front-items{
-    background-color: map-get($color-options , b);
-    border: .39vh solid map-get($color-options , i);
-    &::after {
-      right: 0;
-      border-top: 10px solid lightpink;
-      border-right: 10px solid white;
-      border-left: 10px solid lightpink;
-      border-bottom: 10px solid white;
+    padding-top: calc(3vh + 0.39vh*1.5);
+    position: relative;
+    &::before{
+      content: '';
+      width: calc(100% - 3vh - 0.39vh*2.5);
+      position: absolute;
+      top: -0.39vh;
+      left: 0;
+      height: calc(5.08vh + 0.39vh);
+      background-color: map-get($color-options , b);
+      border-top: .39vh solid map-get($color-options , i);
+      border-left: .39vh solid map-get($color-options , i);
     }
-    &__content{
-      @include make-font-f();
-      color: map-get($color-options , j);
+    &::after {
+      content: '';
+      position: absolute;
+      right: calc(3vh/2 - 0.39vh);
+      top: calc(3vh/2 - 0.39vh*2);
+      width: 0;
+      height: 0;
+      border: 3vh solid transparent;
+      border-top-color: map-get($color-options , i);
+      transform:rotate(45deg);
+    }
+    &__wrapper{
+      background-color: map-get($color-options , b);
+      border-left: .39vh solid map-get($color-options , i);
+      border-bottom: .39vh solid map-get($color-options , i);
+      border-right: .39vh solid map-get($color-options , i);
+      padding: calc(5.08vh - 3vh - 0.39vh*1.5) 3.13vh 5.08vh;
+      &__content{
+        @include make-font-f();
+        color: map-get($color-options , j);
+      }
     }
   }
 }

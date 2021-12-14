@@ -3,7 +3,8 @@
   position: relative;
   padding: $measure * 3 8%;
   border: 1.46vh solid map-get($color-options, b);
-  background: $gradient-g;
+  background: $gradient-n;
+  background-color: map-get($color-options, i);
   // overflow: hidden // to avoid scrollbar
   @media all and ($viewport-type: $mobile) {
     padding: $measure * 3;

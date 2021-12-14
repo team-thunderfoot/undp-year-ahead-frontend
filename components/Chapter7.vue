@@ -23,8 +23,29 @@
                             />
                         </div>
                         <div class="b--card-h__front-items">
-                            <div class="b--card-h__front-items__content">
-                                <p><strong>Lorem ipsum dolor sit</strong> amet consectetur adipisicing elit. Veniam error iste, totam unde maxime maiores ullam. Error id voluptatibus excepturi non, magni eum, iure quos quae, vel neque facilis similique!</p>
+                            <div class="b--card-h__front-items__wrapper">
+                                <div class="b--card-h__front-items__wrapper__content">
+                                    <p><strong>Human Development</strong> Report 2022 will focus on “Shaping our Future in a World in Transformation”.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b--chapter7-a__content b--chapter7-a__content--third">
+                    <div class="b--card-h">
+                        <div class="b--card-h__back-items">
+                            <img
+                            v-lazy="require(`@/assets/img/card-h-bg.png`)"
+                            alt="tv"
+                            title="tv"
+                            class="b--card-h__back-items__media"
+                            />
+                        </div>
+                        <div class="b--card-h__front-items">
+                            <div class="b--card-h__front-items__wrapper">
+                                <div class="b--card-h__front-items__wrapper__content">
+                                    <p><strong>A special report on human security</strong> will examine how the concept of human security can help us understand and respond to new and interlinked challenges.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
