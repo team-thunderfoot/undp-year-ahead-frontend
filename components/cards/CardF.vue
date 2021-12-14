@@ -1,5 +1,5 @@
 <template>
-    <div class="b--card-f">
+    <div class="b--card-f" :class="customClass">
         <div class="b--card-f__hd">
             <!-- card-e -->
             <div class="b--card-e">
@@ -21,7 +21,7 @@
 <script>
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 export default {
-    props:['title','description'],
+    props:['title','description', 'customClass'],
     components: {
         SanityContent,
     },

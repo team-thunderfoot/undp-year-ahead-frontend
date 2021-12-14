@@ -9,6 +9,7 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
+                        customClass="b--card-f--second"
                     />
                 </div>
                 <div class="b--chapter2-a__content b--chapter2-a__content--second">

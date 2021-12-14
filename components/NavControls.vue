@@ -28,7 +28,12 @@ export default {
                 console.log(sceneName);
                 
                 var pos =  sceneName.offsetLeft;
-                this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+                this.$gsap.to(window, {duration: 2, scrollTo: pos,  
+                onStart: () => {
+                    this.$refs.prev.style.pointerEvents = "none";
+                    this.$refs.next.style.pointerEvents = "none";
+                },
+                onComplete: () => {
                     if(this.currentItemMenu == this.maxStories){
                         this.$refs.prev.classList.remove("disabled");
                         this.$refs.next.classList.add("disabled");
@@ -36,6 +41,8 @@ export default {
                     if(this.currentItemMenu > 1 ){
                         this.$refs.prev.classList.remove("disabled");
                     }
+                    this.$refs.prev.style.pointerEvents = "all";
+                    this.$refs.next.style.pointerEvents = "all";
                 }});
 			}
             if(payload == 'prev'){
@@ -43,7 +50,12 @@ export default {
                 this.currentItemMenu = this.currentItemMenu - 1;
 				var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
                 var pos =  sceneName.offsetLeft;
-                this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+                this.$gsap.to(window, {duration: 4, scrollTo: pos,
+                onStart: () => {
+                    this.$refs.prev.style.pointerEvents = "none";
+                    this.$refs.next.style.pointerEvents = "none";
+                },
+                onComplete: () => {
                     if(this.currentItemMenu == 1){
                         this.$refs.next.classList.remove("disabled");
                         this.$refs.prev.classList.add("disabled");
@@ -51,16 +63,29 @@ export default {
                     if(this.currentItemMenu < this.maxStories ){
                         this.$refs.next.classList.remove("disabled");
                     }
+                    this.$refs.prev.style.pointerEvents = "all";
+                    this.$refs.next.style.pointerEvents = "all";
                 }});
 			}
         },
         goToChapter(){
             if(this.urlWithParams){
                 var sceneName  = document.querySelector('#Scene' + this.sceneNumber);
-                var pos =  sceneName.offsetLeft;
-                this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
+                if(this.sceneNumber == 13){
+                    var pos =  sceneName.offsetLeft - 100;
+                } else {
+                    var pos =  sceneName.offsetLeft;
+                }
+                this.$gsap.to(window, {duration: 4, scrollTo: pos,
+                onStart: () => {
+                    this.$refs.prev.style.pointerEvents = "none";
+                    this.$refs.next.style.pointerEvents = "none";
+                },
+                onComplete: () => {
                     //do something after going to section
-                    this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene2 takes the number 2)
+                    this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene4 takes the number 2)
+                    this.$refs.prev.style.pointerEvents = "all";
+                    this.$refs.next.style.pointerEvents = "all";
                     if(this.currentItemMenu == 1){
                         this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
                     }

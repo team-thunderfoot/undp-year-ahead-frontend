@@ -1,10 +1,10 @@
+// title is bigger or same than bd
 .b--card-f {
   position: relative;
   width: 100%;
-  max-width: 36vw;
-  @media all and ($viewport-type: $tabletm) {
-    max-width: calc(100vw - 60px);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__artwork {
     position: absolute;
     top: 0;
@@ -37,6 +37,9 @@
     &::after {
       right: 27%;
     }
+    .b--card-e {
+      width: fit-content;
+    }
   }
   &__bd {
     position: relative;
@@ -61,11 +64,7 @@
     .b--card-a {
       background: $gradient-n;
       background-color: map-get($color-options, i);
-      max-width: 30vw;
       margin: 0 auto;
-      @media all and ($viewport-type: $tabletm) {
-        max-width: calc(100vw - 60px);
-      }
       &::before {
         content: '';
         position: absolute;
@@ -79,13 +78,10 @@
       }
     }
   }
-  // scene 3
+  // bd smaller than title
   &--second {
-  }
-  // scene 4
-  &--third {
-  }
-  // scene 5
-  &--fourth {
+    .b--card-a {
+      max-width: 80%;
+    }
   }
 }

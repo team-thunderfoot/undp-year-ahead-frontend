@@ -3,10 +3,13 @@
     position: absolute;
     bottom: 26.79%;
     left: 5.32%;
+    width: 23.75%;
+    max-width: calc(100vw - 60px);
     &--second {
       bottom: 47.26%;
       left: 30.45%;
       width: 9.71%;
+      max-width: calc(100vw - 60px);
     }
   }
 }

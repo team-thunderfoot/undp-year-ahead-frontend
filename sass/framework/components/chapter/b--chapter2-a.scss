@@ -1,8 +1,11 @@
 .b--chapter2-a {
   &__content {
+    // title
     position: absolute;
     bottom: 26.79%;
     left: 2.81%;
+    width: 25.54%;
+    max-width: calc(100vw - 60px);
     // tv
     &--second {
       bottom: 43%;
