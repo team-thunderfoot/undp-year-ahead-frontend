@@ -15,7 +15,7 @@ export default {
 		}
 	},
     props : [
-        'urlName',
+        'sceneNumber',
         'urlWithParams',
         'currentItem'
     ],
@@ -23,8 +23,10 @@ export default {
         goTo(payload) {
 			if(payload == 'next'){
                 console.log(this.currentItemMenu);
-                this.currentItemMenu = this.currentItemMenu + 1;
-				var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
+                this.currentItemMenu = parseInt(this.currentItemMenu) + 1;
+                var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
+                console.log(sceneName);
+                
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
                     if(this.currentItemMenu == this.maxStories){
@@ -54,12 +56,11 @@ export default {
         },
         goToChapter(){
             if(this.urlWithParams){
-                var sceneName  = document.querySelector(this.urlName);
+                var sceneName  = document.querySelector('#Scene' + this.sceneNumber);
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos, onComplete: () => {
                     //do something after going to section
-                    const words = this.urlName.split('Scene');
-                    this.currentItemMenu = words[1]; // gets number of the url name (from #Scene2 takes the number 2)
+                    this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene2 takes the number 2)
                     if(this.currentItemMenu == 1){
                         this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
                     }
