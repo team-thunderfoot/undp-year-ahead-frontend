@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   max-width: 36vw;
-  @media all and (max-height: $tabletp) {
+  @media all and (max-height: $tabletm) {
     max-width: calc(100vw - 60px);
   }
   &__artwork {
@@ -63,7 +63,7 @@
       background-color: map-get($color-options, i);
       max-width: 30vw;
       margin: 0 auto;
-      @media all and (max-height: $tabletp) {
+      @media all and (max-height: $tabletm) {
         max-width: calc(100vw - 60px);
       }
       &::before {
