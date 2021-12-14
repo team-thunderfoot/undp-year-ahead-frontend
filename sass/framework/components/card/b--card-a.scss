@@ -4,6 +4,7 @@
   padding: $measure * 3 8%;
   border: 1.46vh solid map-get($color-options, b);
   background: $gradient-g;
+  // overflow: hidden // to avoid scrollbar
   @media all and ($viewport-type: $mobile) {
     padding: $measure * 3;
     border: 8px solid map-get($color-options, b);
@@ -24,7 +25,7 @@
     top: -1.46vh;
     left: calc(100% + 1.46vh);
     width: 1.17vh;
-    height: calc(100% + 1.46vh * 2);
+    height: calc(100% + 1.46vh * 2); // check this in mozilla
     background-color: map-get($colorbg-options, d);
     @media all and ($viewport-type: $mobile) {
       top: -8px;
@@ -34,6 +35,7 @@
     }
   }
   &__wrapper {
+    // overflow: hidden // to avoid scrollbar
     max-height: calc(
       100vh - 19.04vh - 17.77vh - $measure * 4 - (1.46vh * 2) - $measure * 6 -
         2px

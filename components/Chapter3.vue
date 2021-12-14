@@ -17,7 +17,7 @@
                 <div class="b--chapter3-a__content">
                     <v-card-f 
                         :title="chapter.title"
-                        :description="chapter.content"
+                        :description="chapter.description"
                     />
                 </div>
 
@@ -31,7 +31,7 @@
                         :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
                     >
                         <div class="b--info-window-a__content"> 
-                            <p><a href="">5th UN Conference on the Least Developed Countries</a> 23-27 January, Doha, Qatar</p>
+                            <p><a :href="chapter.tooltip_link" target="_blank">{{chapter.tooltip_label}}</a> {{chapter.tooltip_date}}</p>
                         </div>
                     </div>
                 </div>
@@ -76,9 +76,13 @@ export default {
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterThree"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
+                "description" : description['${this.lang}'],
+                "tooltip_label" : tooltip_label['${this.lang}'],
+                "tooltip_link" : tooltip_link['${this.lang}'],
+                "tooltip_date" : tooltip_date['${this.lang}']
+
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
