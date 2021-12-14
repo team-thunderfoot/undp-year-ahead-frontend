@@ -2,6 +2,9 @@
   position: relative;
   width: 100%;
   max-width: 36vw;
+  @media all and ($viewport-type: $tabletm) {
+    max-width: calc(100vw - 60px);
+  }
   &__artwork {
     position: absolute;
     top: 0;
@@ -24,7 +27,7 @@
       width: 1.95vh;
       height: $measure * 5;
       background-color: map-get($colorbg-options, d);
-      @media all and (max-height: $mobile) {
+      @media all and ($viewport-type: $mobile) {
         width: 12px;
       }
     }
@@ -45,7 +48,7 @@
       width: 1.95vh;
       height: 50vh;
       background-color: map-get($colorbg-options, d);
-      @media all and (max-height: $mobile) {
+      @media all and ($viewport-type: $mobile) {
         width: 12px;
       }
     }
@@ -60,6 +63,9 @@
       background-color: map-get($color-options, i);
       max-width: 30vw;
       margin: 0 auto;
+      @media all and ($viewport-type: $tabletm) {
+        max-width: calc(100vw - 60px);
+      }
       &::before {
         content: '';
         position: absolute;

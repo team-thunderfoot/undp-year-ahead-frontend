@@ -1,23 +1,25 @@
 .b--motion-a {
-
-    z-index: 3;
-    width: 150px;
-    height: 150px;
-    // background: url('@/assets/img/chapter-1/bubble-motion.png');
-    animation-name: motionA; 
-    animation-duration: 3.13s;
-    animation-timing-function: steps(193);
-    animation-iteration-count: infinite;
-    @media all and ($viewport-type: $tabletl) {
-        // ASK MECHE - NOT EVEN DESIGNED
-        // border:1px solid red;
-        // width:75px;
-        // height: 75px;
-        transform: translate(-25%, -25%) scale(0.5);
-    }
+  z-index: 3;
+  width: 150px;
+  height: 150px;
+  // background: url('@/assets/img/chapter-1/bubble-motion.png');
+  animation-name: motionA;
+  animation-duration: 3.13s;
+  animation-timing-function: steps(193);
+  animation-iteration-count: infinite;
+  @media all and ($viewport-type: $tabletl) {
+    // ASK MECHE - NOT EVEN DESIGNED
+    // border:1px solid red;
+    // width:75px;
+    // height: 75px;
+    transform: translate(-25%, -25%) scale(0.5);
   }
-  @keyframes motionA {
-    from { background-position: 0px; }
-    to { background-position: -28950px; }
+}
+@keyframes motionA {
+  from {
+    background-position: 0px;
   }
-  
+  to {
+    background-position: -28950px;
+  }
+}
