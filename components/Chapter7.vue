@@ -9,7 +9,25 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
+                        customClass="b--card-f--second"
                     />
+                </div>
+                <div class="b--chapter7-a__content b--chapter7-a__content--second">
+                    <div class="b--card-h">
+                        <div class="b--card-h__back-items">
+                            <img
+                            v-lazy="require(`@/assets/img/card-h-bg.png`)"
+                            alt="tv"
+                            title="tv"
+                            class="b--card-h__back-items__media"
+                            />
+                        </div>
+                        <div class="b--card-h__front-items">
+                            <div class="b--card-h__front-items__content">
+                                <p><strong>Lorem ipsum dolor sit</strong> amet consectetur adipisicing elit. Veniam error iste, totam unde maxime maiores ullam. Error id voluptatibus excepturi non, magni eum, iure quos quae, vel neque facilis similique!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">

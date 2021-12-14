@@ -1,9 +1,9 @@
 .b--info-window-a {
     position: relative;
-    left: $measure*4;
+    left: $measure*3;
     z-index:29;
     background-color: map-get($colorbg-options , e );
-    padding: $measure*1.6 $measure*2;
+    padding: $measure*2;
     border: $measure solid map-get($color-options , j );
     transition: all 0.5s 0s ease;
     opacity: 0;
@@ -37,7 +37,7 @@
             }
             @-moz-document url-prefix() {
                 text-underline-offset: .25em;
-              }
+            }
         }
     }
 }
