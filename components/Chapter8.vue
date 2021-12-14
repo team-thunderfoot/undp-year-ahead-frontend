@@ -5,27 +5,26 @@
                 <img v-lazy="require(`@/assets/img/chapter-8/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 8</h3>
                 <!-- chapter title -->
-                <div class="b--chapter5-a__content">
+                <div class="b--chapter8-a__content">
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.content"
                     />
                 </div>
                 <!-- info chart -->
-                <div class="b--chapter5-a__content b--chapter5-a__content--second">
-                <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
-                    <div class="b--info-chapter-a__icon">i</div>
-                </div>
-                <div
-                    class="b--info-window-a"
-                    :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
-                >
-                    <div class="b--info-window-a__content"> 
-                        <p><a href="">Commission on the Status of Women</a> 14-25 March, New York, USA</p>
+                <div class="b--chapter8-a__content b--chapter8-a__content--second">
+                    <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
+                        <div class="b--info-chapter-a__icon">i</div>
                     </div>
-                </div>
+                    <div
+                        class="b--info-window-a"
+                        :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
+                    >
+                        <div class="b--info-window-a__content"> 
+                            <p><a href="">Commission on the Status of Women</a> 14-25 March, New York, USA</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -37,7 +36,12 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import CardF from './cards/CardF';
+
 export default {
+    components:{
+        'v-card-f':CardF
+    },
     data:()=>{
 		return{
             totalContent: 2,
