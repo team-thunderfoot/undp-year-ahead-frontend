@@ -67,10 +67,9 @@
                 <!-- wheel -->
                 <div class="b--chapter3-a__content b--chapter3-a__content--third">
                     <img
-                        class="b--card-b__wrapper__media"
                         v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
-                        alt="frame"
-                        title="frame"
+                        alt="wheel"
+                        title="wheel"
                     />
                 </div>
 
