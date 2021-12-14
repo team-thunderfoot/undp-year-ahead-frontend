@@ -1,11 +1,16 @@
 <template>
-    <section class="b--page-a__item" id="Scene7" v-if="chapter">
+    <section class="b--page-a__item b--chapter7-a" id="Scene7" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-7/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 7</h3>
+                <div class="b--chapter7-a__content">
+                    <v-card-f 
+                        :title="chapter.title"
+                        :description="chapter.description"
+                    />
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-7/back.png">        
@@ -16,7 +21,11 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import CardF from './cards/CardF';
 export default {
+    components:{
+        'v-card-f':CardF
+    },
     data:()=>{
 		return{
             totalContent: 2,
