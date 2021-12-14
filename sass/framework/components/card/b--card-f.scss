@@ -2,6 +2,9 @@
   position: relative;
   width: 100%;
   max-width: 36vw;
+  @media all and (max-height: $tabletp) {
+    max-width: calc(100vw - 60px);
+  }
   &__artwork {
     position: absolute;
     top: 0;
@@ -60,6 +63,9 @@
       background-color: map-get($color-options, i);
       max-width: 30vw;
       margin: 0 auto;
+      @media all and (max-height: $tabletp) {
+        max-width: calc(100vw - 60px);
+      }
       &::before {
         content: '';
         position: absolute;
