@@ -92,7 +92,7 @@
               {{ chapter.quote }}
             </div>
             <div class="b--quote-a__meta">
-              <h3 class="b--quote-a__meta__title">{{ chapter.quotetitle }}</h3>
+              <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="b--quote-a__meta__title">{{ chapter.quotetitle }}</a>
               <h4 class="b--quote-a__meta__subtitle">
                 {{ chapter.quotedirector }}
               </h4>
