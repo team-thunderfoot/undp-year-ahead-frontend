@@ -22,14 +22,17 @@
     z-index: 150;
     bottom: 38.6%;
     left: 42.01%;
-    @media all and ($viewport-type: $mobile) {
-      bottom: 38.1%;
+    @media all and ($viewport-type: $tabletl) {
+      bottom: 38.2%;
     }
     &--second {
       bottom: 38.5%;
       left: 72.91%;
-      @media all and ($viewport-type: $mobile) {
+      @media all and ($viewport-type: $tabletl) {
         bottom: 38.1%;
+        left: 70%;
+      }
+      @media all and ($viewport-type: $mobile) {
         left: 67.91%;
       }
     }
