@@ -71,10 +71,21 @@ export default {
         goToChapter(){
             if(this.urlWithParams){
                 var sceneName  = document.querySelector('#Scene' + this.sceneNumber);
-                var pos =  sceneName.offsetLeft;
-                this.$gsap.to(window, {duration: 4, scrollTo: pos, onComplete: () => {
+                if(this.sceneNumber == 13){
+                    var pos =  sceneName.offsetLeft - 100;
+                } else {
+                    var pos =  sceneName.offsetLeft;
+                }
+                this.$gsap.to(window, {duration: 4, scrollTo: pos,
+                onStart: () => {
+                    this.$refs.prev.style.pointerEvents = "none";
+                    this.$refs.next.style.pointerEvents = "none";
+                },
+                onComplete: () => {
                     //do something after going to section
                     this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene4 takes the number 2)
+                    this.$refs.prev.style.pointerEvents = "all";
+                    this.$refs.next.style.pointerEvents = "all";
                     if(this.currentItemMenu == 1){
                         this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
                     }
