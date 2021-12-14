@@ -45,7 +45,7 @@
                 </div>
 
                 <!-- flags right -->
-                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--eight">
+                <div class="b--chapter3-a__artwork b--chapter3-a__artwork--second">
                     <div class="b--motion-c" v-lazy:background-image="
                         require(`@/assets/img/chapter-3/flags-right_spritesheet.png`)
                         ">
