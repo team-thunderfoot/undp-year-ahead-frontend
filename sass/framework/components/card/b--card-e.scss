@@ -3,7 +3,7 @@
   position: relative;
   padding: $measure * 2 $measure * 3;
   border: 8px solid map-get($color-options, j);
-  background: $gradient-c;
+  background: $gradient-m;
   width: auto;
   z-index: 1;
   @media all and ($viewport-type: $mobile) {
