@@ -97,6 +97,7 @@ export default {
                     
                 }}); 
             }else{
+                $nuxt.$emit('navIsLoaded');
                 if(this.currentItemMenu > 1 && this.currentItemMenu < this.maxStories ){
                     this.$refs.prev.classList.remove("disabled");
                     this.$refs.next.classList.remove("disabled");
