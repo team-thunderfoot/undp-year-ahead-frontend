@@ -21,7 +21,10 @@
                 </div>
                 <!-- second position element, quote -->
                 <div class="b--chapter4-a__content b--chapter4-a__content--second">
-                    <v-quote-a :chapter="chapter"/>
+                    <v-quote-a 
+                        :chapter="chapter"
+                        customClass="b--quote-a--second"
+                    />
                 </div>
                 <!-- third position element, tent -->
                 <div class="b--chapter4-a__artwork">
