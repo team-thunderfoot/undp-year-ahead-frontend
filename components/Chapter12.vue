@@ -5,7 +5,18 @@
                 <img v-lazy="require(`@/assets/img/chapter-12/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 12</h3>
+                <!-- chapter title -->
+                <div class="b--chapter12-a__content">
+                    <v-card-f 
+                        :title="chapter.title"
+                        :description="chapter.content"
+                        customClass="b--card-f--third"
+                    />
+                </div>
+                <!-- info chart -->
+                <div class="b--chapter12-a__content b--chapter12-a__content--second">
+                    <v-info-chapter :info="chapter"/>
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png">        
@@ -16,7 +27,14 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
+
 export default {
+    components:{
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter
+    },
     data:()=>{
 		return{
             totalContent: 2,

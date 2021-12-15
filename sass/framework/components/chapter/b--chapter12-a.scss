@@ -1,3 +1,15 @@
 .b--chapter12-a {
-    
+  &__content {
+    position: absolute;
+    bottom: 26.11%;
+    left: 14.34%;
+    width: 23.75%;
+    @include make-position-a();
+    &--second {
+      bottom: 52.26%;
+      left: 42.6%;
+      width: 6.31%;
+      @include make-position-a();
+    }
+  }
 }
