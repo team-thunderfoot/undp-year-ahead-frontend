@@ -11,8 +11,7 @@
         <div class="b--card-h__front-items">
             <div class="b--card-h__front-items__wrapper">
                 <div class="b--card-h__front-items__wrapper__content">
-                    <p><strong>Human Development</strong> Report 2022 will focus on “Shaping our Future in a World in Transformation”.</p>
-                    <!-- <SanityContent :blocks="content" /> -->
+                    <SanityContent :blocks="content" />
                 </div>
             </div>
         </div>

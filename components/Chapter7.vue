@@ -13,10 +13,10 @@
                     />
                 </div>
                 <div class="b--chapter7-a__content b--chapter7-a__content--second">
-                     <v-card-h :content="chapter.content"/>
+                     <v-card-h :content="chapter.document_left"/>
                 </div>
                 <div class="b--chapter7-a__content b--chapter7-a__content--third">
-                    <v-card-h :content="chapter.content"/>
+                    <v-card-h :content="chapter.document_right"/>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
