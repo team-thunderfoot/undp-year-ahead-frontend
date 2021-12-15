@@ -22,7 +22,7 @@
         &--second {
             bottom: 58.72%;
             left: 75.32%;
-            //width: 16.91%; testing it in production, delete if now is ok
+            width: 16.91%;
             @include make-position-a();
             max-height: calc(100vh - 55.08vh - $measure * 4);
         }
