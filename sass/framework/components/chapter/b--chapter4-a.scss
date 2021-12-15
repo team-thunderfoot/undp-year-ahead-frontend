@@ -10,9 +10,9 @@
     &__content {
         // cards
         position: absolute;
-        bottom: 17.99%;
-        left: 3.79%;
-        width: 23.79%;
+        bottom: 18.99%;
+        left: 4.1%;
+        width: 23.59%;
         @include make-position-a();
         @media all and ($viewport-type: $tabletm) {
             width: 100%;
@@ -25,6 +25,24 @@
             width: 16.91%;
             @include make-position-a();
             max-height: calc(100vh - 55.08vh - $measure * 4);
+        }
+
+        // move card f head and bottom legs
+        .b--card-f {
+            &__hd {
+                margin: 0 auto $measure*3;
+                &:before, &:after {
+                    height: $measure*3;
+                }
+            }
+            &__bd {
+                &:before {
+                    left: 25%;
+                }
+                &:after {
+                    right: 25%;
+                }
+            }
         }
     }
     // tent

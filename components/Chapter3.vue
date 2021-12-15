@@ -18,6 +18,7 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
+                        cardACustomClass="b--card-a--second"
                     />
                 </div>
 
