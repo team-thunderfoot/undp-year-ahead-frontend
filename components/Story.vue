@@ -6,14 +6,14 @@
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />
-        <v-chapter-7  />
+        <!-- <v-chapter-7  />
         <v-chapter-8  />
         <v-chapter-9  />
         <v-chapter-10  />
         <v-chapter-11  />
         <v-chapter-12  />
         <v-chapter-13  />
-        <v-chapter-14  />
+        <v-chapter-14  /> -->
         <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
@@ -25,21 +25,21 @@ import Chapter3 from '~/components/Chapter3.vue';
 import Chapter4 from '~/components/Chapter4.vue';
 import Chapter5 from '~/components/Chapter5.vue';
 import Chapter6 from '~/components/Chapter6.vue';
-import Chapter7 from '~/components/Chapter7.vue';
-import Chapter8 from '~/components/Chapter8.vue';
-import Chapter9 from '~/components/Chapter9.vue';
-import Chapter10 from '~/components/Chapter10.vue';
-import Chapter11 from '~/components/Chapter11.vue';
-import Chapter12 from '~/components/Chapter12.vue';
-import Chapter13 from '~/components/Chapter13.vue';
-import Chapter14 from '~/components/Chapter14.vue';
+// import Chapter7 from '~/components/Chapter7.vue';
+// import Chapter8 from '~/components/Chapter8.vue';
+// import Chapter9 from '~/components/Chapter9.vue';
+// import Chapter10 from '~/components/Chapter10.vue';
+// import Chapter11 from '~/components/Chapter11.vue';
+// import Chapter12 from '~/components/Chapter12.vue';
+// import Chapter13 from '~/components/Chapter13.vue';
+// import Chapter14 from '~/components/Chapter14.vue';
 
 import Progress from '~/components/NavControls.vue';
 
 export default {
     data:()=>{
 		return{
-            totalChapters:14,
+            totalChapters: 6,
 			statusChapter : 0,
             urlWithParams :false,
             sceneNumber : false,
@@ -59,14 +59,14 @@ export default {
         'v-chapter-4':Chapter4,
         'v-chapter-5':Chapter5,
         'v-chapter-6':Chapter6,
-        'v-chapter-7':Chapter7,
-        'v-chapter-8':Chapter8,
-        'v-chapter-9':Chapter9,
-        'v-chapter-10':Chapter10,
-        'v-chapter-11':Chapter11,
-        'v-chapter-12':Chapter12,
-        'v-chapter-13':Chapter13,
-        'v-chapter-14':Chapter14,
+        // 'v-chapter-7':Chapter7,
+        // 'v-chapter-8':Chapter8,
+        // 'v-chapter-9':Chapter9,
+        // 'v-chapter-10':Chapter10,
+        // 'v-chapter-11':Chapter11,
+        // 'v-chapter-12':Chapter12,
+        // 'v-chapter-13':Chapter13,
+        // 'v-chapter-14':Chapter14,
 
         'v-progress' : Progress
     },
