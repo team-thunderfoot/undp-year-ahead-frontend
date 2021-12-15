@@ -5,47 +5,52 @@
   margin: 0;
   padding: 0;
   border: none;
+  outline: none;
 }
 
-html{
-    font-size: $font-body-size;
+html {
+  font-size: $font-body-size;
 }
 
-body{
-    // background:magenta;
-    font-family: $type-a;
-    font-size: $font-body-size;
-    line-height: $line-height;
-    color: map-get($color-options, a);
-    // overflow: hidden;
+body {
+  // background:magenta;
+  font-family: $type-a;
+  font-size: $font-body-size;
+  line-height: $line-height;
+  color: map-get($color-options, a);
+  // overflow: hidden;
 }
 
 :focus {
-    outline: 0;
+  outline: 0;
 }
 
-main{
-    padding-top: $header-height;
-    padding-bottom: $footer-height;
-    @media all and ($viewport-type: $mobile){
-        padding-top: $header-height-mobile;
-    }
-    // i explorer
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        display: block;
-    }
+main {
+  padding-top: $header-height;
+  padding-bottom: $footer-height;
+  @media all and ($viewport-type: $mobile) {
+    padding-top: $header-height-mobile;
+  }
+  // i explorer
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: block;
+  }
 }
 
-b,strong{ font-weight: bold;}
+b,
+strong {
+  font-weight: bold;
+}
 
-ul, ol {
-    list-style: none;
+ul,
+ol {
+  list-style: none;
 }
-img{
-    max-width: 100%;
+img {
+  max-width: 100%;
 }
-fieldset{
-    border: none;
+fieldset {
+  border: none;
 }
 
 //todos los input menos, range
@@ -74,21 +79,25 @@ input[type=button],
 input[type=reset],
 select,
 textarea,
-button{
-    appearance: none;
+button {
+  appearance: none;
 }
 
-textarea{
-    resize: vertical;
+textarea {
+  resize: vertical;
 }
 
-button, select, input[type=button], input[type=reset], input[type=submit]{
-    cursor: pointer;
-    background: transparent;
+button,
+select,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  cursor: pointer;
+  background: transparent;
 }
 
 // remove dotted outline/border in Firefox
 select:-moz-focusring {
-    color: transparent!important;
-    text-shadow: 0 0 0 $color-b!important;
+  color: transparent !important;
+  text-shadow: 0 0 0 $color-b !important;
 }
