@@ -9,7 +9,7 @@
 
                <div class="f--row-12">
                     <!-- flags -->
-                    <div class="b--motion-c" v-lazy:background-image="require(`@/assets/test_sprites/flags.png`)"></div>
+                    <div class="b--motion-c" v-lazy:background-image="require(`@/assets/test_sprites/Waving_Flags.png`)"></div>
               </div>
 
                <div class="f--row-12">
@@ -24,7 +24,7 @@
 
                <div class="f--row-12">
                     <!-- plant wind 2 -->
-                    <div class="b--motion-g" v-lazy:background-image="require(`@/assets/test_sprites/plant_test.png`)"></div>
+                    <div class="b--motion-g" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_2.png`)"></div>
               </div>
 
                 <div class="f--row-12">
@@ -59,7 +59,7 @@
 
                <div class="f--row-12">
                     <!-- flags -->
-                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/test.png`)"></div>
+                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
               </div>
           </div>
       </div>
@@ -104,16 +104,19 @@ export default {
         width: 650px;
         height: 600px;
         animation-name: motionC;
-        animation-duration: 1.45s;
-        animation-timing-function: steps(93);
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionC {
         from {
             background-position: 0px;
-        }
+        } 
         to {
-            background-position: -60450px;
+            background-position: -62400px;
         }
     }
 
@@ -125,6 +128,9 @@ export default {
         animation-duration: 1.24s;
         animation-timing-function: steps(72);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionD {
         from {
@@ -143,6 +149,9 @@ export default {
         animation-duration: 1.18s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionE {
         from {
@@ -161,6 +170,9 @@ export default {
         animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionG {
         from {
@@ -179,6 +191,9 @@ export default {
         animation-duration: 1.24s;
         animation-timing-function: steps(72);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionH {
         from {
@@ -197,6 +212,9 @@ export default {
         animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionI {
         from {
@@ -215,6 +233,9 @@ export default {
         animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionJ {
         from {
@@ -233,6 +254,9 @@ export default {
         animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionK {
         from {
@@ -251,6 +275,9 @@ export default {
         animation-duration: 1.32s;
         animation-timing-function: steps(80);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionM {
         from {
@@ -269,6 +296,9 @@ export default {
         animation-duration: 1.32s;
         animation-timing-function: steps(80);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionN {
         from {
@@ -287,6 +317,9 @@ export default {
         animation-duration: 1.24s;
         animation-timing-function: steps(72);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionO {
         from {
