@@ -78,6 +78,7 @@ export default {
                 }
                 this.$gsap.to(window, {duration: 4, scrollTo: pos,
                 onStart: () => {
+                    $nuxt.$emit('navIsLoaded');
                     this.$refs.prev.style.pointerEvents = "none";
                     this.$refs.next.style.pointerEvents = "none";
                 },
@@ -92,9 +93,9 @@ export default {
                     if(this.currentItemMenu == this.maxStories){
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
+                    
                 }}); 
             }else{
-                console.log(this.currentItemMenu);
                 if(this.currentItemMenu > 1 && this.currentItemMenu < this.maxStories ){
                     this.$refs.prev.classList.remove("disabled");
                     this.$refs.next.classList.remove("disabled");
