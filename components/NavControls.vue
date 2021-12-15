@@ -95,9 +95,12 @@ export default {
                     this.$refs.next.style.pointerEvents = "all";
                     if(this.currentItemMenu == 1){
                         this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                        this.$refs.prev.style.pointerEvents = "none";
                     }
                     if(this.currentItemMenu == this.maxStories){
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                        this.$refs.next.style.pointerEvents = "none";
+
                     }
                     
                 }}); 
