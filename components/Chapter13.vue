@@ -16,6 +16,7 @@
                         :title="chapter.title" 
                         :description="chapter.description"
                         customClass="b--card-f--third"
+                        cardACustomClass="b--card-a--second"
                     />
                 </div>          
             </div>
