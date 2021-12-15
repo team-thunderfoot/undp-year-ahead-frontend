@@ -9,9 +9,15 @@
                 <p>2022: The Year Ahead</p>
             </div>
             <div class="b--nav-a__ft-items__ft">
-                <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/facebook.svg">
-                <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/twitter.svg">
-                <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/linkedin.svg">
+                <a class="b--nav-a__ft-items__ft__link" href="#">
+                    <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/facebook.svg">
+                </a>
+                <a class="b--nav-a__ft-items__ft__link" href="#">
+                    <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/twitter.svg">
+                </a>
+                <a class="b--nav-a__ft-items__ft__link" href="#">
+                    <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/linkedin.svg">
+                </a>
             </div>
             <div class="b--nav-a__ft-items__artwork">
                 <div class="b--nav-a__ft-items__artwork__item" :style="{ height: this.progressValue+'%' }" ></div>
