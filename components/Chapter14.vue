@@ -49,8 +49,16 @@ export default {
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
             const query_content = groq`*[_type == "chapterTwo"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
-                "description" : description['${this.lang}']
+                "description" : description['${this.lang}'],
+                
+                "quote" :  quote['${this.lang}'],
+                "quote_author" :  quote_author['${this.lang}'],
+                "quote_author_link" :  quote_author_link['${this.lang}'],
+                "quote_author_description" :  quote_author_description['${this.lang}'],
+                
+                "tooltip_label" : tooltip_label['${this.lang}'],
+                "tooltip_link" : tooltip_link['${this.lang}'],
+                "tooltip_date" : tooltip_date['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;

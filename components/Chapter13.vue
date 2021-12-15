@@ -50,9 +50,8 @@ export default {
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterThirdteen"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
                 "description" : description['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
