@@ -24,13 +24,11 @@
     &__content {
         position: relative;
         @include make-font-f();
-        color: map-get($color-options , y );
         z-index: 30;
         & a {
             display: block;
-            color: map-get($color-options , y );
             font-weight: bold;
-            text-underline-offset: .15em;
+            text-underline-offset: .05em;
             transition: all $time-a ease-in-out;
             &:hover {
                 opacity: .7;

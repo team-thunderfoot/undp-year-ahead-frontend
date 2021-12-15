@@ -21,7 +21,7 @@
                         class="b--info-window-a"
                         :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
                     >
-                        <div class="b--info-window-a__content"> 
+                        <div class="b--info-window-a__content b--content-a b--content-a--second"> 
                             <p><a href="">UN Biodiversity Conference (COP15)</a> 25 April - 8 May, Kunming, China</p>
                         </div>
                     </div>

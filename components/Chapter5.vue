@@ -21,7 +21,7 @@
               class="b--info-window-a"
               :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
           >
-              <div class="b--info-window-a__content"> 
+              <div class="b--info-window-a__content b--content-a b--content-a--second"> 
                  <p><a :href="chapter.tooltip_link" target="_blank">{{chapter.tooltip_label}}</a> {{chapter.tooltip_date}}</p>
               </div>
           </div>

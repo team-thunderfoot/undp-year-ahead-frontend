@@ -5,16 +5,14 @@
  
 .b--content-a {
     @include lists-and-paragraphs ();
-    // @include headings ();
-    // @include lists-and-paragraphs ();
     @include links();
-    // @include block-quote();
-
-    // @include headings-color ( $_color-a: map-get($color-options, b) );
     @include lists-and-paragraphs-color ( $_color-a: map-get($color-options, a) );
     @include links-color($_color-a: a);
-    // @include block-quote-color($_color-a:map-get($color-options, b));
     *:last-child{
         margin-bottom: 0px;
+    }
+    &--second {
+        @include lists-and-paragraphs-color ( $_color-a: map-get($color-options, y) );
+        @include links-color($_color-a: y);
     }
 }
