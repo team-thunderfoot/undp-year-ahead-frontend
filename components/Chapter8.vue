@@ -15,17 +15,8 @@
                 </div>
                 <!-- info chart -->
                 <div class="b--chapter8-a__content b--chapter8-a__content--second">
-                    <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
-                        <div class="b--info-chapter-a__icon">i</div>
-                    </div>
-                    <div
-                        class="b--info-window-a"
-                        :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
-                    >
-                        <div class="b--info-window-a__content"> 
-                            <p><a href="">UN Biodiversity Conference (COP15)</a> 25 April - 8 May, Kunming, China</p>
-                        </div>
-                    </div>
+                    <v-info-chapter :info="chapter"/>
+                    <!-- <p><a href="">UN Biodiversity Conference (COP15)</a> 25 April - 8 May, Kunming, China</p> -->
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -37,11 +28,13 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
-import CardF from './cards/CardF';
+import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
 
 export default {
     components:{
-        'v-card-f':CardF
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter
     },
     data:()=>{
 		return{
@@ -60,8 +53,9 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-    
+            this.chapter.tooltip_link = '';
+            this.chapter.tooltip_label = 'UN Biodiversity Conference (COP15)';
+            this.chapter.tooltip_date = '25 April - 8 May, Kunming, China';
         },
         handleLoad(){
             this.contentLoaded++;

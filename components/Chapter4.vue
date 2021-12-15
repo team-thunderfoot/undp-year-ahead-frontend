@@ -21,17 +21,7 @@
                 </div>
                 <!-- second position element, quote -->
                 <div class="b--chapter4-a__content b--chapter4-a__content--second">
-                    <div class="b--quote-a b--quote-a--second">
-                        <div class="b--quote-a__content">
-                            {{ chapter.quote }}
-                        </div>
-                        <div class="b--quote-a__meta">
-                        <a :href="chapter.quote_author_link" target="_blank" rel="noopener noreferrer" class="b--quote-a__meta__title">{{ chapter.quote_author }}</a>
-                        <h4 class="b--quote-a__meta__subtitle">
-                            {{ chapter.quote_author_description }}
-                        </h4>
-                        </div> 
-                    </div>
+                    <v-quote-a :chapter="chapter"/>
                 </div>
                 <!-- third position element, tent -->
                 <div class="b--chapter4-a__artwork">
@@ -53,11 +43,13 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
-import CardF from './cards/CardF';
+import CardF from '@/components/cards/CardF';
+import QuoteA from '@/components/quote/Quote';
 
 export default {
         components:{
-        'v-card-f':CardF
+        'v-card-f':CardF,
+        'v-quote-a':QuoteA
     },
     data:()=>{
 		return{
