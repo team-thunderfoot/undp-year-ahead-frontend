@@ -225,6 +225,24 @@ export default {
             },
           },
         })
+       
+        let tlParallax = this.$gsap.timeline({
+            scrollTrigger: {
+                trigger: ".eli",
+                scrub: true,
+                start: () =>
+                    "top top-=" +
+                    (document.querySelector(".eli").offsetLeft - window.innerWidth),
+                end: () => "+=" + document.querySelector(".eli").offsetWidth,
+                onEnter: () => {
+                  alert('entro');
+                },
+                onLeave: () => {
+                  alert('salgo')
+                }
+            }
+        });
+        tlParallax.to(document.querySelector('.eli'), {duration: 40, x:-100});
       })
     },
   },
