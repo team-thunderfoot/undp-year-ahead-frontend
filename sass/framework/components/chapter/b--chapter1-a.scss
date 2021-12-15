@@ -5,7 +5,7 @@
     bottom: 16.79%;
     left: 2.81%;
     width: 11.91%;
-    max-width: calc(100vw - 60px);
+    @include make-position-a();
     max-height: calc(60.25vh - 16.79vh - $measure * 4);
     // intro second box
     &--second {
@@ -36,19 +36,19 @@
     bottom: 67.08%;
     left: 84.4%;
     width: 5.01%;
-    max-width: calc(100vw - 60px);
+    @include make-position-a();
     @media all and ($viewport-type: $mobile) {
       bottom: 51.08%;
       left: 83.4%;
       width: 6.01%;
-      max-width: calc(100vw - 60px);
+      @include make-position-a();
     }
   }
 
   &__artwork {
     position: absolute;
     z-index: 150;
-    max-width: calc(100vw - 60px);
+    @include make-position-a();
 
     // Gif top left
     &--second {
@@ -83,7 +83,7 @@
     bottom: 55.08%;
     left: 43.92%;
     width: 11.31%;
-    max-width: calc(100vw - 60px);
+    @include make-position-a();
     max-height: calc(100vh - 55.08vh - $measure * 4);
   }
 }

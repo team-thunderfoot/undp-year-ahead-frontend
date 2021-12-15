@@ -4,7 +4,7 @@
         bottom: 29.1%;
         left: 5.8%;
         width: 12.41%;
-        max-width: calc(100vw - 60px);
+        @include make-position-a();
         // max-height: calc(60.25vh - 16.79vh - $measure * 4);
         &--second{
             bottom: 61.65%;

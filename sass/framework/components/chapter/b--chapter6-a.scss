@@ -6,10 +6,10 @@
         bottom: 12.6%;
         left: 3.62%;
         width: 24.02%;
-        max-width: calc(100vw - 60px);
+        @include make-position-a();
         @media all and ($viewport-type: $tabletm) {
             width: 100%;
-            max-width: calc(100vw - 60px);
+            @include make-position-a();
         }
         
         // wheel

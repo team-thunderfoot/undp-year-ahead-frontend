@@ -4,12 +4,12 @@
     bottom: 33.11%;
     left: 2.24%;
     width: 23.75%;
-    max-width: calc(100vw - 60px);
+    @include make-position-a();
     &--second {
       bottom: 38.36%;
       left: 23.6%;
       width: 6.31%;
-      max-width: calc(100vw - 60px);
+      @include make-position-a();
     }
   }
 }

@@ -4,7 +4,7 @@
     bottom: 26.79%;
     left: 5.75%;
     width: 15.65%;
-    max-width: calc(100vw - 60px);
+    @include make-position-a();
     z-index: 1;
     // info chart
     &--second {

@@ -5,7 +5,7 @@
     bottom: 26.79%;
     left: 2.81%;
     width: 25.54%;
-    max-width: calc(100vw - 60px);
+    @include make-position-a();
     // tv
     &--second {
       bottom: 43%;
