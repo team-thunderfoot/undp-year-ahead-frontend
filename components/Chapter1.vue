@@ -236,10 +236,10 @@ export default {
                     (document.querySelector(".eli").offsetLeft - window.innerWidth),
                 end: () => "+=" + document.querySelector(".eli").offsetWidth,
                 onEnter: () => {
-                  alert('entro');
+                  // alert('entro');
                 },
                 onLeave: () => {
-                  alert('salgo')
+                  // alert('salgo')
                 }
             }
         });
