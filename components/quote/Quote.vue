@@ -1,5 +1,5 @@
 <template>
-    <div class="b--quote-a">
+    <div class="b--quote-a" :class="customClass">
         <div class="b--quote-a__content">
             {{ chapter.quote }}
         </div>
@@ -14,7 +14,8 @@
 <script>
 export default {
     props : [
-        'chapter'
+        'chapter',
+        'customClass'
     ]
 }
 </script>
