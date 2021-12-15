@@ -15,7 +15,7 @@
                 <!-- info chart -->
                 <div class="b--chapter8-a__content b--chapter8-a__content--second">
                     <v-info-chapter :info="chapter"/>
-                    <!-- <p><a href="">Commission on the Status of Women</a> 14-25 March, New York, USA</p> -->
+                    <!-- <p><a href="">UN Biodiversity Conference (COP15)</a> 25 April - 8 May, Kunming, China</p> -->
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -53,8 +53,8 @@ export default {
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
             this.chapter.tooltip_link = '';
-            this.chapter.tooltip_label = 'Commission on the Status of Women';
-            this.chapter.tooltip_date = '14-25 March, New York, USA';
+            this.chapter.tooltip_label = 'UN Biodiversity Conference (COP15)';
+            this.chapter.tooltip_date = '25 April - 8 May, Kunming, China';
         },
         handleLoad(){
             this.contentLoaded++;

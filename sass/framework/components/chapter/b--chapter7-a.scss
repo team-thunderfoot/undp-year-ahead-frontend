@@ -15,6 +15,9 @@
             bottom: 61.65%;
             left: 65.32%;
             width: 6.97%;
+            @media all and ($viewport-type: $mobile) {
+                width: 9%;
+            }
         }
     }
 }

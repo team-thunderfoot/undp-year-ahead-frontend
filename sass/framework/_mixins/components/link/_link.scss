@@ -1,14 +1,17 @@
-@mixin link-a(){
+@mixin link-a() {
   text-decoration: underline;
   text-underline-position: auto;
   opacity: 1;
   transition: opacity $time-a ease-in-out;
+  @-moz-document url-prefix() {
+    text-underline-offset: 0.25em;
+  }
 }
 
-@mixin link-a-color($colortext){
+@mixin link-a-color($colortext) {
   color: map-get($color-options, $colortext);
 }
 
-@mixin link-a-interaction(){
+@mixin link-a-interaction() {
   opacity: 0.7;
 }
