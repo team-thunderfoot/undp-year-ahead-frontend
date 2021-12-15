@@ -13,42 +13,10 @@
                     />
                 </div>
                 <div class="b--chapter7-a__content b--chapter7-a__content--second">
-                    <div class="b--card-h">
-                        <div class="b--card-h__back-items">
-                            <img
-                            v-lazy="require(`@/assets/img/card-h-bg.png`)"
-                            alt="tv"
-                            title="tv"
-                            class="b--card-h__back-items__media"
-                            />
-                        </div>
-                        <div class="b--card-h__front-items">
-                            <div class="b--card-h__front-items__wrapper">
-                                <div class="b--card-h__front-items__wrapper__content">
-                                    <p><strong>Human Development</strong> Report 2022 will focus on “Shaping our Future in a World in Transformation”.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                     <v-card-h :content="chapter.content"/>
                 </div>
                 <div class="b--chapter7-a__content b--chapter7-a__content--third">
-                    <div class="b--card-h">
-                        <div class="b--card-h__back-items">
-                            <img
-                            v-lazy="require(`@/assets/img/card-h-bg.png`)"
-                            alt="tv"
-                            title="tv"
-                            class="b--card-h__back-items__media"
-                            />
-                        </div>
-                        <div class="b--card-h__front-items">
-                            <div class="b--card-h__front-items__wrapper">
-                                <div class="b--card-h__front-items__wrapper__content">
-                                    <p><strong>A special report on human security</strong> will examine how the concept of human security can help us understand and respond to new and interlinked challenges.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <v-card-h :content="chapter.content"/>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -60,16 +28,19 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
-import CardF from './cards/CardF';
+import CardF from '@/components/cards/CardF';
+import CardH from '@/components/cards/CardH';
+
 export default {
     components:{
-        'v-card-f':CardF
+        'v-card-f':CardF,
+        'v-card-h':CardH
     },
     data:()=>{
 		return{
             totalContent: 2,
 			contentLoaded : 0,
-            chapter: null
+            chapter: null,
 		}
 	},
     methods: {
@@ -82,8 +53,7 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-    
+            console.log(this.chapter);
         },
         handleLoad(){
             this.contentLoaded++;

@@ -87,17 +87,7 @@
         </div>
 
         <div class="b--chapter1-a__item">
-          <div class="b--quote-a">
-            <div class="b--quote-a__content">
-              {{ chapter.quote }}
-            </div>
-            <div class="b--quote-a__meta">
-              <a :href="chapter.quote_author_link" target="_blank" rel="noopener noreferrer" class="b--quote-a__meta__title">{{ chapter.quote_author }}</a>
-              <h4 class="b--quote-a__meta__subtitle">
-                {{ chapter.quote_author_description }}
-              </h4>
-            </div>
-          </div>
+          <v-quote-a :chapter="chapter"/>
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
@@ -148,17 +138,7 @@
         </div>
 
         <div class="b--chapter1-a__info">
-          <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
-            <div class="b--info-chapter-a__icon">i</div>
-          </div>
-          <div
-            class="b--info-window-a"
-            :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
-          >
-            <div class="b--info-window-a__content b--content-a b--content-a--second">
-             <p><a :href="chapter.tooltip_link" target="_blank">{{chapter.tooltip_label}}</a> {{chapter.tooltip_date}}</p>
-            </div>
-          </div>
+            <v-info-chapter :info="chapter"/>
         </div>
       </div>
       <div class="b--ss-a__bg-items">
@@ -179,9 +159,8 @@
 import { groq } from '@nuxtjs/sanity'
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 
-import Vue from 'vue'
-import infoWindow from '@/mixins/infoChapter.js'
-Vue.mixin(infoWindow)
+import InfoChapter from '@/components/infochapter/Infochapter';
+import QuoteA from '@/components/quote/Quote';
 
 export default {
   mixins: ['infoWindow'],
@@ -195,6 +174,8 @@ export default {
   },
   components: {
     SanityContent,
+    'v-info-chapter' : InfoChapter,
+    'v-quote-a' : QuoteA
   },
   methods: {
     async getContent() {

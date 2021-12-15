@@ -10,21 +10,12 @@
             <v-card-f 
                 :title="chapter.title"
                 :description="chapter.description"
+                customClass="b--card-f--third"
             />
         </div>
         <!-- info chart -->
         <div class="b--chapter5-a__content b--chapter5-a__content--second">
-          <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
-              <div class="b--info-chapter-a__icon">i</div>
-          </div>
-          <div
-              class="b--info-window-a"
-              :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
-          >
-              <div class="b--info-window-a__content b--content-a b--content-a--second"> 
-                 <p><a :href="chapter.tooltip_link" target="_blank">{{chapter.tooltip_label}}</a> {{chapter.tooltip_date}}</p>
-              </div>
-          </div>
+           <v-info-chapter :info="chapter"/>
         </div>
       </div>
       <div class="b--ss-a__bg-items">
@@ -41,10 +32,13 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
-import CardF from './cards/CardF';
+import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
+
 export default {
   components:{
-    'v-card-f':CardF
+    'v-card-f':CardF,
+    'v-info-chapter' : InfoChapter
   },
   data: () => {
     return {
