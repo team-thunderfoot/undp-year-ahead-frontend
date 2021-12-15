@@ -22,10 +22,8 @@ export default {
     methods :  {
         goTo(payload) {
 			if(payload == 'next'){
-                console.log(this.currentItemMenu);
                 this.currentItemMenu = parseInt(this.currentItemMenu) + 1;
                 var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
-                console.log(sceneName);
                 
                 var pos =  sceneName.offsetLeft;
                 this.$gsap.to(window, {duration: 2, scrollTo: pos,  
@@ -46,7 +44,6 @@ export default {
                 }});
 			}
             if(payload == 'prev'){
-                console.log(this.currentItemMenu);
                 this.currentItemMenu = this.currentItemMenu - 1;
 				var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
                 var pos =  sceneName.offsetLeft;
