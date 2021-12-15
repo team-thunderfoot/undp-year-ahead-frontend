@@ -9,7 +9,7 @@
                 <div class="b--chapter10-a__content">
                     <v-card-f 
                         :title="chapter.title"
-                        :description="chapter.content"
+                        :description="chapter.description"
                         customClass="b--card-f--third"
                     />
                 </div>

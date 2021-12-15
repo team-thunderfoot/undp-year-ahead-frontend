@@ -9,7 +9,7 @@
                 <div class="b--chapter14-a__content">
                     <v-card-f 
                         :title="chapter.title"
-                        :description="chapter.content"
+                        :description="chapter.description"
                     />
                 </div>
                 <!-- second position element, quote -->
@@ -47,7 +47,7 @@ export default {
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterFourteen"][0]{
                 "title" : title['${this.lang}'],
                 "description" : description['${this.lang}'],
                 
@@ -55,7 +55,7 @@ export default {
                 "quote_author" :  quote_author['${this.lang}'],
                 "quote_author_link" :  quote_author_link['${this.lang}'],
                 "quote_author_description" :  quote_author_description['${this.lang}'],
-                
+
                 "tooltip_label" : tooltip_label['${this.lang}'],
                 "tooltip_link" : tooltip_link['${this.lang}'],
                 "tooltip_date" : tooltip_date['${this.lang}']
