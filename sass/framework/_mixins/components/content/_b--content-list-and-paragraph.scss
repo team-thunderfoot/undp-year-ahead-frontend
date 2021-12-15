@@ -3,7 +3,7 @@
   ol {
     margin-bottom: $measure * 3;
     li {
-      margin-bottom: $measure;
+      margin-bottom: 0;
       @include make-font-f();
       padding-left: $measure * 3;
     }
