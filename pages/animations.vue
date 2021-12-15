@@ -23,12 +23,17 @@
               </div>
 
                <div class="f--row-12">
-                    <!-- plant wind 1 -->
+                    <!-- plant wind 2 -->
                     <div class="b--motion-g" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_2.png`)"></div>
               </div>
 
                 <div class="f--row-12">
-                    <!-- plant wind 1 -->
+                    <!-- blink 2 -->
+                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/test_sprites/blink2.png`)"></div>
+                </div>
+
+                <div class="f--row-12">
+                    <!-- plant wind 3 -->
                     <div class="b--motion-i" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_3.png`)"></div>
               </div>
 
@@ -163,6 +168,24 @@ export default {
         }
         to {
             background-position: -37152px;
+        }
+    }
+
+     .b--motion-h {
+        z-index: 3;
+        width: 1284px;
+        height: 720px;
+        animation-name: motionH;
+        animation-duration: 1.24s;
+        animation-timing-function: steps(72);
+        animation-iteration-count: infinite;
+    }
+    @keyframes motionH {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: -92448px;
         }
     }
 
