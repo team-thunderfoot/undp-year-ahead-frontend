@@ -12,7 +12,7 @@
     @include make-font-f();
     // list-style-type: disc;
     list-style: none; /* Remove default bullets */
-    margin-left: $measure * 6;
+    margin-left: calc($measure * 6 - 0.4rem);
     @media all and ($viewport-type: $mobile) {
       margin-left: $measure * 3;
     }
@@ -20,13 +20,13 @@
       position: relative;
       padding-left: 0px;
       &:before {
-        content: "";
+        content: '';
         display: inline-block;
         width: 5px;
         height: 5px;
         border-radius: 50%;
         margin-bottom: 2px;
-        margin-left: -1em;
+        margin-left: -0.6em;
         margin-right: 10px;
       }
       @media all and ($viewport-type: $mobile) {
@@ -67,7 +67,7 @@
   }
   p {
     @include make-font-f();
-    margin-bottom: $measure*3;
+    margin-bottom: $measure * 3;
   }
   em {
     font-style: italic;
