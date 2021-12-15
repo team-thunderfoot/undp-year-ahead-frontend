@@ -4,8 +4,6 @@
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-9/front.png`)" 
                 alt="front"
-                @load="handleLoad"
-                @error="handleLoad" 
                 />
             </div>
             <div class="b--ss-a__content">

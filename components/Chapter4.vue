@@ -5,8 +5,6 @@
                 <img 
                 v-lazy="require(`@/assets/img/chapter-4/front.png`)"
                 class="b--ss-a__ft-items__artwork"
-                @load="handleLoad"
-                @error="handleLoad" 
                 alt="front" 
                 />
             </div>
