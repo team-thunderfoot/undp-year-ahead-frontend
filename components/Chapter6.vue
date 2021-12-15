@@ -10,6 +10,7 @@
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
+                        customClass="b--card-f--third"
                     />
                 </div>
                 <!-- second position element, wheel -->
@@ -23,7 +24,10 @@
                 </div>
                 <!-- third position element, quote -->
                 <div class="b--chapter6-a__content b--chapter6-a__content--third">
-                    <v-quote-a :chapter="chapter"/>
+                    <v-quote-a 
+                        :chapter="chapter"
+                        customClass="b--quote-a--second"
+                    />
                 </div>
             </div>
             <div class="b--ss-a__bg-items">

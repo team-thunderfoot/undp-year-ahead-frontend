@@ -1,10 +1,10 @@
 @mixin link-a() {
-  text-decoration: underline;
-  text-underline-position: auto;
-  opacity: 1;
-  transition: opacity $time-a ease-in-out;
+  display: block;
+  font-weight: bold;
+  text-underline-offset: 0.05em;
+  transition: all $time-a ease-in-out;
   @-moz-document url-prefix() {
-    text-underline-offset: 0.25em;
+    text-underline-offset: 0.17em;
   }
 }
 
