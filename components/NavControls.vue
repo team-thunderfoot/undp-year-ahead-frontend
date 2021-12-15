@@ -79,7 +79,15 @@ export default {
                 this.$gsap.to(window, {duration: 4, scrollTo: pos,
                 onStart: () => {
                     //  Emits on Update Story .vue 
+                    this.currentItemMenu = this.sceneNumber;
+                    if(this.currentItemMenu == 1){
+                        this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                    }
+                    if(this.currentItemMenu == this.maxStories){
+                        this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                    }
                     $nuxt.$emit('navIsLoaded');
+                    
                     this.$refs.prev.style.pointerEvents = "none";
                     this.$refs.next.style.pointerEvents = "none";
                 },
@@ -97,6 +105,7 @@ export default {
                     
                 }}); 
             }else{
+                //  Emits on Update Story .vue 
                 $nuxt.$emit('navIsLoaded');
                 if(this.currentItemMenu > 1 && this.currentItemMenu < this.maxStories ){
                     this.$refs.prev.classList.remove("disabled");
