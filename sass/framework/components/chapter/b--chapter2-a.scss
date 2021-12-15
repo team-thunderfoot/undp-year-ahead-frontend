@@ -20,7 +20,7 @@
   &__artwork {
     position: absolute;
     z-index: 150;
-    bottom: 39.1%;
+    bottom: 39.2%;
     left: 42.01%;
     height: 14.45vh;
     @media all and ($viewport-type: $tabletl) {
@@ -30,7 +30,7 @@
       max-height: 100%;
     }
     &--second {
-      bottom: 39%;
+      bottom: 39.1%;
       left: 72.91%;
       height: 15.03vh;
       @media all and ($viewport-type: $tabletl) {
