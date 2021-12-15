@@ -15,12 +15,17 @@
     </div>
 </template>
 <script>
-
-import Vue from 'vue'
-import infoWindow from '@/mixins/infoChapter.js'
-Vue.mixin(infoWindow)
-
 export default {
+    data:()=>{
+		return{
+            infoWindowStatus:true
+		}
+	},
+    methods:{
+        toggleInfoChapter(){
+            this.infoWindowStatus = ! this.infoWindowStatus;
+        },
+    },
     props : [
         'info'
     ]
