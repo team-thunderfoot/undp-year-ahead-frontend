@@ -2,7 +2,7 @@
   width: 650px;
   height: 600px;
   animation-name: motionB;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-timing-function: steps(96);
   animation-iteration-count: infinite;
   @media all and ($viewport-type: $tabletl) {
@@ -18,6 +18,6 @@
     background-position: 0px;
   }
   to {
-    background-position: -96000px;
+    background-position: -62400px;
   }
 }

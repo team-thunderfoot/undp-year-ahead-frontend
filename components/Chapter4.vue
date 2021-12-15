@@ -11,23 +11,6 @@
                 />
             </div>
             <div class="b--ss-a__content">
-                <!-- <div class="b--card-a">
-                    <div class="b--card-a__hd">
-                        <h3 class="b--card-a__hd__title">
-                            {{chapter.title}}
-                        </h3> 
-                    </div>
-                    <div class="b--card-a__bd">
-                        <p class="b--card-a__bd__content">
-                            <SanityContent :blocks="chapter.description" />
-                        </p>
-                    </div>
-                </div>
-                <div class="b--card-b">
-                    <p class="b--card-b__content">
-                        <SanityContent :blocks="chapter.content" />
-                    </p>
-                </div> -->
                 <!-- first position element, card -->
                 <div class="b--chapter4-a__content">
                     <v-card-f 
@@ -38,19 +21,7 @@
                 </div>
                 <!-- second position element, quote -->
                 <div class="b--chapter4-a__content b--chapter4-a__content--second">
-                    <div class="b--quote-a b--quote-a--second">
-                        <div class="b--quote-a__content">
-                            <!-- {{ chapter.quote }} -->
-                            “In a world where complex and multidimensional crisis has become the norm, the status quo for crisis response no longer an option.”  
-                        </div>
-                        <div class="b--quote-a__meta">
-                        <h3 class="b--quote-a__meta__title">{{ chapter.quotetitle }}</h3>
-                        <h4 class="b--quote-a__meta__subtitle">
-                            <!-- {{ chapter.quotedirector }} -->
-                            <u>Asako Okai</u>, UNDP Crisis Bureau Director
-                        </h4>
-                        </div>
-                    </div>
+                    <v-quote-a :chapter="chapter"/>
                 </div>
                 <!-- third position element, tent -->
                 <div class="b--chapter4-a__artwork">
@@ -72,11 +43,13 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
-import CardF from './cards/CardF';
+import CardF from '@/components/cards/CardF';
+import QuoteA from '@/components/quote/Quote';
 
 export default {
         components:{
-        'v-card-f':CardF
+        'v-card-f':CardF,
+        'v-quote-a':QuoteA
     },
     data:()=>{
 		return{
@@ -88,10 +61,15 @@ export default {
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterFour"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
                 "description" : description['${this.lang}'],
+
+                "quote" :  quote['${this.lang}'],
+                "quote_author" :  quote_author['${this.lang}'],
+                "quote_author_link" :  quote_author_link['${this.lang}'],
+                "quote_author_description" :  quote_author_description['${this.lang}'],
+                
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;

@@ -9,7 +9,14 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
+                        customClass="b--card-f--second"
                     />
+                </div>
+                <div class="b--chapter7-a__content b--chapter7-a__content--second">
+                     <v-card-h :content="chapter.content"/>
+                </div>
+                <div class="b--chapter7-a__content b--chapter7-a__content--third">
+                    <v-card-h :content="chapter.content"/>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -21,16 +28,19 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
-import CardF from './cards/CardF';
+import CardF from '@/components/cards/CardF';
+import CardH from '@/components/cards/CardH';
+
 export default {
     components:{
-        'v-card-f':CardF
+        'v-card-f':CardF,
+        'v-card-h':CardH
     },
     data:()=>{
 		return{
             totalContent: 2,
 			contentLoaded : 0,
-            chapter: null
+            chapter: null,
 		}
 	},
     methods: {
@@ -43,8 +53,7 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-    
+            console.log(this.chapter);
         },
         handleLoad(){
             this.contentLoaded++;

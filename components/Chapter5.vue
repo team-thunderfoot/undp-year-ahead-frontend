@@ -9,22 +9,13 @@
         <div class="b--chapter5-a__content">
             <v-card-f 
                 :title="chapter.title"
-                :description="chapter.content"
+                :description="chapter.description"
+                customClass="b--card-f--third"
             />
         </div>
         <!-- info chart -->
         <div class="b--chapter5-a__content b--chapter5-a__content--second">
-          <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
-              <div class="b--info-chapter-a__icon">i</div>
-          </div>
-          <div
-              class="b--info-window-a"
-              :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
-          >
-              <div class="b--info-window-a__content"> 
-                  <p><a href="">Commission on the Status of Women</a> 14-25 March, New York, USA</p>
-              </div>
-          </div>
+           <v-info-chapter :info="chapter"/>
         </div>
       </div>
       <div class="b--ss-a__bg-items">
@@ -41,10 +32,13 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
-import CardF from './cards/CardF';
+import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
+
 export default {
   components:{
-    'v-card-f':CardF
+    'v-card-f':CardF,
+    'v-info-chapter' : InfoChapter
   },
   data: () => {
     return {
@@ -56,39 +50,18 @@ export default {
   methods: {
     async getContent() {
       this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
-      const query_content = groq`*[_type == "chapterTwo"][0]{
+      const query_content = groq`*[_type == "chapterFive"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
-                "description" : description['${this.lang}']
+                "description" : description['${this.lang}'],
+
+                "tooltip_label" : tooltip_label['${this.lang}'],
+                "tooltip_link" : tooltip_link['${this.lang}'],
+                "tooltip_date" : tooltip_date['${this.lang}']
             }`
       this.chapter = await this.$sanity.fetch(query_content)
       this.contentLoaded++
 
-      // this.$nextTick(() => {
-      //     // if we want to animate something later
-      //     var tlSection5 = this.$gsap.timeline({
-      //         scrollTrigger: {
-      //             trigger: "#Scene5",
-      //             scrub: 0,
-      //             start: () =>
-      //                 "top top-=" +
-      //                 (document.querySelector("#Scene5").offsetLeft - window.innerWidth),
-      //             end: () => "+=" + document.querySelector("#Scene5").offsetWidth,
-      //             onEnter: () => {
-      //                 // emits on in Story.vue
-      //                 // window.location.href =  this.$route.path  + '#Scene5';
-      //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
-      //                 $nuxt.$emit('changeCurrent', { 'item'  : 5})
-      //             },
-      //             onEnterBack: () => {
-      //                 // emits on in Story.vue
-      //                 // window.location.href =  this.$route.path  + '#Scene5';
-      //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene5'})
-      //                 $nuxt.$emit('changeCurrent', { 'item'  : 5})
-      //             }
-      //         }
-      //     });
-      // })
+   
     },
     handleLoad() {
       this.contentLoaded++

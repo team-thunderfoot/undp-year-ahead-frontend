@@ -5,7 +5,19 @@
                 <img v-lazy="require(`@/assets/img/chapter-8/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 8</h3>
+                <!-- chapter title -->
+                <div class="b--chapter8-a__content">
+                    <v-card-f 
+                        :title="chapter.title"
+                        :description="chapter.content"
+                        customClass="b--card-f--second"
+                    />
+                </div>
+                <!-- info chart -->
+                <div class="b--chapter8-a__content b--chapter8-a__content--second">
+                    <v-info-chapter :info="chapter"/>
+                    <!-- <p><a href="">UN Biodiversity Conference (COP15)</a> 25 April - 8 May, Kunming, China</p> -->
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-8/back.png">        
@@ -16,7 +28,14 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
+
 export default {
+    components:{
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter
+    },
     data:()=>{
 		return{
             totalContent: 2,
@@ -34,8 +53,9 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-    
+            this.chapter.tooltip_link = '';
+            this.chapter.tooltip_label = 'UN Biodiversity Conference (COP15)';
+            this.chapter.tooltip_date = '25 April - 8 May, Kunming, China';
         },
         handleLoad(){
             this.contentLoaded++;

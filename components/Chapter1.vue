@@ -87,17 +87,7 @@
         </div>
 
         <div class="b--chapter1-a__item">
-          <div class="b--quote-a">
-            <div class="b--quote-a__content">
-              {{ chapter.quote }}
-            </div>
-            <div class="b--quote-a__meta">
-              <h3 class="b--quote-a__meta__title">{{ chapter.quotetitle }}</h3>
-              <h4 class="b--quote-a__meta__subtitle">
-                {{ chapter.quotedirector }}
-              </h4>
-            </div>
-          </div>
+          <v-quote-a :chapter="chapter"/>
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
@@ -122,7 +112,7 @@
           <!-- card-e -->
           <div class="b--card-e">
             <h4 class="b--card-e__title">
-              “Working Together, Restoring Trust”
+             {{chapter.panel_title}}
             </h4>
           </div>
         </div>
@@ -133,12 +123,7 @@
           <div class="b--card-d">
             <div class="b--card-d__bd">
               <div class="b--card-d__bd__content b--content-a">
-                <p>
-                  Business, government and civil society leaders meet at the
-                  <strong>World Economic Forum</strong> to address economic,
-                  environmental, political and social challenges and the impact
-                  of COVID-19.
-                </p>
+                <SanityContent :blocks="chapter.blackboard_content" />
               </div>
             </div>
             <div class="b--card-d__media-wrapper">
@@ -153,17 +138,7 @@
         </div>
 
         <div class="b--chapter1-a__info">
-          <div class="b--info-chapter-a" @click.prevent="toggleInfoChapter()">
-            <div class="b--info-chapter-a__icon">i</div>
-          </div>
-          <div
-            class="b--info-window-a"
-            :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
-          >
-            <div class="b--info-window-a__content">
-              <SanityContent :blocks="chapter.info" />
-            </div>
-          </div>
+            <v-info-chapter :info="chapter"/>
         </div>
       </div>
       <div class="b--ss-a__bg-items">
@@ -184,9 +159,8 @@
 import { groq } from '@nuxtjs/sanity'
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 
-import Vue from 'vue'
-import infoWindow from '@/mixins/infoChapter.js'
-Vue.mixin(infoWindow)
+import InfoChapter from '@/components/infochapter/Infochapter';
+import QuoteA from '@/components/quote/Quote';
 
 export default {
   mixins: ['infoWindow'],
@@ -200,6 +174,8 @@ export default {
   },
   components: {
     SanityContent,
+    'v-info-chapter' : InfoChapter,
+    'v-quote-a' : QuoteA
   },
   methods: {
     async getContent() {
@@ -208,12 +184,21 @@ export default {
                 "title" : title['${this.lang}'],
                 "date" : date['${this.lang}'],
                 "description" : description['${this.lang}'],
+
                 "content" : content['${this.lang}'],
+
                 "quote" :  quote['${this.lang}'],
-                "quotetitle" :  quotetitle['${this.lang}'],
-                "quotedirector" :  quotedirector['${this.lang}'],
-                "panel" :  panel['${this.lang}'],
-                "info" : info['${this.lang}']
+                "quote_author" :  quote_author['${this.lang}'],
+                "quote_author_link" :  quote_author_link['${this.lang}'],
+                "quote_author_description" :  quote_author_description['${this.lang}'],
+
+                "panel_title" :  panel_title['${this.lang}'],
+                "blackboard_content" : blackboard_content['${this.lang}'],
+
+                "tooltip_label" : tooltip_label['${this.lang}'],
+                "tooltip_link" : tooltip_link['${this.lang}'],
+                "tooltip_date" : tooltip_date['${this.lang}']
+
             }`
       this.chapter = await this.$sanity.fetch(query_content)
       this.contentLoaded++
