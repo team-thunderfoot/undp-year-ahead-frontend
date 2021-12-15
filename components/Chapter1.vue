@@ -87,9 +87,9 @@
           </div>
         </div>
 
-        <div class="b--chapter1-a__item">
+        <!-- <div class="b--chapter1-a__item">
           <v-quote-a :chapter="chapter"/>
-        </div>
+        </div> -->
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
           <div
