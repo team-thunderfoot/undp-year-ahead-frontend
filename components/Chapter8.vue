@@ -10,6 +10,7 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.content"
+                        customClass="b--card-f--second"
                     />
                 </div>
                 <!-- info chart -->
