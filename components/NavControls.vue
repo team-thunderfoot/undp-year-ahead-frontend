@@ -78,6 +78,7 @@ export default {
                 }
                 this.$gsap.to(window, {duration: 4, scrollTo: pos,
                 onStart: () => {
+                    //  Emits on Update Story .vue 
                     $nuxt.$emit('navIsLoaded');
                     this.$refs.prev.style.pointerEvents = "none";
                     this.$refs.next.style.pointerEvents = "none";

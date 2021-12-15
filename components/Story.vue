@@ -145,9 +145,11 @@ export default {
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
             });
+            // event in NavControl.vue
             this.$nuxt.$on('navIsLoaded', () => {
                 this.navLoaded = true;
             });
+            // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 this.currentItem = payload.item;
             });
