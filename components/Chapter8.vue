@@ -22,7 +22,7 @@
                         :class="{ 'b--info-window-a--is-visible': this.infoWindowStatus }"
                     >
                         <div class="b--info-window-a__content"> 
-                            <p><a href="">Commission on the Status of Women</a> 14-25 March, New York, USA</p>
+                            <p><a href="">UN Biodiversity Conference (COP15)</a> 25 April - 8 May, Kunming, China</p>
                         </div>
                     </div>
                 </div>
