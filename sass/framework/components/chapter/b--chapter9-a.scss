@@ -1,3 +1,29 @@
 .b--chapter9-a {
+
+    &__content {
+        // cards
+        position: absolute;
+        bottom: 37.99%;
+        left: 23.79%;
+        width: 18.79%;
+        @include make-position-a();
+        @media all and ($viewport-type: $tabletm) {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        position: absolute;
+        bottom: 67.08%;
+        left: 44.4%;
+        width: 5.01%;
+        @include make-position-a();
+        @media all and ($viewport-type: $mobile) {
+          bottom: 51.08%;
+          left: 83.4%;
+          width: 6.01%;
+          @include make-position-a();
+        }
+      }
     
 }
