@@ -22,12 +22,14 @@
     z-index: 150;
     bottom: 38.6%;
     left: 42.01%;
+    height: 14.45vh;
     @media all and ($viewport-type: $tabletl) {
       bottom: 38.2%;
     }
     &--second {
       bottom: 38.5%;
       left: 72.91%;
+      height: 15.03vh;
       @media all and ($viewport-type: $tabletl) {
         bottom: 38.1%;
         left: 70%;
