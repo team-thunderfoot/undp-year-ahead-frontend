@@ -8,11 +8,13 @@
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
+                <!-- move up from the scss -->
                 <div class="b--chapter9-a__content">
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
                         customClass="b--card-f--second"
+                        cardACustomClass="b--card-a--second"
                     />
                 </div>
                 <!-- second position element, info -->

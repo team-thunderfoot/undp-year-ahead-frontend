@@ -64,7 +64,6 @@
       background: $gradient-n;
       background-color: map-get($color-options, i);
       margin: 0 auto;
-      padding: $measure * 6 8%;
       &::before {
         content: '';
         position: absolute;

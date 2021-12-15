@@ -12,7 +12,7 @@
     @include make-font-f();
     // list-style-type: disc;
     list-style: none; /* Remove default bullets */
-    margin-left: calc($measure * 6 - 0.4rem);
+    margin-left: calc($measure * 4 - 0.2rem);
     @media all and ($viewport-type: $mobile) {
       margin-left: $measure * 3;
     }

@@ -103,32 +103,33 @@
         </div>
 
         <!-- content-third position -->
-        <div class="b--chapter1-a__content b--chapter1-a__content--third">
+        <!-- <div class="b--chapter1-a__content b--chapter1-a__content--third"> -->
           <!-- card-e -->
-          <div class="b--card-e">
+          <!-- <div class="b--card-e">
             <h4 class="b--card-e__title">
              {{chapter.panel_title}}
             </h4>
           </div>
-        </div>
+        </div>  -->
 
         <!-- content-fourth position -->
         <div class="b--chapter1-a__content b--chapter1-a__content--fourth">
           <!-- text with bg -->
           <div class="b--card-d">
             <div class="b--card-d__bd">
-              <div class="b--card-d__bd__content b--content-a">
+              <v-quote-a :chapter="chapter"/>
+              <!-- <div class="b--card-d__bd__content b--content-a">
                 <SanityContent :blocks="chapter.blackboard_content" />
-              </div>
+              </div> -->
             </div>
-            <div class="b--card-d__media-wrapper">
+            <!-- <div class="b--card-d__media-wrapper">
               <img
                 class="b--card-d__media-wrapper__media"
                 v-lazy="require(`@/assets/img/chapter-1/graphics.png`)"
                 alt="graphic"
                 title="graphic"
               />
-            </div>
+            </div> -->
           </div>
         </div>
 
