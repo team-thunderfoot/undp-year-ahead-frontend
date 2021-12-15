@@ -54,48 +54,17 @@
             bottom: 26px;
             left: 17px;
             margin: 0 auto;
-            &__media {
-                display: block;
-                &:not(:last-child) {
-                    margin-bottom: 26px;
+            &__link{
+                display:block;
+                margin-top: $measure * 2;
+                &__media {
+                    display: block;
+                    &:not(:last-child) {
+                        margin-bottom: 26px;
+                    }
                 }
             }
         }
         
     }
-    // &__hd{
-    //     // empty for now
-    // }
-    // &__bd{
-    //     transform: rotate(-90deg) translateY(22px) translateX(-50%);
-    //     width: 500px;
-    //     text-align: center;
-    //     transform-origin: center left;
-    //     top: 50%;
-    //     position: absolute;
-    // }
-    // &__ft{
-    //     position:absolute;
-    //     bottom:0;
-    //     left:0;
-    //     background:map-get($color-options, a )
-    // }
-    // &__item{
-    //     position:absolute;
-    //     width: 2px;
-    //     height: 100vh;
-    //     background:map-get($color-options, a );
-    //     top:0;
-    //     right:0;
-    //     z-index: 49;
-    //     &__artwork{
-    //         position:absolute;
-    //         width: 100%;
-    //         top:0;
-    //         right:0;
-    //         z-index: 49;
-    //         background:map-get($color-options, c );
-    //         height: 30%;
-    //     }
-    // }
 }

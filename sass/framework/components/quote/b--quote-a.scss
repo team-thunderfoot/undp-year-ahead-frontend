@@ -14,10 +14,10 @@
         }
         &__title {
             @include make-font-g();
-            display: inline;
             font-weight: 600;
             @include link-a();
             @include link-a-color($colortext: a);
+            display: inline;
             &:hover, &:focus, &:active {
                 @include link-a-interaction();
             }

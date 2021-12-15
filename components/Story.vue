@@ -97,6 +97,7 @@ export default {
                         end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
                         scrub: true,
                         markers: "true",
+                        anticipatePin: 1,
                         onUpdate: (self) => {
                             // Emits on Update Progress in Nav.vue 
                             var widthProgress = self.progress.toFixed(2) * 100;
