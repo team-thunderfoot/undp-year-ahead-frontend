@@ -43,11 +43,11 @@ export default {
 	},
     methods : {
         async getContent(){
-            const query_content = groq`*[_type == "page"][0]{
-                title
+            const query_content = groq`*[_type == "sitesettings"][0]{
+                lang_title
             }`;
             var languages = await this.$sanity.fetch(query_content);
-            this.languages = languages.title;
+            this.languages = languages.lang_title;
             switch (this.$route.name) {
                 case 'index':
                     this.languageSelectorActive = this.languages.en;
