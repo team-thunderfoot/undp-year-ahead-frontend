@@ -24,7 +24,7 @@
 
                <div class="f--row-12">
                     <!-- plant wind 2 -->
-                    <div class="b--motion-g" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_2.png`)"></div>
+                    <div class="b--motion-g" v-lazy:background-image="require(`@/assets/test_sprites/plant_test.png`)"></div>
               </div>
 
                 <div class="f--row-12">
@@ -59,7 +59,7 @@
 
                <div class="f--row-12">
                     <!-- flags -->
-                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
+                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/test.png`)"></div>
               </div>
           </div>
       </div>
@@ -158,7 +158,7 @@ export default {
         width: 387px;
         height: 742px;
         animation-name: motionG;
-        animation-duration: 1.18s;
+        animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
     }
