@@ -26,11 +26,11 @@
                             {{ chapter.quote }}
                         </div>
                         <div class="b--quote-a__meta">
-                        <h3 class="b--quote-a__meta__title">{{ chapter.quotetitle }}</h3>
+                        <a :href="chapter.quote_author_link" target="_blank" rel="noopener noreferrer" class="b--quote-a__meta__title">{{ chapter.quote_author }}</a>
                         <h4 class="b--quote-a__meta__subtitle">
-                            {{ chapter.quotedirector }} 
+                            {{ chapter.quote_author_description }}
                         </h4>
-                        </div>
+                        </div> 
                     </div>
                 </div>
                 <!-- third position element, tent -->
@@ -69,13 +69,15 @@ export default {
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterFour"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
                 "description" : description['${this.lang}'],
+
                 "quote" :  quote['${this.lang}'],
-                "quotetitle" :  quotetitle['${this.lang}'],
-                "quotedirector" :  quotedirector['${this.lang}'],
+                "quote_author" :  quote_author['${this.lang}'],
+                "quote_author_link" :  quote_author_link['${this.lang}'],
+                "quote_author_description" :  quote_author_description['${this.lang}'],
+                
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
