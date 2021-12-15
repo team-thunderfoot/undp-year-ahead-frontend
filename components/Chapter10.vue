@@ -5,7 +5,14 @@
                 <img v-lazy="require(`@/assets/img/chapter-10/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 10</h3>
+                <!-- chapter title -->
+                <div class="b--chapter10-a__content">
+                    <v-card-f 
+                        :title="chapter.title"
+                        :description="chapter.content"
+                        customClass="b--card-f--third"
+                    />
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-10/back.png">        
@@ -16,7 +23,14 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
+
 export default {
+    components:{
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter
+    },
     data:()=>{
 		return{
             totalContent: 2,
