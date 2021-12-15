@@ -7,9 +7,14 @@
                     <div class="b--motion-a" v-lazy:background-image="require(`@/assets/test_sprites/speech.png`)"></div>
               </div>
 
+              <div class="f--row-12">
+                    <!-- flags -->
+                    <div class="b--motion-b" v-lazy:background-image="require(`@/assets/test_sprites/flags_left.png`)"></div>
+              </div>
+
                <div class="f--row-12">
                     <!-- flags -->
-                    <div class="b--motion-c" v-lazy:background-image="require(`@/assets/test_sprites/Waving_Flags.png`)"></div>
+                    <div class="b--motion-c" v-lazy:background-image="require(`@/assets/test_sprites/flags_right.png`)"></div>
               </div>
 
                <div class="f--row-12">
@@ -99,6 +104,27 @@ export default {
         }
     }
 
+    .b--motion-b {
+        z-index: 3;
+        width: 520px;
+        height: 800px;
+        animation-name: motionB;
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
+        animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
+    }
+    @keyframes motionB {
+        from {
+            background-position: 0px;
+        } 
+        to {
+            background-position: -49920px;
+        }
+    }
+
     .b--motion-c {
         z-index: 3;
         width: 650px;
@@ -146,7 +172,7 @@ export default {
         width: 513px;
         height: 758px;
         animation-name: motionE;
-        animation-duration: 1.18s;
+        animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
         @media all and ($viewport-type: $tabletl) {
