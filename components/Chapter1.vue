@@ -101,12 +101,6 @@
           </div>
         </div>
 
-        <div class="b--chapter1-a__artwork b--chapter1-a__artwork--sixth">
-          <div class="b--motion-b">
-            <!-- Plant -->
-          </div>
-        </div>
-
         <!-- content-third position -->
         <div class="b--chapter1-a__content b--chapter1-a__content--third">
           <!-- card-e -->
