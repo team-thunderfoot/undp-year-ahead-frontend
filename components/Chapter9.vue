@@ -2,10 +2,25 @@
     <section class="b--page-a__item" id="Scene9" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-9/front.png`)" alt="front" />
+                <img v-lazy="require(`@/assets/img/chapter-9/front.png`)" 
+                alt="front"
+                @load="handleLoad"
+                @error="handleLoad" 
+                />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 9</h3>
+                <!-- first position element, card -->
+                <div class="b--chapter9-a__content">
+                    <v-card-f 
+                        :title="chapter.title" 
+                        :description="chapter.description"
+                        customClass="b--card-f--second"
+                    />
+                </div>
+                <!-- second position element, info -->
+                <div class="b--chapter9-a__info">
+                    <v-info-chapter :info="chapter"/>
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-9/back.png">        
@@ -16,12 +31,23 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
+import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
+
 export default {
+    mixins: ['infoWindow'],
+    components:{
+        SanityContent,
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter,
+    },
     data:()=>{
 		return{
             totalContent: 2,
 			contentLoaded : 0,
-            chapter: null
+            chapter: null,
+            infoWindowStatus: true,
 		}
 	},
     methods: {
