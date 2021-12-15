@@ -9,6 +9,7 @@
           src="@/assets/img/chapter-1/front.png"
           alt=""
         />
+        <div class="eli"></div>
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -243,4 +244,14 @@ export default {
   },
 }
 </script>
-
+<style scoped>
+  .eli{
+    background:red;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:500px;
+    height: 500px;
+    z-index: 5;;
+  }
+</style>

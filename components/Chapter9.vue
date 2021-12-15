@@ -53,10 +53,13 @@ export default {
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterNine"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
-                "description" : description['${this.lang}']
+                "description" : description['${this.lang}'],
+                
+                "tooltip_label" : tooltip_label['${this.lang}'],
+                "tooltip_link" : tooltip_link['${this.lang}'],
+                "tooltip_date" : tooltip_date['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
