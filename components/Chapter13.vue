@@ -10,11 +10,21 @@
                 <img v-lazy="require(`@/assets/img/chapter-13/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-          
-                
+                <!-- first position element, card -->
+                <div class="b--chapter13-a__content">
+                    <v-card-f 
+                        :title="chapter.title" 
+                        :description="chapter.description"
+                        customClass="b--card-f--third"
+                    />
+                </div>          
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-13/back.png">        
+                <img class="b--ss-a__bg-items__artwork" 
+                @load="handleLoad" 
+                @error="handleLoad" 
+                src="@/assets/img/chapter-13/back.png"
+                >        
             </div>
         </div>
     </section>
@@ -22,7 +32,14 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
+import CardF from '@/components/cards/CardF';
+
 export default {
+    components:{
+        SanityContent,
+        'v-card-f':CardF,
+    }, 
     data:()=>{
 		return{
             totalContent: 2,

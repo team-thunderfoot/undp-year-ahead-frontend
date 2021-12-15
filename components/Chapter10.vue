@@ -24,12 +24,10 @@
 <script>
 import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
-import InfoChapter from '@/components/infochapter/Infochapter';
 
 export default {
     components:{
-        'v-card-f':CardF,
-        'v-info-chapter' : InfoChapter
+        'v-card-f':CardF
     },
     data:()=>{
 		return{
