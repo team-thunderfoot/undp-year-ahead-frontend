@@ -14,7 +14,7 @@
         <v-chapter-12  />
         <v-chapter-13  />
         <v-chapter-14  />
-        <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="isLoaded" :currentItem="currentItem" ref="progress" />
+        <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
 
@@ -44,7 +44,9 @@ export default {
             urlWithParams :false,
             sceneNumber : false,
             currentItem : 1,
-            loadedNew : false
+            loadedNew : false,
+            navLoaded : false,
+            allisLoaded : false
 		}
 	},
     props : [
@@ -72,8 +74,21 @@ export default {
         statusChapter(newValue, oldValue) {
             if(newValue == this.totalChapters){
                 setTimeout(() => {
+                    this.allisLoaded = true;
+                }, 1200);
+            }
+        },
+        navLoaded(newValue, oldValue) {
+            if(newValue){
+                setTimeout(() => {
+                    this.allisLoaded = 1;
+                }, 1200);
+            }
+        },
+        allisLoaded(newValue, oldValue) {
+            if(this.statusChapter == this.totalChapters && this.navLoaded){
+                setTimeout(() => {
                     this.asambleStory()
-                    this.loadedNew = true;
                 }, 1200);
             }
         },
@@ -107,6 +122,7 @@ export default {
                 });
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
+                this.loadedNew = true;
             })
         },
         checkURL(){
@@ -129,6 +145,11 @@ export default {
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
             });
+            // event in NavControl.vue
+            this.$nuxt.$on('navIsLoaded', () => {
+                this.navLoaded = true;
+            });
+            // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 this.currentItem = payload.item;
             });

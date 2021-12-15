@@ -1,3 +1,10 @@
 .b--chapter10-a {
-    
+  &__content {
+    // title
+    position: absolute;
+    bottom: 34.63%;
+    left: 12.57%;
+    width: 10.9%;
+    max-width: calc(100vw - 60px);
+  }
 }
