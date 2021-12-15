@@ -10,6 +10,7 @@
                         :title="chapter.title"
                         :description="chapter.description"
                         customClass="b--card-f--second"
+                        cardACustomClass="b--card-a--second"
                     />
                 </div>
                 <div class="b--chapter7-a__content b--chapter7-a__content--second">
