@@ -48,7 +48,7 @@
       }
       @media all and ($viewport-type: $mobile) {
         width: calc(87% + $measure * 4);
-        max-width: calc(100vh - 60px);
+        @include make-position-a();
         padding: 0 $measure * 2;
       }
     }

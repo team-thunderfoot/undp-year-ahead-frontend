@@ -13,18 +13,17 @@
         bottom: 17.99%;
         left: 3.79%;
         width: 23.79%;
-        max-width: calc(100vw - 60px);
+        @include make-position-a();
         @media all and ($viewport-type: $tabletm) {
             width: 100%;
-            max-width: calc(100vw - 60px);
         }
 
         // quote
         &--second {
             bottom: 58.72%;
             left: 75.32%;
-            width: 16.91%;
-            max-width: calc(100vw - 60px);
+            //width: 16.91%; testing it in production, delete if now is ok
+            @include make-position-a();
             max-height: calc(100vh - 55.08vh - $measure * 4);
         }
     }
