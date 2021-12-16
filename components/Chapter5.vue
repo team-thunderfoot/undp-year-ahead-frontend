@@ -1,5 +1,5 @@
 <template>
-  <section class="b--page-a__item" id="Scene5" v-if="chapter">
+  <section class="b--page-a__item b--chapter5-a" id="Scene5" v-if="chapter">
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img v-lazy="require(`@/assets/img/chapter-5/front.png`)" alt="front" />

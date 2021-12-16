@@ -118,18 +118,8 @@
           <div class="b--card-d">
             <div class="b--card-d__bd">
               <v-quote-a :chapter="chapter"/>
-              <!-- <div class="b--card-d__bd__content b--content-a">
-                <SanityContent :blocks="chapter.blackboard_content" />
-              </div> -->
             </div>
-            <!-- <div class="b--card-d__media-wrapper">
-              <img
-                class="b--card-d__media-wrapper__media"
-                v-lazy="require(`@/assets/img/chapter-1/graphics.png`)"
-                alt="graphic"
-                title="graphic"
-              />
-            </div> -->
+            <div class="b--card-d__artwork"></div>
           </div>
         </div>
 
