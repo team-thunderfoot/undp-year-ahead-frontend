@@ -1,11 +1,8 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-        <div style="position: fixed; bottom: 1rem; background-color: pink; color: black;width: 100px; left: 100px;z-index:1000">
-            {{isLoaded}}
-        </div>
-        <v-chapter-1  />
-        <v-chapter-2   />
-        <v-chapter-3   />
+        <v-chapter-1 :scrollTween="scrollTween"  />
+        <v-chapter-2  />
+        <v-chapter-3  />
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />
@@ -119,30 +116,13 @@ export default {
                     }
                 });
                
-                this.parallax(); // parallax
 
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
-                setTimeout(() => {
-                    this.loadedNew = true;
-                }, 5000);
+                this.loadedNew = true;
             })
         },
-        parallax(){
-            let sectionB = document.querySelector("#Scene1");
-            this.$gsap.to(".eli", {
-                x: () => sectionB.offsetWidth - 60,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: "#SectionB",
-                    containerAnimation: this.scrollTween,
-                    scrub: 1,
-                    markers: true,
-                    id: "1",
-                    invalidateOnRefresh: true,
-                }
-            });
-        },
+    
         checkURL(){
             if(process.client){
                 var currentURL = window.location.href;
@@ -173,9 +153,7 @@ export default {
             });
             // event in ChapterX.vue
             this.$nuxt.$on('changeURL', (payload) => {
-                console.log('loadedNew',this.loadedNew);
                 if(this.loadedNew){
-                    console.log(payload);
                     var queryString = window.location.search;
                     this.urlParams = new URLSearchParams(queryString);
                     this.urlParams.set("scene", payload.url );
@@ -183,6 +161,7 @@ export default {
                     window.history.replaceState({}, '', `?${this.urlParams}`);
                 } 
             });
+            
         }
     }
 }

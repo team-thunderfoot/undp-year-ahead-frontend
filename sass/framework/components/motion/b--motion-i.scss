@@ -1,0 +1,24 @@
+.b--motion-i {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 296px;
+  height: 353px;
+  animation-name: motionI;
+  animation-duration: 2s;
+  animation-timing-function: steps(96);
+  animation-iteration-count: infinite;
+  @media all and ($viewport-type: $tabletl) {
+    transform: translate(-15%, 15%) scale(0.7);
+  }
+}
+@keyframes motionI {
+  from {
+    background-position: 0px;
+  }
+  to {
+    // width * steps
+    background-position: -28416px;
+  }
+}

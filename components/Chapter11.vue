@@ -14,10 +14,24 @@
                         customClass="b--card-f--third"
                     />
                 </div>
+                <!-- boxes -->
+                <div class="b--chapter11-a__media">
+                    <img v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
+                </div>
                 <!-- second position element, info -->
                 <div class="b--chapter11-a__info">
                     <v-info-chapter :info="chapter"/>
                 </div>
+                <!-- plant animation -->
+                <div class="b--chapter11-a__artwork">
+                    <div
+                        class="b--motion-i"
+                        v-lazy:background-image="
+                        require(`@/assets/img/chapter-13/plant_wind_3.png`)
+                        "
+                    >
+                </div>
+            </div> 
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-11/back.png">        

@@ -1,6 +1,6 @@
 <template>
-    <section class="b--page-a__item b--chapter2-a" id="Scene2" ref="Scene2" >
-        <div class="b--ss-a" v-if="chapter">
+    <section class="b--page-a__item b--chapter2-a" id="Scene2" ref="Scene2"  v-if="chapter">
+        <div class="b--ss-a">
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-2/front.png`)" alt="front" />
             </div>
@@ -13,7 +13,7 @@
                     />
                 </div>
                 <div class="b--chapter2-a__content b--chapter2-a__content--second">
-                    <div class="b--card-g">
+                    <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
                         <div class="b--card-g__media-wrapper">
                             <img
                             v-lazy="require(`@/assets/img/chapter-2/dino.gif`)"
@@ -75,7 +75,7 @@ export default {
             this.contentLoaded++;
         },
         animate(){
-            // this.$nextTick((e) => {
+            this.$nextTick((e) => {
                 // if we want to animate something later 
                 var tlSection2 = this.$gsap.timeline({
                     scrollTrigger: {
@@ -97,7 +97,7 @@ export default {
                         }
                     }
                 });
-            // });
+            });
         }
     },
     watch: {
@@ -105,13 +105,13 @@ export default {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
+                this.animate();
             }
         }
     },
     mounted(){
         if(process.client){
             this.getContent();
-            this.animate();
         }
     }
 }

@@ -11,7 +11,7 @@ export default {
     data:()=>{
 		return{
            maxStories : 14,
-           currentItemMenu : 1
+           currentItemMenu : false
 		}
 	},
     props : [
@@ -83,9 +83,7 @@ export default {
                     if(this.currentItemMenu == this.maxStories){
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
-                    setTimeout(() => {
-                        $nuxt.$emit('navIsLoaded');
-                    }, 1000);
+                    $nuxt.$emit('navIsLoaded');
                     
                     this.$refs.prev.style.pointerEvents = "none";
                     this.$refs.next.style.pointerEvents = "none";
@@ -137,7 +135,7 @@ export default {
     mounted(){
         this.currentItemMenu  = this.currentItem;
         this.goToChapter();
-    },
+    }
 }
 </script>
 <style lang="scss">
