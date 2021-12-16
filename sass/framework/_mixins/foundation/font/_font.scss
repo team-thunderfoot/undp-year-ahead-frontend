@@ -11,7 +11,6 @@
     font-size: 13vw;
     font-size: clamp(1.5rem, 13vw, 4rem);
   }
-
 }
 
 @mixin make-font-b {
@@ -48,10 +47,15 @@
   font-weight: 500;
   line-height: 1.14;
   // font-size: 35px; // client value
-  font-size: 3.42vh;
-  font-size: clamp(1.4rem, 3.42vh, 2.1875rem);
+  // font-size: 3.42vh;
+  // font-size: clamp(1.4rem, 3.42vh, 2.1875rem);
+  font-size: 3.3vh;
+  font-size: clamp(1.3rem, 3.3vh, 1.9875rem);
   @media all and ($viewport-type: $mobile) {
     // font-size: 26px; // client value
+    font-size: 3.2vh;
+    font-size: clamp(1.2rem, 3.2vh, 1.7875rem);
+    line-height: 1.1;
   }
 }
 
@@ -64,7 +68,7 @@
   font-size: clamp(16px, 3.125vh, 2rem);
   @media all and ($viewport-type: $mobile) {
     // no client value
-    font-size: clamp(16px, 6vw, 1.5rem);
+    font-size: clamp(16px, 6vw, 1.56rem);
   }
 }
 
@@ -77,6 +81,8 @@
   font-size: clamp(1rem, 2.44vh, 1.5625rem);
   @media all and ($viewport-type: $mobile) {
     // font-size: 16px; // client value
+    font-size: 2.44vh;
+    font-size: clamp(1rem, 2.44vh, 1.4625rem);
   }
 }
 
@@ -89,6 +95,9 @@
   font-size: clamp(1.25rem, 2.34vh, 1.5rem);
   @media all and ($viewport-type: $mobile) {
     // font-size: 20px; // client value
+    font-size: 2.34vh;
+    font-size: clamp(0.97rem, 2.26vh, 1.3rem);
+    line-height: 0.8;
   }
 }
 
@@ -129,6 +138,7 @@
   font-size: clamp(12px, 1.37vh, 0.875rem);
   @media all and ($viewport-type: $mobile) {
     // no client value
+    font-size: clamp(12px, 1.37vh, 0.675rem);
   }
 }
 
@@ -141,5 +151,6 @@
   font-size: clamp(10px, 1.31vh, 0.838125rem);
   @media all and ($viewport-type: $mobile) {
     // no client value
+    font-size: clamp(10px, 1.31vh, 0.638125rem);
   }
 }
