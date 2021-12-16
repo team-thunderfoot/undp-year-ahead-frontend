@@ -20,7 +20,15 @@
       left: 63.75%;
       width: 17.48%;
       height: 85.15%;
-      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
+      // max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
+      @media all and ($viewport-type: $tabletl) {
+        height: auto;
+        max-height: none;
+        bottom: 34.48%;
+      }
+      @media all and ($viewport-type: $mobile) {
+        bottom: 29.48%;
+      }
     }
   }
 
@@ -54,6 +62,10 @@
     &--fifth {
       top: 47%;
       left: 70.8%;
+      @media all and ($viewport-type: $tabletl) {
+        top: 51.8%;
+        left: 72.8%;
+      }
     }
   }
 }

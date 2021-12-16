@@ -41,6 +41,9 @@
     background: $gradient-d;
     height: 100%;
     padding: 0 11%;
+    @media all and ($viewport-type: $tabletm) {
+      padding: 5%;
+    }
     &__content {
       width: calc(37.97% + $measure * 20);
       padding: 0 $measure * 10;
@@ -61,6 +64,9 @@
     width: 13.18%;
     height: 6.29%;
     background-color: map-get($color-options, u);
+    @media all and ($viewport-type: $tabletm) {
+      display: none;
+    }
   }
   // &__media-wrapper {
   //   position: absolute;
