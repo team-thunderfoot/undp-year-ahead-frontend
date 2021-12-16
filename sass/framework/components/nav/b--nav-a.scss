@@ -1,4 +1,4 @@
-.b--nav-a{
+.b--nav-a {
     position: fixed;
     left: 0;
     top: 0;
@@ -7,6 +7,10 @@
     background: linear-gradient(180deg, rgba(249,137,104,1) 0%, rgba(239,188,162,1) 62%, rgba(240,200,179,1) 81%, rgba(222,161,140,1) 100%);
     z-index: 50;
     height: 100%;
+    // testing less width on mobile devices
+    @media all and ($viewport-type: $mobile) {
+        width: 45px;
+    }
     &__bg-items{
         position: absolute;
         top: 0;
@@ -47,6 +51,9 @@
             transform-origin: center left;
             top: 50%;
             position: absolute;
+            @media all and ($viewport-type: $mobile) {
+                transform: rotate(450deg) translateY(-22px) translateX(-50%);
+            }
         }
         &__ft {
             position: absolute;
@@ -54,6 +61,9 @@
             bottom: 26px;
             left: 17px;
             margin: 0 auto;
+            @media all and ($viewport-type: $mobile) {
+                left: 12px;
+            }
             &__link{
                 display:block;
                 margin-top: $measure * 2;

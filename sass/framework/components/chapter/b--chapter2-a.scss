@@ -15,7 +15,7 @@
     width: 25.54%;
     @include make-position-a();
     @media all and ($viewport-type: $mobile) {
-      left: 3.81%;
+      left: 6.81%;
     }
     // tv
     &--second {
