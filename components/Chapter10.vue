@@ -11,6 +11,8 @@
                         :title="chapter.title"
                         :description="chapter.description"
                         customClass="b--card-f--third"
+                        :loadMoreBtn="chapter.load_more_button"
+                        :loadMoreURL="chapter.load_more_url"
                         :loadMore="true"
                     />
                 </div>
@@ -42,7 +44,9 @@ export default {
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
             const query_content = groq`*[_type == "chapterTen"][0]{
                 "title" : title['${this.lang}'],
-                "description" : description['${this.lang}']
+                "description" : description['${this.lang}'],
+                "load_more_button" : load_more_button['${this.lang}'],
+                "load_more_url" : load_more_url['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
