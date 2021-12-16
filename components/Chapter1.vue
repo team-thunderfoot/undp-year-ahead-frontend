@@ -10,6 +10,7 @@
           src="@/assets/img/chapter-1/front.png"
           alt=""
         />
+        <!-- <div class="eli"></div> -->
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -33,7 +34,7 @@
         <!-- Intro Story -->
 
         <div class="b--chapter1-a__content b--chapter1-a__content--second">
-          <div class="b--card-a" :class="'b--card-a--' + `${this.lang}`">
+          <div class="b--card-a">
             <div class="b--card-a__artwork"></div>
             <div class="b--card-a__wrapper b--content-a">
               <SanityContent :blocks="chapter.content" />
@@ -42,7 +43,7 @@
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second">
-          <div class="b--card-b" :class="'b--card-b--' + `${this.lang}`">
+          <div class="b--card-b">
             <div class="b--card-b__artwork"></div>
             <div class="b--card-b__wrapper">
               <img
@@ -64,7 +65,7 @@
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
-          <div class="b--card-c" :class="'b--card-c--' + `${this.lang}`">
+          <div class="b--card-c">
             <div class="b--card-c__bd">
               <div class="b--card-c__bd__artwork"></div>
               <div class="b--card-c__bd__media-wrapper">
@@ -101,7 +102,7 @@
         <!-- content-fourth position -->
         <div class="b--chapter1-a__content b--chapter1-a__content--third">
           <!-- text with bg -->
-          <div class="b--card-d" :class="'b--card-d--' + `${this.lang}`">
+          <div class="b--card-d">
             <div class="b--card-d__bd">
               <v-quote-a :chapter="chapter"/>
             </div>
@@ -193,13 +194,14 @@ export default {
           },
         })
        
-       //parallax effect
-       let sectionB = document.querySelector("#Scene1");
+       //parallax effect       
+       setTimeout(() => {
+          let scene1 = document.querySelector("#Scene1");
           this.$gsap.to(this.$refs['parallax-1-ft'], {
-              x: () => sectionB.offsetWidth - 60,
+              x: () => scene1.offsetWidth -60,
               ease: "none",
               scrollTrigger: {
-                  trigger: "#sectionB",
+                  // trigger: '#Scene1',
                   containerAnimation: this.scrollTween,
                   scrub: 1,
                   markers: true,
@@ -207,6 +209,7 @@ export default {
                   invalidateOnRefresh: true,
               }
           });
+       }, 2000);
 
       })
     },
@@ -222,11 +225,19 @@ export default {
   },
   created() {
     if (process.client) {
-      this.getContent()
+      this.getContent();
     }
   },
 }
 </script>
 <style scoped>
- 
+  .eli{
+    background:rgba(187, 146, 146, 0.384);
+    position:absolute;
+    bottom:0;
+    left:40%;
+    width:500px;
+    height: 500px;
+    z-index: 5;;
+  }
 </style>

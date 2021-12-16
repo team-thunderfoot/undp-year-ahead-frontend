@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter2-a" id="Scene2" ref="Scene2"  v-if="chapter">
         <div class="b--ss-a">
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-2/front.png`)" alt="front" />
+                <img ref="parallax-2-ft" v-lazy="require(`@/assets/img/chapter-2/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <div class="b--chapter2-a__content">
@@ -60,7 +60,8 @@ export default {
 			contentLoaded : 0,
             chapter: null
 		}
-	},
+    },
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -97,6 +98,22 @@ export default {
                         }
                     }
                 });
+
+                setTimeout(() => {
+                    let scene2 = document.querySelector("#Scene2");
+                    this.$gsap.to(this.$refs['parallax-2-ft'], {
+                        x: () => scene2.offsetWidth -60,
+                        ease: "none",
+                        scrollTrigger: {
+                            containerAnimation: this.scrollTween,
+                            scrub: 1,
+                            markers: true,
+                            id: "1",
+                            invalidateOnRefresh: true,
+                        }
+                    });
+                }, 2000);
+
             });
         }
     },
