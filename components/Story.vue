@@ -1,7 +1,7 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
         <v-chapter-1 :scrollTween="scrollTween"  />
-        <v-chapter-2  />
+        <v-chapter-2 :scrollTween="scrollTween" />
         <v-chapter-3  />
         <v-chapter-4  />
         <v-chapter-5  />
@@ -46,7 +46,8 @@ export default {
             currentItem : 1,
             loadedNew : false,
             navLoaded : false,
-            allisLoaded : false
+            allisLoaded : false,
+            scrollTween: null,
 		}
 	},
     props : [
@@ -115,7 +116,21 @@ export default {
                         }
                     }
                 });
-               
+
+
+                // let sectionBjkdjkd = document.querySelector("#Scene1");
+                // this.$gsap.to(".eli", {
+                //     x: () => sectionBjkdjkd.offsetWidth + 300,
+                //     ease: "none",
+                //     scrollTrigger: {
+                //         // trigger: "#SectionB",
+                //         containerAnimation: this.scrollTween,
+                //         scrub: 1,
+                //         markers: true,
+                //         id: "1",
+                //         invalidateOnRefresh: true,
+                //     }
+                // });
 
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
@@ -153,13 +168,13 @@ export default {
             });
             // event in ChapterX.vue
             this.$nuxt.$on('changeURL', (payload) => {
-                if(this.loadedNew){
-                    var queryString = window.location.search;
-                    this.urlParams = new URLSearchParams(queryString);
-                    this.urlParams.set("scene", payload.url );
-                    this.urlParams.toString(); 
-                    window.history.replaceState({}, '', `?${this.urlParams}`);
-                } 
+                // if(this.loadedNew){
+                //     var queryString = window.location.search;
+                //     this.urlParams = new URLSearchParams(queryString);
+                //     this.urlParams.set("scene", payload.url );
+                //     this.urlParams.toString(); 
+                //     window.history.replaceState({}, '', `?${this.urlParams}`);
+                // } 
             });
             
         }

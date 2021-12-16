@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter3-a" id="Scene3" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
+                <img ref="parallax-3-ft" v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- flags left -->
