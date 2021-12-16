@@ -73,23 +73,17 @@ export default {
     watch: {
         statusChapter(newValue, oldValue) {
             if(newValue == this.totalChapters){
-                setTimeout(() => {
-                    this.allisLoaded = true;
-                }, 1200);
+                this.allisLoaded = true;
             }
         },
         navLoaded(newValue, oldValue) {
             if(newValue){
-                setTimeout(() => {
-                    this.allisLoaded = 1;
-                }, 1200);
+                this.allisLoaded = 1;
             }
         },
         allisLoaded(newValue, oldValue) {
             if(this.statusChapter == this.totalChapters && this.navLoaded){
-                setTimeout(() => {
-                    this.asambleStory()
-                }, 1200);
+               this.asambleStory()
             }
         },
     },
@@ -114,9 +108,6 @@ export default {
                         scrub: true,
                         markers: "true",
                         anticipatePin: 1,
-                        onEnter: () => {
-                            this.parallax(); // aQui
-                        },
                         onUpdate: (self) => {
                             // Emits on Update Progress in Nav.vue 
                             var widthProgress = self.progress.toFixed(2) * 100;
@@ -124,8 +115,9 @@ export default {
                         }
                     }
                 });
-
                
+                this.parallax(); // parallax
+
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
                 this.loadedNew = true;
