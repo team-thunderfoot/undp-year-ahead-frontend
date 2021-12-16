@@ -1,6 +1,6 @@
 <template>
-    <section class="b--page-a__item b--chapter2-a" id="Scene2" ref="Scene2" >
-        <div class="b--ss-a" v-if="chapter">
+    <section class="b--page-a__item b--chapter2-a" id="Scene2" ref="Scene2"  v-if="chapter">
+        <div class="b--ss-a">
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-2/front.png`)" alt="front" />
             </div>
