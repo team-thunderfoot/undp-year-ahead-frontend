@@ -21,7 +21,6 @@ export default {
     ],
     methods :  {
         goTo(payload) {
-            console.log(this.currentItemMenu);
 			if(payload == 'next'){
                 this.currentItemMenu = parseInt(this.currentItemMenu) + 1;
                 var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
@@ -84,7 +83,9 @@ export default {
                     if(this.currentItemMenu == this.maxStories){
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
-                    $nuxt.$emit('navIsLoaded');
+                    setTimeout(() => {
+                        $nuxt.$emit('navIsLoaded');
+                    }, 1000);
                     
                     this.$refs.prev.style.pointerEvents = "none";
                     this.$refs.next.style.pointerEvents = "none";
@@ -133,10 +134,10 @@ export default {
             this.currentItemMenu = newValue;
         },
     },
-    created(){
+    mounted(){
         this.currentItemMenu  = this.currentItem;
         this.goToChapter();
-    }
+    },
 }
 </script>
 <style lang="scss">
