@@ -4,12 +4,12 @@
       <div class="b--ss-a__ft-items">
         <img
           class="b--ss-a__ft-items__artwork"
+          ref="parallax-1-ft"
           @load="handleLoad"
           @error="handleLoad"
           src="@/assets/img/chapter-1/front.png"
           alt=""
         />
-        <div class="eli"></div>
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -140,6 +140,7 @@ export default {
       infoWindowStatus: true,
     }
   },
+  props: ['scrollTween'],
   components: {
     SanityContent,
     'v-info-chapter' : InfoChapter,
@@ -192,39 +193,21 @@ export default {
           },
         })
        
-        // let tlParallax = this.$gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: ".eli",
-        //         scrub: true,
-        //         start: () =>
-        //             "top top-=" +
-        //             (document.querySelector(".eli").offsetLeft - window.innerWidth),
-        //         end: () => "+=" + document.querySelector(".eli").offsetWidth,
-        //         onEnter: () => {
-        //           // alert('entro');
-        //         },
-        //         onLeave: () => {
-        //           // alert('salgo')
-        //         }
-        //     }
-        // });
-        // tlParallax.to(document.querySelector('.eli'), {duration: 40, x:-100});
+       //parallax effect
+       let sectionB = document.querySelector("#Scene1");
+          this.$gsap.to(this.$refs['parallax-1-ft'], {
+              x: () => sectionB.offsetWidth - 60,
+              ease: "none",
+              scrollTrigger: {
+                  trigger: "#sectionB",
+                  containerAnimation: this.scrollTween,
+                  scrub: 1,
+                  markers: true,
+                  id: "1",
+                  invalidateOnRefresh: true,
+              }
+          });
 
-        // let tlParallax = this.$gsap.timeline({ 
-        //     id:'testEli',
-        //     scrollTrigger: {
-        //         trigger: ".eli",
-        //         scrub: true,
-        //         markers: "true",
-        //         start: "top top",
-        //         end: "bottom top",
-                
-        //         // start: () => "0px top",
-        //         // end: () => "120px 180px"
-                
-        //     }
-        // });
-        // tlParallax.to(document.querySelector('.eli'), { x:-300});
       })
     },
   },
@@ -245,13 +228,5 @@ export default {
 }
 </script>
 <style scoped>
-  .eli{
-    background:rgba(187, 146, 146, 0.384);
-    position:absolute;
-    bottom:0;
-    left:40%;
-    width:500px;
-    height: 500px;
-    z-index: 5;;
-  }
+ 
 </style>
