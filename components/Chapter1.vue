@@ -90,6 +90,7 @@
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
           <div
+            ref="parallax-1-bubble"
             class="b--motion-a"
             v-lazy:background-image="
               require(`@/assets/img/chapter-1/bubble-motion.png`)
@@ -170,18 +171,31 @@ export default {
     },
     parallax(){
       let scene1 = document.querySelector("#Scene1");
-          this.$gsap.to(this.$refs['parallax-1-ft'], {
-              x: () => scene1.offsetWidth -60,
-              ease: "none",
-              scrollTrigger: {
-                  // trigger: '#Scene1',
-                  containerAnimation: this.scrollTween,
-                  scrub: 1,
-                  markers: true,
-                  id: "1",
-                  invalidateOnRefresh: true,
-              }
-          });
+      this.$gsap.to(this.$refs['parallax-1-ft'], {
+          x: () => scene1.offsetWidth -60,
+          ease: "none",
+          scrollTrigger: {
+              containerAnimation: this.scrollTween,
+              scrub: 1,
+              markers: true,
+              id: "1",
+              invalidateOnRefresh: true,
+          }
+      });
+
+      this.$gsap.to(this.$refs['parallax-1-bubble'], {
+          x: () => scene1.offsetWidth -60,
+          ease: "none",
+          scrollTrigger: {
+              // trigger: '#Scene1',
+              containerAnimation: this.scrollTween,
+              scrub: 1,
+              markers: true,
+              id: "1",
+              invalidateOnRefresh: true,
+          }
+      });
+
     },
     animate() {
       this.$nextTick(() => {
