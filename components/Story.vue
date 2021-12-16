@@ -2,7 +2,7 @@
     <div id="HorizontalWrapper" class="b--page-a">
         <v-chapter-1 :scrollTween="scrollTween"  />
         <v-chapter-2 :scrollTween="scrollTween" />
-        <v-chapter-3  />
+        <v-chapter-3 :scrollTween="scrollTween" />
         <v-chapter-4  />
         <v-chapter-5  />
         <v-chapter-6  />

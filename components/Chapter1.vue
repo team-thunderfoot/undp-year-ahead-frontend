@@ -168,6 +168,21 @@ export default {
     handleLoad() {
       this.contentLoaded++
     },
+    parallax(){
+      let scene1 = document.querySelector("#Scene1");
+          this.$gsap.to(this.$refs['parallax-1-ft'], {
+              x: () => scene1.offsetWidth -60,
+              ease: "none",
+              scrollTrigger: {
+                  // trigger: '#Scene1',
+                  containerAnimation: this.scrollTween,
+                  scrub: 1,
+                  markers: true,
+                  id: "1",
+                  invalidateOnRefresh: true,
+              }
+          });
+    },
     animate() {
       this.$nextTick(() => {
         // if we want to animate something later
@@ -194,23 +209,6 @@ export default {
           },
         })
        
-       //parallax effect       
-       setTimeout(() => {
-          let scene1 = document.querySelector("#Scene1");
-          this.$gsap.to(this.$refs['parallax-1-ft'], {
-              x: () => scene1.offsetWidth -60,
-              ease: "none",
-              scrollTrigger: {
-                  // trigger: '#Scene1',
-                  containerAnimation: this.scrollTween,
-                  scrub: 1,
-                  markers: true,
-                  id: "1",
-                  invalidateOnRefresh: true,
-              }
-          });
-       }, 2000);
-
       })
     },
   },
@@ -222,6 +220,11 @@ export default {
         this.animate()
       }
     },
+    scrollTween(newValue, oldValue){
+      if (newValue ) {
+        this.parallax();
+      } 
+    }
   },
   created() {
     if (process.client) {

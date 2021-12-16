@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back-2.png">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back-2.png" alt="back">        
             </div>
         </div>
     </section>
@@ -74,6 +74,20 @@ export default {
         },
         handleLoad(){
             this.contentLoaded++;
+        },
+        parallax(){
+            let scene2 = document.querySelector("#Scene2");
+            this.$gsap.to(this.$refs['parallax-2-ft'], {
+                x: () => scene2.offsetWidth -60,
+                ease: "none",
+                scrollTrigger: {
+                    containerAnimation: this.scrollTween,
+                    scrub: 1,
+                    markers: true,
+                    id: "1",
+                    invalidateOnRefresh: true,
+                }
+            });
         },
         animate(){
             this.$nextTick((e) => {
@@ -124,6 +138,11 @@ export default {
                 $nuxt.$emit('assetLoaded');
                 this.animate();
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                this.parallax();
+            } 
         }
     },
     mounted(){
