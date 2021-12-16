@@ -2,14 +2,20 @@
   &__content {
     position: absolute;
     bottom: 26.11%;
-    left: 14.34%;
-    width: 23.75%;
+    left: 17.14%;
+    width: 19.05%;
     @include make-position-a();
     &--second {
-      bottom: 52.26%;
-      left: 42.6%;
-      width: 6.31%;
+      bottom: 38.96%;
+      left: 38.9%;
+      width: 9.51%;
       @include make-position-a();
+    }
+  }
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
+    &__content {
+      z-index: 10;
     }
   }
 }
