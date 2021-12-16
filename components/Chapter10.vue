@@ -11,6 +11,7 @@
                         :title="chapter.title"
                         :description="chapter.description"
                         customClass="b--card-f--third"
+                        :loadMore="true"
                     />
                 </div>
             </div>
