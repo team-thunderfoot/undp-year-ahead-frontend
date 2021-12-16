@@ -1,44 +1,56 @@
 .b--quote-a {
-    &__content {
-        @include make-font-d();
-        margin-bottom: 2.34vh;
+  &__content {
+    @include make-font-d();
+    margin-bottom: 2.34vh;
+  }
+  &__meta {
+    width: 63.48%;
+    &::before {
+      content: '— ';
+      @include make-font-g();
     }
+    @media all and ($viewport-type: $mobile) {
+      width: 90%;
+    }
+    &__title {
+      @include make-font-g();
+      font-weight: 600;
+      @include link-a();
+      @include link-a-color($colortext: a);
+      display: inline;
+      &:hover,
+      &:focus,
+      &:active {
+        @include link-a-interaction();
+      }
+    }
+    &__subtitle {
+      @include make-font-g();
+      display: inline;
+    }
+  }
+  &--second {
+    text-align: right;
+    color: map-get($color-options, f);
+  }
+  &--second & {
     &__meta {
-        width: 63.48%;
-        &::before {
-            content: "— ";
-            @include make-font-g();
-        }
-        @media all and ($viewport-type: $mobile) {
-            width: 90%;
-        }
-        &__title {
-            @include make-font-g();
-            font-weight: 600;
-            @include link-a();
-            @include link-a-color($colortext: a);
-            display: inline;
-            &:hover, &:focus, &:active {
-                @include link-a-interaction();
-            }
-        }
-        &__subtitle {
-            @include make-font-g();
-            display: inline;
-        }
+      width: 55.87%;
+      text-align: right;
+      float: right;
+      &__title {
+        @include link-a-color($colortext: f);
+      }
     }
-    &--second {
-        text-align: right;
-        color: map-get($color-options , f);
+  }
+  &--third {
+    text-align: right;
+  }
+  &--third & {
+    &__meta {
+      width: 55.87%;
+      text-align: right;
+      float: right;
     }
-    &--second & {
-        &__meta {
-            width: 55.87%;
-            text-align: right;
-            float: right;
-            &__title {
-                @include link-a-color($colortext: f);
-            }
-        }
-    }
+  }
 }

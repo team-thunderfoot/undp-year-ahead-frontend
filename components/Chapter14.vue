@@ -13,10 +13,10 @@
                     />
                 </div>
                 <!-- second position element, quote -->
-                <div class="b--chapter14-a__content b--chapter4-a__content--second">
+                <div class="b--chapter14-a__content b--chapter14-a__content--second">
                     <v-quote-a 
                         :chapter="chapter"
-                        customClass="b--quote-a--second"
+                        customClass="b--quote-a--third"
                     />
                 </div>
             </div>
