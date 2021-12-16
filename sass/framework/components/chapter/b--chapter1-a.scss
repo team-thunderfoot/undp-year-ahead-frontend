@@ -20,7 +20,7 @@
       left: 63.75%;
       width: 17.48%;
       height: 85.15%;
-      // max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
+      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
       @media all and ($viewport-type: $tabletl) {
         height: auto;
         max-height: none;
