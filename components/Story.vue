@@ -114,6 +114,9 @@ export default {
                         scrub: true,
                         markers: "true",
                         anticipatePin: 1,
+                        onEnter: () => {
+                            this.parallax(); // aQui
+                        },
                         onUpdate: (self) => {
                             // Emits on Update Progress in Nav.vue 
                             var widthProgress = self.progress.toFixed(2) * 100;
@@ -122,29 +125,27 @@ export default {
                     }
                 });
 
-        
-
-                setTimeout(()=>{
-                    let sectionB = document.querySelector("#Scene1");
-                    this.$gsap.to(".eli", {
-                        x: () => sectionB.offsetWidth - 60,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: "#SectionB",
-                            containerAnimation: this.scrollTween,
-                            scrub: 1,
-                            markers: true,
-                            id: "1",
-                            invalidateOnRefresh: true,
-                        }
-                    });
-                },300)
-
                
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
                 this.loadedNew = true;
             })
+        },
+        parallax(){
+            console.log("sfs");
+            let sectionB = document.querySelector("#Scene1");
+            this.$gsap.to(".eli", {
+                x: () => sectionB.offsetWidth - 60,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#SectionB",
+                    containerAnimation: this.scrollTween,
+                    scrub: 1,
+                    markers: true,
+                    id: "1",
+                    invalidateOnRefresh: true,
+                }
+            });
         },
         checkURL(){
             if(process.client){
