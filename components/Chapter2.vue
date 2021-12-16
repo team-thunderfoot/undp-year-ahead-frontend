@@ -1,6 +1,6 @@
 <template>
-    <section class="b--page-a__item b--chapter2-a" id="Scene2" v-if="chapter">
-        <div class="b--ss-a"> 
+    <section class="b--page-a__item b--chapter2-a" id="Scene2" ref="Scene2" >
+        <div class="b--ss-a" v-if="chapter">
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-2/front.png`)" alt="front" />
             </div>
@@ -75,8 +75,8 @@ export default {
             this.contentLoaded++;
         },
         animate(){
-            this.$nextTick(() => {
-                    // if we want to animate something later 
+            // this.$nextTick((e) => {
+                // if we want to animate something later 
                 var tlSection2 = this.$gsap.timeline({
                     scrollTrigger: {
                         trigger: "#Scene2",
@@ -89,17 +89,15 @@ export default {
                             // emits on in Story.vue
                             $nuxt.$emit('changeURL', { 'url'  : '2'})
                             $nuxt.$emit('changeCurrent', { 'item'  : 2})
-                            // window.location.href =  this.$route.path  + '#Scene2';
                         },
                         onEnterBack: () => {
                             // emits on in Story.vue
                             $nuxt.$emit('changeURL', { 'url'  : '2'})
                             $nuxt.$emit('changeCurrent', { 'item'  : 2})
-                            // window.location.href =  this.$route.path  + '#Scene2';
                         }
                     }
                 });
-            });
+            // });
         }
     },
     watch: {
@@ -107,13 +105,13 @@ export default {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
-                this.animate();
             }
         }
     },
-    created(){
+    mounted(){
         if(process.client){
             this.getContent();
+            this.animate();
         }
     }
 }
