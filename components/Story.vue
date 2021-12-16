@@ -124,7 +124,6 @@ export default {
             })
         },
         parallax(){
-            console.log("sfs");
             let sectionB = document.querySelector("#Scene1");
             this.$gsap.to(".eli", {
                 x: () => sectionB.offsetWidth - 60,
