@@ -75,7 +75,7 @@ export default {
             this.contentLoaded++;
         },
         animate(){
-            // this.$nextTick((e) => {
+            this.$nextTick((e) => {
                 // if we want to animate something later 
                 var tlSection2 = this.$gsap.timeline({
                     scrollTrigger: {
@@ -97,7 +97,7 @@ export default {
                         }
                     }
                 });
-            // });
+            });
         }
     },
     watch: {
@@ -105,13 +105,13 @@ export default {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
+                this.animate();
             }
         }
     },
     mounted(){
         if(process.client){
             this.getContent();
-            this.animate();
         }
     }
 }
