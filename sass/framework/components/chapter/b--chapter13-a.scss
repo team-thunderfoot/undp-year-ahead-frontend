@@ -1,4 +1,5 @@
-.b--chapter13-a{
+.b--chapter13-a {
+
     &__artwork {
         position: absolute;
         &--second{
@@ -7,15 +8,46 @@
         }
     }
 
+    // content has bigger z-index than ft items
+    .b--ss-a {
+        &__content {
+            z-index: 90;
+        }
+    }
+
     &__content {
         // cards
         position: absolute;
-        bottom: 37.99%;
-        left: 21.79%;
-        width: 38.79%;
+        bottom: 25.99%;
+        left: 7.39%;
+        width: 23.08%;
         @include make-position-a();
         @media all and ($viewport-type: $tabletm) {
             width: 100%;
+        }
+    }
+
+    // move card f head and bottom legs
+    .b--card-f {
+        &__hd {
+            margin: 0 auto $measure*4;
+            &:before, &:after {
+                height: $measure*4;
+            }
+            &:before {
+                left: 14%;
+            }
+            &:after {
+                right: 14%;
+            }
+    }
+        &__bd {
+            &:before {
+                left: 14%;
+            }
+            &:after {
+                right: 14%;
+            }
         }
     }
 }
