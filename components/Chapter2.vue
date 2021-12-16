@@ -13,7 +13,7 @@
                     />
                 </div>
                 <div class="b--chapter2-a__content b--chapter2-a__content--second">
-                    <div class="b--card-g">
+                    <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
                         <div class="b--card-g__media-wrapper">
                             <img
                             v-lazy="require(`@/assets/img/chapter-2/dino.gif`)"
