@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-3/back.png">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-3/back.png" alt="back">        
             </div>
         </div>
     </section>
@@ -68,6 +68,7 @@ export default {
             chapter: null
 		}
 	},
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -84,6 +85,20 @@ export default {
         },
         handleLoad(){
             this.contentLoaded++;
+        },
+        parallax(){
+            let scene3 = document.querySelector("#Scene3");
+            this.$gsap.to(this.$refs['parallax-3-ft'], {
+                x: () => scene3.offsetWidth - 60,
+                ease: "none",
+                scrollTrigger: {
+                    containerAnimation: this.scrollTween,
+                    scrub: 1,
+                    markers: true,
+                    id: "1",
+                    invalidateOnRefresh: true,
+                }
+            });
         },
         animate(){
             this.$nextTick(() => {
@@ -120,6 +135,12 @@ export default {
                 $nuxt.$emit('assetLoaded');
                 this.animate();
             }
+        },
+        scrollTween(newValue, oldValue){
+            console.log("see");
+            if (newValue ) {
+                this.parallax();
+            } 
         }
     },
     created(){

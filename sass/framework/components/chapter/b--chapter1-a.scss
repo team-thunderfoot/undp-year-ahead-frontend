@@ -20,14 +20,14 @@
       left: 63.75%;
       width: 17.48%;
       height: 85.15%;
-      // max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
+      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
       @media all and ($viewport-type: $tabletl) {
         height: auto;
         max-height: none;
         bottom: 34.48%;
       }
       @media all and ($viewport-type: $mobile) {
-        bottom: 29.48%;
+        bottom: 34.48%;
       }
     }
   }
@@ -42,13 +42,16 @@
       bottom: 60.25%;
       left: 2.77%;
       width: 4.19%;
+      height: 28.8%;
       max-height: calc(100vh - 60.25vh - $measure * 4);
     }
 
     // Browser
     &--third {
-      top: 6%;
+      top: 8.3%;
       left: 31.2%;
+      width: 5.61%;
+      height: 21.48%;
     }
 
     // TV
