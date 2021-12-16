@@ -18,7 +18,7 @@
                         customClass="b--card-f--third"
                         cardACustomClass="b--card-a--second"
                     />
-                </div>          
+                </div>         
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" 

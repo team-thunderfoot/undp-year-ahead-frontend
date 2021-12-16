@@ -1,4 +1,12 @@
 .b--chapter2-a {
+
+   // content has more z-index than ft items 
+  .b--ss-a {
+    &__content {
+      z-index: 90;
+    }
+  }
+
   &__content {
     // title
     position: absolute;
