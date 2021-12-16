@@ -1,52 +1,61 @@
 .b--chapter11-a {
-    
-    &__content {
-      // cards
-      position: absolute;
-      bottom: 37.79%;
-      left: 1.79%;
-      width: 15.04%;
+  // cards
+  &__content {
+    position: absolute;
+    bottom: 37.79%;
+    left: 1.79%;
+    width: 15.04%;
+    @include make-position-a();
+    @media all and ($viewport-type: $tabletm) {
+      width: 100%;
+    }
+  }
+  // boxes
+  &__media {
+    position: absolute;
+    left: 15.97%;
+    bottom: 2.5%;
+    width: 40%;
+  }
+  // info window
+  &__info {
+    position: absolute;
+    bottom: 61.08%;
+    left: 30.08%;
+    width: 7%;
+    @include make-position-a();
+    @media all and ($viewport-type: $mobile) {
+      bottom: 51.08%;
+      left: 83.4%;
+      width: 6.01%;
       @include make-position-a();
-      @media all and ($viewport-type: $tabletm) {
-          width: 100%;
+    }
+  }
+  // animation
+  &__artwork {
+    position: absolute;
+    bottom: 5.736%;
+    left: 90.5%; 
+    width: 7.06%;   
+  }
+  // move card f head and bottom legs
+  .b--card-f {
+    &__hd {
+      margin: 0 auto $measure*4;
+      &:before, &:after {
+          height: $measure*4;
       }
     }
-
-    &__info {
-      // info window
-      position: absolute;
-      bottom: 61.08%;
-      left: 30.08%;
-      width: 7%;
-      @include make-position-a();
-      @media all and ($viewport-type: $mobile) {
-        bottom: 51.08%;
-        left: 83.4%;
-        width: 6.01%;
-        @include make-position-a();
+    &__bd {
+      &:before {
+          left: 25%;
       }
-
-    }
-
-
-    // move card f head and bottom legs
-    .b--card-f {
-      &__hd {
-        margin: 0 auto $measure*4;
-        &:before, &:after {
-            height: $measure*4;
-        }
+      &:after {
+          right: 25%;
       }
-      &__bd {
-        &:before {
-            left: 25%;
-        }
-        &:after {
-            right: 25%;
-        }
-        &:before, &:after {
-          height: 19.5vh;
-        }
+      &:before, &:after {
+        height: 19.5vh;
       }
     }
+  }
 }
