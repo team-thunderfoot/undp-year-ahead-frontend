@@ -33,7 +33,7 @@
         <!-- Intro Story -->
 
         <div class="b--chapter1-a__content b--chapter1-a__content--second">
-          <div class="b--card-a">
+          <div class="b--card-a" :class="'b--card-a-' + `${this.lang}`">
             <div class="b--card-a__artwork"></div>
             <div class="b--card-a__wrapper b--content-a">
               <SanityContent :blocks="chapter.content" />
@@ -42,7 +42,7 @@
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second">
-          <div class="b--card-b">
+          <div class="b--card-b" :class="'b--card-b-' + `${this.lang}`">
             <div class="b--card-b__artwork"></div>
             <div class="b--card-b__wrapper">
               <img
@@ -64,7 +64,7 @@
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
-          <div class="b--card-c">
+          <div class="b--card-c" :class="'b--card-c-' + `${this.lang}`">
             <div class="b--card-c__bd">
               <div class="b--card-c__bd__artwork"></div>
               <div class="b--card-c__bd__media-wrapper">
@@ -101,7 +101,7 @@
         <!-- content-fourth position -->
         <div class="b--chapter1-a__content b--chapter1-a__content--third">
           <!-- text with bg -->
-          <div class="b--card-d">
+          <div class="b--card-d" :class="'b--card-d-' + `${this.lang}`">
             <div class="b--card-d__bd">
               <v-quote-a :chapter="chapter"/>
             </div>

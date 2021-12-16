@@ -1,5 +1,5 @@
 <template>
-    <div class="b--card-h">
+    <div class="b--card-h" :class="'b--card-b-' + `${this.lang}`">
         <div class="b--card-h__back-items">
             <img
             v-lazy="require(`@/assets/img/card-h-bg.png`)"
@@ -20,7 +20,8 @@
 <script>
 export default {
     props : [
-        'content'
+        'content',
+        'lang'
     ]
 }
 </script>
