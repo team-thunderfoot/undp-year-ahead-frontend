@@ -23,6 +23,10 @@
       &:active {
         @include link-a-interaction();
       }
+      &:after {
+        content: ',';
+        @include make-font-g();
+      }
     }
     &__subtitle {
       @include make-font-g();
