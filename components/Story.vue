@@ -102,7 +102,8 @@ export default {
         },
         asambleStory(){
            	this.$nextTick(() => {
-                this.$gsap.to(document.querySelectorAll("section"), { 
+                this.scrollTween = this.$gsap.to(document.querySelectorAll("section"), { 
+                    id:'sectionTrigger',
                     x: () => -this.getTotalWidth() + window.innerWidth, 
                     ease: "none", 
                     scrollTrigger: {
@@ -120,6 +121,26 @@ export default {
                         }
                     }
                 });
+
+        
+
+                setTimeout(()=>{
+                    let sectionB = document.querySelector("#Scene1");
+                    this.$gsap.to(".eli", {
+                        x: () => sectionB.offsetWidth - 60,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: "#SectionB",
+                            containerAnimation: this.scrollTween,
+                            scrub: 1,
+                            markers: true,
+                            id: "1",
+                            invalidateOnRefresh: true,
+                        }
+                    });
+                },300)
+
+               
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
                 this.loadedNew = true;

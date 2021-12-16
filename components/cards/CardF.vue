@@ -12,6 +12,9 @@
                 <div class="b--card-a__artwork"></div>
                 <div class="b--card-a__wrapper b--content-a">
                     <SanityContent :blocks="description" />
+                    <div v-if="loadMore">
+                        <a href="#"> Load More </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,7 +24,7 @@
 <script>
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 export default {
-    props:['title','description', 'customClass', 'cardACustomClass'],
+    props:['title','description', 'customClass', 'cardACustomClass','loadMore'],
     components: {
         SanityContent,
     },
