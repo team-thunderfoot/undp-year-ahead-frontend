@@ -122,10 +122,6 @@
             <div class="b--card-d__artwork"></div>
           </div>
         </div>
-
-        <div class="b--chapter1-a__info">
-            <v-info-chapter :info="chapter"/>
-        </div>
       </div>
       <div class="b--ss-a__bg-items">
         <img
