@@ -87,10 +87,6 @@
           </div>
         </div>
 
-        <!-- <div class="b--chapter1-a__item">
-          <v-quote-a :chapter="chapter"/>
-        </div> -->
-
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
           <div
             class="b--motion-a"
@@ -102,18 +98,8 @@
           </div>
         </div>
 
-        <!-- content-third position -->
-        <!-- <div class="b--chapter1-a__content b--chapter1-a__content--third"> -->
-          <!-- card-e -->
-          <!-- <div class="b--card-e">
-            <h4 class="b--card-e__title">
-             {{chapter.panel_title}}
-            </h4>
-          </div>
-        </div>  -->
-
         <!-- content-fourth position -->
-        <div class="b--chapter1-a__content b--chapter1-a__content--fourth">
+        <div class="b--chapter1-a__content b--chapter1-a__content--third">
           <!-- text with bg -->
           <div class="b--card-d">
             <div class="b--card-d__bd">

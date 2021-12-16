@@ -14,34 +14,13 @@
       width: 12.09%;
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
     }
-    // card-e
-    &--third {
-      bottom: 76.4%;
-      left: 57.46%;
-      width: 12.09%;
-      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
-    }
     // card-d
-    &--fourth {
+    &--third {
       bottom: 31.48%;
       left: 63.75%;
       width: 17.48%;
       height: 85.15%;
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
-    }
-  }
-
-  &__info {
-    position: absolute;
-    bottom: 67.08%;
-    left: 84.4%;
-    width: 5.01%;
-    @include make-position-a();
-    @media all and ($viewport-type: $mobile) {
-      bottom: 51.08%;
-      left: 83.4%;
-      width: 6.01%;
-      @include make-position-a();
     }
   }
 
@@ -76,14 +55,5 @@
       top: 47%;
       left: 70.8%;
     }
-  }
-  &__item {
-    position: absolute;
-    z-index: 150;
-    bottom: 55.08%;
-    left: 43.92%;
-    width: 11.31%;
-    @include make-position-a();
-    max-height: calc(100vh - 55.08vh - $measure * 4);
   }
 }
