@@ -21,6 +21,7 @@ export default {
     ],
     methods :  {
         goTo(payload) {
+            console.log(this.currentItemMenu);
 			if(payload == 'next'){
                 this.currentItemMenu = parseInt(this.currentItemMenu) + 1;
                 var sceneName  = document.querySelector("#Scene" + this.currentItemMenu);
@@ -132,7 +133,7 @@ export default {
             this.currentItemMenu = newValue;
         },
     },
-    mounted(){
+    created(){
         this.currentItemMenu  = this.currentItem;
         this.goToChapter();
     }
