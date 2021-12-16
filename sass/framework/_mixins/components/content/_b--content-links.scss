@@ -1,7 +1,7 @@
 @mixin links(){
   a {
     @include link-a();
-    display: inline-block;
+    display: inline;
     &:hover, &:focus, &:active{
       @include link-a-interaction();
     }
