@@ -41,6 +41,7 @@
                         require(`@/assets/test_sprites/flags_right.png`)
                         ">
                     </div>
+                    
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
