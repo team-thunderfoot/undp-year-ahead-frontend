@@ -1,7 +1,7 @@
 // Used in several chapters
 .b--card-a {
   position: relative;
-  padding: $measure * 3 8%;
+  padding: $measure * 3 7.5%;
   border: 1.46vh solid map-get($color-options, b);
   background: $gradient-n;
   background-color: map-get($color-options, i);

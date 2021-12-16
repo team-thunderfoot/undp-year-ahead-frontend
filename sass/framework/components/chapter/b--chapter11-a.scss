@@ -1,30 +1,52 @@
 .b--chapter11-a {
     
     &__content {
-        // cards
-        position: absolute;
-        // move up with a modifier with the real copy
-        bottom: 37.99%;
-        left: 1.79%;
-        width: 18.79%;
-        @include make-position-a();
-        @media all and ($viewport-type: $tabletm) {
-            width: 100%;
-        }
+      // cards
+      position: absolute;
+      bottom: 37.79%;
+      left: 1.79%;
+      width: 15.04%;
+      @include make-position-a();
+      @media all and ($viewport-type: $tabletm) {
+          width: 100%;
+      }
     }
 
     &__info {
-        // info window
-        position: absolute;
-        bottom: 67.08%;
-        left: 34.4%;
-        width: 5.01%;
+      // info window
+      position: absolute;
+      bottom: 61.08%;
+      left: 30.08%;
+      width: 7%;
+      @include make-position-a();
+      @media all and ($viewport-type: $mobile) {
+        bottom: 51.08%;
+        left: 83.4%;
+        width: 6.01%;
         @include make-position-a();
-        @media all and ($viewport-type: $mobile) {
-          bottom: 51.08%;
-          left: 83.4%;
-          width: 6.01%;
-          @include make-position-a();
+      }
+
+    }
+
+
+    // move card f head and bottom legs
+    .b--card-f {
+      &__hd {
+        margin: 0 auto $measure*4;
+        &:before, &:after {
+            height: $measure*4;
         }
       }
+      &__bd {
+        &:before {
+            left: 25%;
+        }
+        &:after {
+            right: 25%;
+        }
+        &:before, &:after {
+          height: 19.5vh;
+        }
+      }
+    }
 }
