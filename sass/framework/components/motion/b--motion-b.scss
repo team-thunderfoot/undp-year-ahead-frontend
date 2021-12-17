@@ -38,7 +38,7 @@
   animation-timing-function: steps(96);
   animation-iteration-count: infinite;
   @media all and ($viewport-type: $laptop) {
-    transform: translate(-15%, 15%) scale(0.7);
+    transform: translate(-10%, 10%) scale(0.8);
   }
   @media all and ($viewport-type: $tabletm) {
     transform: translate(-5%, 5%) scale(0.9);
