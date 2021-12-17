@@ -16,7 +16,7 @@
         <!-- Intro Story -->
         <!-- first div position element -->
         <div class="b--chapter1-a__content">
-          <div class="b--intro-a">
+          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`">
             <div class="b--intro-a__artwork"></div>
             <div class="b--intro-a__wrapper">
               <h1 class="b--intro-a__wrapper__title">
@@ -42,7 +42,7 @@
           </div>
         </div>
 
-        <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second">
+        <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second" ref="frameTv">
           <div class="b--card-b">
             <div class="b--card-b__artwork"></div>
             <div class="b--card-b__wrapper">
@@ -56,7 +56,7 @@
           </div>
         </div>
 
-        <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third">
+        <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third" ref="browser">
           <img
             v-lazy="require(`@/assets/img/chapter-1/browser.gif`)"
             alt="browser"
@@ -132,8 +132,14 @@ import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import InfoChapter from '@/components/infochapter/Infochapter';
 import QuoteA from '@/components/quote/Quote';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+Vue.use(Parallax)
+
+
 export default {
-  mixins: ['infoWindow'],
+  mixins: [Parallax],
   data: () => {
     return {
       totalContent: 3,
@@ -149,6 +155,7 @@ export default {
     'v-quote-a' : QuoteA
   },
   methods: {
+
     async getContent() {
       this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
       const query_content = groq`*[_type == "chapterOne"][0]{
@@ -171,30 +178,30 @@ export default {
     },
     parallax(){
       let scene1 = document.querySelector("#Scene1");
-      this.$gsap.to(this.$refs['parallax-1-ft'], {
-          x: () => scene1.offsetWidth -60,
-          ease: "none",
-          scrollTrigger: {
-              containerAnimation: this.scrollTween,
-              scrub: 1,
-              markers: true,
-              id: "1",
-              invalidateOnRefresh: true,
-          }
-      });
+      // this.$gsap.to(this.$refs['parallax-1-ft'], {
+      //     x: () => scene1.offsetWidth -60,
+      //     ease: "none",
+      //     scrollTrigger: {
+      //         containerAnimation: this.scrollTween,
+      //         scrub: 1,
+      //         markers: true,
+      //         id: "1",
+      //         invalidateOnRefresh: true,
+      //     }
+      // });
 
-      this.$gsap.to(this.$refs['parallax-1-bubble'], {
-          x: () => scene1.offsetWidth -60,
-          ease: "none",
-          scrollTrigger: {
-              // trigger: '#Scene1',
-              containerAnimation: this.scrollTween,
-              scrub: 1,
-              markers: true,
-              id: "1",
-              invalidateOnRefresh: true,
-          }
-      });
+      // this.$gsap.to(this.$refs['parallax-1-bubble'], {
+      //     x: () => scene1.offsetWidth -60,
+      //     ease: "none",
+      //     scrollTrigger: {
+      //         // trigger: '#Scene1',
+      //         containerAnimation: this.scrollTween,
+      //         scrub: 1,
+      //         markers: true,
+      //         id: "1",
+      //         invalidateOnRefresh: true,
+      //     }
+      // });
 
     },
     animate() {
@@ -237,6 +244,32 @@ export default {
     scrollTween(newValue, oldValue){
       if (newValue ) {
         this.parallax();
+        this.parallaxMove({
+          containerAnimation:this.scrollTween,
+          scrub:1,
+          element:this.$refs['parallax-1-ft'],
+          intensity:.5,
+        })
+        this.parallaxMove({
+          containerAnimation:this.scrollTween,
+          scrub:1,
+          element:this.$refs['bubble'],
+          intensity:.5,
+        })
+        this.parallaxMove({
+          containerAnimation:this.scrollTween,
+          scrub:1,
+          element:this.$refs['frameTv'],
+          intensity:2,
+        })
+        this.parallaxMove({
+          containerAnimation:this.scrollTween,
+          scrub:1,
+          element:this.$refs['browser'],
+          intensity: -.3,
+        })
+ 
+
       } 
     }
   },
@@ -247,14 +280,4 @@ export default {
   },
 }
 </script>
-<style scoped>
-  .eli{
-    background:rgba(187, 146, 146, 0.384);
-    position:absolute;
-    bottom:0;
-    left:40%;
-    width:500px;
-    height: 500px;
-    z-index: 5;;
-  }
-</style>
+
