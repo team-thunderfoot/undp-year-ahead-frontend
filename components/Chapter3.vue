@@ -93,16 +93,6 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        parallax(reference,intensity){
-            var sceneID = 3;
-            this.parallaxMove({
-                sceneID : sceneID,
-                containerAnimation:this.scrollTween,
-                scrub:1,
-                element:this.$refs[reference],
-                intensity:intensity,
-            })
-        },
         animate(){
             this.$nextTick(() => {
                 this.startAnimation({

@@ -7,9 +7,8 @@ export default {
             containerAnimation,
             scrub
         }){
-            console.log('parallaxMove',el,intensity,duration,containerAnimation,scrub)
             this.$gsap.to(el, {
-                x: () =>  duration.offsetWidth * intensity,
+                x: () =>  duration * intensity,
                 ease: "none",
                 scrollTrigger: {
                     containerAnimation: containerAnimation,
