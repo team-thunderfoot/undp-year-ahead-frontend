@@ -12,7 +12,7 @@
       top: 7.32%;
       left: 56.12%;
       width: 6.38%;
-      @media all and ($viewport-type: $mobile) {
+      @media all and ($viewport-type: $tabletl) {
         top: 7.32%;
         bottom: auto;
       }
@@ -22,7 +22,7 @@
       bottom: 61.65%;
       left: 65.32%;
       width: 6.97%;
-      @media all and ($viewport-type: $mobile) {
+      @media all and ($viewport-type: $tabletl) {
         width: 9%;
         top: 7.32%;
         bottom: auto;
