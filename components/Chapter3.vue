@@ -8,7 +8,7 @@
                 <!-- flags left -->
                 <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fifth">
                     <div class="b--motion-b" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flags_left.png`)
+                        require(`@/assets/img/chapter-3/flags-left_spritesheet.png`)
                         ">
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <!-- flags right -->
                 <div class="b--chapter3-a__artwork b--chapter3-a__artwork--second">
                     <div class="b--motion-c" v-lazy:background-image="
-                        require(`@/assets/img/chapter-3/flags_right.png`)
+                        require(`@/assets/img/chapter-3/flags-right_spritesheet.png`)
                         ">
                     </div>
                     
