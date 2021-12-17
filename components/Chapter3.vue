@@ -94,7 +94,7 @@ export default {
                 scrollTrigger: {
                     containerAnimation: this.scrollTween,
                     scrub: 1,
-                    markers: true,
+                    // markers: 'false',
                     id: "1",
                     invalidateOnRefresh: true,
                 }

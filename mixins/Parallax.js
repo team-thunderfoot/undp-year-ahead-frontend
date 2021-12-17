@@ -14,7 +14,7 @@ export default {
                 scrollTrigger: {
                     containerAnimation: containerAnimation,
                     scrub: scrub,
-                    markers: false,
+                    // markers: 'false',
                     id: "1",
                     invalidateOnRefresh: true,
                 }
