@@ -84,7 +84,6 @@ export default {
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
                     $nuxt.$emit('navIsLoaded');
-                    
                     this.$refs.prev.style.pointerEvents = "none";
                     this.$refs.next.style.pointerEvents = "none";
                 },
@@ -104,6 +103,7 @@ export default {
             }else{
                 //  Emits on Update Story .vue 
                 $nuxt.$emit('navIsLoaded');
+                console.log(this.$refs);
                 if(this.currentItemMenu > 1 && this.currentItemMenu < this.maxStories ){
                     this.$refs.prev.classList.remove("disabled");
                     this.$refs.next.classList.remove("disabled");
@@ -133,8 +133,10 @@ export default {
         },
     },
     mounted(){
-        this.currentItemMenu  = this.currentItem;
-        this.goToChapter();
+        if(process.client){
+            this.currentItemMenu  = this.currentItem;
+            this.goToChapter();
+        }
     }
 }
 </script>

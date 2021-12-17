@@ -1,5 +1,8 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
+        <!-- <div style="position: fixed; bottom: 1rem; background-color: pink; color: black;width: 100px; left: 100px;z-index:1000">
+            {{loadedNew}} ++ {{currentItem}}
+        </div> -->
         <v-chapter-1 :scrollTween="scrollTween"  />
         <v-chapter-2 :scrollTween="scrollTween" />
         <v-chapter-3 :scrollTween="scrollTween" />
@@ -119,7 +122,9 @@ export default {
 
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
-                this.loadedNew = true;
+                setTimeout(() => {
+                    this.loadedNew = true;
+                }, 5000);
             })
         },
     
@@ -149,7 +154,14 @@ export default {
             });
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
-                this.currentItem = payload.item;
+                if(this.loadedNew){
+                    this.currentItem = payload.item;
+                    var queryString = window.location.search;
+                    this.urlParams = new URLSearchParams(queryString);
+                    this.urlParams.set("scene", payload.item );
+                    this.urlParams.toString(); 
+                    window.history.replaceState({}, '', `?${this.urlParams}`);
+                }
             });
             // event in ChapterX.vue
             this.$nuxt.$on('changeURL', (payload) => {
@@ -161,7 +173,6 @@ export default {
                 //     window.history.replaceState({}, '', `?${this.urlParams}`);
                 // } 
             });
-            
         }
     }
 }
