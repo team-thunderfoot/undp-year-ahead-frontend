@@ -50,10 +50,14 @@
 import { groq } from '@nuxtjs/sanity';
 import CardF from './cards/CardF';
 
+
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+Vue.use(Parallax)
+
 export default {
-    components:{
-        'v-card-f':CardF
-    },
+    mixins: [Parallax],
     data:()=>{
 		return{
             totalContent: 2,
@@ -62,6 +66,9 @@ export default {
 		}
     },
     props: ['scrollTween'],
+    components:{
+        'v-card-f':CardF
+    },
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -76,18 +83,14 @@ export default {
             this.contentLoaded++;
         },
         parallax(){
-            let scene2 = document.querySelector("#Scene2");
-            this.$gsap.to(this.$refs['parallax-2-ft'], {
-                x: () => scene2.offsetWidth -60,
-                ease: "none",
-                scrollTrigger: {
-                    containerAnimation: this.scrollTween,
-                    scrub: 1,
-                    // markers: 'false',
-                    id: "1",
-                    invalidateOnRefresh: true,
-                }
-            });
+            var sceneID = 2;
+            this.parallaxMove({
+                sceneID : sceneID,
+                containerAnimation:this.scrollTween,
+                scrub:1,
+                element:this.$refs['parallax-2-ft'],
+                intensity:.5,
+            })
         },
         animate(){
             this.$nextTick((e) => {
@@ -112,22 +115,6 @@ export default {
                         }
                     }
                 });
-
-                setTimeout(() => {
-                    let scene2 = document.querySelector("#Scene2");
-                    this.$gsap.to(this.$refs['parallax-2-ft'], {
-                        x: () => scene2.offsetWidth -60,
-                        ease: "none",
-                        scrollTrigger: {
-                            containerAnimation: this.scrollTween,
-                            scrub: 1,
-                            // markers: 'false',
-                            id: "1",
-                            invalidateOnRefresh: true,
-                        }
-                    });
-                }, 2000);
-
             });
         }
     },
