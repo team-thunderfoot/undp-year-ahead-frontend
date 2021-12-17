@@ -11,6 +11,9 @@
       bottom: 46.87%;
       left: 27.15%;
       width: 8.21%;
+      @media all and ($viewport-type: $mobile) {
+        width: 10%;
+      }
     }
     // wheel
     &--third {
@@ -46,12 +49,14 @@
     }
   }
   // mobile adjustment of card-f
-  @media all and ($viewport-type: $mobile) {
-    .b--card-f {
-      &__hd {
+  .b--card-f {
+    &__hd {
+      @media all and ($viewport-type: $mobile) {
         margin: 0 auto $measure * 3;
-        &:before,
-        &:after {
+      }
+      &:before,
+      &:after {
+        @media all and ($viewport-type: $mobile) {
           height: $measure * 3;
         }
       }

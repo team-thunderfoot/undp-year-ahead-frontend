@@ -5,11 +5,32 @@
     left: 6.44%;
     width: 13.77%;
     @include make-position-a();
+    @media all and ($viewport-type: $mobile) {
+      bottom: 26.11%;
+    }
     &--second {
       bottom: 38.36%;
       left: 23.08%;
       width: 6.44%;
       @include make-position-a();
+      @media all and ($viewport-type: $mobile) {
+        width: 9.4%;
+        bottom: 34.36%;
+      }
+    }
+    // mobile adjustment of card-f
+    .b--card-f {
+      &__hd {
+        @media all and ($viewport-type: $mobile) {
+          margin: 0 auto $measure * 3;
+        }
+        &:before,
+        &:after {
+          @media all and ($viewport-type: $mobile) {
+            height: $measure * 3;
+          }
+        }
+      }
     }
   }
 }
