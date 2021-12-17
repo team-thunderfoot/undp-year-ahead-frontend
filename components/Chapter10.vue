@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter10-a" id="Scene10" v-if="chapter">
+    <section class="b--page-a__item b--chapter10-a" id="Scene10" ref="Scene10" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-10/front.png`)" alt="front" />
@@ -28,7 +28,14 @@
 import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
+    mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF
     },
@@ -56,29 +63,10 @@ export default {
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection6 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene10",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene10").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene10").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '10'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 10})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '10'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 10})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 10,
+                    scrub:0,
+                })
             })
         }
     },

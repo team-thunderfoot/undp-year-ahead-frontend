@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter8-a" id="Scene8" v-if="chapter">
+    <section class="b--page-a__item b--chapter8-a" id="Scene8" ref="Scene8"  v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-8/front.png`)" alt="front" />
@@ -31,7 +31,14 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
+    mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
         'v-info-chapter' : InfoChapter
@@ -62,29 +69,10 @@ export default {
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection6 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene8",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene8").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene8").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '8'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 8})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '8'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 8})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 8,
+                    scrub:0,
+                })
             })
         }
     },

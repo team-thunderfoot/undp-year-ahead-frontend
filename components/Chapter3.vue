@@ -59,11 +59,11 @@ import InfoChapter from '@/components/infochapter/Infochapter';
 // import Parallax from '@/motion/Parallax';
 import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
 Vue.use(Parallax)
 
-
 export default {
-    mixins: [Parallax],
+    mixins: [Parallax,Animation],
     data:()=>{
 		return{
             totalContent: 2,
@@ -105,29 +105,10 @@ export default {
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection3 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene3",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene3").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene3';
-                            $nuxt.$emit('changeURL', { 'url'  : '3'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 3})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene3';
-                            $nuxt.$emit('changeURL', { 'url'  : '3'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 3})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 3,
+                    scrub:0,
+                })
             })
         }
     },

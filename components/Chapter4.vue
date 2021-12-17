@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter4-a" id="Scene4" v-if="chapter">
+    <section class="b--page-a__item b--chapter4-a" id="Scene4" ref="Scene4" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img 
@@ -50,8 +50,15 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import QuoteA from '@/components/quote/Quote';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
-        components:{
+    mixins: [Parallax,Animation],
+    components:{
         'v-card-f':CardF,
         'v-quote-a':QuoteA
     },
@@ -77,61 +84,16 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-            // this.$nextTick(() => {
-            //     // if we want to animate something later 
-            //     var tlSection4 = this.$gsap.timeline({
-            //         scrollTrigger: {
-            //             trigger: "#Scene4",
-            //             scrub: 0,
-            //             start: () =>
-            //                 "top top-=" +
-            //                 (document.querySelector("#Scene4").offsetLeft - window.innerWidth),
-            //             end: () => "+=" + document.querySelector("#Scene4").offsetWidth,
-            //             onEnter: () => {
-            //                 // emits on in Story.vue
-            //                 // window.location.href =  this.$route.path  + '#Scene4';
-            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene4'})
-            //                 $nuxt.$emit('changeCurrent', { 'item'  : 4})
-            //             },
-            //             onEnterBack: () => {
-            //                 // emits on in Story.vue
-            //                 // window.location.href =  this.$route.path  + '#Scene4';
-            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene4'})
-            //                 $nuxt.$emit('changeCurrent', { 'item'  : 4})
-            //             }
-            //         }
-            //     });
-            // })
         },
         handleLoad(){
             this.contentLoaded++;
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection4 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene4",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene4").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene4").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene4';
-                            $nuxt.$emit('changeURL', { 'url'  : '4'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 4})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene4';
-                            $nuxt.$emit('changeURL', { 'url'  : '4'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 4})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 4,
+                    scrub:0,
+                })
             })
         }
     },

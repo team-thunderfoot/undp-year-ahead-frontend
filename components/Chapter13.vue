@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter13-a" id="Scene13" v-if="chapter">
+    <section class="b--page-a__item b--chapter13-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second">
@@ -36,7 +36,14 @@ import { groq } from '@nuxtjs/sanity';
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import CardF from '@/components/cards/CardF';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
+    mixins: [Parallax,Animation],
     components:{
         SanityContent,
         'v-card-f':CardF,
@@ -57,37 +64,16 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-    
         },
         handleLoad(){
             this.contentLoaded++;
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection6 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene13",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene13").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene13").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '13'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 13})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '13'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 13})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 13,
+                    scrub:0,
+                })
             })
         }
     },

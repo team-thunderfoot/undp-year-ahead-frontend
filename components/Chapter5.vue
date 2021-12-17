@@ -1,5 +1,5 @@
 <template>
-  <section class="b--page-a__item b--chapter5-a" id="Scene5" v-if="chapter">
+  <section class="b--page-a__item b--chapter5-a" id="Scene5" ref="Scene5" v-if="chapter">
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img v-lazy="require(`@/assets/img/chapter-5/front.png`)" alt="front" />
@@ -36,7 +36,14 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
+  mixins: [Parallax,Animation],
   components:{
     'v-card-f':CardF,
     'v-info-chapter' : InfoChapter
@@ -61,37 +68,15 @@ export default {
             }`
       this.chapter = await this.$sanity.fetch(query_content)
       this.contentLoaded++
-
-   
     },
     handleLoad() {
       this.contentLoaded++
     },
     animate() {
       this.$nextTick(() => {
-        // if we want to animate something later
-        var tlSection5 = this.$gsap.timeline({
-          scrollTrigger: {
-            trigger: '#Scene5',
-            scrub: 0,
-            start: () =>
-              'top top-=' +
-              (document.querySelector('#Scene5').offsetLeft -
-                window.innerWidth),
-            end: () => '+=' + document.querySelector('#Scene5').offsetWidth,
-            onEnter: () => {
-              // emits on in Story.vue
-              // window.location.href =  this.$route.path  + '#Scene5';
-              $nuxt.$emit('changeURL', { url: '5' })
-              $nuxt.$emit('changeCurrent', { item: 5 })
-            },
-            onEnterBack: () => {
-              // emits on in Story.vue
-              // window.location.href =  this.$route.path  + '#Scene5';
-              $nuxt.$emit('changeURL', { url: '5' })
-              $nuxt.$emit('changeCurrent', { item: 5 })
-            },
-          },
+        this.startAnimation({
+            sceneID : 5,
+            scrub:0,
         })
       })
     },

@@ -123,8 +123,9 @@ export default {
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');
                 setTimeout(() => {
-                    this.loadedNew = true;
-                }, 5000);
+                this.loadedNew = true;
+                    
+                }, 3000);
             })
         },
     
@@ -152,26 +153,23 @@ export default {
             this.$nuxt.$on('navIsLoaded', () => {
                 this.navLoaded = true;
             });
+            this.queryString = window.location.search;
+            this.urlParams = new URLSearchParams(this.queryString);
+
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
+                    console.log(payload);
+                    // // SET NEW Item
                     this.currentItem = payload.item;
-                    var queryString = window.location.search;
-                    this.urlParams = new URLSearchParams(queryString);
+                    // // Change URL
                     this.urlParams.set("scene", payload.item );
                     this.urlParams.toString(); 
                     window.history.replaceState({}, '', `?${this.urlParams}`);
                 }
             });
-            // event in ChapterX.vue
             this.$nuxt.$on('changeURL', (payload) => {
-                // if(this.loadedNew){
-                //     var queryString = window.location.search;
-                //     this.urlParams = new URLSearchParams(queryString);
-                //     this.urlParams.set("scene", payload.url );
-                //     this.urlParams.toString(); 
-                //     window.history.replaceState({}, '', `?${this.urlParams}`);
-                // } 
+                // log
             });
         }
     }

@@ -54,10 +54,11 @@ import CardF from './cards/CardF';
 // import Parallax from '@/motion/Parallax';
 import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
 Vue.use(Parallax)
 
 export default {
-    mixins: [Parallax],
+    mixins: [Parallax,Animation],
     data:()=>{
 		return{
             totalContent: 2,
@@ -94,28 +95,11 @@ export default {
         },
         animate(){
             this.$nextTick((e) => {
-                // if we want to animate something later 
-                var tlSection2 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene2",
-                        scrub: 1,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene2").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene2").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            $nuxt.$emit('changeURL', { 'url'  : '2'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 2})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            $nuxt.$emit('changeURL', { 'url'  : '2'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 2})
-                        }
-                    }
-                });
-            });
+                this.startAnimation({
+                    sceneID : 2,
+                    scrub:0,
+                })
+            })
         }
     },
     watch: {

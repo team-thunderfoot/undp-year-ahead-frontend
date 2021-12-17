@@ -7,8 +7,6 @@ export default {
             scrub,
             intensity
         }){
-            console.log(element);
-            // let scene1 = document.querySelector("#Scene" + sceneID);
             let scene = this.$refs['Scene' + sceneID];
             this.$gsap.to(element, {
                 x: () =>  scene.offsetWidth * intensity,
@@ -21,7 +19,6 @@ export default {
                     invalidateOnRefresh: true,
                 }
             });
-
         }
     },
 }

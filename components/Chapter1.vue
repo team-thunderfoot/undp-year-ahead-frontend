@@ -135,10 +135,12 @@ import QuoteA from '@/components/quote/Quote';
 // import Parallax from '@/motion/Parallax';
 import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
 Vue.use(Parallax)
+Vue.use(Animation)
 
 export default {
-  mixins: [Parallax],
+  mixins: [Parallax,Animation],
   data: () => {
     return {
       totalContent: 3,
@@ -187,31 +189,11 @@ export default {
     },
     animate() {
       this.$nextTick(() => {
-        // if we want to animate something later
-        let tlSection = this.$gsap.timeline({
-          scrollTrigger: {
-            trigger: '#Scene1',
-            scrub: 0,
-            // containerAnimation: scrollTween,
-            start: () =>
-              'top top-=' +
-              (document.querySelector('#Scene1').offsetLeft -
-                window.innerWidth),
-            end: () => '+=' + document.querySelector('#Scene1').offsetWidth,
-            onEnter: () => {
-              // emits on in Story.vue
-              $nuxt.$emit('changeURL', { url: '1' })
-              $nuxt.$emit('changeCurrent', { item: 1 })
-            },
-            onEnterBack: () => {
-              // emits on in Story.vue
-              $nuxt.$emit('changeURL', { url: '1' })
-              $nuxt.$emit('changeCurrent', { item: 1 })
-            },
-          },
+        this.startAnimation({
+            sceneID : 1,
+            scrub:0,
+          })
         })
-       
-      })
     },
   },
   watch: {
