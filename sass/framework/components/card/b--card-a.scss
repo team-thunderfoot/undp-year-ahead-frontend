@@ -51,8 +51,16 @@
         100vh - 18.85vh - 17.77vh - $measure * 4 - 16px - $measure * 6
       );
     }
+    &__link {
+      float: right;
+      text-transform: uppercase;
+      padding: $measure $measure * 2;
+      background: $gradient-m;
+      @include make-font-h();
+      color: map-get($color-options, f) !important;
+    }
   }
   &--second {
-    padding: $measure*6 5%;
+    padding: $measure * 6 5%;
   }
 }

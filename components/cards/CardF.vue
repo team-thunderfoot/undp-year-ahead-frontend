@@ -13,7 +13,7 @@
                 <div class="b--card-a__wrapper b--content-a">
                     <SanityContent :blocks="description" />
                     <div v-if="loadMore">
-                        <a :href="loadMoreURL"> {{loadMoreBtn}} </a>
+                        <a class="b--card-a__wrapper__link" :href="loadMoreURL"> {{loadMoreBtn}} </a>
                     </div>
                 </div>
             </div>

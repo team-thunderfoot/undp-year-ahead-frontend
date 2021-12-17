@@ -6,10 +6,36 @@
     left: 12.57%;
     width: 10.9%;
     @include make-position-a();
-    .b--card-f__bd {
-      &::before,
-      &::after {
-        height: 16.7vh;
+    @media all and ($viewport-type: $mobile) {
+      bottom: 24.63%;
+    }
+    // card-f corrections
+    .b--card-f {
+      &__hd {
+        @media all and ($viewport-type: $mobile) {
+          margin: 0 auto $measure * 3;
+          max-width: 100% !important;
+        }
+        &:before,
+        &:after {
+          @media all and ($viewport-type: $mobile) {
+            height: $measure * 3;
+          }
+        }
+      }
+      &__bd {
+        &::before,
+        &::after {
+          height: 16.7vh;
+          @media all and ($viewport-type: $mobile) {
+            height: 7.1vh;
+          }
+        }
+        .b--card-a {
+          @media all and ($viewport-type: $mobile) {
+            padding: $measure * 2 5%;
+          }
+        }
       }
     }
   }

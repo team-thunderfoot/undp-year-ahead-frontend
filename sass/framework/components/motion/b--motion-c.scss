@@ -1,20 +1,43 @@
+// .b--motion-c {
+//   border: 1px solid red;
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   z-index: 3;
+//   width: 650px;
+//   height: 600px;
+//   animation-name: motionC;
+//   animation-duration: 2s;
+//   animation-timing-function: steps(96);
+//   animation-iteration-count: infinite;
+//   transform: translate(-10%, 10%) scale(0.8);
+//   @media all and ($viewport-type: $laptop) {
+//     transform: translate(-15%, 15%) scale(0.7);
+//   }
+//   @media all and ($viewport-type: $tabletl) {
+//     transform: translate(-25%, 25%) scale(0.5);
+//   }
+// }
+// @keyframes motionC {
+//   from {
+//     background-position: 0px;
+//   }
+//   to {
+//     background-position: -62400px;
+//   }
+// }
+
 .b--motion-c {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
   z-index: 3;
-  width: 650px;
-  height: 600px;
+  width: 600px;
+  height: 550px;
   animation-name: motionC;
   animation-duration: 2s;
   animation-timing-function: steps(96);
   animation-iteration-count: infinite;
-  transform: translate(-10%, 10%) scale(0.8);
-  @media all and ($viewport-type: $laptop) {
-    transform: translate(-15%, 15%) scale(0.7);
-  }
   @media all and ($viewport-type: $tabletl) {
-    transform: translate(-25%, 25%) scale(0.5);
+    transform: translate(-25%, -25%) scale(0.5);
   }
 }
 @keyframes motionC {
@@ -22,6 +45,6 @@
     background-position: 0px;
   }
   to {
-    background-position: -62400px;
+    background-position: -57600px;
   }
 }
