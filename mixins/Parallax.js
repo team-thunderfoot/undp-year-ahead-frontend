@@ -1,15 +1,17 @@
 export default {
     methods:{
         parallaxMove({
+            sceneID,
             containerAnimation,
             element,
             scrub,
             intensity
         }){
-            
-            let scene1 = document.querySelector("#Scene1");
+            console.log(element);
+            // let scene1 = document.querySelector("#Scene" + sceneID);
+            let scene = this.$refs['Scene' + sceneID];
             this.$gsap.to(element, {
-                x: () =>  scene1.offsetWidth * intensity,
+                x: () =>  scene.offsetWidth * intensity,
                 ease: "none",
                 scrollTrigger: {
                     containerAnimation: containerAnimation,

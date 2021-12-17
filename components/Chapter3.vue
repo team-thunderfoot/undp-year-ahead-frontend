@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter3-a" id="Scene3" v-if="chapter">
+    <section class="b--page-a__item b--chapter3-a" id="Scene3" ref="Scene3" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img ref="parallax-3-ft" v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
@@ -56,11 +56,14 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+Vue.use(Parallax)
+
+
 export default {
-    components:{
-        'v-card-f':CardF,
-        'v-info-chapter' : InfoChapter
-    },
+    mixins: [Parallax],
     data:()=>{
 		return{
             totalContent: 2,
@@ -69,6 +72,10 @@ export default {
 		}
 	},
     props: ['scrollTween'],
+    components:{
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter
+    },
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -87,18 +94,14 @@ export default {
             this.contentLoaded++;
         },
         parallax(){
-            let scene3 = document.querySelector("#Scene3");
-            this.$gsap.to(this.$refs['parallax-3-ft'], {
-                x: () => scene3.offsetWidth - 60,
-                ease: "none",
-                scrollTrigger: {
-                    containerAnimation: this.scrollTween,
-                    scrub: 1,
-                    // markers: 'false',
-                    id: "1",
-                    invalidateOnRefresh: true,
-                }
-            });
+            var sceneID = 3;
+            this.parallaxMove({
+                sceneID : sceneID,
+                containerAnimation:this.scrollTween,
+                scrub:1,
+                element:this.$refs['parallax-3-ft'],
+                intensity:.5,
+            })
         },
         animate(){
             this.$nextTick(() => {
@@ -137,7 +140,6 @@ export default {
             }
         },
         scrollTween(newValue, oldValue){
-            console.log("see");
             if (newValue ) {
                 this.parallax();
             } 

@@ -1,5 +1,5 @@
 <template>
-  <section class="b--page-a__item b--chapter1-a" id="Scene1" v-if="chapter">
+  <section class="b--page-a__item b--chapter1-a" id="Scene1" ref="Scene1" v-if="chapter">
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img
@@ -137,7 +137,6 @@ import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
 Vue.use(Parallax)
 
-
 export default {
   mixins: [Parallax],
   data: () => {
@@ -176,10 +175,15 @@ export default {
     handleLoad() {
       this.contentLoaded++
     },
-    parallax(){
-      let scene1 = document.querySelector("#Scene1");
-    
-
+    parallax(reference, intensity){
+      var sceneID = 1;
+      this.parallaxMove({
+        sceneID : sceneID,
+        containerAnimation:this.scrollTween,
+        scrub:1,
+        element:this.$refs[reference],
+        intensity: intensity,
+      })
     },
     animate() {
       this.$nextTick(() => {
@@ -220,33 +224,10 @@ export default {
     },
     scrollTween(newValue, oldValue){
       if (newValue ) {
-        this.parallax();
-        this.parallaxMove({
-          containerAnimation:this.scrollTween,
-          scrub:1,
-          element:this.$refs['parallax-1-ft'],
-          intensity:.5,
-        })
-        this.parallaxMove({
-          containerAnimation:this.scrollTween,
-          scrub:1,
-          element:this.$refs['bubble'],
-          intensity:.5,
-        })
-        this.parallaxMove({
-          containerAnimation:this.scrollTween,
-          scrub:1,
-          element:this.$refs['frameTv'],
-          intensity:2,
-        })
-        this.parallaxMove({
-          containerAnimation:this.scrollTween,
-          scrub:1,
-          element:this.$refs['browser'],
-          intensity: -.3,
-        })
- 
-
+        this.parallax('parallax-1-ft',.5);
+        this.parallax('parallax-1-bubble',.5);
+        this.parallax('frameTv',2);
+        this.parallax('browser',-.3);
       } 
     }
   },
