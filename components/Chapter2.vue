@@ -112,7 +112,18 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                // this.parallax('parallax-2-ft');
+                var motion = [
+                    {obj:this.$refs['parallax-2-ft'], intensity:.5},
+                ]
+                motion.forEach(item => {
+                    this.parallaxMove({
+                        el: item.obj,
+                        intensity:item.intensity,
+                        duration: this.$refs['Scene2'],
+                        containerAnimation:this.scrollTween,
+                        scrub:1,
+                    })  
+                });
             } 
         }
     },

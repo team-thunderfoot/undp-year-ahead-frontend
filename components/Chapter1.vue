@@ -203,8 +203,6 @@ export default {
           {obj:this.$refs['frameTv'], intensity:.3},
           {obj:this.$refs['browser'], intensity:.5},
         ]
-        console.log('parallax 1 ft', this.$refs['parallax-1-ft'])
-        
         motion.forEach(item => {
           console.log(item)
           this.parallaxMove({
