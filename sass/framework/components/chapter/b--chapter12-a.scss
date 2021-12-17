@@ -10,6 +10,9 @@
       left: 38.9%;
       width: 9.51%;
       @include make-position-a();
+      @media all and ($viewport-type: $mobile) {
+        width: 12.21%;
+      }
     }
   }
   .b--ss-a {
