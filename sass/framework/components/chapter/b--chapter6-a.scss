@@ -35,15 +35,39 @@
       width: 18.07%;
       left: 69.16%;
       bottom: 10.8%;
+      @media all and ($viewport-type: $mobile) {
+        bottom: 18.8%;
+      }
     }
 
     // move card f head and bottom legs
     .b--card-f {
       &__hd {
         margin: 0 auto $measure * 4;
+        @media all and ($viewport-type: $mobile) {
+          margin: 0 auto $measure * 3;
+          max-width: 100% !important;
+        }
         &:before,
         &:after {
           height: $measure * 4;
+          @media all and ($viewport-type: $mobile) {
+            height: $measure * 3;
+          }
+        }
+      }
+      &__bd {
+        .b--card-a {
+          @media all and ($viewport-type: $mobile) {
+            padding: $measure * 3 5%;
+          }
+        }
+      }
+    }
+    .b--quote-a {
+      &__meta {
+        @media all and ($viewport-type: $mobile) {
+          width: 90% !important;
         }
       }
     }
