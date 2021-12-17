@@ -1,24 +1,23 @@
 export default {
     methods:{
         parallaxMove({
-            sceneID,
+            el,
+            intensity,
+            duration,
             containerAnimation,
-            element,
-            scrub,
-            intensity
+            scrub
         }){
-            let scene = this.$refs['Scene' + sceneID];
-            this.$gsap.to(element, {
-                x: () =>  scene.offsetWidth * intensity,
+            console.log('parallaxMove',el,intensity,duration,containerAnimation,scrub)
+            this.$gsap.to(el, {
+                x: () =>  duration * intensity,
                 ease: "none",
                 scrollTrigger: {
                     containerAnimation: containerAnimation,
                     scrub: scrub,
-                    // markers: 'false',
-                    id: "1",
                     invalidateOnRefresh: true,
                 }
             });
-        }
+        },
+       
     },
 }

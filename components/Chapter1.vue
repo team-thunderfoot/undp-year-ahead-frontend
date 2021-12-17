@@ -177,16 +177,6 @@ export default {
     handleLoad() {
       this.contentLoaded++
     },
-    parallax(reference, intensity){
-      var sceneID = 1;
-      this.parallaxMove({
-        sceneID : sceneID,
-        containerAnimation:this.scrollTween,
-        scrub:1,
-        element:this.$refs[reference],
-        intensity: intensity,
-      })
-    },
     animate() {
       this.$nextTick(() => {
         this.startAnimation({
@@ -206,10 +196,27 @@ export default {
     },
     scrollTween(newValue, oldValue){
       if (newValue ) {
-        this.parallax('parallax-1-ft',.5);
-        this.parallax('parallax-1-bubble',.5);
-        this.parallax('frameTv',2);
-        this.parallax('browser',-.3);
+
+        var motion = [
+          {obj:this.$refs['parallax-1-ft'], intensity:.5},
+          {obj:this.$refs['parallax-1-bubble'], intensity:.5},
+          {obj:this.$refs['frameTv'], intensity:.3},
+          {obj:this.$refs['browser'], intensity:.5},
+        ]
+        console.log('parallax 1 ft', this.$refs['parallax-1-ft'])
+        
+        motion.forEach(item => {
+          console.log(item)
+          this.parallaxMove({
+            el: item.obj,
+            intensity:item.intensity,
+            duration: this.$refs['Scene1'],
+            containerAnimation:this.scrollTween,
+            scrub:1,
+          })  
+        });
+        
+
       } 
     }
   },

@@ -112,7 +112,7 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.parallax('parallax-2-ft');
+                // this.parallax('parallax-2-ft');
             } 
         }
     },
