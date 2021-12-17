@@ -159,7 +159,6 @@ export default {
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
-                    console.log(payload);
                     // // SET NEW Item
                     this.currentItem = payload.item;
                     // // Change URL

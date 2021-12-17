@@ -103,7 +103,6 @@ export default {
             }else{
                 //  Emits on Update Story .vue 
                 $nuxt.$emit('navIsLoaded');
-                console.log(this.$refs);
                 if(this.currentItemMenu > 1 && this.currentItemMenu < this.maxStories ){
                     this.$refs.prev.classList.remove("disabled");
                     this.$refs.next.classList.remove("disabled");

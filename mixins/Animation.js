@@ -19,13 +19,11 @@ export default {
                     end: () => '+=' + this.$refs['Scene' + sceneID].offsetWidth,
                     onEnter: () => {
                     // emits on in Story.vue
-                        console.log(sceneID);
                         $nuxt.$emit('changeCurrent', { item:sceneID })
                     },
                     onEnterBack: () => {
                     // emits on in Story.vue
                         $nuxt.$emit('changeCurrent', { item:sceneID })
-                        console.log('back',sceneID);
                     },
                 }
             })

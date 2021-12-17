@@ -204,7 +204,6 @@ export default {
           {obj:this.$refs['browser'], intensity:.5},
         ]
         motion.forEach(item => {
-          console.log(item)
           this.parallaxMove({
             el: item.obj,
             intensity:item.intensity,
