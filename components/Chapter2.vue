@@ -83,14 +83,14 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        parallax(){
+        parallax(reference, intensity){
             var sceneID = 2;
             this.parallaxMove({
                 sceneID : sceneID,
                 containerAnimation:this.scrollTween,
                 scrub:1,
-                element:this.$refs['parallax-2-ft'],
-                intensity:.5,
+                element:this.$refs[reference],
+                intensity:intensity,
             })
         },
         animate(){
@@ -112,7 +112,7 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.parallax();
+                this.parallax('parallax-2-ft');
             } 
         }
     },
