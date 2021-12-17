@@ -107,7 +107,7 @@ export default {
                         start: 0,
                         end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
                         scrub: true,
-                        markers: "true",
+                        // markers: "false",
                         anticipatePin: 1,
                         onUpdate: (self) => {
                             // Emits on Update Progress in Nav.vue 
@@ -116,21 +116,6 @@ export default {
                         }
                     }
                 });
-
-
-                // let sectionBjkdjkd = document.querySelector("#Scene1");
-                // this.$gsap.to(".eli", {
-                //     x: () => sectionBjkdjkd.offsetWidth + 300,
-                //     ease: "none",
-                //     scrollTrigger: {
-                //         // trigger: "#SectionB",
-                //         containerAnimation: this.scrollTween,
-                //         scrub: 1,
-                //         markers: true,
-                //         id: "1",
-                //         invalidateOnRefresh: true,
-                //     }
-                // });
 
                 // emits on in Index.vue
                 $nuxt.$emit('siteLoaded');

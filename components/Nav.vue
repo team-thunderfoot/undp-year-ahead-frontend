@@ -40,9 +40,6 @@ export default {
                 "facebook" : facebook,
                 "twitter" : twitter,
                 "linkedin" : linkedin,
-
-                
-
             }`
             this.nav = await this.$sanity.fetch(query_content)
         },
