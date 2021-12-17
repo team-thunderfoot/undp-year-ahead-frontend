@@ -119,7 +119,7 @@ export default {
                 //     this.parallaxMove({
                 //         el: item.obj,
                 //         intensity:item.intensity,
-                //         duration: this.$refs['Scene3'],
+                //         duration: this.$refs['Scene3'].offsetWidth,
                 //         containerAnimation:this.scrollTween,
                 //         scrub:1,
                 //     })  
