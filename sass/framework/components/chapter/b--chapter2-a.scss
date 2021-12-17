@@ -15,6 +15,7 @@
     width: 25.54%;
     @include make-position-a();
     @media all and ($viewport-type: $mobile) {
+      bottom: 20%;
       left: 6.81%;
     }
     // tv
@@ -34,9 +35,6 @@
     bottom: 39.2%;
     left: 42.01%;
     height: 14.45vh;
-    // @media all and ($viewport-type: $tabletl) {
-    //   bottom: 39.2%;
-    // }
     img {
       max-height: 100%;
     }
@@ -50,6 +48,17 @@
       }
       @media all and ($viewport-type: $mobile) {
         left: 67.91%;
+      }
+    }
+  }
+  // mobile adjustment of card-f
+  @media all and ($viewport-type: $mobile) {
+    .b--card-f {
+      &__hd {
+        margin: 0 auto $measure*3;
+        &:before, &:after {
+            height: $measure*3;
+        }
       }
     }
   }
