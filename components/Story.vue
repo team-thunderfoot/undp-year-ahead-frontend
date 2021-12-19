@@ -6,17 +6,17 @@
         <v-chapter-1 :scrollTween="scrollTween"  />
         <v-chapter-2 :scrollTween="scrollTween" />
         <v-chapter-3 :scrollTween="scrollTween" />
-        <v-chapter-4  />
-        <v-chapter-5  />
-        <v-chapter-6  />
-        <v-chapter-7  />
-        <v-chapter-8  />
-        <v-chapter-9  />
-        <v-chapter-10  />
-        <v-chapter-11  />
-        <v-chapter-12  />
-        <v-chapter-13  />
-        <v-chapter-14  />
+        <v-chapter-4  :scrollTween="scrollTween"/>
+        <v-chapter-5 :scrollTween="scrollTween"  />
+        <v-chapter-6  :scrollTween="scrollTween"/>
+        <v-chapter-7  :scrollTween="scrollTween"/>
+        <v-chapter-8 :scrollTween="scrollTween" />
+        <v-chapter-9  :scrollTween="scrollTween"/>
+        <v-chapter-10 :scrollTween="scrollTween" />
+        <v-chapter-11 :scrollTween="scrollTween" />
+        <v-chapter-12 :scrollTween="scrollTween" />
+        <v-chapter-13  :scrollTween="scrollTween"/>
+        <v-chapter-14  :scrollTween="scrollTween"/>
         <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
@@ -42,7 +42,7 @@ import Progress from '~/components/NavControls.vue';
 export default {
     data:()=>{
 		return{
-            totalChapters:14,
+            totalChapters: 14,
 			statusChapter : 0,
             urlWithParams :false,
             sceneNumber : false,
@@ -121,10 +121,10 @@ export default {
                 });
 
                 // emits on in Index.vue
-                $nuxt.$emit('siteLoaded');
+                // $nuxt.$emit('siteLoaded');
                 setTimeout(() => {
-                this.loadedNew = true;
-                    
+                    $nuxt.$emit('siteLoaded');
+                    this.loadedNew = true;
                 }, 3000);
             })
         },

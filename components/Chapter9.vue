@@ -56,6 +56,7 @@ export default {
             infoWindowStatus: true,
 		}
 	},
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -78,6 +79,7 @@ export default {
                 this.startAnimation({
                     sceneID : 9,
                     scrub:0,
+                    scrollTween : this.scrollTween
                 })
             })
         }
@@ -89,6 +91,11 @@ export default {
                 $nuxt.$emit('assetLoaded');
                 this.animate()
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                this.animate();
+            } 
         }
     },
     created(){

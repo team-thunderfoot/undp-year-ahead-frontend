@@ -182,6 +182,7 @@ export default {
         this.startAnimation({
             sceneID : 1,
             scrub:0,
+            scrollTween : this.scrollTween
           })
         })
     },
@@ -191,7 +192,7 @@ export default {
       if (newValue == this.totalContent) {
         // emits on in Story.vue
         $nuxt.$emit('assetLoaded')
-        this.animate()
+        // this.animate()
       }
     },
     scrollTween(newValue, oldValue){
@@ -212,8 +213,7 @@ export default {
             scrub:1,
           })  
         });
-        
-
+        this.animate();
       } 
     }
   },

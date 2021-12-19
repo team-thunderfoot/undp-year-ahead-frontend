@@ -69,6 +69,7 @@ export default {
             chapter: null
 		}
 	},
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -93,6 +94,7 @@ export default {
                 this.startAnimation({
                     sceneID : 4,
                     scrub:0,
+                    scrollTween : this.scrollTween
                 })
             })
         }
@@ -102,8 +104,25 @@ export default {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
-                this.animate();
+                // this.animate();
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                var motion = [
+                    {obj:this.$refs['parallax-3-ft'], intensity:.5},
+                ]
+                // motion.forEach(item => {
+                //     this.parallaxMove({
+                //         el: item.obj,
+                //         intensity:item.intensity,
+                //         duration: this.$refs['Scene3'].offsetWidth,
+                //         containerAnimation:this.scrollTween,
+                //         scrub:1,
+                //     })  
+                // });
+                this.animate();
+            } 
         }
     },
     created(){
