@@ -38,4 +38,22 @@
       }
     }
   }
+  // women
+  &__media {
+    position: absolute;
+    left: 46.47%;
+    bottom: -1.9%;
+    width: 43%;
+  }
+  // first blink animation
+  &__artwork {
+    position: absolute;
+    bottom: 58%;
+    left: 52.2%;
+    // second blink animation
+    &--second {
+      bottom: 57.1%;
+      left: 82.1%; 
+    }   
+  } 
 }

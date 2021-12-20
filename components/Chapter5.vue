@@ -18,6 +18,28 @@
         <div class="b--chapter5-a__content b--chapter5-a__content--second">
            <v-info-chapter :info="chapter"/>
         </div>
+        <!-- women -->
+        <div class="b--chapter5-a__media">
+            <img v-lazy="require(`@/assets/img/chapter-5/women.svg`)" alt="women" />
+        </div>
+        <!-- first blink animation -->
+        <div class="b--chapter5-a__artwork">
+            <div
+                class="b--motion-d"
+                v-lazy:background-image="
+                require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`)
+                "
+            ></div>
+        </div>
+        <!-- second blink animation -->
+        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second">
+            <div
+                class="b--motion-p"
+                v-lazy:background-image="
+                require(`@/assets/img/chapter-5/blink-1B_spritesheet.png`)
+                "
+            ></div>
+        </div>    
       </div>
       <div class="b--ss-a__bg-items">
         <img
