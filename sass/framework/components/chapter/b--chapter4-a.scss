@@ -46,18 +46,21 @@
       }
     }
   }
-  // tent
-  &__artwork {
-    position: absolute;
-    &--third{
-      top:0 ;
-      left: 0;
-      max-width: 100%;
-    }
-    &--fourth{
-      bottom:0 ;
-      left: 0;
-      max-width: 100%;
-    }
+  &__artwork{
+    position:absolute;
   }
+  // tent
+  // &__artwork {
+  //   position: absolute;
+  //   &--third{
+  //     top:0 ;
+  //     left: 0;
+  //     max-width: 100%;
+  //   }
+  //   &--fourth{
+  //     bottom:0 ;
+  //     left: 0;
+  //     max-width: 100%;
+  //   }
+  // }
 }
