@@ -44,5 +44,12 @@
     left: 46.47%;
     bottom: -1.9%;
     width: 43%;
-  }  
+  }
+  // first blink animation
+  &__artwork {
+    position: absolute;
+    bottom: 56.7%;
+    left: 51.7%; 
+    width: 7.06%;   
+  } 
 }

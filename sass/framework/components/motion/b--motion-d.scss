@@ -1,0 +1,25 @@
+.b--motion-d {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+    animation-name: motionD;
+    animation-duration: 2s;
+    animation-timing-function: steps(96);
+    animation-iteration-count: infinite;
+    @media all and ($viewport-type: $tabletl) {
+      transform: translate(-15%, 15%) scale(0.7);
+    }
+  }
+  @keyframes motionD {
+    from {
+      background-position: 0px;
+    }
+    to {
+      // width * steps
+      background-position: -9600px;
+    }
+  }
+  

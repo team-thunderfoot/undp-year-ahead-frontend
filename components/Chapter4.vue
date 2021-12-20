@@ -29,8 +29,6 @@
                 <img 
                     v-lazy="require(`@/assets/img/chapter-4/tent.svg`)"
                     class="b--chapter4-a__artwork__media"
-                    @load="handleLoad"
-                    @error="handleLoad" 
                     alt="tent" 
                 />
                 </div>
