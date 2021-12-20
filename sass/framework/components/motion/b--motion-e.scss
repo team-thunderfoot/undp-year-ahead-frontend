@@ -10,7 +10,7 @@
   animation-timing-function: steps(96);
   animation-iteration-count: infinite;
   @media all and ($viewport-type: $tabletl) {
-    transform: translate(-25%, -25%) scale(0.5);
+    transform: translate(-15%, 15%) scale(0.7);
   }
 }
 @keyframes motionE {
