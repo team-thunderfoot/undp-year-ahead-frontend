@@ -21,4 +21,10 @@
       z-index: 10;
     }
   }
+  // animation
+  &__artwork {
+    position: absolute;
+    bottom: 49%;
+    left: 49.5%;
+  }
 }
