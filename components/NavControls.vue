@@ -33,15 +33,16 @@ export default {
                     this.$refs.prev.style.pointerEvents = "none";
                     this.$refs.next.style.pointerEvents = "none";
                 },
-                onComplete: () => {
+               onComplete: () => {
+                    if(this.currentItemMenu > 1 ){
+                        this.$refs.prev.classList.remove("disabled");
+                        this.$refs.prev.style.pointerEvents = "all";
+                        this.$refs.next.style.pointerEvents = "all";
+                    }
                     if(this.currentItemMenu == this.maxStories){
                         this.$refs.prev.classList.remove("disabled");
                         this.$refs.next.classList.add("disabled");
                         this.$refs.next.style.pointerEvents = "none";
-                    }
-                    if(this.currentItemMenu > 1 ){
-                        this.$refs.prev.classList.remove("disabled");
-                        this.$refs.prev.style.pointerEvents = "all";
                     }
                     // this.$refs.prev.style.pointerEvents = "all";
                     // this.$refs.next.style.pointerEvents = "all";
