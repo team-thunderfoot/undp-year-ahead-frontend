@@ -2,11 +2,6 @@
     <section class="b--page-a__item b--chapter13-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second">
-                    <div class="b--motion-test">
-                        <!-- Plant -->
-                    </div>
-                </div>
                 <img v-lazy="require(`@/assets/img/chapter-13/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
@@ -18,6 +13,18 @@
                         :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
                         cardACustomClass="b--card-a--second"
                     />
+                </div> 
+                <div class="b--chapter13-a__artwork">
+                    <div class="b--motion-m" v-lazy:background-image="
+                    require(`@/assets/img/chapter-13/plant_water.png`)
+                    ">
+                    </div>
+                </div>
+                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second">
+                    <div class="b--motion-n" v-lazy:background-image="
+                    require(`@/assets/img/chapter-13/plant_water_2.png`)
+                    ">
+                    </div>
                 </div>         
             </div>
             <div class="b--ss-a__bg-items">

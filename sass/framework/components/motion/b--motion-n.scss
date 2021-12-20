@@ -1,0 +1,26 @@
+.b--motion-n {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 200px;
+    height: 227px;
+    animation-name: motionN;
+    animation-duration: 1.32s;
+    animation-timing-function: steps(80);
+    animation-iteration-count: infinite;
+    @media all and ($viewport-type: $laptop) {
+        transform: translate(-10%, 10%) scale(0.8);
+    }
+    @media all and ($viewport-type: $tabletl) {
+        transform: translate(-15%, 15%) scale(0.7);
+    }
+}
+@keyframes motionN {
+    from {
+        background-position: 0px;
+    }
+    to {
+        background-position: -16000px;
+    }
+}

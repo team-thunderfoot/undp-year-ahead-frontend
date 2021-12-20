@@ -1,13 +1,5 @@
 .b--chapter13-a {
 
-    &__artwork {
-        position: absolute;
-        &--second{
-            bottom:0;
-            left:34%;
-        }
-    }
-
     // content has bigger z-index than ft items
     .b--ss-a {
         &__content {
@@ -26,6 +18,21 @@
             width: 100%;
         }
  
+    }
+
+    // animation
+    &__artwork {
+        position: absolute;
+        bottom: 0;
+        left: 35.2%;
+        @media all and ($viewport-type: $laptop) {
+            bottom: 4%;
+        }
+        // second animation
+        &--second{
+            bottom: 0;
+            left: 78%;
+        }
     }
 
     // move card f head and bottom legs
