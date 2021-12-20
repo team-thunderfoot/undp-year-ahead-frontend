@@ -10,7 +10,7 @@
             <v-card-f 
                 :title="chapter.title"
                 :description="chapter.description"
-                customClass="b--card-f--third"
+                :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
                 cardACustomClass="b--card-a--second"
             />
         </div>
@@ -36,7 +36,7 @@
             <div
                 class="b--motion-p"
                 v-lazy:background-image="
-                require(`@/assets/img/chapter-5/blink-1B_spritesheet.png`)
+                require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`)
                 "
             ></div>
         </div>    

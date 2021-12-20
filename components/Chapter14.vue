@@ -10,6 +10,7 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
+                        :customClass="'b--card-f--'+ `${this.lang}`"
                     />
                 </div>
                 <!-- second position element, quote -->

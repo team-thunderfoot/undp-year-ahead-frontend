@@ -1,6 +1,10 @@
 .b--quote-a {
   &__content {
     margin-bottom: 2.34vh;
+    @include make-font-d();
+    &.b--content-a * {
+      @include make-font-d();
+    }
   }
   &__meta {
     width: 63.48%;
@@ -10,6 +14,7 @@
     }
     @media all and ($viewport-type: $mobile) {
       width: 90%;
+      line-height: 1;
     }
     &__title {
       @include make-font-g();
@@ -17,6 +22,9 @@
       @include link-a();
       @include link-a-color($colortext: a);
       display: inline;
+      @media all and ($viewport-type: $mobile) {
+        font-size: clamp(0.89rem, 2.34vh, 1.45rem);
+      }
       &:hover,
       &:focus,
       &:active {
@@ -30,19 +38,28 @@
     &__subtitle {
       @include make-font-g();
       display: inline;
+      @media all and ($viewport-type: $mobile) {
+        font-size: clamp(0.89rem, 2.34vh, 1.45rem);
+      }
     }
   }
   &--second {
     text-align: right;
-    color: map-get($color-options, f);
+    .b--content-a * {
+      color: map-get($color-options, f);
+    }
   }
   &--second & {
     &__meta {
+      color: map-get($color-options, f);
       width: 55.87%;
       text-align: right;
       float: right;
       &__title {
         @include link-a-color($colortext: f);
+      }
+      &__subtitle {
+        color: map-get($color-options, f);
       }
     }
   }

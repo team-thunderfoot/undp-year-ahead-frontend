@@ -19,6 +19,7 @@
                         :title="chapter.title"
                         :description="chapter.description"
                         cardACustomClass="b--card-a--second"
+                        :customClass="'b--card-f--'+ `${this.lang}`"
                     />
                 </div>
 
