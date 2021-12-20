@@ -49,7 +49,7 @@
       &--next {
           left: 60%;
           @media all and ($viewport-type: $mobile) {
-            left: 78%;
+            left: 83.5%;
             margin-right: 0px;
           }
           img {
@@ -59,7 +59,7 @@
           }
           
       }
-      &--prev{
+      &--prev {
           left: 32%;
           @media all and ($viewport-type: $mobile) {
             left: 8%;
