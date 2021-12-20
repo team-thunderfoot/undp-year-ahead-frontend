@@ -14,6 +14,7 @@
     }
     @media all and ($viewport-type: $mobile) {
       width: 90%;
+      line-height: 1;
     }
     &__title {
       @include make-font-g();
@@ -21,6 +22,9 @@
       @include link-a();
       @include link-a-color($colortext: a);
       display: inline;
+      @media all and ($viewport-type: $mobile) {
+        font-size: clamp(0.89rem, 2.34vh, 1.45rem);
+      }
       &:hover,
       &:focus,
       &:active {
@@ -34,6 +38,9 @@
     &__subtitle {
       @include make-font-g();
       display: inline;
+      @media all and ($viewport-type: $mobile) {
+        font-size: clamp(0.89rem, 2.34vh, 1.45rem);
+      }
     }
   }
   &--second {
@@ -44,7 +51,7 @@
   }
   &--second & {
     &__meta {
-      color: map-get($color-options , f );
+      color: map-get($color-options, f);
       width: 55.87%;
       text-align: right;
       float: right;
@@ -52,7 +59,7 @@
         @include link-a-color($colortext: f);
       }
       &__subtitle {
-        color: map-get($color-options , f );
+        color: map-get($color-options, f);
       }
     }
   }
