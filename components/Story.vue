@@ -125,7 +125,7 @@ export default {
                 $nuxt.$emit('siteLoaded');
                 setTimeout(() => {
                     this.loadedNew = true;
-                }, 3000);
+                }, 5000);
             })
         },
     
@@ -158,7 +158,7 @@ export default {
 
             this.queryString = window.location.search;
             this.urlParams = new URLSearchParams(this.queryString);
-            
+
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
