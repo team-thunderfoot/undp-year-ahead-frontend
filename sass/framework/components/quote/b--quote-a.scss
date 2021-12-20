@@ -1,6 +1,10 @@
 .b--quote-a {
   &__content {
     margin-bottom: 2.34vh;
+    @include make-font-d();
+    &.b--content-a * {
+      @include make-font-d();
+    }
   }
   &__meta {
     width: 63.48%;
@@ -34,15 +38,21 @@
   }
   &--second {
     text-align: right;
-    color: map-get($color-options, f);
+    .b--content-a * {
+      color: map-get($color-options, f);
+    }
   }
   &--second & {
     &__meta {
+      color: map-get($color-options , f );
       width: 55.87%;
       text-align: right;
       float: right;
       &__title {
         @include link-a-color($colortext: f);
+      }
+      &__subtitle {
+        color: map-get($color-options , f );
       }
     }
   }
