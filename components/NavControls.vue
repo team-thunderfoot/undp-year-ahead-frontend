@@ -76,6 +76,7 @@ export default {
                 this.$gsap.to(window, {duration: 4, scrollTo: pos,
                 onStart: () => {
                     //  Emits on Update Story .vue 
+                    console.log(this.sceneNumber);
                     this.currentItemMenu = this.sceneNumber;
                     if(this.currentItemMenu == 1){
                         this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
@@ -92,11 +93,14 @@ export default {
                     this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene4 takes the number 2)
                     this.$refs.prev.style.pointerEvents = "all";
                     this.$refs.next.style.pointerEvents = "all";
+                    console.log(this.currentItemMenu);
                     if(this.currentItemMenu == 1){
                         this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                        this.$refs.prev.style.pointerEvents = "none";
                     }
                     if(this.currentItemMenu == this.maxStories){
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                        this.$refs.next.style.pointerEvents = "none";
                     }
                     
                 }}); 
@@ -109,9 +113,11 @@ export default {
                 }
                 if(this.currentItemMenu == 1 ){
                     this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                    this.$refs.prev.style.pointerEvents = "none";
                 }
                 if(this.currentItemMenu == this.maxStories ){
                     this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                    this.$refs.next.style.pointerEvents = "none";
                 }
             }
 		},
@@ -124,9 +130,11 @@ export default {
             }
             if(newValue == 1 ){
                 this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                this.$refs.prev.style.pointerEvents = "none";
             }
             if(newValue == this.maxStories ){
                 this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                this.$refs.next.style.pointerEvents = "none";
             }
             this.currentItemMenu = newValue;
         },
