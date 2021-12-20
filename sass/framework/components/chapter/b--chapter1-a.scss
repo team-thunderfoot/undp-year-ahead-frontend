@@ -26,7 +26,7 @@
         max-height: none;
         // bottom: 34.48%;
         bottom: auto;
-        top: 10%;
+        top: 8%;
       }
       @media all and ($viewport-type: $mobile) {
         bottom: 34.48%;
@@ -64,12 +64,19 @@
       max-height: calc(100vh - 27.44vh - $measure * 4);
     }
 
+    // bubble
     &--fifth {
       top: 47%;
       left: 70.8%;
-      @media all and ($viewport-type: $tabletl) {
+      width: 2.96%;
+      height: 14.06%;
+      @media all and ($viewport-type: $laptop) {
         top: 51.8%;
-        left: 72.8%;
+        left: 70.8%;
+      }
+      @media all and ($viewport-type: $tabletl) {
+        top: 49.5%;
+        left: 71.5%;
       }
     }
   }
