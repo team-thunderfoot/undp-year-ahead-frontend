@@ -9,6 +9,7 @@
     border: 1.5vh solid map-get($color-options, h);
     max-width: none !important;
     width: calc(100vw - 60px);
+    height: auto;
   }
   &::before,
   &::after {
