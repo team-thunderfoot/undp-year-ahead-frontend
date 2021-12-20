@@ -1,0 +1,27 @@
+.b--motion-r {
+    position: relative;
+    z-index: 2;
+    width: 600px;
+    height: 200px;
+    animation-name: motionR;
+    animation-duration: 2s;
+    animation-timing-function: steps(96);
+    animation-iteration-count: infinite;
+    @media all and ($viewport-type: $laptop) {
+        transform: translate(-10%, 10%) scale(0.8);
+    }
+    @media all and ($viewport-type: $tabletm) {
+        transform: translate(-15%, 15%) scale(0.7);
+    }
+    @media all and ($viewport-type: $mobile) {
+        transform: translate(-20%, 20%) scale(0.6);
+    }
+}
+@keyframes motionR {
+    from {
+        background-position: 0px;
+    }
+    to {
+        background-position: -57600px;
+    }
+}

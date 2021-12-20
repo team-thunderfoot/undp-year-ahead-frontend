@@ -19,7 +19,7 @@
                     <v-info-chapter :info="chapter"/>
                 </div>
                 <div class="b--chapter12-a__artwork">
-                <div class="b--motion-j" v-lazy:background-image="
+                    <div class="b--motion-j" v-lazy:background-image="
                     require(`@/assets/img/chapter-12/blink_3.png`)
                     ">
                     </div>
