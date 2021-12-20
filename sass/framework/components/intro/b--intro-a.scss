@@ -63,6 +63,11 @@
         @include make-font-a();
         display: block;
       }
+      // Safari 10.1+
+      @media not all and (min-resolution: 0.001dpcm) {
+        color: map-get($color-options, t);
+        -webkit-text-fill-color: map-get($color-options, t);
+      }
     }
     &__subtitle {
       @include make-font-e();
@@ -70,7 +75,7 @@
     }
   }
   // french modifier
-  &--second & {
+  &--fr & {
     &__wrapper {
       &__title {
         font-size: clamp(1rem, 4.785vh, 2.56rem);
@@ -87,7 +92,7 @@
     }
   }
   // spanish modifier
-  &--third & {
+  &--es & {
     &__wrapper {
       &__title {
         &__badge {
