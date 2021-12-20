@@ -42,12 +42,6 @@
       max-height: 52.83vh;
     }
   }
-  .b--ss-a {
-    // bigger z-index to be shown above ft items
-    &__content {
-      z-index: 10;
-    }
-  }
   // mobile adjustment of card-f
   .b--card-f {
     &__hd {

@@ -17,7 +17,7 @@
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>
         <v-chapter-14  :scrollTween="scrollTween"/>
-        <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
+        <v-progress :isLoaded="isLoaded" :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
 
@@ -122,10 +122,10 @@ export default {
                 });
 
                 // emits on in Index.vue
-                $nuxt.$emit('siteLoaded');
                 setTimeout(() => {
+                    $nuxt.$emit('siteLoaded');
                     this.loadedNew = true;
-                }, 3000);
+                }, 5000);
             })
         },
     
@@ -156,12 +156,16 @@ export default {
             this.queryString = window.location.search;
             this.urlParams = new URLSearchParams(this.queryString);
 
+            this.queryString = window.location.search;
+            this.urlParams = new URLSearchParams(this.queryString);
+
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
                     // // SET NEW Item
                     this.currentItem = payload.item;
-                    // // Change URL
+                    console.log(this.currentItem);
+                    // // // Change URL
                     this.urlParams.set("scene", payload.item );
                     this.urlParams.toString(); 
                     window.history.replaceState({}, '', `?${this.urlParams}`);

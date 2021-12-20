@@ -64,8 +64,10 @@
 @import './framework/components/motion/b--motion-e.scss';
 @import './framework/components/motion/b--motion-f.scss';
 @import './framework/components/motion/b--motion-g.scss';
+@import './framework/components/motion/b--motion-h.scss';
 @import './framework/components/motion/b--motion-i.scss';
 @import './framework/components/motion/b--motion-p.scss';
+@import './framework/components/motion/b--motion-q.scss';
 @import './framework/components/motion/b--motion-test.scss';
 
 // Chapter Information
@@ -78,4 +80,8 @@
   bottom: 0;
   z-index: 3;
   border: 1px solid red;
+}
+
+section {
+  // min-width: 100vw;
 }

@@ -78,7 +78,7 @@
   &--fr & {
     &__wrapper {
       &__title {
-        font-size: clamp(1rem, 4.785vh, 2.56rem);
+        font-size: clamp(1rem, 4.785vh, 2.16rem);
         @media all and ($viewport-type: $laptop) {
           font-size: clamp(1.25rem, 6.3vw, 1.96rem);
         }
@@ -89,7 +89,7 @@
           font-size: clamp(1.25rem, 6.3vw, 1.9rem);
         }
         &__badge {
-          font-size: clamp(1rem, 9.5vh, 5.55rem);
+          font-size: clamp(1rem, 9.5vh, 4.55rem);
           @media all and ($viewport-type: $laptop) {
             font-size: clamp(1rem, 9.5vh, 4.15rem);
           }
@@ -110,7 +110,7 @@
     &__wrapper {
       &__title {
         &__badge {
-          font-size: clamp(1rem, 9.5vh, 5.55rem);
+          font-size: clamp(1rem, 9.5vh, 4.55rem);
           @media all and ($viewport-type: $laptop) {
             font-size: clamp(1rem, 9.5vh, 4.15rem);
           }
