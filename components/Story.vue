@@ -156,6 +156,9 @@ export default {
             this.queryString = window.location.search;
             this.urlParams = new URLSearchParams(this.queryString);
 
+            this.queryString = window.location.search;
+            this.urlParams = new URLSearchParams(this.queryString);
+            
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
@@ -163,9 +166,9 @@ export default {
                     this.currentItem = payload.item;
                     console.log(this.currentItem);
                     // // // Change URL
-                    // this.urlParams.set("scene", payload.item );
-                    // this.urlParams.toString(); 
-                    // window.history.replaceState({}, '', `?${this.urlParams}`);
+                    this.urlParams.set("scene", payload.item );
+                    this.urlParams.toString(); 
+                    window.history.replaceState({}, '', `?${this.urlParams}`);
                 }
             });
             this.$nuxt.$on('changeURL', (payload) => {

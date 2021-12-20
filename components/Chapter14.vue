@@ -90,7 +90,6 @@ export default {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
-                this.animate()
             }
         },
          scrollTween(newValue, oldValue){
