@@ -30,20 +30,16 @@
                         require(`@/assets/img/chapter-13/plant_wind_3.png`)
                         "
                     >
-                </div>
-                <!-- plant wind 1 -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork__second">
-                    <div class="b--motion-e" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_1.png`)"></div>
+                    </div>
                 </div>
                 <!-- blink 2a -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork__third">
+                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--second">
                     <div class="b--motion-h" v-lazy:background-image="require(`@/assets/test_sprites/blink_2a.png`)"></div>
                 </div>
                 <!-- blink 2b -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork__fourth">
+                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--third">
                     <div class="b--motion-q" v-lazy:background-image="require(`@/assets/test_sprites/blink_2b.png`)"></div>
-                </div>
-            </div> 
+                </div> 
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-11/back.png">        
