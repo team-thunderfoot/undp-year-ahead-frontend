@@ -17,7 +17,7 @@
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>
         <v-chapter-14  :scrollTween="scrollTween"/>
-        <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
+        <v-progress :isLoaded="isLoaded" :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
 
@@ -122,8 +122,8 @@ export default {
                 });
 
                 // emits on in Index.vue
-                $nuxt.$emit('siteLoaded');
                 setTimeout(() => {
+                    $nuxt.$emit('siteLoaded');
                     this.loadedNew = true;
                 }, 5000);
             })

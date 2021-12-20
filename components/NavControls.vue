@@ -11,13 +11,15 @@ export default {
     data:()=>{
 		return{
            maxStories : 14,
-           currentItemMenu : false
+           currentItemMenu : false,
+           navIsLoaded: true,
 		}
 	},
     props : [
         'sceneNumber',
         'urlWithParams',
-        'currentItem'
+        'currentItem',
+        'isLoaded',
     ],
     methods :  {
         goTo(payload) {
@@ -67,43 +69,43 @@ export default {
         },
         goToChapter(){
             if(this.urlWithParams){
-                var sceneName  = document.querySelector('#Scene' + this.sceneNumber);
-                if(this.sceneNumber == 13){
-                    var pos =  sceneName.offsetLeft - 100;
-                } else {
-                    var pos =  sceneName.offsetLeft;
-                }
-                this.$gsap.to(window, {duration: 4, scrollTo: pos,
-                onStart: () => {
-                    //  Emits on Update Story .vue 
-                    console.log(this.sceneNumber);
-                    this.currentItemMenu = this.sceneNumber;
-                    if(this.currentItemMenu == 1){
-                        this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                if(this.sceneNumber != '1'){
+                   var sceneName  = document.querySelector('#Scene' + this.sceneNumber);
+                    if(this.sceneNumber == 13){
+                        var pos =  sceneName.offsetLeft - 100;
+                    } else {
+                        var pos =  sceneName.offsetLeft;
                     }
-                    if(this.currentItemMenu == this.maxStories){
-                        this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
-                    }
-                    $nuxt.$emit('navIsLoaded');
-                    this.$refs.prev.style.pointerEvents = "none";
-                    this.$refs.next.style.pointerEvents = "none";
-                },
-                onComplete: () => {
-                    //do something after going to section
-                    this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene4 takes the number 2)
-                    this.$refs.prev.style.pointerEvents = "all";
-                    this.$refs.next.style.pointerEvents = "all";
-                    console.log(this.currentItemMenu);
-                    if(this.currentItemMenu == 1){
-                        this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                    this.$gsap.to(window, {duration: 4, scrollTo: pos,
+                    onStart: () => {
+                        //  Emits on Update Story .vue 
+                        console.log(this.sceneNumber);
+                        this.currentItemMenu = this.sceneNumber;
+                        if(this.currentItemMenu == this.maxStories){
+                            this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                        }
+                        // $nuxt.$emit('navIsLoaded');
                         this.$refs.prev.style.pointerEvents = "none";
-                    }
-                    if(this.currentItemMenu == this.maxStories){
-                        this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                         this.$refs.next.style.pointerEvents = "none";
-                    }
+                    },
+                    onComplete: () => {
+                        //do something after going to section
+                        this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene4 takes the number 2)
+                        this.$refs.prev.style.pointerEvents = "all";
+                        this.$refs.next.style.pointerEvents = "all";
+                        console.log(this.currentItemMenu);
+                        if(this.currentItemMenu == this.maxStories){
+                            this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                            this.$refs.next.style.pointerEvents = "none";
+                        }
                     
-                }}); 
+                    }}); 
+                } else {
+                    this.currentItemMenu = this.sceneNumber;
+                    this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
+                    this.$refs.prev.style.pointerEvents = "none";
+                }
+                
             }else{
                 //  Emits on Update Story .vue 
                 $nuxt.$emit('navIsLoaded');
@@ -138,11 +140,16 @@ export default {
             }
             this.currentItemMenu = newValue;
         },
+        isLoaded(newValue, oldValue){
+            if(newValue){
+                this.goToChapter();
+            }
+        }
     },
     mounted(){
         if(process.client){
             this.currentItemMenu  = this.currentItem;
-            this.goToChapter();
+            $nuxt.$emit('navIsLoaded');
         }
     }
 }
