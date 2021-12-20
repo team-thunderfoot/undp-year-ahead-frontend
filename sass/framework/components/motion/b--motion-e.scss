@@ -12,6 +12,9 @@
   @media all and ($viewport-type: $tabletl) {
     transform: translate(-15%, 15%) scale(0.7);
   }
+  @media all and ($viewport-type: $mobile) {
+    transform: translate(-25%, 25%) scale(0.5);
+  }
 }
 @keyframes motionE {
   from {
