@@ -18,7 +18,7 @@
                     <v-info-chapter :info="chapter"/>
                     <!-- <p><a href="">UN Biodiversity Conference (COP15)</a> 25 April - 8 May, Kunming, China</p> -->
                 </div>
-                <!-- animation -->
+                <!-- plant animation -->
                 <div class="b--chapter8-a__artwork">
                     <div
                         class="b--motion-e"
@@ -26,7 +26,16 @@
                         require(`@/assets/img/chapter-8/plant_wind_1.png`)
                         "
                     ></div>
-                </div>     
+                </div> 
+                <!-- fishes animation -->
+                <div class="b--chapter8-a__artwork b--chapter8-a__artwork--second">
+                    <div
+                        class="b--motion-r"
+                        v-lazy:background-image="
+                        require(`@/assets/img/chapter-8/fishes_spritesheet.png`)
+                        "
+                    ></div>
+                </div>      
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-8/back.png">        

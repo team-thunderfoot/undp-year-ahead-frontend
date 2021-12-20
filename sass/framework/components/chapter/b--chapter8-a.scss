@@ -33,10 +33,15 @@
       }
     }
   }
-  // animation
+  // first animation
   &__artwork {
     position: absolute;
     bottom: 7%;
-    left: 36.5%;  
+    left: 36.5%;
+    // second animation
+    &--second {
+      bottom: 0;
+      left: 44%;
+    }  
   } 
 }
