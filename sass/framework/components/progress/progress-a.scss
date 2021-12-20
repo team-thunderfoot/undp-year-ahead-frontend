@@ -4,6 +4,9 @@
   width: 200px;
   right: 0;
   z-index: 100;
+  @media all and ($viewport-type: $mobile) {
+    width: calc( 100% - 45px);
+  }
   &__wrapper {
     list-style: none;
     display: flex;
@@ -40,8 +43,15 @@
       width: 45px;
       border-radius: 50%;
       transition: all $time-a ease-in-out;
+      &:last-child{
+        margin-right: 0px;
+      }
       &--next {
           left: 60%;
+          @media all and ($viewport-type: $mobile) {
+            left: 78%;
+            margin-right: 0px;
+          }
           img {
             left: 18px;
             top: 12px;
@@ -50,12 +60,16 @@
           
       }
       &--prev{
-          right: 40%;
+          left: 32%;
+          @media all and ($viewport-type: $mobile) {
+            left: 8%;
+          }
           img {
             left: 14px;
             top: 12px;
             position: absolute;
           }
+          
       }
       &:hover{
         background-color:#55606E;
