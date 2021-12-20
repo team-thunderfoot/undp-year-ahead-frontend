@@ -98,6 +98,7 @@ export default {
             Sections.forEach(el => width += el.offsetWidth);
             return width;
         },
+        
         asambleStory(){
            	this.$nextTick(() => {
                 this.scrollTween = this.$gsap.to(document.querySelectorAll("section"), { 
@@ -121,9 +122,8 @@ export default {
                 });
 
                 // emits on in Index.vue
-                // $nuxt.$emit('siteLoaded');
+                $nuxt.$emit('siteLoaded');
                 setTimeout(() => {
-                    $nuxt.$emit('siteLoaded');
                     this.loadedNew = true;
                 }, 3000);
             })
