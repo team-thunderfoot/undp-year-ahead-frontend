@@ -129,8 +129,8 @@ export default {
             if(newValue >  1 && newValue < this.maxStories ){
                 this.$refs.prev.classList.remove("disabled");
                 this.$refs.next.classList.remove("disabled");
-                this.$refs.prev.style.pointerEvents = "none";
-                this.$refs.next.style.pointerEvents = "none";
+                this.$refs.prev.style.pointerEvents = "all";
+                this.$refs.next.style.pointerEvents = "all";
             }
             if(newValue == 1 ){
                 this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
