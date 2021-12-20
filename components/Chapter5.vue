@@ -36,7 +36,7 @@
             <div
                 class="b--motion-p"
                 v-lazy:background-image="
-                require(`@/assets/img/chapter-5/blink-1B_spritesheet.png`)
+                require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`)
                 "
             ></div>
         </div>    
