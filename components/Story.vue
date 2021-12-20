@@ -9,14 +9,14 @@
         <v-chapter-4  :scrollTween="scrollTween"/>
         <v-chapter-5 :scrollTween="scrollTween"  />
         <v-chapter-6  :scrollTween="scrollTween"/>
-        <!-- <v-chapter-7  :scrollTween="scrollTween"/>
+        <v-chapter-7  :scrollTween="scrollTween"/>
         <v-chapter-8 :scrollTween="scrollTween" />
         <v-chapter-9  :scrollTween="scrollTween"/>
         <v-chapter-10 :scrollTween="scrollTween" />
         <v-chapter-11 :scrollTween="scrollTween" />
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>
-        <v-chapter-14  :scrollTween="scrollTween"/> -->
+        <v-chapter-14  :scrollTween="scrollTween"/>
         <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
@@ -42,7 +42,7 @@ import Progress from '~/components/NavControls.vue';
 export default {
     data:()=>{
 		return{
-            totalChapters: 6,
+            totalChapters: 14,
 			statusChapter : 0,
             urlWithParams :false,
             sceneNumber : false,
@@ -125,7 +125,7 @@ export default {
                 $nuxt.$emit('siteLoaded');
                 setTimeout(() => {
                     this.loadedNew = true;
-                }, 3000);
+                }, 5000);
             })
         },
     
@@ -156,15 +156,19 @@ export default {
             this.queryString = window.location.search;
             this.urlParams = new URLSearchParams(this.queryString);
 
+            this.queryString = window.location.search;
+            this.urlParams = new URLSearchParams(this.queryString);
+
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
                     // // SET NEW Item
                     this.currentItem = payload.item;
+                    console.log(this.currentItem);
                     // // // Change URL
-                    // this.urlParams.set("scene", payload.item );
-                    // this.urlParams.toString(); 
-                    // window.history.replaceState({}, '', `?${this.urlParams}`);
+                    this.urlParams.set("scene", payload.item );
+                    this.urlParams.toString(); 
+                    window.history.replaceState({}, '', `?${this.urlParams}`);
                 }
             });
             this.$nuxt.$on('changeURL', (payload) => {

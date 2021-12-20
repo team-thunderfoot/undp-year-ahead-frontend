@@ -12,12 +12,12 @@ export default {
                 scrollTrigger: {
                     trigger: '#Scene' + sceneID,
                     scrub: scrub,
-                    containerAnimation: scrollTween,
-                    // start: () =>
-                    // 'top top-=' +
-                    // (this.$refs['Scene' + sceneID].offsetLeft -
-                    //     window.innerWidth),
-                    // end: () => '+=' + this.$refs['Scene' + sceneID].offsetWidth,
+                    // containerAnimation: scrollTween,
+                    start: () =>
+                    'top top-=' +
+                    (this.$refs['Scene' + sceneID].offsetLeft -
+                        window.innerWidth),
+                    end: () => '+=' + this.$refs['Scene' + sceneID].offsetWidth,
                     onEnter: () => {
                     // emits on in Story.vue
                         $nuxt.$emit('changeCurrent', { item:sceneID })
