@@ -9,14 +9,14 @@
         <v-chapter-4  :scrollTween="scrollTween"/>
         <v-chapter-5 :scrollTween="scrollTween"  />
         <v-chapter-6  :scrollTween="scrollTween"/>
-        <v-chapter-7  :scrollTween="scrollTween"/>
+        <!-- <v-chapter-7  :scrollTween="scrollTween"/>
         <v-chapter-8 :scrollTween="scrollTween" />
         <v-chapter-9  :scrollTween="scrollTween"/>
         <v-chapter-10 :scrollTween="scrollTween" />
         <v-chapter-11 :scrollTween="scrollTween" />
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>
-        <v-chapter-14  :scrollTween="scrollTween"/>
+        <v-chapter-14  :scrollTween="scrollTween"/> -->
         <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
@@ -42,7 +42,7 @@ import Progress from '~/components/NavControls.vue';
 export default {
     data:()=>{
 		return{
-            totalChapters: 14,
+            totalChapters: 6,
 			statusChapter : 0,
             urlWithParams :false,
             sceneNumber : false,
@@ -161,10 +161,10 @@ export default {
                 if(this.loadedNew){
                     // // SET NEW Item
                     this.currentItem = payload.item;
-                    // // Change URL
-                    this.urlParams.set("scene", payload.item );
-                    this.urlParams.toString(); 
-                    window.history.replaceState({}, '', `?${this.urlParams}`);
+                    // // // Change URL
+                    // this.urlParams.set("scene", payload.item );
+                    // this.urlParams.toString(); 
+                    // window.history.replaceState({}, '', `?${this.urlParams}`);
                 }
             });
             this.$nuxt.$on('changeURL', (payload) => {
