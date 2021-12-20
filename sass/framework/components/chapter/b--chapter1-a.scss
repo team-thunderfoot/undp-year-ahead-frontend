@@ -24,7 +24,9 @@
       @media all and ($viewport-type: $tabletl) {
         height: auto;
         max-height: none;
-        bottom: 34.48%;
+        // bottom: 34.48%;
+        bottom: auto;
+        top: 10%;
       }
       @media all and ($viewport-type: $mobile) {
         bottom: 34.48%;
