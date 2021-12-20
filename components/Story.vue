@@ -161,6 +161,7 @@ export default {
                 if(this.loadedNew){
                     // // SET NEW Item
                     this.currentItem = payload.item;
+                    console.log(this.currentItem);
                     // // // Change URL
                     // this.urlParams.set("scene", payload.item );
                     // this.urlParams.toString(); 
