@@ -5,6 +5,9 @@
     left: 4.32%;
     width: 21.95%;
     @include make-position-a();
+    @media all and ($viewport-type: $tabletl) {
+      bottom: 8.69%;
+    }
     &--second {
       bottom: 47.26%;
       left: 31.45%;
@@ -53,7 +56,7 @@
     // second blink animation
     &--second {
       bottom: 57.1%;
-      left: 82.1%; 
-    }   
-  } 
+      left: 82.1%;
+    }
+  }
 }
