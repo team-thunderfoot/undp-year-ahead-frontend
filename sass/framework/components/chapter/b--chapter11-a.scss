@@ -6,7 +6,7 @@
     left: 1.79%;
     width: 15.04%;
     @include make-position-a();
-    @media all and ($viewport-type: $tabletm) {
+    @media all and ($viewport-type: $tablets) {
       width: 100%;
     }
   }

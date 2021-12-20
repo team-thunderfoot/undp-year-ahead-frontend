@@ -20,6 +20,10 @@
                         customClass="b--quote-a--third"
                     />
                 </div>
+                <!-- arrow -->
+                <div class="b--chapter14-a__artwork">
+                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-14/back.png">        
