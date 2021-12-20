@@ -2,65 +2,85 @@
   <div>
       <div class="f--container">
           <div class="f--row">
-              <div class="f--row-12">
+              <div class="f--col-12">
                     <!-- bubble -->
                     <div class="b--motion-a" v-lazy:background-image="require(`@/assets/test_sprites/speech.png`)"></div>
               </div>
 
-               <div class="f--row-12">
+              <div class="f--col-12">
                     <!-- flags -->
-                    <div class="b--motion-c" v-lazy:background-image="require(`@/assets/test_sprites/flags.png`)"></div>
+                    <div class="b--motion-b" v-lazy:background-image="require(`@/assets/test_sprites/flags_left.png`)"></div>
+              </div>
+               <div class="f--col-12">
+                    <!-- flags -->
+                    <div class="b--motion-c" v-lazy:background-image="require(`@/assets/test_sprites/flags_right.png`)"></div>
               </div>
 
-               <div class="f--row-12">
+               <div class="f--col-12">
                     <!-- blink -->
-                    <div class="b--motion-d" v-lazy:background-image="require(`@/assets/test_sprites/blink.png`)"></div>
+                    <div class="b--motion-d" v-lazy:background-image="require(`@/assets/test_sprites/blink_1a.png`)"></div>
               </div>
 
-               <div class="f--row-12">
+               <div class="f--col-12">
                     <!-- plant wind 1 -->
                     <div class="b--motion-e" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_1.png`)"></div>
               </div>
 
-               <div class="f--row-12">
-                    <!-- plant wind 2 -->
-                    <div class="b--motion-g" v-lazy:background-image="require(`@/assets/test_sprites/plant_test.png`)"></div>
+               <div class="f--col-12">
+                    <!-- fisherman -->
+                    <div class="b--motion-f" v-lazy:background-image="require(`@/assets/test_sprites/fisherman.png`)"></div>
               </div>
 
-                <div class="f--row-12">
-                    <!-- blink 2 -->
-                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/test_sprites/blink2.png`)"></div>
+               <div class="f--col-12">
+                    <!-- plant wind 2 -->
+                    <div class="b--motion-g" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_2.png`)"></div>
+              </div>
+
+                <div class="f--col-12">
+                    <!-- blink 2a -->
+                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/test_sprites/blink_2a.png`)"></div>
                 </div>
 
-                <div class="f--row-12">
+                <div class="f--col-12">
                     <!-- plant wind 3 -->
                     <div class="b--motion-i" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_3.png`)"></div>
               </div>
 
-              <div class="f--row-12">
+              <div class="f--col-12">
                     <!-- bear -->
                     <div class="b--motion-j" v-lazy:background-image="require(`@/assets/test_sprites/blink3.png`)"></div>
               </div>
 
-              <div class="f--row-12">
-                    <!-- lines -->
+              <div class="f--col-12">
+                    <!-- lines, also b--motion-l -->
                     <div class="b--motion-k" v-lazy:background-image="require(`@/assets/test_sprites/lines.png`)"></div>
               </div>
               
-              <div class="f--row-12">
+              <div class="f--col-12">
                     <!-- plant water 1 -->
                     <div class="b--motion-m" v-lazy:background-image="require(`@/assets/test_sprites/plant_water_1.png`)"></div>
               </div>
 
-               <div class="f--row-12">
+               <div class="f--col-12">
                     <!-- plant water 2 -->
                     <div class="b--motion-n" v-lazy:background-image="require(`@/assets/test_sprites/plant_water_2.png`)"></div>
               </div>
 
-               <div class="f--row-12">
-                    <!-- flags -->
-                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/test.png`)"></div>
+               <div class="f--col-12">
+                    <!-- arrow -->
+                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
               </div>
+
+              <div class="f--col-12">
+                    <!-- blink 1b -->
+                    <div class="b--motion-p" v-lazy:background-image="require(`@/assets/test_sprites/blink_1b.png`)"></div>
+              </div>
+
+              <div class="f--col-12">
+                    <!-- blink 2b -->
+                    <div class="b--motion-q" v-lazy:background-image="require(`@/assets/test_sprites/blink_2b.png`)"></div>
+              </div>
+
           </div>
       </div>
   </div>
@@ -79,6 +99,7 @@ export default {
     }
 
     .b--motion-a {
+        position: relative;
         z-index: 3;
         width: 150px;
         height: 150px;
@@ -99,50 +120,84 @@ export default {
         }
     }
 
-    .b--motion-c {
+    .b--motion-b {
+        position: relative;
         z-index: 3;
-        width: 650px;
-        height: 600px;
-        animation-name: motionC;
-        animation-duration: 1.45s;
-        animation-timing-function: steps(93);
+        width: 600px;
+        height: 550px;
+        animation-name: motionB;
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
+    }
+    @keyframes motionB {
+        from {
+            background-position: 0px;
+        } 
+        to {
+            background-position: -57600px;
+        }
+    }
+
+    .b--motion-c {
+        position: relative;
+        z-index: 3;
+        width: 600px;
+        height: 550px;
+        animation-name: motionC;
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
+        animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionC {
         from {
             background-position: 0px;
-        }
+        } 
         to {
-            background-position: -60450px;
+            background-position: -57600px;
         }
     }
 
     .b--motion-d {
+        position: relative;
         z-index: 3;
-        width: 1163px;
-        height: 768px;
+        width: 100px;
+        height: 100px;
         animation-name: motionD;
-        animation-duration: 1.24s;
-        animation-timing-function: steps(72);
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionD {
         from {
             background-position: 0px;
         }
         to {
-            background-position: -83736px;
+            background-position: -9600px;
         }
     }
 
     .b--motion-e {
+        position: relative;
         z-index: 3;
         width: 513px;
         height: 758px;
         animation-name: motionE;
-        animation-duration: 1.18s;
+        animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionE {
         from {
@@ -153,7 +208,30 @@ export default {
         }
     }
 
+    .b--motion-f {
+        position: relative;
+        z-index: 3;
+        width: 600px;
+        height: 700px;
+        animation-name: motionF;
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
+        animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
+    }
+    @keyframes motionF {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: -57600px;
+        }
+    }
+
     .b--motion-g {
+        position: relative;
         z-index: 3;
         width: 387px;
         height: 742px;
@@ -161,6 +239,9 @@ export default {
         animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionG {
         from {
@@ -172,24 +253,29 @@ export default {
     }
 
      .b--motion-h {
+        position: relative;
         z-index: 3;
-        width: 1284px;
-        height: 720px;
+        width: 100px;
+        height: 100px;
         animation-name: motionH;
-        animation-duration: 1.24s;
-        animation-timing-function: steps(72);
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionH {
         from {
             background-position: 0px;
         }
         to {
-            background-position: -92448px;
+            background-position: -9600px;
         }
     }
 
     .b--motion-i {
+        position: relative;
         z-index: 3;
         width: 296px;
         height: 353px;
@@ -197,6 +283,9 @@ export default {
         animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionI {
         from {
@@ -208,6 +297,7 @@ export default {
     }
 
     .b--motion-j {
+        position: relative;
         z-index: 3;
         width: 529px;
         height: 299px;
@@ -215,6 +305,9 @@ export default {
         animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionJ {
         from {
@@ -226,24 +319,29 @@ export default {
     }
 
     .b--motion-k {
+        position: relative;
         z-index: 3;
-        width: 55px;
+        width: 60px;
         height: 155px;
         animation-name: motionK;
         animation-duration: 2s;
         animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionK {
         from {
             background-position: 0px;
         }
         to {
-            background-position: -5280px;
+            background-position: -5760px;
         }
     }
 
     .b--motion-m {
+        position: relative;
         z-index: 3;
         width: 180px;
         height: 224px;
@@ -251,6 +349,9 @@ export default {
         animation-duration: 1.32s;
         animation-timing-function: steps(80);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionM {
         from {
@@ -262,6 +363,7 @@ export default {
     }
 
     .b--motion-n {
+        position: relative;
         z-index: 3;
         width: 200px;
         height: 227px;
@@ -269,6 +371,9 @@ export default {
         animation-duration: 1.32s;
         animation-timing-function: steps(80);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionN {
         from {
@@ -280,20 +385,68 @@ export default {
     }
 
     .b--motion-o {
+        position: relative;
         z-index: 3;
-        width: 695px;
-        height: 544px;
+        width: 500px;
+        height: 350px;
         animation-name: motionO;
-        animation-duration: 1.24s;
-        animation-timing-function: steps(72);
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
         animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
     }
     @keyframes motionO {
         from {
             background-position: 0px;
         }
         to {
-            background-position: -50040px;
+            background-position: -48000px;
+        }
+    }
+
+    .b--motion-p {
+        position: relative;
+        z-index: 3;
+        width: 100px;
+        height: 100px;
+        animation-name: motionP;
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
+        animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
+    }
+    @keyframes motionP {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: -9600px;
+        }
+    }
+
+     .b--motion-q {
+        position: relative;
+        z-index: 3;
+        width: 100px;
+        height: 100px;
+        animation-name: motionQ;
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
+        animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
+    }
+    @keyframes motionQ {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: -9600px;
         }
     }
 </style>

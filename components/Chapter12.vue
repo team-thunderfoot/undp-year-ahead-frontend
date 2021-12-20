@@ -1,11 +1,23 @@
 <template>
-    <section class="b--page-a__item" id="Scene12" v-if="chapter">
+    <section class="b--page-a__item b--chapter12-a" id="Scene12" ref="Scene12" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-12/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <h3>chapter 12</h3>
+                <!-- chapter title -->
+                <div class="b--chapter12-a__content">
+                    <v-card-f 
+                        :title="chapter.title"
+                        :description="chapter.description"
+                        :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
+                        cardACustomClass="b--card-a--second"
+                    />
+                </div>
+                <!-- info chart -->
+                <div class="b--chapter12-a__content b--chapter12-a__content--second">
+                    <v-info-chapter :info="chapter"/>
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png">        
@@ -16,7 +28,21 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
+
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
+    mixins: [Parallax,Animation],
+    components:{
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter
+    },
     data:()=>{
 		return{
             totalContent: 2,
@@ -24,47 +50,31 @@ export default {
             chapter: null
 		}
 	},
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterTwelve"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
-                "description" : description['${this.lang}']
+                "description" : description['${this.lang}'],
+                
+                "tooltip_label" : tooltip_label['${this.lang}'],
+                "tooltip_link" : tooltip_link['${this.lang}'],
+                "tooltip_date" : tooltip_date['${this.lang}']       
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-    
         },
         handleLoad(){
             this.contentLoaded++;
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection6 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene12",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene12").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene12").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '12'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 12})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '12'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 12})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 12,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             })
         }
     },
@@ -75,6 +85,11 @@ export default {
                 $nuxt.$emit('assetLoaded');
                 this.animate()
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                this.animate();
+            } 
         }
     },
     created(){

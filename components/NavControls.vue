@@ -84,7 +84,6 @@ export default {
                         this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
                     }
                     $nuxt.$emit('navIsLoaded');
-                    
                     this.$refs.prev.style.pointerEvents = "none";
                     this.$refs.next.style.pointerEvents = "none";
                 },
@@ -136,8 +135,10 @@ export default {
         },
     },
     mounted(){
-        this.currentItemMenu  = this.currentItem;
-        this.goToChapter();
+        if(process.client){
+            this.currentItemMenu  = this.currentItem;
+            this.goToChapter();
+        }
     }
 }
 </script>

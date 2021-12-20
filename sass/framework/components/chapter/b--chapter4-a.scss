@@ -1,40 +1,66 @@
 .b--chapter4-a {
-
-    .b--ss-a {
-        // bigger z-index to be shown above ft items
-        &__content {
-            z-index: 10;
-        }
-    }
-
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
     &__content {
-        // cards
-        position: absolute;
-        bottom: 17.99%;
-        left: 3.79%;
-        width: 23.79%;
-        @include make-position-a();
-        @media all and ($viewport-type: $tabletm) {
-            width: 100%;
-        }
-
-        // quote
-        &--second {
-            bottom: 58.72%;
-            left: 75.32%;
-            width: 16.91%;
-            @include make-position-a();
-            max-height: calc(100vh - 55.08vh - $measure * 4);
-        }
+      z-index: 10;
     }
-    // tent
-    &__artwork {
-        position: absolute;
-        width: 23.05%;
-        left: 70.61%;
-        bottom: -0.5%;
+  }
+
+  &__content {
+    // cards
+    position: absolute;
+    bottom: 18.99%;
+    left: 5.1%;
+    width: 21.55%;
+    @include make-position-a();
+    @media all and ($viewport-type: $tabletm) {
+      width: 100%;
     }
 
+    // quote
+    &--second {
+      // bottom: 58.72%;
+      top: 13%;
+      left: 75.32%;
+      width: 16.91%;
+      @include make-position-a();
+      max-height: calc(100vh - 55.08vh - $measure * 4);
+    }
 
-    
+    // move card f head and bottom legs
+    .b--card-f {
+      &__hd {
+        margin: 0 auto $measure * 3;
+        &:before,
+        &:after {
+          height: $measure * 3;
+        }
+      }
+      &__bd {
+        &:before {
+          left: 25%;
+        }
+        &:after {
+          right: 25%;
+        }
+      }
+    }
+  }
+  &__artwork{
+    position:absolute;
+  }
+  // tent
+  // &__artwork {
+  //   position: absolute;
+  //   &--third{
+  //     top:0 ;
+  //     left: 0;
+  //     max-width: 100%;
+  //   }
+  //   &--fourth{
+  //     bottom:0 ;
+  //     left: 0;
+  //     max-width: 100%;
+  //   }
+  // }
 }

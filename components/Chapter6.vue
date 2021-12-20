@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item" id="Scene6" v-if="chapter">
+    <section class="b--page-a__item b--chapter6-a" id="Scene6" ref="Scene6" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-6/front.png`)" alt="front" />
@@ -10,7 +10,8 @@
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
-                        customClass="b--card-f--third"
+                        :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
+                        cardACustomClass="b--card-a--second"
                     />
                 </div>
                 <!-- second position element, wheel -->
@@ -42,7 +43,14 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import QuoteA from '@/components/quote/Quote';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
+    mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
         'v-quote-a':QuoteA
@@ -54,6 +62,7 @@ export default {
             chapter: null
 		}
 	},
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -68,61 +77,17 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-            // this.$nextTick(() => {
-            //     // if we want to animate something later 
-            //     var tlSection6 = this.$gsap.timeline({
-            //         scrollTrigger: {
-            //             trigger: "#Scene6",
-            //             scrub: 0,
-            //             start: () =>
-            //                 "top top-=" +
-            //                 (document.querySelector("#Scene6").offsetLeft - window.innerWidth),
-            //             end: () => "+=" + document.querySelector("#Scene6").offsetWidth,
-            //             onEnter: () => {
-            //                 // emits on in Story.vue
-            //                 // window.location.href =  this.$route.path  + '#Scene6';
-            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene6'})
-            //                 $nuxt.$emit('changeCurrent', { 'item'  : 6})
-            //             },
-            //             onEnterBack: () => {
-            //                 // emits on in Story.vue
-            //                 // window.location.href =  this.$route.path  + '#Scene6';
-            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene6'})
-            //                 $nuxt.$emit('changeCurrent', { 'item'  : 6})
-            //             }
-            //         }
-            //     });
-            // })
         },
         handleLoad(){
             this.contentLoaded++;
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection6 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene6",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene6").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene6").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '6'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 6})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '6'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 6})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 6,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             })
         }
     },
@@ -133,6 +98,11 @@ export default {
                 $nuxt.$emit('assetLoaded');
                 this.animate()
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                this.animate();
+            } 
         }
     },
     created(){

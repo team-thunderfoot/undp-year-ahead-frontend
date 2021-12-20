@@ -11,6 +11,9 @@
       bottom: 46.87%;
       left: 27.15%;
       width: 8.21%;
+      @media all and ($viewport-type: $mobile) {
+        width: 10%;
+      }
     }
     // wheel
     &--third {
@@ -25,12 +28,38 @@
   &__artwork {
     position: absolute;
     left: 0%;
-    top: 9.53%;
+    top: 10.03%;
+    width: 17.93%;
+    height: 52.83vh;
+    max-height: 52.83vh;
     z-index: 1;
     //right group
     &--second {
-      left: 79.94%;
-      top: 9.53%;
+      left: 78.74%;
+      top: 10.03%;
+      width: 17.65%;
+      height: 52.83vh;
+      max-height: 52.83vh;
+    }
+  }
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
+    &__content {
+      z-index: 10;
+    }
+  }
+  // mobile adjustment of card-f
+  .b--card-f {
+    &__hd {
+      @media all and ($viewport-type: $mobile) {
+        margin: 0 auto $measure * 3;
+      }
+      &:before,
+      &:after {
+        @media all and ($viewport-type: $mobile) {
+          height: $measure * 3;
+        }
+      }
     }
   }
 }

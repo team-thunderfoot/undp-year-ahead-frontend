@@ -9,6 +9,7 @@
     border: 1.5vh solid map-get($color-options, h);
     max-width: none !important;
     width: calc(100vw - 60px);
+    height: auto;
   }
   &::before,
   &::after {
@@ -40,34 +41,27 @@
     justify-content: center;
     background: $gradient-d;
     height: 100%;
-    &__content {
-      width: calc(37.97% + $measure * 20);
-      padding: 0 $measure * 10;
-      @media all and ($viewport-type: $tabletm) {
-        width: calc(50% + $measure * 20);
-      }
-      @media all and ($viewport-type: $mobile) {
-        width: calc(87% + $measure * 4);
-        @include make-position-a();
-        padding: 0 $measure * 2;
+    padding: 11%;
+    @media all and ($viewport-type: $tabletm) {
+      padding: 5%;
+    }
+    .b--quote-a {
+      &__content {
+        &.b--content-a * {
+          font-weight: 600;
+        }
       }
     }
   }
-  &__media-wrapper {
+  &__artwork {
     position: absolute;
-    top: 55px;
-    left: calc(53.89% + 3.9vh);
-    width: 66.95%;
+    bottom: 0;
+    right: 10.76%;
+    width: 13.18%;
+    height: 6.29%;
+    background-color: map-get($color-options, u);
     @media all and ($viewport-type: $tabletm) {
-      left: calc(62% + 3.9vh);
-    }
-    @media all and ($viewport-type: $mobile) {
-      left: calc(80% + 4vh);
-      width: 65%;
-      top: 72px;
-    }
-    &__media {
-      display: block;
+      display: none;
     }
   }
 }

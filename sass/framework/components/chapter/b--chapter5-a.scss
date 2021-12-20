@@ -2,14 +2,58 @@
   &__content {
     position: absolute;
     bottom: 13.79%;
-    left: 5.32%;
-    width: 23.75%;
+    left: 4.32%;
+    width: 21.95%;
     @include make-position-a();
     &--second {
       bottom: 47.26%;
       left: 31.45%;
       width: 9.71%;
       @include make-position-a();
+      @media all and ($viewport-type: $mobile) {
+        left: 28.85%;
+        width: 12.61%;
+      }
+    }
+    // some adjust for mobile
+    .b--card-f {
+      &__hd {
+        @media all and ($viewport-type: $mobile) {
+          margin: 0 auto $measure * 3;
+          max-width: 100% !important;
+        }
+        &:before,
+        &:after {
+          @media all and ($viewport-type: $mobile) {
+            height: $measure * 3;
+          }
+        }
+      }
+      &__bd {
+        .b--card-a {
+          @media all and ($viewport-type: $mobile) {
+            padding: $measure * 3 5%;
+          }
+        }
+      }
     }
   }
+  // women
+  &__media {
+    position: absolute;
+    left: 46.47%;
+    bottom: -1.9%;
+    width: 43%;
+  }
+  // first blink animation
+  &__artwork {
+    position: absolute;
+    bottom: 58%;
+    left: 52.1%;
+    // second blink animation
+    &--second {
+      bottom: 57.1%;
+      left: 82.1%; 
+    }   
+  } 
 }

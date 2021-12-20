@@ -4,6 +4,9 @@
   width: 200px;
   right: 0;
   z-index: 100;
+  @media all and ($viewport-type: $mobile) {
+    width: calc( 100% - 45px);
+  }
   &__wrapper {
     list-style: none;
     display: flex;
@@ -34,27 +37,42 @@
       background-color: map-get($colorbg-options , h );
       position: absolute;
       bottom: 0;
-      margin-right: 5px;
+      margin-right: 10px;
       z-index: 10000;
       height: 45px;
       width: 45px;
       border-radius: 50%;
+      transition: all $time-a ease-in-out;
+      &:last-child{
+        margin-right: 0px;
+      }
       &--next {
           left: 60%;
+          @media all and ($viewport-type: $mobile) {
+            left: 83.5%;
+            margin-right: 0px;
+          }
           img {
-            left: 16px;
+            left: 18px;
             top: 12px;
             position: absolute;
           }
           
       }
-      &--prev{
-          right: 60%;
+      &--prev {
+          left: 32%;
+          @media all and ($viewport-type: $mobile) {
+            left: 8%;
+          }
           img {
-            left: 16px;
+            left: 14px;
             top: 12px;
             position: absolute;
           }
+          
+      }
+      &:hover{
+        background-color:#55606E;
       }
   }
 }
@@ -62,6 +80,6 @@
 
 .disabled {
   pointer-events: none;
-  background-color: red;
+  background-color: rgba(241, 205, 186, 0.8);
   opacity: .6;
 }

@@ -1,3 +1,24 @@
 .b--chapter12-a {
-    
+  &__content {
+    position: absolute;
+    bottom: 26.11%;
+    left: 17.14%;
+    width: 19.05%;
+    @include make-position-a();
+    &--second {
+      bottom: 38.96%;
+      left: 38.9%;
+      width: 9.51%;
+      @include make-position-a();
+      @media all and ($viewport-type: $mobile) {
+        width: 12.21%;
+      }
+    }
+  }
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
+    &__content {
+      z-index: 10;
+    }
+  }
 }

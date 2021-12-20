@@ -1,8 +1,8 @@
 <template>
-    <section class="b--page-a__item b--chapter3-a" id="Scene3" v-if="chapter">
+    <section class="b--page-a__item b--chapter3-a" id="Scene3" ref="Scene3" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
+                <img ref="parallax-3-ft" v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- flags left -->
@@ -18,6 +18,8 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
+                        cardACustomClass="b--card-a--second"
+                        :customClass="'b--card-f--'+ `${this.lang}`"
                     />
                 </div>
 
@@ -40,10 +42,11 @@
                         require(`@/assets/test_sprites/flags_right.png`)
                         ">
                     </div>
+                    
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-3/back.png">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-3/back.png" alt="back">        
             </div>
         </div>
     </section>
@@ -54,11 +57,14 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
-    components:{
-        'v-card-f':CardF,
-        'v-info-chapter' : InfoChapter
-    },
+    mixins: [Parallax,Animation],
     data:()=>{
 		return{
             totalContent: 2,
@@ -66,6 +72,11 @@ export default {
             chapter: null
 		}
 	},
+    props: ['scrollTween'],
+    components:{
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter
+    },
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -85,29 +96,11 @@ export default {
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection3 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene3",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene3").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene3").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene3';
-                            $nuxt.$emit('changeURL', { 'url'  : '3'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 3})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene3';
-                            $nuxt.$emit('changeURL', { 'url'  : '3'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 3})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 3,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             })
         }
     },
@@ -116,8 +109,25 @@ export default {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
-                this.animate();
+                // this.animate();
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                var motion = [
+                    {obj:this.$refs['parallax-3-ft'], intensity:.5},
+                ]
+                // motion.forEach(item => {
+                //     this.parallaxMove({
+                //         el: item.obj,
+                //         intensity:item.intensity,
+                //         duration: this.$refs['Scene3'].offsetWidth,
+                //         containerAnimation:this.scrollTween,
+                //         scrub:1,
+                //     })  
+                // });
+                this.animate();
+            } 
         }
     },
     created(){

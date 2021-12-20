@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter13-a" id="Scene13" v-if="chapter">
+    <section class="b--page-a__item b--chapter13-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second">
@@ -10,11 +10,22 @@
                 <img v-lazy="require(`@/assets/img/chapter-13/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
-          
-                
+                <!-- first position element, card -->
+                <div class="b--chapter13-a__content">
+                    <v-card-f 
+                        :title="chapter.title" 
+                        :description="chapter.description"
+                        :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
+                        cardACustomClass="b--card-a--second"
+                    />
+                </div>         
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-13/back.png">        
+                <img class="b--ss-a__bg-items__artwork" 
+                @load="handleLoad" 
+                @error="handleLoad" 
+                src="@/assets/img/chapter-13/back.png"
+                >        
             </div>
         </div>
     </section>
@@ -22,7 +33,21 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity';
+import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
+import CardF from '@/components/cards/CardF';
+
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
+    mixins: [Parallax,Animation],
+    components:{
+        SanityContent,
+        'v-card-f':CardF,
+    }, 
     data:()=>{
 		return{
             totalContent: 2,
@@ -30,47 +55,27 @@ export default {
             chapter: null
 		}
 	},
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterThirdteen"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
                 "description" : description['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-    
         },
         handleLoad(){
             this.contentLoaded++;
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection6 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene13",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene13").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene13").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '13'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 13})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '13'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 13})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 13,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             })
         }
     },
@@ -81,6 +86,11 @@ export default {
                 $nuxt.$emit('assetLoaded');
                 this.animate()
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                this.animate();
+            } 
         }
     },
     created(){

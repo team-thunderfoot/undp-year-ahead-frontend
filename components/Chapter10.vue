@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item" id="Scene10" v-if="chapter">
+    <section class="b--page-a__item b--chapter10-a" id="Scene10" ref="Scene10" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-10/front.png`)" alt="front" />
@@ -9,8 +9,11 @@
                 <div class="b--chapter10-a__content">
                     <v-card-f 
                         :title="chapter.title"
-                        :description="chapter.content"
-                        customClass="b--card-f--third"
+                        :description="chapter.description"
+                        :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
+                        :loadMoreBtn="chapter.load_more_button"
+                        :loadMoreURL="chapter.load_more_url"
+                        :loadMore="true"
                     />
                 </div>
             </div>
@@ -24,12 +27,17 @@
 <script>
 import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
-import InfoChapter from '@/components/infochapter/Infochapter';
+
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
 
 export default {
+    mixins: [Parallax,Animation],
     components:{
-        'v-card-f':CardF,
-        'v-info-chapter' : InfoChapter
+        'v-card-f':CardF
     },
     data:()=>{
 		return{
@@ -38,47 +46,29 @@ export default {
             chapter: null
 		}
 	},
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterTwo"][0]{
+            const query_content = groq`*[_type == "chapterTen"][0]{
                 "title" : title['${this.lang}'],
-                "content" : content['${this.lang}'],
-                "description" : description['${this.lang}']
+                "description" : description['${this.lang}'],
+                "load_more_button" : load_more_button['${this.lang}'],
+                "load_more_url" : load_more_url['${this.lang}']
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-    
         },
         handleLoad(){
             this.contentLoaded++;
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection6 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene10",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene10").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene10").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '10'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 10})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene6';
-                            $nuxt.$emit('changeURL', { 'url'  : '10'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 10})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 10,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             })
         }
     },
@@ -89,6 +79,11 @@ export default {
                 $nuxt.$emit('assetLoaded');
                 this.animate()
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                this.animate();
+            } 
         }
     },
     created(){

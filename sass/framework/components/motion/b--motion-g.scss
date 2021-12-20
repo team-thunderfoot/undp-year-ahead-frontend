@@ -1,0 +1,21 @@
+.b--motion-g {
+  position: relative;
+  z-index: 3;
+  width: 387px;
+  height: 742px;
+  animation-name: motionG;
+  animation-duration: 2s;
+  animation-timing-function: steps(96);
+  animation-iteration-count: infinite;
+  @media all and ($viewport-type: $tabletl) {
+    transform: translate(-25%, -25%) scale(0.5);
+  }
+}
+@keyframes motionG {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -37152px;
+  }
+}

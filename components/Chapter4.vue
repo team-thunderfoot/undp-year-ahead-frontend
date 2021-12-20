@@ -1,14 +1,11 @@
 <template>
-    <section class="b--page-a__item b--chapter4-a" id="Scene4" v-if="chapter">
+    <section class="b--page-a__item b--chapter4-a" id="Scene4" ref="Scene4" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img 
-                v-lazy="require(`@/assets/img/chapter-4/front.png`)"
-                class="b--ss-a__ft-items__artwork"
-                @load="handleLoad"
-                @error="handleLoad" 
-                alt="front" 
-                />
+                
+                <img v-lazy="require(`@/assets/img/chapter-4/front.png`)"  class="b--chapter4-a__artwork" alt="front" />
+                <img class="b--chapter4-a__artwork" ref="parallax-ft" src="@/assets/img/chapter-4/front-parallax.png">
+                <img v-lazy="require(`@/assets/img/chapter-4/front-2.png`)" class="b--ss-a__ft-items__artwork b--chapter4-a__artwork"  alt="Tree" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -16,7 +13,7 @@
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
-                        customClass="b--card-f--second"
+                        :customClass="'b--card-f--second b--card-f--'+ `${this.lang}`"
                     />
                 </div>
                 <!-- second position element, quote -->
@@ -26,19 +23,10 @@
                         customClass="b--quote-a--second"
                     />
                 </div>
-                <!-- third position element, tent -->
-                <div class="b--chapter4-a__artwork">
-                <img 
-                    v-lazy="require(`@/assets/img/chapter-4/tent.svg`)"
-                    class="b--chapter4-a__artwork__media"
-                    @load="handleLoad"
-                    @error="handleLoad" 
-                    alt="tent" 
-                />
-                </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.png">        
+                <img class="b--chapter4-a__artwork" ref="parallax-bg" src="@/assets/img/chapter-4/back-parallax.png" alt="">  
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.jpg">        
             </div>
         </div>
     </section>
@@ -49,8 +37,15 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import QuoteA from '@/components/quote/Quote';
 
+// import Parallax from '@/motion/Parallax';
+import Vue from 'vue';
+import Parallax from '@/mixins/Parallax.js';
+import Animation from '@/mixins/Animation.js';
+Vue.use(Parallax)
+
 export default {
-        components:{
+    mixins: [Parallax,Animation],
+    components:{
         'v-card-f':CardF,
         'v-quote-a':QuoteA
     },
@@ -61,6 +56,7 @@ export default {
             chapter: null
 		}
 	},
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -76,61 +72,17 @@ export default {
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;
-
-            // this.$nextTick(() => {
-            //     // if we want to animate something later 
-            //     var tlSection4 = this.$gsap.timeline({
-            //         scrollTrigger: {
-            //             trigger: "#Scene4",
-            //             scrub: 0,
-            //             start: () =>
-            //                 "top top-=" +
-            //                 (document.querySelector("#Scene4").offsetLeft - window.innerWidth),
-            //             end: () => "+=" + document.querySelector("#Scene4").offsetWidth,
-            //             onEnter: () => {
-            //                 // emits on in Story.vue
-            //                 // window.location.href =  this.$route.path  + '#Scene4';
-            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene4'})
-            //                 $nuxt.$emit('changeCurrent', { 'item'  : 4})
-            //             },
-            //             onEnterBack: () => {
-            //                 // emits on in Story.vue
-            //                 // window.location.href =  this.$route.path  + '#Scene4';
-            //                 $nuxt.$emit('changeURL', { 'url'  : 'Scene4'})
-            //                 $nuxt.$emit('changeCurrent', { 'item'  : 4})
-            //             }
-            //         }
-            //     });
-            // })
         },
         handleLoad(){
             this.contentLoaded++;
         },
         animate(){
             this.$nextTick(() => {
-                // if we want to animate something later 
-                var tlSection4 = this.$gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#Scene4",
-                        scrub: 0,
-                        start: () =>
-                            "top top-=" +
-                            (document.querySelector("#Scene4").offsetLeft - window.innerWidth),
-                        end: () => "+=" + document.querySelector("#Scene4").offsetWidth,
-                        onEnter: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene4';
-                            $nuxt.$emit('changeURL', { 'url'  : '4'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 4})
-                        },
-                        onEnterBack: () => {
-                            // emits on in Story.vue
-                            // window.location.href =  this.$route.path  + '#Scene4';
-                            $nuxt.$emit('changeURL', { 'url'  : '4'})
-                            $nuxt.$emit('changeCurrent', { 'item'  : 4})
-                        }
-                    }
-                });
+                this.startAnimation({
+                    sceneID : 4,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             })
         }
     },
@@ -139,8 +91,26 @@ export default {
             if(newValue == this.totalContent ) {
                 // emits on in Story.vue
                 $nuxt.$emit('assetLoaded');
-                this.animate();
+                // this.animate();
             }
+        },
+        scrollTween(newValue, oldValue){
+            if (newValue ) {
+                var motion = [
+                    {obj:this.$refs['parallax-bg'], intensity:.3},
+                    {obj:this.$refs['parallax-ft'], intensity:.5},
+                ];
+                motion.forEach(item => {
+                    this.parallaxMove({
+                        el: item.obj,
+                        intensity:item.intensity,
+                        duration: this.$refs['Scene4'].offsetWidth,
+                        containerAnimation:this.scrollTween,
+                        scrub:1,
+                    })  
+                });
+                this.animate();
+            } 
         }
     },
     created(){

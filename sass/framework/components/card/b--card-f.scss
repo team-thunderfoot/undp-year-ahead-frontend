@@ -64,7 +64,6 @@
       background: $gradient-n;
       background-color: map-get($color-options, i);
       margin: 0 auto;
-      padding: $measure * 6 8%;
       &::before {
         content: '';
         position: absolute;
@@ -81,7 +80,7 @@
   // bd smaller than title
   &--second {
     .b--card-a {
-      max-width: 80%;
+      max-width: 85%;
     }
   }
   // title is bigger or same than bd
