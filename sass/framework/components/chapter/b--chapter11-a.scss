@@ -35,25 +35,42 @@
   &__artwork {
     position: absolute;
     bottom: 5.736%;
-    left: 90.5%; 
-    width: 7.06%;   
+    left: 90.5%;
+    width: 7.06%;
+    &--second {
+      bottom: 10.736%;
+      left: 10.5%;
+      width: 7.06%;
+    }
+    &--third {
+      bottom: 10.736%;
+      left: 10.5%;
+      width: 7.06%;
+    }
+    &--fourth {
+      bottom: 10.736%;
+      left: 10.5%;
+      width: 7.06%;
+    }
   }
   // move card f head and bottom legs
   .b--card-f {
     &__hd {
-      margin: 0 auto $measure*4;
-      &:before, &:after {
-          height: $measure*4;
+      margin: 0 auto $measure * 4;
+      &:before,
+      &:after {
+        height: $measure * 4;
       }
     }
     &__bd {
       &:before {
-          left: 25%;
+        left: 25%;
       }
       &:after {
-          right: 25%;
+        right: 25%;
       }
-      &:before, &:after {
+      &:before,
+      &:after {
         height: 19.5vh;
       }
     }

@@ -1,11 +1,9 @@
 <template>
     <section class="b--page-a__item b--chapter4-a" id="Scene4" ref="Scene4" v-if="chapter">
         <div class="b--ss-a"> 
-            <div class="b--ss-a__ft-items">
-                
-                <img v-lazy="require(`@/assets/img/chapter-4/front.png`)"  class="b--chapter4-a__artwork" alt="front" />
+            <div class="b--ss-a__ft-items">                
                 <img class="b--chapter4-a__artwork" ref="parallax-ft" src="@/assets/img/chapter-4/front-parallax.png">
-                <img v-lazy="require(`@/assets/img/chapter-4/front-2.png`)" class="b--ss-a__ft-items__artwork b--chapter4-a__artwork"  alt="Tree" />
+                <img v-lazy="require(`@/assets/img/chapter-4/front.png`)" class="b--ss-a__ft-items__artwork b--chapter4-a__artwork"  alt="Tree" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -97,8 +95,8 @@ export default {
         scrollTween(newValue, oldValue){
             if (newValue ) {
                 var motion = [
-                    {obj:this.$refs['parallax-bg'], intensity:.1},
-                    {obj:this.$refs['parallax-ft'], intensity:.15},
+                    {obj:this.$refs['parallax-bg'], intensity:-2.0},
+                    {obj:this.$refs['parallax-ft'], intensity:2.5},
                 ];
                 motion.forEach(item => {
                     this.parallaxMove({
