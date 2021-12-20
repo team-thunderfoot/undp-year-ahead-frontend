@@ -1,7 +1,8 @@
 <template>
     <div class="b--quote-a" :class="customClass">
         <div class="b--quote-a__content">
-            {{ chapter.quote }}
+            <!-- {{ chapter.quote }} -->
+            <SanityContent :blocks="chapter.quote" />
         </div>
         <div class="b--quote-a__meta">
             <a :href="chapter.quote_author_link" target="_blank" rel="noopener noreferrer" class="b--quote-a__meta__title">{{ chapter.quote_author }}</a>
