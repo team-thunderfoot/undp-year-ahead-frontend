@@ -15,7 +15,7 @@
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
-                        customClass="b--card-f--third"
+                        :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
                         cardACustomClass="b--card-a--second"
                     />
                 </div>         
