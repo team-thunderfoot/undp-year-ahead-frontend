@@ -78,7 +78,7 @@
   &--fr & {
     &__wrapper {
       &__title {
-        font-size: clamp(1rem, 4.785vh, 2.16rem);
+        font-size: clamp(1rem, 4.785vh, 1.96rem);
         @media all and ($viewport-type: $laptop) {
           font-size: clamp(1.25rem, 6.3vw, 1.96rem);
         }

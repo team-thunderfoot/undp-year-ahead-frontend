@@ -37,20 +37,19 @@
     bottom: 5.736%;
     left: 90.5%;
     width: 7.06%;
+    // blink
     &--second {
-      bottom: 10.736%;
-      left: 10.5%;
+      bottom: 63.536%;
+      left: 23.95%;
       width: 7.06%;
+      height: 10%;
     }
+    // blink
     &--third {
-      bottom: 10.736%;
-      left: 10.5%;
+      bottom: 39.936%;
+      left: 47.65%;
       width: 7.06%;
-    }
-    &--fourth {
-      bottom: 10.736%;
-      left: 10.5%;
-      width: 7.06%;
+      height: 10%;
     }
   }
   // move card f head and bottom legs
