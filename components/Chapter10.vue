@@ -10,7 +10,7 @@
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
-                        customClass="b--card-f--third"
+                        :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
                         :loadMoreBtn="chapter.load_more_button"
                         :loadMoreURL="chapter.load_more_url"
                         :loadMore="true"
