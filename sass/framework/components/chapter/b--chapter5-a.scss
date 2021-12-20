@@ -48,8 +48,12 @@
   // first blink animation
   &__artwork {
     position: absolute;
-    bottom: 56.7%;
-    left: 51.7%; 
-    width: 7.06%;   
+    bottom: 58%;
+    left: 52.2%;
+    // second blink animation
+    &--second {
+      bottom: 57.1%;
+      left: 82.1%; 
+    }   
   } 
 }

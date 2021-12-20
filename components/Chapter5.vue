@@ -30,6 +30,15 @@
                 require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`)
                 "
             ></div>
+        </div>
+        <!-- second blink animation -->
+        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second">
+            <div
+                class="b--motion-p"
+                v-lazy:background-image="
+                require(`@/assets/img/chapter-5/blink-1B_spritesheet.png`)
+                "
+            ></div>
         </div>    
       </div>
       <div class="b--ss-a__bg-items">

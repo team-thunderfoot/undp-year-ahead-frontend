@@ -1,11 +1,11 @@
-.b--motion-d {
+.b--motion-p {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 3;
     width: 100px;
     height: 100px;
-    animation-name: motionD;
+    animation-name: motionP;
     animation-duration: 2s;
     animation-timing-function: steps(96);
     animation-iteration-count: infinite;
@@ -13,7 +13,7 @@
     //   transform: translate(-15%, 15%) scale(0.7);
     // }
   }
-  @keyframes motionD {
+  @keyframes motionP {
     from {
       background-position: 0px;
     }
