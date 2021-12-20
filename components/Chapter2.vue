@@ -103,19 +103,19 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                var motion = [
-                    {obj:this.$refs['parallax-2-ft'], intensity:.5},
-                ]
-                motion.forEach(item => {
-                    this.parallaxMove({
-                        el: item.obj,
-                        intensity:item.intensity,
-                        duration: this.$refs['Scene2'].offsetWidth,
-                        containerAnimation:this.scrollTween,
-                        scrub:1,
-                    })  
-                });
-                  this.animate();
+                // var motion = [
+                //     {obj:this.$refs['parallax-2-ft'], intensity:.5},
+                // ]
+                // motion.forEach(item => {
+                //     this.parallaxMove({
+                //         el: item.obj,
+                //         intensity:item.intensity,
+                //         duration: this.$refs['Scene2'].offsetWidth,
+                //         containerAnimation:this.scrollTween,
+                //         scrub:1,
+                //     })  
+                // });
+                this.animate();
             } 
         }
     },
