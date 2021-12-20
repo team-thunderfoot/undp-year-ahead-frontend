@@ -2,12 +2,10 @@
     <section class="b--page-a__item b--chapter4-a" id="Scene4" ref="Scene4" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img class="b--chapter4-a__artwork b--chapter4-a__artwork--fourth" ref="parallax-ft-1" src="@/assets/img/chapter-4/front-parallax.png" alt="">
-                <img 
-                    v-lazy="require(`@/assets/img/chapter-4/front.png`)"
-                    class="b--ss-a__ft-items__artwork"
-                    alt="front" 
-                />
+                
+                <img v-lazy="require(`@/assets/img/chapter-4/front.png`)"  class="b--chapter4-a__artwork" alt="front" />
+                <img class="b--chapter4-a__artwork" ref="parallax-ft" src="@/assets/img/chapter-4/front-parallax.png">
+                <img v-lazy="require(`@/assets/img/chapter-4/front-2.png`)" class="b--ss-a__ft-items__artwork b--chapter4-a__artwork"  alt="Tree" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -27,8 +25,8 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.jpg">  
-                <img class="b--chapter4-a__artwork b--chapter4-a__artwork--third" ref="parallax-bg-1" src="@/assets/img/chapter-4/back-parallax.png" alt="">      
+                <img class="b--chapter4-a__artwork" ref="parallax-bg" src="@/assets/img/chapter-4/back-parallax.png" alt="">  
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.jpg">        
             </div>
         </div>
     </section>
@@ -99,19 +97,9 @@ export default {
         scrollTween(newValue, oldValue){
             if (newValue ) {
                 var motion = [
-                    {obj:this.$refs['parallax-bg-1'], intensity:1},
-                    {obj:this.$refs['parallax-ft-1'], intensity:.5},
-                    {obj:this.$refs['parallax-ft-1'], intensity:.3},
-                ]
-                motion.forEach(item => {
-                    this.parallaxMove({
-                        el: item.obj,
-                        intensity:item.intensity,
-                        duration: this.$refs['Scene4'].offsetWidth,
-                        containerAnimation:this.scrollTween,
-                        scrub:1,
-                    })  
-                });
+                    {obj:this.$refs['parallax-bg'], intensity:.3},
+                    {obj:this.$refs['parallax-ft'], intensity:.5},
+                ];
                 motion.forEach(item => {
                     this.parallaxMove({
                         el: item.obj,
