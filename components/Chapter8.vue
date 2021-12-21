@@ -1,8 +1,12 @@
 <template>
     <section class="b--page-a__item b--chapter8-a" id="Scene8" ref="Scene8"  v-if="chapter">
         <div class="b--ss-a"> 
+            <div class="b--ss-a__artwork">
+                <img class="b--ss-a__artwork__media b--ss-a__artwork__media--right" src="@/assets/img/chapter-8/front_tree.png">
+            </div>
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-8/front.png`)" alt="front" />
+                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-8/front-parallax.png">
+                <img class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle" ref="parallax-ft" src="@/assets/img/chapter-8/middle-parallax.png">
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
@@ -38,7 +42,8 @@
                 </div>      
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-8/back.png">        
+                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-8/back-parallax.png" alt=""> 
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-8/back.png">       
             </div>
         </div>
     </section>

@@ -54,8 +54,12 @@
       height: 100vh;
     }
     &__parallax {
-      position:absolute;
+      position: absolute;
       height: 100%;
+      z-index: 4;
+      &--middle {
+        z-index: 2;
+      }
     }
   }
   &__artwork {
@@ -66,7 +70,7 @@
     height: 100%;
     width: 100%;
     pointer-events: none;
-    z-index: 1;
+    z-index: 10;
     &__media {
       position: absolute;
       top: 0;
