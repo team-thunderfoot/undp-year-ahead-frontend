@@ -34,11 +34,13 @@
                 </div>
                 <!-- card-i -->
                 <div class="b--chapter14-a__content b--chapter14-a__content--third">
-                    <v-card-i />
+                    <v-card-i
+                    :customClass="'b--card-i--'+ `${this.lang}`"
+                    />
                 </div>
                 <!-- social -->
                 <div class="b--chapter14-a__content b--chapter14-a__content--fourth">
-                    
+                    <v-social-a></v-social-a>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -53,7 +55,7 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import CardI from '@/components/cards/CardI';
 import QuoteA from '@/components/quote/Quote';
-
+import SocialA from '@/components/social/Social.vue';
 // import Parallax from '@/motion/Parallax';
 import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
@@ -65,7 +67,8 @@ export default {
     components:{
         'v-card-f':CardF,
         'v-card-i':CardI,
-        'v-quote-a':QuoteA
+        'v-quote-a':QuoteA,
+        'v-social-a':SocialA
     },
     data:()=>{
 		return{

@@ -1,6 +1,5 @@
 .b--chapter2-a {
-
-   // content has more z-index than ft items 
+  // content has more z-index than ft items
   .b--ss-a {
     &__content {
       z-index: 90;
@@ -21,11 +20,12 @@
     // tv
     &--second {
       bottom: 43%;
-      left: 48.24%;
+      // left: 48.24%;
+      left: 53.64%;
       width: 24.36%;
       height: 39.02%;
       @media all and ($viewport-type: $mobile) {
-        left: 50.7%;
+        left: 56.1%;
       }
     }
   }
@@ -33,31 +33,27 @@
     position: absolute;
     z-index: 150;
     bottom: 39.2%;
-    left: 42.01%;
+    // left: 42.01%;
+    left: 47.41%;
     height: 14.45vh;
     img {
       max-height: 100%;
     }
     &--second {
       bottom: 39.1%;
-      left: 72.91%;
+      // left: 72.91%;
+      left: 78.31%;
       height: 15.03vh;
-      @media all and ($viewport-type: $tabletl) {
-        // bottom: 39.2%;
-        left: 70%;
-      }
-      @media all and ($viewport-type: $mobile) {
-        left: 67.91%;
-      }
     }
   }
   // mobile adjustment of card-f
   @media all and ($viewport-type: $mobile) {
     .b--card-f {
       &__hd {
-        margin: 0 auto $measure*3;
-        &:before, &:after {
-            height: $measure*3;
+        margin: 0 auto $measure * 3;
+        &:before,
+        &:after {
+          height: $measure * 3;
         }
       }
     }

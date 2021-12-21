@@ -6,15 +6,19 @@
   &__wrapper {
     background: $gradient-l;
     padding: $measure * 5.5;
+    @media all and ($viewport-type: $laptop) {
+      padding: $measure*4;
+    }
     &__hd {
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: $measure * 4.5;
+      margin-bottom: $measure * 3;
       &__media-wrapper {
         max-width: 60px;
+        display: flex;
         &__media {
         }
       }

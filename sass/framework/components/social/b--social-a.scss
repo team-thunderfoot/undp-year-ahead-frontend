@@ -1,0 +1,17 @@
+.b--social-a {
+    text-align: center;
+    &__title {
+        @include make-font-f();
+        color: map-get($color-options , f );
+        margin-bottom: $measure;
+    }
+    &__list-group {
+        display: flex;
+        &__item {
+            margin-right: $measure;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
