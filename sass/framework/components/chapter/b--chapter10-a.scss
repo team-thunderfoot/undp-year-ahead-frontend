@@ -1,4 +1,19 @@
 .b--chapter10-a {
+  .b--ss-a {
+    &__artwork {
+      &__media {
+        &--left {
+          left: -21%;
+        }
+      }
+    }
+  }
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
+    &__content {
+      z-index: 10;
+    }
+  }
   &__content {
     // title
     position: absolute;
@@ -37,14 +52,15 @@
           }
         }
       }
-      // spanish card f corrections 
+      // spanish card f corrections
       &--es {
         .b--card-f {
           &__hd {
             max-width: 100%;
-            margin-bottom: $measure*2;
-            &:after, &:before {
-              height: $measure*2;
+            margin-bottom: $measure * 2;
+            &:after,
+            &:before {
+              height: $measure * 2;
             }
           }
         }
@@ -54,17 +70,20 @@
         .b--card-f {
           &__hd {
             max-width: 100%;
-            margin-bottom: $measure*2;
-            &:after, &:before {
-              height: $measure*2;
+            margin-bottom: $measure * 2;
+            &:after,
+            &:before {
+              height: $measure * 2;
             }
           }
           &__bd {
-            &:after, &:before {
+            &:after,
+            &:before {
               height: 10.72vh;
             }
             @media all and ($viewport-type: $laptop) {
-              &:after, &:before {
+              &:after,
+              &:before {
                 height: 10.3vh;
               }
               &:before {
@@ -75,7 +94,6 @@
               }
             }
           }
-
         }
       }
     }
@@ -87,7 +105,7 @@
         left: 11.17%;
         bottom: 27.63%;
       }
-    } 
+    }
   }
   // fisherman animation
   &__artwork {
@@ -104,5 +122,4 @@
       }
     }
   }
-
 }
