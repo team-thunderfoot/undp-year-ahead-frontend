@@ -12,7 +12,7 @@
         <v-chapter-7  :scrollTween="scrollTween"/>
         <v-chapter-8 :scrollTween="scrollTween" />
         <v-chapter-9  :scrollTween="scrollTween"/>
-        <v-chapter-10 :scrollTween="scrollTween" />
+        <v-chapter-10 :scrollTween="scrollTween"/>
         <v-chapter-11 :scrollTween="scrollTween" />
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>

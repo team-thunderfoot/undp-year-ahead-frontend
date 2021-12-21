@@ -37,7 +37,45 @@
           }
         }
       }
+      // french card f corrections
+      &--fr {
+        .b--card-f {
+          &__hd {
+            max-width: 100%;
+            margin-bottom: $measure*2;
+            &:after, &:before {
+              height: $measure*2;
+            }
+          }
+          &__bd {
+            &:after, &:before {
+              height: 10.72vh;
+            }
+            @media all and ($viewport-type: $laptop) {
+              &:after, &:before {
+                height: 10.3vh;
+              }
+              &:before {
+                left: 28%;
+              }
+              &:after {
+                right: 28%;
+              }
+            }
+          }
+
+        }
+      }
     }
+    // french content corrections
+    &--fr {
+      bottom: 28.63%;
+      @media all and ($viewport-type: $laptop) {
+        width: 13.9%;
+        left: 11.17%;
+        bottom: 27.63%;
+      }
+    } 
   }
   // fisherman animation
   &__artwork {
@@ -53,5 +91,6 @@
         bottom: -5%;
       }
     }
-  } 
+  }
+
 }
