@@ -1,71 +1,102 @@
 <template>
-  <section class="b--page-a__item b--chapter5-a" id="Scene5" ref="Scene5" v-if="chapter">
+  <section
+    class="b--page-a__item b--chapter5-a"
+    id="Scene5"
+    ref="Scene5"
+    v-if="chapter"
+  >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" :style="{left: '30%' }" src="@/assets/img/chapter-5/front.png">
+        <img
+          class="b--ss-a__ft-items__parallax"
+          ref="parallax-ft"
+          :style="{ left: '30%' }"
+          src="@/assets/img/chapter-5/front.png"
+        />
       </div>
       <div class="b--ss-a__content">
         <!-- chapter title -->
-        <div class="b--chapter5-a__content" :style="{left: '35%' }" ref="boxContent">
-            <v-card-f 
-                :title="chapter.title"
-                :description="chapter.description"
-                :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
-                cardACustomClass="b--card-a--second"
-            />
+        <div
+          class="b--chapter5-a__content"
+          :style="{ left: '35%' }"
+          ref="boxContent"
+        >
+          <v-card-f
+            :title="chapter.title"
+            :description="chapter.description"
+            :customClass="'b--card-f--third b--card-f--' + `${this.lang}`"
+            cardACustomClass="b--card-a--second"
+          />
         </div>
         <!-- info chart -->
-        <div class="b--chapter5-a__content b--chapter5-a__content--second" ref="infochapter" :style="{left: '60%' }">
-           <v-info-chapter :info="chapter"/>
+        <div
+          class="b--chapter5-a__content b--chapter5-a__content--second"
+          ref="infochapter"
+          :style="{ left: '60%' }"
+        >
+          <v-info-chapter :info="chapter" />
         </div>
         <!-- women -->
         <div class="b--chapter5-a__media">
-            <img v-lazy="require(`@/assets/img/chapter-5/women.svg`)" alt="women" />
+          <img
+            v-lazy="require(`@/assets/img/chapter-5/women.svg`)"
+            alt="women"
+          />
         </div>
         <!-- first blink animation -->
         <div class="b--chapter5-a__artwork">
-            <div
-                class="b--motion-d"
-                v-lazy:background-image="
-                require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`)
-                "
-            ></div>
+          <div
+            class="b--motion-d"
+            v-lazy:background-image="
+              require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`)
+            "
+          ></div>
         </div>
         <!-- second blink animation -->
         <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second">
-            <div
-                class="b--motion-p"
-                v-lazy:background-image="
-                require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`)
-                "
-            ></div>
-        </div>    
+          <div
+            class="b--motion-p"
+            v-lazy:background-image="
+              require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`)
+            "
+          ></div>
+        </div>
       </div>
       <div class="b--ss-a__bg-items">
-        <img class="b--ss-a__bg-items__parallax" :style="{left: '2%' }" ref="parallax-bg" src="@/assets/img/chapter-5/back-parallax.png" alt=""> 
-        <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-5/back.png"> 
+        <img
+          class="b--ss-a__bg-items__parallax"
+          :style="{ left: '2%' }"
+          ref="parallax-bg"
+          src="@/assets/img/chapter-5/back-parallax.png"
+          alt=""
+        />
+        <img
+          class="b--ss-a__bg-items__back"
+          @load="handleLoad"
+          @error="handleLoad"
+          src="@/assets/img/chapter-5/back.png"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity';
-import CardF from '@/components/cards/CardF';
-import InfoChapter from '@/components/infochapter/Infochapter';
+import { groq } from '@nuxtjs/sanity'
+import CardF from '@/components/cards/CardF'
+import InfoChapter from '@/components/infochapter/Infochapter'
 
-
-import Vue from 'vue';
-import Parallax from '@/mixins/Parallax.js';
-import Animation from '@/mixins/Animation.js';
+import Vue from 'vue'
+import Parallax from '@/mixins/Parallax.js'
+import Animation from '@/mixins/Animation.js'
 Vue.use(Parallax)
 Vue.use(Animation)
 
 export default {
-  mixins: [Parallax,Animation],
-  components:{
-    'v-card-f':CardF,
-    'v-info-chapter' : InfoChapter
+  mixins: [Parallax, Animation],
+  components: {
+    'v-card-f': CardF,
+    'v-info-chapter': InfoChapter,
   },
   data: () => {
     return {
@@ -92,25 +123,25 @@ export default {
     handleLoad() {
       this.contentLoaded++
     },
-    AsambleParallaxObjs(){
-        var motion = [
-            {obj:this.$refs['parallax-bg'], intensity:4},
-            {obj:this.$refs['parallax-ft'], intensity:11},
-            {obj:this.$refs['infochapter'], intensity:11},
-            {obj:this.$refs['boxContent'], intensity:11},
-            
-            // {obj:this.$refs['boxContent'], intensity:11},
-            // {obj:this.$refs['quoteContent'], intensity:4},
-        ];
-        motion.forEach(item => {
-            this.parallaxMove({
-                el: item.obj,
-                intensity:item.intensity,
-                duration: this.$refs['Scene5'].offsetWidth,
-                containerAnimation:this.scrollTween,
-                scrub:1,
-            })  
-        });
+    AsambleParallaxObjs() {
+      var motion = [
+        { obj: this.$refs['parallax-bg'], intensity: 4 },
+        { obj: this.$refs['parallax-ft'], intensity: 11 },
+        { obj: this.$refs['infochapter'], intensity: 11 },
+        { obj: this.$refs['boxContent'], intensity: 11 },
+
+        // {obj:this.$refs['boxContent'], intensity:11},
+        // {obj:this.$refs['quoteContent'], intensity:4},
+      ]
+      motion.forEach((item) => {
+        this.parallaxMove({
+          el: item.obj,
+          intensity: item.intensity,
+          duration: this.$refs['Scene5'].offsetWidth,
+          containerAnimation: this.scrollTween,
+          scrub: 1,
+        })
+      })
     },
   },
   watch: {
@@ -120,18 +151,18 @@ export default {
         $nuxt.$emit('assetLoaded')
       }
     },
-        scrollTween(newValue, oldValue){
-            if (newValue ) {
-               // motion frontend and backend elements
-                this.AsambleParallaxObjs();
-                // mixin function
-                this.startAnimation({
-                    sceneID : 5,
-                    scrub:0,
-                    scrollTween : this.scrollTween
-                })
-            } 
-        }
+    scrollTween(newValue, oldValue) {
+      if (newValue) {
+        // motion frontend and backend elements
+        this.AsambleParallaxObjs()
+        // mixin function
+        this.startAnimation({
+          sceneID: 5,
+          scrub: 0,
+          scrollTween: this.scrollTween,
+        })
+      }
+    },
   },
   created() {
     if (process.client) {
