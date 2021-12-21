@@ -29,7 +29,7 @@
             
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-4/back-parallax.png" alt=""> 
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.jpg">     
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.png">     
             </div>
         </div>
     </section>
