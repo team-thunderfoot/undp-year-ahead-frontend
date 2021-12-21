@@ -7,7 +7,7 @@
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
                 <!-- move up with a modifier in the scss of the scene -->
-                <div class="b--chapter11-a__content">
+                <div class="b--chapter11-a__content" :class="'b--chapter11-a__content--'+`${this.lang}`">
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
