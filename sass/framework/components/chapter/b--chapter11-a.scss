@@ -10,6 +10,9 @@
       width: 100%;
       bottom: 32.79%;
     }
+    @media all and ($viewport-type: $mobile) {
+      bottom: 28.79%;
+    }
   }
   // boxes
   &__media {
@@ -84,6 +87,9 @@
         height: 19.5vh;
         @media all and ($viewport-type: $tablets) {
           height: 14.5vh;
+        }
+        @media all and ($viewport-type: $mobile) {
+          height: 10.5vh;
         }
       }
     }
