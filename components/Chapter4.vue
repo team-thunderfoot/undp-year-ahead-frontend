@@ -79,30 +79,23 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        AsambleParallax(){
+        AsambleParallaxObjs(){
             var motion = [
-                    {obj:this.$refs['parallax-bg'], intensity:4},
-                    {obj:this.$refs['parallax-ft'], intensity:10},
-                    {obj:this.$refs['boxContent'], intensity:10},
-                    {obj:this.$refs['quoteContent'], intensity:4},
-                ];
-                motion.forEach(item => {
-                    this.parallaxMove({
-                        el: item.obj,
-                        intensity:item.intensity,
-                        duration: this.$refs['Scene4'].offsetWidth,
-                        containerAnimation:this.scrollTween,
-                        scrub:1,
-                    })  
-                });
+                {obj:this.$refs['parallax-bg'], intensity:4},
+                {obj:this.$refs['parallax-ft'], intensity:10},
+                {obj:this.$refs['boxContent'], intensity:10},
+                {obj:this.$refs['quoteContent'], intensity:4},
+            ];
+            motion.forEach(item => {
+                this.parallaxMove({
+                    el: item.obj,
+                    intensity:item.intensity,
+                    duration: this.$refs['Scene4'].offsetWidth,
+                    containerAnimation:this.scrollTween,
+                    scrub:1,
+                })  
+            });
         },
-        startAnimationOut(){
-                 this.startAnimation({
-                    sceneID : 4,
-                    scrub:0,
-                    scrollTween : this.scrollTween
-                })
-        }
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -114,8 +107,14 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.AsambleParallax();
-                this.startAnimationOut();
+                // motion frontend and backend elements
+                this.AsambleParallaxObjs();
+                //mixin fn
+                this.startAnimation({
+                    sceneID : 4,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             } 
         }
     },
