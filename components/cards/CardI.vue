@@ -1,5 +1,5 @@
 <template>
-    <div class="b--card-i" :class="'b--card-i--' + `${this.lang}`">
+    <div class="b--card-i">
         <div class="b--card-i__wrapper">
             <div class="b--card-i__wrapper__hd">
                 <div class="b--card-i__wrapper__hd__media-wrapper">
