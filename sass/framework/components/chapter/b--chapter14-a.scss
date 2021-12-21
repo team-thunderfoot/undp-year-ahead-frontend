@@ -32,10 +32,10 @@
     max-height: 52.83vh;
     z-index: 1;
     &--second {
-      left: 37.9%;
+      left: 38.1%;
       top: 68.65%;
-      width: 10vh;
-      height: 10vh;
+      width: 9vh;
+      height: 9vh;
       @include make-wheel();
     }
   }
