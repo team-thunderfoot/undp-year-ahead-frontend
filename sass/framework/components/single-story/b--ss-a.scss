@@ -56,6 +56,10 @@
     &__parallax {
       position: absolute;
       height: 100%;
+      z-index: 4;
+      &--middle {
+        z-index: 2;
+      }
     }
   }
   &__artwork {

@@ -6,7 +6,7 @@
             </div>
             <div class="b--ss-a__ft-items">
                 <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-8/front-parallax.png">
-                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-8/middle-parallax.png">
+                <img class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle" ref="parallax-ft" src="@/assets/img/chapter-8/middle-parallax.png">
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
