@@ -10,7 +10,7 @@
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
-                <div class="b--chapter4-a__content" ref="boxContent" :style="{left: '25%' }">
+                <div class="b--chapter4-a__content" ref="boxContent" :style="{left: '35%' }">
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
@@ -18,7 +18,7 @@
                     />
                 </div>
                 <!-- second position element, quote -->
-                <div class="b--chapter4-a__content b--chapter4-a__content--second" ref="quoteContent"> 
+                <div class="b--chapter4-a__content b--chapter4-a__content--second" ref="quoteContent" :style="{left: '85%' }"> 
                     <v-quote-a 
                         :chapter="chapter"
                         customClass="b--quote-a--second"
@@ -82,8 +82,8 @@ export default {
         AsambleParallaxObjs(){
             var motion = [
                 {obj:this.$refs['parallax-bg'], intensity:4},
-                {obj:this.$refs['parallax-ft'], intensity:10},
-                {obj:this.$refs['boxContent'], intensity:10},
+                {obj:this.$refs['parallax-ft'], intensity:11},
+                {obj:this.$refs['boxContent'], intensity:11},
                 {obj:this.$refs['quoteContent'], intensity:4},
             ];
             motion.forEach(item => {
@@ -109,7 +109,7 @@ export default {
             if (newValue ) {
                 // motion frontend and backend elements
                 this.AsambleParallaxObjs();
-                //mixin fn
+                //mixin function
                 this.startAnimation({
                     sceneID : 4,
                     scrub:0,
