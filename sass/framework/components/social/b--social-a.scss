@@ -1,0 +1,11 @@
+.b--social-a {
+    text-align: center;
+    &__title {
+        @include make-font-f();
+        color: map-get($color-options , f );
+        margin-bottom: $measure;
+    }
+    &__list-group {
+        display: flex;
+    }
+}
