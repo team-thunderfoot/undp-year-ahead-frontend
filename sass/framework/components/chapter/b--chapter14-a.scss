@@ -11,6 +11,12 @@
       width: 10.62%;
       @include make-position-a();
     }
+    &--third {
+      bottom: auto;
+      top: 25.19%;
+      left: 65.18%;
+      width: 10.05%;
+    }
   }
   &__artwork {
     position: absolute;
@@ -20,5 +26,12 @@
     height: 52.83vh;
     max-height: 52.83vh;
     z-index: 1;
+    &--second {
+      left: 37.9%;
+      top: 68.65%;
+      width: 10vh;
+      height: 10vh;
+      @include make-wheel();
+    }
   }
 }

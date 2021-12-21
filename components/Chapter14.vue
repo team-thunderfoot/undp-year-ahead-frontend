@@ -24,6 +24,17 @@
                 <div class="b--chapter14-a__artwork">
                     <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
                 </div>
+                <!--wheel -->
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second">
+                    <img
+                        v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
+                        alt="wheel"
+                        title="wheel"
+                    />
+                </div>
+                <div class="b--chapter14-a__content b--chapter14-a__content--third">
+                    <v-card-i />
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-14/back.png">        
@@ -35,6 +46,7 @@
 <script>
 import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
+import CardI from '@/components/cards/CardI';
 import QuoteA from '@/components/quote/Quote';
 
 // import Parallax from '@/motion/Parallax';
@@ -47,6 +59,7 @@ export default {
     mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
+        'v-card-i':CardI,
         'v-quote-a':QuoteA
     },
     data:()=>{
