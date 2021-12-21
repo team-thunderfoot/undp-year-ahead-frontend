@@ -27,7 +27,7 @@ export default {
                 },
                 linkedin: {
                     url: "https://www.google.es",
-                    icon: require(`@/assets/img/social/linkedin.svg`)
+                    icon: require(`@/assets/img/social/linkedin.svg`),
                 },
                 twitter: {
                     url: "https://www.google.es",

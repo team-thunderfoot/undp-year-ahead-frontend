@@ -34,7 +34,9 @@
                 </div>
                 <!-- card-i -->
                 <div class="b--chapter14-a__content b--chapter14-a__content--third">
-                    <v-card-i />
+                    <v-card-i
+                    :customClass="'b--card-i--'+ `${this.lang}`"
+                    />
                 </div>
                 <!-- social -->
                 <div class="b--chapter14-a__content b--chapter14-a__content--fourth">
