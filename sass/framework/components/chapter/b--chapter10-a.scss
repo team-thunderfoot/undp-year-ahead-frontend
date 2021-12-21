@@ -12,13 +12,13 @@
     // card-f corrections
     .b--card-f {
       &__hd {
-        @media all and ($viewport-type: $mobile) {
+        @media all and ($viewport-type: $laptop) {
           margin: 0 auto $measure * 3;
           max-width: 100% !important;
         }
         &:before,
         &:after {
-          @media all and ($viewport-type: $mobile) {
+          @media all and ($viewport-type: $laptop) {
             height: $measure * 3;
           }
         }
@@ -34,6 +34,18 @@
         .b--card-a {
           @media all and ($viewport-type: $mobile) {
             padding: $measure * 2 5%;
+          }
+        }
+      }
+      // spanish card f corrections 
+      &--es {
+        .b--card-f {
+          &__hd {
+            max-width: 100%;
+            margin-bottom: $measure*2;
+            &:after, &:before {
+              height: $measure*2;
+            }
           }
         }
       }
