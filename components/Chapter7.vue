@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter7-a" id="Scene7" ref="Scene7" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-7/front.png`)" alt="front" />
+                <img class="b--ss-a__ft-items__parallax" src="@/assets/img/chapter-7/front-parallax.png">
             </div>
             <div class="b--ss-a__content">
                 <div class="b--chapter7-a__content">
@@ -20,8 +20,9 @@
                     <v-card-h :content="chapter.document_right"/>
                 </div>
             </div>
-            <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-7/back.png">        
+            <div class="b--ss-a__bg-items"> 
+                <img class="b--ss-a__bg-items__parallax" src="@/assets/img/chapter-7/back-parallax.png" alt=""> 
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-7/back.png">        
             </div>
         </div>
     </section>
