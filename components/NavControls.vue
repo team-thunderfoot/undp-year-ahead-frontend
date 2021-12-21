@@ -145,15 +145,12 @@ export default {
             }
             this.currentItemMenu = newValue;
         },
-        isLoaded(newValue, oldValue){
-            if(newValue){
-                this.goToChapter();
-            }
-        }
+        
     },
     mounted(){
         if(process.client){
             this.currentItemMenu  = this.currentItem;
+            this.goToChapter();
             $nuxt.$emit('navIsLoaded');
         }
     }
