@@ -100,7 +100,7 @@ export default {
         scrollTween(newValue, oldValue){
             if (newValue ) {
                 var motion = [
-                    {obj:this.$refs['parallax-bg'], intensity:-1},
+                    {obj:this.$refs['parallax-bg'], intensity:-2},
                     {obj:this.$refs['parallax-ft'], intensity:-4},
                 ];
                 motion.forEach(item => {
