@@ -24,6 +24,14 @@
                 <div class="b--chapter14-a__artwork">
                     <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
                 </div>
+                <!--wheel -->
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second">
+                    <img
+                        v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
+                        alt="wheel"
+                        title="wheel"
+                    />
+                </div>
                 <div class="b--chapter14-a__content b--chapter14-a__content--third">
                     <v-card-i />
                 </div>
