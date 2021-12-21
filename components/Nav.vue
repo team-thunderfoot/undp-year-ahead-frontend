@@ -10,13 +10,13 @@
             </div>
             <div class="b--nav-a__ft-items__ft">
                 <a class="b--nav-a__ft-items__ft__link" :href="nav.facebook" target="_blank" rel="noopener noreferrer">
-                    <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/facebook.svg" alt="Facebook">
+                    <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/facebook.svg" alt="Facebook">
                 </a>
                 <a class="b--nav-a__ft-items__ft__link" :href="nav.twitter" target="_blank" rel="noopener noreferrer">
-                    <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/twitter.svg" alt="Twitter">
+                    <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/twitter.svg" alt="Twitter">
                 </a>
                 <a class="b--nav-a__ft-items__ft__link" :href="nav.linkedin" target="_blank" rel="noopener noreferrer">
-                    <img class="b--nav-a__ft-items__ft__media" src="@/assets/img/linkedin.svg" alt="Linkedin">
+                    <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/linkedin.svg" alt="Linkedin">
                 </a>
             </div>
             <div class="b--nav-a__ft-items__artwork">

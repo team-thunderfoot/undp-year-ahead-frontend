@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter2-a" id="Scene2" ref="Scene2"  v-if="chapter">
         <div class="b--ss-a">
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-2-ft" v-lazy="require(`@/assets/img/chapter-2/front.png`)" alt="front" />
+                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-2/front-parallax.png">
             </div>
             <div class="b--ss-a__content">
                 <div class="b--chapter2-a__content">
@@ -40,7 +40,8 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back-2.png" alt="back">        
+                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-2/back-parallax.png" alt=""> 
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back.png">     
             </div>
         </div>
     </section>
@@ -103,18 +104,19 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                // var motion = [
-                //     {obj:this.$refs['parallax-2-ft'], intensity:.5},
-                // ]
-                // motion.forEach(item => {
-                //     this.parallaxMove({
-                //         el: item.obj,
-                //         intensity:item.intensity,
-                //         duration: this.$refs['Scene2'].offsetWidth,
-                //         containerAnimation:this.scrollTween,
-                //         scrub:1,
-                //     })  
-                // });
+                var motion = [
+                    {obj:this.$refs['parallax-ft'], intensity:-0.5},
+                    {obj:this.$refs['parallax-bg'], intensity:-1},
+                ]
+                motion.forEach(item => {
+                    this.parallaxMove({
+                        el: item.obj,
+                        intensity:item.intensity,
+                        duration: this.$refs['Scene2'].offsetWidth,
+                        containerAnimation:this.scrollTween,
+                        scrub:1,
+                    })  
+                });
                 this.animate();
             } 
         }

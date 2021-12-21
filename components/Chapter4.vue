@@ -6,12 +6,11 @@
                 <img class="b--ss-a__artwork__media b--ss-a__artwork__media--left" src="@/assets/img/chapter-4/front_electric-cable.png">
             </div>
             <div class="b--ss-a__ft-items">                
-                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-4/front-parallax.png">
-                <!-- <img class="b--ss-a__ft-items__front" src="@/assets/img/chapter-4/front.png"> -->
+                <img :style="{left: '20%' }" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-4/front-parallax.png">
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
-                <div class="b--chapter4-a__content">
+                <div class="b--chapter4-a__content" ref="boxContent" :style="{left: '35%' }">
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
@@ -19,7 +18,7 @@
                     />
                 </div>
                 <!-- second position element, quote -->
-                <div class="b--chapter4-a__content b--chapter4-a__content--second">
+                <div class="b--chapter4-a__content b--chapter4-a__content--second" ref="quoteContent" :style="{left: '85%' }"> 
                     <v-quote-a 
                         :chapter="chapter"
                         customClass="b--quote-a--second"
@@ -28,7 +27,7 @@
             </div>
             
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-4/back-parallax.png" alt=""> 
+                <img  :style="{left: '10%' }" class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-4/back-parallax.png" alt=""> 
                 <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-4/back.png">     
             </div>
         </div>
@@ -45,6 +44,7 @@ import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
 Vue.use(Parallax)
+Vue.use(Animation)
 
 export default {
     mixins: [Parallax,Animation],
@@ -79,15 +79,23 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 4,
-                    scrub:0,
-                    scrollTween : this.scrollTween
-                })
-            })
-        }
+        AsambleParallaxObjs(){
+            var motion = [
+                {obj:this.$refs['parallax-bg'], intensity:4},
+                {obj:this.$refs['parallax-ft'], intensity:11},
+                {obj:this.$refs['boxContent'], intensity:11},
+                {obj:this.$refs['quoteContent'], intensity:4},
+            ];
+            motion.forEach(item => {
+                this.parallaxMove({
+                    el: item.obj,
+                    intensity:item.intensity,
+                    duration: this.$refs['Scene4'].offsetWidth,
+                    containerAnimation:this.scrollTween,
+                    scrub:1,
+                })  
+            });
+        },
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -99,20 +107,14 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                var motion = [
-                    {obj:this.$refs['parallax-bg'], intensity:-1},
-                    {obj:this.$refs['parallax-ft'], intensity:-3},
-                ];
-                motion.forEach(item => {
-                    this.parallaxMove({
-                        el: item.obj,
-                        intensity:item.intensity,
-                        duration: this.$refs['Scene4'].offsetWidth,
-                        containerAnimation:this.scrollTween,
-                        scrub:1,
-                    })  
-                });
-                this.animate();
+                // motion frontend and backend elements
+                this.AsambleParallaxObjs();
+                //mixin function
+                this.startAnimation({
+                    sceneID : 4,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             } 
         }
     },
