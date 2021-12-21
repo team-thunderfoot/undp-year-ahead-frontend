@@ -11,6 +11,12 @@
       width: 10.62%;
       @include make-position-a();
     }
+    &--third {
+      bottom: auto;
+      top: 25.19%;
+      left: 65.18%;
+      width: 10.05%;
+    }
   }
   &__artwork {
     position: absolute;
