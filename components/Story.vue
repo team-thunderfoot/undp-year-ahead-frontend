@@ -17,7 +17,7 @@
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>
         <v-chapter-14  :scrollTween="scrollTween"/>
-        <v-progress :isLoaded="isLoaded" :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
+        <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
 
