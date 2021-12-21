@@ -8,7 +8,7 @@ export default {
             scrub
         }){
             this.$gsap.to(el, {
-                x: () =>  duration * intensity/10,
+                x: () =>  duration * -intensity/10,
                 ease: "none",
                 scrollTrigger: {
                     containerAnimation: containerAnimation,
