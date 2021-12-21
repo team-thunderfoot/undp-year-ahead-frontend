@@ -43,14 +43,13 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import QuoteA from '@/components/quote/Quote';
 
-// import Parallax from '@/motion/Parallax';
+
 import Vue from 'vue';
-import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
-Vue.use(Parallax)
+Vue.use(Animation)
 
 export default {
-    mixins: [Parallax,Animation],
+    mixins: [Animation],
     components:{
         'v-card-f':CardF,
         'v-quote-a':QuoteA
@@ -81,15 +80,6 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 6,
-                    scrub:0,
-                    scrollTween : this.scrollTween
-                })
-            })
-        }
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -100,7 +90,11 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.animate();
+                this.startAnimation({
+                    sceneID : 6,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             } 
         }
     },

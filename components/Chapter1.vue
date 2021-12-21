@@ -132,15 +132,13 @@ import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import InfoChapter from '@/components/infochapter/Infochapter';
 import QuoteA from '@/components/quote/Quote';
 
-// import Parallax from '@/motion/Parallax';
+
 import Vue from 'vue';
-import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
-Vue.use(Parallax)
 Vue.use(Animation)
 
 export default {
-  mixins: [Parallax,Animation],
+  mixins: [ Animation],
   data: () => {
     return {
       totalContent: 3,
@@ -197,23 +195,13 @@ export default {
     },
     scrollTween(newValue, oldValue){
       if (newValue ) {
-
-        // var motion = [
-        //   {obj:this.$refs['parallax-1-ft'], intensity:.5},
-        //   {obj:this.$refs['parallax-1-bubble'], intensity:.5},
-        //   {obj:this.$refs['frameTv'], intensity:.3},
-        //   {obj:this.$refs['browser'], intensity:.5},
-        // ]
-        // motion.forEach(item => {
-        //   this.parallaxMove({
-        //     el: item.obj,
-        //     intensity:item.intensity,
-        //     duration: this.$refs['Scene1'].offsetWidth,
-        //     containerAnimation:this.scrollTween,
-        //     scrub:1,
-        //   })  
-        // });
-        this.animate();
+        // mixin function
+        this.startAnimation({
+            sceneID : 1,
+            scrub:0,
+            scrollTween : this.scrollTween
+          })
+       
       } 
     }
   },
