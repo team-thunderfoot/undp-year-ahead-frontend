@@ -1,4 +1,9 @@
 .b--chapter4-a {
+  // z-index to the chapter to see the union elements
+  &.b--page-a__item {
+    z-index: 1;
+  }
+
   .b--ss-a {
     // bigger z-index to be shown above ft items
     &__content {
@@ -46,8 +51,8 @@
       }
     }
   }
-  &__artwork{
-    position:absolute;
+  &__artwork {
+    position: absolute;
   }
   // tent
   // &__artwork {
