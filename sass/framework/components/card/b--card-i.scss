@@ -9,6 +9,9 @@
     @media all and ($viewport-type: $laptop) {
       padding: $measure*4;
     }
+    @media all and ($viewport-type: $tablets) {
+      padding: $measure*3;
+    }
     &__hd {
       width: 100%;
       display: flex;

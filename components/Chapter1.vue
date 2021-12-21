@@ -15,7 +15,7 @@
       <div class="b--ss-a__content">
         <!-- Intro Story -->
         <!-- first div position element -->
-        <div class="b--chapter1-a__content">
+        <div class="b--chapter1-a__content" :class="'b--chapter1-a__content--'+`${this.lang}`">
           <div class="b--intro-a" :class="`b--intro-a--${this.lang}`">
             <div class="b--intro-a__artwork"></div>
             <div class="b--intro-a__wrapper">
