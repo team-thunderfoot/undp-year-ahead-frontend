@@ -8,6 +8,8 @@
         margin: 0 auto;
         top: 8px;
         height: 70.52%;
+        // test to avoid lazy loading reflow
+        max-height: 300px;
         @media all and ($viewport-type: $mobile) {
             top: 6px;
         }
