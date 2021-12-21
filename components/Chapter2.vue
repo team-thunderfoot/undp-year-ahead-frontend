@@ -2,17 +2,17 @@
     <section class="b--page-a__item b--chapter2-a" id="Scene2" ref="Scene2"  v-if="chapter">
         <div class="b--ss-a">
             <div class="b--ss-a__ft-items">
-                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-2/front-parallax.png">
+                <img :style="{left: '21%' }" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-2/front-parallax.png">
             </div>
             <div class="b--ss-a__content">
-                <div class="b--chapter2-a__content">
+                <div class="b--chapter2-a__content" ref="boxContent" :style="{left: '26%' }">
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
                         :customClass="'b--card-f--second b--card-f--'+ `${this.lang}`" 
                     />
                 </div>
-                <div class="b--chapter2-a__content b--chapter2-a__content--second">
+                <div class="b--chapter2-a__content b--chapter2-a__content--second" :style="{left: '47%' }" ref="TVfrankie">
                     <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
                         <div class="b--card-g__media-wrapper">
                             <img
@@ -24,14 +24,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="b--chapter2-a__artwork">
+                <div class="b--chapter2-a__artwork" :style="{left: '42%' }" ref="dino1">
                     <img
                         v-lazy="require(`@/assets/img/chapter-2/dino-orange.png`)"
                         alt="browser"
                         title="browser"
                     />
                 </div>
-                <div class="b--chapter2-a__artwork b--chapter2-a__artwork--second">
+                <div class="b--chapter2-a__artwork b--chapter2-a__artwork--second" :style="{left: '72%' }" ref="dino2">
                     <img
                         v-lazy="require(`@/assets/img/chapter-2/dino-green.png`)"
                         alt="browser"
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-2/back-parallax.png" alt=""> 
+                <img class="b--ss-a__bg-items__parallax" :style="{left: '-6%' }" ref="parallax-bg" src="@/assets/img/chapter-2/back-parallax.png" alt=""> 
                 <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-2/back.png">     
             </div>
         </div>
@@ -57,6 +57,7 @@ import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
 Vue.use(Parallax)
+Vue.use(Animation)
 
 export default {
     mixins: [Parallax,Animation],
@@ -67,10 +68,10 @@ export default {
             chapter: null
 		}
     },
-    props: ['scrollTween'],
     components:{
         'v-card-f':CardF
     },
+    props: ['scrollTween'],
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -84,15 +85,25 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick((e) => {
-                this.startAnimation({
-                    sceneID : 2,
-                    scrub:0,
-                     scrollTween : this.scrollTween
-                })
-            })
-        }
+        AsambleParallaxObjs(){
+            var motion = [
+                {obj:this.$refs['parallax-bg'], intensity:4},
+                {obj:this.$refs['dino1'], intensity:4},
+                {obj:this.$refs['dino2'], intensity:4},
+                {obj:this.$refs['TVfrankie'], intensity:4},
+                {obj:this.$refs['parallax-ft'], intensity:21},
+                {obj:this.$refs['boxContent'], intensity:21},
+            ];
+            motion.forEach(item => {
+                this.parallaxMove({
+                    el: item.obj,
+                    intensity:item.intensity,
+                    duration: this.$refs['Scene2'].offsetWidth,
+                    containerAnimation:this.scrollTween,
+                    scrub:1,
+                })  
+            });
+        },
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -104,20 +115,16 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                var motion = [
-                    {obj:this.$refs['parallax-ft'], intensity:-0.5},
-                    {obj:this.$refs['parallax-bg'], intensity:-1},
-                ]
-                motion.forEach(item => {
-                    this.parallaxMove({
-                        el: item.obj,
-                        intensity:item.intensity,
-                        duration: this.$refs['Scene2'].offsetWidth,
-                        containerAnimation:this.scrollTween,
-                        scrub:1,
-                    })  
-                });
-                this.animate();
+
+
+                // motion frontend and backend elements
+                this.AsambleParallaxObjs();
+
+                this.startAnimation({
+                    sceneID : 2,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             } 
         }
     },

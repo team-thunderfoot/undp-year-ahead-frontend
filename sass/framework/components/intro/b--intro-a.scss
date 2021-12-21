@@ -77,36 +77,33 @@
   // french modifier
   &--fr & {
     &__wrapper {
-      padding: 7%;
+      padding: 6%;
+      @media all and ($viewport-type: $laptop) {
+        padding: 5%;
+      }
       &__title {
         font-size: clamp(1rem, 4.785vh, 1.96rem);
         @media all and ($viewport-type: $laptop) {
-          font-size: clamp(1.25rem, 6.3vw, 1.5rem);
+          font-size: clamp(1.25rem, 6.3vw, 1.96rem);
         }
         @media all and ($viewport-type: $tabletm) {
           font-size: clamp(1.25rem, 6.3vw, 1.5rem);
         }
         @media all and ($viewport-type: $tablets) {
-          font-size: clamp(1.25rem, 6.3vw, 1.5rem);
-        }
-        @media all and ($viewport-type: $mobile) {
-          font-size: clamp(1.25rem, 6.3vw, 1.3rem);
+          font-size: clamp(1.25rem, 6.3vw, 1.9rem);
         }
         &__badge {
           font-size: clamp(1rem, 9.5vh, 4.55rem);
           @media all and ($viewport-type: $laptop) {
-            font-size: clamp(1rem, 9.5vh, 3.65rem);
+            font-size: clamp(1rem, 9.5vh, 4.15rem);
           }
           @media all and ($viewport-type: $tabletm) {
-            font-size: clamp(1.5rem, 13vw, 3rem);
-          }
-          @media all and ($viewport-type: $mobile) {
-            font-size: clamp(1.25rem, 6.3vw, 2.5rem);
+            font-size: clamp(1.5rem, 13vw, 4rem);
           }
         }
       }
       &__subtitle {
-        @media all and ($viewport-type: $mobile) {
+        @media all and ($viewport-type: $tabletm) {
           font-size: clamp(16px, 6vw, 1.5rem);
         }
       }

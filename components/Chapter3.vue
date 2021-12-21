@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter3-a" id="Scene3" ref="Scene3" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-3-ft" v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
+                <img v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- flags left -->
@@ -56,14 +56,19 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
-// import Parallax from '@/motion/Parallax';
+
 import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
 Vue.use(Parallax)
+Vue.use(Animation)
 
 export default {
     mixins: [Parallax,Animation],
+    components:{
+        'v-card-f':CardF,
+        'v-info-chapter' : InfoChapter
+    },
     data:()=>{
 		return{
             totalContent: 2,
@@ -72,10 +77,6 @@ export default {
 		}
 	},
     props: ['scrollTween'],
-    components:{
-        'v-card-f':CardF,
-        'v-info-chapter' : InfoChapter
-    },
     methods: {
         async getContent(){
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
@@ -93,15 +94,7 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 3,
-                    scrub:0,
-                    scrollTween : this.scrollTween
-                })
-            })
-        }
+        
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -113,19 +106,12 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                var motion = [
-                    {obj:this.$refs['parallax-3-ft'], intensity:.5},
-                ]
-                // motion.forEach(item => {
-                //     this.parallaxMove({
-                //         el: item.obj,
-                //         intensity:item.intensity,
-                //         duration: this.$refs['Scene3'].offsetWidth,
-                //         containerAnimation:this.scrollTween,
-                //         scrub:1,
-                //     })  
-                // });
-                this.animate();
+                // mixin function
+                this.startAnimation({
+                    sceneID : 3,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             } 
         }
     },
