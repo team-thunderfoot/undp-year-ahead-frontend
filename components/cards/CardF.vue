@@ -23,7 +23,7 @@
 
 <script>
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
-import Links from '~/components/links/Links.vue';
+import Links from '~/components/sanity/Links.vue';
 const serializers = {
     types: {
           },
