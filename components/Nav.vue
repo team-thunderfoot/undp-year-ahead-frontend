@@ -1,10 +1,9 @@
 
 <template>
+<div>
+    <a class="b--logo-a" :href="nav.logo_url" target="_blank" rel="noopener noreferrer"><img src="@/assets/img/en/undp_en.svg" alt="Undp Logo"></a>
     <div class="b--nav-a" v-if="nav">
         <div class="b--nav-a__ft-items">
-            <div class="b--nav-a__ft-items__hd">
-                <a :href="nav.logo_url" target="_blank" rel="noopener noreferrer"><img src="@/assets/img/en/undp_en.svg" alt="Undp Logo"></a>
-            </div>
             <div class="b--nav-a__ft-items__bd">
                 <p>{{nav.nav_title}}</p>
             </div>
@@ -25,6 +24,7 @@
         </div>
         <div class="b--nav-a__bg-items"></div>
     </div>
+</div>
 </template>
 
 <script>
