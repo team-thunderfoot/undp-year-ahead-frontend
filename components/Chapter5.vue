@@ -11,7 +11,7 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           :style="{ left: '30%' }"
-          src="@/assets/img/chapter-5/front.png"
+          src="@/assets/img/chapter-5/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
