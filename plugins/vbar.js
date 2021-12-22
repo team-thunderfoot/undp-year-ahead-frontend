@@ -1,4 +1,11 @@
-// import Vue from "vue";
-// import VBar from 'v-bar';
+import Vue from "vue";
+import vuescroll from 'vuescroll';
 
-// Vue.use(VBar);
+
+Vue.use(vuescroll, {
+    mode: 'native',
+    sizeStrategy: 'percent',
+    detectResize: true,
+    /** Enable locking to the main axis if user moves only slightly on one of them at start */
+    locking: true,
+});
