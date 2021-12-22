@@ -39,7 +39,7 @@
                     <div
                         class="b--motion-r"
                         v-lazy:background-image="
-                        require(`@/assets/img/chapter-8/fishes_spritesheet.png`)
+                        require(`@/assets/img/chapter-8/fishes-spritesheet.png`)
                         "
                     ></div>
                 </div>      
