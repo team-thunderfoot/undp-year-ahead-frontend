@@ -23,10 +23,10 @@
 
 <script>
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
-import SanityLinks from '~/mixins/sanityLinks';
+import sanityLinks from '~/mixins/sanityLinks';
 
 export default {
-    mixins: [SanityLinks],
+    mixins: [sanityLinks],
     props:[
         'title',
         'description', 
@@ -40,7 +40,7 @@ export default {
         SanityContent,
     },
     created(){
-        this.serializers = this.getSerialize();
+        this.serializers = this.getSerialize()
     }
 }
 </script>
