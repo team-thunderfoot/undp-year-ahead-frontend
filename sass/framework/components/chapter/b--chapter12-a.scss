@@ -5,12 +5,15 @@
     left: 17.14%;
     width: 19.05%;
     @include make-position-a();
+    // info window
     &--second {
       bottom: 38.96%;
       left: 38.9%;
       width: 9.51%;
       @include make-position-a();
-      @media all and ($viewport-type: $mobile) {
+      @media all and ($viewport-type: $laptop) {
+        bottom: 37.2%;
+        left: 38.3%;
         width: 12.21%;
       }
     }
