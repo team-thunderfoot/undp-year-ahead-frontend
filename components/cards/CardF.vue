@@ -11,7 +11,7 @@
             <div class="b--card-a" :class="cardACustomClass">
                 <div class="b--card-a__artwork"></div>
                 <div class="b--card-a__wrapper b--content-a">
-                    <SanityContent :blocks="description" />
+                    <SanityContent :blocks="description" :serializers="serializers" />
                     <div v-if="loadMore">
                         <a class="b--card-a__wrapper__link" :href="loadMoreURL"> {{loadMoreBtn}} </a>
                     </div>
@@ -24,6 +24,15 @@
 <script>
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 export default {
+    setup() {
+        const blocks = "[...];" // Sanity block text
+        const serializers = {
+            types: {
+                // custom: CustomComponent,
+            }
+        };
+        return { blocks, serializers };
+    },
     props:[
         'title',
         'description', 
