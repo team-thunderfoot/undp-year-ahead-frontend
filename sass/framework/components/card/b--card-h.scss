@@ -42,6 +42,12 @@
       border-bottom: .39vh solid map-get($color-options , i);
       border-right: .39vh solid map-get($color-options , i);
       padding: calc(5.08vh - 3vh - 0.39vh*1.5) 3.13vh 5.08vh;
+      @media all and ($viewport-type: $tabletm) {
+        min-height: 290px;
+      }
+      @media all and ($viewport-type: $mobile) {
+        min-height: 240px;
+      }
       &__content{
         @include make-font-f();
         color: map-get($color-options , j);

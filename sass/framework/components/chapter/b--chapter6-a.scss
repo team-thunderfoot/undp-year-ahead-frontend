@@ -29,16 +29,12 @@
       }
     }
 
-    // quote
+    // quote, changed because the text was too large<
     &--third {
       position: absolute;
       width: 18.07%;
-      left: 69.16%;
-      bottom: 10.8%;
-      @media all and ($viewport-type: $mobile) {
-        bottom: 22.8%;
-        left: 81.16%;
-      }
+      left: 78%;
+      bottom: 22.8%;
     }
 
     // move card f head and bottom legs
