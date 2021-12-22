@@ -1,5 +1,10 @@
 <template>
-  <section class="b--page-a__item b--chapter1-a" id="Scene1" ref="Scene1" v-if="chapter">
+  <section
+    class="b--page-a__item b--chapter1-a"
+    id="Scene1"
+    ref="Scene1"
+    v-if="chapter"
+  >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img
@@ -15,7 +20,10 @@
       <div class="b--ss-a__content">
         <!-- Intro Story -->
         <!-- first div position element -->
-        <div class="b--chapter1-a__content" :class="'b--chapter1-a__content--'+`${this.lang}`">
+        <div
+          class="b--chapter1-a__content"
+          :class="'b--chapter1-a__content--' + `${this.lang}`"
+        >
           <div class="b--intro-a" :class="`b--intro-a--${this.lang}`">
             <div class="b--intro-a__artwork"></div>
             <div class="b--intro-a__wrapper">
@@ -42,7 +50,10 @@
           </div>
         </div>
 
-        <div class="b--chapter1-a__artwork b--chapter1-a__artwork--second" ref="frameTv">
+        <div
+          class="b--chapter1-a__artwork b--chapter1-a__artwork--second"
+          ref="frameTv"
+        >
           <div class="b--card-b">
             <div class="b--card-b__artwork"></div>
             <div class="b--card-b__wrapper">
@@ -56,7 +67,10 @@
           </div>
         </div>
 
-        <div class="b--chapter1-a__artwork b--chapter1-a__artwork--third" ref="browser">
+        <div
+          class="b--chapter1-a__artwork b--chapter1-a__artwork--third"
+          ref="browser"
+        >
           <img
             v-lazy="require(`@/assets/img/chapter-1/browser.gif`)"
             alt="browser"
@@ -105,7 +119,7 @@
           <!-- text with bg -->
           <div class="b--card-d">
             <div class="b--card-d__bd">
-              <v-quote-a :chapter="chapter"/>
+              <v-quote-a :chapter="chapter" />
             </div>
             <div class="b--card-d__artwork"></div>
           </div>
@@ -129,18 +143,15 @@
 import { groq } from '@nuxtjs/sanity'
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 
-import InfoChapter from '@/components/infochapter/Infochapter';
-import QuoteA from '@/components/quote/Quote';
+import InfoChapter from '@/components/infochapter/Infochapter'
+import QuoteA from '@/components/quote/Quote'
 
-// import Parallax from '@/motion/Parallax';
-import Vue from 'vue';
-import Parallax from '@/mixins/Parallax.js';
-import Animation from '@/mixins/Animation.js';
-Vue.use(Parallax)
+import Vue from 'vue'
+import Animation from '@/mixins/Animation.js'
 Vue.use(Animation)
 
 export default {
-  mixins: [Parallax,Animation],
+  mixins: [Animation],
   data: () => {
     return {
       totalContent: 3,
@@ -152,11 +163,10 @@ export default {
   props: ['scrollTween'],
   components: {
     SanityContent,
-    'v-info-chapter' : InfoChapter,
-    'v-quote-a' : QuoteA
+    'v-info-chapter': InfoChapter,
+    'v-quote-a': QuoteA,
   },
   methods: {
-
     async getContent() {
       this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
       const query_content = groq`*[_type == "chapterOne"][0]{
@@ -180,11 +190,11 @@ export default {
     animate() {
       this.$nextTick(() => {
         this.startAnimation({
-            sceneID : 1,
-            scrub:0,
-            scrollTween : this.scrollTween
-          })
+          sceneID: 1,
+          scrub: 0,
+          scrollTween: this.scrollTween,
         })
+      })
     },
   },
   watch: {
@@ -195,31 +205,20 @@ export default {
         // this.animate()
       }
     },
-    scrollTween(newValue, oldValue){
-      if (newValue ) {
-
-        // var motion = [
-        //   {obj:this.$refs['parallax-1-ft'], intensity:.5},
-        //   {obj:this.$refs['parallax-1-bubble'], intensity:.5},
-        //   {obj:this.$refs['frameTv'], intensity:.3},
-        //   {obj:this.$refs['browser'], intensity:.5},
-        // ]
-        // motion.forEach(item => {
-        //   this.parallaxMove({
-        //     el: item.obj,
-        //     intensity:item.intensity,
-        //     duration: this.$refs['Scene1'].offsetWidth,
-        //     containerAnimation:this.scrollTween,
-        //     scrub:1,
-        //   })  
-        // });
-        this.animate();
-      } 
-    }
+    scrollTween(newValue, oldValue) {
+      if (newValue) {
+        // mixin function
+        this.startAnimation({
+          sceneID: 1,
+          scrub: 0,
+          scrollTween: this.scrollTween,
+        })
+      }
+    },
   },
   created() {
     if (process.client) {
-      this.getContent();
+      this.getContent()
     }
   },
 }

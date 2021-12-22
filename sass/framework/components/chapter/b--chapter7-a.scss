@@ -1,4 +1,12 @@
 .b--chapter7-a {
+  .b--ss-a {
+    &__bg-items__parallax {
+      right: 13.8%;
+    }
+    &__ft-items__parallax {
+      right: 19.1%;
+    }
+  }
   &__content {
     position: absolute;
     bottom: 29.1%;
