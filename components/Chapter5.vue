@@ -18,6 +18,7 @@
         <!-- chapter title -->
         <div
           class="b--chapter5-a__content"
+          :class="'b--chapter5-a__content--' + `${this.lang}`"
           :style="{ left: '35%' }"
           ref="boxContent"
         >

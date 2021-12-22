@@ -17,6 +17,7 @@
       <div class="b--ss-a__content">
         <div
           class="b--chapter2-a__content"
+          :class="'b--chapter2-a__content--' + `${this.lang}`"
           ref="boxContent"
           :style="{ left: '26%' }"
         >

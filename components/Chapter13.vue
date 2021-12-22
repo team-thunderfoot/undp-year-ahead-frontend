@@ -6,7 +6,10 @@
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
-                <div class="b--chapter13-a__content">
+                <div 
+                class="b--chapter13-a__content"
+                :class="'b--chapter13-a__content--' + `${this.lang}`"
+                >
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
