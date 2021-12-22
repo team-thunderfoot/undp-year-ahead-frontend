@@ -9,3 +9,9 @@ Vue.use(vuescroll, {
     /** Enable locking to the main axis if user moves only slightly on one of them at start */
     locking: true,
 });
+
+Vue.prototype.$vuescrollConfig = {
+    bar: {
+      background: '#000'
+    }
+  };
