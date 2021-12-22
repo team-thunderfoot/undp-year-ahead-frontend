@@ -22,7 +22,9 @@
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
-                <div class="b--chapter10-a__content" :class="'b--chapter10-a__content--'+`${this.lang}`">
+                <div 
+                    class="b--chapter10-a__content" :class="'b--chapter10-a__content--'+`${this.lang}`"
+                >
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"

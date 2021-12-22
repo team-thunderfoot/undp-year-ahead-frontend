@@ -15,7 +15,10 @@
         />
       </div>
       <div class="b--ss-a__content">
-        <div class="b--chapter7-a__content">
+        <div 
+          class="b--chapter7-a__content"
+          :class="'b--chapter7-a__content--' + `${this.lang}`"
+        >
           <v-card-f
             :title="chapter.title"
             :description="chapter.description"
