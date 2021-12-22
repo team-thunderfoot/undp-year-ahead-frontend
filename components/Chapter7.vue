@@ -27,10 +27,16 @@
           />
         </div>
         <div class="b--chapter7-a__content b--chapter7-a__content--second">
-          <v-card-h :content="chapter.document_left" />
+          <v-card-h 
+            :content="chapter.document_left"
+            :class="'b--card-h--' + `${this.lang}`" 
+            />
         </div>
         <div class="b--chapter7-a__content b--chapter7-a__content--third">
-          <v-card-h :content="chapter.document_right" />
+          <v-card-h 
+            :content="chapter.document_right"
+            :class="'b--card-h--' + `${this.lang}`"  
+          />
         </div>
       </div>
       <div class="b--ss-a__bg-items">
