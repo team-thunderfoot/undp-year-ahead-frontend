@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter13-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-13/front.png`)" alt="front" />
+                <img v-lazy="require(`@/assets/img/chapter-13/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
