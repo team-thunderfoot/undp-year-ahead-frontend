@@ -8,7 +8,7 @@
   @media all and ($viewport-type: $mobile) {
     border: 1.5vh solid map-get($color-options, h);
     max-width: none !important;
-    width: calc(100vw - 60px);
+    width: calc(100vw - 80px);
     height: auto;
   }
   &::before,
