@@ -22,17 +22,16 @@
 </template>
 
 <script>
-import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
+import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
+import Links from '~/components/links/Links.vue';
+const serializers = {
+    types: {
+          },
+    marks : {
+        link : Links
+    }
+};
 export default {
-    setup() {
-        const blocks = "[...];" // Sanity block text
-        const serializers = {
-            types: {
-                // custom: CustomComponent,
-            }
-        };
-        return { blocks, serializers };
-    },
     props:[
         'title',
         'description', 
@@ -44,6 +43,11 @@ export default {
     ],
     components: {
         SanityContent,
+    },
+    data: () => {
+        return {
+            serializers: serializers,
+        }
     },
 }
 </script>
