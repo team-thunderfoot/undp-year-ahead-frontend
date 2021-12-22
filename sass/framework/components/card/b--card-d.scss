@@ -42,7 +42,7 @@
     background: $gradient-d;
     height: 100%;
     padding: 11%;
-    @media all and ($viewport-type: $tabletm) {
+    @media all and ($viewport-type: $tabletl) {
       padding: 5%;
     }
     .b--quote-a {

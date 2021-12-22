@@ -7,9 +7,13 @@
     width: 11.91%;
     max-width: calc(100vw - 100px);
     max-height: calc(60.25vh - 16.79vh - $measure * 4);
+    @media all and ($viewport-type: $tabletl) {
+      width: 12%;
+      left: 2.81%;
+      bottom: 19%;
+    }
     @media all and ($viewport-type: $tablets) {
       max-width: calc(100vw - 60px);
-
     }
     // intro second box
     &--second {
@@ -17,6 +21,12 @@
       left: 17.5%;
       width: 12.09%;
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
+      @media all and ($viewport-type: $tabletl) {
+        width: 9.9%;
+      }
+      @media all and ($viewport-type: $tablets) {
+        max-width: calc(100vw - 100px);
+      }
     }
     // card-d
     &--third {
@@ -24,6 +34,7 @@
       left: 63.75%;
       width: 17.48%;
       height: 85.15%;
+      max-width: calc(100vw - 140px);
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
       @media all and ($viewport-type: $tabletl) {
         height: auto;
@@ -42,9 +53,13 @@
         width: 13.51%;
         left: 2.51%;
       }
-      @media all and ($viewport-type: $tabletm) {
-        width: 13%;
+      @media all and ($viewport-type: $tabletl) {
+        width: 12%;
         left: 2.81%;
+        bottom: 19%;
+      }
+      @media all and ($viewport-type: $tablets) {
+        max-width: calc(100vw - 60px);
       }
     }
   }

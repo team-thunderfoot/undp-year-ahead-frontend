@@ -18,12 +18,14 @@
     &--second {
       top: 7.32%;
       left: 56.12%;
+      bottom: auto;
       width: 6.38%;
     }
     // card-h
     &--third {
       top: 7.32%;
       left: 65.32%;
+      bottom: auto;
       width: 6.97%;
       @media all and ($viewport-type: $tabletl) {
         width: 9%;
