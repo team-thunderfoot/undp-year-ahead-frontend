@@ -25,6 +25,8 @@
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
 import Links from '~/components/links/Links.vue';
 const serializers = {
+    types: {
+          },
     marks : {
         link : Links
     }
@@ -43,10 +45,10 @@ export default {
         SanityContent,
     },
     data: () => {
-    return {
-      serializers: serializers,
-    }
-  },
+        return {
+            serializers: serializers,
+        }
+    },
 }
 </script>
 
