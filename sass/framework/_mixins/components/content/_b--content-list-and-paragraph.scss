@@ -31,8 +31,8 @@
       }
       @media all and ($viewport-type: $mobile) {
         &:before {
-          width: 2px;
-          height: 2px;
+          width: 4px;
+          height: 4px;
           margin-bottom: 3.5px;
         }
       }

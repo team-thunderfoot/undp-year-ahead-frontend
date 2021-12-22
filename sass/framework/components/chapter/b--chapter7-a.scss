@@ -28,6 +28,9 @@
       @media all and ($viewport-type: $tabletl) {
         width: 9%;
       }
+      @media all and ($viewport-type: $tablets) {
+        width: 8%;
+      }
     }
   }
 }

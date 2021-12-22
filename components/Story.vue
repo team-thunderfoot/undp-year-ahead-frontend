@@ -23,7 +23,6 @@
 </template>
 
 <script>
-// import VBar from 'v-bar'
 import Chapter1 from '~/components/Chapter1.vue';
 import Chapter2 from '~/components/Chapter2.vue';
 import Chapter3 from '~/components/Chapter3.vue';
