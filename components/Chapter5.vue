@@ -38,14 +38,14 @@
           <v-info-chapter :info="chapter" />
         </div>
         <!-- women -->
-        <div class="b--chapter5-a__media">
+        <div class="b--chapter5-a__media" ref="woman" :style="{ left: '77%' }">
           <img
             v-lazy="require(`@/assets/img/chapter-5/women.svg`)"
             alt="women"
           />
         </div>
         <!-- first blink animation -->
-        <div class="b--chapter5-a__artwork">
+        <div class="b--chapter5-a__artwork" ref="eyes1" :style="{ left: '82.5%' }">
           <div
             class="b--motion-d"
             v-lazy:background-image="
@@ -54,7 +54,7 @@
           ></div>
         </div>
         <!-- second blink animation -->
-        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second">
+        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second" ref="eyes2" :style="{ left: '112.6%' }">
           <div
             class="b--motion-p"
             v-lazy:background-image="
@@ -130,6 +130,9 @@ export default {
         { obj: this.$refs['parallax-ft'], intensity: 11 },
         { obj: this.$refs['infochapter'], intensity: 11 },
         { obj: this.$refs['boxContent'], intensity: 11 },
+        { obj: this.$refs['woman'], intensity: 11 },
+        { obj: this.$refs['eyes1'], intensity: 11 },
+        { obj: this.$refs['eyes2'], intensity: 11 },
 
         // {obj:this.$refs['boxContent'], intensity:11},
         // {obj:this.$refs['quoteContent'], intensity:4},
