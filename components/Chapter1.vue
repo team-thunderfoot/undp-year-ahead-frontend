@@ -44,7 +44,9 @@
           <div class="b--card-a">
             <div class="b--card-a__artwork"></div>
             <div class="b--card-a__wrapper b--content-a">
-              <SanityContent :blocks="chapter.content" />
+              <vuescroll>
+                 <SanityContent :blocks="chapter.content" />
+              </vuescroll>
             </div>
           </div>
         </div>
@@ -142,13 +144,14 @@
 // Data import
 import { groq } from '@nuxtjs/sanity'
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
-
 import InfoChapter from '@/components/infochapter/Infochapter'
 import QuoteA from '@/components/quote/Quote'
 
 import Vue from 'vue'
 import Animation from '@/mixins/Animation.js'
 Vue.use(Animation)
+
+import vuescroll from 'vuescroll';
 
 export default {
   mixins: [Animation],
@@ -165,6 +168,7 @@ export default {
     SanityContent,
     'v-info-chapter': InfoChapter,
     'v-quote-a': QuoteA,
+    vuescroll,
   },
   methods: {
     async getContent() {
