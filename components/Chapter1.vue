@@ -58,7 +58,7 @@
             <div class="b--card-b__wrapper">
               <img
                 class="b--card-b__wrapper__media"
-                v-lazy="require(`@/assets/videos/frame.mp4`)"
+                v-lazy="require(`@/assets/img/chapter-1/frame.gif`)"
                 alt="frame"
                 title="frame"
               />
@@ -70,15 +70,12 @@
           class="b--chapter1-a__artwork b--chapter1-a__artwork--third"
           ref="browser"
         >  
-          <!-- <video
+          <img
 
-            v-lazy="require(`@/assets/videos/browser.mp4`)"
+            v-lazy="require(`@/assets/img/chapter-1/browser.gif`)"
             alt="browser"
             title="browser"
-          /> -->
-          <video autoplay>
-            <source src="@/assets/videos/browser.mp4" type="video/mp4">
-          </video>
+          />
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
@@ -87,7 +84,7 @@
               <div class="b--card-c__bd__artwork"></div>
               <div class="b--card-c__bd__media-wrapper">
                 <img
-                  v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"
+                  v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"
                   alt="tv"
                   title="tv"
                   class="b--card-c__bd__media-wrapper__media"
