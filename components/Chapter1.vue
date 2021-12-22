@@ -15,7 +15,6 @@
           src="@/assets/img/chapter-1/front.png"
           alt=""
         />
-        <!-- <div class="eli"></div> -->
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -70,8 +69,9 @@
         <div
           class="b--chapter1-a__artwork b--chapter1-a__artwork--third"
           ref="browser"
-        >
+        >  
           <img
+
             v-lazy="require(`@/assets/img/chapter-1/browser.gif`)"
             alt="browser"
             title="browser"
