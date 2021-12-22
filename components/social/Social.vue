@@ -18,19 +18,19 @@ export default {
         return {
             social: {
                 facebook: {
-                    url: "https://www.google.es",
+                    url: "https://www.facebook.com/sharer/sharer.php?u=" + window.location.host,
                     icon: require(`@/assets/img/social/facebook.svg`)
                 },
                 instagram: {
-                    url: "https://www.google.es",
+                    url: "https://twitter.com/intent/tweet?url="+ window.location.host + "&text=Check%20out%20this%20UNDP%20Page",
                     icon: require(`@/assets/img/social/instagram.svg`)
                 },
                 linkedin: {
-                    url: "https://www.google.es",
+                    url: "http://www.linkedin.com/shareArticle?mini=true&url=" + window.location.host,
                     icon: require(`@/assets/img/social/linkedin.svg`),
                 },
                 twitter: {
-                    url: "https://www.google.es",
+                    url: "mailto:?subject=Check out this UNDP Page&amp;body=Check out this UNDP Page" + + window.location.host,
                     icon: require(`@/assets/img/social/twitter.svg`)
                 }
             }

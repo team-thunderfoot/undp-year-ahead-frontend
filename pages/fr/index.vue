@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="b--noise-a"></div>
-        <v-nav />
+        <v-nav v-if="isLoaded" />
         <v-lang v-if="isLoaded" />
          <v-story :isLoaded="isLoaded" />
         <div class="b--preloader-a" :class="{'b--preloader-a--is-hidden':isLoaded}">

@@ -45,7 +45,7 @@
             <div class="b--card-a__artwork"></div>
             <div class="b--card-a__wrapper b--content-a">
               <vuescroll>
-                 <SanityContent :blocks="chapter.content" />
+                 <SanityContent :blocks="chapter.content" :serializers="serializers"/>
               </vuescroll>
             </div>
           </div>
@@ -152,9 +152,10 @@ import Animation from '@/mixins/Animation.js'
 Vue.use(Animation)
 
 import vuescroll from 'vuescroll';
+import SanityLinks from '~/mixins/sanityLinks';
 
 export default {
-  mixins: [Animation],
+  mixins: [Animation,SanityLinks],
   data: () => {
     return {
       totalContent: 3,
@@ -222,7 +223,8 @@ export default {
   },
   created() {
     if (process.client) {
-      this.getContent()
+      this.getContent();
+      this.serializers = this.getSerialize();
     }
   },
 }

@@ -12,6 +12,6 @@ Vue.use(vuescroll, {
 
 Vue.prototype.$vuescrollConfig = {
     bar: {
-      background: '#000'
+      background: 'green'
     }
   };

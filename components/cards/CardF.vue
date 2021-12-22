@@ -23,14 +23,10 @@
 
 <script>
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
-import Links from '~/components/sanity/Links.vue';
-const serializers = {
-    types: {},
-    marks : {
-        link : Links
-    }
-};
+import sanityLinks from '~/mixins/sanityLinks';
+
 export default {
+    mixins: [sanityLinks],
     props:[
         'title',
         'description', 
@@ -43,11 +39,9 @@ export default {
     components: {
         SanityContent,
     },
-    data: () => {
-        return {
-            serializers: serializers,
-        }
-    },
+    created(){
+        this.serializers = this.getSerialize()
+    }
 }
 </script>
 
