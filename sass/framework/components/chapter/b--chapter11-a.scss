@@ -13,6 +13,17 @@
     @media all and ($viewport-type: $mobile) {
       bottom: 28.79%;
     }
+    // french and spanish adjustments
+    &--fr, &--es {
+      bottom: 29.79%;
+      .b--card-f {
+        &__bd {
+          &:after, &:before {
+            height: 11.5vh!important;
+          }
+        }
+      }
+    }
   }
   // boxes
   &__media {
