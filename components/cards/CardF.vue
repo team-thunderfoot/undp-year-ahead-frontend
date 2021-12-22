@@ -24,14 +24,12 @@
 <script>
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 export default {
-    setup() {
-        const blocks = "[...];" // Sanity block text
-        const serializers = {
+    created() {
+        this.serializers = {
             types: {
                 // custom: CustomComponent,
             }
         };
-        return { blocks, serializers };
     },
     props:[
         'title',
@@ -45,6 +43,11 @@ export default {
     components: {
         SanityContent,
     },
+    data: () => {
+    return {
+      serializers: '',
+    }
+  },
 }
 </script>
 
