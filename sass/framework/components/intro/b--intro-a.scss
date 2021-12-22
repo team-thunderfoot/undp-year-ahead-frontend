@@ -82,16 +82,16 @@
         padding: 5%;
       }
       &__title {
-        font-size: clamp(1rem, 4.785vh, 1.96rem);
-        @media all and ($viewport-type: $laptop) {
-          font-size: clamp(1.25rem, 6.3vw, 1.96rem);
-        }
-        @media all and ($viewport-type: $tabletm) {
-          font-size: clamp(1.25rem, 6.3vw, 1.5rem);
-        }
-        @media all and ($viewport-type: $tablets) {
-          font-size: clamp(1.25rem, 6.3vw, 1.9rem);
-        }
+        // font-size: clamp(1rem, 4.785vh, 1.96rem);
+        // @media all and ($viewport-type: $laptop) {
+        //   font-size: clamp(1.25rem, 6.3vw, 1.96rem);
+        // }
+        // @media all and ($viewport-type: $tabletm) {
+        //   font-size: clamp(1.25rem, 6.3vw, 1.96rem);
+        // }
+        // @media all and ($viewport-type: $tablets) {
+        //   font-size: clamp(1.25rem, 6.3vw, 1.9rem);
+        // }
         &__badge {
           font-size: clamp(1rem, 9.5vh, 4.55rem);
           @media all and ($viewport-type: $laptop) {
