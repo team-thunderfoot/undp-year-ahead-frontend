@@ -14,9 +14,9 @@
       transform: translate(-14%, 14%) scale(0.72);
     }
     @media all and ($viewport-type: $tabletl) {
-      transform: translate(-10%, 10%) scale(0.8);
+      transform: translate(15%, -15%) scale(1.3);
     }
-    @media all and ($viewport-type: $tablets) {
+    @media all and ($viewport-type: $tabletm) {
       transform: scale(1);
     }
     @media all and ($viewport-type: $mobile) {
