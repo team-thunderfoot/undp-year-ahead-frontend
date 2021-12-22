@@ -37,8 +37,23 @@
       }
       &__bd {
         .b--card-a {
+          padding: $measure*3 5%;
           @media all and ($viewport-type: $mobile) {
             padding: $measure * 3 5%;
+          }
+        }
+      }
+    }
+    // french adjustments
+    &--fr {
+      width: 22.95%;
+      .b--card-f {
+        &__hd {
+          max-width: 100%!important;
+          margin: 0 auto $measure * 3;
+          &:before,
+          &:after {
+            height: $measure * 3;
           }
         }
       }
