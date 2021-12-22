@@ -8,7 +8,7 @@
     @include make-position-a();
     @media all and ($viewport-type: $tabletm) {
       width: 100%;
-      @include make-position-a();
+      max-width: calc(100vw - 120px);
     }
 
     // wheel
