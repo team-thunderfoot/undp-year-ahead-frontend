@@ -3,6 +3,7 @@
         <!-- <div style="position: fixed; bottom: 1rem; background-color: pink; color: black;width: 100px; left: 100px;z-index:1000">
             {{loadedNew}} ++ {{currentItem}}
         </div> -->
+        
         <v-chapter-1 :scrollTween="scrollTween"  />
         <v-chapter-2 :scrollTween="scrollTween" />
         <v-chapter-3 :scrollTween="scrollTween" />
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+// import VBar from 'v-bar'
 import Chapter1 from '~/components/Chapter1.vue';
 import Chapter2 from '~/components/Chapter2.vue';
 import Chapter3 from '~/components/Chapter3.vue';
