@@ -16,6 +16,7 @@
     "gsap": "file:gsap-bonus.tgz",
     "nuxt": "^2.15.7",
     "sanity-blocks-vue-component": "^0.1.0",
+    "v-bar": "^3.0.0",
     "vue-lazyload": "^1.3.3",
     "vue2-perfect-scrollbar": "^1.5.2"
   },
