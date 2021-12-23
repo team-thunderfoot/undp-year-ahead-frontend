@@ -11,6 +11,9 @@
     @media all and ($viewport-type: $tabletl) {
       bottom: 8.69%;
     }
+    @media all and ($viewport-type: $tablets) {
+      bottom: 15%;
+    }
     &--second {
       bottom: 47.26%;
       left: 31.45%;
