@@ -10,11 +10,11 @@
         <div class="b--chapter4-a__divider">
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
-            src="@/assets/img/chapter-4/front_tree.png"
+            v-lazy="require(`@/assets/img/chapter-4/front_tree.png`)"
           />
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
-            src="@/assets/img/chapter-4/front_electric-cable.png"
+            v-lazy="require(`@/assets/img/chapter-4/front_electric-cable.png`)"
           />
         </div>
       </div>
