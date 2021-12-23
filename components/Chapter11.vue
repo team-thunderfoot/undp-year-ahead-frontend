@@ -30,7 +30,7 @@
                     <div
                         class="b--motion-i"
                         v-lazy:background-image="
-                        require(`@/assets/img/chapter-13/plant_wind_3.png`)
+                        require(`@/assets/img/chapter-11/plant_wind_3.png`)
                         "
                     >
                     </div>
