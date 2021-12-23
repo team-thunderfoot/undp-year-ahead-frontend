@@ -2,8 +2,11 @@
     <section class="b--page-a__item b--chapter9-a" id="Scene9" ref="Scene9" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)" 
+                <img class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)" 
                 alt="front"
+                />
+                <img class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-9/middle-parallax.png`)" 
+                alt="middle"
                 />
             </div>
             <div class="b--ss-a__content">
@@ -26,7 +29,8 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-9/back.png">        
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-9/back.png">        
+                <img class="b--ss-a__bg-items__parallax" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-9/back-parallax.png">        
             </div>
         </div>
     </section>
