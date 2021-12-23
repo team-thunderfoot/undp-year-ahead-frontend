@@ -72,7 +72,7 @@ import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import QuoteA from '@/components/quote/Quote'
 
-// import Parallax from '@/motion/Parallax';
+
 import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
