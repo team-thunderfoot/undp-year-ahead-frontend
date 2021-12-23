@@ -10,7 +10,7 @@
 export default {
     data:()=>{
 		return{
-           maxStories : 14,
+           maxStories : 6,
            currentItemMenu : false,
            navIsLoaded: true,
 		}

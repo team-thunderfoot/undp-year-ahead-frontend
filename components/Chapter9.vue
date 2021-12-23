@@ -12,7 +12,7 @@
           ref="parallax-ft"
           v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)"
           alt="front"
-         :style="{ left: '50%' }"
+          :style="{ left: '40%' }"
         />
         <img
           class="b--ss-a__ft-items__parallax"
@@ -39,8 +39,9 @@
           />
         </div>
         <!-- second position element, info -->
-        <div class="b--chapter9-a__info"
-        ref="quoteContent"
+        <div
+          class="b--chapter9-a__info"
+          ref="quoteContent"
           :style="{ left: '104.1%' }"
         >
           <v-info-chapter :info="chapter" />

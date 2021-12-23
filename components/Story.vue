@@ -125,8 +125,11 @@ export default {
                 // emits on in Index.vue
                 setTimeout(() => {
                     $nuxt.$emit('siteLoaded');
+                }, 3000);
+                setTimeout(() => {  
                     this.loadedNew = true;
                 }, 5000);
+                
             })
         },
     
@@ -165,15 +168,12 @@ export default {
                 if(this.loadedNew){
                     // // SET NEW Item
                     this.currentItem = payload.item;
-                    console.log(this.currentItem);
+                    // console.log(this.currentItem);
                     // // // Change URL
                     this.urlParams.set("scene", payload.item );
                     this.urlParams.toString(); 
                     window.history.replaceState({}, '', `?${this.urlParams}`);
                 }
-            });
-            this.$nuxt.$on('changeURL', (payload) => {
-                // log
             });
         }
     }
