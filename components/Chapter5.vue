@@ -11,7 +11,7 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           :style="{ left: '30%' }"
-          src="@/assets/img/chapter-5/front-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-5/front-parallax.png`)"
         />
       </div>
       <div class="b--ss-a__content">
@@ -68,7 +68,7 @@
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '2%' }"
           ref="parallax-bg"
-          src="@/assets/img/chapter-5/back-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-5/back-parallax.png`)"
           alt=""
         />
         <img

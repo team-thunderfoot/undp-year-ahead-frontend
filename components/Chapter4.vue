@@ -23,7 +23,7 @@
           :style="{ left: '20%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          src="@/assets/img/chapter-4/front-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-4/front-parallax.png`)"
         />
       </div>
       <div class="b--ss-a__content">
@@ -55,7 +55,7 @@
           :style="{ left: '10%' }"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          src="@/assets/img/chapter-4/back-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-4/back-parallax.png`)"
           alt=""
         />
         <img
