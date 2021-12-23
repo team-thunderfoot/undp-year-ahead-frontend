@@ -6,14 +6,14 @@
     v-if="chapter"
   >
     <div class="b--ss-a">
-      <div class="b--ss-a__artwork">
-        <div class="b--chapter4-a__artwork">
+      <div class="b--ss-a__divider">
+        <div class="b--chapter4-a__divider">
           <img
-            class="b--chapter4-a__artwork__media b--chapter4-a__artwork__media--right"
+            class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
             src="@/assets/img/chapter-4/front_tree.png"
           />
           <img
-            class="b--chapter4-a__artwork__media b--chapter4-a__artwork__media--left"
+            class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
             src="@/assets/img/chapter-4/front_electric-cable.png"
           />
         </div>
