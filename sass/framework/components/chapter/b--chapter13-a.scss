@@ -35,8 +35,11 @@
         }
         // lines animation
         &--third {
-            bottom: 60%;
-            left: 85%;
+            bottom: 63%;
+            left: 88.5%;
+            @media all and ($viewport-type: $tabletl) {
+                left: 90%;
+            }
         }
     }
 
