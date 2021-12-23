@@ -20,7 +20,7 @@
       </div>
       <div class="b--ss-a__ft-items">
         <img
-          :style="{ left: '55%' }"
+          :style="{ left: '45%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           v-lazy="require(`@/assets/img/chapter-4/front-parallax.png`)"
@@ -31,7 +31,7 @@
         <div
           class="b--chapter4-a__content"
           ref="boxContent"
-          :style="{ left: '65%' }"
+          :style="{ left: '55%' }"
           :class="'b--chapter4-a__content--' + `${this.lang}`"
         >
           <v-card-f
@@ -44,7 +44,7 @@
         <div
           class="b--chapter4-a__content b--chapter4-a__content--second"
           ref="quoteContent"
-          :style="{ left: '82%' }"
+          :style="{ left: '85%' }"
         >
           <v-quote-a :chapter="chapter" customClass="b--quote-a--second" />
         </div>
@@ -101,10 +101,10 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 3 },
-        { obj: this.$refs['quoteContent'], intensity: 3 },
-        { obj: this.$refs['parallax-ft'], intensity: 26 },
-        { obj: this.$refs['boxContent'], intensity: 26 },
+        { obj: this.$refs['parallax-bg'], intensity: 6 },
+        { obj: this.$refs['quoteContent'], intensity: 6 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
@@ -112,7 +112,7 @@ export default {
           intensity: item.intensity,
           duration: this.$refs['Scene4'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: true,
+          scrub: 1,
         })
       })
     },
