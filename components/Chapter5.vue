@@ -111,8 +111,8 @@ export default {
       this.contentLoaded++
     },
     AsambleParallaxObjs() {
-      var backI = 2;
-      var frontI = 17;
+      var backI = 4;
+      var frontI = 11;
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: backI },
         { obj: this.$refs['parallax-ft'], intensity: frontI },
