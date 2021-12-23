@@ -9,10 +9,8 @@
       <div class="b--ss-a__divider">
         <div class="b--chapter8-a__divider">
           <img
-            class="
-              b--chapter8-a__divider__media b--chapter8-a__divider__media--right
-            "
-            src="@/assets/img/chapter-8/front_tree.png"
+            class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right"
+            v-lazy="require(`@/assets/img/chapter-8/front_tree.png`)"
           />
         </div>
       </div>
@@ -20,7 +18,7 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          src="@/assets/img/chapter-8/front-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-8/front-parallax.png`)"
           :style="{ left: '40%' }"
         />
         <img
@@ -28,7 +26,7 @@
             b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle
           "
           ref="parallax-middle"
-          src="@/assets/img/chapter-8/middle-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-8/middle-parallax.png`)"
           :style="{ left: '49%' }"
         />
       </div>
@@ -91,7 +89,7 @@
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          src="@/assets/img/chapter-8/back-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-8/back-parallax.png`)"
           alt=""
           :style="{ left: '16%' }"
         />
