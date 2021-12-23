@@ -46,7 +46,7 @@
         min-height: 290px;
       }
       @media all and ($viewport-type: $mobile) {
-        min-height: 210px;
+        min-height: 220px;
       }
       &__content{
         @include make-font-f();
