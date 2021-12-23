@@ -5,7 +5,7 @@
                 <div class="b--chapter13-a__divider">
                 <img
                     class="b--chapter13-a__divider__media b--chapter13-a__divider__media--right"
-                    src="@/assets/img/chapter-13/13-14_tree.png"
+                    v-lazy="require(`@/assets/img/chapter-13/13-14_tree.png`)"
                 />
                 </div>
             </div>
@@ -52,9 +52,7 @@
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
-                @load="handleLoad" 
-                @error="handleLoad" 
-                src="@/assets/img/chapter-13/back-parallax.png"
+                v-lazy="require(`@/assets/img/chapter-13/back-parallax.png`)"
                 >  
                 <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad" 
