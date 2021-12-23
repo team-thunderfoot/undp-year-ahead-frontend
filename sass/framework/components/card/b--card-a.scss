@@ -29,7 +29,7 @@
     height: calc(100% + 1.46vh * 2); // check this in mozilla
     background-color: map-get($colorbg-options, d);
     // safari bug
-    @media screen and (-webkit-min-device-pixel-ratio:0) { 
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
       top: -1.4vh;
       left: calc(100% + 1vh);
       width: 1.17vh;
@@ -51,7 +51,7 @@
       100vh - 19.04vh - 17.77vh - $measure * 4 - (1.46vh * 2) - $measure * 6 -
         2px
     );
-    overflow: auto;
+    // overflow: auto;
     position: relative;
     @media all and ($viewport-type: $mobile) {
       max-height: calc(
