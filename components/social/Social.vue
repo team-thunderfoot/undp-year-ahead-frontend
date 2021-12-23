@@ -40,8 +40,8 @@ export default {
             this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
            const query_content = groq`*[_type == "sitesettings"][0]{
                 "facebook" : facebook['${this.lang}'],
-                "instagram" : instagram['${this.lang}'],
-                "twitter" : twitter,
+                "instagram" : instagram,
+                "twitter" : twitter['${this.lang}'],
                 "linkedin" : linkedin,
             }`;
             this.social = await this.$sanity.fetch(query_content);
