@@ -1,4 +1,4 @@
-# virgai-frontend-nuxt
+# undp-frontend-nuxt
 
 ## Build Setup
 
