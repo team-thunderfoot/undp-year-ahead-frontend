@@ -1,8 +1,11 @@
 <template>
     <section class="b--page-a__item b--chapter8-a" id="Scene8" ref="Scene8"  v-if="chapter">
         <div class="b--ss-a"> 
-            <div class="b--ss-a__artwork">
-                <img class="b--ss-a__artwork__media b--ss-a__artwork__media--right" src="@/assets/img/chapter-8/front_tree.png">
+            <div class="b--ss-a__divider">
+                <div class="b--chapter8-a__divider">
+                    <img class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right" src="@/assets/img/chapter-8/front_tree.png">
+                </div>
+                
             </div>
             <div class="b--ss-a__ft-items">
                 <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-8/front-parallax.png" :style="{ left: '40%' }">
