@@ -13,7 +13,7 @@
         bottom: 25.99%;
         left: 7.39%;
         width: 23.08%;
-        @include make-position-a();
+        max-width: calc(100vw - 120px);
         @media all and ($viewport-type: $tabletm) {
             width: 100%;
         }
@@ -28,10 +28,15 @@
         @media all and ($viewport-type: $laptop) {
             bottom: 4%;
         }
-        // second animation
+        // plant animation
         &--second{
             bottom: 0;
             left: 78%;
+        }
+        // lines animation
+        &--third {
+            bottom: 60%;
+            left: 85%;
         }
     }
 
