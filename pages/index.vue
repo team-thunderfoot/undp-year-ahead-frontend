@@ -39,14 +39,14 @@ export default {
     },
     head() {
         return {
-            title: '2022 Year Ahead',
+            title: 'New Year, New Plan',
             meta: [
-                { hid: 'title', name: 'title', content: '2022 Year Ahead' },
-                { hid: 'description', name: 'description', content: 'Sustainable development in 2022. New Year, New Plan' },
+                { hid: 'title', name: 'title', content: 'New Year, New Plan' },
+                { hid: 'description', name: 'description', content: 'Sustainable development in 2022' },
                 { hid: 'og:type', property: 'og:type', content: 'website' },
                 { hid: 'og:image', property: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg'},
-                { hid: 'og:title', property: 'og:title', content: '2022 Year Ahead'},
-                { hid: 'og:description', property: 'og:description', content: 'Sustainable development in 2022. New Year, New Plan'},
+                { hid: 'og:title', property: 'og:title', content: 'New Year, New Plan'},
+                { hid: 'og:description', property: 'og:description', content: 'Sustainable development in 2022'},
             ]
         }
     },
