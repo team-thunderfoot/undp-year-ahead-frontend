@@ -125,14 +125,16 @@ export default {
       this.contentLoaded++
     },
     AsambleParallaxObjs() {
+      var backI = 2;
+      var frontI = 17;
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 6 },
-        { obj: this.$refs['parallax-ft'], intensity: 17 },
-        { obj: this.$refs['infochapter'], intensity: 17 },
-        { obj: this.$refs['boxContent'], intensity: 17 },
-        { obj: this.$refs['woman'], intensity: 17 },
-        { obj: this.$refs['eyes1'], intensity: 17 },
-        { obj: this.$refs['eyes2'], intensity: 17 },
+        { obj: this.$refs['parallax-bg'], intensity: backI },
+        { obj: this.$refs['parallax-ft'], intensity: frontI },
+        { obj: this.$refs['infochapter'], intensity: frontI },
+        { obj: this.$refs['boxContent'], intensity: frontI },
+        { obj: this.$refs['woman'], intensity: frontI },
+        { obj: this.$refs['eyes1'], intensity: frontI },
+        { obj: this.$refs['eyes2'], intensity: frontI },
 
         // {obj:this.$refs['boxContent'], intensity:11},
         // {obj:this.$refs['quoteContent'], intensity:4},
