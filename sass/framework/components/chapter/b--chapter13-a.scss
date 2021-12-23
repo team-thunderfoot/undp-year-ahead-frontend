@@ -13,9 +13,12 @@
         bottom: 25.99%;
         left: 7.39%;
         width: 23.08%;
-        max-width: calc(100vw - 120px);
+        max-width: calc(100vw - 100px);
         @media all and ($viewport-type: $tabletm) {
             width: 100%;
+        }
+        @media all and ($viewport-type: $mobile) {
+            bottom: 22%;
         }
  
     }
