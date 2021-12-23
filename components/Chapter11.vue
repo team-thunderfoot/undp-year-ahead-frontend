@@ -12,8 +12,8 @@
                     :class="'b--chapter11-a__content--'+`${this.lang}`"
                 >
                     <v-card-f 
-                        :title="chapter.title" 
-                        :description="chapter.description"
+                        :title="chapter.intro_title" 
+                        :description="chapter.intro_description"
                         :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
                     />
                 </div>
@@ -59,7 +59,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity';
 import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
@@ -70,8 +69,9 @@ import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
 Vue.use(Parallax)
 
+import LanguageData from '~/mixins/LanguageData';
 export default {
-    mixins: ['infoWindow',Parallax,Animation],
+    mixins: ['infoWindow',Parallax,Animation,LanguageData],
     components:{
         SanityContent,
         'v-card-f':CardF,
@@ -87,19 +87,6 @@ export default {
 	},
     props: ['scrollTween'],
     methods: {
-        async getContent(){
-            this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterEleven"][0]{
-                "title" : title['${this.lang}'],
-                "description" : description['${this.lang}'],
-                
-                "tooltip_label" : tooltip_label['${this.lang}'],
-                "tooltip_link" : tooltip_link['${this.lang}'],
-                "tooltip_date" : tooltip_date['${this.lang}']
-            }`;
-            this.chapter = await this.$sanity.fetch(query_content);
-            this.contentLoaded++;
-        },
         handleLoad(){
             this.contentLoaded++;
         },
@@ -126,10 +113,11 @@ export default {
             } 
         }
     },
-    created(){
-        if(process.client){
-            this.getContent();
-        }
+    created() {
+        this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+        var chapter = this.getLanguageData({lang : this.lang});
+        this.chapter =  chapter.ChapterEleven;
+        this.contentLoaded++
     }
 }
 </script>

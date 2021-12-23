@@ -22,8 +22,8 @@
           ref="boxContent" :style="{ left: '50%' }"
         >
           <v-card-f
-            :title="chapter.title"
-            :description="chapter.description"
+            :title="chapter.intro_title"
+            :description="chapter.intro_description"
             :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
             cardACustomClass="b--card-a--second"
           />
@@ -61,7 +61,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import CardH from '@/components/cards/CardH'
 
@@ -70,9 +69,10 @@ import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 Vue.use(Parallax)
 Vue.use(Animation)
+import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: [Parallax, Animation],
+  mixins: [Parallax, Animation,LanguageData],
   components: {
     'v-card-f': CardF,
     'v-card-h': CardH,
@@ -86,18 +86,6 @@ export default {
   },
   props: ['scrollTween'],
   methods: {
-    async getContent() {
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
-      const query_content = groq`*[_type == "chapterSeven"][0]{
-                "title" : title['${this.lang}'],
-                "description" : description['${this.lang}'],
-                
-                "document_left" : document_left['${this.lang}'],
-                "document_right" : document_right['${this.lang}'],
-            }`
-      this.chapter = await this.$sanity.fetch(query_content)
-      this.contentLoaded++
-    },
     handleLoad() {
       this.contentLoaded++
     },
@@ -142,10 +130,11 @@ export default {
     },
   },
   created() {
-    if (process.client) {
-      this.getContent()
-    }
-  },
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterSeven;
+    this.contentLoaded++
+  }
 }
 </script>
 

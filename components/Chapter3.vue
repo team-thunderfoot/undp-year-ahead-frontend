@@ -26,8 +26,8 @@
         :class="'b--chapter3-a__content--' + `${this.lang}`"
         >
           <v-card-f
-            :title="chapter.title"
-            :description="chapter.description"
+            :title="chapter.intro_title"
+            :description="chapter.intro_description"
             cardACustomClass="b--card-a--second"
             :customClass="'b--card-f--' + `${this.lang}`"
           />
@@ -69,7 +69,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import InfoChapter from '@/components/infochapter/Infochapter'
 
@@ -79,8 +78,9 @@ import Animation from '@/mixins/Animation.js'
 Vue.use(Parallax)
 Vue.use(Animation)
 
+import LanguageData from '~/mixins/LanguageData';
 export default {
-  mixins: [Parallax, Animation],
+  mixins: [Parallax, Animation,LanguageData],
   components: {
     'v-card-f': CardF,
     'v-info-chapter': InfoChapter,
@@ -94,19 +94,6 @@ export default {
   },
   props: ['scrollTween'],
   methods: {
-    async getContent() {
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
-      const query_content = groq`*[_type == "chapterThree"][0]{
-                "title" : title['${this.lang}'],
-                "description" : description['${this.lang}'],
-                "tooltip_label" : tooltip_label['${this.lang}'],
-                "tooltip_link" : tooltip_link['${this.lang}'],
-                "tooltip_date" : tooltip_date['${this.lang}']
-
-            }`
-      this.chapter = await this.$sanity.fetch(query_content)
-      this.contentLoaded++
-    },
     handleLoad() {
       this.contentLoaded++
     },
@@ -116,7 +103,6 @@ export default {
       if (newValue == this.totalContent) {
         // emits on in Story.vue
         $nuxt.$emit('assetLoaded')
-        // this.animate();
       }
     },
     scrollTween(newValue, oldValue) {
@@ -131,9 +117,10 @@ export default {
     },
   },
   created() {
-    if (process.client) {
-      this.getContent()
-    }
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterThree;
+    this.contentLoaded++
   },
 }
 </script>
