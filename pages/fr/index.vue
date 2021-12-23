@@ -39,14 +39,14 @@ export default {
     },
     head() {
         return {
-            title: 'Project Title Spanish',
+            title: 'Nouvelle année, nouveau plan',
             meta: [
-                { hid: 'title', name: 'title', content: 'Project Title SP' },
-                { hid: 'description', name: 'description', content: 'this is meta description for SP page' },
+                { hid: 'title', name: 'title', content: 'Nouvelle année, nouveau plan' },
+                { hid: 'description', name: 'description', content: 'Développement durable en 2022' },
                 { hid: 'og:type', property: 'og:type', content: 'website' },
                 { hid: 'og:image', property: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg'},
-                { hid: 'og:title', property: 'og:title', content: 'Og Title Spanish'},
-                { hid: 'og:description', property: 'og:description', content: 'OG Description Spanish'},
+                { hid: 'og:title', property: 'og:title', content: 'Nouvelle année, nouveau plan'},
+                { hid: 'og:description', property: 'og:description', content: 'Développement durable en 2022'},
             ]
         }
     },
