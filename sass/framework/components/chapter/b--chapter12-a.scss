@@ -30,4 +30,23 @@
     bottom: 49%;
     left: 49.5%;
   }
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    &__media {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: 100vh;
+      &--left {
+        left: -1.5%;
+      }
+    }
+  }
 }
