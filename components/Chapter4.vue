@@ -10,17 +10,17 @@
         <div class="b--chapter4-a__divider">
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
-            src="@/assets/img/chapter-4/front_tree.png"
+            v-lazy="require(`@/assets/img/chapter-4/front_tree.png`)"
           />
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
-            src="@/assets/img/chapter-4/front_electric-cable.png"
+            v-lazy="require(`@/assets/img/chapter-4/front_electric-cable.png`)"
           />
         </div>
       </div>
       <div class="b--ss-a__ft-items">
         <img
-          :style="{ left: '20%' }"
+          :style="{ left: '45%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           v-lazy="require(`@/assets/img/chapter-4/front-parallax.png`)"
@@ -31,7 +31,7 @@
         <div
           class="b--chapter4-a__content"
           ref="boxContent"
-          :style="{ left: '35%' }"
+          :style="{ left: '55%' }"
           :class="'b--chapter4-a__content--' + `${this.lang}`"
         >
           <v-card-f
@@ -101,10 +101,10 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 11 },
-        { obj: this.$refs['boxContent'], intensity: 11 },
-        { obj: this.$refs['quoteContent'], intensity: 4 },
+        { obj: this.$refs['parallax-bg'], intensity: 6 },
+        { obj: this.$refs['quoteContent'], intensity: 6 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
@@ -112,7 +112,7 @@ export default {
           intensity: item.intensity,
           duration: this.$refs['Scene4'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
+          scrub: true,
         })
       })
     },

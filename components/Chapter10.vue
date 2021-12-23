@@ -3,11 +3,15 @@
         <div class="b--ss-a"> 
             <div class="b--ss-a__divider">
                 <div class="b--chapter-10-a__divider">
-                    <img class="b--chapter10-a__divider__media b--chapter10-a__divider__media--left" src="@/assets/img/chapter-10/front_rock.png">
+                    <img class="b--chapter10-a__divider__media b--chapter10-a__divider__media--left" 
+                    v-lazy="require(`@/assets/img/chapter-10/front_rock.png`)">
                 </div>
             </div>
             <div class="b--ss-a__ft-items">
-                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-10/front-parallax.png">
+                <img class="b--ss-a__ft-items__parallax" 
+                ref="parallax-ft" 
+                v-lazy="require(`@/assets/img/chapter-10/front-parallax.png`)"
+                >
             </div>
             <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
             <div class="b--chapter10-a__artwork">
@@ -38,8 +42,14 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">  
-                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-10/back-parallax.png" alt=""> 
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-10/back.png">        
+                <img class="b--ss-a__bg-items__parallax" 
+                ref="parallax-bg" 
+                v-lazy="require(`@/assets/img/chapter-10/back-parallax.png`)"
+                alt=""> 
+                <img class="b--ss-a__bg-items__back" 
+                @load="handleLoad" 
+                @error="handleLoad" 
+                src="@/assets/img/chapter-10/back.png">        
             </div>
         </div>
     </section>
