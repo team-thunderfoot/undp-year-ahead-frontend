@@ -10,6 +10,9 @@
       width: 100%;
       max-width: calc(100vw - 90px);
     }
+    @media all and ($viewport-type: $tablets) {
+      bottom: 20%;
+    }
 
     // wheel
     &--second {

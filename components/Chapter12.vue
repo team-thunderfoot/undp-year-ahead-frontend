@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-12/front-parallax.png`)" alt="front" />
+                <img class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-12/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
