@@ -8,7 +8,7 @@
     <div class="b--ss-a">
       <div class="b--ss-a__artwork">
         <img
-          class="b--ss-a__artwork__media b--ss-a__artwork__media--right"
+          class="b--ss-a__artwork__media  b--chapter4-a__artwork__media--right"
           src="@/assets/img/chapter-4/front_tree.png"
         />
         <img
