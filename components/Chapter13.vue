@@ -1,8 +1,22 @@
 <template>
     <section class="b--page-a__item b--chapter13-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
+            <div class="b--ss-a__divider">
+                <div class="b--chapter13-a__divider">
+                <img
+                    class="b--chapter13-a__divider__media b--chapter13-a__divider__media--right"
+                    src="@/assets/img/chapter-13/13-14_tree.png"
+                />
+                </div>
+            </div>
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-13/front-parallax.png`)" alt="front" />
+                <img
+                class="b--ss-a__ft-items__parallax"
+                v-lazy="require(`@/assets/img/chapter-13/middle-parallax.png`)"
+                alt="middle"
+                ref="parallax-middle"
+                />
+                <img class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-13/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -37,7 +51,12 @@
                 </div>            
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" 
+                <img class="b--ss-a__bg-items__parallax" 
+                @load="handleLoad" 
+                @error="handleLoad" 
+                src="@/assets/img/chapter-13/back-parallax.png"
+                >  
+                <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad" 
                 @error="handleLoad" 
                 src="@/assets/img/chapter-13/back.png"

@@ -63,4 +63,23 @@
             }
         }
     }
+    &__divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 4;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      z-index: 10;
+      &__media {
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        height: 100vh;
+        &--right {
+          right: -10.5%;
+        }
+      }
+    }
 }
