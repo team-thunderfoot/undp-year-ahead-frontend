@@ -1,4 +1,8 @@
 .b--chapter8-a {
+  // z-index to the chapter to see the union elements
+  &.b--page-a__item {
+    z-index: 1;
+  }
   &__content {
     position: absolute;
     bottom: 33.11%;
@@ -61,7 +65,7 @@
       height: 100vh;
       &--right {
         left: auto;
-        right: -4.3%;
+        right: -5.4%;
       }
     }
   }
