@@ -16,8 +16,10 @@
       </div>
       <div class="b--ss-a__content">
         <div 
+          
           class="b--chapter7-a__content"
           :class="'b--chapter7-a__content--' + `${this.lang}`"
+          ref="contentChapter7" :style="{ left: '55%' }"
         >
           <v-card-f
             :title="chapter.title"
@@ -41,7 +43,7 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
-          :style="{ left: '25%' }"
+          :style="{ left: '2%' }"
           ref="parallax-bg"
           class="b--ss-a__bg-items__parallax"
           src="@/assets/img/chapter-7/back-parallax.png"
@@ -63,7 +65,6 @@ import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import CardH from '@/components/cards/CardH'
 
-// import Parallax from '@/motion/Parallax';
 import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -104,7 +105,7 @@ export default {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 4 },
         { obj: this.$refs['parallax-ft'], intensity: 11 },
-       
+        { obj: this.$refs['contentChapter7'], intensity: 11 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
@@ -126,13 +127,15 @@ export default {
     },
     scrollTween(newValue, oldValue) {
       if (newValue) {
+    
         this.AsambleParallaxObjs();
 
         this.startAnimation({
-          sceneID: 7,
-          scrub: 0,
-          scrollTween: this.scrollTween,
+            sceneID: 7,
+            scrub: 0,
+            scrollTween: this.scrollTween,
         })
+
       }
     },
   },
