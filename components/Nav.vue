@@ -38,7 +38,7 @@ export default {
                 "nav_title" : nav_title['${this.lang}'],
 
                 "facebook" : facebook['${this.lang}'],
-                "twitter" : twitter,
+                "twitter" : twitter['${this.lang}'],
                 "linkedin" : linkedin,
             }`
             this.nav = await this.$sanity.fetch(query_content)
