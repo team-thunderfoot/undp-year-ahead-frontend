@@ -19,7 +19,7 @@
           
           class="b--chapter7-a__content"
           :class="'b--chapter7-a__content--' + `${this.lang}`"
-          ref="boxContent" :style="{ left: '55%' }"
+          ref="boxContent" :style="{ left: '50%' }"
         >
           <v-card-f
             :title="chapter.title"
