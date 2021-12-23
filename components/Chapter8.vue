@@ -5,14 +5,15 @@
                 <img class="b--ss-a__artwork__media b--ss-a__artwork__media--right" src="@/assets/img/chapter-8/front_tree.png">
             </div>
             <div class="b--ss-a__ft-items">
-                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-8/front-parallax.png">
-                <img class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle" ref="parallax-ft" src="@/assets/img/chapter-8/middle-parallax.png">
+                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-8/front-parallax.png" :style="{ left: '40%' }">
+                <img class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle" ref="parallax-middle" src="@/assets/img/chapter-8/middle-parallax.png" :style="{ left: '46%' }">
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
                 <div 
                     class="b--chapter8-a__content"
                     :class="'b--chapter8-a__content--' + `${this.lang}`"
+                    ref="boxContent" :style="{ left: '46%' }"
                 >
                     <v-card-f 
                         :title="chapter.title"
@@ -21,12 +22,11 @@
                     />
                 </div>
                 <!-- info chart -->
-                <div class="b--chapter8-a__content b--chapter8-a__content--second">
+                <div class="b--chapter8-a__content b--chapter8-a__content--second" ref="infoChapter" :style="{ left: '66%' }">
                     <v-info-chapter :info="chapter"/>
-                    <!-- <p><a href="">UN Biodiversity Conference (COP15)</a> 25 April - 8 May, Kunming, China</p> -->
                 </div>
                 <!-- plant animation -->
-                <div class="b--chapter8-a__artwork">
+                <div class="b--chapter8-a__artwork" ref="plant" :style="{ left: '80%' }">
                     <div
                         class="b--motion-e"
                         v-lazy:background-image="
@@ -35,7 +35,7 @@
                     ></div>
                 </div> 
                 <!-- fishes animation -->
-                <div class="b--chapter8-a__artwork b--chapter8-a__artwork--second">
+                <div class="b--chapter8-a__artwork b--chapter8-a__artwork--second" ref="fishes" :style="{ left: '86%' }">
                     <div
                         class="b--motion-r"
                         v-lazy:background-image="
@@ -45,7 +45,7 @@
                 </div>      
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-8/back-parallax.png" alt=""> 
+                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-8/back-parallax.png" alt="" :style="{ left: '16%' }"> 
                 <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-8/back.png">       
             </div>
         </div>
@@ -57,11 +57,11 @@ import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
-// import Parallax from '@/motion/Parallax';
-import Vue from 'vue';
-import Parallax from '@/mixins/Parallax.js';
-import Animation from '@/mixins/Animation.js';
+import Vue from 'vue'
+import Parallax from '@/mixins/Parallax.js'
+import Animation from '@/mixins/Animation.js'
 Vue.use(Parallax)
+Vue.use(Animation)
 
 export default {
     mixins: [Parallax,Animation],
@@ -94,15 +94,27 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 8,
-                    scrub:0,
-                    scrollTween : this.scrollTween
+        AsambleParallaxObjs() {
+            var motion = [
+                { obj: this.$refs['parallax-bg'], intensity: 4 },
+                { obj: this.$refs['parallax-ft'], intensity: 11 },
+                { obj: this.$refs['parallax-middle'], intensity: 8 },
+                { obj: this.$refs['boxContent'], intensity: 8 },
+                { obj: this.$refs['infoChapter'], intensity: 8 },
+                { obj: this.$refs['plant'], intensity: 8 },
+                { obj: this.$refs['fishes'], intensity: 8 },
+            ]
+            motion.forEach((item) => {
+                this.parallaxMove({
+                    el: item.obj,
+                    intensity: item.intensity,
+                    duration: this.$refs['Scene8'].offsetWidth,
+                    containerAnimation: this.scrollTween,
+                    scrub: 1,
                 })
             })
-        }
+        },
+        
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -113,7 +125,14 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.animate();
+                // motion frontend and backend elements
+                this.AsambleParallaxObjs()
+                //mixin function
+                this.startAnimation({
+                    sceneID : 8,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             } 
         }
     },
