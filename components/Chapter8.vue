@@ -13,6 +13,7 @@
                 <div 
                     class="b--chapter8-a__content"
                     :class="'b--chapter8-a__content--' + `${this.lang}`"
+                    ref="boxContent" :style="{ left: '46%' }"
                 >
                     <v-card-f 
                         :title="chapter.title"
@@ -21,11 +22,11 @@
                     />
                 </div>
                 <!-- info chart -->
-                <div class="b--chapter8-a__content b--chapter8-a__content--second">
+                <div class="b--chapter8-a__content b--chapter8-a__content--second" ref="infoChapter" :style="{ left: '66%' }">
                     <v-info-chapter :info="chapter"/>
                 </div>
                 <!-- plant animation -->
-                <div class="b--chapter8-a__artwork">
+                <div class="b--chapter8-a__artwork" ref="plant" :style="{ left: '80%' }">
                     <div
                         class="b--motion-e"
                         v-lazy:background-image="
@@ -34,7 +35,7 @@
                     ></div>
                 </div> 
                 <!-- fishes animation -->
-                <div class="b--chapter8-a__artwork b--chapter8-a__artwork--second">
+                <div class="b--chapter8-a__artwork b--chapter8-a__artwork--second" ref="fishes" :style="{ left: '86%' }">
                     <div
                         class="b--motion-r"
                         v-lazy:background-image="
@@ -98,7 +99,10 @@ export default {
                 { obj: this.$refs['parallax-bg'], intensity: 4 },
                 { obj: this.$refs['parallax-ft'], intensity: 11 },
                 { obj: this.$refs['parallax-middle'], intensity: 8 },
-                // { obj: this.$refs['quoteContent'], intensity: 4 },
+                { obj: this.$refs['boxContent'], intensity: 8 },
+                { obj: this.$refs['infoChapter'], intensity: 8 },
+                { obj: this.$refs['plant'], intensity: 8 },
+                { obj: this.$refs['fishes'], intensity: 8 },
             ]
             motion.forEach((item) => {
                 this.parallaxMove({
