@@ -7,14 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img
-          class="b--ss-a__ft-items__artwork"
-          ref="parallax-1-ft"
-          @load="handleLoad"
-          @error="handleLoad"
-          src="@/assets/img/chapter-1/front.png"
-          alt=""
-        />
+        <img v-lazy="require(`@/assets/img/chapter-1/front.png`)" alt="front" ref="parallax-1-ft" />
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -158,7 +151,7 @@ export default {
   mixins: [Animation,SanityLinks],
   data: () => {
     return {
-      totalContent: 3,
+      totalContent: 2,
       contentLoaded: 0,
       chapter: null,
       infoWindowStatus: true,
