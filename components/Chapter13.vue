@@ -28,7 +28,13 @@
                     require(`@/assets/img/chapter-13/plant_water_2.png`)
                     ">
                     </div>
-                </div>         
+                </div>
+                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--third">
+                    <div class="b--motion-k" v-lazy:background-image="
+                    require(`@/assets/img/chapter-13/lines_spritesheet.png`)
+                    ">
+                    </div>
+                </div>            
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" 

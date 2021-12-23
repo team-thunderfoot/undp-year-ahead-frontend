@@ -10,14 +10,8 @@
   animation-duration: 3.13s;
   animation-timing-function: steps(193);
   animation-iteration-count: infinite;
-  transform: translate(-7.5%, 7.5%) scale(0.85);
+  transform: translate(14.5%, 14.5%) scale(0.75);
   @media all and ($viewport-type: $laptop) {
-    transform: translate(-5%, 5%) scale(0.9);
-  }
-  @media all and ($viewport-type: $tabletl) {
-    transform: scale(1.2);
-  }
-  @media all and ($viewport-type: $tabletm) {
     transform: translate(-5%, 5%) scale(0.9);
   }
   @media all and ($viewport-type: $mobile) {

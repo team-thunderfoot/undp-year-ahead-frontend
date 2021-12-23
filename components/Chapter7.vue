@@ -16,8 +16,10 @@
       </div>
       <div class="b--ss-a__content">
         <div 
+          
           class="b--chapter7-a__content"
           :class="'b--chapter7-a__content--' + `${this.lang}`"
+          ref="boxContent" :style="{ left: '50%' }"
         >
           <v-card-f
             :title="chapter.title"
@@ -26,13 +28,13 @@
             cardACustomClass="b--card-a--second"
           />
         </div>
-        <div class="b--chapter7-a__content b--chapter7-a__content--second">
+        <div class="b--chapter7-a__content b--chapter7-a__content--second" ref="documentLeft" :style="{ left: '68%' }">
           <v-card-h 
             :content="chapter.document_left"
             :class="'b--card-h--' + `${this.lang}`" 
             />
         </div>
-        <div class="b--chapter7-a__content b--chapter7-a__content--third">
+        <div class="b--chapter7-a__content b--chapter7-a__content--third" ref="documentRight" :style="{ left: '80%' }">
           <v-card-h 
             :content="chapter.document_right"
             :class="'b--card-h--' + `${this.lang}`"  
@@ -41,7 +43,7 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
-          :style="{ left: '25%' }"
+          :style="{ left: '2%' }"
           ref="parallax-bg"
           class="b--ss-a__bg-items__parallax"
           src="@/assets/img/chapter-7/back-parallax.png"
@@ -63,7 +65,6 @@ import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import CardH from '@/components/cards/CardH'
 
-// import Parallax from '@/motion/Parallax';
 import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -103,8 +104,10 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 4 },
+        { obj: this.$refs['documentLeft'], intensity: 4 },
+        { obj: this.$refs['documentRight'], intensity: 4 },
         { obj: this.$refs['parallax-ft'], intensity: 11 },
-       
+        { obj: this.$refs['boxContent'], intensity: 11 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
@@ -126,13 +129,15 @@ export default {
     },
     scrollTween(newValue, oldValue) {
       if (newValue) {
+    
         this.AsambleParallaxObjs();
 
         this.startAnimation({
-          sceneID: 7,
-          scrub: 0,
-          scrollTween: this.scrollTween,
+            sceneID: 7,
+            scrub: 0,
+            scrollTween: this.scrollTween,
         })
+
       }
     },
   },

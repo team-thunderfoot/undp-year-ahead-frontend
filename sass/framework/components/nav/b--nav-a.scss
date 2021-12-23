@@ -10,7 +10,7 @@
     @media all and ($viewport-type: $mobile) {
         width: 45px;
     }
-    &__bg-items{
+    &__bg-items {
         position: absolute;
         top: 0;
         left: 0;
@@ -22,7 +22,7 @@
         opacity: .9;
 
     }
-    &__ft-items{
+    &__ft-items {
         position: relative;
         z-index: 10;
         height: 100%;
@@ -65,7 +65,7 @@
             @media all and ($viewport-type: $mobile) {
                 left: 12px;
             }
-            &__link{
+            &__link {
                 display:block;
                 margin-top: $measure * 2;
                 &__media {
