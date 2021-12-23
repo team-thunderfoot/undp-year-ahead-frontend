@@ -12,7 +12,7 @@
           ref="parallax-ft"
           v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)"
           alt="front"
-         :style="{ left: '50%' }"
+         :style="{ left: '40%' }"
         />
         <img
           class="b--ss-a__ft-items__parallax"

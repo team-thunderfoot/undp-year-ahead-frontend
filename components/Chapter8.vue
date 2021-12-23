@@ -5,11 +5,10 @@
                 <div class="b--chapter8-a__divider">
                     <img class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right" src="@/assets/img/chapter-8/front_tree.png">
                 </div>
-                
             </div>
             <div class="b--ss-a__ft-items">
                 <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-8/front-parallax.png" :style="{ left: '40%' }">
-                <img class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle" ref="parallax-middle" src="@/assets/img/chapter-8/middle-parallax.png" :style="{ left: '46%' }">
+                <img class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle" ref="parallax-middle" src="@/assets/img/chapter-8/middle-parallax.png" :style="{ left: '49%' }">
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
@@ -48,8 +47,9 @@
                 </div>      
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-8/back-parallax.png" alt="" :style="{ left: '16%' }"> 
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-8/back.png">       
+               
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-8/back.png">  
+                 <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-8/back-parallax.png" alt="" :style="{ left: '16%' }">      
             </div>
         </div>
     </section>
