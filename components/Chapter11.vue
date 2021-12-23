@@ -45,8 +45,14 @@
                 </div> 
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-11/back-parallax.png" alt=""> 
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-11/back.png">          
+                <img class="b--ss-a__bg-items__parallax" 
+                ref="parallax-bg" 
+                v-lazy="require(`@/assets/img/chapter-11/back-parallax.png`)"
+                alt=""> 
+                <img class="b--ss-a__bg-items__back" 
+                @load="handleLoad"  
+                @error="handleLoad" 
+                src="@/assets/img/chapter-11/back.png">          
             </div>
         </div>
     </section>
