@@ -11,7 +11,8 @@
         <div class="b--card-h__front-items">
             <div class="b--card-h__front-items__wrapper">
                 <div class="b--card-h__front-items__wrapper__content">
-                    <SanityContent :blocks="content" :serializers="serializers"/>
+                    <!-- <SanityContent :blocks="content" :serializers="serializers"/> -->
+                    <div v-html="content"></div>
                 </div>
             </div>
         </div>

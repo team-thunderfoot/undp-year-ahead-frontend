@@ -20,13 +20,13 @@
             <div class="b--intro-a__artwork"></div>
             <div class="b--intro-a__wrapper">
               <h1 class="b--intro-a__wrapper__title">
-                {{ chapter.title }}
+                {{ chapter.intro_title }}
                 <span class="b--intro-a__wrapper__title__badge">{{
-                  chapter.date
+                  chapter.intro_date
                 }}</span>
               </h1>
               <h2 class="b--intro-a__wrapper__subtitle">
-                {{ chapter.description }}
+                {{ chapter.intro_description }}
               </h2>
             </div>
           </div>
@@ -34,14 +34,15 @@
         <!-- Intro Story -->
 
         <div class="b--chapter1-a__content b--chapter1-a__content--second">
-          <div class="b--card-a">
-            <div class="b--card-a__artwork"></div>
-            <div class="b--card-a__wrapper b--content-a">
-              <vuescroll>
-                 <SanityContent :blocks="chapter.content" :serializers="serializers"/>
-              </vuescroll>
-            </div>
-          </div>
+			<div class="b--card-a">
+				<div class="b--card-a__artwork"></div>
+				<div class="b--card-a__wrapper b--content-a">
+				<vuescroll>
+					<!-- <SanityContent :blocks="chapter.content" :serializers="serializers"/> -->
+					<div v-html="chapter.content"></div>
+				</vuescroll>
+				</div>
+			</div>
         </div>
 
         <div
@@ -146,9 +147,10 @@ Vue.use(Animation)
 
 import vuescroll from 'vuescroll';
 import SanityLinks from '~/mixins/sanityLinks';
+import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: [Animation,SanityLinks],
+  mixins: [Animation,SanityLinks,LanguageData],
   data: () => {
     return {
       totalContent: 2,
@@ -165,61 +167,44 @@ export default {
     vuescroll,
   },
   methods: {
-    async getContent() {
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
-      const query_content = groq`*[_type == "chapterOne"][0]{
-                "title" : title['${this.lang}'],
-                "date" : date['${this.lang}'],
-                "description" : description['${this.lang}'],
-
-                "content" : content['${this.lang}'],
-
-                "quote" :  quote['${this.lang}'],
-                "quote_author" :  quote_author['${this.lang}'],
-                "quote_author_link" :  quote_author_link['${this.lang}'],
-                "quote_author_description" :  quote_author_description['${this.lang}'],
-            }`
-      this.chapter = await this.$sanity.fetch(query_content)
-      this.contentLoaded++
-    },
     handleLoad() {
-      this.contentLoaded++
+      	this.contentLoaded++
     },
     animate() {
-      this.$nextTick(() => {
-        this.startAnimation({
-          sceneID: 1,
-          scrub: 0,
-          scrollTween: this.scrollTween,
-        })
-      })
-    },
-  },
-  watch: {
-    contentLoaded(newValue, oldValue) {
-      if (newValue == this.totalContent) {
-        // emits on in Story.vue
-        $nuxt.$emit('assetLoaded')
-        // this.animate()
-      }
-    },
-    scrollTween(newValue, oldValue) {
-      if (newValue) {
-        // mixin function
-        this.startAnimation({
-          sceneID: 1,
-          scrub: 0,
-          scrollTween: this.scrollTween,
-        })
-      }
-    },
-  },
-  created() {
-    if (process.client) {
-      this.getContent();
-      this.serializers = this.getSerialize();
-    }
-  },
+		this.$nextTick(() => {
+			this.startAnimation({
+				sceneID: 1,
+				scrub: 0,
+				scrollTween: this.scrollTween,
+				})
+			})
+		},
+	},
+	watch: {
+		contentLoaded(newValue, oldValue) {
+			if (newValue == this.totalContent) {
+				// emits on in Story.vue
+				$nuxt.$emit('assetLoaded')
+				// this.animate()
+			}
+		},
+		scrollTween(newValue, oldValue) {
+			if (newValue) {
+				// mixin function
+				this.startAnimation({
+				sceneID: 1,
+				scrub: 0,
+				scrollTween: this.scrollTween,
+				})
+			}
+		},
+	},
+	created() {
+		this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+		var chapter = this.getLanguageData({lang : this.lang});
+		this.chapter = chapter.ChapterOne;
+		this.contentLoaded++
+  	},
 }
 </script>
 
