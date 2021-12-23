@@ -95,7 +95,7 @@ export default {
 
                 "tooltip_label" : tooltip_label['${this.lang}'],
                 "tooltip_link" : tooltip_link['${this.lang}'],
-                "tooltip_date" : tooltip_date['${this.lang}']
+                "tooltip_date" : tooltip_date['${this.lang}'],
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;

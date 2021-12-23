@@ -37,7 +37,7 @@ export default {
                 "logo_url" : logo_url['${this.lang}'],
                 "nav_title" : nav_title['${this.lang}'],
 
-                "facebook" : facebook,
+                "facebook" : facebook['${this.lang}'],
                 "twitter" : twitter,
                 "linkedin" : linkedin,
             }`
