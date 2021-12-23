@@ -1,4 +1,10 @@
 .b--chapter11-a {
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
+    &__content {
+      z-index: 10;
+    }
+  }
   // cards
   &__content {
     position: absolute;
@@ -14,12 +20,14 @@
       bottom: 28.79%;
     }
     // french and spanish adjustments
-    &--fr, &--es {
+    &--fr,
+    &--es {
       bottom: 29.79%;
       .b--card-f {
         &__bd {
-          &:after, &:before {
-            height: 11.5vh!important;
+          &:after,
+          &:before {
+            height: 11.5vh !important;
           }
         }
       }
@@ -77,7 +85,7 @@
       }
       @media all and ($viewport-type: $laptop) {
         margin: 0 auto $measure * 3;
-        max-width: 100%!important;
+        max-width: 100% !important;
       }
       &:before,
       &:after {
