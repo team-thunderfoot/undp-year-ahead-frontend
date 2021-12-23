@@ -19,7 +19,7 @@
           
           class="b--chapter7-a__content"
           :class="'b--chapter7-a__content--' + `${this.lang}`"
-          ref="contentChapter7" :style="{ left: '55%' }"
+          ref="boxContent" :style="{ left: '55%' }"
         >
           <v-card-f
             :title="chapter.title"
@@ -28,13 +28,13 @@
             cardACustomClass="b--card-a--second"
           />
         </div>
-        <div class="b--chapter7-a__content b--chapter7-a__content--second">
+        <div class="b--chapter7-a__content b--chapter7-a__content--second" ref="documentLeft" :style="{ left: '68%' }">
           <v-card-h 
             :content="chapter.document_left"
             :class="'b--card-h--' + `${this.lang}`" 
             />
         </div>
-        <div class="b--chapter7-a__content b--chapter7-a__content--third">
+        <div class="b--chapter7-a__content b--chapter7-a__content--third" ref="documentRight" :style="{ left: '80%' }">
           <v-card-h 
             :content="chapter.document_right"
             :class="'b--card-h--' + `${this.lang}`"  
@@ -104,8 +104,10 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 4 },
+        { obj: this.$refs['documentLeft'], intensity: 4 },
+        { obj: this.$refs['documentRight'], intensity: 4 },
         { obj: this.$refs['parallax-ft'], intensity: 11 },
-        { obj: this.$refs['contentChapter7'], intensity: 11 },
+        { obj: this.$refs['boxContent'], intensity: 11 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
