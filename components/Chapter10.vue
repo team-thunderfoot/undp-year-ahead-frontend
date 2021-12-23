@@ -1,8 +1,10 @@
 <template>
     <section class="b--page-a__item b--chapter10-a" id="Scene10" ref="Scene10" v-if="chapter">
         <div class="b--ss-a"> 
-            <div class="b--ss-a__artwork">
-                <img class="b--ss-a__artwork__media b--ss-a__artwork__media--left" src="@/assets/img/chapter-10/front_rock.png">
+            <div class="b--ss-a__divider">
+                <div class="b--chapter-10-a__divider">
+                    <img class="b--chapter10-a__divider__media b--chapter10-a__divider__media--left" src="@/assets/img/chapter-10/front_rock.png">
+                </div>
             </div>
             <div class="b--ss-a__ft-items">
                 <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-10/front-parallax.png">
