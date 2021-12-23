@@ -81,6 +81,11 @@
                     <div class="b--motion-q" v-lazy:background-image="require(`@/assets/test_sprites/blink_2b.png`)"></div>
               </div>
 
+              <div class="f--col-12">
+                    <!-- fishes -->
+                    <div class="b--motion-r" v-lazy:background-image="require(`@/assets/test_sprites/fishes_spritesheet.png`)"></div>
+              </div>
+
           </div>
       </div>
   </div>
@@ -447,6 +452,28 @@ export default {
         }
         to {
             background-position: -9600px;
+        }
+    }
+
+    .b--motion-r {
+        position: relative;
+        z-index: 3;
+        width: 600px;
+        height: 200px;
+        animation-name: motionQ;
+        animation-duration: 2s;
+        animation-timing-function: steps(96);
+        animation-iteration-count: infinite;
+        @media all and ($viewport-type: $tabletl) {
+            transform: translate(-25%, -25%) scale(0.5);
+        }
+    }
+    @keyframes motionQ {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: -57600px;
         }
     }
 </style>

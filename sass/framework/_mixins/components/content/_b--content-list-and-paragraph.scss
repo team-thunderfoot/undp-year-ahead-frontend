@@ -27,12 +27,12 @@
         border-radius: 50%;
         margin-bottom: 2px;
         margin-left: -0.6em;
-        margin-right: 10px;
+        margin-right: 5px;
       }
       @media all and ($viewport-type: $mobile) {
         &:before {
-          width: 2px;
-          height: 2px;
+          width: 4px;
+          height: 4px;
           margin-bottom: 3.5px;
         }
       }

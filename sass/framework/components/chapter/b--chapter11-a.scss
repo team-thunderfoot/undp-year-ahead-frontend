@@ -1,4 +1,10 @@
 .b--chapter11-a {
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
+    &__content {
+      z-index: 10;
+    }
+  }
   // cards
   &__content {
     position: absolute;
@@ -6,8 +12,25 @@
     left: 1.79%;
     width: 15.04%;
     @include make-position-a();
-    @media all and ($viewport-type: $tabletm) {
+    @media all and ($viewport-type: $tablets) {
       width: 100%;
+      bottom: 32.79%;
+    }
+    @media all and ($viewport-type: $mobile) {
+      bottom: 28.79%;
+    }
+    // french and spanish adjustments
+    &--fr,
+    &--es {
+      bottom: 29.79%;
+      .b--card-f {
+        &__bd {
+          &:after,
+          &:before {
+            height: 11.5vh !important;
+          }
+        }
+      }
     }
   }
   // boxes
@@ -37,20 +60,19 @@
     bottom: 5.736%;
     left: 90.5%;
     width: 7.06%;
+    // blink
     &--second {
-      bottom: 10.736%;
-      left: 10.5%;
+      bottom: 63.536%;
+      left: 23.95%;
       width: 7.06%;
+      height: 10%;
     }
+    // blink
     &--third {
-      bottom: 10.736%;
-      left: 10.5%;
+      bottom: 39.936%;
+      left: 47.65%;
       width: 7.06%;
-    }
-    &--fourth {
-      bottom: 10.736%;
-      left: 10.5%;
-      width: 7.06%;
+      height: 10%;
     }
   }
   // move card f head and bottom legs
@@ -60,6 +82,16 @@
       &:before,
       &:after {
         height: $measure * 4;
+      }
+      @media all and ($viewport-type: $laptop) {
+        margin: 0 auto $measure * 3;
+        max-width: 100% !important;
+      }
+      &:before,
+      &:after {
+        @media all and ($viewport-type: $laptop) {
+          height: $measure * 3;
+        }
       }
     }
     &__bd {
@@ -72,6 +104,12 @@
       &:before,
       &:after {
         height: 19.5vh;
+        @media all and ($viewport-type: $tablets) {
+          height: 14.5vh;
+        }
+        @media all and ($viewport-type: $mobile) {
+          height: 10.5vh;
+        }
       }
     }
   }

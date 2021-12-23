@@ -1,0 +1,10 @@
+.b--brand-a{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    width: 50px;
+    @media all and ($viewport-type: $mobile) {
+        width: 45px;
+    }
+}

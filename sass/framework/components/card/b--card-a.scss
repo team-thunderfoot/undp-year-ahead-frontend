@@ -28,6 +28,13 @@
     width: 1.17vh;
     height: calc(100% + 1.46vh * 2); // check this in mozilla
     background-color: map-get($colorbg-options, d);
+    // safari bug
+    @media screen and (-webkit-min-device-pixel-ratio:0) { 
+      top: -1.4vh;
+      left: calc(100% + 1vh);
+      width: 1.17vh;
+      height: calc(100% + 2.85vh);
+    }
     @media all and ($viewport-type: $mobile) {
       top: -8px;
       left: calc(100% + 8px);

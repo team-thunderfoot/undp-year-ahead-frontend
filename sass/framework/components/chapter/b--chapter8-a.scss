@@ -1,4 +1,8 @@
 .b--chapter8-a {
+  // z-index to the chapter to see the union elements
+  &.b--page-a__item {
+    z-index: 1;
+  }
   &__content {
     position: absolute;
     bottom: 33.11%;
@@ -9,7 +13,7 @@
       bottom: 26.11%;
     }
     &--second {
-      bottom: 38.36%;
+      bottom: 36.36%;
       left: 23.08%;
       width: 6.44%;
       @include make-position-a();
@@ -33,10 +37,36 @@
       }
     }
   }
-  // animation
+  // first animation
   &__artwork {
     position: absolute;
     bottom: 7%;
-    left: 36.5%;  
-  } 
+    left: 36.5%;
+    // second animation
+    &--second {
+      bottom: 0;
+      left: 44%;
+    }
+  }
+  // chapter divider
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    &__media {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: 100vh;
+      &--right {
+        left: auto;
+        right: -5.4%;
+      }
+    }
+  }
 }

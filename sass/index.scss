@@ -17,6 +17,7 @@
 // Navbar
 @import './framework/components/nav/b--nav-a.scss';
 @import './framework/components/lang/b--lang-a.scss';
+@import './framework/components/brand/b--brand-a.scss';
 
 // Preloader
 @import './framework/components/preloader/b--preloader-a.scss';
@@ -49,6 +50,7 @@
 @import './framework/components/card/b--card-f.scss';
 @import './framework/components/card/b--card-g.scss';
 @import './framework/components/card/b--card-h.scss';
+@import './framework/components/card/b--card-i.scss';
 
 // Content
 @import './framework/components/content/b--content-a.scss';
@@ -67,10 +69,17 @@
 @import './framework/components/motion/b--motion-h.scss';
 @import './framework/components/motion/b--motion-i.scss';
 @import './framework/components/motion/b--motion-j.scss';
+@import './framework/components/motion/b--motion-k.scss';
+@import './framework/components/motion/b--motion-m.scss';
+@import './framework/components/motion/b--motion-n.scss';
+@import './framework/components/motion/b--motion-o.scss';
 @import './framework/components/motion/b--motion-p.scss';
 @import './framework/components/motion/b--motion-q.scss';
-@import './framework/components/motion/b--motion-test.scss';
+@import './framework/components/motion/b--motion-r.scss';
 
 // Chapter Information
 @import './framework/components/info-chapter/b--info-chapter-a.scss';
 @import './framework/components/info-window/b--info-window-a.scss';
+
+// social
+@import './framework/components/social/b--social-a.scss';

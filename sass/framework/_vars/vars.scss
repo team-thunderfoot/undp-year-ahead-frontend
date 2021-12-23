@@ -39,6 +39,7 @@ $color-u: #33579e;
 $color-v: #35488b;
 $color-w: #33579e;
 $color-x: #232e3d;
+$color-z: #006EB5;
 
 // BLACK TEXT COLOR
 $color-y: #000;
@@ -69,6 +70,7 @@ $color-options: (
   w: $color-w,
   x: $color-x,
   y: $color-y,
+  z: $color-z,
 );
 
 // gradients
@@ -129,8 +131,10 @@ $gradient-k: linear-gradient(
 ); // Gradient Blue1
 $gradient-l: linear-gradient(
   360deg,
-  #33579e 47.51%,
-  #a6c4ff 147.8%
+  /*#33579e 47.51%,
+  // #a6c4ff 147.8% */
+  #33579e 7.51%,
+  #a6c4ff 107.8%
 ); // Gradient Blue2
 $gradient-m: linear-gradient(
   180deg,

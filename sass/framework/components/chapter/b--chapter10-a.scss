@@ -1,4 +1,10 @@
 .b--chapter10-a {
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
+    &__content {
+      z-index: 10;
+    }
+  }
   &__content {
     // title
     position: absolute;
@@ -12,13 +18,13 @@
     // card-f corrections
     .b--card-f {
       &__hd {
-        @media all and ($viewport-type: $mobile) {
+        @media all and ($viewport-type: $laptop) {
           margin: 0 auto $measure * 3;
           max-width: 100% !important;
         }
         &:before,
         &:after {
-          @media all and ($viewport-type: $mobile) {
+          @media all and ($viewport-type: $laptop) {
             height: $measure * 3;
           }
         }
@@ -37,6 +43,59 @@
           }
         }
       }
+      // spanish card f corrections
+      &--es {
+        .b--card-f {
+          &__hd {
+            max-width: 100%;
+            margin-bottom: $measure * 2;
+            &:after,
+            &:before {
+              height: $measure * 2;
+            }
+          }
+        }
+      }
+      // french card f corrections
+      &--fr {
+        .b--card-f {
+          &__hd {
+            max-width: 100%;
+            margin-bottom: $measure * 2;
+            &:after,
+            &:before {
+              height: $measure * 2;
+            }
+          }
+          &__bd {
+            &:after,
+            &:before {
+              height: 10.72vh;
+            }
+            @media all and ($viewport-type: $laptop) {
+              &:after,
+              &:before {
+                height: 10.3vh;
+              }
+              &:before {
+                left: 28%;
+              }
+              &:after {
+                right: 28%;
+              }
+            }
+          }
+        }
+      }
+    }
+    // french content corrections
+    &--fr {
+      bottom: 28.63%;
+      @media all and (min-width: $mobile) and ($viewport-type: $laptop) {
+        width: 13.9%;
+        left: 11.17%;
+        bottom: 27.63%;
+      }
     }
   }
   // fisherman animation
@@ -45,6 +104,7 @@
     bottom: 2.5%;
     left: 37.5%;
     z-index: 10;
+
     // plant animation
     &--second {
       bottom: -7.8%;
@@ -53,5 +113,25 @@
         bottom: -5%;
       }
     }
-  } 
+  }
+  // chapter divider
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    &__media {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: 100vh;
+      &--left {
+        left: -21%;
+      }
+    }
+  }
 }

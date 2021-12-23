@@ -9,6 +9,6 @@ Vue.use(VueLazyload, {
     //     rootMargin: '-300px',
     //     threshold: 0.1
     // }
-    // attempt: 1,
+    attempt: 10,
     // loading: '/img/placeholder.svg'
 });

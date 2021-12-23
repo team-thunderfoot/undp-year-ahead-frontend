@@ -3,21 +3,22 @@
         <!-- <div style="position: fixed; bottom: 1rem; background-color: pink; color: black;width: 100px; left: 100px;z-index:1000">
             {{loadedNew}} ++ {{currentItem}}
         </div> -->
+        
         <v-chapter-1 :scrollTween="scrollTween"  />
         <v-chapter-2 :scrollTween="scrollTween" />
         <v-chapter-3 :scrollTween="scrollTween" />
         <v-chapter-4  :scrollTween="scrollTween"/>
         <v-chapter-5 :scrollTween="scrollTween"  />
         <v-chapter-6  :scrollTween="scrollTween"/>
-        <!-- <v-chapter-7  :scrollTween="scrollTween"/>
+        <v-chapter-7  :scrollTween="scrollTween"/>
         <v-chapter-8 :scrollTween="scrollTween" />
         <v-chapter-9  :scrollTween="scrollTween"/>
-        <v-chapter-10 :scrollTween="scrollTween" />
+        <v-chapter-10 :scrollTween="scrollTween"/>
         <v-chapter-11 :scrollTween="scrollTween" />
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>
-        <v-chapter-14  :scrollTween="scrollTween"/> -->
-        <v-progress :isLoaded="isLoaded" :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
+        <v-chapter-14  :scrollTween="scrollTween"/>
+        <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
 
@@ -42,7 +43,7 @@ import Progress from '~/components/NavControls.vue';
 export default {
     data:()=>{
 		return{
-            totalChapters: 6,
+            totalChapters: 14,
 			statusChapter : 0,
             urlWithParams :false,
             sceneNumber : false,

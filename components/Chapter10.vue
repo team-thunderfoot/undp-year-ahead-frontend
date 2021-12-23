@@ -1,8 +1,13 @@
 <template>
     <section class="b--page-a__item b--chapter10-a" id="Scene10" ref="Scene10" v-if="chapter">
         <div class="b--ss-a"> 
+            <div class="b--ss-a__divider">
+                <div class="b--chapter-10-a__divider">
+                    <img class="b--chapter10-a__divider__media b--chapter10-a__divider__media--left" src="@/assets/img/chapter-10/front_rock.png">
+                </div>
+            </div>
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-10/front.png`)" alt="front" />
+                <img class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-10/front-parallax.png">
             </div>
             <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
             <div class="b--chapter10-a__artwork">
@@ -19,7 +24,9 @@
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
-                <div class="b--chapter10-a__content">
+                <div 
+                    class="b--chapter10-a__content" :class="'b--chapter10-a__content--'+`${this.lang}`"
+                >
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
@@ -30,8 +37,9 @@
                     />
                 </div>
             </div>
-            <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-10/back.png">        
+            <div class="b--ss-a__bg-items">  
+                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-10/back-parallax.png" alt=""> 
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-10/back.png">        
             </div>
         </div>
     </section>

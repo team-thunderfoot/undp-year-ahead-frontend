@@ -1,13 +1,5 @@
 .b--chapter13-a {
 
-    &__artwork {
-        position: absolute;
-        &--second{
-            bottom:0;
-            left:34%;
-        }
-    }
-
     // content has bigger z-index than ft items
     .b--ss-a {
         &__content {
@@ -21,11 +13,31 @@
         bottom: 25.99%;
         left: 7.39%;
         width: 23.08%;
-        @include make-position-a();
+        max-width: calc(100vw - 120px);
         @media all and ($viewport-type: $tabletm) {
             width: 100%;
         }
  
+    }
+
+    // animation
+    &__artwork {
+        position: absolute;
+        bottom: 0;
+        left: 35.2%;
+        @media all and ($viewport-type: $laptop) {
+            bottom: 4%;
+        }
+        // plant animation
+        &--second{
+            bottom: 0;
+            left: 78%;
+        }
+        // lines animation
+        &--third {
+            bottom: 60%;
+            left: 85%;
+        }
     }
 
     // move card f head and bottom legs
@@ -50,5 +62,24 @@
                 right: 14%;
             }
         }
+    }
+    &__divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 4;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      z-index: 10;
+      &__media {
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        height: 100vh;
+        &--right {
+          right: -10.5%;
+        }
+      }
     }
 }

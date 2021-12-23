@@ -8,7 +8,10 @@
     @include make-position-a();
     @media all and ($viewport-type: $tabletm) {
       width: 100%;
-      @include make-position-a();
+      max-width: calc(100vw - 90px);
+    }
+    @media all and ($viewport-type: $tablets) {
+      bottom: 20%;
     }
 
     // wheel
@@ -29,15 +32,12 @@
       }
     }
 
-    // quote
+    // quote, changed because the text was too large<
     &--third {
       position: absolute;
       width: 18.07%;
-      left: 69.16%;
-      bottom: 10.8%;
-      @media all and ($viewport-type: $mobile) {
-        bottom: 18.8%;
-      }
+      left: 78%;
+      bottom: 22.8%;
     }
 
     // move card f head and bottom legs

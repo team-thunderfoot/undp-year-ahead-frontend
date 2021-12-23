@@ -1,12 +1,23 @@
 <template>
     <section class="b--page-a__item b--chapter12-a" id="Scene12" ref="Scene12" v-if="chapter">
         <div class="b--ss-a"> 
+            <div class="b--ss-a__divider">
+                <div class="b--chapter12-a__divider">
+                <img
+                    class="b--chapter12-a__divider__media b--chapter12-a__divider__media--left"
+                    src="@/assets/img/chapter-12/11-12_tree.png"
+                />
+                </div>
+            </div>
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-12/front.png`)" alt="front" />
+                <img class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-12/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
-                <div class="b--chapter12-a__content">
+                <div 
+                    class="b--chapter12-a__content"
+                    :class="'b--chapter12-a__content--' + `${this.lang}`"
+                >
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
@@ -19,14 +30,15 @@
                     <v-info-chapter :info="chapter"/>
                 </div>
                 <div class="b--chapter12-a__artwork">
-                <div class="b--motion-j" v-lazy:background-image="
+                    <div class="b--motion-j" v-lazy:background-image="
                     require(`@/assets/img/chapter-12/blink_3.png`)
                     ">
                     </div>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png">        
+                <img class="b--ss-a__bg-items__parallax" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back-parallax.png">        
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png">        
             </div>
         </div>
     </section>

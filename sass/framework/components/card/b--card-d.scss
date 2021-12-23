@@ -8,7 +8,7 @@
   @media all and ($viewport-type: $mobile) {
     border: 1.5vh solid map-get($color-options, h);
     max-width: none !important;
-    width: calc(100vw - 60px);
+    width: calc(100vw - 80px);
     height: auto;
   }
   &::before,
@@ -42,7 +42,7 @@
     background: $gradient-d;
     height: 100%;
     padding: 11%;
-    @media all and ($viewport-type: $tabletm) {
+    @media all and ($viewport-type: $tabletl) {
       padding: 5%;
     }
     .b--quote-a {

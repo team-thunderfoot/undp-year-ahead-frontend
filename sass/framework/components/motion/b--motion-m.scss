@@ -1,0 +1,23 @@
+.b--motion-m {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 180px;
+    height: 224px;
+    animation-name: motionM;
+    animation-duration: 1.32s;
+    animation-timing-function: steps(80);
+    animation-iteration-count: infinite;
+    @media all and ($viewport-type: $laptop) {
+        transform: translate(-25%, 25%) scale(0.8);
+    }
+}
+@keyframes motionM {
+    from {
+        background-position: 0px;
+    }
+    to {
+        background-position: -14400px;
+    }
+}

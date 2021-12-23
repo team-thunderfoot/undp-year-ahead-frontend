@@ -11,5 +11,40 @@
       width: 10.62%;
       @include make-position-a();
     }
+    // card
+    &--third {
+      bottom: 8%;
+      left: 65.18%;
+      width: 10.15%;
+    }
+    // social
+    &--fourth {
+      width: fit-content;
+      bottom: 8%;
+      left: 82.6%;
+    }
+  }
+  &__artwork {
+    position: absolute;
+    left: 46.7%;
+    top: 0.73%;
+    width: 17.93%;
+    height: 52.83vh;
+    max-height: 52.83vh;
+    z-index: 1;
+    &--second {
+      left: 38.1%;
+      top: 68.65%;
+      width: 9vh;
+      height: 9vh;
+      @include make-wheel();
+    }
+  }
+
+  // content has more z-index than ft items
+  .b--ss-a {
+    &__content {
+      z-index: 90;
+    }
   }
 }

@@ -6,7 +6,10 @@
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, chapter title -->
-                <div class="b--chapter14-a__content">
+                <div 
+                    class="b--chapter14-a__content"
+                    :class="'b--chapter14-a__content--' + `${this.lang}`"
+                >
                     <v-card-f 
                         :title="chapter.title"
                         :description="chapter.description"
@@ -20,6 +23,28 @@
                         customClass="b--quote-a--third"
                     />
                 </div>
+                <!-- arrow -->
+                <div class="b--chapter14-a__artwork">
+                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
+                </div>
+                <!-- wheel -->
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second">
+                    <img
+                        v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
+                        alt="wheel"
+                        title="wheel"
+                    />
+                </div>
+                <!-- card-i -->
+                <div class="b--chapter14-a__content b--chapter14-a__content--third">
+                    <v-card-i
+                    :customClass="'b--card-i--'+ `${this.lang}`"
+                    />
+                </div>
+                <!-- social -->
+                <div class="b--chapter14-a__content b--chapter14-a__content--fourth">
+                    <v-social-a></v-social-a>
+                </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-14/back.png">        
@@ -31,8 +56,9 @@
 <script>
 import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
+import CardI from '@/components/cards/CardI';
 import QuoteA from '@/components/quote/Quote';
-
+import SocialA from '@/components/social/Social.vue';
 // import Parallax from '@/motion/Parallax';
 import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
@@ -43,7 +69,9 @@ export default {
     mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
-        'v-quote-a':QuoteA
+        'v-card-i':CardI,
+        'v-quote-a':QuoteA,
+        'v-social-a':SocialA
     },
     data:()=>{
 		return{
@@ -67,7 +95,7 @@ export default {
 
                 "tooltip_label" : tooltip_label['${this.lang}'],
                 "tooltip_link" : tooltip_link['${this.lang}'],
-                "tooltip_date" : tooltip_date['${this.lang}']
+                "tooltip_date" : tooltip_date['${this.lang}'],
             }`;
             this.chapter = await this.$sanity.fetch(query_content);
             this.contentLoaded++;

@@ -1,4 +1,9 @@
 .b--chapter4-a {
+  // z-index to the chapter to see the union elements
+  &.b--page-a__item {
+    z-index: 1;
+  }
+
   .b--ss-a {
     // bigger z-index to be shown above ft items
     &__content {
@@ -46,21 +51,27 @@
       }
     }
   }
-  &__artwork{
-    position:absolute;
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    &__media {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: 100vh;
+      &--right {
+        left: auto;
+        right: -4.3%;
+      }
+      &--left {
+        left: -6.6%;
+      }
+    }
   }
-  // tent
-  // &__artwork {
-  //   position: absolute;
-  //   &--third{
-  //     top:0 ;
-  //     left: 0;
-  //     max-width: 100%;
-  //   }
-  //   &--fourth{
-  //     bottom:0 ;
-  //     left: 0;
-  //     max-width: 100%;
-  //   }
-  // }
 }

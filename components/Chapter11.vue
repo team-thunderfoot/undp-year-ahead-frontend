@@ -2,12 +2,15 @@
     <section class="b--page-a__item b--chapter11-a" id="Scene11" ref="Scene11"  v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-11/front.png`)" alt="front" />
+                <img v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
                 <!-- move up with a modifier in the scss of the scene -->
-                <div class="b--chapter11-a__content">
+                <div 
+                    class="b--chapter11-a__content" 
+                    :class="'b--chapter11-a__content--'+`${this.lang}`"
+                >
                     <v-card-f 
                         :title="chapter.title" 
                         :description="chapter.description"
@@ -27,26 +30,23 @@
                     <div
                         class="b--motion-i"
                         v-lazy:background-image="
-                        require(`@/assets/img/chapter-13/plant_wind_3.png`)
+                        require(`@/assets/img/chapter-11/plant_wind_3.png`)
                         "
                     >
-                </div>
-                <!-- plant wind 1 -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork__second">
-                    <div class="b--motion-e" v-lazy:background-image="require(`@/assets/test_sprites/plant_wind_1.png`)"></div>
+                    </div>
                 </div>
                 <!-- blink 2a -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork__third">
-                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/test_sprites/blink_2a.png`)"></div>
+                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--second">
+                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2a.png`)"></div>
                 </div>
                 <!-- blink 2b -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork__fourth">
-                    <div class="b--motion-q" v-lazy:background-image="require(`@/assets/test_sprites/blink_2b.png`)"></div>
-                </div>
-            </div> 
+                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--third">
+                    <div class="b--motion-q" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2b.png`)"></div>
+                </div> 
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-11/back.png">        
+                <img class="b--ss-a__bg-items__parallax" ref="parallax-bg" src="@/assets/img/chapter-11/back-parallax.png" alt=""> 
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-11/back.png">          
             </div>
         </div>
     </section>
