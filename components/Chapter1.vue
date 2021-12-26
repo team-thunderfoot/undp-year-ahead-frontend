@@ -52,12 +52,16 @@
           <div class="b--card-b">
             <div class="b--card-b__artwork"></div>
             <div class="b--card-b__wrapper">
-              <img
+              <!-- video should be a scss component. -->
+              <video width="200" height="150" autoplay muted loop playsinline :style="{ pointerEvents: 'none' }">
+                  <source src="@/assets/video/chapter-1/frame.mp4" type="video/mp4">
+              </video>
+              <!-- <img
                 class="b--card-b__wrapper__media"
                 v-lazy="require(`@/assets/img/chapter-1/frame.gif`)"
                 alt="frame"
                 title="frame"
-              />
+              /> -->
             </div>
           </div>
         </div>

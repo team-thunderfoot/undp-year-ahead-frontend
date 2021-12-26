@@ -8,7 +8,7 @@
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img
-          :style="{ left: '28%' }"
+          :style="{ left: '68%' }"
           ref="parallax-ft"
           class="b--ss-a__ft-items__parallax"
           v-lazy="require(`@/assets/img/chapter-7/front-parallax.png`)"
@@ -19,7 +19,7 @@
           
           class="b--chapter7-a__content"
           :class="'b--chapter7-a__content--' + `${this.lang}`"
-          ref="boxContent" :style="{ left: '50%' }"
+          ref="boxContent" :style="{ left: '88%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -94,8 +94,8 @@ export default {
         { obj: this.$refs['parallax-bg'], intensity: 4 },
         { obj: this.$refs['documentLeft'], intensity: 4 },
         { obj: this.$refs['documentRight'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 11 },
-        { obj: this.$refs['boxContent'], intensity: 11 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({

@@ -15,7 +15,7 @@ export default {
                 scrollTrigger: {
                     containerAnimation: containerAnimation,
                     scrub: scrub,
-                    invalidateOnRefresh: true,
+                    // invalidateOnRefresh: true,
                 }
             });
         },
