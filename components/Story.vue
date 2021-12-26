@@ -1,9 +1,5 @@
 <template>
     <div id="HorizontalWrapper" class="b--page-a">
-        <!-- <div style="position: fixed; bottom: 1rem; background-color: pink; color: black;width: 100px; left: 100px;z-index:1000">
-            {{loadedNew}} ++ {{currentItem}}
-        </div> -->
-        
         <v-chapter-1 :scrollTween="scrollTween"  />
         <v-chapter-2 :scrollTween="scrollTween" />
         <v-chapter-3 :scrollTween="scrollTween" />
@@ -166,10 +162,9 @@ export default {
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
-                    // // SET NEW Item
+                    // SET NEW Item
                     this.currentItem = payload.item;
-                    // console.log(this.currentItem);
-                    // // // Change URL
+                    // Change URL
                     this.urlParams.set("scene", payload.item );
                     this.urlParams.toString(); 
                     window.history.replaceState({}, '', `?${this.urlParams}`);

@@ -11,6 +11,8 @@
         "linkedin" : "https://www.linkedin.com/company/undp/"
     },
     "Languages" : {
-        "lang_title" : "Español"
+        "en" : "English",
+        "fr" : "Français",
+        "es" : "Español"
     }
 }
