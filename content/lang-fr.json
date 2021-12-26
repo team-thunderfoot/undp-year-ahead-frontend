@@ -93,6 +93,11 @@
         "quote_content": "<p>« Il s’agit d’un moment crucial pour le monde et pour le développement.Mais c’est aussi un moment de choix : une occasion d’apprendre de notre expérience, de faire les choses différemment, d’aspirer à de plus grands objectifs communs. »</p>",
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
-        "quote_author_description": "Administrateur du PNUD"
+        "quote_author_description": "Administrateur du PNUD",
+        "share_this_story" : "Share this Story",
+        "poster_visit_title" : "Visit",
+        "poster_url" : "www.undp.org/french",  
+        "poster" : "<p>Présent dans quelque 170 pays et territoires, le PNUD contribue à éradiquer la pauvreté tout en protégeant la planète.</p>",
+        "copyright" : "© 2021 United Nations Development Programme"
     }
 }

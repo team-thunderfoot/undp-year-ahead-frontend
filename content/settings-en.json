@@ -1,0 +1,16 @@
+{
+    "Nav" : {
+        "logo" : "undp_en.svg",
+        "logo_url" : "https://www.undp.org/",
+        "nav_title" : "2022: The year ahead"
+    },
+    "SocialIcons" : {
+        "facebook" : "https://www.facebook.com/UNDP",
+        "twitter" : "https://twitter.com/UNDP/",
+        "instagram" : "https://www.instagram.com/UNDP/",
+        "linkedin" : "https://www.linkedin.com/company/undp/"
+    },
+    "Languages" : {
+        "lang_title" : "English"
+    }
+}

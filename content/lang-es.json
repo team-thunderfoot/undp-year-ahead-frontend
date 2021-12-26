@@ -93,6 +93,11 @@
         "quote_content": "<p>“Nos encontramos en un momento crítico para el mundo y para el desarrollo.Ahora bien, también es un momento de decisiones fundamentales: tenemos una oportunidad para aprender de nuestra experiencia, hacer las cosas de forma distinta y aspirar a objetivos comunes más ambiciosos”</p>",
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
-        "quote_author_description": "Administrador del PNUD"
+        "quote_author_description": "Administrador del PNUD",
+        "share_this_story" : "Share this Story",
+        "poster_visit_title" : "Visit",
+        "poster_url" : "www.undp.org/spanish",  
+        "poster" : "<p>Siete huracanes en cinco meses: en el Caribe y en todo el mundo, el cambio climático podría generar que los fenómenos meteorológicos extremos se conviertan en la nueva realidad. Y esta es solo una razón más por la que necesitamos acción climática urgente. Para las personas y el planeta.</p>",
+        "copyright" : "© 2021 United Nations Development Programme"
     }
 }

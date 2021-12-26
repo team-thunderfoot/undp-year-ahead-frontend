@@ -93,6 +93,11 @@
         "quote_content": "<p>“This is a critical moment for the world, and for development.But this is also a moment of choice: an opportunity to learn from our experience, to do things differently, to aspire to greater shared goals.”</p>",
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
-        "quote_author_description": "UNDP Administrator"
+        "quote_author_description": "UNDP Administrator",
+        "share_this_story" : "Share this Story",
+        "poster_visit_title" : "Visit",
+        "poster_url" : "www.undp.org",  
+        "poster" : "<p>UNDP works to eradicate poverty and reduce inequalities through the sustainable development of nations, in more than 170 countries and territories.</p>",
+        "copyright" : "© 2021 United Nations Development Programme"
     }
 }

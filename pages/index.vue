@@ -44,7 +44,7 @@ export default {
                 { hid: 'title', name: 'title', content: 'New Year, New Plan' },
                 { hid: 'description', name: 'description', content: 'Sustainable development in 2022' },
                 { hid: 'og:type', property: 'og:type', content: 'website' },
-                { hid: 'og:image', property: 'og:image', content: 'https://teamthunderfoot.com/wp-content/uploads/2020/06/OG-Image-1.jpg'},
+                { hid: 'og:image', property: 'og:image', content: require(`@/assets/img/settings/meta_undp_en.jpeg`)},
                 { hid: 'og:title', property: 'og:title', content: 'New Year, New Plan'},
                 { hid: 'og:description', property: 'og:description', content: 'Sustainable development in 2022'},
             ]
