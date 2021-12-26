@@ -54,7 +54,6 @@ export default {
                 case 'es':
                     this.languageSelectorActive = this.languages.es;
                     break;
-            
                 default:
                     break;
             }
