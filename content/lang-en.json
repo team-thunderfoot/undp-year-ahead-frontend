@@ -11,7 +11,7 @@
     },
     "ChapterTwo" :   {
         "intro_title": "#DontChooseExtinction",
-        "intro_description": "<p>Keep an eye out for <a href='https://strategicplan.undp.org/' target='_blank' rel='noopenner noreferrer'>Frankie the Dinosaur </a>this year as he continues to make the case for fossil fuel subsidies reform as a critical component of climate action. He might make an appearance near you!<p><p>Watch Frankie’s message to humanity: <a href='https://strategicplan.undp.org/' target='_blank' rel='noopenner noreferrer'>Don't choose extinction | UNDP</a></p>"
+        "intro_description": "<p>Keep an eye out for <a href='https://twitter.com/frankiethedino' target='_blank' rel='noopenner noreferrer'>Frankie the Dinosaur </a>this year as he continues to make the case for fossil fuel subsidies reform as a critical component of climate action. He might make an appearance near you!<p><p>Watch Frankie’s message to humanity: <a href='https://dontchooseextinction.com/en/' target='_blank' rel='noopenner noreferrer'>Don't choose extinction | UNDP</a></p>"
     },
     "ChapterThree" :   {
         "intro_title": "Delivering on the Global Goals",
@@ -37,7 +37,7 @@
     },
     "ChapterSix" :   {
         "intro_title": "Maximizing impact",
-        "intro_description": "<p><strong>Our new <a href='' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> pinpoints three key enablers to help countries scale up development progress.</strong></p><ul><li><strong>Strategic innovation</strong> to enhance performance of entire systems</li><li><strong>Digitalization</strong> to build more inclusive, ethical and sustainable societies</li><li><strong>Development finance </strong>to align capital flows with the SDGs and the Paris Agreement</li></ul>",
+        "intro_description": "<p><strong>Our new <a href='https://undocs.org/Home/Mobile?FinalSymbol=DP%2F2021%2F28' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> pinpoints three key enablers to help countries scale up development progress.</strong></p><ul><li><strong>Strategic innovation</strong> to enhance performance of entire systems</li><li><strong>Digitalization</strong> to build more inclusive, ethical and sustainable societies</li><li><strong>Development finance </strong>to align capital flows with the SDGs and the Paris Agreement</li></ul>",
         "quote_content": "<p>“To make a difference to people’s lives at this scale, we have to examine the systems and structures that shape development – not just the immediate challenges.”</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
@@ -93,6 +93,11 @@
         "quote_content": "<p>“This is a critical moment for the world, and for development.But this is also a moment of choice: an opportunity to learn from our experience, to do things differently, to aspire to greater shared goals.”</p>",
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
-        "quote_author_description": "UNDP Administrator"
+        "quote_author_description": "UNDP Administrator",
+        "share_this_story" : "Share this Story",
+        "poster_visit_title" : "Visit",
+        "poster_url" : "www.undp.org",  
+        "poster" : "<p>UNDP works to eradicate poverty and reduce inequalities through the sustainable development of nations, in more than 170 countries and territories.</p>",
+        "copyright" : "© 2021 United Nations Development Programme"
     }
 }

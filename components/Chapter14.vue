@@ -39,11 +39,13 @@
                 <div class="b--chapter14-a__content b--chapter14-a__content--third">
                     <v-card-i
                     :customClass="'b--card-i--'+ `${this.lang}`"
+                    :chapter="chapter"
+                    :settings="settings"
                     />
                 </div>
                 <!-- social -->
                 <div class="b--chapter14-a__content b--chapter14-a__content--fourth">
-                    <v-social-a></v-social-a>
+                    <v-social-a :chapter="chapter"></v-social-a>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -77,7 +79,8 @@ export default {
 		return{
             totalContent: 2,
 			contentLoaded : 0,
-            chapter: null
+            chapter: null,
+            settings : null
 		}
 	},
     props: ['scrollTween'],
@@ -112,6 +115,8 @@ export default {
         this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
         var chapter = this.getLanguageData({lang : this.lang});
         this.chapter =  chapter.ChapterFourteen;
+        var settings = this.getLanguageSettings({lang : this.lang});
+        this.settings = settings.Nav;
         this.contentLoaded++
     }
 }
