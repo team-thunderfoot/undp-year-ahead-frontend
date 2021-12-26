@@ -74,7 +74,7 @@ import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 
 export default {
-  mixins: ['infoWindow', Parallax, Animation],
+  mixins: [Parallax, Animation],
   components: {
     'v-card-f': CardF,
     'v-info-chapter': InfoChapter,
