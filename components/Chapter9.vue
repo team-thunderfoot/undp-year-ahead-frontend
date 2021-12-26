@@ -67,22 +67,15 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
-import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import CardF from '@/components/cards/CardF'
 import InfoChapter from '@/components/infochapter/Infochapter'
 
-import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Parallax)
-Vue.use(Animation)
-import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: ['infoWindow', Parallax, Animation,LanguageData],
+  mixins: ['infoWindow', Parallax, Animation],
   components: {
-    SanityContent,
     'v-card-f': CardF,
     'v-info-chapter': InfoChapter,
   },

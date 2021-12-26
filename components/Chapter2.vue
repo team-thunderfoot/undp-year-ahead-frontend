@@ -88,15 +88,11 @@
 <script>
 import CardF from './cards/CardF'
 
-import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Parallax)
-Vue.use(Animation)
-import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: [Parallax, Animation,LanguageData],
+  mixins: [Parallax, Animation],
   data: () => {
     return {
       totalContent: 2,
@@ -137,7 +133,6 @@ export default {
       if (newValue == this.totalContent) {
         // emits on in Story.vue
         $nuxt.$emit('assetLoaded')
-        // this.animate();
       }
     },
     scrollTween(newValue, oldValue) {

@@ -29,9 +29,7 @@
 </template>
 
 <script>
-import LanguageData from '~/mixins/LanguageData';
 export default {
-    mixins: [LanguageData],
     methods : {
         getContent() {
             this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;

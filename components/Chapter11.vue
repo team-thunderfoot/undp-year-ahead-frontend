@@ -59,21 +59,15 @@
 </template>
 
 <script>
-import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
-// import Parallax from '@/motion/Parallax';
-import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
-Vue.use(Parallax)
 
-import LanguageData from '~/mixins/LanguageData';
 export default {
-    mixins: ['infoWindow',Parallax,Animation,LanguageData],
+    mixins: ['infoWindow',Parallax,Animation],
     components:{
-        SanityContent,
         'v-card-f':CardF,
         'v-info-chapter' : InfoChapter,
     },    

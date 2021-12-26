@@ -11,7 +11,6 @@
             <div class="b--card-a" :class="cardACustomClass">
                 <div class="b--card-a__artwork"></div>
                 <div class="b--card-a__wrapper b--content-a">
-                    <!-- <SanityContent :blocks="description" :serializers="serializers" /> -->
                     <div v-html="description"></div>
                     <div v-if="loadMore">
                         <a class="b--card-a__wrapper__link" :href="loadMoreURL"> {{loadMoreBtn}} </a>
@@ -23,11 +22,7 @@
 </template>
 
 <script>
-import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
-import sanityLinks from '~/mixins/sanityLinks';
-
 export default {
-    mixins: [sanityLinks],
     props:[
         'title',
         'description', 
@@ -37,12 +32,6 @@ export default {
         'loadMoreBtn',
         'loadMoreURL'
     ],
-    components: {
-        SanityContent,
-    },
-    created(){
-        this.serializers = this.getSerialize()
-    }
 }
 </script>
 

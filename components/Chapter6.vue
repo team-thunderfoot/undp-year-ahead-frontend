@@ -49,16 +49,13 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import QuoteA from '@/components/quote/Quote'
 
-import Vue from 'vue'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Animation)
-import LanguageData from '~/mixins/LanguageData';
+
 export default {
-  mixins: [Animation,LanguageData],
+  mixins: [Animation],
   components: {
     'v-card-f': CardF,
     'v-quote-a': QuoteA,

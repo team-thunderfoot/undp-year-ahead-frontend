@@ -38,7 +38,6 @@
 				<div class="b--card-a__artwork"></div>
 				<div class="b--card-a__wrapper b--content-a">
 				<vuescroll>
-					<!-- <SanityContent :blocks="chapter.content" :serializers="serializers"/> -->
 					<div v-html="chapter.content"></div>
 				</vuescroll>
 				</div>
@@ -136,21 +135,14 @@
 
 <script>
 // Data import
-import { groq } from '@nuxtjs/sanity'
-import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import InfoChapter from '@/components/infochapter/Infochapter'
 import QuoteA from '@/components/quote/Quote'
 
-import Vue from 'vue'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Animation)
-
 import vuescroll from 'vuescroll';
-import SanityLinks from '~/mixins/sanityLinks';
-import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: [Animation,SanityLinks,LanguageData],
+  mixins: [Animation],
   data: () => {
     return {
       totalContent: 2,
@@ -161,7 +153,6 @@ export default {
   },
   props: ['scrollTween'],
   components: {
-    SanityContent,
     'v-info-chapter': InfoChapter,
     'v-quote-a': QuoteA,
     vuescroll,
@@ -185,7 +176,6 @@ export default {
 			if (newValue == this.totalContent) {
 				// emits on in Story.vue
 				$nuxt.$emit('assetLoaded')
-				// this.animate()
 			}
 		},
 		scrollTween(newValue, oldValue) {
@@ -204,7 +194,7 @@ export default {
 		var chapter = this.getLanguageData({lang : this.lang});
 		this.chapter = chapter.ChapterOne;
 		this.contentLoaded++
-  	},
+  },
 }
 </script>
 

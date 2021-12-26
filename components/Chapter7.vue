@@ -64,15 +64,11 @@
 import CardF from '@/components/cards/CardF'
 import CardH from '@/components/cards/CardH'
 
-import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Parallax)
-Vue.use(Animation)
-import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: [Parallax, Animation,LanguageData],
+  mixins: [Parallax, Animation],
   components: {
     'v-card-f': CardF,
     'v-card-h': CardH,
