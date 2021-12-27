@@ -37,7 +37,7 @@
       .b--card-f {
         .b--card-a {
           &__wrapper {
-            @media all and (max-height: 700px) {
+            @media all and (max-height: 620px) {
               @include make-card-a-scroll();
             }
             @media all and ($viewport-type: 430px) {
