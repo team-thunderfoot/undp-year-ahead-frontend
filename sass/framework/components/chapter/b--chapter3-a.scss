@@ -6,6 +6,16 @@
     width: 15.65%;
     @include make-position-a();
     z-index: 1;
+    &--fr {
+      width: 16.65%;
+      .b--card-f {
+        &__hd {
+        }
+        &__bd {
+          width: 85%;
+        }
+      }
+    }
     // info chart
     &--second {
       bottom: 46.87%;
