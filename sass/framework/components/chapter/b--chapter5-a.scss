@@ -14,11 +14,24 @@
     @media all and ($viewport-type: $tablets) {
       bottom: 15%;
     }
+
+    .b--card-f {
+      .b--card-a {
+        &__wrapper {
+          @media all and (max-height: 630px) {
+            @include make-card-a-scroll();
+          }
+          @media all and ($viewport-type: 375px) {
+            @include make-card-a-scroll();
+          }
+        }
+      }
+    }
     &--fr {
       .b--card-f {
         .b--card-a {
           &__wrapper {
-            @media all and (max-height: 630px) {
+            @media all and (max-height: 900px) {
               @include make-card-a-scroll();
             }
             @media all and ($viewport-type: 375px) {
@@ -28,14 +41,16 @@
         }
       }
     }
-    .b--card-f {
-      .b--card-a {
-        &__wrapper {
-          @media all and (max-height: 630px) {
-            @include make-card-a-scroll();
-          }
-          @media all and ($viewport-type: 375px) {
-            @include make-card-a-scroll();
+    &--es {
+      .b--card-f {
+        .b--card-a {
+          &__wrapper {
+            @media all and (max-height: 700px) {
+              @include make-card-a-scroll();
+            }
+            @media all and ($viewport-type: 430px) {
+              @include make-card-a-scroll();
+            }
           }
         }
       }
