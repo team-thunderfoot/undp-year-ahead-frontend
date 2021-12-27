@@ -25,14 +25,14 @@
       width: 12.09%;
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
       @media all and ($viewport-type: $laptop) {
-        left: 17%;
-        width: 9.9%;
+        // left: 17%;
+        // width: 9.9%;
       }
       @media all and ($viewport-type: $tabletl) {
-        width: 9.9%;
+        // width: 9.9%;
       }
       @media all and ($viewport-type: $tablets) {
-        max-width: calc(100vw - 100px);
+        // max-width: calc(100vw - 100px);
       }
       .b--card-a {
         @media all and (max-height: 800px) {

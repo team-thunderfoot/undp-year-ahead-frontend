@@ -5,16 +5,16 @@
 @mixin make-card-a-shadow() {
   &:after {
     content: '';
-    height: 45px;
+    height: calc(45px + $measure * 3);
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: $measure * 3;
+    bottom: 0;
     right: 0;
     background: linear-gradient(
       180deg,
       rgba(#fff3e9, 0) 0%,
-      rgba(#ce9184, 1) 100%
+      rgba(#ce9184, 1) 60%
     );
   }
 }
