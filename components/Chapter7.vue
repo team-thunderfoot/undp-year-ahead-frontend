@@ -11,6 +11,7 @@
           :style="{ left: '68%' }"
           ref="parallax-ft"
           class="b--ss-a__ft-items__parallax"
+          alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-7/front-parallax.png`)"
         />
       </div>

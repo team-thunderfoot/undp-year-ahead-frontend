@@ -18,6 +18,7 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
+          alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-8/front-parallax.png`)"
           :style="{ left: '90%' }"
         />
@@ -26,6 +27,7 @@
             b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle
           "
           ref="parallax-middle"
+          alt="middle-parallax"
           v-lazy="require(`@/assets/img/chapter-8/middle-parallax.png`)"
           :style="{ left: '66%' }"
         />
