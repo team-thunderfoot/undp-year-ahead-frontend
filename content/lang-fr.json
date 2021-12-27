@@ -3,20 +3,20 @@
         "intro_title": "Développement durable",
         "intro_date": "en 2022",
         "intro_description": "Nouvelle année, nouveau plan",
-        "content": "<p>En ce début d’année, le monde lutte contre une pandémie mondiale et fait face à une urgence planétaire. La COVID-19 et le changement climatique contribuent tous deux à accroître les inégalités, les conflits et la fragilité dans le monde. Ces défis interdépendants nécessitent des solutions intégrées.</p><p>En 2022, le PNUD commence à mettre en œuvre son nouveau <a href='https://strategicplan.undp.org/fr/' target='_blank' rel='noopenner noreferrer'>Plan stratégique,</a> fondé sur notre engagement à éradiquer la pauvreté et à aider les pays à atteindre les Objectifs de développement durable.</p><p><strong> fondé sur notre engagement à éradiquer la pauvreté et à aider les pays à atteindre les Objectifs de développement durable.</strong></p>",
+        "content": "<p>En ce début d’année, le monde lutte contre une pandémie mondiale et fait face à une urgence planétaire. La COVID-19 et le changement climatique contribuent tous deux à accroître les inégalités, les conflits et la fragilité dans le monde. Ces défis interdépendants nécessitent des solutions intégrées.</p><p>En 2022, le PNUD commence à mettre en œuvre son nouveau <a href='https://strategicplan.undp.org/fr/' target='_blank' rel='noopenner noreferrer'>Plan stratégique,</a> fondé sur notre engagement à éradiquer la pauvreté et à aider les pays à atteindre les Objectifs de développement durable.</p><p><strong>Voici quelques moments clés à surveiller au cours de l’année à venir.</strong></p>",
         "quote_content": "<p>« Pour faire une différence dans la vie des gens à cette échelle, nous devons examiner les systèmes et les structures qui façonnent le développement, pas seulement les défis immédiats. »</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
-        "quote_author_description": "directeur du Bureau des politiques et de l’appui aux programmes du PNUD,"
+        "quote_author_description": "directeur du Bureau des politiques et de l’appui aux programmes du PNUD"
     },
     "ChapterTwo" :   {
         "intro_title": "#DontChooseExtinction",
-        "intro_description": "<p>Après avoir lancé son appel à l’Assemblée générale, <a href='https://twitter.com/frankiethedino' target='_blank' rel='noopenner noreferrer'>Frankie the Dinosaur</a> continuera de défendre une réforme des subventions aux combustibles fossiles comme l’une des clés de l’action climatique. Attendez-vous à le rencontrer là où vous ne vous y attendriez pas !<p><p>Découvrez le message de Frankie à l’humanité : <a href='https://dontchooseextinction.com/en/' target='_blank' rel='noopenner noreferrer'>Don't choose extinction | UNDP</a></p>"
+        "intro_description": "<p>Après avoir lancé son appel à l’Assemblée générale, <a href='https://twitter.com/frankiethedino' target='_blank' rel='noopenner noreferrer'>Frankie the Dinosaur</a> continuera de défendre une réforme des subventions aux combustibles fossiles comme l’une des clés de l’action climatique. Attendez-vous à le rencontrer là où vous ne vous y attendriez pas !<p><p>Découvrez le message de Frankie à l’humanité : <a href='https://dontchooseextinction.com/en/' target='_blank' rel='noopenner noreferrer'>Don't choose extinction | PNUD</a></p>"
     },
     "ChapterThree" :   {
         "intro_title": "Réaliser les objectifs mondiaux ",
         "intro_description": "<div><p>Des jeunes de 46 pays se réuniront pour façonner la prochaine décennie d’action en vue d’atteindre les Objectifs de développement durable (ODD).</p></div>",
-        "tooltip_label": "5ème Conférence des Nations Unies sur les pays les moins avancés",
+        "tooltip_label": "5<sup>ème</sup> Conférence des Nations Unies sur les pays les moins avancés",
         "tooltip_link": "https://www.un.org/ldc5/fr",
         "tooltip_date": "23 - 27 janvier, Doha, Qatar"
     },
@@ -30,7 +30,7 @@
     },
     "ChapterFive" :   {
         "intro_title": "Faire progresser l’égalité des sexes",
-        "intro_description": "<p><strong>La 66ème Commission de la condition de la femme se concentrera sur l’atteinte de l’égalité des sexes dans le contexte du changement climatique, des risques environnementaux et de catastrophe.</strong></p><p>L’autonomisation des femmes est l’un des moyens les plus efficaces de réduire la pauvreté et les inégalités et de faire avancer les ODD. En 2022, le PNUD publiera une série de rapports visant à éclairer les politiques et programmes sensibles aux questions de genre, tels que :</p><ul><li>La stratégie du PNUD pour l’égalité des sexes</li><li>Un article sur les normes sociales en matière de genre</li><li>Des indices de genre surl’autonomisation des femmes et le bien-être des femmes</li></ul>",
+        "intro_description": "<p><strong>La 66<sup>ème</sup> Commission de la condition de la femme se concentrera sur l’atteinte de l’égalité des sexes dans le contexte du changement climatique, des risques environnementaux et de catastrophe.</strong></p><p>L’autonomisation des femmes est l’un des moyens les plus efficaces de réduire la pauvreté et les inégalités et de faire avancer les ODD. En 2022, le PNUD publiera une série de rapports visant à éclairer les politiques et programmes sensibles aux questions de genre, tels que :</p><ul><li>La stratégie du PNUD pour l’égalité des sexes</li><li>Un article sur les normes sociales en matière de genre</li><li>Des indices de genre surl’autonomisation des femmes et le bien-être des femmes</li></ul>",
         "tooltip_label": "Commission de la condition de la femme des Nations Unies ",
         "tooltip_link": "https://www.unwomen.org/fr/csw/csw66-2022",
         "tooltip_date": "14 -25 mars, New York, États-Unis "
@@ -46,7 +46,7 @@
     "ChapterSeven" :   {
         "intro_title": "Des données pour le développement",
         "intro_description": "<p>Nous élargissons la base de données probantes pour le développement axé sur l’être humain. Parmi les rapports phares qui seront publiés cette année figurent :</p>",
-        "document_left": "<p>Le <i><strong>Rapport sur le développement humain 2022 </strong></i> qui aura pour thème « Façonner notre avenir dans un monde en mutation »..</p>",
+        "document_left": "<p>Le <i><strong>Rapport sur le développement humain 2022 </strong></i> qui aura pour thème « Façonner notre avenir dans un monde en mutation ».</p>",
         "document_right": "<p>Un <strong><i>rapport spécial sur la sécurité humaine </i></strong> qui examinera comment le concept de sécurité humaine peut nous aider à comprendre et à relever des défis nouveaux et interdépendants.</p>"
     },
     "ChapterEight" :   {
@@ -94,7 +94,7 @@
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
         "quote_author_description": "Administrateur du PNUD",
-        "share_this_story" : "Partagez cette story",
+        "share_this_story" : "Le PNUD sur les réseaux sociaux",
         "poster_visit_title" : "Rendez-vous sur",
         "poster_url_title" : "www.undp.org",  
         "poster_url_link" : "www.undp.org/french",  

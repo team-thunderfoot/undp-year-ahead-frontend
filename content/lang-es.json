@@ -23,7 +23,7 @@
     "ChapterFour" :   {
         "intro_title": "De la crisis a la recuperación",
         "intro_description": "<p>En marzo se cumplirá el segundo aniversario de la declaración de la pandemia mundial de COVID-19. Como líder técnico de la respuesta socioeconómica de las Naciones Unidas, el PNUD desempeña un papel fundamental en la recuperación.</p><p>Desde los riesgos mundiales hasta las catástrofes localizadas, así como los conflictos violentos y los desastres ambientales, el PNUD ayuda a los países a hacer frente a las crisis actuales y a prevenir las futuras.</p>",
-        "quote_content": "<p>“En un mundo donde las crisis complejas y multidimensionales se han convertido en la norma, el statu quo ya no es una opción para responder a estas”</p>",
+        "quote_content": "<p>“En un mundo donde las crisis complejas y multidimensionales se han convertido en la norma, el <i>statu quo</i> ya no es una opción para responder a estas”</p>",
         "quote_author": "Asako Okai",
         "quote_author_link": "https://twitter.com/asakookai",
         "quote_author_description": "Directora de la Oficina de Crisis del PNUD."
@@ -36,7 +36,7 @@
         "tooltip_date": "14-25 de marzo, Nueva York, NY (Estados Unidos)"
     },
     "ChapterSix" :   {
-        "intro_title": "Sustainable development",
+        "intro_title": "Maximizar el impacto",
         "intro_description": "<p><strong>Nuestro nuevo <a href='https://undocs.org/Home/Mobile?FinalSymbol=DP/2021/28' target='_blank' rel='noopenner noreferrer'>Plan Estratégico</a> identifica tres ejes de cambio para ayudar a los países a aumentar el progreso del desarrollo:</strong></p><ul><li><strong>Innovación estratégica</strong> para mejorar el rendimiento de sistemas completos</li><li><strong>Digitalización</strong> para construir sociedades más inclusivas, éticas y sostenibles</li><li><strong>Financiación para el desarrollo</strong> para alinear los flujos de capital con los ODS y el Acuerdo de París</li></ul>",
         "quote_content": "<p>“Lo digital no es solo una herramienta, sino también el contexto en el que operamos. El PNUD seguirá adoptando un enfoque de transformación digital de toda la sociedad para garantizar que todos compartan los beneficios de la conectividad y trabajará para mitigar los posibles riesgos y daños de la tecnología digital”</p>",
         "quote_author": "Robert Opp",
@@ -44,8 +44,8 @@
         "quote_author_description": "Jefe de Operaciones Digitales del PNUD"
     },
     "ChapterSeven" :   {
-        "intro_title": "Data for development",
-        "intro_description": "<p>We’re expanding the evidence base for people-centred development. Flagship reports coming out this year include:</p>",
+        "intro_title": "Datos para el desarrollo",
+        "intro_description": "<p>Estamos ampliando la base empírica para un desarrollo centrado en las personas. Entre los informes insignia que se publicarán este año se encuentran:</p>",
         "document_left": "<p>El <i><strong>Informe sobre Desarrollo Humano 2022</strong></i>, que se versará sobre cómo “Dar forma a nuestro futuro en un mundo en transformación”</p>",
         "document_right": "<p>Un <i><strong>Informe especial sobre seguridad humana</strong></i>, que examinará cómo el concepto de seguridad humana puede ayudarnos a comprender y responder a nuevos retos interrelacionados</p>"
     },
@@ -77,15 +77,15 @@
         "tooltip_date": "5-7 de julio y 11-15 de julio, Nueva York, NY (Estados Unidos)"
     },
     "ChapterTwelve" :   {
-        "intro_title": "Sustainable development",
+        "intro_title": "Alcanzar el objetivo de los 1,5 ºC",
         "intro_description": "<p>La próxima Conferencia de las Naciones Unidas sobre el Clima (COP27) se basará en el <a href='https://unfccc.int/documents/310475' target='_blank' rel='noopenner noreferrer'>Pacto Climático de Glasgow acordado en la COP26.</a></p>",
         "tooltip_label": "Conferencia de las Naciones Unidas sobre el Clima (COP27)",
         "tooltip_link": "https://news.un.org/es/story/2021/11/1499972",
         "tooltip_date": "7-18 de noviembre, Sharm El-Sheikh (Egipto)"
     },
     "ChapterThirdteen" :   {
-        "intro_title": "Vos voix",
-        "intro_description": "<p>El PNUD dará a conocer la siguiente fase del Peoples' Climate Vote (voto popular sobre el clima), que profundiza en la opinión pública sobre la emergencia climática y la respuesta que deberían dar los líderes mundiales.</p><p><i>G20 Peoples' Climate Vote: </i><a href='https://www.undp.org/publications/g20-peoples-climate-vote-2021' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote 2021 | PNUD</a></p>"
+        "intro_title": "Te escuchamos",
+        "intro_description": "<p>El PNUD dará a conocer la siguiente fase del <i>Peoples' Climate Vote</i> (voto popular sobre el clima), que profundiza en la opinión pública sobre la emergencia climática y la respuesta que deberían dar los líderes mundiales.</p><p><i>G20 Peoples' Climate Vote: </i><a href='https://www.undp.org/publications/g20-peoples-climate-vote-2021' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote 2021 | PNUD</a></p>"
     },
     "ChapterFourteen" :   {
         "intro_title": "#FutureSmartUNDP",
@@ -94,7 +94,7 @@
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
         "quote_author_description": "Administrador del PNUD",
-        "share_this_story" : "Comparte esta historia",
+        "share_this_story" : "El PNUD en las redes sociales",
         "poster_visit_title" : "Visita",
         "poster_url_title" : "undp.org/spanish",  
         "poster_url_link" : "www.undp.org/spanish",  

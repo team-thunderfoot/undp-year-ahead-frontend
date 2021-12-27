@@ -3,7 +3,7 @@
         "intro_title": "Sustainable development",
         "intro_date": "in 2022",
         "intro_description": "New Year, New Plan",
-        "content": "<p>As the new year opens, the world is battling a global pandemic and confronting a planetary emergency. Both COVID-19 and climate change are contributing to rising inequality, conflict and fragility around the world. These interconnected challenges require integrated solutions.</p><p>In 2022, UNDP puts its new <a href='https://strategicplan.undp.org/' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> into action, grounded in our commitment to eradicating poverty and helping countries achieve the Sustainable Development Goals.</p><p><strong>Here are some key moments to watch in the</strong></p>",
+        "content": "<p>As the new year opens, the world is battling a global pandemic and confronting a planetary emergency. Both COVID-19 and climate change are contributing to rising inequality, conflict and fragility around the world. These interconnected challenges require integrated solutions.</p><p>In 2022, UNDP puts its new <a href='https://strategicplan.undp.org/' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> into action, grounded in our commitment to eradicating poverty and helping countries achieve the Sustainable Development Goals.</p><p><strong>Here are some key moments to watch in the year ahead.</strong></p>",
         "quote_content": "<p>“To make a difference to people’s lives at this scale, we have to examine the systems and structures that shape development – not just the immediate challenges.”</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
@@ -30,7 +30,7 @@
     },
     "ChapterFive" :   {
         "intro_title": "Advancing gender equality",
-        "intro_description": "<p><strong>The 66th Commission on the Status of Women will focus on achieving gender equality in the context of climate change, environmental and disaster risk.</strong></p><p>Empowering women is one of the most effective ways to reduce poverty and inequality and advance the SDGs. In 2022, UNDP will publish a series of reports to inform gender-responsive policies and programmes:</p><ul><li>UNDP Gender Strategy</li><li>Gender Social Norms Paper</li><li>Gender Indices onwomen’s empowerment and women’s wellbeing</li></ul>",
+        "intro_description": "<p><strong>The 66<sup>th</sup> Commission on the Status of Women will focus on achieving gender equality in the context of climate change, environmental and disaster risk.</strong></p><p>Empowering women is one of the most effective ways to reduce poverty and inequality and advance the SDGs. In 2022, UNDP will publish a series of reports to inform gender-responsive policies and programmes:</p><ul><li>UNDP Gender Strategy</li><li>Gender Social Norms Paper</li><li>Gender Indices onwomen’s empowerment and women’s wellbeing</li></ul>",
         "tooltip_label": "Commission on the Status of Women",
         "tooltip_link": "https://www.unwomen.org/en/csw/csw66-2022",
         "tooltip_date": "14-25 March, New York, USA "
@@ -38,10 +38,10 @@
     "ChapterSix" :   {
         "intro_title": "Maximizing impact",
         "intro_description": "<p><strong>Our new <a href='https://undocs.org/Home/Mobile?FinalSymbol=DP%2F2021%2F28' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> pinpoints three key enablers to help countries scale up development progress.</strong></p><ul><li><strong>Strategic innovation</strong> to enhance performance of entire systems</li><li><strong>Digitalization</strong> to build more inclusive, ethical and sustainable societies</li><li><strong>Development finance </strong>to align capital flows with the SDGs and the Paris Agreement</li></ul>",
-        "quote_content": "<p>“To make a difference to people’s lives at this scale, we have to examine the systems and structures that shape development – not just the immediate challenges.”</p>",
-        "quote_author": "Haoliang Xu",
-        "quote_author_link": "https://twitter.com/haoliangxu",
-        "quote_author_description": "Director of UNDP Bureau for Policy and Programme Support"
+        "quote_content": "<p>“Digital is not just a tool, but also the context in which we operate. UNDP will continue to take a whole-of-society approach to digital transformation to ensure that the benefits of connectivity are shared by all, and work to mitigate digital’s potential risks and harms.”</p>",
+        "quote_author": "Robert Opp",
+        "quote_author_link": "https://twitter.com/Robert_Opp",
+        "quote_author_description": "UNDP Chief Digital Officer"
     },
     "ChapterSeven" :   {
         "intro_title": "Data for development",
@@ -94,7 +94,7 @@
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
         "quote_author_description": "UNDP Administrator",
-        "share_this_story" : "Share this Story",
+        "share_this_story" : "UNDP on social media",
         "poster_visit_title" : "Visit",
         "poster_url_title" : "www.undp.org",  
         "poster_url_link" : "www.undp.org",  
