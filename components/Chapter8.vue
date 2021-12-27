@@ -9,10 +9,8 @@
       <div class="b--ss-a__divider">
         <div class="b--chapter8-a__divider">
           <img
-            class="
-              b--chapter8-a__divider__media b--chapter8-a__divider__media--right
-            "
-            src="@/assets/img/chapter-8/front_tree.png"
+            class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right"
+            v-lazy="require(`@/assets/img/chapter-8/front_tree.png`)"
           />
         </div>
       </div>
@@ -20,7 +18,7 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          src="@/assets/img/chapter-8/front-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-8/front-parallax.png`)"
           :style="{ left: '40%' }"
         />
         <img
@@ -28,7 +26,7 @@
             b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle
           "
           ref="parallax-middle"
-          src="@/assets/img/chapter-8/middle-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-8/middle-parallax.png`)"
           :style="{ left: '49%' }"
         />
       </div>
@@ -41,8 +39,8 @@
           :style="{ left: '46%' }"
         >
           <v-card-f
-            :title="chapter.title"
-            :description="chapter.description"
+            :title="chapter.intro_title"
+            :description="chapter.intro_description"
             :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
           />
         </div>
@@ -91,7 +89,7 @@
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          src="@/assets/img/chapter-8/back-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-8/back-parallax.png`)"
           alt=""
           :style="{ left: '16%' }"
         />
@@ -101,7 +99,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import InfoChapter from '@/components/infochapter/Infochapter'
 
@@ -110,9 +107,9 @@ import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 Vue.use(Parallax)
 Vue.use(Animation)
-
+import LanguageData from '~/mixins/LanguageData';
 export default {
-  mixins: [Parallax, Animation],
+  mixins: [Parallax, Animation,LanguageData],
   components: {
     'v-card-f': CardF,
     'v-info-chapter': InfoChapter,
@@ -126,19 +123,6 @@ export default {
   },
   props: ['scrollTween'],
   methods: {
-    async getContent() {
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
-      const query_content = groq`*[_type == "chapterEight"][0]{
-                "title" : title['${this.lang}'],
-                "description" : description['${this.lang}'],
-                
-                "tooltip_label" : tooltip_label['${this.lang}'],
-                "tooltip_link" : tooltip_link['${this.lang}'],
-                "tooltip_date" : tooltip_date['${this.lang}']
-            }`
-      this.chapter = await this.$sanity.fetch(query_content)
-      this.contentLoaded++
-    },
     handleLoad() {
       this.contentLoaded++
     },
@@ -184,10 +168,11 @@ export default {
     },
   },
   created() {
-    if (process.client) {
-      this.getContent()
-    }
-  },
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterEight;
+    this.contentLoaded++
+  }
 }
 </script>
 

@@ -10,8 +10,8 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '30%' }"
-          src="@/assets/img/chapter-5/front-parallax.png"
+          :style="{ left: '35%' }"
+          v-lazy="require(`@/assets/img/chapter-5/front-parallax.png`)"
         />
       </div>
       <div class="b--ss-a__content">
@@ -19,12 +19,12 @@
         <div
           class="b--chapter5-a__content"
           :class="'b--chapter5-a__content--' + `${this.lang}`"
-          :style="{ left: '35%' }"
+          :style="{ left: '40%' }"
           ref="boxContent"
         >
           <v-card-f
-            :title="chapter.title"
-            :description="chapter.description"
+            :title="chapter.intro_title"
+            :description="chapter.intro_description"
             :customClass="'b--card-f--third b--card-f--' + `${this.lang}`"
             cardACustomClass="b--card-a--second"
           />
@@ -33,7 +33,7 @@
         <div
           class="b--chapter5-a__content b--chapter5-a__content--second"
           ref="infochapter"
-          :style="{ left: '60%' }"
+          :style="{ left: '65%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
@@ -66,9 +66,9 @@
       <div class="b--ss-a__bg-items">
         <img
           class="b--ss-a__bg-items__parallax"
-          :style="{ left: '2%' }"
+          :style="{ left: '4%' }"
           ref="parallax-bg"
-          src="@/assets/img/chapter-5/back-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-5/back-parallax.png`)"
           alt=""
         />
         <img
@@ -83,7 +83,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import InfoChapter from '@/components/infochapter/Infochapter'
 
@@ -92,9 +91,9 @@ import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 Vue.use(Parallax)
 Vue.use(Animation)
-
+import LanguageData from '~/mixins/LanguageData';
 export default {
-  mixins: [Parallax, Animation],
+  mixins: [Parallax, Animation,LanguageData],
   components: {
     'v-card-f': CardF,
     'v-info-chapter': InfoChapter,
@@ -108,31 +107,20 @@ export default {
   },
   props: ['scrollTween'],
   methods: {
-    async getContent() {
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
-      const query_content = groq`*[_type == "chapterFive"][0]{
-                "title" : title['${this.lang}'],
-                "description" : description['${this.lang}'],
-
-                "tooltip_label" : tooltip_label['${this.lang}'],
-                "tooltip_link" : tooltip_link['${this.lang}'],
-                "tooltip_date" : tooltip_date['${this.lang}']
-            }`
-      this.chapter = await this.$sanity.fetch(query_content)
-      this.contentLoaded++
-    },
     handleLoad() {
       this.contentLoaded++
     },
     AsambleParallaxObjs() {
+      var backI = 4;
+      var frontI = 11;
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 11 },
-        { obj: this.$refs['infochapter'], intensity: 11 },
-        { obj: this.$refs['boxContent'], intensity: 11 },
-        { obj: this.$refs['woman'], intensity: 11 },
-        { obj: this.$refs['eyes1'], intensity: 11 },
-        { obj: this.$refs['eyes2'], intensity: 11 },
+        { obj: this.$refs['parallax-bg'], intensity: backI },
+        { obj: this.$refs['parallax-ft'], intensity: frontI },
+        { obj: this.$refs['infochapter'], intensity: frontI },
+        { obj: this.$refs['boxContent'], intensity: frontI },
+        { obj: this.$refs['woman'], intensity: frontI },
+        { obj: this.$refs['eyes1'], intensity: frontI },
+        { obj: this.$refs['eyes2'], intensity: frontI },
 
         // {obj:this.$refs['boxContent'], intensity:11},
         // {obj:this.$refs['quoteContent'], intensity:4},
@@ -143,7 +131,7 @@ export default {
           intensity: item.intensity,
           duration: this.$refs['Scene5'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
+          scrub: true,
         })
       })
     },
@@ -169,10 +157,11 @@ export default {
     },
   },
   created() {
-    if (process.client) {
-      this.getContent()
-    }
-  },
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterFive;
+    this.contentLoaded++
+  }
 }
 </script>
 

@@ -11,8 +11,8 @@
                     :class="'b--chapter14-a__content--' + `${this.lang}`"
                 >
                     <v-card-f 
-                        :title="chapter.title"
-                        :description="chapter.description"
+                        :title="chapter.intro_title"
+                        :description="chapter.intro_description"
                         :customClass="'b--card-f--'+ `${this.lang}`"
                     />
                 </div>
@@ -54,7 +54,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import CardI from '@/components/cards/CardI';
 import QuoteA from '@/components/quote/Quote';
@@ -63,10 +62,11 @@ import SocialA from '@/components/social/Social.vue';
 import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
+import LanguageData from '~/mixins/LanguageData';
 Vue.use(Parallax)
 
 export default {
-    mixins: [Parallax,Animation],
+    mixins: [Parallax,Animation,LanguageData],
     components:{
         'v-card-f':CardF,
         'v-card-i':CardI,
@@ -82,24 +82,6 @@ export default {
 	},
     props: ['scrollTween'],
     methods: {
-        async getContent(){
-            this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-            const query_content = groq`*[_type == "chapterFourteen"][0]{
-                "title" : title['${this.lang}'],
-                "description" : description['${this.lang}'],
-                
-                "quote" :  quote['${this.lang}'],
-                "quote_author" :  quote_author['${this.lang}'],
-                "quote_author_link" :  quote_author_link['${this.lang}'],
-                "quote_author_description" :  quote_author_description['${this.lang}'],
-
-                "tooltip_label" : tooltip_label['${this.lang}'],
-                "tooltip_link" : tooltip_link['${this.lang}'],
-                "tooltip_date" : tooltip_date['${this.lang}'],
-            }`;
-            this.chapter = await this.$sanity.fetch(query_content);
-            this.contentLoaded++;
-        },
         handleLoad(){
             this.contentLoaded++;
         },
@@ -126,10 +108,11 @@ export default {
             } 
         }
     },
-    created(){
-        if(process.client){
-            this.getContent();
-        }
+    created() {
+        this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+        var chapter = this.getLanguageData({lang : this.lang});
+        this.chapter =  chapter.ChapterFourteen;
+        this.contentLoaded++
     }
 }
 </script>

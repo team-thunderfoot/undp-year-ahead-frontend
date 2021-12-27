@@ -74,6 +74,10 @@
     position: absolute;
     bottom: 58%;
     left: 52.1%;
+    // set blink position with the height of the screen, check left with parallax
+    // @media all and (max-height: 1366px) {
+    //   bottom: 44.1%;
+    // }
     // second blink animation
     &--second {
       bottom: 57.1%;

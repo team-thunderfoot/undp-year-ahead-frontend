@@ -1,7 +1,8 @@
 <template>
   <div class="b--quote-a" :class="customClass">
     <div class="b--quote-a__content b--content-a">
-      <SanityContent :blocks="chapter.quote" :serializers="serializers"/>
+      <div v-html="chapter.quote_content" />
+      <!-- <SanityContent :blocks="chapter.quote" :serializers="serializers"/> -->
     </div>
     <div class="b--quote-a__meta">
       <a

@@ -10,20 +10,20 @@
         <div class="b--chapter4-a__divider">
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
-            src="@/assets/img/chapter-4/front_tree.png"
+            v-lazy="require(`@/assets/img/chapter-4/front_tree.png`)"
           />
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
-            src="@/assets/img/chapter-4/front_electric-cable.png"
+            v-lazy="require(`@/assets/img/chapter-4/front_electric-cable.png`)"
           />
         </div>
       </div>
       <div class="b--ss-a__ft-items">
         <img
-          :style="{ left: '20%' }"
+          :style="{ left: '45%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          src="@/assets/img/chapter-4/front-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-4/front-parallax.png`)"
         />
       </div>
       <div class="b--ss-a__content">
@@ -31,12 +31,12 @@
         <div
           class="b--chapter4-a__content"
           ref="boxContent"
-          :style="{ left: '35%' }"
+          :style="{ left: '55%' }"
           :class="'b--chapter4-a__content--' + `${this.lang}`"
         >
           <v-card-f
-            :title="chapter.title"
-            :description="chapter.description"
+            :title="chapter.intro_title"
+            :description="chapter.intro_description"
             :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
           />
         </div>
@@ -55,7 +55,7 @@
           :style="{ left: '10%' }"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          src="@/assets/img/chapter-4/back-parallax.png"
+          v-lazy="require(`@/assets/img/chapter-4/back-parallax.png`)"
           alt=""
         />
         <img
@@ -70,7 +70,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import QuoteA from '@/components/quote/Quote'
 
@@ -80,9 +79,10 @@ import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 Vue.use(Parallax)
 Vue.use(Animation)
+import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: [Parallax, Animation],
+  mixins: [Parallax, Animation,LanguageData],
   components: {
     'v-card-f': CardF,
     'v-quote-a': QuoteA,
@@ -96,30 +96,15 @@ export default {
   },
   props: ['scrollTween'],
   methods: {
-    async getContent() {
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
-      const query_content = groq`*[_type == "chapterFour"][0]{
-                "title" : title['${this.lang}'],
-                "description" : description['${this.lang}'],
-
-                "quote" :  quote['${this.lang}'],
-                "quote_author" :  quote_author['${this.lang}'],
-                "quote_author_link" :  quote_author_link['${this.lang}'],
-                "quote_author_description" :  quote_author_description['${this.lang}'],
-                
-            }`
-      this.chapter = await this.$sanity.fetch(query_content)
-      this.contentLoaded++
-    },
     handleLoad() {
       this.contentLoaded++
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 11 },
-        { obj: this.$refs['boxContent'], intensity: 11 },
-        { obj: this.$refs['quoteContent'], intensity: 4 },
+        { obj: this.$refs['parallax-bg'], intensity: 6 },
+        { obj: this.$refs['quoteContent'], intensity: 6 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
@@ -129,6 +114,7 @@ export default {
           containerAnimation: this.scrollTween,
           scrub: 1,
         })
+        console.log('demo-client3')
       })
     },
   },
@@ -154,10 +140,11 @@ export default {
     },
   },
   created() {
-    if (process.client) {
-      this.getContent()
-    }
-  },
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterFour;
+    this.contentLoaded++
+  }
 }
 </script>
 
