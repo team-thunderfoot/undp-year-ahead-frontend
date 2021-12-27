@@ -53,6 +53,7 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
+          alt="back"
           src="@/assets/img/chapter-7/back.png"
         />
       </div>

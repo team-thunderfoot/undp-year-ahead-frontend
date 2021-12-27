@@ -60,7 +60,7 @@
           <v-card-f
             :title="chapter.intro_title"
             :description="chapter.intro_description"
-            :customClass="'b--card-f--third b--card-f--' + `${this.lang}`"
+            :customClass="'b--card-f--fourth b--card-f--' + `${this.lang}`"
             :loadMoreBtn="chapter.load_more_button"
             :loadMoreURL="chapter.load_more_url"
             :loadMore="true"
@@ -79,6 +79,7 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
+          alt="back"
           src="@/assets/img/chapter-10/back.png"
         />
       </div>
