@@ -90,7 +90,7 @@
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           v-lazy="require(`@/assets/img/chapter-8/back-parallax.png`)"
-          alt=""
+          alt="back parallax"
           :style="{ left: '16%' }"
         />
       </div>

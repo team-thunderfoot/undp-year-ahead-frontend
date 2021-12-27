@@ -69,7 +69,7 @@
           :style="{ left: '-6%' }"
           ref="parallax-bg"
           src="@/assets/img/chapter-2/back-parallax.png"
-          alt=""
+          alt="back parallax"
         />
         <img
           class="b--ss-a__bg-items__back"
