@@ -1,9 +1,9 @@
 <template>
     <div class="b--progress-a">
-        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-a__arrow b--progress-a__arrow--prev">
+        <a href="#" id="prev" ref="prev" @click.prevent="goTo('prev')" class="b--progress-a__arrow b--progress-a__arrow--prev" aria-label="prev">
             <img src="@/assets/img/arrow-left.png" />
         </a>
-        <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-a__arrow b--progress-a__arrow--next"> <img src="@/assets/img/arrow-right.png" /></a>
+        <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-a__arrow b--progress-a__arrow--next" aria-label="next"> <img src="@/assets/img/arrow-right.png" /></a>
     </div>
 </template>
 <script>

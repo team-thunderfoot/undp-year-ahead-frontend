@@ -12,6 +12,7 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-2/front-parallax.png"
+          alt="front-parallax"
         />
       </div>
       <div class="b--ss-a__content">
@@ -76,6 +77,7 @@
           @load="handleLoad"
           @error="handleLoad"
           src="@/assets/img/chapter-2/back.png"
+          alt="back"
         />
       </div>
     </div>
