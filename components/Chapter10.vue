@@ -29,12 +29,12 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '148%' }"
+          :style="{ left: '118%' }"
           v-lazy="require(`@/assets/img/chapter-10/front-parallax.png`)"
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
-      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '185%' }">
+      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '156%' }">
         <div
           class="b--motion-f"
           v-lazy:background-image="
@@ -55,7 +55,7 @@
         <div
           class="b--chapter10-a__content"
           :class="'b--chapter10-a__content--' + `${this.lang}`"
-          ref="boxContent"  :style="{ left: '160.4%' }"
+          ref="boxContent"  :style="{ left: '131%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -110,10 +110,10 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 8 },
-        { obj: this.$refs['parallax-ft'], intensity: 21 },
-        { obj: this.$refs['fisherman'], intensity: 21 },
-        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['parallax-bg'], intensity: 4 },
+        { obj: this.$refs['parallax-ft'], intensity: 16 },
+        { obj: this.$refs['fisherman'], intensity: 16 },
+        { obj: this.$refs['boxContent'], intensity: 16 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
