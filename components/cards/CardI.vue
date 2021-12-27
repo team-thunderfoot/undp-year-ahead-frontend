@@ -10,7 +10,7 @@
                     class="b--card-i__wrapper__hd__media-wrapper__media"
                     />
                 </div>
-                <p class="b--card-i__wrapper__hd__title">{{chapter.poster_visit_title}} <a  target="_blank" rel="noopener noreferrer" class="b--card-i__wrapper__hd__title__link" :href="'https://' + chapter.poster_url">{{ chapter.poster_url}}</a></p>
+                <p class="b--card-i__wrapper__hd__title">{{chapter.poster_visit_title}} <a  target="_blank" rel="noopener noreferrer" class="b--card-i__wrapper__hd__title__link" :href="'https://' + chapter.poster_url_link">{{ chapter.poster_url_title}}</a></p>
             </div>
             <div class="b--card-i__wrapper__bd b--content-a">
                <div v-html="chapter.poster"></div>

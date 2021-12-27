@@ -94,10 +94,11 @@
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
         "quote_author_description": "Administrateur du PNUD",
-        "share_this_story" : "Share this Story",
-        "poster_visit_title" : "Visit",
-        "poster_url" : "www.undp.org/french",  
+        "share_this_story" : "Partagez cette story",
+        "poster_visit_title" : "Rendez-vous sur",
+        "poster_url_title" : "www.undp.org",  
+        "poster_url_link" : "www.undp.org/french",  
         "poster" : "<p>Présent dans quelque 170 pays et territoires, le PNUD contribue à éradiquer la pauvreté tout en protégeant la planète.</p>",
-        "copyright" : "© 2021 United Nations Development Programme"
+        "copyright" : "Suivez les comptes @pnudfr et @ASteiner sur Twitter "
     }
 }

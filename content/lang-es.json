@@ -94,10 +94,11 @@
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
         "quote_author_description": "Administrador del PNUD",
-        "share_this_story" : "Share this Story",
-        "poster_visit_title" : "Visit",
-        "poster_url" : "www.undp.org/spanish",  
+        "share_this_story" : "Comparte esta historia",
+        "poster_visit_title" : "Visita",
+        "poster_url_title" : "undp.org/spanish",  
+        "poster_url_link" : "www.undp.org/spanish",  
         "poster" : "<p>Siete huracanes en cinco meses: en el Caribe y en todo el mundo, el cambio climático podría generar que los fenómenos meteorológicos extremos se conviertan en la nueva realidad. Y esta es solo una razón más por la que necesitamos acción climática urgente. Para las personas y el planeta.</p>",
-        "copyright" : "© 2021 United Nations Development Programme"
+        "copyright" : "Sigue a @PNUD y a @ASteiner"
     }
 }
