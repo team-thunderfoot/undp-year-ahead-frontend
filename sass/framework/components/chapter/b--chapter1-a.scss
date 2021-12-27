@@ -36,10 +36,7 @@
       }
       .b--card-a {
         &__wrapper {
-          @media all and (max-height: 718px) {
-            @include make-card-a-scroll();
-          }
-          @media all and (max-height: 630px) {
+          @media all and (max-height: 800px) {
             @include make-card-a-scroll();
           }
           @media all and ($viewport-type: 430px) {

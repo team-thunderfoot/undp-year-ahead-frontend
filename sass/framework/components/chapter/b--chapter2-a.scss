@@ -17,6 +17,15 @@
       bottom: 20%;
       left: 6.81%;
     }
+    .b--card-f {
+      .b--card-a {
+        &__wrapper {
+          @media all and (max-height: 500px) {
+            @include make-card-a-scroll();
+          }
+        }
+      }
+    }
     // tv
     &--second {
       bottom: 43%;
