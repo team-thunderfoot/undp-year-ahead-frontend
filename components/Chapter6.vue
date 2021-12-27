@@ -19,7 +19,6 @@
             :title="chapter.intro_title"
             :description="chapter.intro_description"
             :customClass="'b--card-f--third b--card-f--' + `${this.lang}`"
-            cardACustomClass="b--card-a--second"
           />
         </div>
         <!-- second position element, wheel -->
