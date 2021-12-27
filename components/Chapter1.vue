@@ -62,15 +62,9 @@
           class="b--chapter1-a__artwork b--chapter1-a__artwork--third"
           ref="browser"
         > 
-          <video class="b--video-a" autoplay muted loop playsinline>
+          <video class="b--video-a b--video-a--second" autoplay muted loop playsinline>
             <source src="@/assets/video/chapter-1/browser.mp4" type="video/mp4">
           </video>
-          <!-- <img
-
-            v-lazy="require(`@/assets/img/chapter-1/browser.gif`)"
-            alt="browser"
-            title="browser"
-          /> -->
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
@@ -79,14 +73,8 @@
               <div class="b--card-c__bd__artwork"></div>
               <div class="b--card-c__bd__media-wrapper">
                 <video class="b--video-a" autoplay muted loop playsinline>
-                  <source src="@/assets/video/chapter-1/tv_1.mp4" type="video/mp4">
+                  <source src="@/assets/video/chapter-1/tv_1.mov" type="video/mp4">
                 </video>
-                <!-- <img
-                  v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"
-                  alt="tv"
-                  title="tv"
-                  class="b--card-c__bd__media-wrapper__media"
-                /> -->
               </div>
             </div>
             <div class="b--card-c__ft">
