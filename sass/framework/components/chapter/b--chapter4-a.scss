@@ -21,7 +21,18 @@
     @media all and ($viewport-type: $tabletm) {
       width: 100%;
     }
-
+    .b--card-f {
+      .b--card-a {
+        &__wrapper {
+          @media all and (max-height: 630px) {
+            @include make-card-a-scroll();
+          }
+          @media all and ($viewport-type: 375px) {
+            @include make-card-a-scroll();
+          }
+        }
+      }
+    }
     // quote
     &--second {
       // bottom: 58.72%;
