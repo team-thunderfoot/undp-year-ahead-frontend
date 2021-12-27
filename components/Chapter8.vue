@@ -29,7 +29,7 @@
           ref="parallax-middle"
           alt="middle-parallax"
           v-lazy="require(`@/assets/img/chapter-8/middle-parallax.png`)"
-          :style="{ left: '66%' }"
+          :style="{ left: '62%' }"
         />
       </div>
       <div class="b--ss-a__content">
@@ -58,7 +58,7 @@
         <div
           class="b--chapter8-a__artwork"
           ref="plant"
-          :style="{ left: '100%' }"
+          :style="{ left: '95%' }"
         >
           <div
             class="b--motion-e"

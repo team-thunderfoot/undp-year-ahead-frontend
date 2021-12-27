@@ -12,7 +12,7 @@
           ref="parallax-ft"
           v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)"
           alt="front"
-          :style="{ left: '40%' }"
+          :style="{ left: '128%' }"
         />
         <img
           class="b--ss-a__ft-items__parallax"
@@ -96,8 +96,8 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 21 },
         { obj: this.$refs['parallax-middle'], intensity: 14 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
         { obj: this.$refs['boxContent'], intensity: 21 },
         { obj: this.$refs['quoteContent'], intensity: 21 },
       ]

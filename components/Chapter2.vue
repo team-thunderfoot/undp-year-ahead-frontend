@@ -8,7 +8,7 @@
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img
-          :style="{ left: '21%' }"
+          :style="{ left: '24%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-2/front-parallax.png"
@@ -30,7 +30,7 @@
         </div>
         <div
           class="b--chapter2-a__content b--chapter2-a__content--second"
-          :style="{ left: '47%' }"
+          :style="{ left: '50%' }"
           ref="TVfrankie"
         >
           <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
@@ -43,7 +43,7 @@
         </div>
         <div
           class="b--chapter2-a__artwork"
-          :style="{ left: '42%' }"
+          :style="{ left: '45%' }"
           ref="dino1"
         >
           <img
@@ -54,7 +54,7 @@
         </div>
         <div
           class="b--chapter2-a__artwork b--chapter2-a__artwork--second"
-          :style="{ left: '72%' }"
+          :style="{ left: '75%' }"
           ref="dino2"
         >
           <img
@@ -67,7 +67,7 @@
       <div class="b--ss-a__bg-items">
         <img
           class="b--ss-a__bg-items__parallax"
-          :style="{ left: '-6%' }"
+          :style="{ left: '-3%' }"
           ref="parallax-bg"
           src="@/assets/img/chapter-2/back-parallax.png"
           alt="back parallax"
