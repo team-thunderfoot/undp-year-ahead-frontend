@@ -59,12 +59,18 @@
       );
     }
     &__link {
-      float: right;
-      text-transform: uppercase;
       padding: $measure $measure * 2;
       background: $gradient-m;
       @include make-font-h();
-      color: map-get($color-options, f) !important;
+      @include link-a();
+      @include link-a-color(f);
+      width: fit-content;
+      margin: $measure*2 0 0 auto;
+      &:hover,
+      &:focus {
+        @include link-a-interaction();
+      }
+      // color: map-get($color-options, f) !important;
     }
   }
   &--second {

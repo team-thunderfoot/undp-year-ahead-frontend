@@ -55,12 +55,12 @@
         <div
           class="b--chapter10-a__content"
           :class="'b--chapter10-a__content--' + `${this.lang}`"
-          ref="boxContent"  :style="{ left: '131%' }"
+          ref="boxContent"  :style="{ left: '130.65%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
             :description="chapter.intro_description"
-            :customClass="'b--card-f--third b--card-f--' + `${this.lang}`"
+            :customClass="'b--card-f--fourth b--card-f--' + `${this.lang}`"
             :loadMoreBtn="chapter.load_more_button"
             :loadMoreURL="chapter.load_more_url"
             :loadMore="true"

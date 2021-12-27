@@ -89,4 +89,18 @@
       max-width: 80%;
     }
   }
+
+  &--fourth &{
+    &__hd {
+      max-width: 80%;
+    }
+    &__bd{
+      &::before{
+        left: 23%;
+      }
+      &::after{
+        right: 23%;
+      }
+    }
+  }
 }
