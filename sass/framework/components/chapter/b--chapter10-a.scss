@@ -44,6 +44,14 @@
           @media all and ($viewport-type: $mobile) {
             padding: $measure * 2 5%;
           }
+          @media all and (max-height: 480px) {
+            @include make-card-a-shadow();
+          }
+          &__wrapper {
+            @media all and (max-height: 480px) {
+              @include make-card-a-wrapper-scroll();
+            }
+          }
         }
       }
       // spanish card f corrections
@@ -55,6 +63,16 @@
             &:after,
             &:before {
               height: $measure * 2;
+            }
+          }
+          .b--card-a {
+            @media all and (max-height: 520px) {
+              @include make-card-a-shadow();
+            }
+            &__wrapper {
+              @media all and (max-height: 520px) {
+                @include make-card-a-wrapper-scroll();
+              }
             }
           }
         }
@@ -135,7 +153,7 @@
       &--left {
         left: -21%;
       }
-      &--right{
+      &--right {
         top: auto;
         bottom: 0;
         height: 60.83vh;

@@ -17,12 +17,18 @@
 
     .b--card-f {
       .b--card-a {
+        @media all and (max-height: 630px) {
+          @include make-card-a-shadow();
+        }
+        @media all and ($viewport-type: 375px) {
+          @include make-card-a-shadow();
+        }
         &__wrapper {
           @media all and (max-height: 630px) {
-            @include make-card-a-scroll();
+            @include make-card-a-wrapper-scroll();
           }
           @media all and ($viewport-type: 375px) {
-            @include make-card-a-scroll();
+            @include make-card-a-wrapper-scroll();
           }
         }
       }
@@ -30,12 +36,18 @@
     &--fr {
       .b--card-f {
         .b--card-a {
+          @media all and (max-height: 900px) {
+            @include make-card-a-shadow();
+          }
+          @media all and ($viewport-type: 375px) {
+            @include make-card-a-shadow();
+          }
           &__wrapper {
             @media all and (max-height: 900px) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
             @media all and ($viewport-type: 375px) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
           }
         }
@@ -44,12 +56,18 @@
     &--es {
       .b--card-f {
         .b--card-a {
+          @media all and (max-height: 700px) {
+            @include make-card-a-shadow();
+          }
+          @media all and ($viewport-type: 430px) {
+            @include make-card-a-shadow();
+          }
           &__wrapper {
             @media all and (max-height: 700px) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
             @media all and ($viewport-type: 430px) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
           }
         }

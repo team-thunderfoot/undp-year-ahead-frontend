@@ -51,6 +51,7 @@
       100vh - 19.04vh - 17.77vh - $measure * 4 - (1.46vh * 2) - $measure * 6 -
         2px
     );
+    height: auto;
     // overflow: auto;
     position: relative;
     @media all and ($viewport-type: $mobile) {
@@ -65,7 +66,7 @@
       @include link-a();
       @include link-a-color(f);
       width: fit-content;
-      margin: $measure*2 0 0 auto;
+      margin: $measure * 2 0 0 auto;
       &:hover,
       &:focus {
         @include link-a-interaction();
@@ -78,8 +79,9 @@
   }
   // overflow-auto for scroll in card-a
   &--third & {
+    @include make-card-a-shadow();
     &__wrapper {
-      @include make-card-a-scroll();
+      @include make-card-a-wrapper-scroll();
     }
   }
 }
