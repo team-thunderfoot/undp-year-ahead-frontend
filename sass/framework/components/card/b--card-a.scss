@@ -76,19 +76,10 @@
   &--second {
     padding: $measure * 6 5%;
   }
-
+  // overflow-auto for scroll in card-a
   &--third & {
     &__wrapper {
-      overflow: auto;
-      &:after {
-        content: '';
-        height: 45px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: $gradient-n;
-      }
+      @include make-card-a-scroll();
     }
   }
 }

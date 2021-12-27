@@ -63,6 +63,7 @@
           @load="handleLoad"
           @error="handleLoad"
           src="@/assets/img/chapter-4/back.png"
+          alt="back"
         />
       </div>
     </div>
