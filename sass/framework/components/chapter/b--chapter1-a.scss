@@ -18,7 +18,7 @@
     @media all and ($viewport-type: $tablets) {
       max-width: calc(100vw - 60px);
     }
-    // intro second box
+    // intro second box card-a
     &--second {
       bottom: 17.77%;
       left: 17.5%;
@@ -33,6 +33,19 @@
       }
       @media all and ($viewport-type: $tablets) {
         max-width: calc(100vw - 100px);
+      }
+      .b--card-a {
+        &__wrapper {
+          @media all and (max-height: 630px) {
+            @include make-card-a-scroll();
+          }
+          @media all and ($viewport-type: 430px) {
+            @include make-card-a-scroll();
+          }
+          @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            @include make-card-a-scroll();
+          }
+        }
       }
     }
     // card-d
