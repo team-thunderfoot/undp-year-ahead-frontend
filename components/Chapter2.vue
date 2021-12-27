@@ -35,14 +35,8 @@
           <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
             <div class="b--card-g__media-wrapper">
               <video class="b--video-a" autoplay muted loop playsinline>
-                <source src="@/assets/video/chapter-2/dino2.mp4" type="video/mp4">
+                <source src="@/assets/video/chapter-2/dino2.mov" type="video/mp4">
               </video>
-              <!-- <img
-                v-lazy="require(`@/assets/img/chapter-2/dino.gif`)"
-                alt="tv"
-                title="tv"
-                class="b--card-g__media-wrapper__media"
-              /> -->
             </div>
           </div>
         </div>
