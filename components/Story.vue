@@ -154,18 +154,13 @@ export default {
                 this.navLoaded = true;
             });
 
-            this.queryString = window.location.search;
-            this.urlParams = new URLSearchParams(this.queryString);
-
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
                     // SET NEW Item
                     this.currentItem = payload.item;
                     // Change URL
-                    this.urlParams.set("scene", payload.item );
-                    this.urlParams.toString(); 
-                    window.history.replaceState({}, '', `?${this.urlParams}`);
+                    this.$router.push({path: this.$route.path, query: { scene:  payload.item }})
                 }
             });
         }
