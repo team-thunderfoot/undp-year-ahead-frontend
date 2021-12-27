@@ -78,7 +78,7 @@
     },
     "ChapterTwelve" :   {
         "intro_title": "Sustainable development",
-        "intro_description": "<p>La próxima Conferencia de las Naciones Unidas sobre el Clima (COP27) se basará en el <a href='https://unfccc.int/documents/310475' target='_blank' rel='noopenner noreferrer'>Pacto Climático de Glasgow acordado en la COP26.</p>",
+        "intro_description": "<p>La próxima Conferencia de las Naciones Unidas sobre el Clima (COP27) se basará en el <a href='https://unfccc.int/documents/310475' target='_blank' rel='noopenner noreferrer'>Pacto Climático de Glasgow acordado en la COP26.</a></p>",
         "tooltip_label": "Conferencia de las Naciones Unidas sobre el Clima (COP27)",
         "tooltip_link": "https://news.un.org/es/story/2021/11/1499972",
         "tooltip_date": "7-18 de noviembre, Sharm El-Sheikh (Egipto)"

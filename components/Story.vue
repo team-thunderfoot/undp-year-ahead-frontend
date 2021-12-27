@@ -153,8 +153,6 @@ export default {
             this.$nuxt.$on('navIsLoaded', () => {
                 this.navLoaded = true;
             });
-            this.queryString = window.location.search;
-            this.urlParams = new URLSearchParams(this.queryString);
 
             this.queryString = window.location.search;
             this.urlParams = new URLSearchParams(this.queryString);
