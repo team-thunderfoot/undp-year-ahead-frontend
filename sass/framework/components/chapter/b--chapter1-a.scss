@@ -35,44 +35,71 @@
         max-width: calc(100vw - 100px);
       }
       .b--card-a {
+        @media all and (max-height: 800px) {
+          @include make-card-a-shadow();
+        }
+        @media all and ($viewport-type: 430px) {
+          @include make-card-a-shadow();
+        }
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+          @include make-card-a-shadow();
+        }
         &__wrapper {
           @media all and (max-height: 800px) {
-            @include make-card-a-scroll();
+            @include make-card-a-wrapper-scroll();
           }
           @media all and ($viewport-type: 430px) {
-            @include make-card-a-scroll();
+            @include make-card-a-wrapper-scroll();
           }
           @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-            @include make-card-a-scroll();
+            @include make-card-a-wrapper-scroll();
           }
         }
       }
       &--es {
         .b--card-a {
+          @media all and (max-height: 700px) {
+            @include make-card-a-shadow();
+          }
+          @media all and ($viewport-type: 430px) {
+            @include make-card-a-shadow();
+          }
+          @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            @include make-card-a-shadow();
+          }
           &__wrapper {
             @media all and (max-height: 700px) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
             @media all and ($viewport-type: 430px) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
             @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
           }
         }
       }
       &--fr {
         .b--card-a {
+          @media all and (max-height: 645px) {
+            @include make-card-a-shadow();
+          }
+          @media all and ($viewport-type: 430px) {
+            @include make-card-a-shadow();
+          }
+          @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            @include make-card-a-shadow();
+          }
           &__wrapper {
             @media all and (max-height: 645px) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
             @media all and ($viewport-type: 430px) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
             @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-              @include make-card-a-scroll();
+              @include make-card-a-wrapper-scroll();
             }
           }
         }
