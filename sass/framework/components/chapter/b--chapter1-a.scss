@@ -47,6 +47,36 @@
           }
         }
       }
+      &--es {
+        .b--card-a {
+          &__wrapper {
+            @media all and (max-height: 700px) {
+              @include make-card-a-scroll();
+            }
+            @media all and ($viewport-type: 430px) {
+              @include make-card-a-scroll();
+            }
+            @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+              @include make-card-a-scroll();
+            }
+          }
+        }
+      }
+      &--fr {
+        .b--card-a {
+          &__wrapper {
+            @media all and (max-height: 645px) {
+              @include make-card-a-scroll();
+            }
+            @media all and ($viewport-type: 430px) {
+              @include make-card-a-scroll();
+            }
+            @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+              @include make-card-a-scroll();
+            }
+          }
+        }
+      }
     }
     // card-d
     &--third {
