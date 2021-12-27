@@ -29,13 +29,13 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '158%' }"
+          :style="{ left: '148%' }"
           alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-10/front-parallax.png`)"
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
-      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '196%' }">
+      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '186%' }">
         <div
           class="b--motion-f"
           v-lazy:background-image="
@@ -56,7 +56,7 @@
         <div
           class="b--chapter10-a__content"
           :class="'b--chapter10-a__content--' + `${this.lang}`"
-          ref="boxContent"  :style="{ left: '170.5%' }"
+          ref="boxContent"  :style="{ left: '160.5%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
