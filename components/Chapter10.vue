@@ -34,7 +34,7 @@
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
-      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '157%' }">
+      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '156%' }">
         <div
           class="b--motion-f"
           v-lazy:background-image="
