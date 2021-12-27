@@ -44,7 +44,7 @@
                     />
                 </div>
                 <!-- social -->
-                <div class="b--chapter14-a__content b--chapter14-a__content--fourth">
+                <div class="b--chapter14-a__content b--chapter14-a__content--fourth" :class="'b--chapter14-a__content--fourth--'+ `${this.lang}`">
                     <v-social-a :chapter="chapter"></v-social-a>
                 </div>
             </div>

@@ -22,6 +22,12 @@
       width: fit-content;
       bottom: 8%;
       left: 82.6%;
+      &--fr{
+        left: 81.2%;
+      }
+      &--es{
+        left: 81.6%;
+      }
     }
   }
   &__artwork {

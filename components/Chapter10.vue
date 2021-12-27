@@ -23,17 +23,18 @@
       </div>
       <div class="b--ss-a__ft-items">
         <img
+            class="b--ss-a__ft-items__media"
           v-lazy="require(`@/assets/img/chapter-10/front.png`)"
         />
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '118%' }"
+          :style="{ left: '158%' }"
           v-lazy="require(`@/assets/img/chapter-10/front-parallax.png`)"
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
-      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '157%' }">
+      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '196%' }">
         <div
           class="b--motion-f"
           v-lazy:background-image="
@@ -54,7 +55,7 @@
         <div
           class="b--chapter10-a__content"
           :class="'b--chapter10-a__content--' + `${this.lang}`"
-          ref="boxContent"  :style="{ left: '131%' }"
+          ref="boxContent"  :style="{ left: '170.5%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -70,6 +71,7 @@
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
+          :style="{ left: '21%' }"
           v-lazy="require(`@/assets/img/chapter-10/back-parallax.png`)"
           alt="back parallax"
         />
@@ -110,9 +112,10 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 16 },
-        { obj: this.$refs['fisherman'], intensity: 16 },
-        { obj: this.$refs['boxContent'], intensity: 16 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['fisherman'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
