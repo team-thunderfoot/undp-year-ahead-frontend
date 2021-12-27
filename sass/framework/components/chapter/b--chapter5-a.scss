@@ -14,6 +14,32 @@
     @media all and ($viewport-type: $tablets) {
       bottom: 15%;
     }
+    &--fr {
+      .b--card-f {
+        .b--card-a {
+          &__wrapper {
+            @media all and (max-height: 630px) {
+              @include make-card-a-scroll();
+            }
+            @media all and ($viewport-type: 375px) {
+              @include make-card-a-scroll();
+            }
+          }
+        }
+      }
+    }
+    .b--card-f {
+      .b--card-a {
+        &__wrapper {
+          @media all and (max-height: 630px) {
+            @include make-card-a-scroll();
+          }
+          @media all and ($viewport-type: 375px) {
+            @include make-card-a-scroll();
+          }
+        }
+      }
+    }
     &--second {
       bottom: 47.26%;
       left: 31.45%;
@@ -40,7 +66,7 @@
       }
       &__bd {
         .b--card-a {
-          padding: $measure*3 5%;
+          padding: $measure * 3 5%;
           @media all and ($viewport-type: $mobile) {
             padding: $measure * 3 5%;
           }
@@ -52,7 +78,7 @@
       width: 22.95%;
       .b--card-f {
         &__hd {
-          max-width: 100%!important;
+          max-width: 100% !important;
           margin: 0 auto $measure * 3;
           &:before,
           &:after {
