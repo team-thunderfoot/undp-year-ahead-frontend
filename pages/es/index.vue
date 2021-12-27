@@ -18,6 +18,10 @@ import Nav from '@/components/Nav';
 import Lang from '@/components/Lang';
 import Story from '~/components/Story';
 
+import Vue from 'vue';
+import LanguageData from '~/mixins/LanguageData';
+Vue.mixin(LanguageData);
+
 export default {
 	data:()=>{
 		return{
