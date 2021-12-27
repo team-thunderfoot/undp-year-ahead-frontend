@@ -23,7 +23,7 @@
       </div>
       <div class="b--ss-a__ft-items">
         <img
-            class="b--ss-a__ft-items__media"
+          class="b--ss-a__ft-items__media"
           v-lazy="require(`@/assets/img/chapter-10/front.png`)"
         />
         <img

@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter11-a" id="Scene11" ref="Scene11"  v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
+                <img ref="parallax-ft" :style="{ left: '66%' }" v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -66,7 +66,7 @@ import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
 
 export default {
-    mixins: ['infoWindow',Parallax,Animation],
+    mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
         'v-info-chapter' : InfoChapter,
@@ -84,15 +84,25 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 11,
-                    scrub:0,
-                    scrollTween : this.scrollTween
+
+        AsambleParallaxObjs() {
+            var motion = [
+                { obj: this.$refs['parallax-bg'], intensity: 4 },
+                { obj: this.$refs['parallax-ft'], intensity: 21 },
+                // { obj: this.$refs['parallax-ft'], intensity: 21 },
+                // { obj: this.$refs['fisherman'], intensity: 21 },
+                // { obj: this.$refs['boxContent'], intensity: 21 },
+            ]
+            motion.forEach((item) => {
+                this.parallaxMove({
+                el: item.obj,
+                intensity: item.intensity,
+                duration: this.$refs['Scene11'].offsetWidth,
+                containerAnimation: this.scrollTween,
+                scrub: true,
                 })
             })
-        }
+        },
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -103,7 +113,14 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.animate();
+                //motion frontend and backend elements
+                this.AsambleParallaxObjs()
+                // mixin function
+                this.startAnimation({
+                    sceneID: 11,
+                    scrub: 0,
+                    scrollTween: this.scrollTween,
+                })
             } 
         }
     },
