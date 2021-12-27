@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter14-a" id="Scene14" ref="Scene14" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-14/front.png`)" alt="front" />
+                <img v-lazy="require(`@/assets/img/chapter-14/front-${this.lang}.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, chapter title -->
