@@ -1,0 +1,18 @@
+.b--video-b{
+    position: relative;
+    &__media{
+        display: block;
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+        clip-path: polygon(3% 0, 100% 0%, 100% 94%, 7% 94%, 0 100%, 3% 93%);
+        // clip-path: path('M5 7C6 4.16667 9.7 3.0467 12.5 9.8467C15 4.68003 21.1 -5.4 25.5 7');
+    }
+    &__artwork{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 97%;
+        background-color: map-get($color-options, f);
+    }
+}
