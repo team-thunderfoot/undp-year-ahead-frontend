@@ -3,4 +3,8 @@
     width: 100%;
     height: auto;
     pointer-events: none;
+    &--second{
+        clip-path: polygon(3% 0, 100% 0%, 100% 94%, 7% 94%, 0 100%, 3% 93%);
+        // border-radius: 10px;
+    }
 }

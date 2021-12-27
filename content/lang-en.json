@@ -96,7 +96,8 @@
         "quote_author_description": "UNDP Administrator",
         "share_this_story" : "Share this Story",
         "poster_visit_title" : "Visit",
-        "poster_url" : "www.undp.org",  
+        "poster_url_title" : "www.undp.org",  
+        "poster_url_link" : "www.undp.org",  
         "poster" : "<p>UNDP works to eradicate poverty and reduce inequalities through the sustainable development of nations, in more than 170 countries and territories.</p>",
         "copyright" : "© 2021 United Nations Development Programme"
     }
