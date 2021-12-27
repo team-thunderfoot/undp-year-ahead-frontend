@@ -38,9 +38,10 @@
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax"
+                alt="back-parallax"
                 v-lazy="require(`@/assets/img/chapter-12/back-parallax.png`)"
                 >        
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png">        
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" :src="require(`@/assets/img/chapter-12/back.png`)" alt="back">        
             </div>
         </div>
     </section>

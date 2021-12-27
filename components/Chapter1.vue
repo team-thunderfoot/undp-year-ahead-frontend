@@ -37,9 +37,7 @@
 			<div class="b--card-a">
 				<div class="b--card-a__artwork"></div>
 				<div class="b--card-a__wrapper b--content-a">
-				<vuescroll>
 					<div v-html="chapter.content"></div>
-				</vuescroll>
 				</div>
 			</div>
         </div>
@@ -144,7 +142,6 @@ import InfoChapter from '@/components/infochapter/Infochapter'
 import QuoteA from '@/components/quote/Quote'
 
 import Animation from '@/mixins/Animation.js'
-import vuescroll from 'vuescroll';
 
 export default {
   mixins: [Animation],
@@ -160,7 +157,6 @@ export default {
   components: {
     'v-info-chapter': InfoChapter,
     'v-quote-a': QuoteA,
-    vuescroll,
   },
   methods: {
     handleLoad() {

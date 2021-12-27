@@ -52,11 +52,13 @@
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
+                alt="back-parallax"
                 v-lazy="require(`@/assets/img/chapter-13/back-parallax.png`)"
                 >  
                 <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad" 
                 @error="handleLoad" 
+                alt="back"
                 src="@/assets/img/chapter-13/back.png"
                 >        
             </div>
