@@ -48,7 +48,7 @@
                 <img class="b--ss-a__bg-items__parallax" 
                 ref="parallax-bg" 
                 v-lazy="require(`@/assets/img/chapter-11/back-parallax.png`)"
-                alt=""> 
+                alt="back parallax"> 
                 <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad"  
                 @error="handleLoad" 

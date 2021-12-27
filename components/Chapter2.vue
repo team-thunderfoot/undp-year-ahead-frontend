@@ -35,7 +35,7 @@
           <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
             <div class="b--card-g__media-wrapper">
               <video class="b--video-a" autoplay muted loop playsinline>
-                <source src="@/assets/video/chapter-2/dino2.mov" type="video/mp4">
+                <source :src="require(`@/assets/video/chapter-2/dino2.mov`)" type="video/mp4">
               </video>
             </div>
           </div>
@@ -69,7 +69,7 @@
           :style="{ left: '-6%' }"
           ref="parallax-bg"
           src="@/assets/img/chapter-2/back-parallax.png"
-          alt=""
+          alt="back parallax"
         />
         <img
           class="b--ss-a__bg-items__back"
