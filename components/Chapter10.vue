@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__divider">
-        <div class="b--chapter-10-a__divider">
+        <div class="b--chapter10-a__divider">
           <img
             class="
               b--chapter10-a__divider__media
@@ -15,9 +15,16 @@
             "
             v-lazy="require(`@/assets/img/chapter-10/front_rock.png`)"
           />
+          <img
+            class="b--chapter10-a__divider__media b--chapter10-a__divider__media--right"
+            v-lazy="require(`@/assets/img/chapter-10/10-11_rock-stairs.png`)"
+          />
         </div>
       </div>
       <div class="b--ss-a__ft-items">
+        <img
+          v-lazy="require(`@/assets/img/chapter-10/front.png`)"
+        />
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
