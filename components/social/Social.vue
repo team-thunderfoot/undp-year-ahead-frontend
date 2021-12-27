@@ -4,22 +4,22 @@
         <div class="b--social-a__list-group">
             <div class="b--social-a__list-group__item">
                 <a :href="social.facebook.url" target="_blank" rel="noopener noreferrer"  aria-label="share by facebook">
-                    <img :src="social.facebook.icon">
+                    <img :src="social.facebook.icon" alt="facebook">
                 </a>
             </div>
             <div class="b--social-a__list-group__item" >
                 <a :href="social.instagram.url" target="_blank" rel="noopener noreferrer"  aria-label="share by instagram">
-                    <img :src="social.instagram.icon">
+                    <img :src="social.instagram.icon" alt="instagram">
                 </a>
             </div>
             <div class="b--social-a__list-group__item">
                 <a :href="social.linkedin.url" target="_blank" rel="noopener noreferrer"  aria-label="share by linkedin">
-                    <img :src="social.linkedin.icon">
+                    <img :src="social.linkedin.icon" alt="linkedin">
                 </a>
             </div>
             <div class="b--social-a__list-group__item">
                 <a :href="social.twitter.url" target="_blank" rel="noopener noreferrer"  aria-label="share by twitter">
-                    <img :src="social.twitter.icon">
+                    <img :src="social.twitter.icon" alt="twitter">
                 </a>
             </div>
 
