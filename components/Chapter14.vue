@@ -60,15 +60,12 @@ import CardF from '@/components/cards/CardF';
 import CardI from '@/components/cards/CardI';
 import QuoteA from '@/components/quote/Quote';
 import SocialA from '@/components/social/Social.vue';
-// import Parallax from '@/motion/Parallax';
-import Vue from 'vue';
+
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
-import LanguageData from '~/mixins/LanguageData';
-Vue.use(Parallax)
 
 export default {
-    mixins: [Parallax,Animation,LanguageData],
+    mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
         'v-card-i':CardI,

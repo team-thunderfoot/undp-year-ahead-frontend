@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
