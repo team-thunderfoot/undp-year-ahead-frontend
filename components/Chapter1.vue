@@ -51,16 +51,9 @@
           <div class="b--card-b">
             <div class="b--card-b__artwork"></div>
             <div class="b--card-b__wrapper">
-              <!-- video should be a scss component. -->
-              <video width="200" height="150" autoplay muted loop playsinline :style="{ pointerEvents: 'none' }">
-                  <source src="@/assets/video/chapter-1/frame.mp4" type="video/mp4">
+              <video class="b--video-a" autoplay muted loop playsinline>
+                <source src="@/assets/video/chapter-1/frame.mp4" type="video/mp4">
               </video>
-              <!-- <img
-                class="b--card-b__wrapper__media"
-                v-lazy="require(`@/assets/img/chapter-1/frame.gif`)"
-                alt="frame"
-                title="frame"
-              /> -->
             </div>
           </div>
         </div>
@@ -68,13 +61,16 @@
         <div
           class="b--chapter1-a__artwork b--chapter1-a__artwork--third"
           ref="browser"
-        >  
-          <img
+        > 
+          <video class="b--video-a" autoplay muted loop playsinline>
+            <source src="@/assets/video/chapter-1/browser.mp4" type="video/mp4">
+          </video>
+          <!-- <img
 
             v-lazy="require(`@/assets/img/chapter-1/browser.gif`)"
             alt="browser"
             title="browser"
-          />
+          /> -->
         </div>
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fourth">
@@ -82,12 +78,15 @@
             <div class="b--card-c__bd">
               <div class="b--card-c__bd__artwork"></div>
               <div class="b--card-c__bd__media-wrapper">
-                <img
+                <video class="b--video-a" autoplay muted loop playsinline>
+                  <source src="@/assets/video/chapter-1/tv_1.mp4" type="video/mp4">
+                </video>
+                <!-- <img
                   v-lazy="require(`@/assets/img/chapter-1/tv.gif`)"
                   alt="tv"
                   title="tv"
                   class="b--card-c__bd__media-wrapper__media"
-                />
+                /> -->
               </div>
             </div>
             <div class="b--card-c__ft">
