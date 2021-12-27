@@ -19,6 +19,41 @@
     @media all and ($viewport-type: $mobile) {
       bottom: 28.79%;
     }
+    .b--card-a {
+      @media all and (max-height: 485px) {
+        @include make-card-a-shadow();
+      }
+      &__wrapper {
+        @media all and (max-height: 485px) {
+          @include make-card-a-wrapper-scroll();
+        }
+      }
+    }
+    &--fr {
+      .b--card-a {
+        @media all and (max-height: 525px) {
+          @include make-card-a-shadow();
+        }
+        &__wrapper {
+          @media all and (max-height: 525px) {
+            @include make-card-a-wrapper-scroll();
+          }
+        }
+      }
+    }
+    &--es {
+      .b--card-a {
+        @media all and (max-height: 520px) {
+          @include make-card-a-shadow();
+        }
+        &__wrapper {
+          @media all and (max-height: 520px) {
+            @include make-card-a-wrapper-scroll();
+          }
+        }
+      }
+    }
+
     // french and spanish adjustments
     &--fr,
     &--es {
