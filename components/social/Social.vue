@@ -2,24 +2,24 @@
     <div class="b--social-a" v-if="social">
         <h3 class="b--social-a__title">{{chapter.share_this_story}}</h3>
         <div class="b--social-a__list-group">
-            <div class="b--social-a__list-group__item" rel="noopener noreferrer"  aria-label="share by facebook">
-                <a :href="social.facebook.url" target="_blank">
-                    <img :src="social.facebook.icon">
+            <div class="b--social-a__list-group__item">
+                <a :href="social.facebook.url" target="_blank" rel="noopener noreferrer"  aria-label="share by facebook">
+                    <img :src="social.facebook.icon" alt="facebook">
                 </a>
             </div>
-            <div class="b--social-a__list-group__item" rel="noopener noreferrer"  aria-label="share by instagram">
-                <a :href="social.instagram.url" target="_blank">
-                    <img :src="social.instagram.icon">
+            <div class="b--social-a__list-group__item" >
+                <a :href="social.instagram.url" target="_blank" rel="noopener noreferrer"  aria-label="share by instagram">
+                    <img :src="social.instagram.icon" alt="instagram">
                 </a>
             </div>
-            <div class="b--social-a__list-group__item" rel="noopener noreferrer"  aria-label="share by linkedin">
-                <a :href="social.linkedin.url" target="_blank">
-                    <img :src="social.linkedin.icon">
+            <div class="b--social-a__list-group__item">
+                <a :href="social.linkedin.url" target="_blank" rel="noopener noreferrer"  aria-label="share by linkedin">
+                    <img :src="social.linkedin.icon" alt="linkedin">
                 </a>
             </div>
             <div class="b--social-a__list-group__item">
                 <a :href="social.twitter.url" target="_blank" rel="noopener noreferrer"  aria-label="share by twitter">
-                    <img :src="social.twitter.icon">
+                    <img :src="social.twitter.icon" alt="twitter">
                 </a>
             </div>
 

@@ -10,10 +10,12 @@
         <div class="b--chapter4-a__divider">
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
+            alt="front_tree"
             v-lazy="require(`@/assets/img/chapter-4/front_tree.png`)"
           />
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
+            alt="front_electric-cable"
             v-lazy="require(`@/assets/img/chapter-4/front_electric-cable.png`)"
           />
         </div>
@@ -23,6 +25,7 @@
           :style="{ left: '45%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
+          alt="ront-parallax"
           v-lazy="require(`@/assets/img/chapter-4/front-parallax.png`)"
         />
       </div>
