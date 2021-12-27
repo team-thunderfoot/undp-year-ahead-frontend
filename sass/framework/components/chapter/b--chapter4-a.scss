@@ -33,6 +33,20 @@
         }
       }
     }
+    &--es {
+      .b--card-f {
+        .b--card-a {
+          &__wrapper {
+            @media all and (max-height: 700px) {
+              @include make-card-a-scroll();
+            }
+            @media all and ($viewport-type: 430px) {
+              @include make-card-a-scroll();
+            }
+          }
+        }
+      }
+    }
     // quote
     &--second {
       // bottom: 58.72%;
