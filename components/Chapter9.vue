@@ -52,7 +52,7 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-9/back.png"
+          :src="require(`@/assets/img/chapter-9/back.png`)"
         />
         <img
           class="b--ss-a__bg-items__parallax"

@@ -41,7 +41,7 @@
           class="b--ss-a__bg-items__artwork"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-6/back.png"
+          :src="require(`@/assets/img/chapter-6/back.png`)"
         />
       </div>
     </div>
