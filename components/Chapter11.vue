@@ -2,7 +2,9 @@
     <section class="b--page-a__item b--chapter11-a" id="Scene11" ref="Scene11"  v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-ft" :style="{ left: '66%' }" v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
+                <img ref="parallax-ft" 
+                :style="{ left: '66%' }"
+                v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -88,8 +90,8 @@ export default {
 
         AsambleParallaxObjs() {
             var motion = [
-                { obj: this.$refs['parallax-bg'], intensity: 4 },
-                { obj: this.$refs['parallax-ft'], intensity: 21 },
+                // { obj: this.$refs['parallax-bg'], intensity: 4 },
+                // { obj: this.$refs['parallax-ft'], intensity: 3 },
                 // { obj: this.$refs['parallax-ft'], intensity: 21 },
                 // { obj: this.$refs['fisherman'], intensity: 21 },
                 // { obj: this.$refs['boxContent'], intensity: 21 },
