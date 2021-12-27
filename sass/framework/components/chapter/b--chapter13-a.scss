@@ -1,91 +1,124 @@
 .b--chapter13-a {
-
-    // content has bigger z-index than ft items
-    .b--ss-a {
-        &__content {
-            z-index: 90;
-        }
-    }
-
+  // content has bigger z-index than ft items
+  .b--ss-a {
     &__content {
-        // cards
-        position: absolute;
-        bottom: 25.99%;
-        left: 7.39%;
-        width: 23.08%;
-        max-width: calc(100vw - 100px);
-        @media all and ($viewport-type: $tabletm) {
-            width: 100%;
-        }
-        @media all and ($viewport-type: $mobile) {
-            bottom: 22%;
-        }
- 
+      z-index: 90;
     }
+  }
 
-    // animation
-    &__artwork {
-        position: absolute;
-        bottom: 0;
-        left: 35.2%;
-        @media all and ($viewport-type: $laptop) {
-            bottom: 4%;
-        }
-        // plant animation
-        &--second{
-            bottom: 0;
-            left: 78%;
-        }
-        // lines animation
-        &--third {
-            bottom: 63%;
-            left: 88.5%;
-            @media all and ($viewport-type: $tabletl) {
-                left: 90%;
-            }
-        }
-    }
-
-    // move card f head and bottom legs
-    .b--card-f {
-        &__hd {
-            margin: 0 auto $measure*4;
-            &:before, &:after {
-                height: $measure*4;
-            }
-            &:before {
-                left: 14%;
-            }
-            &:after {
-                right: 14%;
-            }
-    }
-        &__bd {
-            &:before {
-                left: 14%;
-            }
-            &:after {
-                right: 14%;
-            }
-        }
-    }
-    &__divider {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 4;
-      height: 100%;
+  &__content {
+    // cards
+    position: absolute;
+    bottom: 25.99%;
+    left: 7.39%;
+    width: 23.08%;
+    max-width: calc(100vw - 100px);
+    @media all and ($viewport-type: $tabletm) {
       width: 100%;
-      pointer-events: none;
-      z-index: 10;
-      &__media {
-        position: absolute;
-        top: 0;
-        bottom: auto;
-        height: 100vh;
-        &--right {
-          right: -10.5%;
+    }
+    @media all and ($viewport-type: $mobile) {
+      bottom: 22%;
+    }
+    .b--card-a {
+      @media all and (max-height: 450px) {
+        @include make-card-a-shadow();
+      }
+      &__wrapper {
+        @media all and (max-height: 450px) {
+          @include make-card-a-wrapper-scroll();
         }
       }
     }
+    &--fr {
+      .b--card-a {
+        @media all and (max-height: 540px) {
+          @include make-card-a-shadow();
+        }
+        &__wrapper {
+          @media all and (max-height: 540px) {
+            @include make-card-a-wrapper-scroll();
+          }
+        }
+      }
+    }
+    &--es {
+      .b--card-a {
+        @media all and (max-height: 510px) {
+          @include make-card-a-shadow();
+        }
+        &__wrapper {
+          @media all and (max-height: 510px) {
+            @include make-card-a-wrapper-scroll();
+          }
+        }
+      }
+    }
+  }
+
+  // animation
+  &__artwork {
+    position: absolute;
+    bottom: 0;
+    left: 35.2%;
+    @media all and ($viewport-type: $laptop) {
+      bottom: 4%;
+    }
+    // plant animation
+    &--second {
+      bottom: 0;
+      left: 78%;
+    }
+    // lines animation
+    &--third {
+      bottom: 63%;
+      left: 88.5%;
+      @media all and ($viewport-type: $tabletl) {
+        left: 90%;
+      }
+    }
+  }
+
+  // move card f head and bottom legs
+  .b--card-f {
+    &__hd {
+      margin: 0 auto $measure * 4;
+      &:before,
+      &:after {
+        height: $measure * 4;
+      }
+      &:before {
+        left: 14%;
+      }
+      &:after {
+        right: 14%;
+      }
+    }
+    &__bd {
+      &:before {
+        left: 14%;
+      }
+      &:after {
+        right: 14%;
+      }
+    }
+  }
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    &__media {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: 100vh;
+      &--right {
+        right: -10.5%;
+      }
+    }
+  }
 }
