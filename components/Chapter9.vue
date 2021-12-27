@@ -19,7 +19,7 @@
           v-lazy="require(`@/assets/img/chapter-9/middle-parallax.png`)"
           alt="middle"
           ref="parallax-middle"
-          :style="{ left: '79.1%' }"
+          :style="{ left: '74.1%' }"
         />
       </div>
       <div class="b--ss-a__content">
@@ -29,7 +29,7 @@
           class="b--chapter9-a__content"
           :class="'b--chapter9-a__content--' + `${this.lang}`"
           ref="boxContent"
-          :style="{ left: '84.1%' }"
+          :style="{ left: '137.1%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -42,7 +42,7 @@
         <div
           class="b--chapter9-a__info"
           ref="quoteContent"
-          :style="{ left: '104.1%' }"
+          :style="{ left: '154.1%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
@@ -52,14 +52,15 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-9/back.png"
+          alt="back"
+          :src="require(`@/assets/img/chapter-9/back.png`)"
         />
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           v-lazy="require(`@/assets/img/chapter-9/back-parallax.png`)"
           alt="back-parallax"
-          :style="{ left: '20%' }"
+          :style="{ left: '30%' }"
         />
       </div>
     </div>
@@ -67,22 +68,15 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
-import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import CardF from '@/components/cards/CardF'
 import InfoChapter from '@/components/infochapter/Infochapter'
 
-import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Parallax)
-Vue.use(Animation)
-import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: ['infoWindow', Parallax, Animation,LanguageData],
+  mixins: [Parallax, Animation],
   components: {
-    SanityContent,
     'v-card-f': CardF,
     'v-info-chapter': InfoChapter,
   },
@@ -102,10 +96,10 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 11 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
         { obj: this.$refs['parallax-middle'], intensity: 14 },
-        { obj: this.$refs['boxContent'], intensity: 11 },
-        { obj: this.$refs['quoteContent'], intensity: 11 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['quoteContent'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({

@@ -51,7 +51,6 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/vue-lazyload',
-    '~/plugins/vbar'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -59,14 +58,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/sanity/module',
     'nuxt-gsap-module',
   ],
-
-  sanity: {
-    projectId: 'jf55zufm',
-    minimal: true
-  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -75,5 +68,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend (config) {
+      config.module.rules.push({
+        test: /\.(mov)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          esModule: false
+        }
+      })
+    }  
   }
 }

@@ -4,31 +4,34 @@
     bottom: 0;
     left: 0;
     z-index: 3;
-    width: 600px;
+    width: 580px;
     height: 700px;
     animation-name: motionF;
     animation-duration: 2s;
     animation-timing-function: steps(96);
     animation-iteration-count: infinite;
-    transform: translate(-5%, 5%) scale(0.9);
+    transform-origin: bottom left;
     // custom media query for screen between "huge" and laptop
-    @media all and ($viewport-type: 1700px) {
-      transform: translate(-10%, 10%) scale(0.8);
+    @media all and (max-height: 1000px) {
+      transform: scale(0.9);
     }
-    @media all and ($viewport-type: $laptop) {
-      transform: translate(-15%, 15%) scale(0.7);
+    @media all and (max-height: 900px) {
+      transform: scale(0.8);
     }
-    @media all and ($viewport-type: $laptop) {
-      transform: translate(-15%, 15%) scale(0.7);
+    @media all and (max-height: 800px) {
+      transform: scale(0.7);
     }
-    @media all and ($viewport-type: $tabletl) {
-      transform: translate(5%, -5%) scale(1.1);
+    @media all and (max-height: 700px) {
+      transform: scale(0.6);
     }
-    @media all and ($viewport-type: $tabletm) {
-      transform: scale(1);
+    @media all and (max-height: 600px) {
+      transform: scale(0.5);
     }
-    @media all and ($viewport-type: $mobile) {
-      transform: translate(-10%, 10%) scale(0.8);
+    @media all and (max-height: 500px) {
+      transform: scale(0.4);
+    }
+    @media all and (max-height: 400px) {
+      transform: scale(0.3);
     }
   }
   @keyframes motionF {

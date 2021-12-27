@@ -52,11 +52,13 @@
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
+                alt="back-parallax"
                 v-lazy="require(`@/assets/img/chapter-13/back-parallax.png`)"
                 >  
                 <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad" 
                 @error="handleLoad" 
+                alt="back"
                 src="@/assets/img/chapter-13/back.png"
                 >        
             </div>
@@ -65,19 +67,14 @@
 </template>
 
 <script>
-import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content'
 import CardF from '@/components/cards/CardF';
 
-// import Parallax from '@/motion/Parallax';
-import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
-Vue.use(Parallax)
-import LanguageData from '~/mixins/LanguageData';
+
 export default {
-    mixins: [Parallax,Animation,LanguageData],
+    mixins: [Parallax,Animation],
     components:{
-        SanityContent,
         'v-card-f':CardF,
     }, 
     data:()=>{

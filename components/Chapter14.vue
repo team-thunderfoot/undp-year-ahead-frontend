@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter14-a" id="Scene14" ref="Scene14" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-14/front.png`)" alt="front" />
+                <img v-lazy="require(`@/assets/img/chapter-14/front-${this.lang}.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, chapter title -->
@@ -39,15 +39,17 @@
                 <div class="b--chapter14-a__content b--chapter14-a__content--third">
                     <v-card-i
                     :customClass="'b--card-i--'+ `${this.lang}`"
+                    :chapter="chapter"
+                    :settings="settings"
                     />
                 </div>
                 <!-- social -->
-                <div class="b--chapter14-a__content b--chapter14-a__content--fourth">
-                    <v-social-a></v-social-a>
+                <div class="b--chapter14-a__content b--chapter14-a__content--fourth" :class="'b--chapter14-a__content--fourth--'+ `${this.lang}`">
+                    <v-social-a :chapter="chapter"></v-social-a>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-14/back.png">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-14/back.png" alt="back">        
             </div>
         </div>
     </section>
@@ -58,15 +60,12 @@ import CardF from '@/components/cards/CardF';
 import CardI from '@/components/cards/CardI';
 import QuoteA from '@/components/quote/Quote';
 import SocialA from '@/components/social/Social.vue';
-// import Parallax from '@/motion/Parallax';
-import Vue from 'vue';
+
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
-import LanguageData from '~/mixins/LanguageData';
-Vue.use(Parallax)
 
 export default {
-    mixins: [Parallax,Animation,LanguageData],
+    mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
         'v-card-i':CardI,
@@ -77,7 +76,8 @@ export default {
 		return{
             totalContent: 2,
 			contentLoaded : 0,
-            chapter: null
+            chapter: null,
+            settings : null
 		}
 	},
     props: ['scrollTween'],
@@ -112,6 +112,8 @@ export default {
         this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
         var chapter = this.getLanguageData({lang : this.lang});
         this.chapter =  chapter.ChapterFourteen;
+        var settings = this.getLanguageSettings({lang : this.lang});
+        this.settings = settings.Nav;
         this.contentLoaded++
     }
 }

@@ -1,4 +1,7 @@
 .b--chapter10-a {
+  &.b--page-a__item {
+    z-index: 1;
+  }
   .b--ss-a {
     // bigger z-index to be shown above ft items
     &__content {
@@ -101,7 +104,7 @@
   // fisherman animation
   &__artwork {
     position: absolute;
-    bottom: 2.5%;
+    bottom: 4.5%;
     left: 37.5%;
     z-index: 10;
 
@@ -131,6 +134,12 @@
       height: 100vh;
       &--left {
         left: -21%;
+      }
+      &--right{
+        top: auto;
+        bottom: 0;
+        height: 60.83vh;
+        right: -6.5%;
       }
     }
   }

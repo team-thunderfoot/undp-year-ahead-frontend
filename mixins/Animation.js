@@ -5,9 +5,6 @@ export default {
             scrub,
             scrollTween
         }){
-            this.queryString = window.location.search;
-            this.urlParams = new URLSearchParams(this.queryString);
-           
             let tlSection = this.$gsap.timeline({
                 scrollTrigger: {
                     trigger: '#Scene' + sceneID,

@@ -38,28 +38,24 @@
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax"
+                alt="back-parallax"
                 v-lazy="require(`@/assets/img/chapter-12/back-parallax.png`)"
                 >        
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png">        
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" :src="require(`@/assets/img/chapter-12/back.png`)" alt="back">        
             </div>
         </div>
     </section>
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity';
 import CardF from '@/components/cards/CardF';
 import InfoChapter from '@/components/infochapter/Infochapter';
 
-// import Parallax from '@/motion/Parallax';
-import Vue from 'vue';
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
-Vue.use(Parallax)
-import LanguageData from '~/mixins/LanguageData';
 
 export default {
-    mixins: [Parallax,Animation,LanguageData],
+    mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
         'v-info-chapter' : InfoChapter

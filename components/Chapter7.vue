@@ -8,9 +8,10 @@
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img
-          :style="{ left: '28%' }"
+          :style="{ left: '68%' }"
           ref="parallax-ft"
           class="b--ss-a__ft-items__parallax"
+          alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-7/front-parallax.png`)"
         />
       </div>
@@ -19,7 +20,7 @@
           
           class="b--chapter7-a__content"
           :class="'b--chapter7-a__content--' + `${this.lang}`"
-          ref="boxContent" :style="{ left: '50%' }"
+          ref="boxContent" :style="{ left: '88%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -47,12 +48,13 @@
           ref="parallax-bg"
           class="b--ss-a__bg-items__parallax"
           v-lazy="require(`@/assets/img/chapter-7/back-parallax.png`)"
-          alt=""
+          alt="back parallax"
         />
         <img
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
+          alt="back"
           src="@/assets/img/chapter-7/back.png"
         />
       </div>
@@ -64,15 +66,11 @@
 import CardF from '@/components/cards/CardF'
 import CardH from '@/components/cards/CardH'
 
-import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Parallax)
-Vue.use(Animation)
-import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: [Parallax, Animation,LanguageData],
+  mixins: [Parallax, Animation],
   components: {
     'v-card-f': CardF,
     'v-card-h': CardH,
@@ -94,8 +92,8 @@ export default {
         { obj: this.$refs['parallax-bg'], intensity: 4 },
         { obj: this.$refs['documentLeft'], intensity: 4 },
         { obj: this.$refs['documentRight'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 11 },
-        { obj: this.$refs['boxContent'], intensity: 11 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({

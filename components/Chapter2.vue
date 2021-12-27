@@ -12,6 +12,7 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-2/front-parallax.png"
+          alt="front-parallax"
         />
       </div>
       <div class="b--ss-a__content">
@@ -34,12 +35,9 @@
         >
           <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
             <div class="b--card-g__media-wrapper">
-              <img
-                v-lazy="require(`@/assets/img/chapter-2/dino.gif`)"
-                alt="tv"
-                title="tv"
-                class="b--card-g__media-wrapper__media"
-              />
+              <video class="b--video-a" autoplay muted loop playsinline>
+                <source :src="require(`@/assets/video/chapter-2/dino2.mov`)" type="video/mp4">
+              </video>
             </div>
           </div>
         </div>
@@ -72,13 +70,14 @@
           :style="{ left: '-6%' }"
           ref="parallax-bg"
           src="@/assets/img/chapter-2/back-parallax.png"
-          alt=""
+          alt="back parallax"
         />
         <img
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
           src="@/assets/img/chapter-2/back.png"
+          alt="back"
         />
       </div>
     </div>
@@ -88,15 +87,11 @@
 <script>
 import CardF from './cards/CardF'
 
-import Vue from 'vue'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Parallax)
-Vue.use(Animation)
-import LanguageData from '~/mixins/LanguageData';
 
 export default {
-  mixins: [Parallax, Animation,LanguageData],
+  mixins: [Parallax, Animation],
   data: () => {
     return {
       totalContent: 2,
@@ -137,7 +132,6 @@ export default {
       if (newValue == this.totalContent) {
         // emits on in Story.vue
         $nuxt.$emit('assetLoaded')
-        // this.animate();
       }
     },
     scrollTween(newValue, oldValue) {
@@ -161,4 +155,3 @@ export default {
   },
 }
 </script>
-

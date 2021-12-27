@@ -19,7 +19,6 @@
             :title="chapter.intro_title"
             :description="chapter.intro_description"
             :customClass="'b--card-f--third b--card-f--' + `${this.lang}`"
-            cardACustomClass="b--card-a--second"
           />
         </div>
         <!-- second position element, wheel -->
@@ -41,7 +40,8 @@
           class="b--ss-a__bg-items__artwork"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-6/back.png"
+          alt="back"
+          :src="require(`@/assets/img/chapter-6/back.png`)"
         />
       </div>
     </div>
@@ -49,16 +49,13 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
 import CardF from '@/components/cards/CardF'
 import QuoteA from '@/components/quote/Quote'
 
-import Vue from 'vue'
 import Animation from '@/mixins/Animation.js'
-Vue.use(Animation)
-import LanguageData from '~/mixins/LanguageData';
+
 export default {
-  mixins: [Animation,LanguageData],
+  mixins: [Animation],
   components: {
     'v-card-f': CardF,
     'v-quote-a': QuoteA,

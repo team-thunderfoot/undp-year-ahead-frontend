@@ -2,7 +2,6 @@
   <div class="b--quote-a" :class="customClass">
     <div class="b--quote-a__content b--content-a">
       <div v-html="chapter.quote_content" />
-      <!-- <SanityContent :blocks="chapter.quote" :serializers="serializers"/> -->
     </div>
     <div class="b--quote-a__meta">
       <a
@@ -19,17 +18,8 @@
   </div>
 </template>
 <script>
-import { SanityContent } from '@nuxtjs/sanity/dist/components/sanity-content';
-import SanityLinks from '~/mixins/sanityLinks';
 
 export default {
-  mixins: [SanityLinks],
-  components: {
-    SanityContent,
-  },
   props: ['chapter', 'customClass'],
-  created(){
-      this.serializers = this.getSerialize();
-  }
 }
 </script>

@@ -1,25 +1,25 @@
 <template>
     <div class="b--social-a" v-if="social">
-        <h3 class="b--social-a__title">Share this Story</h3>
+        <h3 class="b--social-a__title">{{chapter.share_this_story}}</h3>
         <div class="b--social-a__list-group">
             <div class="b--social-a__list-group__item">
-                <a :href=social.facebook.url target="_blank">
-                    <img :src=social.facebook.icon>
+                <a :href="social.facebook.url" target="_blank" rel="noopener noreferrer"  aria-label="share by facebook">
+                    <img :src="social.facebook.icon" alt="facebook">
+                </a>
+            </div>
+            <div class="b--social-a__list-group__item" >
+                <a :href="social.instagram.url" target="_blank" rel="noopener noreferrer"  aria-label="share by instagram">
+                    <img :src="social.instagram.icon" alt="instagram">
                 </a>
             </div>
             <div class="b--social-a__list-group__item">
-                <a :href=social.instagram.url target="_blank">
-                    <img :src=social.instagram.icon>
+                <a :href="social.linkedin.url" target="_blank" rel="noopener noreferrer"  aria-label="share by linkedin">
+                    <img :src="social.linkedin.icon" alt="linkedin">
                 </a>
             </div>
             <div class="b--social-a__list-group__item">
-                <a :href=social.linkedin.url target="_blank">
-                    <img :src=social.linkedin.icon>
-                </a>
-            </div>
-            <div class="b--social-a__list-group__item">
-                <a :href=social.twitter.url target="_blank">
-                    <img :src=social.twitter.icon>
+                <a :href="social.twitter.url" target="_blank" rel="noopener noreferrer"  aria-label="share by twitter">
+                    <img :src="social.twitter.icon" alt="twitter">
                 </a>
             </div>
 
@@ -27,45 +27,46 @@
     </div>    
 </template>
 <script>
-import { groq } from '@nuxtjs/sanity';
+import LanguageData from '~/mixins/LanguageData';
 export default {
+    mixins: [LanguageData],
     data:()=>{
 		return{
             social: null,
-            lang : ''
+            lang : null
 		}
 	},
+    props : [
+        'chapter'
+    ],
     methods : {
-        async getContent(){
-            this.lang = (this.$route.name == 'index') ? 'en' : this.$route.name;
-           const query_content = groq`*[_type == "sitesettings"][0]{
-                "facebook" : facebook['${this.lang}'],
-                "instagram" : instagram,
-                "twitter" : twitter['${this.lang}'],
-                "linkedin" : linkedin,
-            }`;
-            this.social = await this.$sanity.fetch(query_content);
-            this.social = {
-                facebook: {
-                    url: this.social.facebook,
-                    icon: require(`@/assets/img/social/facebook.svg`)
-                },
-                instagram: {
-                    url: this.social.instagram,
-                    icon: require(`@/assets/img/social/instagram.svg`)
-                },
-                linkedin: {
-                    url: this.social.linkedin,
-                    icon: require(`@/assets/img/social/linkedin.svg`),
-                },
-                twitter: {
-                    url: this.social.twitter,
-                    icon: require(`@/assets/img/social/twitter.svg`)
-                }
-            };
-        },
+        getContent(){
+            this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+            var settings = this.getLanguageSettings({lang : this.lang});
+            var settings = settings.SocialIcons;
+            if(settings){
+                this.social = {
+                    facebook: {
+                        url: settings.facebook,
+                        icon: require(`@/assets/img/social/facebook.svg`)
+                    },
+                    instagram: {
+                        url: settings.instagram,
+                        icon: require(`@/assets/img/social/instagram.svg`)
+                    },
+                    linkedin: {
+                        url: settings.linkedin,
+                        icon: require(`@/assets/img/social/linkedin.svg`),
+                    },
+                    twitter: {
+                        url: settings.twitter,
+                        icon: require(`@/assets/img/social/twitter.svg`)
+                    }
+                };
+            }
+        }
     },
-    created(){
+    mounted(){
         if(process.client){
             this.getContent();
         }

@@ -1,0 +1,17 @@
+@mixin make-card-a-scroll() {
+  overflow: auto;
+  &:after {
+    content: '';
+    height: 45px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(#fff3e9, 0) 0%,
+      rgba(#aa3e39, 1) 100%
+    );
+  }
+}

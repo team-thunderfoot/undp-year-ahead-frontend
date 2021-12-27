@@ -59,30 +59,27 @@
       );
     }
     &__link {
-      float: right;
-      text-transform: uppercase;
       padding: $measure $measure * 2;
       background: $gradient-m;
       @include make-font-h();
-      color: map-get($color-options, f) !important;
+      @include link-a();
+      @include link-a-color(f);
+      width: fit-content;
+      margin: $measure*2 0 0 auto;
+      &:hover,
+      &:focus {
+        @include link-a-interaction();
+      }
+      // color: map-get($color-options, f) !important;
     }
   }
   &--second {
     padding: $measure * 6 5%;
   }
-
+  // overflow-auto for scroll in card-a
   &--third & {
     &__wrapper {
-      overflow: auto;
-      &:after {
-        content: '';
-        height: 45px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: $gradient-n;
-      }
+      @include make-card-a-scroll();
     }
   }
 }

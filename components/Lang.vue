@@ -32,8 +32,6 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity';
-
 export default {
     data:()=>{
 		return{
@@ -42,14 +40,12 @@ export default {
 		}
 	},
     methods : {
-        async getContent(){
-            const query_content = groq`*[_type == "sitesettings"][0]{
-                lang_title
-            }`;
-            var languages = await this.$sanity.fetch(query_content);
-            this.languages = languages.lang_title;
-            switch (this.$route.name) {
-                case 'index':
+        getContent(){
+            this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+            var settings = this.getLanguageSettings({lang : this.lang});
+            this.languages = settings.Languages;
+            switch (this.lang) {
+                case 'en':
                     this.languageSelectorActive = this.languages.en;
                     break;
                 case 'fr':
@@ -58,7 +54,6 @@ export default {
                 case 'es':
                     this.languageSelectorActive = this.languages.es;
                     break;
-            
                 default:
                     break;
             }
