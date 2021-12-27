@@ -25,6 +25,17 @@
         }
       }
     }
+    &--fr {
+      .b--card-f {
+        .b--card-a {
+          &__wrapper {
+            @media all and (max-height: 560px) {
+              @include make-card-a-scroll();
+            }
+          }
+        }
+      }
+    }
     // wheel
     &--second {
       left: 66.04%;
