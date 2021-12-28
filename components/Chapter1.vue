@@ -132,7 +132,7 @@
         />
         <img
           class="b--ss-a__bg-items__parallax"
-          v-lazy="require(`@/assets/img/chapter-1/back-parallax.png`)"
+          src="@/assets/img/chapter-1/back-parallax.png"
           alt="back parallax"
         />
       </div>
