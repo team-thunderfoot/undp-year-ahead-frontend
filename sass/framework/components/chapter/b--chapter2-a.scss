@@ -38,10 +38,9 @@
     // tv
     &--second {
       bottom: 43%;
-      // left: 48.24%;
       left: 54.71%;
       width: 24.36%;
-      height: 39.02%;
+      max-width: none;
       @media all and ($viewport-type: $mobile) {
         left: 56.1%;
       }
