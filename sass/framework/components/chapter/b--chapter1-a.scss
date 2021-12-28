@@ -122,6 +122,22 @@
       }
       @media all and ($viewport-type: $mobile) {
         bottom: 34.48%;
+        width: calc(100vw - 80px);
+        max-width: none;
+      }
+      .b--card-e{
+        width: fit-content;
+        position: absolute;
+        top: 3.9vh*2;
+        right: calc(100% - 3.9vh*2);
+        @media all and ($viewport-type: $mobile) {
+          // top: -1.5vh*2;
+          // right: calc(100% - 1.5vh*2);
+          position: relative;
+          top: auto;
+          right: auto;
+          margin: 0 auto $measure;
+        }
       }
     }
     &--fr {
