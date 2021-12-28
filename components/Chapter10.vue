@@ -25,13 +25,13 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '148%' }"
+          :style="{ left: '300%' }"
           alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-10/front-parallax.png`)"
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
-      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '186%' }">
+      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '328%' }">
         <div
           class="b--motion-f"
           v-lazy:background-image="
@@ -52,7 +52,7 @@
         <div
           class="b--chapter10-a__content"
           :class="'b--chapter10-a__content--' + `${this.lang}`"
-          ref="boxContent"  :style="{ left: '160.5%' }"
+          ref="boxContent"  :style="{ left: '305%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -68,7 +68,7 @@
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          :style="{ left: '21%' }"
+          :style="{ left: '14%' }"
           v-lazy="require(`@/assets/img/chapter-10/back-parallax.png`)"
           alt="back parallax"
         />
@@ -113,11 +113,11 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 21 },
-        { obj: this.$refs['parallax-ft'], intensity: 21 },
-        { obj: this.$refs['fisherman'], intensity: 21 },
-        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['parallax-bg'], intensity: 1 },
+        { obj: this.$refs['parallax-ft'], intensity: 40 },
+        { obj: this.$refs['parallax-ft'], intensity: 40 },
+        { obj: this.$refs['fisherman'], intensity: 40 },
+        { obj: this.$refs['boxContent'], intensity: 40 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
