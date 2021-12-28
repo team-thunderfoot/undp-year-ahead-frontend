@@ -15,11 +15,11 @@
                     <a class="b--nav-a__ft-items__ft__link" :href="social.instagram" target="_blank" rel="noopener noreferrer">
                         <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--instagram" src="@/assets/img/social/instagram-black.svg" alt="Instagram">
                     </a>
-                    <a class="b--nav-a__ft-items__ft__link" :href="social.twitter" target="_blank" rel="noopener noreferrer">
-                        <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/social/twitter-black.svg" alt="Twitter">
-                    </a>
                     <a class="b--nav-a__ft-items__ft__link" :href="social.linkedin" target="_blank" rel="noopener noreferrer">
                         <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/social/linkedin-black.svg" alt="Linkedin">
+                    </a>
+                    <a class="b--nav-a__ft-items__ft__link" :href="social.twitter" target="_blank" rel="noopener noreferrer">
+                        <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/social/twitter-black.svg" alt="Twitter">
                     </a>
                 </div>
                 <div class="b--nav-a__ft-items__artwork">
