@@ -1,9 +1,10 @@
 {
     "ChapterOne" :   {
-        "intro_title": "Sustainable development",
-        "intro_date": "in 2022",
-        "intro_description": "New Year, New Plan",
+        "intro_title": "New Year, New Plan",
+        "intro_date": "",
+        "intro_description": "Sustainable development in 2022",
         "content": "<p>As the new year opens, the world is battling a global pandemic and confronting a planetary emergency. Both COVID-19 and climate change are contributing to rising inequality, conflict and fragility around the world. These interconnected challenges require integrated solutions.</p><p>In 2022, UNDP puts its new <a href='https://strategicplan.undp.org/' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> into action, grounded in our commitment to eradicating poverty and helping countries achieve the Sustainable Development Goals.</p><p><strong>Here are some key moments to watch in the year ahead.</strong></p>",
+        "quote_system": "Changing systems",
         "quote_content": "<p>“To make a difference to people’s lives at this scale, we have to examine the systems and structures that shape development – not just the immediate challenges.”</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
@@ -47,7 +48,7 @@
         "intro_title": "Data for development",
         "intro_description": "<p>We’re expanding the evidence base for people-centred development. Flagship reports coming out this year include:</p>",
         "document_left": "<p><i><strong>Human Development Report 2022</strong></i> will focus on “Shaping our Future in a World in Transformation”.</p>",
-        "document_right": "<p><i><strong>A special report on human security</strong></i> will examine how the concept of human security can help us understand and respond to new and interlinked challenges.</p>"
+        "document_right": "<p><strong>A <i>special report on human security</strong></i> will examine how the concept of human security </strong>can help us understand and respond to new and interlinked challenges.</p>"
     },
     "ChapterEight" :   {
         "intro_title": "Towards living in harmony with nature",
@@ -85,7 +86,7 @@
     },
     "ChapterThirdteen" :   {
         "intro_title": "Your voices",
-        "intro_description": "<p>UNDP will release the next phase of the <i>Peoples’ Climate Vote</i>, diving deeper into public opinion on the climate emergency and how world leaders should respond.</p><p>G20 Peoples’ Climate Vote: <a href='https://www.undp.org/publications/g20-peoples-climate-vote-2021' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote 2021 | UNDP</a></p>"
+        "intro_description": "<p>UNDP will release the next phase of the <i>Peoples’ Climate Vote</i>, diving deeper into public opinion on the climate emergency and how world leaders should respond.</p><p><a href='https://www.undp.org/publications/g20-peoples-climate-vote-2021' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote</a></p>"
     },
     "ChapterFourteen" :   {
         "intro_title": "#FutureSmartUNDP",

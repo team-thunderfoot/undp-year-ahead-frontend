@@ -59,6 +59,13 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       opacity: 0.8;
+      margin-bottom: 16px;
+      @media all and ($viewport-type: $laptop) {
+        margin-bottom: 8px;
+      }
+      @media all and ($viewport-type: $mobile) {
+        margin-bottom: 8px;
+      }
       &__badge {
         @include make-font-a();
         display: block;

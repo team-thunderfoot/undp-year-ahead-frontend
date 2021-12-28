@@ -1,5 +1,8 @@
 @mixin make-card-a-wrapper-scroll() {
   overflow: auto;
+  .b--content-a {
+    padding-bottom: $measure * 4;
+  }
 }
 
 @mixin make-card-a-shadow() {
@@ -13,7 +16,7 @@
     right: 0;
     background: linear-gradient(
       180deg,
-      rgba(#fff3e9, 0) 0%,
+      rgba(#ce9184, 0) 0%,
       rgba(#ce9184, 1) 60%
     );
   }

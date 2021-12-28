@@ -83,7 +83,7 @@
     position: absolute;
     left: 15.97%;
     bottom: 2.5%;
-    width: 40%;
+    height: 71%;
   }
   // info window
   &__info {
@@ -107,17 +107,17 @@
     width: 7.06%;
     // blink
     &--second {
-      bottom: 63.536%;
+      bottom: 65.5%;
       left: 23.95%;
-      width: 7.06%;
-      height: 10%;
+      width: 2.1%;
+      height: 4%;
     }
     // blink
     &--third {
-      bottom: 39.936%;
-      left: 47.65%;
-      width: 7.06%;
-      height: 10%;
+      bottom: 42%;
+      left: 47.45%;
+      width: 2%;
+      height: 4.4%;
     }
   }
   // move card f head and bottom legs

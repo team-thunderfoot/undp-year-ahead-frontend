@@ -10,13 +10,16 @@
                 </div>
                 <div class="b--nav-a__ft-items__ft">
                     <a class="b--nav-a__ft-items__ft__link" :href="social.facebook" target="_blank" rel="noopener noreferrer">
-                        <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/facebook.svg" alt="Facebook">
+                        <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--facebook" src="@/assets/img/social/facebook-black.svg" alt="Facebook">
                     </a>
-                    <a class="b--nav-a__ft-items__ft__link" :href="social.twitter" target="_blank" rel="noopener noreferrer">
-                        <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/twitter.svg" alt="Twitter">
+                    <a class="b--nav-a__ft-items__ft__link" :href="social.instagram" target="_blank" rel="noopener noreferrer">
+                        <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--instagram" src="@/assets/img/social/instagram-black.svg" alt="Instagram">
                     </a>
                     <a class="b--nav-a__ft-items__ft__link" :href="social.linkedin" target="_blank" rel="noopener noreferrer">
-                        <img class="b--nav-a__ft-items__ft__link__media" src="@/assets/img/linkedin.svg" alt="Linkedin">
+                        <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--linkedin" src="@/assets/img/social/linkedin-black.svg" alt="Linkedin">
+                    </a>
+                    <a class="b--nav-a__ft-items__ft__link" :href="social.twitter" target="_blank" rel="noopener noreferrer">
+                        <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--twitter" src="@/assets/img/social/twitter-black.svg" alt="Twitter">
                     </a>
                 </div>
                 <div class="b--nav-a__ft-items__artwork">

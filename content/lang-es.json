@@ -1,9 +1,10 @@
 {
     "ChapterOne" :   {
-        "intro_title": "Desarrollo Sostenible",
-        "intro_date": "en 2022",
-        "intro_description": "Año nuevo, plan nuevo",
+        "intro_title": "Año nuevo, plan nuevo",
+        "intro_date": "",
+        "intro_description": "Desarrollo Sostenible en 2022",
         "content": "<p>A medida que empezamos el nuevo año, el mundo está luchando contra una pandemia y se enfrenta a una emergencia planetaria. Tanto la COVID-19 como el cambio climático contribuyen al aumento de la desigualdad, los conflictos y la fragilidad en todo el mundo. Estos desafíos interconectados requieren soluciones integradas.</p><p>En 2022, el PNUD pondrá en acción su nuevo<a href='https://strategicplan.undp.org/es/' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a>  que se basa en el compromiso de erradicar la pobreza y ayudar a los países a alcanzar los Objetivos de Desarrollo Sostenible (ODS).</p><p><strong>He aquí algunos momentos clave para tener en cuenta a lo largo de este año que empezamos.</strong></p>",
+        "quote_system": "Cambiar los sistemas",
         "quote_content": "<p>“Para marcar una diferencia en la vida de las personas a la escala que se necesita, tenemos que examinar los sistemas y estructuras que dan forma al desarrollo, no solo los desafíos inmediatos”</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
@@ -85,7 +86,7 @@
     },
     "ChapterThirdteen" :   {
         "intro_title": "Te escuchamos",
-        "intro_description": "<p>El PNUD dará a conocer la siguiente fase del <i>Peoples' Climate Vote</i> (voto popular sobre el clima), que profundiza en la opinión pública sobre la emergencia climática y la respuesta que deberían dar los líderes mundiales.</p><p><i>G20 Peoples' Climate Vote: </i><a href='https://www.undp.org/publications/g20-peoples-climate-vote-2021' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote 2021 | PNUD</a></p>"
+        "intro_description": "<p>El PNUD dará a conocer la siguiente fase del <i>Peoples' Climate Vote</i> (voto popular sobre el clima), que profundiza en la opinión pública sobre la emergencia climática y la respuesta que deberían dar los líderes mundiales.</p><p><a href='https://www.undp.org/publications/g20-peoples-climate-vote-2021' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote</a></p>"
     },
     "ChapterFourteen" :   {
         "intro_title": "#FutureSmartUNDP",
@@ -96,7 +97,7 @@
         "quote_author_description": "Administrador del PNUD",
         "share_this_story" : "El PNUD en las redes sociales",
         "poster_visit_title" : "Visita",
-        "poster_url_title" : "www.undp.org/spanish",  
+        "poster_url_title" : "www.undp.org",  
         "poster_url_link" : "www.undp.org/spanish",  
         "poster" : "<p>El PNUD trabaja en cerca de 170 países y territorios, ayudando a lograr la erradicación de la pobreza y la reducción de las desigualdades y la exclusión. Asistimos a los países en el desarrollo de políticas, capacidades de liderazgo, asociación e institucionales, así como a crear resiliencia con el fin de alcanzar el desarrollo sostenible.</p>",
         "copyright" : "© 2022 Programa de las Naciones Unidas para el Desarrollo"

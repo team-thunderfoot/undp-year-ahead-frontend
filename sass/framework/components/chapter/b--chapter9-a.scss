@@ -1,10 +1,4 @@
 .b--chapter9-a {
-  // content is
-  .b--ss-a {
-    &__content {
-      z-index: 90;
-    }
-  }
 
   &__content {
     // cards
@@ -16,6 +10,10 @@
     @include make-position-a();
     @media all and ($viewport-type: $tablets) {
       width: 100%;
+    }
+
+    &--fr {
+      width: 14.8%;
     }
 
     // move card f head and bottom legs

@@ -3,9 +3,10 @@
     z-index: 1;
   }
   .b--ss-a {
-    // bigger z-index to be shown above ft items
-    &__content {
-      z-index: 10;
+    &__ft-items{
+      &__media{
+        // z-index: -1;
+      }
     }
   }
   &__content {
@@ -139,7 +140,7 @@
     // plant animation
     &--second {
       bottom: -7.8%;
-      left: 77.9%;
+      left: 87.9%;
       @media all and ($viewport-type: $tabletl) {
         bottom: -5%;
       }
@@ -167,7 +168,7 @@
         top: auto;
         bottom: 0;
         height: 60.83vh;
-        right: -6.5%;
+        right: -20.5%;
       }
     }
   }

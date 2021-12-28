@@ -5,6 +5,11 @@
                 <img ref="parallax-ft" 
                 :style="{ left: '66%' }"
                 v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
+                <img
+                    class="b--ss-a__ft-items__media"
+                    alt="front"
+                    v-lazy="require(`@/assets/img/chapter-11/front-elements.png`)"
+                />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -21,7 +26,7 @@
                 </div>
                 <!-- boxes -->
                 <div class="b--chapter11-a__media">
-                    <img v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
+                    <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
                 </div>
                 <!-- second position element, info -->
                 <div class="b--chapter11-a__info">

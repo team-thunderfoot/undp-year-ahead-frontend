@@ -1,4 +1,7 @@
 .b--chapter13-a {
+  &.b--page-a__item {
+    z-index: 1;
+  }
   // content has bigger z-index than ft items
   .b--ss-a {
     &__content {

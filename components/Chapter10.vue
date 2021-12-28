@@ -15,27 +15,28 @@
             "
             v-lazy="require(`@/assets/img/chapter-10/front_rock.png`)"
           />
-          <img
+          <!-- <img
             class="b--chapter10-a__divider__media b--chapter10-a__divider__media--right"
             v-lazy="require(`@/assets/img/chapter-10/10-11_rock-stairs.png`)"
-          />
+          /> -->
         </div>
       </div>
       <div class="b--ss-a__ft-items">
         <img
-            class="b--ss-a__ft-items__media"
-          v-lazy="require(`@/assets/img/chapter-10/front.png`)"
-        />
-        <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '148%' }"
+          :style="{ left: '253%' }"
           alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-10/front-parallax.png`)"
         />
+        <img
+          class="b--ss-a__ft-items__media"
+          alt="front"
+          v-lazy="require(`@/assets/img/chapter-10/front-elements.png`)"
+        />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
-      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '186%' }">
+      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '291%' }">
         <div
           class="b--motion-f"
           v-lazy:background-image="
@@ -56,7 +57,7 @@
         <div
           class="b--chapter10-a__content"
           :class="'b--chapter10-a__content--' + `${this.lang}`"
-          ref="boxContent"  :style="{ left: '160.5%' }"
+          ref="boxContent"  :style="{ left: '248%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -72,7 +73,7 @@
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          :style="{ left: '21%' }"
+          :style="{ left: '14%' }"
           v-lazy="require(`@/assets/img/chapter-10/back-parallax.png`)"
           alt="back parallax"
         />
@@ -82,6 +83,10 @@
           @error="handleLoad"
           alt="back"
           src="@/assets/img/chapter-10/back.png"
+        />
+        <img
+            class="b--ss-a__bg-items__media"
+          v-lazy="require(`@/assets/img/chapter-10/front.png`)"
         />
       </div>
     </div>
@@ -113,11 +118,11 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 21 },
-        { obj: this.$refs['parallax-ft'], intensity: 21 },
-        { obj: this.$refs['fisherman'], intensity: 21 },
-        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['parallax-bg'], intensity: 1 },
+        { obj: this.$refs['parallax-ft'], intensity: 35 },
+        { obj: this.$refs['parallax-ft'], intensity: 35 },
+        { obj: this.$refs['fisherman'], intensity: 35 },
+        { obj: this.$refs['boxContent'], intensity: 35 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({

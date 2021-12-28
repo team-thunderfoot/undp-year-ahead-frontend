@@ -60,7 +60,7 @@ export default {
         },
         changeLanguage(actualLanguage) {
             this.$router.push({
-                path: '/' + actualLanguage
+                path: '/' + actualLanguage + '/'
             })
         },
         openDropdown() {

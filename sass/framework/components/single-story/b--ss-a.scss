@@ -21,6 +21,12 @@
     &__back {
       height: 100%;
     }
+    &__media{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+    }
   }
   &__content {
     position: absolute;
@@ -49,6 +55,10 @@
     &__media{
       width: 100%;
       height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
     }
     // parallax front
     &__front {

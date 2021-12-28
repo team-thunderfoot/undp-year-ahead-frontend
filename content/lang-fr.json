@@ -1,9 +1,10 @@
 {
     "ChapterOne" :   {
-        "intro_title": "Développement durable",
-        "intro_date": "en 2022",
-        "intro_description": "Nouvelle année, nouveau plan",
+        "intro_title": "Nouvelle année, nouveau plan",
+        "intro_date": "",
+        "intro_description": "Développement durable en 2022",
         "content": "<p>En ce début d’année, le monde lutte contre une pandémie mondiale et fait face à une urgence planétaire. La COVID-19 et le changement climatique contribuent tous deux à accroître les inégalités, les conflits et la fragilité dans le monde. Ces défis interdépendants nécessitent des solutions intégrées.</p><p>En 2022, le PNUD commence à mettre en œuvre son nouveau <a href='https://strategicplan.undp.org/fr/' target='_blank' rel='noopenner noreferrer'>Plan stratégique,</a> fondé sur notre engagement à éradiquer la pauvreté et à aider les pays à atteindre les Objectifs de développement durable.</p><p><strong>Voici quelques moments clés à surveiller au cours de l’année à venir.</strong></p>",
+        "quote_system": "Changer les systèmes",
         "quote_content": "<p>« Pour faire une différence dans la vie des gens à cette échelle, nous devons examiner les systèmes et les structures qui façonnent le développement, pas seulement les défis immédiats. »</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
@@ -85,7 +86,7 @@
     },
     "ChapterThirdteen" :   {
         "intro_title": "Vos voix",
-        "intro_description": "<p>Le PNUD publiera la prochaine phase du Vote des peuples pour le climat, qui permettra de mieux connaître l’opinion publique sur l’urgence climatique et la façon dont les dirigeants mondiaux doivent y répondre.</p><p>Vote populaire pour le climat : le <a href='https://www1.undp.org/content/undp/fr/home/news-centre/news/2021/impulsar-una-accion-climatica-audaz-en-las-principales-economias.html' target='_blank' rel='noopenner noreferrer'>Vote populaire pour le climat 2021 dans les pays du G20| PNUD</a></p>"
+        "intro_description": "<p>Le PNUD publiera la prochaine phase du Vote des peuples pour le climat, qui permettra de mieux connaître l’opinion publique sur l’urgence climatique et la façon dont les dirigeants mondiaux doivent y répondre.</p><p><a href='https://www1.undp.org/content/undp/fr/home/news-centre/news/2021/impulsar-una-accion-climatica-audaz-en-las-principales-economias.html' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote</a></p>"
     },
     "ChapterFourteen" :   {
         "intro_title": "#FutureSmartUNDP",
@@ -96,7 +97,7 @@
         "quote_author_description": "Administrateur du PNUD",
         "share_this_story" : "Le PNUD sur les réseaux sociaux",
         "poster_visit_title" : "",
-        "poster_url_title" : "www.undp.org/french",  
+        "poster_url_title" : "www.undp.org",  
         "poster_url_link" : "www.undp.org/french",  
         "poster" : "<p>Présent dans quelque 170 pays et territoires, le PNUD contribue à éradiquer la pauvreté, et réduire les inégalités et l’exclusion. Nous aidons les pays à développer des politiques, des compétences en leadership, des possibilités de partenariat et des capacités institutionnelles en vue de renforcer la résilience et de maintenir les résultats du développement.</p>",
         "copyright" : "© 2022 Programme des Nations Unies pour le Développement"
