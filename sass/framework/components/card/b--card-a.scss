@@ -54,6 +54,10 @@
     height: auto;
     // overflow: auto;
     position: relative;
+    scrollbar-width: none; /* Firefox 64 */
+    ::-webkit-scrollbar {
+      display: none;
+    }
     @media all and ($viewport-type: $mobile) {
       max-height: calc(
         100vh - 18.85vh - 17.77vh - $measure * 4 - 16px - $measure * 6
