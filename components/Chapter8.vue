@@ -20,7 +20,7 @@
           ref="parallax-ft"
           alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-8/front-parallax.png`)"
-          :style="{ left: '80%' }"
+          :style="{ left: '190%' }"
         />
         <img
           class="
@@ -29,7 +29,7 @@
           ref="parallax-middle"
           alt="middle-parallax"
           v-lazy="require(`@/assets/img/chapter-8/middle-parallax.png`)"
-          :style="{ left: '78%' }"
+          :style="{ left: '123%' }"
         />
       </div>
       <div class="b--ss-a__content">
@@ -38,7 +38,7 @@
           class="b--chapter8-a__content"
           :class="'b--chapter8-a__content--' + `${this.lang}`"
           ref="boxContent"
-          :style="{ left: '66%' }"
+          :style="{ left: '109%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -50,7 +50,7 @@
         <div
           class="b--chapter8-a__content b--chapter8-a__content--second"
           ref="infoChapter"
-          :style="{ left: '86%' }"
+          :style="{ left: '130%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
@@ -58,7 +58,7 @@
         <div
           class="b--chapter8-a__artwork"
           ref="plant"
-          :style="{ left: '97%' }"
+          :style="{ left: '143%' }"
         >
           <div
             class="b--motion-e"
@@ -71,7 +71,7 @@
         <div
           class="b--chapter8-a__artwork b--chapter8-a__artwork--second"
           ref="fishes"
-          :style="{ left: '106%' }"
+          :style="{ left: '160%' }"
         >
           <div
             class="b--motion-r"
@@ -93,7 +93,7 @@
           ref="parallax-bg"
           v-lazy="require(`@/assets/img/chapter-8/back-parallax.png`)"
           alt="back parallax"
-          :style="{ left: '16%' }"
+          :style="{ left: '1%' }"
         />
       </div>
     </div>
@@ -127,13 +127,13 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-ft'], intensity: 21 },
-        { obj: this.$refs['parallax-middle'], intensity: 12 },
-        { obj: this.$refs['boxContent'], intensity: 12 },
-        { obj: this.$refs['infoChapter'], intensity: 12 },
-        { obj: this.$refs['plant'], intensity: 12 },
-        { obj: this.$refs['fishes'], intensity: 12 },
+        { obj: this.$refs['parallax-bg'], intensity: 1 },
+        { obj: this.$refs['parallax-ft'], intensity: 40 },
+        { obj: this.$refs['parallax-middle'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['infoChapter'], intensity: 21 },
+        { obj: this.$refs['plant'], intensity: 21 },
+        { obj: this.$refs['fishes'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
