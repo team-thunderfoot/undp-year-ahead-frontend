@@ -21,7 +21,7 @@
                 </div>
                 <!-- boxes -->
                 <div class="b--chapter11-a__media">
-                    <img v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
+                    <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
                 </div>
                 <!-- second position element, info -->
                 <div class="b--chapter11-a__info">
