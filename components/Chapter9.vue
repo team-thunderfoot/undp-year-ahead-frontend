@@ -7,19 +7,20 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img
-          class="b--ss-a__ft-items__parallax"
-          ref="parallax-ft"
-          v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)"
-          alt="front"
-          :style="{ left: '129%' }"
-        />
+        
         <img
           class="b--ss-a__ft-items__parallax"
           v-lazy="require(`@/assets/img/chapter-9/middle-parallax.png`)"
           alt="middle"
           ref="parallax-middle"
           :style="{ left: '245%' }"
+        />
+        <img
+          class="b--ss-a__ft-items__parallax"
+          ref="parallax-ft"
+          v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)"
+          alt="front"
+          :style="{ left: '129%' }"
         />
       </div>
       <div class="b--ss-a__content">
