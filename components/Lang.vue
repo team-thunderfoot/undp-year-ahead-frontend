@@ -62,9 +62,7 @@ export default {
             // this.$router.push({
             //     path: '/' + actualLanguage,
             // });
-            console.log(this.$router);
             window.location  =  '/' + actualLanguage;
-            // this.$forceUpdate();
         },
         openDropdown() {
             document.querySelector(".b--lang-a").classList.toggle("b--lang-a--is-active");
