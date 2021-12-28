@@ -3,56 +3,54 @@
   top: 0;
   left: 0;
   z-index: 3;
-  width: 100px;
-  height: 100px;
+  width: 74px;
+  height: 42px;
   animation-name: motionH;
   animation-duration: 2s;
   animation-timing-function: steps(96);
   animation-iteration-count: infinite;
-  @media all and (max-height: 920px) {
-    transform: translate(-2%, -2%) scale(0.96);
+  transform-origin: bottom left;
+  @media all and (max-height: 1000px) {
+    transform: scale(0.95);
   }
-  @media all and (max-height: 875px) {
-    transform: translate(-5%, -5%) scale(0.9);
+  @media all and (max-height: 950px) {
+    transform: scale(0.9);
   }
-  @media all and (max-height: 820px) {
-    transform: translate(-7%, -7%) scale(0.86);
+  @media all and (max-height: 900px) {
+    transform: scale(0.85);
   }
-  @media all and (max-height: 770px) {
-    transform: translate(-10%, -10%) scale(0.8);
+  @media all and (max-height: 850px) {
+    transform: scale(0.8);
   }
-  @media all and (max-height: 720px) {
-    transform: translate(-12%, -12%) scale(0.76);
+  @media all and (max-height: 800px) {
+    transform: scale(0.75);
   }
-  @media all and (max-height: 670px) {
-    transform: translate(-14%, -14%) scale(0.72);
+  @media all and (max-height: 750px) {
+    transform: scale(0.7);
   }
-  @media all and (max-height: 620px) {
-    transform: translate(-16%, -16%) scale(0.68);
+  @media all and (max-height: 700px) {
+    transform: scale(0.65);
   }
-  @media all and (max-height: 570px) {
-    transform: translate(-18%, -18%) scale(0.64);
+  @media all and (max-height: 650px) {
+    transform: scale(0.6);
   }
-  @media all and (max-height: 520px) {
-    transform: translate(-22%, -22%) scale(0.56);
+  @media all and (max-height: 600px) {
+    transform: scale(0.55);
+  }
+  @media all and (max-height: 550px) {
+    transform: scale(0.5);
   }
   @media all and (max-height: 500px) {
-    transform: translate(-24%, -24%) scale(0.52);
+    transform: scale(0.45);
   }
   @media all and (max-height: 450px) {
-    transform: translate(-26%, -26%) scale(0.48);
-  }
-  @media all and (max-height: 420px) {
-    transform: translate(-28%, -28%) scale(0.44);
+    transform: scale(0.4);
   }
   @media all and (max-height: 400px) {
-    transform: translate(-30%, -30%) scale(0.4);
+    transform: scale(0.35);
   }
-  @media all and (max-height: 370px) {
-    transform: translate(-32%, -32%) scale(0.36);
-  }
-  @media all and (max-height: 340px) {
-    transform: translate(-34%, -34%) scale(0.32);
+  @media all and (max-height: 350px) {
+    transform: scale(0.3);
   }
 }
 @keyframes motionH {
