@@ -44,7 +44,7 @@
         @media all and ($viewport-type: $laptop) {
           font-size: clamp(1rem, 2.44vh, 0.8625rem);
         }
-        @media all and ($viewport-type: $tabletp) {
+        @media all and ($viewport-type: $tabletm) {
           font-size: clamp(1rem, 2.44vh, 1.5625rem);
         }
       }
