@@ -172,10 +172,10 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 2 },
-        { obj: this.$refs['parallax-ft'], intensity: 16 },
-        { obj: this.$refs['bubble'], intensity: 16 },
-        { obj: this.$refs['boxContent'], intensity: 16 },
-        { obj: this.$refs['intro'], intensity: 16 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['bubble'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['intro'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
