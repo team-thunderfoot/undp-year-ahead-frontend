@@ -10,14 +10,14 @@
                 </div>
             </div>
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-ft" :style="{ left: '490%' }" class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-12/front-parallax.png`)" alt="front" />
+                <img ref="parallax-ft" :style="{ left: '455%' }" class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-12/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
                 <div 
                     class="b--chapter12-a__content"
                     :class="'b--chapter12-a__content--' + `${this.lang}`"
-                    ref="boxContent"  :style="{ left: '508%' }"
+                    ref="boxContent"  :style="{ left: '472%' }"
                 >
                     <v-card-f 
                         :title="chapter.intro_title"
@@ -28,7 +28,7 @@
                 </div>
                 <!-- info chart -->
                 <div class="b--chapter12-a__content b--chapter12-a__content--second"
-                 ref="infoChapter"  :style="{ left: '530%' }"
+                 ref="infoChapter"  :style="{ left: '500%' }"
                 >
                     <v-info-chapter :info="chapter"/>
                 </div>
