@@ -76,8 +76,10 @@ export default {
         }
     },
     created(){
-        window.addEventListener('scroll', this.handleScroll);
-        this.getContent();
+        if(process.client){
+            window.addEventListener('scroll', this.handleScroll);
+            this.getContent();
+        }
     }
 }
 </script>

@@ -169,16 +169,6 @@ export default {
     handleLoad() {
       	this.contentLoaded++
     },
-    scrollCard(){
-      if(process.client){
-        console.log(this.$refs);
-        this.$refs['CardA'].addEventListener('wheel', (e) => {
-          console.log("Sfsd", e.offsetY);
-          console.log(this.$refs['CardA'].offsetHeight);
-          console.log(this.$refs['CardA'].height);
-        })
-      }
-    },
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 2 },
@@ -219,14 +209,13 @@ export default {
 		},
 	},
 	created() {
-		this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-		var chapter = this.getLanguageData({lang : this.lang});
-		this.chapter = chapter.ChapterOne;
-		this.contentLoaded++;
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter = chapter.ChapterOne;
+      this.contentLoaded++;
+    // }
   },
-  mounted(){
-    this.scrollCard();
-  }
 }
 </script>
 

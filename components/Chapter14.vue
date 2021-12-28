@@ -109,12 +109,14 @@ export default {
         }
     },
     created() {
-        this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-        var chapter = this.getLanguageData({lang : this.lang});
-        this.chapter =  chapter.ChapterFourteen;
-        var settings = this.getLanguageSettings({lang : this.lang});
-        this.settings = settings.Nav;
-        this.contentLoaded++
+        // if(process.client){
+            this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+            var chapter = this.getLanguageData({lang : this.lang});
+            this.chapter =  chapter.ChapterFourteen;
+            var settings = this.getLanguageSettings({lang : this.lang});
+            this.settings = settings.Nav;
+            this.contentLoaded++
+        // }
     }
 }
 </script>

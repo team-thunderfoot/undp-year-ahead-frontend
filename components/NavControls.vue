@@ -74,7 +74,7 @@ export default {
             if(this.urlWithParams){
                 if(this.sceneNumber > 0 && this.sceneNumber < 15){
                     if(this.sceneNumber != '1'){
-                    var sceneName  = document.querySelector('#Scene' + this.sceneNumber);
+                        var sceneName  = document.querySelector('#Scene' + this.sceneNumber);
                         if(this.sceneNumber == 13){
                             var pos =  sceneName.offsetLeft - 100;
                         } else {
@@ -108,7 +108,6 @@ export default {
                         this.$refs.prev.style.pointerEvents = "none";
                     }
                 }else{
-                    console.log('sfdsd');
                     this.$router.push({
                         query: { scene:  '1' }
                     });
