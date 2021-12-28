@@ -22,7 +22,7 @@
       </div>
       <div class="b--ss-a__ft-items">
         <img
-          :style="{ left: '45%' }"
+          :style="{ left: '95%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           alt="ront-parallax"
@@ -34,7 +34,7 @@
         <div
           class="b--chapter4-a__content"
           ref="boxContent"
-          :style="{ left: '55%' }"
+          :style="{ left: '95%' }"
           :class="'b--chapter4-a__content--' + `${this.lang}`"
         >
           <v-card-f
@@ -47,7 +47,7 @@
         <div
           class="b--chapter4-a__content b--chapter4-a__content--second"
           ref="quoteContent"
-          :style="{ left: '85%' }"
+          :style="{ left: '75%' }"
         >
           <v-quote-a :chapter="chapter" customClass="b--quote-a--second" />
         </div>
@@ -55,7 +55,7 @@
 
       <div class="b--ss-a__bg-items">
         <img
-          :style="{ left: '10%' }"
+          
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           v-lazy="require(`@/assets/img/chapter-4/back-parallax.png`)"
@@ -100,10 +100,10 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 6 },
-        { obj: this.$refs['quoteContent'], intensity: 6 },
-        { obj: this.$refs['parallax-ft'], intensity: 21 },
-        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['parallax-bg'], intensity: 1},
+        { obj: this.$refs['quoteContent'], intensity: 1 },
+        { obj: this.$refs['parallax-ft'], intensity: 40 },
+        { obj: this.$refs['boxContent'], intensity: 40 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
