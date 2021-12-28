@@ -9,7 +9,7 @@
   animation-duration: 2s;
   animation-timing-function: steps(96);
   animation-iteration-count: infinite;
-  transform-origin: bottom left;
+  transform-origin: top left;
   @media all and (max-height: 1000px) {
     transform: scale(0.95);
   }
@@ -44,13 +44,16 @@
     transform: scale(0.45);
   }
   @media all and (max-height: 450px) {
-    transform: scale(0.4);
+    transform: scale(0.43);
   }
   @media all and (max-height: 400px) {
-    transform: scale(0.35);
+    transform: scale(0.39);
   }
   @media all and (max-height: 350px) {
-    transform: scale(0.3);
+    transform: scale(0.35);
+  }
+  @media all and (max-height: 335px) {
+    transform: scale(0.33);
   }
 }
 @keyframes motionQ {
