@@ -15,10 +15,10 @@
             "
             v-lazy="require(`@/assets/img/chapter-10/front_rock.png`)"
           />
-          <img
+          <!-- <img
             class="b--chapter10-a__divider__media b--chapter10-a__divider__media--right"
             v-lazy="require(`@/assets/img/chapter-10/10-11_rock-stairs.png`)"
-          />
+          /> -->
         </div>
       </div>
       <div class="b--ss-a__ft-items">
@@ -28,6 +28,11 @@
           :style="{ left: '300%' }"
           alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-10/front-parallax.png`)"
+        />
+        <img
+          class="b--ss-a__ft-items__media"
+          alt="front"
+          v-lazy="require(`@/assets/img/chapter-10/front-elements.png`)"
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->

@@ -5,6 +5,11 @@
                 <img ref="parallax-ft" 
                 :style="{ left: '66%' }"
                 v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
+                <img
+                    class="b--ss-a__ft-items__media"
+                    alt="front"
+                    v-lazy="require(`@/assets/img/chapter-11/front-elements.png`)"
+                />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
