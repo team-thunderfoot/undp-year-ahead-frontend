@@ -3,7 +3,7 @@
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img ref="parallax-ft" 
-                :style="{ left: '66%' }"
+                :style="{ left: '66%', position: 'absolute' }"
                 v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
                 <img
                     class="b--ss-a__ft-items__media"
@@ -17,6 +17,7 @@
                 <div 
                     class="b--chapter11-a__content" 
                     :class="'b--chapter11-a__content--'+`${this.lang}`"
+                    ref="boxContent" :style="{ left: '62%'}"
                 >
                     <v-card-f 
                         :title="chapter.intro_title" 
@@ -25,11 +26,11 @@
                     />
                 </div>
                 <!-- boxes -->
-                <div class="b--chapter11-a__media">
+                <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
                     <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
                 </div>
                 <!-- second position element, info -->
-                <div class="b--chapter11-a__info">
+                <div class="b--chapter11-a__info" ref="infoChapter" :style="{ left: '92%'}">
                     <v-info-chapter :info="chapter"/>
                 </div>
                 <!-- plant animation -->
@@ -43,17 +44,18 @@
                     </div>
                 </div>
                 <!-- blink 2a -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--second">
+                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--second" :style="{ left: '85%'}" ref="eyes1" >
                     <div class="b--motion-h" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2a.png`)"></div>
                 </div>
                 <!-- blink 2b -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--third">
+                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--third" :style="{ left: '108.4%'}" ref="eyes2" >
                     <div class="b--motion-q" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2b.png`)"></div>
                 </div> 
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
                 ref="parallax-bg" 
+                :style="{ left: '170%' }"
                 v-lazy="require(`@/assets/img/chapter-11/back-parallax.png`)"
                 alt="back parallax"> 
                 <img class="b--ss-a__bg-items__back" 
@@ -95,11 +97,13 @@ export default {
 
         AsambleParallaxObjs() {
             var motion = [
-                // { obj: this.$refs['parallax-bg'], intensity: 4 },
-                // { obj: this.$refs['parallax-ft'], intensity: 3 },
-                // { obj: this.$refs['parallax-ft'], intensity: 21 },
-                // { obj: this.$refs['fisherman'], intensity: 21 },
-                // { obj: this.$refs['boxContent'], intensity: 21 },
+                { obj: this.$refs['parallax-bg'], intensity: 21 },
+                { obj: this.$refs['eyes1'], intensity: 8 },
+                { obj: this.$refs['eyes2'], intensity: 8 },
+                { obj: this.$refs['infoChapter'], intensity: 8 },
+                { obj: this.$refs['parallax-ft'], intensity: 8 },
+                { obj: this.$refs['boxes'], intensity: 8 },
+                { obj: this.$refs['boxContent'], intensity: 8 },
             ]
             motion.forEach((item) => {
                 this.parallaxMove({
