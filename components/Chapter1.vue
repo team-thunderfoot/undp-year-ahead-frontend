@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img v-lazy="require(`@/assets/img/chapter-1/front.png`)" alt="front" ref="parallax-1-ft" />
+        <img v-lazy="require(`@/assets/img/chapter-1/front-parallax.png`)" alt="front" ref="parallax-1-ft" />
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -124,11 +124,16 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
-          class="b--ss-a__bg-items__artwork"
+          class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
           src="@/assets/img/chapter-1/back.png"
           alt="back"
+        />
+        <img
+          class="b--ss-a__bg-items__parallax"
+          v-lazy="require(`@/assets/img/chapter-1/back-parallax.png`)"
+          alt="back parallax"
         />
       </div>
     </div>
