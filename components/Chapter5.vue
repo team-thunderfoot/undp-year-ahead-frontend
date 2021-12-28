@@ -46,7 +46,7 @@
           />
         </div>
         <!-- first blink animation -->
-        <div class="b--chapter5-a__artwork" ref="eyes1" :style="{ left: '102.5%' }">
+        <div class="b--chapter5-a__artwork" ref="eyes1" :style="{ left: '102.7%' }">
           <div
             class="b--motion-d"
             v-lazy:background-image="
@@ -55,7 +55,7 @@
           ></div>
         </div>
         <!-- second blink animation -->
-        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second" ref="eyes2" :style="{ left: '130.8%' }">
+        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second" ref="eyes2" :style="{ left: '132.8%' }">
           <div
             class="b--motion-p"
             v-lazy:background-image="
