@@ -7,10 +7,10 @@
     background: $gradient-l;
     padding: $measure * 5.5;
     @media all and ($viewport-type: $laptop) {
-      padding: $measure*4;
+      padding: $measure * 4;
     }
     @media all and ($viewport-type: $tablets) {
-      padding: $measure*3;
+      padding: $measure * 3;
     }
     &__hd {
       width: 100%;
@@ -39,6 +39,9 @@
       &.b--content-a * {
         color: map-get($color-options, f);
         @include make-font-f();
+        @media all and ($viewport-type: $laptop) {
+          font-size: clamp(1rem, 2.44vh, 0.8625rem);
+        }
       }
     }
   }
