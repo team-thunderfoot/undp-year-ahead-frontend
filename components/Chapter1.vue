@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img v-lazy="require(`@/assets/img/chapter-1/front-parallax.png`)" alt="front" ref="parallax-1-ft" />
+        <img :style="{ left: '3%' }" v-lazy="require(`@/assets/img/chapter-1/front-parallax.png`)" alt="front" ref="parallax-ft" />
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -16,7 +16,7 @@
           class="b--chapter1-a__content"
           :class="'b--chapter1-a__content--' + `${this.lang}`"
         >
-          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`">
+          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`"  :style="{ left: '20%' }" ref="intro" > 
             <div class="b--intro-a__artwork"></div>
             <div class="b--intro-a__wrapper">
               <h1 class="b--intro-a__wrapper__title">
@@ -33,7 +33,8 @@
         </div>
         <!-- Intro Story -->
 
-        <div class="b--chapter1-a__content b--chapter1-a__content--second">
+        <div class="b--chapter1-a__content b--chapter1-a__content--second"  ref="boxContent"
+          :style="{ left: '20%' }">
             <div class="b--card-a" ref="CardA">
               <div class="b--card-a__artwork"></div>
               <div class="b--card-a__wrapper b--content-a">
@@ -98,7 +99,7 @@
 
         <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
           <div
-            ref="parallax-1-bubble"
+            ref="bubble"
             class="b--motion-a"
             v-lazy:background-image="
               require(`@/assets/img/chapter-1/bubble-motion.png`)
@@ -134,6 +135,7 @@
           class="b--ss-a__bg-items__parallax"
           src="@/assets/img/chapter-1/back-parallax.png"
           alt="back parallax"
+          ref="parallax-bg"
         />
       </div>
     </div>
@@ -145,10 +147,11 @@
 import InfoChapter from '@/components/infochapter/Infochapter'
 import QuoteA from '@/components/quote/Quote'
 
+import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 
 export default {
-  mixins: [Animation],
+  mixins: [Parallax, Animation],
   data: () => {
     return {
       totalContent: 2,
@@ -166,15 +169,6 @@ export default {
     handleLoad() {
       	this.contentLoaded++
     },
-    animate() {
-		this.$nextTick(() => {
-			this.startAnimation({
-				sceneID: 1,
-				scrub: 0,
-				scrollTween: this.scrollTween,
-				})
-			})
-		},
     scrollCard(){
       if(process.client){
         console.log(this.$refs);
@@ -184,7 +178,25 @@ export default {
           console.log(this.$refs['CardA'].height);
         })
       }
-    }
+    },
+    AsambleParallaxObjs() {
+      var motion = [
+        { obj: this.$refs['parallax-bg'], intensity: 2 },
+        { obj: this.$refs['parallax-ft'], intensity: 16 },
+        { obj: this.$refs['bubble'], intensity: 16 },
+        { obj: this.$refs['boxContent'], intensity: 16 },
+        { obj: this.$refs['intro'], intensity: 16 },
+      ]
+      motion.forEach((item) => {
+        this.parallaxMove({
+          el: item.obj,
+          intensity: item.intensity,
+          duration: this.$refs['Scene1'].offsetWidth,
+          containerAnimation: this.scrollTween,
+          scrub: 1,
+        })
+      })
+    },
 	},
 	watch: {
 		contentLoaded(newValue, oldValue) {
@@ -195,11 +207,13 @@ export default {
 		},
 		scrollTween(newValue, oldValue) {
 			if (newValue) {
+        // motion frontend and backend elements
+        this.AsambleParallaxObjs()
 				// mixin function
 				this.startAnimation({
-				sceneID: 1,
-				scrub: 0,
-				scrollTween: this.scrollTween,
+				  sceneID: 1,
+				  scrub: 0,
+				  scrollTween: this.scrollTween,
 				})
 			}
 		},
