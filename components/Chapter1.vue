@@ -34,12 +34,12 @@
         <!-- Intro Story -->
 
         <div class="b--chapter1-a__content b--chapter1-a__content--second">
-			<div class="b--card-a">
-				<div class="b--card-a__artwork"></div>
-				<div class="b--card-a__wrapper b--content-a">
-					<div v-html="chapter.content"></div>
-				</div>
-			</div>
+            <div class="b--card-a" ref="CardA">
+              <div class="b--card-a__artwork"></div>
+              <div class="b--card-a__wrapper b--content-a">
+                <div v-html="chapter.content"></div>
+              </div>
+            </div>
         </div>
 
         <div
@@ -170,6 +170,16 @@ export default {
 				})
 			})
 		},
+    scrollCard(){
+      if(process.client){
+        console.log(this.$refs);
+        this.$refs['CardA'].addEventListener('wheel', (e) => {
+          console.log("Sfsd", e.offsetY);
+          console.log(this.$refs['CardA'].offsetHeight);
+          console.log(this.$refs['CardA'].height);
+        })
+      }
+    }
 	},
 	watch: {
 		contentLoaded(newValue, oldValue) {
@@ -193,8 +203,11 @@ export default {
 		this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
 		var chapter = this.getLanguageData({lang : this.lang});
 		this.chapter = chapter.ChapterOne;
-		this.contentLoaded++
+		this.contentLoaded++;
   },
+  mounted(){
+    this.scrollCard();
+  }
 }
 </script>
 
