@@ -59,9 +59,9 @@ export default {
             }
         },
         changeLanguage(actualLanguage) {
-            this.$router.push({
-                path: '/' + actualLanguage 
-            })
+            this.$router.replace({
+                path: '/' + actualLanguage,
+            });
         },
         openDropdown() {
             document.querySelector(".b--lang-a").classList.toggle("b--lang-a--is-active");
