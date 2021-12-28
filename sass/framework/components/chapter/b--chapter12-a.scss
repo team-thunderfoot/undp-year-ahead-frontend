@@ -1,9 +1,22 @@
 .b--chapter12-a {
+  .b--ss-a {
+    // bigger z-index to be shown above ft items
+    &__content {
+      z-index: 10;
+    }
+    &__artwork {
+      z-index: 8;
+    }
+    &__font-items {
+      z-index: 9;
+    }
+  }
   &__content {
     position: absolute;
     bottom: 26.11%;
     left: 17.14%;
     width: 19.05%;
+    z-index: 5;
     @include make-position-a();
     // info window
     &--second {
@@ -16,12 +29,6 @@
         left: 38.3%;
         width: 12.21%;
       }
-    }
-  }
-  .b--ss-a {
-    // bigger z-index to be shown above ft items
-    &__content {
-      z-index: 10;
     }
   }
   // animation
