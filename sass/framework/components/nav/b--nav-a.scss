@@ -20,7 +20,7 @@
         overflow: hidden;
         background: map-get($color-options, i);
         opacity: .9;
-
+        backdrop-filter: blur(37px);
     }
     &__ft-items {
         position: relative;
