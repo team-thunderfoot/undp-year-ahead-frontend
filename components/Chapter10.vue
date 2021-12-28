@@ -23,10 +23,6 @@
       </div>
       <div class="b--ss-a__ft-items">
         <img
-            class="b--ss-a__ft-items__media"
-          v-lazy="require(`@/assets/img/chapter-10/front.png`)"
-        />
-        <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           :style="{ left: '148%' }"
@@ -82,6 +78,10 @@
           @error="handleLoad"
           alt="back"
           src="@/assets/img/chapter-10/back.png"
+        />
+        <img
+            class="b--ss-a__bg-items__media"
+          v-lazy="require(`@/assets/img/chapter-10/front.png`)"
         />
       </div>
     </div>

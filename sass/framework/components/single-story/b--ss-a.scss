@@ -21,6 +21,12 @@
     &__back {
       height: 100%;
     }
+    &__media{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+    }
   }
   &__content {
     position: absolute;
