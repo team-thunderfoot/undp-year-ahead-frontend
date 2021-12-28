@@ -12,14 +12,14 @@
           ref="parallax-ft"
           v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)"
           alt="front"
-          :style="{ left: '128%' }"
+          :style="{ left: '129%' }"
         />
         <img
           class="b--ss-a__ft-items__parallax"
           v-lazy="require(`@/assets/img/chapter-9/middle-parallax.png`)"
           alt="middle"
           ref="parallax-middle"
-          :style="{ left: '74.1%' }"
+          :style="{ left: '245%' }"
         />
       </div>
       <div class="b--ss-a__content">
@@ -29,7 +29,7 @@
           class="b--chapter9-a__content"
           :class="'b--chapter9-a__content--' + `${this.lang}`"
           ref="boxContent"
-          :style="{ left: '137.1%' }"
+          :style="{ left: '152%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -42,7 +42,7 @@
         <div
           class="b--chapter9-a__info"
           ref="quoteContent"
-          :style="{ left: '154.1%' }"
+          :style="{ left: '173%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
@@ -95,8 +95,8 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 4 },
-        { obj: this.$refs['parallax-middle'], intensity: 14 },
+        { obj: this.$refs['parallax-bg'], intensity: 1 },
+        { obj: this.$refs['parallax-middle'], intensity: 40 },
         { obj: this.$refs['parallax-ft'], intensity: 21 },
         { obj: this.$refs['boxContent'], intensity: 21 },
         { obj: this.$refs['quoteContent'], intensity: 21 },
