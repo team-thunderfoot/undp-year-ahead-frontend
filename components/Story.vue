@@ -163,6 +163,8 @@ export default {
                     this.$router.push({path: this.$route.path, query: { scene:  payload.item }})
                 }
             });
+            
+            window.onresize = ()=> { location.reload(); }
         }
     }
 }
