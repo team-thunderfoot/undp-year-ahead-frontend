@@ -16,7 +16,7 @@
                 alt="middle"
                 ref="parallax-middle"
                 />
-                <img class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-13/front-parallax.png`)" alt="front" />
+                <img :style="{ left: '55%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" v-lazy="require(`@/assets/img/chapter-13/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -52,7 +52,8 @@
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
-                alt="back-parallax"
+                alt="parallax-bg"
+                ref=""
                 v-lazy="require(`@/assets/img/chapter-13/back-parallax.png`)"
                 >  
                 <img class="b--ss-a__bg-items__back" 
@@ -89,15 +90,26 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 13,
-                    scrub:0,
-                    scrollTween : this.scrollTween
+        AsambleParallaxObjs() {
+            var motion = [
+                { obj: this.$refs['parallax-bg'], intensity: 1 },
+                // { obj: this.$refs['eyes1'], intensity: 8 },
+                // { obj: this.$refs['eyes2'], intensity: 8 },
+                // { obj: this.$refs['infoChapter'], intensity: 8 },
+                { obj: this.$refs['parallax-ft'], intensity: 55 },
+                // { obj: this.$refs['boxes'], intensity: 8 },
+                // { obj: this.$refs['boxContent'], intensity: 8 },
+            ]
+            motion.forEach((item) => {
+                this.parallaxMove({
+                    el: item.obj,
+                    intensity: item.intensity,
+                    duration: this.$refs['Scene13'].offsetWidth,
+                    containerAnimation: this.scrollTween,
+                    scrub: true,
                 })
             })
-        }
+        },
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -108,7 +120,14 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.animate();
+                //motion frontend and backend elements
+                this.AsambleParallaxObjs()
+                // mixin function
+                this.startAnimation({
+                    sceneID : 13,
+                    scrub:0,
+                    scrollTween : this.scrollTween
+                })
             } 
         }
     },

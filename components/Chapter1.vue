@@ -16,7 +16,7 @@
           class="b--chapter1-a__content"
           :class="'b--chapter1-a__content--' + `${this.lang}`"
         >
-          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`"  :style="{ left: '20%' }" ref="intro" > 
+          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`"  :style="{ left: '5%' }" ref="intro" > 
             <div class="b--intro-a__artwork"></div>
             <div class="b--intro-a__wrapper">
               <h1 class="b--intro-a__wrapper__title">
@@ -34,7 +34,7 @@
         <!-- Intro Story -->
 
         <div class="b--chapter1-a__content b--chapter1-a__content--second"  ref="boxContent"
-          :style="{ left: '20%' }">
+          :style="{ left: '18%' }">
             <div class="b--card-a" ref="CardA">
               <div class="b--card-a__artwork"></div>
               <div class="b--card-a__wrapper b--content-a">
