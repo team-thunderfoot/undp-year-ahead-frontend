@@ -50,42 +50,42 @@
           <v-info-chapter :info="chapter" />
         </div>
         <!-- animation algae 1 -->
-        <div class="b--chapter9-a__artwork">
+        <div class="b--chapter9-a__artwork" ref="algae1" :style="{ left: '295%' }">
           <div
             class="b--motion-v"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_1.png`) + ')'"
           ></div>
         </div>
         <!-- animation algae 2 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--second">
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--second" ref="algae2" :style="{ left: '278%' }">
           <div
             class="b--motion-w"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation algae 2 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--third">
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--third" ref="algae3" :style="{ left: '322%' }">
           <div
             class="b--motion-w"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 1 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fourth">
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fourth" ref="bubble1" :style="{ left: '168%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_1.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 2 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fifth">
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fifth" ref="bubble2" :style="{ left: '186%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 3 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--sixth">
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--sixth" ref="bubble3" :style="{ left: '205%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
@@ -143,6 +143,12 @@ export default {
         { obj: this.$refs['parallax-bg'], intensity: 1 },
         { obj: this.$refs['parallax-middle'], intensity: 40 },
         { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['algae1'], intensity: 40 },
+        { obj: this.$refs['algae2'], intensity: 40 },
+        { obj: this.$refs['algae3'], intensity: 40 },
+        { obj: this.$refs['bubble1'], intensity: 21 },
+        { obj: this.$refs['bubble2'], intensity: 21 },
+        { obj: this.$refs['bubble3'], intensity: 21 },
         { obj: this.$refs['boxContent'], intensity: 21 },
         { obj: this.$refs['quoteContent'], intensity: 21 },
       ]
@@ -152,7 +158,6 @@ export default {
           intensity: item.intensity,
           duration: this.$refs['Scene10'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
         })
       })
     },

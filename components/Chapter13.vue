@@ -112,7 +112,6 @@ export default {
                 intensity: item.intensity,
                 duration: this.$refs['Scene14'].offsetWidth,
                 containerAnimation: this.scrollTween,
-                scrub: true,
                 })
             })
         }
