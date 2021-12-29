@@ -76,6 +76,33 @@
             "
           ></div>
         </div>
+        <!-- animation buble 1 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fourth">
+          <div
+            class="b--motion-x"
+            v-lazy:background-image="
+              require(`@/assets/img/chapter-9/bubble_1.png`)
+            "
+          ></div>
+        </div>
+        <!-- animation buble 2 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fifth">
+          <div
+            class="b--motion-x"
+            v-lazy:background-image="
+              require(`@/assets/img/chapter-9/bubble_2.png`)
+            "
+          ></div>
+        </div>
+        <!-- animation buble 3 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--sixth">
+          <div
+            class="b--motion-x"
+            v-lazy:background-image="
+              require(`@/assets/img/chapter-9/bubble_3.png`)
+            "
+          ></div>
+        </div>
       </div>
       <div class="b--ss-a__bg-items">
         <img
