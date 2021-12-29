@@ -62,7 +62,7 @@
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '-4%' }"
           ref="parallax-bg"
-          src="require(`@/assets/img/chapter-5/back-parallax.png`)"
+          src="@/assets/img/chapter-5/back-parallax.png"
           alt="back parallax"
         />
         <img

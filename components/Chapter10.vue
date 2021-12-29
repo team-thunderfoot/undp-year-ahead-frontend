@@ -15,10 +15,6 @@
             "
             src="@/assets/img/chapter-10/front_rock.png"
           />
-          <!-- <img
-            class="b--chapter10-a__divider__media b--chapter10-a__divider__media--right"
-            v-lazy="require(`@/assets/img/chapter-10/10-11_rock-stairs.png`)"
-          /> -->
         </div>
       </div>
       <div class="b--ss-a__ft-items">
