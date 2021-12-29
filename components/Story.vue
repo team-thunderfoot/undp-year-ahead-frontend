@@ -150,7 +150,6 @@ export default {
             return check;
         },
         windowChangeOrientation(){
-            console.log("Sfsd");
             window.addEventListener('orientationchange', this.workAfterResizeIsDone());
         }
     },
@@ -184,15 +183,18 @@ export default {
                 }
             });
             
-            window.onresize = (e)=> { 
-                console.log(window.innerWidth);
+            window.onresize = (e)=> {  
                 if(window.innerWidth > 1201){
                     clearTimeout(this.timeOutFunctionId);
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
-            if(this.isMobile())
-                this.windowChangeOrientation();
+            
+        }
+    },
+    created(){
+        if(this.isMobile()){
+            this.windowChangeOrientation();
         }
     }
 }
