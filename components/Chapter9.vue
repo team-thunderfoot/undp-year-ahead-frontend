@@ -92,7 +92,7 @@
           ></div>
         </div>
         <!-- animation buble 3 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--seventh">
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--seventh" ref="bubble4" :style="{ left: '148%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
@@ -156,6 +156,7 @@ export default {
         { obj: this.$refs['bubble1'], intensity: 21 },
         { obj: this.$refs['bubble2'], intensity: 21 },
         { obj: this.$refs['bubble3'], intensity: 21 },
+        { obj: this.$refs['bubble4'], intensity: 21 },
         { obj: this.$refs['boxContent'], intensity: 21 },
         { obj: this.$refs['quoteContent'], intensity: 21 },
       ]
