@@ -41,10 +41,8 @@ export default {
             this.social = settings.SocialIcons;
         },
         goToStart() {
-            var sceneName  = document.querySelector("#Scene1");
-            var pos =  sceneName.offsetLeft;
-            this.$gsap.to(window, {duration: 4, scrollTo: pos});
             this.$router.push({path: this.$route.path, query: { scene:  1}})
+            window.location  =  this.$route.path + "?scene=1";
         }
     },
     data:()=>{
