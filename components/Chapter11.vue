@@ -29,6 +29,14 @@
                 <div class="b--chapter11-a__info" ref="infoChapter" :style="{ left: '92%'}">
                     <v-info-chapter :info="chapter"/>
                 </div>
+                <!-- boxes -->
+                <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
+                    <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
+                    <!-- blink 2a -->
+                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2a.png`)"></div>
+                    <!-- blink 2b -->
+                    <div class="b--motion-q" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2b.png`)"></div>
+                </div>
                 <!-- plant animation -->
                 <div class="b--chapter11-a__artwork">
                     <div
@@ -39,14 +47,6 @@
                     >
                     </div>
                 </div>
-            </div>
-            <!-- boxes -->
-            <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
-                <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
-                <!-- blink 2a -->
-                <div class="b--motion-h" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2a.png`)"></div>
-                <!-- blink 2b -->
-                <div class="b--motion-q" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2b.png`)"></div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
