@@ -188,15 +188,14 @@ export default {
             });
             
             window.onresize = (e)=> { 
+                console.log(window.innerWidth);
                 if(window.innerWidth > 1201){
                     clearTimeout(this.timeOutFunctionId);
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 1000);
-                }else{
-                    this.windowChangeOrientation();
                 }
             }
 
-            
+            this.windowChangeOrientation();
         }
     }
 }
