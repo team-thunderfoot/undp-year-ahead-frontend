@@ -33,10 +33,10 @@
                 transition: all $time-a ease-in-out;
             }
         }
-        &:hover, &:focus, &:active{
+        &:hover, &:focus-visible, &:active{
             color: map-get($color-options, z);
         }
-        &:hover &, &:focus &, &:active &{
+        &:hover &, &:focus-visible &, &:active &{
             &__artwork, &__icon{
                 path{
                     stroke: map-get($color-options, z);
@@ -72,7 +72,7 @@
                     text-decoration: none;
                     display: block;
                     transition: all $time-a ease-in-out;
-                    &:hover, &:focus, &:active{
+                    &:hover, &:focus-visible, &:active{
                         color: map-get($color-options, k);
                     }
                 }

@@ -3,7 +3,8 @@
     @include link-a();
     display: inline;
     &:hover,
-    &:focus {
+    &:focus-visible,
+    &:active {
       @include link-a-interaction();
     }
   }
