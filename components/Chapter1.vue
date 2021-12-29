@@ -11,7 +11,7 @@
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
-        <!-- first div position element -->
+        <!-- first div   position element -->
         <div
           class="b--chapter1-a__content"
           :class="'b--chapter1-a__content--' + `${this.lang}`"
