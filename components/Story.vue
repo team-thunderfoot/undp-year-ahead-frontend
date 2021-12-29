@@ -180,15 +180,15 @@ export default {
                 }
             });
             
-            window.onresize = (e)=> {  
-                if(window.innerWidth > 1201){
-                    clearTimeout(this.timeOutFunctionId);
-                    this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
-                }
-            }
-            if(this.isMobile()){
-                window.addEventListener('orientationchange', this.workAfterResizeIsDone);
-            }
+            // window.onresize = (e)=> {  
+            //     if(window.innerWidth > 1201){
+            //         clearTimeout(this.timeOutFunctionId);
+            //         this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+            //     }
+            // }
+            // if(this.isMobile()){
+            //     window.addEventListener('orientationchange', this.workAfterResizeIsDone);
+            // }
         }
     },
     
