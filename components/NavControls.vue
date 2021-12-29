@@ -153,7 +153,7 @@ export default {
         },
         
     },
-    created(){
+    mounted(){
         if(process.client){
             this.currentItemMenu  = this.currentItem;
             this.goToChapter();
