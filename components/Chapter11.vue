@@ -25,10 +25,6 @@
                         :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
                     />
                 </div>
-                <!-- boxes -->
-                <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
-                    <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
-                </div>
                 <!-- second position element, info -->
                 <div class="b--chapter11-a__info" ref="infoChapter" :style="{ left: '92%'}">
                     <v-info-chapter :info="chapter"/>
@@ -43,14 +39,14 @@
                     >
                     </div>
                 </div>
+            </div>
+            <!-- boxes -->
+            <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
+                <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
                 <!-- blink 2a -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--second" :style="{ left: '85%'}" ref="eyes1" >
-                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2a.png`)"></div>
-                </div>
+                <div class="b--motion-h" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2a.png`)"></div>
                 <!-- blink 2b -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--third" :style="{ left: '108.4%'}" ref="eyes2" >
-                    <div class="b--motion-q" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2b.png`)"></div>
-                </div> 
+                <div class="b--motion-q" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2b.png`)"></div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
