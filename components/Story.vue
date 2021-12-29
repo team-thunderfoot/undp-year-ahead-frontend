@@ -193,8 +193,10 @@ export default {
         }
     },
     created(){
-        if(this.isMobile()){
-            this.windowChangeOrientation();
+        if(process.client){
+            if(this.isMobile()){
+                this.windowChangeOrientation();
+            }
         }
     }
 }
