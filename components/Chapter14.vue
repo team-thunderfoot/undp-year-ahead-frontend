@@ -25,7 +25,7 @@
                 </div>
                 <!-- arrow -->
                 <div class="b--chapter14-a__artwork">
-                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
+                    <div class="b--motion-o" :style="'background-image: url(' + require(`@/assets/test_sprites/arrow.png`) + ')'"></div>
                 </div>
                 <!-- wheel -->
                 <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second">
