@@ -10,7 +10,7 @@
         <div class="b--chapter8-a__divider">
           <img
             class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right"
-            v-lazy="require(`@/assets/img/chapter-8/front_tree.png`)"
+            src="@/assets/img/chapter-8/front_tree.png"
           />
         </div>
       </div>
@@ -19,7 +19,7 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           alt="front-parallax"
-          v-lazy="require(`@/assets/img/chapter-8/front-parallax.png`)"
+          src="@/assets/img/chapter-8/front-parallax.png"
           :style="{ left: '190%' }"
         />
         <img
@@ -28,7 +28,7 @@
           "
           ref="parallax-middle"
           alt="middle-parallax"
-          v-lazy="require(`@/assets/img/chapter-8/middle-parallax.png`)"
+          srsc="@/assets/img/chapter-8/middle-parallax.png"
           :style="{ left: '123%' }"
         />
       </div>
@@ -62,9 +62,7 @@
         >
           <div
             class="b--motion-e"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-8/plant_wind_1.png`)
-            "
+            style="background-image: url('~/assets/img/chapter-8/plant_wind_1.png')"
           ></div>
         </div>
         <!-- fishes animation -->
@@ -75,9 +73,7 @@
         >
           <div
             class="b--motion-r"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-8/fishes-spritesheet.png`)
-            "
+            style="background-image: url('~/assets/img/chapter-8/fishes-spritesheet.png')"
           ></div>
         </div>
       </div>
@@ -91,7 +87,7 @@
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          v-lazy="require(`@/assets/img/chapter-8/back-parallax.png`)"
+          src="@/assets/img/chapter-8/back-parallax.png"
           alt="back parallax"
           :style="{ left: '1%' }"
         />
