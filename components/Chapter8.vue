@@ -28,7 +28,7 @@
           "
           ref="parallax-middle"
           alt="middle-parallax"
-          srsc="@/assets/img/chapter-8/middle-parallax.png"
+          src="@/assets/img/chapter-8/middle-parallax.png"
           :style="{ left: '123%' }"
         />
       </div>
