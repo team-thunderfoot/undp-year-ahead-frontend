@@ -9,15 +9,17 @@
                 />
                 </div>
             </div>
-            <div class="b--ss-a__ft-items">
+            <div class="b--ss-a__middle-items">
                 <img
                 :style="{ left: '90%'}"
-                class="b--ss-a__ft-items__parallax"
+                class="b--ss-a__middle-items__parallax"
                 src="@/assets/img/chapter-13/middle-parallax.png"
                 alt="middle"
                 ref="parallax-middle"
                 
                 />
+            </div>
+            <div class="b--ss-a__ft-items">
                 <img :style="{ left: '578%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-13/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
