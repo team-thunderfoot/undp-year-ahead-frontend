@@ -195,6 +195,7 @@ export default {
     created(){
         if(process.client){
             if(this.isMobile()){
+                alert('afdsd')
                 this.windowChangeOrientation();
             }
         }
