@@ -55,6 +55,11 @@
             @media all and ($viewport-type: $mobile) {
                 transform: rotate(450deg) translateY(-22px) translateX(-50%);
             }
+
+            &__link {
+                color: map-get($color-options , a );
+                text-decoration: none;
+            }
         }
         &__ft {
             position: absolute;

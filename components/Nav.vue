@@ -6,7 +6,7 @@
         <div class="b--nav-a" v-if="nav">
             <div class="b--nav-a__ft-items">
                 <div class="b--nav-a__ft-items__bd">
-                    <a href="#" @click.prevent="goToStart()"><p>{{nav.nav_title}}</p></a>
+                    <a href="#" @click.prevent="goToStart()" class="b--nav-a__ft-items__bd__link">{{nav.nav_title}}</a>
                 </div>
                 <div class="b--nav-a__ft-items__ft">
                     <a class="b--nav-a__ft-items__ft__link" :href="social.facebook" target="_blank" rel="noopener noreferrer">
