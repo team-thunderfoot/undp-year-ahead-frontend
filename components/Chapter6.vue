@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img src="require(`@/assets/img/chapter-6/front.png`)" alt="front" />
+        <img src="@/assets/img/chapter-6/front.png" alt="front" />
       </div>
       <div class="b--ss-a__content">
         <!-- first position element, card -->
@@ -25,7 +25,7 @@
         <div class="b--chapter6-a__content b--chapter6-a__content--second">
           <img
             class="b--chapter6-a__content--second__media"
-            src="require(`@/assets/img/chapter-6/wheel.png`)"
+            src="@/assets/img/chapter-6/wheel.png"
             alt="wheel"
             title="wheel"
           />

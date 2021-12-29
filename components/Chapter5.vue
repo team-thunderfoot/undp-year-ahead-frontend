@@ -12,7 +12,7 @@
           ref="parallax-ft"
           :style="{ left: '115%' }"
           alt="front-parallax"
-          src="require(`@/assets/img/chapter-5/front-parallax.png`)"
+          src="@/assets/img/chapter-5/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
@@ -42,7 +42,7 @@
         <div class="b--chapter5-a__media" ref="woman" :style="{ left: '167%' }">
           <img
             class="b--media-b"
-            src="require(`@/assets/img/chapter-5/women.svg`)"
+            src="@/assets/img/chapter-5/women.svg"
             alt="women"
           />
           <!-- first blink animation -->
