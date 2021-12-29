@@ -125,10 +125,10 @@ export default {
                 // emits on in Index.vue
                 setTimeout(() => {
                     $nuxt.$emit('siteLoaded');
-                }, 6000);
+                }, 3000);
                 setTimeout(() => {  
                     this.loadedNew = true;
-                }, 8000);
+                }, 5000);
                 
             })
         },
