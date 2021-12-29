@@ -62,7 +62,7 @@
         >
           <div
             class="b--motion-e"
-            style="background-image: url('~/assets/img/chapter-8/plant_wind_1.png')"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-2/dino-orange.png`) + ')'"
           ></div>
         </div>
         <!-- fishes animation -->
@@ -73,7 +73,7 @@
         >
           <div
             class="b--motion-r"
-            style="background-image: url('~/assets/img/chapter-8/fishes-spritesheet.png')"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-8/fishes-spritesheet.png`) + ')'"
           ></div>
         </div>
       </div>

@@ -101,7 +101,7 @@
           <div
             ref="bubble"
             class="b--motion-a"
-            style="background-image: url('~/assets/img/chapter-1/bubble-motion.png')"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-1/bubble-motion.png`) + ')'"
           >
             <!-- bubble -->
           </div>
