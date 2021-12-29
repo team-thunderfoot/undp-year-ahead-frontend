@@ -1,23 +1,23 @@
 <template>
-    <section class="b--page-a__item b--chapter12-a" id="Scene12" ref="Scene12" v-if="chapter">
+    <section class="b--page-a__item b--chapter12-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__divider">
                 <div class="b--chapter12-a__divider">
                     <img
                         class="b--chapter12-a__divider__media b--chapter12-a__divider__media--left"
-                        v-lazy="require(`@/assets/img/chapter-12/11-12_tree.png`)"
+                        src="@/assets/img/chapter-12/11-12_tree.png"
                     />
                 </div>
             </div>
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-ft" :style="{ left: '455%' }" class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-12/front-parallax.png`)" alt="front" />
+                <img ref="parallax-ft" :style="{ left: '628%' }" class="b--ss-a__ft-items__parallax" src="@/assets/img/chapter-12/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
                 <div 
                     class="b--chapter12-a__content"
                     :class="'b--chapter12-a__content--' + `${this.lang}`"
-                    ref="boxContent"  :style="{ left: '472%' }"
+                    ref="boxContent"  :style="{ left: '645%' }"
                 >
                     <v-card-f 
                         :title="chapter.intro_title"
@@ -28,24 +28,22 @@
                 </div>
                 <!-- info chart -->
                 <div class="b--chapter12-a__content b--chapter12-a__content--second"
-                 ref="infoChapter"  :style="{ left: '500%' }"
+                 ref="infoChapter"  :style="{ left: '667%' }"
                 >
                     <v-info-chapter :info="chapter"/>
                 </div>
             </div>
             <div class="b--chapter12-a__artwork">
-                <div class="b--motion-j" v-lazy:background-image="
-                require(`@/assets/img/chapter-12/blink_3.png`)
-                ">
+                <div class="b--motion-j" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_3.png`) + ')'">
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax"
                 alt="back-parallax"
                 ref="parallax-bg'"
-                v-lazy="require(`@/assets/img/chapter-12/back-parallax.png`)"
+                src="@/assets/img/chapter-12/back-parallax.png"
                 >        
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" :src="require(`@/assets/img/chapter-12/back.png`)" alt="back">        
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png" alt="back">        
             </div>
         </div>
     </section>
@@ -79,17 +77,16 @@ export default {
         AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 1 },
-        { obj: this.$refs['parallax-ft'], intensity: 55 },
-        { obj: this.$refs['infoChapter'], intensity: 55 },
-        { obj: this.$refs['boxContent'], intensity: 55 },
+        { obj: this.$refs['parallax-ft'], intensity: 75 },
+        { obj: this.$refs['infoChapter'], intensity: 75 },
+        { obj: this.$refs['boxContent'], intensity: 75 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene12'].offsetWidth,
+          duration: this.$refs['Scene13'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: true,
         })
       })
     },
@@ -107,7 +104,7 @@ export default {
                 this.AsambleParallaxObjs()
                 // mixin function
                 this.startAnimation({
-                    sceneID : 12,
+                    sceneID : 13,
                     scrub:0,
                     scrollTween : this.scrollTween
                 })
@@ -115,10 +112,12 @@ export default {
         }
     },
     created() {
-        this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-        var chapter = this.getLanguageData({lang : this.lang});
-        this.chapter =  chapter.ChapterTwelve;
-        this.contentLoaded++
+        // if(process.client){
+            this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+            var chapter = this.getLanguageData({lang : this.lang});
+            this.chapter =  chapter.ChapterTwelve;
+            this.contentLoaded++
+        // }
     }
 }
 </script>

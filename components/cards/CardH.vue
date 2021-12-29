@@ -2,7 +2,7 @@
     <div class="b--card-h" :class="customClass">
         <div class="b--card-h__back-items">
             <img
-            v-lazy="require(`@/assets/img/card-h-bg.png`)"
+            src="@/assets/img/card-h-bg.png"
             alt="tv"
             title="tv"
             class="b--card-h__back-items__media"

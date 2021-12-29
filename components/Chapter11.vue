@@ -1,14 +1,14 @@
 <template>
-    <section class="b--page-a__item b--chapter11-a" id="Scene11" ref="Scene11"  v-if="chapter">
+    <section class="b--page-a__item b--chapter11-a" id="Scene12" ref="Scene12"  v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img ref="parallax-ft" 
-                :style="{ left: '66%' }"
-                v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
+                :style="{ left: '66%', position: 'absolute' }"
+                src="@/assets/img/chapter-11/front-parallax.png" alt="front" />
                 <img
                     class="b--ss-a__ft-items__media"
                     alt="front"
-                    v-lazy="require(`@/assets/img/chapter-11/front-elements.png`)"
+                    src="@/assets/img/chapter-11/front-elements.png"
                 />
             </div>
             <div class="b--ss-a__content">
@@ -17,6 +17,7 @@
                 <div 
                     class="b--chapter11-a__content" 
                     :class="'b--chapter11-a__content--'+`${this.lang}`"
+                    ref="boxContent" :style="{ left: '62%'}"
                 >
                     <v-card-f 
                         :title="chapter.intro_title" 
@@ -24,43 +25,38 @@
                         :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
                     />
                 </div>
-                <!-- boxes -->
-                <div class="b--chapter11-a__media">
-                    <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
-                </div>
                 <!-- second position element, info -->
-                <div class="b--chapter11-a__info">
+                <div class="b--chapter11-a__info" ref="infoChapter" :style="{ left: '92%'}">
                     <v-info-chapter :info="chapter"/>
+                </div>
+                <!-- boxes -->
+                <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
+                    <img class="b--media-a" src="@/assets/img/chapter-11/boxes.svg" alt="boxes" />
+                    <!-- blink 2a -->
+                    <div class="b--motion-h" :style="'background-image: url(' + require(`@/assets/img/chapter-11/blink_2a.png`) + ')'"></div>
+                    <!-- blink 2b -->
+                    <div class="b--motion-q" :style="'background-image: url(' + require(`@/assets/img/chapter-11/blink_2b.png`) + ')'"></div>
                 </div>
                 <!-- plant animation -->
                 <div class="b--chapter11-a__artwork">
                     <div
                         class="b--motion-i"
-                        v-lazy:background-image="
-                        require(`@/assets/img/chapter-11/plant_wind_3.png`)
-                        "
+                        :style="'background-image: url(' + require(`@/assets/img/chapter-11/plant_wind_3.png`) + ')'"
                     >
                     </div>
                 </div>
-                <!-- blink 2a -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--second">
-                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2a.png`)"></div>
-                </div>
-                <!-- blink 2b -->
-                <div class="b--chapter11-a__artwork b--chapter11-a__artwork--third">
-                    <div class="b--motion-q" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2b.png`)"></div>
-                </div> 
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
                 ref="parallax-bg" 
-                v-lazy="require(`@/assets/img/chapter-11/back-parallax.png`)"
+                :style="{ left: '170%' }"
+                src="@/assets/img/chapter-11/back-parallax.png"
                 alt="back parallax"> 
                 <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad"  
                 @error="handleLoad" 
                 alt="back"
-                :src="require(`@/assets/img/chapter-11/back.png`)">          
+                src="@/assets/img/chapter-11/back.png">          
             </div>
         </div>
     </section>
@@ -95,19 +91,20 @@ export default {
 
         AsambleParallaxObjs() {
             var motion = [
-                // { obj: this.$refs['parallax-bg'], intensity: 4 },
-                // { obj: this.$refs['parallax-ft'], intensity: 3 },
-                // { obj: this.$refs['parallax-ft'], intensity: 21 },
-                // { obj: this.$refs['fisherman'], intensity: 21 },
-                // { obj: this.$refs['boxContent'], intensity: 21 },
+                { obj: this.$refs['parallax-bg'], intensity: 21 },
+                { obj: this.$refs['eyes1'], intensity: 8 },
+                { obj: this.$refs['eyes2'], intensity: 8 },
+                { obj: this.$refs['infoChapter'], intensity: 8 },
+                { obj: this.$refs['parallax-ft'], intensity: 8 },
+                { obj: this.$refs['boxes'], intensity: 8 },
+                { obj: this.$refs['boxContent'], intensity: 8 },
             ]
             motion.forEach((item) => {
                 this.parallaxMove({
                 el: item.obj,
                 intensity: item.intensity,
-                duration: this.$refs['Scene11'].offsetWidth,
+                duration: this.$refs['Scene12'].offsetWidth,
                 containerAnimation: this.scrollTween,
-                scrub: true,
                 })
             })
         },
@@ -125,7 +122,7 @@ export default {
                 this.AsambleParallaxObjs()
                 // mixin function
                 this.startAnimation({
-                    sceneID: 11,
+                    sceneID: 12,
                     scrub: 0,
                     scrollTween: this.scrollTween,
                 })
@@ -133,10 +130,12 @@ export default {
         }
     },
     created() {
-        this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-        var chapter = this.getLanguageData({lang : this.lang});
-        this.chapter =  chapter.ChapterEleven;
-        this.contentLoaded++
+        // if(process.client){
+            this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+            var chapter = this.getLanguageData({lang : this.lang});
+            this.chapter =  chapter.ChapterEleven;
+            this.contentLoaded++
+        // }
     }
 }
 </script>

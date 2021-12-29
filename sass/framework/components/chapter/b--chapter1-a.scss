@@ -7,6 +7,13 @@
     width: 11.91%;
     max-width: calc(100vw - 100px);
     max-height: calc(60.25vh - 16.79vh - $measure * 4);
+
+    &--es {
+      width: 10.8%;
+    }
+    &--en {
+      width: 10.8%;
+    }
     @media all and ($viewport-type: $laptop) {
       left: 2.31%;
       bottom: 19%;
@@ -121,8 +128,10 @@
         top: 12%;
       }
       @media all and ($viewport-type: $mobile) {
-        bottom: 34.48%;
-        width: calc(100vw - 80px);
+        // bottom: 34.48%;
+        top: 8%;
+        left: 62%;
+        width: calc(100vw - 80px + $measure*10);
         max-width: none;
       }
       .b--card-e{
@@ -130,6 +139,11 @@
         position: absolute;
         top: 3.9vh*2;
         right: calc(100% - 3.9vh*2);
+        max-width: calc(100vw - 80px);
+        @media all and ($viewport-type: $tabletl) {
+          top: calc(3.9vh - $measure*2);
+          right: calc(100% - 3.9vh - $measure*2);
+        }
         @media all and ($viewport-type: $mobile) {
           // top: -1.5vh*2;
           // right: calc(100% - 1.5vh*2);
@@ -183,6 +197,7 @@
       bottom: 27.44%;
       left: 31.09%;
       width: 10.2%;
+      height: 36.5%;
       max-height: calc(100vh - 27.44vh - $measure * 4);
       z-index: -1;
     }

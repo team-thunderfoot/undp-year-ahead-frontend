@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter7-a"
-    id="Scene7"
-    ref="Scene7"
+    id="Scene8"
+    ref="Scene8"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -12,7 +12,7 @@
           ref="parallax-ft"
           class="b--ss-a__ft-items__parallax"
           alt="front-parallax"
-          v-lazy="require(`@/assets/img/chapter-7/front-parallax.png`)"
+          src="@/assets/img/chapter-7/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
@@ -47,7 +47,7 @@
           :style="{ left: '2%' }"
           ref="parallax-bg"
           class="b--ss-a__bg-items__parallax"
-          v-lazy="require(`@/assets/img/chapter-7/back-parallax.png`)"
+          src="@/assets/img/chapter-7/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -99,9 +99,8 @@ export default {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene7'].offsetWidth,
+          duration: this.$refs['Scene8'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
         })
       })
     },
@@ -119,7 +118,7 @@ export default {
         this.AsambleParallaxObjs();
 
         this.startAnimation({
-            sceneID: 7,
+            sceneID: 8,
             scrub: 0,
             scrollTween: this.scrollTween,
         })
@@ -128,10 +127,12 @@ export default {
     },
   },
   created() {
-    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-    var chapter = this.getLanguageData({lang : this.lang});
-    this.chapter =  chapter.ChapterSeven;
-    this.contentLoaded++
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter =  chapter.ChapterSeven;
+      this.contentLoaded++
+    // }
   }
 }
 </script>

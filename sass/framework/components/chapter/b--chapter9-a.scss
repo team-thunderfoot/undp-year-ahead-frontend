@@ -1,5 +1,4 @@
 .b--chapter9-a {
-
   &__content {
     // cards
     position: absolute;
@@ -13,7 +12,7 @@
     }
 
     &--fr {
-      width: 14.8%;
+      width: 15.8%;
     }
 
     // move card f head and bottom legs
@@ -37,6 +36,42 @@
           height: 22.32vh;
         }
       }
+    }
+  }
+  // algae 1 animation
+  &__artwork {
+    position: absolute;
+    bottom: 12.4%;
+    left: 51.5%;
+    // algae 2 animation
+    &--second {
+      bottom: 12.4%;
+      left: 36.1%;
+    }
+    // algae 1 animation
+    &--third {
+      bottom: 12.4%;
+      left: 79.2%;
+    }
+    // buble 1 animation
+    &--fourth {
+      bottom: 55.4%;
+      left: 51.2%;
+    }
+    // buble 2 animation
+    &--fifth {
+      bottom: 40.4%;
+      left: 60.2%;
+    }
+    // buble 3 animation
+    &--sixth {
+      bottom: 64%;
+      left: 72%;
+    }
+    // buble 3 animation
+    &--seventh {
+      bottom: 38%;
+      left: 23%;
     }
   }
 

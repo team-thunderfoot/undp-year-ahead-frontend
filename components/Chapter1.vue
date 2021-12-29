@@ -7,16 +7,16 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img :style="{ left: '3%' }" v-lazy="require(`@/assets/img/chapter-1/front-parallax.png`)" alt="front" ref="parallax-ft" />
+        <img :style="{ left: '3%' }" src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" />
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
-        <!-- first div position element -->
+        <!-- first div   position element -->
         <div
           class="b--chapter1-a__content"
           :class="'b--chapter1-a__content--' + `${this.lang}`"
         >
-          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`"  :style="{ left: '20%' }" ref="intro" > 
+          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`"  :style="{ left: '5%' }" ref="intro" > 
             <div class="b--intro-a__artwork"></div>
             <div class="b--intro-a__wrapper">
               <h1 class="b--intro-a__wrapper__title">
@@ -34,7 +34,7 @@
         <!-- Intro Story -->
 
         <div class="b--chapter1-a__content b--chapter1-a__content--second"  ref="boxContent"
-          :style="{ left: '20%' }">
+          :style="{ left: '18%' }">
             <div class="b--card-a" ref="CardA">
               <div class="b--card-a__artwork"></div>
               <div class="b--card-a__wrapper b--content-a">
@@ -68,7 +68,7 @@
             <div class="b--video-b__wrapper">
               <img
                 class="b--video-b__wrapper__artwork"
-                v-lazy="require(`@/assets/img/chapter-1/browser-bar.svg`)"
+                src="@/assets/img/chapter-1/browser-bar.svg"
                 alt="browser bar"
                 title="browser bar"
               />
@@ -89,7 +89,7 @@
             <div class="b--card-c__ft">
               <img
                 class="b--card-c__ft__media"
-                v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"
+                src="@/assets/img/chapter-1/tv-set.png"
                 alt="tvset"
                 title="tvset"
               />
@@ -101,16 +101,14 @@
           <div
             ref="bubble"
             class="b--motion-a"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-1/bubble-motion.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-1/bubble-motion.png`) + ')'"
           >
             <!-- bubble -->
           </div>
         </div>
 
         <!-- content-fourth position -->
-        <div class="b--chapter1-a__content b--chapter1-a__content--third">
+        <div class="b--chapter1-a__content b--chapter1-a__content--third" id="Scene2" ref="Scene2">
           <!-- text with bg -->
           <div class="b--card-e">
             <h4 class="b--card-e__title">{{ chapter.quote_system }}</h4>
@@ -169,23 +167,13 @@ export default {
     handleLoad() {
       	this.contentLoaded++
     },
-    scrollCard(){
-      if(process.client){
-        console.log(this.$refs);
-        this.$refs['CardA'].addEventListener('wheel', (e) => {
-          console.log("Sfsd", e.offsetY);
-          console.log(this.$refs['CardA'].offsetHeight);
-          console.log(this.$refs['CardA'].height);
-        })
-      }
-    },
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 2 },
-        { obj: this.$refs['parallax-ft'], intensity: 16 },
-        { obj: this.$refs['bubble'], intensity: 16 },
-        { obj: this.$refs['boxContent'], intensity: 16 },
-        { obj: this.$refs['intro'], intensity: 16 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['bubble'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['intro'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
@@ -193,7 +181,6 @@ export default {
           intensity: item.intensity,
           duration: this.$refs['Scene1'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
         })
       })
     },
@@ -214,19 +201,23 @@ export default {
 				  sceneID: 1,
 				  scrub: 0,
 				  scrollTween: this.scrollTween,
+        })
+        this.startAnimation({
+				  sceneID: 2,
+				  scrub: 0,
+				  scrollTween: this.scrollTween,
 				})
 			}
 		},
 	},
 	created() {
-		this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-		var chapter = this.getLanguageData({lang : this.lang});
-		this.chapter = chapter.ChapterOne;
-		this.contentLoaded++;
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter = chapter.ChapterOne;
+      this.contentLoaded++;
+    // }
   },
-  mounted(){
-    this.scrollCard();
-  }
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter5-a"
-    id="Scene5"
-    ref="Scene5"
+    id="Scene6"
+    ref="Scene6"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -10,9 +10,9 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '45%' }"
+          :style="{ left: '115%' }"
           alt="front-parallax"
-          v-lazy="require(`@/assets/img/chapter-5/front-parallax.png`)"
+          src="@/assets/img/chapter-5/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
@@ -20,7 +20,7 @@
         <div
           class="b--chapter5-a__content"
           :class="'b--chapter5-a__content--' + `${this.lang}`"
-          :style="{ left: '50%' }"
+          :style="{ left: '120%' }"
           ref="boxContent"
         >
           <v-card-f
@@ -34,33 +34,26 @@
         <div
           class="b--chapter5-a__content b--chapter5-a__content--second"
           ref="infochapter"
-          :style="{ left: '85%' }"
+          :style="{ left: '155%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
         <!-- women -->
-        <div class="b--chapter5-a__media" ref="woman" :style="{ left: '97%' }">
+        <div class="b--chapter5-a__media" ref="woman" :style="{ left: '167%' }">
           <img
-            v-lazy="require(`@/assets/img/chapter-5/women.svg`)"
+            class="b--media-b"
+            src="@/assets/img/chapter-5/women.svg"
             alt="women"
           />
-        </div>
-        <!-- first blink animation -->
-        <div class="b--chapter5-a__artwork" ref="eyes1" :style="{ left: '102.7%' }">
+          <!-- first blink animation -->
           <div
             class="b--motion-d"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`) + ')'"
           ></div>
-        </div>
-        <!-- second blink animation -->
-        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second" ref="eyes2" :style="{ left: '132.8%' }">
+          <!-- second blink animation -->
           <div
             class="b--motion-p"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`) + ')'"
           ></div>
         </div>
       </div>
@@ -69,7 +62,7 @@
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '-4%' }"
           ref="parallax-bg"
-          v-lazy="require(`@/assets/img/chapter-5/back-parallax.png`)"
+          src="@/assets/img/chapter-5/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -112,18 +105,18 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 2 },
-        { obj: this.$refs['parallax-ft'], intensity: 16 },
-        { obj: this.$refs['infochapter'], intensity: 16 },
-        { obj: this.$refs['boxContent'], intensity: 16 },
-        { obj: this.$refs['woman'], intensity: 16 },
-        { obj: this.$refs['eyes1'], intensity: 16 },
-        { obj: this.$refs['eyes2'], intensity: 16 },
+        { obj: this.$refs['parallax-ft'], intensity: 40 },
+        { obj: this.$refs['infochapter'], intensity: 40 },
+        { obj: this.$refs['boxContent'], intensity: 40 },
+        { obj: this.$refs['woman'], intensity: 40 },
+        // { obj: this.$refs['eyes1'], intensity: 40 },
+        // { obj: this.$refs['eyes2'], intensity: 40 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene5'].offsetWidth,
+          duration: this.$refs['Scene6'].offsetWidth,
           containerAnimation: this.scrollTween,
           scrub: true,
         })
@@ -143,7 +136,7 @@ export default {
         this.AsambleParallaxObjs()
         // mixin function
         this.startAnimation({
-          sceneID: 5,
+          sceneID: 6,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -151,10 +144,12 @@ export default {
     },
   },
   created() {
-    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-    var chapter = this.getLanguageData({lang : this.lang});
-    this.chapter =  chapter.ChapterFive;
-    this.contentLoaded++
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter =  chapter.ChapterFive;
+      this.contentLoaded++
+    // }
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter2-a"
-    id="Scene2"
-    ref="Scene2"
+    id="Scene3"
+    ref="Scene3"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -47,7 +47,7 @@
           ref="dino1"
         >
           <img
-            v-lazy="require(`@/assets/img/chapter-2/dino-orange.png`)"
+            src="@/assets/img/chapter-2/dino-orange.png"
             alt="browser"
             title="browser"
           />
@@ -58,7 +58,7 @@
           ref="dino2"
         >
           <img
-            v-lazy="require(`@/assets/img/chapter-2/dino-green.png`)"
+            src="@/assets/img/chapter-2/dino-green.png"
             alt="browser"
             title="browser"
           />
@@ -120,9 +120,8 @@ export default {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene2'].offsetWidth,
+          duration: this.$refs['Scene3'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
         })
       })
     },
@@ -140,7 +139,7 @@ export default {
         this.AsambleParallaxObjs()
 
         this.startAnimation({
-          sceneID: 2,
+          sceneID: 3,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -148,10 +147,12 @@ export default {
     },
   },
   created() {
-    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-    var chapter = this.getLanguageData({lang : this.lang});
-    this.chapter =  chapter.ChapterTwo;
-    this.contentLoaded++
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter =  chapter.ChapterTwo;
+      this.contentLoaded++
+    // }
   },
 }
 </script>

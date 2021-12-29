@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter8-a"
-    id="Scene8"
-    ref="Scene8"
+    id="Scene9"
+    ref="Scene9"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -10,7 +10,7 @@
         <div class="b--chapter8-a__divider">
           <img
             class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right"
-            v-lazy="require(`@/assets/img/chapter-8/front_tree.png`)"
+            src="@/assets/img/chapter-8/front_tree.png"
           />
         </div>
       </div>
@@ -19,8 +19,8 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           alt="front-parallax"
-          v-lazy="require(`@/assets/img/chapter-8/front-parallax.png`)"
-          :style="{ left: '190%' }"
+          src="@/assets/img/chapter-8/front-parallax.png"
+          :style="{ left: '183%' }"
         />
         <img
           class="
@@ -28,8 +28,8 @@
           "
           ref="parallax-middle"
           alt="middle-parallax"
-          v-lazy="require(`@/assets/img/chapter-8/middle-parallax.png`)"
-          :style="{ left: '123%' }"
+          src="@/assets/img/chapter-8/middle-parallax.png"
+          :style="{ left: '120%' }"
         />
       </div>
       <div class="b--ss-a__content">
@@ -50,7 +50,7 @@
         <div
           class="b--chapter8-a__content b--chapter8-a__content--second"
           ref="infoChapter"
-          :style="{ left: '130%' }"
+          :style="{ left: '126%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
@@ -62,22 +62,18 @@
         >
           <div
             class="b--motion-e"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-8/plant_wind_1.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-8/plant_wind_1.png`) + ')'"
           ></div>
         </div>
         <!-- fishes animation -->
         <div
           class="b--chapter8-a__artwork b--chapter8-a__artwork--second"
           ref="fishes"
-          :style="{ left: '160%' }"
+          :style="{ left: '152%' }"
         >
           <div
             class="b--motion-r"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-8/fishes-spritesheet.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-8/fishes-spritesheet.png`) + ')'"
           ></div>
         </div>
       </div>
@@ -91,7 +87,7 @@
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          v-lazy="require(`@/assets/img/chapter-8/back-parallax.png`)"
+          src="@/assets/img/chapter-8/back-parallax.png"
           alt="back parallax"
           :style="{ left: '1%' }"
         />
@@ -139,9 +135,8 @@ export default {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene8'].offsetWidth,
+          duration: this.$refs['Scene9'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
         })
       })
     },
@@ -159,7 +154,7 @@ export default {
         this.AsambleParallaxObjs()
         //mixin function
         this.startAnimation({
-          sceneID: 8,
+          sceneID: 9,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -167,10 +162,12 @@ export default {
     },
   },
   created() {
-    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-    var chapter = this.getLanguageData({lang : this.lang});
-    this.chapter =  chapter.ChapterEight;
-    this.contentLoaded++
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter =  chapter.ChapterEight;
+      this.contentLoaded++
+    // }
   }
 }
 </script>

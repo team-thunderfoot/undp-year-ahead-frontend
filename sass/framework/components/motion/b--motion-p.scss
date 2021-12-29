@@ -1,7 +1,7 @@
 .b--motion-p {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 78%;
+    left: 83%;
     z-index: 3;
     width: 100px;
     height: 100px;
@@ -51,6 +51,9 @@
     }
     @media all and (max-height: 350px) {
         transform: scale(0.35);
+    }
+    @media all and (max-height: 325px) {
+        transform: scale(0.33);
     }
   }
   @keyframes motionP {

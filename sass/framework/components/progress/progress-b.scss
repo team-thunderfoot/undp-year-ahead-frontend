@@ -22,7 +22,7 @@
       &:not(:last-child) {
         margin-right: 32px;
       }
-      &:hover {
+      &:hover, &:focus-visible {
         transform: scale(1.2);
       }
       &.is-current {

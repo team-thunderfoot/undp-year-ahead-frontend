@@ -1,13 +1,13 @@
 <template>
   <section
     class="b--page-a__item b--chapter6-a"
-    id="Scene6"
-    ref="Scene6"
+    id="Scene7"
+    ref="Scene7"
     v-if="chapter"
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img v-lazy="require(`@/assets/img/chapter-6/front.png`)" alt="front" />
+        <img src="@/assets/img/chapter-6/front.png" alt="front" />
       </div>
       <div class="b--ss-a__content">
         <!-- first position element, card -->
@@ -25,7 +25,7 @@
         <div class="b--chapter6-a__content b--chapter6-a__content--second">
           <img
             class="b--chapter6-a__content--second__media"
-            v-lazy="require(`@/assets/img/chapter-6/wheel.png`)"
+            src="@/assets/img/chapter-6/wheel.png"
             alt="wheel"
             title="wheel"
           />
@@ -83,7 +83,7 @@ export default {
     scrollTween(newValue, oldValue) {
       if (newValue) {
         this.startAnimation({
-          sceneID: 6,
+          sceneID: 7,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -91,10 +91,12 @@ export default {
     },
   },
   created() {
-    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-    var chapter = this.getLanguageData({lang : this.lang});
-    this.chapter =  chapter.ChapterSix;
-    this.contentLoaded++
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter =  chapter.ChapterSix;
+      this.contentLoaded++
+    // }
   },
 }
 </script>

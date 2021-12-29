@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter4-a"
-    id="Scene4"
-    ref="Scene4"
+    id="Scene5"
+    ref="Scene5"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -11,12 +11,12 @@
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
             alt="front_tree"
-            v-lazy="require(`@/assets/img/chapter-4/front_tree.png`)"
+            src="@/assets/img/chapter-4/front_tree.png"
           />
           <img
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
             alt="front_electric-cable"
-            v-lazy="require(`@/assets/img/chapter-4/front_electric-cable.png`)"
+            src="@/assets/img/chapter-4/front_electric-cable.png"
           />
         </div>
       </div>
@@ -26,7 +26,7 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           alt="ront-parallax"
-          v-lazy="require(`@/assets/img/chapter-4/front-parallax.png`)"
+          src="@/assets/img/chapter-4/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
@@ -58,7 +58,7 @@
           
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          v-lazy="require(`@/assets/img/chapter-4/back-parallax.png`)"
+          src="@/assets/img/chapter-4/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -109,9 +109,8 @@ export default {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene4'].offsetWidth,
+          duration: this.$refs['Scene5'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
         })
         console.log('demo-client3')
       })
@@ -130,7 +129,7 @@ export default {
         this.AsambleParallaxObjs()
         //mixin function
         this.startAnimation({
-          sceneID: 4,
+          sceneID: 5,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -138,10 +137,12 @@ export default {
     },
   },
   created() {
-    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-    var chapter = this.getLanguageData({lang : this.lang});
-    this.chapter =  chapter.ChapterFour;
-    this.contentLoaded++
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter =  chapter.ChapterFour;
+      this.contentLoaded++;
+    // }
   }
 }
 </script>

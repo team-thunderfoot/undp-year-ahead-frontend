@@ -1,22 +1,20 @@
 <template>
   <section
     class="b--page-a__item b--chapter3-a"
-    id="Scene3"
-    ref="Scene3"
+    id="Scene4"
+    ref="Scene4"
     v-if="chapter"
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img v-lazy="require(`@/assets/img/chapter-3/front.png`)" alt="front" />
+        <img src="@/assets/img/chapter-3/front.png" alt="front" />
       </div>
       <div class="b--ss-a__content">
         <!-- flags left -->
         <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fifth">
           <div
             class="b--motion-b"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-3/flags-left_spritesheet.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-left_spritesheet.png`) + ')'"
           ></div>
         </div>
 
@@ -40,7 +38,7 @@
         <!-- wheel -->
         <div class="b--chapter3-a__content b--chapter3-a__content--third">
           <img
-            v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
+            src="@/assets/img/chapter-3/wheel.png"
             alt="wheel"
             title="wheel"
           />
@@ -49,9 +47,7 @@
         <div class="b--chapter3-a__artwork b--chapter3-a__artwork--second">
           <div
             class="b--motion-c"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-3/flags-right_spritesheet.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-right_spritesheet.png`) + ')'"
           ></div>
         </div>
       </div>
@@ -105,7 +101,7 @@ export default {
       if (newValue) {
         // mixin function
         this.startAnimation({
-          sceneID: 3,
+          sceneID: 4,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -113,10 +109,12 @@ export default {
     },
   },
   created() {
-    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-    var chapter = this.getLanguageData({lang : this.lang});
-    this.chapter =  chapter.ChapterThree;
-    this.contentLoaded++
+    // if(process.client){
+       this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter =  chapter.ChapterThree;
+      this.contentLoaded++
+    // }
   },
 }
 </script>

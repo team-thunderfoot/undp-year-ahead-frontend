@@ -1,8 +1,8 @@
 <template>
-    <section class="b--page-a__item b--chapter14-a" id="Scene14" ref="Scene14" v-if="chapter">
+    <section class="b--page-a__item b--chapter14-a" id="Scene15" ref="Scene15" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img v-lazy="require(`@/assets/img/chapter-14/front-${this.lang}.png`)" alt="front" />
+                <img :src="require(`@/assets/img/chapter-14/front-${this.lang}.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, chapter title -->
@@ -25,12 +25,12 @@
                 </div>
                 <!-- arrow -->
                 <div class="b--chapter14-a__artwork">
-                    <div class="b--motion-o" v-lazy:background-image="require(`@/assets/test_sprites/arrow.png`)"></div>
+                    <div class="b--motion-o" :style="'background-image: url(' + require(`@/assets/test_sprites/arrow.png`) + ')'"></div>
                 </div>
                 <!-- wheel -->
                 <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second">
                     <img
-                        v-lazy="require(`@/assets/img/chapter-3/wheel.png`)"
+                        src="@/assets/img/chapter-3/wheel.png"
                         alt="wheel"
                         title="wheel"
                     />
@@ -88,7 +88,7 @@ export default {
         animate(){
             this.$nextTick(() => {
                 this.startAnimation({
-                    sceneID : 14,
+                    sceneID : 15,
                     scrub:0,
                     scrollTween : this.scrollTween
                 })
@@ -109,12 +109,14 @@ export default {
         }
     },
     created() {
-        this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-        var chapter = this.getLanguageData({lang : this.lang});
-        this.chapter =  chapter.ChapterFourteen;
-        var settings = this.getLanguageSettings({lang : this.lang});
-        this.settings = settings.Nav;
-        this.contentLoaded++
+        // if(process.client){
+            this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+            var chapter = this.getLanguageData({lang : this.lang});
+            this.chapter =  chapter.ChapterFourteen;
+            var settings = this.getLanguageSettings({lang : this.lang});
+            this.settings = settings.Nav;
+            this.contentLoaded++
+        // }
     }
 }
 </script>

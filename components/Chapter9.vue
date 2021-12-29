@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter9-a"
-    id="Scene9"
-    ref="Scene9"
+    id="Scene10"
+    ref="Scene10"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -10,7 +10,7 @@
         
         <img
           class="b--ss-a__ft-items__parallax"
-          v-lazy="require(`@/assets/img/chapter-9/middle-parallax.png`)"
+          src="@/assets/img/chapter-9/middle-parallax.png"
           alt="middle"
           ref="parallax-middle"
           :style="{ left: '245%' }"
@@ -18,7 +18,7 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)"
+          src="@/assets/img/chapter-9/front-parallax.png"
           alt="front"
           :style="{ left: '129%' }"
         />
@@ -39,13 +39,64 @@
             cardACustomClass="b--card-a--second"
           />
         </div>
-        <!-- second position element, info -->
+      </div>
+      <!-- second position element, info -->
+      <div class="b--ss-a__front-content">
         <div
           class="b--chapter9-a__info"
           ref="quoteContent"
           :style="{ left: '173%' }"
         >
           <v-info-chapter :info="chapter" />
+        </div>
+        <!-- animation algae 1 -->
+        <div class="b--chapter9-a__artwork" ref="algae1" :style="{ left: '295%' }">
+          <div
+            class="b--motion-v"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_1.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation algae 2 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--second" ref="algae2" :style="{ left: '278%' }">
+          <div
+            class="b--motion-w"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation algae 2 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--third" ref="algae3" :style="{ left: '322%' }">
+          <div
+            class="b--motion-w"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation buble 1 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fourth" ref="bubble1" :style="{ left: '168%' }">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_1.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation buble 2 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fifth" ref="bubble2" :style="{ left: '186%' }">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_2.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation buble 3 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--sixth" ref="bubble3" :style="{ left: '205%' }">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation buble 3 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--seventh" ref="bubble4" :style="{ left: '148%' }">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
+          ></div>
         </div>
       </div>
       <div class="b--ss-a__bg-items">
@@ -54,12 +105,12 @@
           @load="handleLoad"
           @error="handleLoad"
           alt="back"
-          :src="require(`@/assets/img/chapter-9/back.png`)"
+          src="@/assets/img/chapter-9/back.png"
         />
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          v-lazy="require(`@/assets/img/chapter-9/back-parallax.png`)"
+          src="@/assets/img/chapter-9/back-parallax.png"
           alt="back-parallax"
           :style="{ left: '30%' }"
         />
@@ -99,6 +150,13 @@ export default {
         { obj: this.$refs['parallax-bg'], intensity: 1 },
         { obj: this.$refs['parallax-middle'], intensity: 40 },
         { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['algae1'], intensity: 40 },
+        { obj: this.$refs['algae2'], intensity: 40 },
+        { obj: this.$refs['algae3'], intensity: 40 },
+        { obj: this.$refs['bubble1'], intensity: 21 },
+        { obj: this.$refs['bubble2'], intensity: 21 },
+        { obj: this.$refs['bubble3'], intensity: 21 },
+        { obj: this.$refs['bubble4'], intensity: 21 },
         { obj: this.$refs['boxContent'], intensity: 21 },
         { obj: this.$refs['quoteContent'], intensity: 21 },
       ]
@@ -106,9 +164,8 @@ export default {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene9'].offsetWidth,
+          duration: this.$refs['Scene10'].offsetWidth,
           containerAnimation: this.scrollTween,
-          scrub: 1,
         })
       })
     },
@@ -126,7 +183,7 @@ export default {
         this.AsambleParallaxObjs()
         //mixin function
         this.startAnimation({
-          sceneID: 9,
+          sceneID: 10,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -134,10 +191,12 @@ export default {
     },
   },
   created() {
-    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-    var chapter = this.getLanguageData({lang : this.lang});
-    this.chapter =  chapter.ChapterNine;
-    this.contentLoaded++
+    // if(process.client){
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      var chapter = this.getLanguageData({lang : this.lang});
+      this.chapter =  chapter.ChapterNine;
+      this.contentLoaded++
+    // }
   }
 }
 </script>
