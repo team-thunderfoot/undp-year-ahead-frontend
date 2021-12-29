@@ -10,7 +10,7 @@
 export default {
     data:()=>{
 		return{
-           maxStories : 14,
+           maxStories : 15,
            currentItemMenu : false,
            navIsLoaded: true,
 		}
@@ -72,10 +72,10 @@ export default {
         },
         goToChapter(){
             if(this.urlWithParams){
-                if(this.sceneNumber > 0 && this.sceneNumber < 15){
+                if(this.sceneNumber > 0 && this.sceneNumber < 16){
                     if(this.sceneNumber != '1'){
                         var sceneName  = document.querySelector('#Scene' + this.sceneNumber);
-                        if(this.sceneNumber == 13){
+                        if(this.sceneNumber == 14){
                             var pos =  sceneName.offsetLeft - 100;
                         } else {
                             var pos =  sceneName.offsetLeft;

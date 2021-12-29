@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter6-a"
-    id="Scene6"
-    ref="Scene6"
+    id="Scene7"
+    ref="Scene7"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -83,7 +83,7 @@ export default {
     scrollTween(newValue, oldValue) {
       if (newValue) {
         this.startAnimation({
-          sceneID: 6,
+          sceneID: 7,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
