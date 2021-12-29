@@ -91,6 +91,13 @@
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
           ></div>
         </div>
+        <!-- animation buble 3 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--seventh">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
+          ></div>
+        </div>
       </div>
       <div class="b--ss-a__bg-items">
         <img
