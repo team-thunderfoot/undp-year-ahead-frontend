@@ -6,7 +6,7 @@
         <div class="b--nav-a" v-if="nav">
             <div class="b--nav-a__ft-items">
                 <div class="b--nav-a__ft-items__bd">
-                    <p>{{nav.nav_title}}</p>
+                    <a href="#" @click.prevent="goToStart()"><p>{{nav.nav_title}}</p></a>
                 </div>
                 <div class="b--nav-a__ft-items__ft">
                     <a class="b--nav-a__ft-items__ft__link" :href="social.facebook" target="_blank" rel="noopener noreferrer">
@@ -40,6 +40,12 @@ export default {
             this.nav = settings.Nav;
             this.social = settings.SocialIcons;
         },
+        goToStart() {
+            var sceneName  = document.querySelector("#Scene1");
+            var pos =  sceneName.offsetLeft;
+            this.$gsap.to(window, {duration: 4, scrollTo: pos});
+            this.$router.push({path: this.$route.path, query: { scene:  1}})
+        }
     },
     data:()=>{
 		return{
