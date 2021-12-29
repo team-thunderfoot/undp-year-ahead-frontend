@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img :style="{ left: '3%' }" v-lazy="require(`@/assets/img/chapter-1/front-parallax.png`)" alt="front" ref="parallax-ft" />
+        <img :style="{ left: '3%' }" src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" />
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -68,7 +68,7 @@
             <div class="b--video-b__wrapper">
               <img
                 class="b--video-b__wrapper__artwork"
-                v-lazy="require(`@/assets/img/chapter-1/browser-bar.svg`)"
+                src="@/assets/img/chapter-1/browser-bar.svg"
                 alt="browser bar"
                 title="browser bar"
               />
@@ -89,7 +89,7 @@
             <div class="b--card-c__ft">
               <img
                 class="b--card-c__ft__media"
-                v-lazy="require(`@/assets/img/chapter-1/tv-set.png`)"
+                src="@/assets/img/chapter-1/tv-set.png"
                 alt="tvset"
                 title="tvset"
               />
@@ -101,9 +101,7 @@
           <div
             ref="bubble"
             class="b--motion-a"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-1/bubble-motion.png`)
-            "
+            style="background-image: url('~/assets/img/chapter-1/bubble-motion.png')"
           >
             <!-- bubble -->
           </div>
