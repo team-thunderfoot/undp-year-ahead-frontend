@@ -39,7 +39,9 @@
             cardACustomClass="b--card-a--second"
           />
         </div>
-        <!-- second position element, info -->
+      </div>
+      <!-- second position element, info -->
+      <div class="b--ss-a__front-content">
         <div
           class="b--chapter9-a__info"
           ref="quoteContent"

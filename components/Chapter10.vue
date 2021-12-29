@@ -54,7 +54,7 @@
         ></div>
       </div>
       <!-- animation boat -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third">
+      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third" ref="boat" :style="{ left: '271%' }">
         <div
           class="b--motion-s"
           v-lazy:background-image="
@@ -63,7 +63,7 @@
         ></div>
       </div>
       <!-- animation fish -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth">
+      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="fish1" :style="{ left: '308%' }">
         <div
           class="b--motion-t"
           v-lazy:background-image="
@@ -72,7 +72,7 @@
         ></div>
       </div>
       <!-- animation fish -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth">
+      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth" ref="fish2" :style="{ left: '277%' }">
         <div
           class="b--motion-u"
           v-lazy:background-image="
@@ -150,6 +150,9 @@ export default {
         { obj: this.$refs['parallax-ft'], intensity: 35 },
         { obj: this.$refs['parallax-ft'], intensity: 35 },
         { obj: this.$refs['fisherman'], intensity: 35 },
+        { obj: this.$refs['boat'], intensity: 35 },
+        { obj: this.$refs['fish1'], intensity: 35 },
+        { obj: this.$refs['fish2'], intensity: 35 },
         { obj: this.$refs['boxContent'], intensity: 35 },
       ]
       motion.forEach((item) => {
