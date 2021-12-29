@@ -7,6 +7,12 @@
     &__content {
       z-index: 90;
     }
+    &__artwork {
+      z-index: 1;
+    }
+    &__ft-items {
+      z-index: 10;
+    }
   }
 
   &__content {
@@ -78,6 +84,11 @@
       @media all and ($viewport-type: $tabletl) {
         left: 90%;
       }
+    }
+    // lines animation
+    &--fourth {
+      bottom: 54%;
+      left: 34.5%;
     }
   }
 

@@ -52,8 +52,15 @@
                     require(`@/assets/img/chapter-13/lines_spritesheet.png`)
                     ">
                     </div>
-                </div>            
+                </div>  
+                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--fourth">
+                    <div class="b--motion-k" v-lazy:background-image="
+                    require(`@/assets/img/chapter-13/lines_spritesheet.png`)
+                    ">
+                    </div>
+                </div>       
             </div>
+            
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
                 alt="back-parallax"
