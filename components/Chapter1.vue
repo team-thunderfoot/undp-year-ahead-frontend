@@ -110,7 +110,7 @@
         </div>
 
         <!-- content-fourth position -->
-        <div class="b--chapter1-a__content b--chapter1-a__content--third">
+        <div class="b--chapter1-a__content b--chapter1-a__content--third" id="Scene2" ref="Scene2">
           <!-- text with bg -->
           <div class="b--card-e">
             <h4 class="b--card-e__title">{{ chapter.quote_system }}</h4>
@@ -202,6 +202,11 @@ export default {
 				// mixin function
 				this.startAnimation({
 				  sceneID: 1,
+				  scrub: 0,
+				  scrollTween: this.scrollTween,
+        })
+        this.startAnimation({
+				  sceneID: 2,
 				  scrub: 0,
 				  scrollTween: this.scrollTween,
 				})

@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter11-a" id="Scene11" ref="Scene11"  v-if="chapter">
+    <section class="b--page-a__item b--chapter11-a" id="Scene12" ref="Scene12"  v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img ref="parallax-ft" 
@@ -109,7 +109,7 @@ export default {
                 this.parallaxMove({
                 el: item.obj,
                 intensity: item.intensity,
-                duration: this.$refs['Scene11'].offsetWidth,
+                duration: this.$refs['Scene12'].offsetWidth,
                 containerAnimation: this.scrollTween,
                 scrub: true,
                 })
@@ -129,7 +129,7 @@ export default {
                 this.AsambleParallaxObjs()
                 // mixin function
                 this.startAnimation({
-                    sceneID: 11,
+                    sceneID: 12,
                     scrub: 0,
                     scrollTween: this.scrollTween,
                 })
