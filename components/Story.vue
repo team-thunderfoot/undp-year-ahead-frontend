@@ -186,9 +186,9 @@ export default {
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
-            // if(this.isMobile()){
-            //     window.addEventListener('orientationchange', this.workAfterResizeIsDone);
-            // }
+            if(this.isMobile()){
+                window.addEventListener('orientationchange', this.workAfterResizeIsDone);
+            }
         }
     },
     
