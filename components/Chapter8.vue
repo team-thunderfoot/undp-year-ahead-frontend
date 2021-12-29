@@ -20,7 +20,7 @@
           ref="parallax-ft"
           alt="front-parallax"
           src="@/assets/img/chapter-8/front-parallax.png"
-          :style="{ left: '190%' }"
+          :style="{ left: '183%' }"
         />
         <img
           class="
@@ -29,7 +29,7 @@
           ref="parallax-middle"
           alt="middle-parallax"
           src="@/assets/img/chapter-8/middle-parallax.png"
-          :style="{ left: '123%' }"
+          :style="{ left: '120%' }"
         />
       </div>
       <div class="b--ss-a__content">
@@ -50,7 +50,7 @@
         <div
           class="b--chapter8-a__content b--chapter8-a__content--second"
           ref="infoChapter"
-          :style="{ left: '130%' }"
+          :style="{ left: '126%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
@@ -69,7 +69,7 @@
         <div
           class="b--chapter8-a__artwork b--chapter8-a__artwork--second"
           ref="fishes"
-          :style="{ left: '160%' }"
+          :style="{ left: '152%' }"
         >
           <div
             class="b--motion-r"

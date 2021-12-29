@@ -8,10 +8,6 @@
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img src="@/assets/img/chapter-3/front.png" alt="front" />
-<<<<<<< HEAD
-        
-=======
->>>>>>> dc826faccb33624851a548f3cd0178ab11f35a49
       </div>
       <div class="b--ss-a__content">
         <!-- flags left -->

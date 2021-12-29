@@ -48,6 +48,7 @@ export default {
             navLoaded : false,
             allisLoaded : false,
             scrollTween: null,
+            timeOutFunctionId: null
 		}
 	},
     props : [
@@ -89,13 +90,17 @@ export default {
         },
     },
     methods:{
+        workAfterResizeIsDone(){
+            console.log("adone");
+            this.scrollTween.kill();
+            window.location  =  this.$route.path;
+        },
         getTotalWidth(){
             let width = 0;
             let Sections = document.querySelectorAll("section");
             Sections.forEach(el => width += el.offsetWidth);
             return width;
         },
-        
         asambleStory(){
            	this.$nextTick(() => {
                 this.scrollTween = this.$gsap.to(document.querySelectorAll("section"), { 
@@ -121,10 +126,10 @@ export default {
                 // emits on in Index.vue
                 setTimeout(() => {
                     $nuxt.$emit('siteLoaded');
-                }, 3000);
+                }, 6000);
                 setTimeout(() => {  
                     this.loadedNew = true;
-                }, 5000);
+                }, 8000);
                 
             })
         },
@@ -158,13 +163,24 @@ export default {
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
                     // SET NEW Item
-                    this.currentItem = payload.item;
+                    if(this.currentItem == 3 && payload.item == 1){ // if we are entering Scene 2 from Scene 3
+                        this.currentItem = 2;
+                    }else{
+                        if(payload.item == 2 && this.currentItem == 2){ // if we are entering Scene 1 from Scene 2
+                            this.currentItem = 1;
+                        }else{
+                            this.currentItem = payload.item;
+                        }
+                    }
                     // Change URL
                     this.$router.push({path: this.$route.path, query: { scene:  payload.item }})
                 }
             });
             
-            // window.onresize = ()=> { location.reload(); }
+            window.onresize = (e)=> { 
+                clearTimeout(this.timeOutFunctionId);
+                this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 1000);
+            }
         }
     }
 }
