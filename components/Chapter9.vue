@@ -47,6 +47,33 @@
         >
           <v-info-chapter :info="chapter" />
         </div>
+        <!-- animation algae 1 -->
+        <div class="b--chapter9-a__artwork">
+          <div
+            class="b--motion-v"
+            v-lazy:background-image="
+              require(`@/assets/img/chapter-9/algae_1.png`)
+            "
+          ></div>
+        </div>
+        <!-- animation algae 2 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--second">
+          <div
+            class="b--motion-w"
+            v-lazy:background-image="
+              require(`@/assets/img/chapter-9/algae_2.png`)
+            "
+          ></div>
+        </div>
+        <!-- animation algae 2 -->
+        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--third">
+          <div
+            class="b--motion-w"
+            v-lazy:background-image="
+              require(`@/assets/img/chapter-9/algae_2.png`)
+            "
+          ></div>
+        </div>
       </div>
       <div class="b--ss-a__bg-items">
         <img

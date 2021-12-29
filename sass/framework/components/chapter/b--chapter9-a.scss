@@ -1,5 +1,4 @@
 .b--chapter9-a {
-
   &__content {
     // cards
     position: absolute;
@@ -37,6 +36,22 @@
           height: 22.32vh;
         }
       }
+    }
+  }
+  // algae 1 animation
+  &__artwork {
+    position: absolute;
+    bottom: 12.4%;
+    left: 51.5%;
+    // algae 2 animation
+    &--second {
+      bottom: 12.4%;
+      left: 36.1%;
+    }
+    // algae 1 animation
+    &--third {
+      bottom: 12.4%;
+      left: 79.2%;
     }
   }
 
