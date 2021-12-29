@@ -91,7 +91,7 @@ export default {
     },
     methods:{
         workAfterResizeIsDone(){
-            this.scrollTween.kill();
+            // this.scrollTween.kill();
             window.location  =  this.$route.path;
         },
         getTotalWidth(){
