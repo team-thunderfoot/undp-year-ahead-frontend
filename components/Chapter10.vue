@@ -44,11 +44,39 @@
           "
         ></div>
       </div>
+      <!-- animation plants wind -->
       <div class="b--chapter10-a__artwork b--chapter10-a__artwork--second">
         <div
           class="b--motion-g"
           v-lazy:background-image="
             require(`@/assets/img/chapter-10/plant_wind_2.png`)
+          "
+        ></div>
+      </div>
+      <!-- animation boat -->
+      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third">
+        <div
+          class="b--motion-s"
+          v-lazy:background-image="
+            require(`@/assets/img/chapter-10/waves_boat.png`)
+          "
+        ></div>
+      </div>
+      <!-- animation fish -->
+      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth">
+        <div
+          class="b--motion-t"
+          v-lazy:background-image="
+            require(`@/assets/img/chapter-10/fish_3.png`)
+          "
+        ></div>
+      </div>
+      <!-- animation fish -->
+      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth">
+        <div
+          class="b--motion-u"
+          v-lazy:background-image="
+            require(`@/assets/img/chapter-10/fish_4.png`)
           "
         ></div>
       </div>

@@ -3,8 +3,8 @@
     z-index: 1;
   }
   .b--ss-a {
-    &__ft-items{
-      &__media{
+    &__ft-items {
+      &__media {
         // z-index: -1;
       }
     }
@@ -144,6 +144,24 @@
       @media all and ($viewport-type: $tabletl) {
         bottom: -5%;
       }
+    }
+    // boat animation
+    &--third {
+      bottom: 31.5%;
+      left: 30.5%;
+      z-index: 2;
+    }
+    // fish_3 animation
+    &--fourth {
+      bottom: 10%;
+      left: 30.5%;
+      z-index: 1;
+    }
+    // fish_4 animation
+    &--fifth {
+      bottom: 10%;
+      left: 60.5%;
+      z-index: 1;
     }
   }
   // chapter divider
