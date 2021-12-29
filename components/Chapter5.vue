@@ -38,32 +38,37 @@
         >
           <v-info-chapter :info="chapter" />
         </div>
-        <!-- women -->
-        <div class="b--chapter5-a__media" ref="woman" :style="{ left: '167%' }">
-          <img
-            v-lazy="require(`@/assets/img/chapter-5/women.svg`)"
-            alt="women"
-          />
-        </div>
-        <!-- first blink animation -->
-        <div class="b--chapter5-a__artwork" ref="eyes1" :style="{ left: '172.7%' }">
-          <div
-            class="b--motion-d"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`)
-            "
-          ></div>
-        </div>
-        <!-- second blink animation -->
-        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second" ref="eyes2" :style="{ left: '202.8%' }">
-          <div
-            class="b--motion-p"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`)
-            "
-          ></div>
-        </div>
       </div>
+      <!-- women -->
+      <div class="b--chapter5-a__media" ref="woman" :style="{ left: '167%' }">
+        <img
+          class="b--media-b"
+          v-lazy="require(`@/assets/img/chapter-5/women.svg`)"
+          alt="women"
+        />
+        <!-- first blink animation -->
+        <div
+          class="b--motion-d"
+          v-lazy:background-image="
+            require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`)
+          "
+        ></div>
+        <!-- second blink animation -->
+        <div
+          class="b--motion-p"
+          v-lazy:background-image="
+            require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`)
+          "
+        ></div>
+      </div>
+      <!-- first blink animation -->
+      <!-- <div class="b--chapter5-a__artwork" ref="eyes1" :style="{ left: '172.7%' }">
+        
+      </div> -->
+      <!-- second blink animation -->
+      <!-- <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second" ref="eyes2" :style="{ left: '202.8%' }">
+        
+      </div> -->
       <div class="b--ss-a__bg-items">
         <img
           class="b--ss-a__bg-items__parallax"
@@ -116,8 +121,8 @@ export default {
         { obj: this.$refs['infochapter'], intensity: 40 },
         { obj: this.$refs['boxContent'], intensity: 40 },
         { obj: this.$refs['woman'], intensity: 40 },
-        { obj: this.$refs['eyes1'], intensity: 40 },
-        { obj: this.$refs['eyes2'], intensity: 40 },
+        // { obj: this.$refs['eyes1'], intensity: 40 },
+        // { obj: this.$refs['eyes2'], intensity: 40 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
