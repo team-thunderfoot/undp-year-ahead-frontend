@@ -4,7 +4,7 @@
   z-index: 2;
   width: 290px;
   height: 80px;
-  animation-name: motionS;
+  animation-name: motionT;
   animation-duration: 1.36s;
   animation-timing-function: steps(84);
   animation-iteration-count: infinite;
@@ -18,7 +18,7 @@
     transform: translate(-20%, 20%) scale(0.6);
   }
 }
-@keyframes motionS {
+@keyframes motionT {
   from {
     background-position: 0px;
   }
