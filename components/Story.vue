@@ -189,16 +189,9 @@ export default {
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
-            
+            window.addEventListener('orientationchange', this.workAfterResizeIsDone());
         }
     },
-    created(){
-        if(process.client){
-            if(this.isMobile()){
-                alert('afdsd')
-                this.windowChangeOrientation();
-            }
-        }
-    }
+    
 }
 </script>
