@@ -4,11 +4,11 @@
             <div class="b--ss-a__ft-items">
                 <img ref="parallax-ft" 
                 :style="{ left: '66%', position: 'absolute' }"
-                v-lazy="require(`@/assets/img/chapter-11/front-parallax.png`)" alt="front" />
+                src="@/assets/img/chapter-11/front-parallax.png" alt="front" />
                 <img
                     class="b--ss-a__ft-items__media"
                     alt="front"
-                    v-lazy="require(`@/assets/img/chapter-11/front-elements.png`)"
+                    src="@/assets/img/chapter-11/front-elements.png"
                 />
             </div>
             <div class="b--ss-a__content">
@@ -31,19 +31,17 @@
                 </div>
                 <!-- boxes -->
                 <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
-                    <img class="b--media-a" v-lazy="require(`@/assets/img/chapter-11/boxes.svg`)" alt="boxes" />
+                    <img class="b--media-a" src="@/assets/img/chapter-11/boxes.svg" alt="boxes" />
                     <!-- blink 2a -->
-                    <div class="b--motion-h" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2a.png`)"></div>
+                    <div class="b--motion-h" :style="'background-image: url(' + require(`@/assets/img/chapter-11/blink_2a.png`) + ')'"></div>
                     <!-- blink 2b -->
-                    <div class="b--motion-q" v-lazy:background-image="require(`@/assets/img/chapter-11/blink_2b.png`)"></div>
+                    <div class="b--motion-q" :style="'background-image: url(' + require(`@/assets/img/chapter-11/blink_2b.png`) + ')'"></div>
                 </div>
                 <!-- plant animation -->
                 <div class="b--chapter11-a__artwork">
                     <div
                         class="b--motion-i"
-                        v-lazy:background-image="
-                        require(`@/assets/img/chapter-11/plant_wind_3.png`)
-                        "
+                        :style="'background-image: url(' + require(`@/assets/img/chapter-11/plant_wind_3.png`) + ')'"
                     >
                     </div>
                 </div>
@@ -52,13 +50,13 @@
                 <img class="b--ss-a__bg-items__parallax" 
                 ref="parallax-bg" 
                 :style="{ left: '170%' }"
-                v-lazy="require(`@/assets/img/chapter-11/back-parallax.png`)"
+                src="@/assets/img/chapter-11/back-parallax.png"
                 alt="back parallax"> 
                 <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad"  
                 @error="handleLoad" 
                 alt="back"
-                :src="require(`@/assets/img/chapter-11/back.png`)">          
+                src="@/assets/img/chapter-11/back.png">          
             </div>
         </div>
     </section>

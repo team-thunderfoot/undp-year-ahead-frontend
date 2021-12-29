@@ -13,7 +13,7 @@
               b--chapter10-a__divider__media
               b--chapter10-a__divider__media--left
             "
-            v-lazy="require(`@/assets/img/chapter-10/front_rock.png`)"
+            src="@/assets/img/chapter-10/front_rock.png"
           />
           <!-- <img
             class="b--chapter10-a__divider__media b--chapter10-a__divider__media--right"
@@ -27,57 +27,47 @@
           ref="parallax-ft"
           :style="{ left: '253%' }"
           alt="front-parallax"
-          v-lazy="require(`@/assets/img/chapter-10/front-parallax.png`)"
+          src="@/assets/img/chapter-10/front-parallax.png"
         />
         <img
           class="b--ss-a__ft-items__media"
           alt="front"
-          v-lazy="require(`@/assets/img/chapter-10/front-elements.png`)"
+          src="@/assets/img/chapter-10/front-elements.png"
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
       <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '291%' }">
         <div
           class="b--motion-f"
-          v-lazy:background-image="
-            require(`@/assets/img/chapter-10/fisherman_spritesheet.png`)
-          "
+           :style="'background-image: url(' + require(`@/assets/img/chapter-10/fisherman_spritesheet.png`) + ')'"
         ></div>
       </div>
       <!-- animation plants wind -->
       <div class="b--chapter10-a__artwork b--chapter10-a__artwork--second">
         <div
           class="b--motion-g"
-          v-lazy:background-image="
-            require(`@/assets/img/chapter-10/plant_wind_2.png`)
-          "
+          :style="'background-image: url(' + require(`@/assets/img/chapter-10/plant_wind_2.png`) + ')'"
         ></div>
       </div>
       <!-- animation boat -->
       <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third" ref="boat" :style="{ left: '271%' }">
         <div
           class="b--motion-s"
-          v-lazy:background-image="
-            require(`@/assets/img/chapter-10/waves_boat.png`)
-          "
+           :style="'background-image: url(' + require(`@/assets/img/chapter-10/waves_boat.png`) + ')'"
         ></div>
       </div>
       <!-- animation fish 3 -->
       <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="fish1" :style="{ left: '308%' }">
         <div
           class="b--motion-t"
-          v-lazy:background-image="
-            require(`@/assets/img/chapter-10/fish_3.png`)
-          "
+           :style="'background-image: url(' + require(`@/assets/img/chapter-10/fish_3.png`) + ')'"
         ></div>
       </div>
       <!-- animation fish 4 -->
       <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth" ref="fish2" :style="{ left: '277%' }">
         <div
           class="b--motion-u"
-          v-lazy:background-image="
-            require(`@/assets/img/chapter-10/fish_4.png`)
-          "
+          :style="'background-image: url(' + require(`@/assets/img/chapter-10/fish_4.png`) + ')'"
         ></div>
       </div>
       <div class="b--ss-a__content">
@@ -102,7 +92,7 @@
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           :style="{ left: '14%' }"
-          v-lazy="require(`@/assets/img/chapter-10/back-parallax.png`)"
+          src="@/assets/img/chapter-10/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -114,7 +104,7 @@
         />
         <img
             class="b--ss-a__bg-items__media"
-          v-lazy="require(`@/assets/img/chapter-10/front.png`)"
+          src="@/assets/img/chapter-10/front.png"
         />
       </div>
     </div>
