@@ -62,7 +62,7 @@
           "
         ></div>
       </div>
-      <!-- animation fish -->
+      <!-- animation fish 3 -->
       <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="fish1" :style="{ left: '308%' }">
         <div
           class="b--motion-t"
@@ -71,7 +71,7 @@
           "
         ></div>
       </div>
-      <!-- animation fish -->
+      <!-- animation fish 4 -->
       <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth" ref="fish2" :style="{ left: '277%' }">
         <div
           class="b--motion-u"
