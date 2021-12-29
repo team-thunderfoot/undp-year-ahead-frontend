@@ -11,18 +11,22 @@
             </div>
             <div class="b--ss-a__ft-items">
                 <img
+                :style="{ left: '90%'}"
                 class="b--ss-a__ft-items__parallax"
                 v-lazy="require(`@/assets/img/chapter-13/middle-parallax.png`)"
                 alt="middle"
                 ref="parallax-middle"
+                
                 />
-                <img class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-13/front-parallax.png`)" alt="front" />
+                <img :style="{ left: '578%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" v-lazy="require(`@/assets/img/chapter-13/front-parallax.png`)" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
                 <div 
                 class="b--chapter13-a__content"
                 :class="'b--chapter13-a__content--' + `${this.lang}`"
+                ref="boxContent"
+                :style="{ left: '100%'}"
                 >
                     <v-card-f 
                         :title="chapter.intro_title" 
@@ -31,19 +35,19 @@
                         cardACustomClass="b--card-a--second"
                     />
                 </div> 
-                <div class="b--chapter13-a__artwork">
+                <div class="b--chapter13-a__artwork" ref="plantwater1" :style="{ left: '125%'}">
                     <div class="b--motion-m" v-lazy:background-image="
                     require(`@/assets/img/chapter-13/plant_water.png`)
                     ">
                     </div>
                 </div>
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second">
+                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second" ref="plantwater2" :style="{ left: '170%'}">
                     <div class="b--motion-n" v-lazy:background-image="
                     require(`@/assets/img/chapter-13/plant_water_2.png`)
                     ">
                     </div>
                 </div>
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--third">
+                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--third" ref="lines" :style="{ left: '180%'}">
                     <div class="b--motion-k" v-lazy:background-image="
                     require(`@/assets/img/chapter-13/lines_spritesheet.png`)
                     ">
@@ -53,6 +57,8 @@
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
                 alt="back-parallax"
+                ref="parallax-bg"
+                :style="{ left: '9%' }"
                 v-lazy="require(`@/assets/img/chapter-13/back-parallax.png`)"
                 >  
                 <img class="b--ss-a__bg-items__back" 
@@ -89,12 +95,23 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 14,
-                    scrub:0,
-                    scrollTween : this.scrollTween
+        AsambleParallaxObjs() {
+            var motion = [
+                { obj: this.$refs['parallax-bg'], intensity: 1 },
+                { obj: this.$refs['parallax-ft'], intensity: 65},
+                { obj: this.$refs['parallax-middle'], intensity: 10},
+                { obj: this.$refs['plantwater1'], intensity: 10},
+                { obj: this.$refs['plantwater2'], intensity: 10},
+                { obj: this.$refs['lines'], intensity: 10},
+                { obj: this.$refs['boxContent'], intensity: 10},
+            ]
+            motion.forEach((item) => {
+                this.parallaxMove({
+                el: item.obj,
+                intensity: item.intensity,
+                duration: this.$refs['Scene14'].offsetWidth,
+                containerAnimation: this.scrollTween,
+                scrub: true,
                 })
             })
         }
@@ -108,7 +125,14 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.animate();
+                //motion frontend and backend elements
+                this.AsambleParallaxObjs()
+                // mixin function
+                this.startAnimation({
+                    sceneID: 14,
+                    scrub: 0,
+                    scrollTween: this.scrollTween,
+                })
             } 
         }
     },
