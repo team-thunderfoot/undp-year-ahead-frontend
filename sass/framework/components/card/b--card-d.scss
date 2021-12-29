@@ -9,6 +9,7 @@
     border: 1.5vh solid map-get($color-options, h);
     max-width: none !important;
     width: calc(100vw - 80px);
+    width: calc(100vw - 80px + $measure*10);
     height: auto;
   }
   &::before,
@@ -44,6 +45,9 @@
     padding: 11%;
     @media all and ($viewport-type: $tabletl) {
       padding: 5%;
+    }
+    @media all and ($viewport-type: $mobile) {
+      padding: 5% $measure*5;
     }
     .b--quote-a {
       &__content {
