@@ -10,7 +10,7 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '45%' }"
+          :style="{ left: '115%' }"
           alt="front-parallax"
           v-lazy="require(`@/assets/img/chapter-5/front-parallax.png`)"
         />
@@ -20,7 +20,7 @@
         <div
           class="b--chapter5-a__content"
           :class="'b--chapter5-a__content--' + `${this.lang}`"
-          :style="{ left: '50%' }"
+          :style="{ left: '120%' }"
           ref="boxContent"
         >
           <v-card-f
@@ -34,19 +34,19 @@
         <div
           class="b--chapter5-a__content b--chapter5-a__content--second"
           ref="infochapter"
-          :style="{ left: '85%' }"
+          :style="{ left: '155%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
         <!-- women -->
-        <div class="b--chapter5-a__media" ref="woman" :style="{ left: '97%' }">
+        <div class="b--chapter5-a__media" ref="woman" :style="{ left: '167%' }">
           <img
             v-lazy="require(`@/assets/img/chapter-5/women.svg`)"
             alt="women"
           />
         </div>
         <!-- first blink animation -->
-        <div class="b--chapter5-a__artwork" ref="eyes1" :style="{ left: '102.7%' }">
+        <div class="b--chapter5-a__artwork" ref="eyes1" :style="{ left: '172.7%' }">
           <div
             class="b--motion-d"
             v-lazy:background-image="
@@ -55,7 +55,7 @@
           ></div>
         </div>
         <!-- second blink animation -->
-        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second" ref="eyes2" :style="{ left: '132.8%' }">
+        <div class="b--chapter5-a__artwork b--chapter5-a__artwork--second" ref="eyes2" :style="{ left: '202.8%' }">
           <div
             class="b--motion-p"
             v-lazy:background-image="
@@ -112,12 +112,12 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 2 },
-        { obj: this.$refs['parallax-ft'], intensity: 16 },
-        { obj: this.$refs['infochapter'], intensity: 16 },
-        { obj: this.$refs['boxContent'], intensity: 16 },
-        { obj: this.$refs['woman'], intensity: 16 },
-        { obj: this.$refs['eyes1'], intensity: 16 },
-        { obj: this.$refs['eyes2'], intensity: 16 },
+        { obj: this.$refs['parallax-ft'], intensity: 40 },
+        { obj: this.$refs['infochapter'], intensity: 40 },
+        { obj: this.$refs['boxContent'], intensity: 40 },
+        { obj: this.$refs['woman'], intensity: 40 },
+        { obj: this.$refs['eyes1'], intensity: 40 },
+        { obj: this.$refs['eyes2'], intensity: 40 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
