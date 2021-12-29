@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter13-a" id="Scene13" ref="Scene13" v-if="chapter">
+    <section class="b--page-a__item b--chapter13-a" id="Scene14" ref="Scene14" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__divider">
                 <div class="b--chapter13-a__divider">
@@ -92,7 +92,7 @@ export default {
         animate(){
             this.$nextTick(() => {
                 this.startAnimation({
-                    sceneID : 13,
+                    sceneID : 14,
                     scrub:0,
                     scrollTween : this.scrollTween
                 })

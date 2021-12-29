@@ -1,0 +1,28 @@
+// scene 10 - fish 4
+.b--motion-u {
+  position: relative;
+  z-index: 2;
+  width: 230px;
+  height: 80px;
+  animation-name: motionS;
+  animation-duration: 1.36s;
+  animation-timing-function: steps(84);
+  animation-iteration-count: infinite;
+  @media all and ($viewport-type: $laptop) {
+    transform: translate(-10%, 10%) scale(0.8);
+  }
+  @media all and ($viewport-type: $tabletm) {
+    transform: translate(-15%, 15%) scale(0.7);
+  }
+  @media all and ($viewport-type: $mobile) {
+    transform: translate(-20%, 20%) scale(0.6);
+  }
+}
+@keyframes motionS {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -19320px;
+  }
+}

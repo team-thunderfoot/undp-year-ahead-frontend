@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter12-a" id="Scene12" ref="Scene12" v-if="chapter">
+    <section class="b--page-a__item b--chapter12-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__divider">
                 <div class="b--chapter12-a__divider">
@@ -87,7 +87,7 @@ export default {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene12'].offsetWidth,
+          duration: this.$refs['Scene13'].offsetWidth,
           containerAnimation: this.scrollTween,
           scrub: true,
         })
@@ -107,7 +107,7 @@ export default {
                 this.AsambleParallaxObjs()
                 // mixin function
                 this.startAnimation({
-                    sceneID : 12,
+                    sceneID : 13,
                     scrub:0,
                     scrollTween : this.scrollTween
                 })
