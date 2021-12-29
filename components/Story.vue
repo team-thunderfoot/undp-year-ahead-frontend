@@ -164,7 +164,7 @@ export default {
                 }
             });
             
-            window.onresize = ()=> { location.reload(); }
+            // window.onresize = ()=> { location.reload(); }
         }
     }
 }
