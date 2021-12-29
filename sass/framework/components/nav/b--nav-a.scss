@@ -1,99 +1,98 @@
 .b--nav-a {
-    position: fixed;
-    left: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 50px;
+  z-index: 50;
+  height: 100%;
+  // testing less width on mobile devices
+  @media all and ($viewport-type: $mobile) {
+    width: 45px;
+  }
+  &__bg-items {
+    position: absolute;
     top: 0;
-    right: 0;
-    width: 50px;
-    z-index: 50;
+    left: 0;
+    width: 100%;
+    z-index: 1;
     height: 100%;
-    // testing less width on mobile devices
-    @media all and ($viewport-type: $mobile) {
-        width: 45px;
-    }
-    &__bg-items {
+    overflow: hidden;
+    background: rgb(241 205 186 / 60%);
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+  &__ft-items {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    &__artwork {
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      background: rgb(255, 242, 228);
+      top: 0;
+      right: -4px;
+      &__item {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        z-index: 1;
-        height: 100%;
-        overflow: hidden;
-        background: map-get($color-options, i);
-        opacity: .9;
-        backdrop-filter: blur(37px);
+        top: 0;
+        height: 0%;
+        background-color: map-get($colorbg-options, i);
+      }
     }
-    &__ft-items {
-        position: relative;
-        z-index: 10;
-        height: 100%;
-        &__artwork{
-            position: absolute;
-            width: 4px;
-            height: 100%;
-            background:rgb(255, 242, 228);
-            top:0;
-            right:-4px;
-            &__item {
-                position: absolute;
-                width: 100%;
-                top:0;
-                height: 0%;
-                background-color: map-get($colorbg-options , i );
-            }
-        }
-        &__hd {
-            // empty for now
-        }
-        &__bd {
-            @include make-font-j();
-            transform: rotate(450deg) translateY(-27px) translateX(-50%);
-            width: 500px;
-            text-align: center;
-            transform-origin: center left;
-            top: 50%;
-            position: absolute;
-            @media all and ($viewport-type: $mobile) {
-                transform: rotate(450deg) translateY(-22px) translateX(-50%);
-            }
+    &__hd {
+      // empty for now
+    }
+    &__bd {
+      @include make-font-j();
+      transform: rotate(450deg) translateY(-27px) translateX(-50%);
+      width: 500px;
+      text-align: center;
+      transform-origin: center left;
+      top: 50%;
+      position: absolute;
+      @media all and ($viewport-type: $mobile) {
+        transform: rotate(450deg) translateY(-22px) translateX(-50%);
+      }
 
-            &__link {
-                color: map-get($color-options , a );
-                text-decoration: none;
-            }
-        }
-        &__ft {
-            position: absolute;
-            text-align: center;
-            bottom: 26px;
-            left: 12px;
-            margin: 0 auto;
-            @media all and ($viewport-type: $mobile) {
-                left: 12px;
-            }
-            &__link {
-                display:block;
-                margin-top: $measure * 2;
-                &__media {
-                    display: block;
-                    margin: 0 auto;
-                    &:not(:last-child) {
-                        margin-bottom: 26px;
-                    }
-                    &--facebook {
-                        width: 25px;
-                    }
-                    &--instagram {
-                        width: 25px;
-                    }
-                    &--linkedin {
-                        width: 25px;
-                    }
-                    &--twitter {
-                        width: 25px;
-                    }
-                }
-            }
-        }
-        
+      &__link {
+        color: map-get($color-options, a);
+        text-decoration: none;
+      }
     }
+    &__ft {
+      position: absolute;
+      text-align: center;
+      bottom: 26px;
+      left: 12px;
+      margin: 0 auto;
+      @media all and ($viewport-type: $mobile) {
+        left: 12px;
+      }
+      &__link {
+        display: block;
+        margin-top: $measure * 2;
+        &__media {
+          display: block;
+          margin: 0 auto;
+          &:not(:last-child) {
+            margin-bottom: 26px;
+          }
+          &--facebook {
+            width: 25px;
+          }
+          &--instagram {
+            width: 25px;
+          }
+          &--linkedin {
+            width: 25px;
+          }
+          &--twitter {
+            width: 25px;
+          }
+        }
+      }
+    }
+  }
 }
