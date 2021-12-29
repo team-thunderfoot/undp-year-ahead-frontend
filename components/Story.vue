@@ -189,7 +189,7 @@ export default {
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
-            window.addEventListener('orientationchange', this.workAfterResizeIsDone());
+            window.addEventListener('orientationchange', this.workAfterResizeIsDone);
         }
     },
     
