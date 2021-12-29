@@ -12,7 +12,7 @@
           ref="parallax-ft"
           :style="{ left: '115%' }"
           alt="front-parallax"
-          v-lazy="require(`@/assets/img/chapter-5/front-parallax.png`)"
+          src="@/assets/img/chapter-5/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
@@ -42,22 +42,18 @@
         <div class="b--chapter5-a__media" ref="woman" :style="{ left: '167%' }">
           <img
             class="b--media-b"
-            v-lazy="require(`@/assets/img/chapter-5/women.svg`)"
+            src="@/assets/img/chapter-5/women.svg"
             alt="women"
           />
           <!-- first blink animation -->
           <div
             class="b--motion-d"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`) + ')'"
           ></div>
           <!-- second blink animation -->
           <div
             class="b--motion-p"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`) + ')'"
           ></div>
         </div>
       </div>
@@ -66,7 +62,7 @@
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '-4%' }"
           ref="parallax-bg"
-          v-lazy="require(`@/assets/img/chapter-5/back-parallax.png`)"
+          src="@/assets/img/chapter-5/back-parallax.png"
           alt="back parallax"
         />
         <img

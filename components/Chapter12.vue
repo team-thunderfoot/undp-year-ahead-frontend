@@ -5,12 +5,12 @@
                 <div class="b--chapter12-a__divider">
                     <img
                         class="b--chapter12-a__divider__media b--chapter12-a__divider__media--left"
-                        v-lazy="require(`@/assets/img/chapter-12/11-12_tree.png`)"
+                        src="@/assets/img/chapter-12/11-12_tree.png"
                     />
                 </div>
             </div>
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-ft" :style="{ left: '628%' }" class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-12/front-parallax.png`)" alt="front" />
+                <img ref="parallax-ft" :style="{ left: '628%' }" class="b--ss-a__ft-items__parallax" src="@/assets/img/chapter-12/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
@@ -34,18 +34,16 @@
                 </div>
             </div>
             <div class="b--chapter12-a__artwork">
-                <div class="b--motion-j" v-lazy:background-image="
-                require(`@/assets/img/chapter-12/blink_3.png`)
-                ">
+                <div class="b--motion-j" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_3.png`) + ')'">
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax"
                 alt="back-parallax"
                 ref="parallax-bg'"
-                v-lazy="require(`@/assets/img/chapter-12/back-parallax.png`)"
+                src="@/assets/img/chapter-12/back-parallax.png"
                 >        
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" :src="require(`@/assets/img/chapter-12/back.png`)" alt="back">        
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png" alt="back">        
             </div>
         </div>
     </section>

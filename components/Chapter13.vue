@@ -5,7 +5,7 @@
                 <div class="b--chapter13-a__divider">
                 <img
                     class="b--chapter13-a__divider__media b--chapter13-a__divider__media--right"
-                    v-lazy="require(`@/assets/img/chapter-13/13-14_tree.png`)"
+                    src="@/assets/img/chapter-13/13-14_tree.png"
                 />
                 </div>
             </div>
@@ -13,12 +13,12 @@
                 <img
                 :style="{ left: '90%'}"
                 class="b--ss-a__ft-items__parallax"
-                v-lazy="require(`@/assets/img/chapter-13/middle-parallax.png`)"
+                src="@/assets/img/chapter-13/middle-parallax.png"
                 alt="middle"
                 ref="parallax-middle"
                 
                 />
-                <img :style="{ left: '578%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" v-lazy="require(`@/assets/img/chapter-13/front-parallax.png`)" alt="front" />
+                <img :style="{ left: '578%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-13/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -36,21 +36,15 @@
                     />
                 </div> 
                 <div class="b--chapter13-a__artwork" ref="plantwater1" :style="{ left: '125%'}">
-                    <div class="b--motion-m" v-lazy:background-image="
-                    require(`@/assets/img/chapter-13/plant_water.png`)
-                    ">
+                    <div class="b--motion-m" :style="'background-image: url(' + require(`@/assets/img/chapter-13/plant_water.png`) + ')'">
                     </div>
                 </div>
                 <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second" ref="plantwater2" :style="{ left: '170%'}">
-                    <div class="b--motion-n" v-lazy:background-image="
-                    require(`@/assets/img/chapter-13/plant_water_2.png`)
-                    ">
+                    <div class="b--motion-n"  :style="'background-image: url(' + require(`@/assets/img/chapter-13/plant_water_2.png`) + ')'">
                     </div>
                 </div>
                 <div class="b--chapter13-a__artwork b--chapter13-a__artwork--third" ref="lines" :style="{ left: '180%'}">
-                    <div class="b--motion-k" v-lazy:background-image="
-                    require(`@/assets/img/chapter-13/lines_spritesheet.png`)
-                    ">
+                    <div class="b--motion-k" :style="'background-image: url(' + require(`@/assets/img/chapter-13/lines_spritesheet.png`) + ')'">
                     </div>
                 </div>  
                 <div class="b--chapter13-a__artwork b--chapter13-a__artwork--fourth">
@@ -66,7 +60,7 @@
                 alt="back-parallax"
                 ref="parallax-bg"
                 :style="{ left: '9%' }"
-                v-lazy="require(`@/assets/img/chapter-13/back-parallax.png`)"
+                src="@/assets/img/chapter-13/back-parallax.png"
                 >  
                 <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad" 

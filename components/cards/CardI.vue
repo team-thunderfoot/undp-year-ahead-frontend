@@ -4,7 +4,7 @@
             <div class="b--card-i__wrapper__hd">
                 <div class="b--card-i__wrapper__hd__media-wrapper">
                     <img
-                    v-lazy="require(`@/assets/img/nav/${settings.logo}`)"
+                    :src="require(`@/assets/img/nav/${settings.logo}`)"
                     alt="undp"
                     title="undp"
                     class="b--card-i__wrapper__hd__media-wrapper__media"

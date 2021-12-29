@@ -47,7 +47,7 @@
           ref="dino1"
         >
           <img
-            v-lazy="require(`@/assets/img/chapter-2/dino-orange.png`)"
+            src="@/assets/img/chapter-2/dino-orange.png"
             alt="browser"
             title="browser"
           />
@@ -58,7 +58,7 @@
           ref="dino2"
         >
           <img
-            v-lazy="require(`@/assets/img/chapter-2/dino-green.png`)"
+            src="@/assets/img/chapter-2/dino-green.png"
             alt="browser"
             title="browser"
           />

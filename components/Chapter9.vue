@@ -10,7 +10,7 @@
         
         <img
           class="b--ss-a__ft-items__parallax"
-          v-lazy="require(`@/assets/img/chapter-9/middle-parallax.png`)"
+          src="@/assets/img/chapter-9/middle-parallax.png"
           alt="middle"
           ref="parallax-middle"
           :style="{ left: '245%' }"
@@ -18,7 +18,7 @@
         <img
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          v-lazy="require(`@/assets/img/chapter-9/front-parallax.png`)"
+          src="@/assets/img/chapter-9/front-parallax.png"
           alt="front"
           :style="{ left: '129%' }"
         />
@@ -53,54 +53,42 @@
         <div class="b--chapter9-a__artwork">
           <div
             class="b--motion-v"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-9/algae_1.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_1.png`) + ')'"
           ></div>
         </div>
         <!-- animation algae 2 -->
         <div class="b--chapter9-a__artwork b--chapter9-a__artwork--second">
           <div
             class="b--motion-w"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-9/algae_2.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation algae 2 -->
         <div class="b--chapter9-a__artwork b--chapter9-a__artwork--third">
           <div
             class="b--motion-w"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-9/algae_2.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 1 -->
         <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fourth">
           <div
             class="b--motion-x"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-9/bubble_1.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_1.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 2 -->
         <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fifth">
           <div
             class="b--motion-x"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-9/bubble_2.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 3 -->
         <div class="b--chapter9-a__artwork b--chapter9-a__artwork--sixth">
           <div
             class="b--motion-x"
-            v-lazy:background-image="
-              require(`@/assets/img/chapter-9/bubble_3.png`)
-            "
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
           ></div>
         </div>
       </div>
@@ -110,12 +98,12 @@
           @load="handleLoad"
           @error="handleLoad"
           alt="back"
-          :src="require(`@/assets/img/chapter-9/back.png`)"
+          src="@/assets/img/chapter-9/back.png"
         />
         <img
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          v-lazy="require(`@/assets/img/chapter-9/back-parallax.png`)"
+          src="@/assets/img/chapter-9/back-parallax.png"
           alt="back-parallax"
           :style="{ left: '30%' }"
         />
