@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter14-a" id="Scene14" ref="Scene14" v-if="chapter">
+    <section class="b--page-a__item b--chapter14-a" id="Scene15" ref="Scene15" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img v-lazy="require(`@/assets/img/chapter-14/front-${this.lang}.png`)" alt="front" />
@@ -88,7 +88,7 @@ export default {
         animate(){
             this.$nextTick(() => {
                 this.startAnimation({
-                    sceneID : 14,
+                    sceneID : 15,
                     scrub:0,
                     scrollTween : this.scrollTween
                 })

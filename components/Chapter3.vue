@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter3-a"
-    id="Scene3"
-    ref="Scene3"
+    id="Scene4"
+    ref="Scene4"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -105,7 +105,7 @@ export default {
       if (newValue) {
         // mixin function
         this.startAnimation({
-          sceneID: 3,
+          sceneID: 4,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
