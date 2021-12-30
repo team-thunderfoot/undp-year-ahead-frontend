@@ -58,7 +58,7 @@
                 ref="parallax-bg" 
                 @load="handleLoad"
                 @error="handleLoad"
-                :style="{ left: '42 0%' }"
+                :style="{ left: '420%' }"
                 src="@/assets/img/chapter-11/back-parallax.png"
                 alt="back parallax"> 
                 <img class="b--ss-a__bg-items__back" 
