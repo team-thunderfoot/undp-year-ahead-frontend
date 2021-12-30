@@ -12,14 +12,14 @@
     },
     "ChapterTwo" :   {
         "intro_title": "#DontChooseExtinction",
-        "intro_description": "<p>Après avoir lancé son appel à l’Assemblée générale, <a href='https://twitter.com/frankiethedino' target='_blank' rel='noopenner noreferrer'>Frankie the Dinosaur</a> continuera de défendre une réforme des subventions aux combustibles fossiles comme l’une des clés de l’action climatique. Attendez-vous à le rencontrer là où vous ne vous y attendriez pas !<p><p>Découvrez le message de Frankie à l’humanité : <a href='https://dontchooseextinction.com/en/' target='_blank' rel='noopenner noreferrer'>Don't choose extinction | PNUD</a></p>"
+        "intro_description": "<p>Après avoir lancé son appel à l’Assemblée générale, <a href='https://twitter.com/frankiethedino' target='_blank' rel='noopenner noreferrer'>Frankie le dinosaure</a> continuera de défendre une réforme des subventions aux combustibles fossiles comme l’une des clés de l’action climatique. Attendez-vous à le rencontrer là où vous ne vous y attendriez pas !<p><p>Découvrez le message de Frankie à l’humanité : <a href='https://dontchooseextinction.com/en/' target='_blank' rel='noopenner noreferrer'>Ne choisissez pas l’extinction | PNUD</a></p>"
     },
     "ChapterThree" :   {
         "intro_title": "Réaliser les objectifs mondiaux ",
-        "intro_description": "<div><p>Des jeunes de 46 pays se réuniront pour façonner la prochaine décennie d’action en vue d’atteindre les Objectifs de développement durable (ODD).</p></div>",
+        "intro_description": "<div><p>Des dirigeants et des jeunes de 46 pays pour façonner la prochaine décennie d’action en vue d’atteindre les Objectifs de développement durable (ODD).</p></div>",
         "tooltip_label": "5<sup>ème</sup> Conférence des Nations Unies sur les pays les moins avancés",
         "tooltip_link": "https://www.un.org/ldc5/fr",
-        "tooltip_date": "23 - 27 janvier, Doha, Qatar"
+        "tooltip_date": "Doha, Qatar"
     },
     "ChapterFour" :   {
         "intro_title": "De la crise à la reprise",
@@ -55,7 +55,7 @@
         "intro_description": "<p>Lors de la Conférence des Nations Unies sur la biodiversité (COP15), les pays adopteront un nouveau cadre mondial pour mettre fin à la crise de l’extinction et transformer notre rapport au monde naturel.</p>",
         "tooltip_label": "Conférence des Nations Unies sur la biodiversité",
         "tooltip_link": "https://www.cbd.int/conferences/2021-2022",
-        "tooltip_date": "25 avril - 8 mai, Kunming, Chine "
+        "tooltip_date": "Kunming, Chine "
     },
     "ChapterNine" :   {
         "intro_title": "« Sauver les océans, protéger notre avenir »",
@@ -86,12 +86,12 @@
     },
     "ChapterThirdteen" :   {
         "intro_title": "Vos voix",
-        "intro_description": "<p>Le PNUD publiera la prochaine phase du Vote des peuples pour le climat, qui permettra de mieux connaître l’opinion publique sur l’urgence climatique et la façon dont les dirigeants mondiaux doivent y répondre.</p><p><a href='https://www1.undp.org/content/undp/fr/home/news-centre/news/2021/impulsar-una-accion-climatica-audaz-en-las-principales-economias.html' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote</a></p>"
+        "intro_description": "<p>Le PNUD publiera la prochaine phase du <i>Vote des peuples pour le climat</i>, qui permettra de mieux connaître l’opinion publique sur l’urgence climatique et la façon dont les dirigeants mondiaux doivent y répondre.</p><p><a href='https://www1.undp.org/content/undp/fr/home/news-centre/news/2021/impulsar-una-accion-climatica-audaz-en-las-principales-economias.html' target='_blank' rel='noopenner noreferrer'>Vote populaire pour le climat 2021 dans les pays du G20 | PNUD</a></p>"
     },
     "ChapterFourteen" :   {
         "intro_title": "#FutureSmartUNDP",
         "intro_description": "<p>La COVID-19 a changé le monde. En 2022 et au-delà, le PNUD investit dans les capacités, la programmation et la gestion pour aider les pays à se redresser et à se développer. Fort de son nouveau Plan stratégique, de ses précieux partenariats et des enseignements tirés de ses travaux dans le monde entier, le PNUD se concentre sur la mise en œuvre d’un développement intelligent pour l’avenir.</p>",
-        "quote_content": "<p>« Il s’agit d’un moment crucial pour le monde et pour le développement.Mais c’est aussi un moment de choix : une occasion d’apprendre de notre expérience, de faire les choses différemment, d’aspirer à de plus grands objectifs communs. »</p>",
+        "quote_content": "<p>« Il s’agit d’un moment crucial pour le monde et pour le développement. Mais c’est aussi un moment de choix : une occasion d’apprendre de notre expérience, de faire les choses différemment, d’aspirer à de plus grands objectifs communs. »</p>",
         "quote_author": "Achim Steiner",
         "quote_author_link": "https://twitter.com/ASteiner",
         "quote_author_description": "Administrateur du PNUD",
