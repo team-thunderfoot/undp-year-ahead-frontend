@@ -21,10 +21,14 @@
     opacity: 1;
     backdrop-filter: blur(10px);
     // background: rgb(241 205 186 / 60%);
-    background: rgb(241 205 186 / 90%); // less transparent for Firefox
+    background: rgb(
+      241 205 186 / 90%
+    ); // less transparent for browsers not support blur
     @supports (backdrop-filter: blur(10px)) {
       backdrop-filter: blur(10px);
-      background: rgb(241 205 186 / 60%); // more transparent for Chrome
+      background: rgb(
+        241 205 186 / 60%
+      ); // more transparent for browsers support blur
     }
   }
   &__ft-items {

@@ -102,6 +102,8 @@
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
           ></div>
         </div>
+        <!-- lottie animation fishes -->
+        <lottie class="b--chapter9-a__artwork b--chapter9-a__artwork--eight" :options="lottieOptions" v-on:animCreated="handleAnimation" />
       </div>
       <div class="b--ss-a__bg-items">
         <img
@@ -111,7 +113,6 @@
           alt="back"
           src="@/assets/img/chapter-9/back.png"
         />
-        <!-- <lottie :options="lottieOptions" v-on:animCreated="handleAnimation" /> -->
         <img
           @load="handleLoad"
           @error="handleLoad"
