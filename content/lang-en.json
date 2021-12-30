@@ -19,19 +19,20 @@
         "intro_description": "<p>Leaders and youth from 46 countries will come together to shape the next decade of action to deliver on the Sustainable Development Goals (SDGs).</p>",
         "tooltip_label": "5th UN Conference on the Least Developed Countries",
         "tooltip_link": "https://www.un.org/ldc5/",
-        "tooltip_date": "23-27 January, Doha, Qatar"
+        "tooltip_date": "Doha, Qatar"
+    
     },
     "ChapterFour" :   {
         "intro_title": "From crisis to recovery",
         "intro_description": "<p>In March we mark the second anniversary of the COVID-19 global pandemic declaration. As technical lead for the UN’s socio-economic response, UNDP plays a critical role in the recovery.</p><p>From global risks to localized catastrophes like violent conflict and environmental disasters, UNDP helps countries confront current crises and prevent future ones.</p>",
-        "quote_content": "<p>“In a world where complex and multidimensional crisis has become the norm, the status quo for crisis response no longer an option.”</p>",
+        "quote_content": "<p>“In a world where complex and multidimensional crisis has become the norm, the status quo for crisis response is no longer an option.”</p>",
         "quote_author": "Asako Okai",
         "quote_author_link": "https://twitter.com/asakookai",
         "quote_author_description": "UNDP Crisis Bureau Director"
     },
     "ChapterFive" :   {
         "intro_title": "Advancing gender equality",
-        "intro_description": "<p><strong>The 66<sup>th</sup> Commission on the Status of Women will focus on achieving gender equality in the context of climate change, environmental and disaster risk.</strong></p><p>Empowering women is one of the most effective ways to reduce poverty and inequality and advance the SDGs. In 2022, UNDP will publish a series of reports to inform gender-responsive policies and programmes:</p><ul><li>UNDP Gender Strategy</li><li>Gender Social Norms Paper</li><li>Gender Indices onwomen’s empowerment and women’s wellbeing</li></ul>",
+        "intro_description": "<p><strong>The 66<sup>th</sup> Commission on the Status of Women will focus on achieving gender equality in the context of climate change, environmental and disaster risk.</strong></p><p>Empowering women is one of the most effective ways to reduce poverty and inequality and advance the SDGs. In 2022, UNDP will publish a series of reports to inform gender-responsive policies and programmes:</p><ul><li>UNDP Gender Strategy</li><li>Gender Social Norms Paper</li><li>Gender Indices on women’s empowerment and women’s wellbeing</li></ul>",
         "tooltip_label": "Commission on the Status of Women",
         "tooltip_link": "https://www.unwomen.org/en/csw/csw66-2022",
         "tooltip_date": "14-25 March, New York, USA "
@@ -55,7 +56,7 @@
         "intro_description": "<p>At the UN Biodiversity Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>",
         "tooltip_label": "UN Biodiversity Conference",
         "tooltip_link": "https://www.cbd.int/conferences/2021-2022",
-        "tooltip_date": "25 April - 8 May, Kunming, China"
+        "tooltip_date": "Kunming, China"
     },
     "ChapterNine" :   {
         "intro_title": "“Save our ocean, protect our future”",
