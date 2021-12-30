@@ -129,6 +129,7 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
+          id="Scene1Image"
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"

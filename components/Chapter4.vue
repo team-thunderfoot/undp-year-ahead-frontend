@@ -16,6 +16,7 @@
             src="@/assets/img/chapter-4/front_tree.png"
           />
           <img
+          id="Scene5Img"
            @load="handleLoad"
           @error="handleLoad"
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
@@ -69,6 +70,8 @@
           alt="back parallax"
         />
         <img
+          
+          id="Scene5Image"
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"

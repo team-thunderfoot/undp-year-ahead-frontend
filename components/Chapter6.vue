@@ -40,6 +40,8 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
+
+          id="Scene7Image"
           class="b--ss-a__bg-items__artwork"
           @load="handleLoad"
           @error="handleLoad"

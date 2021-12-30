@@ -81,6 +81,7 @@
           alt="back parallax"
         />
         <img
+         id="Scene3Image"
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
