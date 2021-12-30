@@ -12,7 +12,7 @@
           @load="handleLoad"
           @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
-          src="@/assets/img/chapter-9/middle-parallax.png"
+          :src="require(`@/assets/img/chapter-9/middle-parallax-${this.lang}.png`)"
           alt="middle"
           ref="parallax-middle"
           :style="{ left: '245%' }"

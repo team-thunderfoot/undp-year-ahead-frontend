@@ -7,7 +7,7 @@
                 @error="handleLoad"
                 ref="parallax-ft" 
                 :style="{ left: '66%', position: 'absolute' }"
-                src="@/assets/img/chapter-11/front-parallax.png" alt="front" />
+                :src="require(`@/assets/img/chapter-11/front-parallax-${this.lang}.png`)" alt="front" />
                 <img
                     @load="handleLoad"
                     @error="handleLoad"
