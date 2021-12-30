@@ -14,9 +14,11 @@ export default {
                     scrub: true,
                     onEnter: ()=>{
                         $nuxt.$emit('changeCurrent', { item:sceneID })
+                        console.log("enter" , sceneID);
                     },
-                    onEnterBack: () => {
+                    onLeaveBack: () => {
                         $nuxt.$emit('changeCurrent', { item:sceneID })
+                        console.log("salir" , sceneID);
                     },
                 }
             });
