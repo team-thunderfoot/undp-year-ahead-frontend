@@ -25,7 +25,7 @@
           ref="parallax-ft"
           alt="front-parallax"
           src="@/assets/img/chapter-8/front-parallax.png"
-          :style="{ left: '183%' }"
+          :style="{ left: '222%' }"
         />
         <img
           @load="handleLoad"
@@ -34,7 +34,7 @@
           ref="parallax-middle"
           alt="middle-parallax"
           src="@/assets/img/chapter-8/middle-parallax.png"
-          :style="{ left: '120%' }"
+          :style="{ left: '203%' }"
         />
       </div>
       <div class="b--ss-a__content">
@@ -43,7 +43,7 @@
           class="b--chapter8-a__content"
           :class="'b--chapter8-a__content--' + `${this.lang}`"
           ref="boxContent"
-          :style="{ left: '109%' }"
+          :style="{ left: '180%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -55,7 +55,7 @@
         <div
           class="b--chapter8-a__content b--chapter8-a__content--second"
           ref="infoChapter"
-          :style="{ left: '126%' }"
+          :style="{ left: '198%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
@@ -63,7 +63,7 @@
         <div
           class="b--chapter8-a__artwork"
           ref="plant"
-          :style="{ left: '143%' }"
+          :style="{ left: '223%' }"
         >
           <div
             class="b--motion-e"
@@ -74,7 +74,7 @@
         <div
           class="b--chapter8-a__artwork b--chapter8-a__artwork--second"
           ref="fishes"
-          :style="{ left: '152%' }"
+          :style="{ left: '229%' }"
         >
           <div
             class="b--motion-r"
@@ -132,12 +132,12 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 1 },
-        { obj: this.$refs['parallax-ft'], intensity: 40 },
-        { obj: this.$refs['parallax-middle'], intensity: 21 },
-        { obj: this.$refs['boxContent'], intensity: 21 },
-        { obj: this.$refs['infoChapter'], intensity: 21 },
-        { obj: this.$refs['plant'], intensity: 21 },
-        { obj: this.$refs['fishes'], intensity: 21 },
+        { obj: this.$refs['parallax-ft'], intensity: 45 },
+        { obj: this.$refs['parallax-middle'], intensity: 35 },
+        { obj: this.$refs['boxContent'], intensity: 35 },
+        { obj: this.$refs['infoChapter'], intensity: 35 },
+        { obj: this.$refs['plant'], intensity: 35 },
+        { obj: this.$refs['fishes'], intensity: 35 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
