@@ -8,7 +8,7 @@
         "quote_content": "<p>“Para marcar una diferencia en la vida de las personas a la escala que se necesita, tenemos que examinar los sistemas y estructuras que dan forma al desarrollo, no solo los desafíos inmediatos”</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
-        "quote_author_description": "Director de la Oficina del UNDP de Apoyo a Políticas y Programas"
+        "quote_author_description": "Director de la Oficina del UNDP de Apoyo a Políticas y Programas."
     },
     "ChapterTwo" :   {
         "intro_title": "#DontChooseExtinction",
@@ -19,7 +19,7 @@
         "intro_description": "<p>Líderes y jóvenes de 46 países se reunirán para dar forma a la próxima década de acción para lograr los ODS.</p>",
         "tooltip_label": "5ª Conferencia de las Naciones Unidas sobre los Países Menos Adelantados",
         "tooltip_link": "https://www.un.org/ldc5/es",
-        "tooltip_date": "23-27 de enero, Doha (Qatar)"
+        "tooltip_date": "Doha (Qatar)"
     },
     "ChapterFour" :   {
         "intro_title": "De la crisis a la recuperación",
@@ -38,7 +38,7 @@
     },
     "ChapterSix" :   {
         "intro_title": "Maximizar el impacto",
-        "intro_description": "<p><strong>Nuestro nuevo <a href='https://undocs.org/Home/Mobile?FinalSymbol=DP/2021/28' target='_blank' rel='noopenner noreferrer'>Plan Estratégico</a> identifica tres ejes de cambio para ayudar a los países a aumentar el progreso del desarrollo:</strong></p><ul><li><strong>Innovación estratégica</strong> para mejorar el rendimiento de sistemas completos</li><li><strong>Digitalización</strong> para construir sociedades más inclusivas, éticas y sostenibles</li><li><strong>Financiación para el desarrollo</strong> para alinear los flujos de capital con los ODS y el Acuerdo de París</li></ul>",
+        "intro_description": "<p><strong>Nuestro nuevo <a href='https://undocs.org/Home/Mobile?FinalSymbol=DP/2021/28' target='_blank' rel='noopenner noreferrer'>Plan Estratégico</a> identifica tres ejes de cambio para ayudar a los países a aumentar el progreso del desarrollo:</strong></p><ul><li><strong>Innovación estratégica</strong> para mejorar el rendimiento de sistemas completos.</li><li><strong>Digitalización</strong> para construir sociedades más inclusivas, éticas y sostenibles.</li><li><strong>Financiación para el desarrollo</strong> para alinear los flujos de capital con los ODS y el Acuerdo de París.</li></ul>",
         "quote_content": "<p>“Lo digital no es solo una herramienta, sino también el contexto en el que operamos. El PNUD seguirá adoptando un enfoque de transformación digital de toda la sociedad para garantizar que todos compartan los beneficios de la conectividad y trabajará para mitigar los posibles riesgos y daños de la tecnología digital”</p>",
         "quote_author": "Robert Opp",
         "quote_author_link": "https://twitter.com/Robert_Opp",
@@ -55,7 +55,7 @@
         "intro_description": "<p>En la Conferencia de la ONU sobre Biodiversidad (COP15), los países adoptarán un nuevo marco mundial para detener la crisis de extinción de especies y transformar la relación con el mundo natural.</p>",
         "tooltip_label": "Conferencia de las Naciones Unidas sobre la Biodiversidad",
         "tooltip_link": "https://www.cbd.int/conferences/2021-2022",
-        "tooltip_date": "25 de abril-8 de mayo, Kunming (China)"
+        "tooltip_date": "Kunming (China)"
     },
     "ChapterNine" :   {
         "intro_title": "“Salvemos nuestros océanos, protejamos nuestro futuro”",

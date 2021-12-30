@@ -9,13 +9,17 @@
       <div class="b--ss-a__ft-items">
         
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
-          src="@/assets/img/chapter-9/middle-parallax.png"
+          :src="require(`@/assets/img/chapter-9/middle-parallax-${this.lang}.png`)"
           alt="middle"
           ref="parallax-middle"
           :style="{ left: '245%' }"
         />
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-9/front-parallax.png"
@@ -98,6 +102,8 @@
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
           ></div>
         </div>
+        <!-- lottie animation fishes -->
+        <lottie class="b--chapter9-a__artwork b--chapter9-a__artwork--eight" :options="lottieOptions" v-on:animCreated="handleAnimation" />
       </div>
       <div class="b--ss-a__bg-items">
         <img
@@ -108,6 +114,8 @@
           src="@/assets/img/chapter-9/back.png"
         />
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           src="@/assets/img/chapter-9/back-parallax.png"
@@ -126,22 +134,34 @@ import InfoChapter from '@/components/infochapter/Infochapter'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 
+import lottie from 'vue-lottie/src/lottie.vue'
+import * as animationData from "~/assets/img/chapter-9/fish.json";
+
+
 export default {
   mixins: [Parallax, Animation],
   components: {
     'v-card-f': CardF,
     'v-info-chapter': InfoChapter,
+    lottie
   },
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 5,
       contentLoaded: 0,
       chapter: null,
       infoWindowStatus: true,
+
+      //lottie
+      anim: null, // for saving the reference to the animation
+      lottieOptions: { animationData: animationData.default }
     }
   },
   props: ['scrollTween'],
   methods: {
+    handleAnimation: function (anim) {
+      this.anim = anim;
+    },
     handleLoad() {
       this.contentLoaded++
     },

@@ -7,7 +7,8 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img :style="{ left: '3%' }" src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" />
+        <img :style="{ left: '3%' }" src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" @load="handleLoad"
+          @error="handleLoad" />
       </div>
       <div class="b--ss-a__content">
         <!-- Intro Story -->
@@ -25,9 +26,7 @@
                   chapter.intro_date
                 }}</span>
               </h1>
-              <h2 class="b--intro-a__wrapper__subtitle">
-                {{ chapter.intro_description }}
-              </h2>
+              <h2 class="b--intro-a__wrapper__subtitle" v-html="chapter.intro_description"></h2>
             </div>
           </div>
         </div>
@@ -50,8 +49,8 @@
           <div class="b--card-b">
             <div class="b--card-b__artwork"></div>
             <div class="b--card-b__wrapper">
-              <video class="b--video-a" autoplay muted loop playsinline>
-                <source src="@/assets/video/chapter-1/frame.mp4" type="video/mp4">
+              <video class="b--video-a" autoplay muted loop playsinline >
+                <source src="@/assets/video/chapter-1/frame.mp4" type="video/mp4"  >
               </video>
             </div>
           </div>
@@ -67,6 +66,8 @@
             </video>
             <div class="b--video-b__wrapper">
               <img
+                @load="handleLoad"
+                @error="handleLoad"
                 class="b--video-b__wrapper__artwork"
                 src="@/assets/img/chapter-1/browser-bar.svg"
                 alt="browser bar"
@@ -88,6 +89,8 @@
             </div>
             <div class="b--card-c__ft">
               <img
+                @load="handleLoad"
+                @error="handleLoad"
                 class="b--card-c__ft__media"
                 src="@/assets/img/chapter-1/tv-set.png"
                 alt="tvset"
@@ -102,6 +105,7 @@
             ref="bubble"
             class="b--motion-a"
             :style="'background-image: url(' + require(`@/assets/img/chapter-1/bubble-motion.png`) + ')'"
+            
           >
             <!-- bubble -->
           </div>
@@ -123,6 +127,7 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
+          id="Scene1Image"
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
@@ -130,6 +135,8 @@
           alt="back"
         />
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           src="@/assets/img/chapter-1/back-parallax.png"
           alt="back parallax"
@@ -152,7 +159,7 @@ export default {
   mixins: [Parallax, Animation],
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 6,
       contentLoaded: 0,
       chapter: null,
       infoWindowStatus: true,

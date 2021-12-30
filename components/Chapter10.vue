@@ -9,6 +9,8 @@
       <div class="b--ss-a__divider">
         <div class="b--chapter10-a__divider">
           <img
+          @load="handleLoad"
+          @error="handleLoad"
             class="
               b--chapter10-a__divider__media
               b--chapter10-a__divider__media--left
@@ -19,6 +21,8 @@
       </div>
       <div class="b--ss-a__ft-items">
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           :style="{ left: '253%' }"
@@ -26,6 +30,8 @@
           src="@/assets/img/chapter-10/front-parallax.png"
         />
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__ft-items__media"
           alt="front"
           src="@/assets/img/chapter-10/front-elements.png"
@@ -85,6 +91,8 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           :style="{ left: '14%' }"
@@ -99,7 +107,9 @@
           src="@/assets/img/chapter-10/back.png"
         />
         <img
-            class="b--ss-a__bg-items__media"
+          @load="handleLoad"
+          @error="handleLoad"
+          class="b--ss-a__bg-items__media"
           src="@/assets/img/chapter-10/front.png"
         />
       </div>
@@ -120,7 +130,7 @@ export default {
   },
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 7,
       contentLoaded: 0,
       chapter: null,
     }

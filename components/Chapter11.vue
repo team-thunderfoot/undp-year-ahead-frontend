@@ -2,10 +2,15 @@
     <section class="b--page-a__item b--chapter11-a" id="Scene12" ref="Scene12"  v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-ft" 
+                <img 
+                @load="handleLoad"
+                @error="handleLoad"
+                ref="parallax-ft" 
                 :style="{ left: '66%', position: 'absolute' }"
-                src="@/assets/img/chapter-11/front-parallax.png" alt="front" />
+                :src="require(`@/assets/img/chapter-11/front-parallax-${this.lang}.png`)" alt="front" />
                 <img
+                    @load="handleLoad"
+                    @error="handleLoad"
                     class="b--ss-a__ft-items__media"
                     alt="front"
                     src="@/assets/img/chapter-11/front-elements.png"
@@ -31,7 +36,9 @@
                 </div>
                 <!-- boxes -->
                 <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
-                    <img class="b--media-a" src="@/assets/img/chapter-11/boxes.svg" alt="boxes" />
+                    <img class="b--media-a" src="@/assets/img/chapter-11/boxes.svg" alt="boxes" 
+                        @load="handleLoad"
+                        @error="handleLoad"/>
                     <!-- blink 2a -->
                     <div class="b--motion-h" :style="'background-image: url(' + require(`@/assets/img/chapter-11/blink_2a.png`) + ')'"></div>
                     <!-- blink 2b -->
@@ -49,6 +56,8 @@
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax" 
                 ref="parallax-bg" 
+                @load="handleLoad"
+                @error="handleLoad"
                 :style="{ left: '170%' }"
                 src="@/assets/img/chapter-11/back-parallax.png"
                 alt="back parallax"> 
@@ -77,7 +86,7 @@ export default {
     },    
     data:()=>{
 		return{
-            totalContent: 2,
+            totalContent: 6,
 			contentLoaded : 0,
             chapter: null,
             infoWindowStatus: true,

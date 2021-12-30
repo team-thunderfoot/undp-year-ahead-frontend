@@ -91,7 +91,7 @@ export default {
     },
     methods:{
         workAfterResizeIsDone(){
-            this.scrollTween.kill();
+            // this.scrollTween.kill();
             window.location  =  this.$route.path;
         },
         getTotalWidth(){
@@ -125,10 +125,10 @@ export default {
                 // emits on in Index.vue
                 setTimeout(() => {
                     $nuxt.$emit('siteLoaded');
-                }, 5000);
-                setTimeout(() => {
-                    this.loadedNew = true;
                 }, 3000);
+                setTimeout(() => {  
+                    this.loadedNew = true;
+                }, 6000);
             })
         },
     
@@ -186,7 +186,7 @@ export default {
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
-            if(this.isMobile()){
+            if(this.isMobile() || window.innerWidth < 1201){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }
         }

@@ -7,7 +7,8 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img src="@/assets/img/chapter-6/front.png" alt="front" />
+        <img src="@/assets/img/chapter-6/front.png" alt="front"  @load="handleLoad"
+          @error="handleLoad"/>
       </div>
       <div class="b--ss-a__content">
         <!-- first position element, card -->
@@ -24,6 +25,8 @@
         <!-- second position element, wheel -->
         <div class="b--chapter6-a__content b--chapter6-a__content--second">
           <img
+           @load="handleLoad"
+          @error="handleLoad"
             class="b--chapter6-a__content--second__media"
             src="@/assets/img/chapter-6/wheel.png"
             alt="wheel"
@@ -37,6 +40,8 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
+
+          id="Scene7Image"
           class="b--ss-a__bg-items__artwork"
           @load="handleLoad"
           @error="handleLoad"
@@ -62,7 +67,7 @@ export default {
   },
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 4,
       contentLoaded: 0,
       chapter: null,
     }

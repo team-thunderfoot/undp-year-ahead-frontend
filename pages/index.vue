@@ -51,6 +51,12 @@ export default {
                 { hid: 'og:image', property: 'og:image', content: require(`@/assets/img/settings/meta_undp_en.jpeg`)},
                 { hid: 'og:title', property: 'og:title', content: 'New Year, New Plan'},
                 { hid: 'og:description', property: 'og:description', content: 'Sustainable development in 2022'},
+            ],
+            link: [
+                {
+                    rel: 'canonical',
+                    href: 'https://produndp2022.netlify.app' + this.$route.path
+                }
             ]
         }
     },

@@ -8,6 +8,8 @@
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           :style="{ left: '17%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
@@ -47,6 +49,8 @@
           ref="dino1"
         >
           <img
+            @load="handleLoad"
+            @error="handleLoad"
             src="@/assets/img/chapter-2/dino-orange.png"
             alt="browser"
             title="browser"
@@ -58,6 +62,8 @@
           ref="dino2"
         >
           <img
+            @load="handleLoad"
+            @error="handleLoad"
             src="@/assets/img/chapter-2/dino-green.png"
             alt="browser"
             title="browser"
@@ -66,6 +72,8 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '-6%' }"
           ref="parallax-bg"
@@ -73,6 +81,7 @@
           alt="back parallax"
         />
         <img
+         id="Scene3Image"
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
@@ -94,7 +103,7 @@ export default {
   mixins: [Parallax, Animation],
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 6,
       contentLoaded: 0,
       chapter: null,
     }

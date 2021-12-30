@@ -1,4 +1,7 @@
 .b--chapter9-a {
+  .b--ss-a__content {
+    z-index: 10;
+  }
   &__content {
     // cards
     position: absolute;
@@ -43,6 +46,7 @@
     position: absolute;
     bottom: 12.4%;
     left: 51.5%;
+    z-index: 1;
     // algae 2 animation
     &--second {
       bottom: 12.4%;
@@ -73,11 +77,19 @@
       bottom: 38%;
       left: 23%;
     }
+    // lottie fishes
+    &--eight {
+      width: auto;
+      height: 100vh;
+      bottom: 0%;
+      left: 0.5%;
+    }
   }
 
   &__info {
     // info window
     position: absolute;
+    z-index: 10;
     bottom: 45.88%;
     left: 38.91%;
     width: 6.51%;

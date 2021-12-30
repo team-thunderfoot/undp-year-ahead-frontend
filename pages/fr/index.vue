@@ -51,6 +51,15 @@ export default {
                 { hid: 'og:image', property: 'og:image', content: require(`@/assets/img/settings/meta_pnud_fr.jpeg`)},
                 { hid: 'og:title', property: 'og:title', content: 'Nouvelle année, nouveau plan'},
                 { hid: 'og:description', property: 'og:description', content: 'Développement durable en 2022'},
+            ],
+            htmlAttrs: {
+                lang: 'fr'
+            },
+            link: [
+                {
+                    rel: 'canonical',
+                    href: 'https://produndp2022.netlify.app' + this.$route.path
+                }
             ]
         }
     },
