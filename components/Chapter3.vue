@@ -7,7 +7,8 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img src="@/assets/img/chapter-3/front.png" alt="front" />
+        <img src="@/assets/img/chapter-3/front.png" alt="front"  @load="handleLoad"
+          @error="handleLoad"/>
       </div>
       <div class="b--ss-a__content">
         <!-- flags left -->
@@ -41,6 +42,8 @@
             src="@/assets/img/chapter-3/wheel.png"
             alt="wheel"
             title="wheel"
+             @load="handleLoad"
+          @error="handleLoad"
           />
         </div>
         <!-- flags right -->
@@ -79,7 +82,7 @@ export default {
   },
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 4,
       contentLoaded: 0,
       chapter: null,
     }

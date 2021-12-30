@@ -9,11 +9,15 @@
       <div class="b--ss-a__divider">
         <div class="b--chapter4-a__divider">
           <img
+           @load="handleLoad"
+          @error="handleLoad"
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
             alt="front_tree"
             src="@/assets/img/chapter-4/front_tree.png"
           />
           <img
+           @load="handleLoad"
+          @error="handleLoad"
             class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
             alt="front_electric-cable"
             src="@/assets/img/chapter-4/front_electric-cable.png"
@@ -22,6 +26,8 @@
       </div>
       <div class="b--ss-a__ft-items">
         <img
+         @load="handleLoad"
+          @error="handleLoad"
           :style="{ left: '95%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
@@ -55,7 +61,8 @@
 
       <div class="b--ss-a__bg-items">
         <img
-          
+           @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           src="@/assets/img/chapter-4/back-parallax.png"
@@ -88,7 +95,7 @@ export default {
   },
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 6,
       contentLoaded: 0,
       chapter: null,
     }

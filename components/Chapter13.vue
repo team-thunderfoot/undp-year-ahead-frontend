@@ -4,6 +4,8 @@
             <div class="b--ss-a__divider">
                 <div class="b--chapter13-a__divider">
                 <img
+                    @load="handleLoad"
+                    @error="handleLoad"
                     class="b--chapter13-a__divider__media b--chapter13-a__divider__media--right"
                     src="@/assets/img/chapter-13/13-14_tree.png"
                 />
@@ -11,6 +13,8 @@
             </div>
             <div class="b--ss-a__middle-items">
                 <img
+                @load="handleLoad"
+                @error="handleLoad"
                 :style="{ left: '90%'}"
                 class="b--ss-a__middle-items__parallax"
                 src="@/assets/img/chapter-13/middle-parallax.png"
@@ -20,7 +24,8 @@
                 />
             </div>
             <div class="b--ss-a__ft-items">
-                <img :style="{ left: '578%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-13/front-parallax.png" alt="front" />
+                <img @load="handleLoad"
+                @error="handleLoad" :style="{ left: '578%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-13/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -58,7 +63,8 @@
             </div>
             
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__parallax" 
+                <img class="b--ss-a__bg-items__parallax" @load="handleLoad"
+                @error="handleLoad"
                 alt="back-parallax"
                 ref="parallax-bg"
                 :style="{ left: '9%' }"
@@ -88,7 +94,7 @@ export default {
     }, 
     data:()=>{
 		return{
-            totalContent: 2,
+            totalContent: 6,
 			contentLoaded : 0,
             chapter: null
 		}

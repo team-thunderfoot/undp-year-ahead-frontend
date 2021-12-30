@@ -8,6 +8,8 @@
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
         <img
+         @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           :style="{ left: '115%' }"
@@ -41,6 +43,8 @@
         <!-- women -->
         <div class="b--chapter5-a__media" ref="woman" :style="{ left: '167%' }">
           <img
+           @load="handleLoad"
+          @error="handleLoad"
             class="b--media-b"
             src="@/assets/img/chapter-5/women.svg"
             alt="women"
@@ -59,6 +63,8 @@
       </div>
       <div class="b--ss-a__bg-items">
         <img
+         @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '-4%' }"
           ref="parallax-bg"
@@ -92,7 +98,7 @@ export default {
   },
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 5,
       contentLoaded: 0,
       chapter: null,
     }

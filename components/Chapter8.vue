@@ -9,6 +9,8 @@
       <div class="b--ss-a__divider">
         <div class="b--chapter8-a__divider">
           <img
+            @load="handleLoad"
+            @error="handleLoad"
             class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right"
             src="@/assets/img/chapter-8/front_tree.png"
           />
@@ -16,6 +18,8 @@
       </div>
       <div class="b--ss-a__ft-items">
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           alt="front-parallax"
@@ -23,9 +27,9 @@
           :style="{ left: '183%' }"
         />
         <img
-          class="
-            b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle
-          "
+          @load="handleLoad"
+          @error="handleLoad"
+          class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle"
           ref="parallax-middle"
           alt="middle-parallax"
           src="@/assets/img/chapter-8/middle-parallax.png"
@@ -85,6 +89,8 @@
           src="@/assets/img/chapter-8/back.png"
         />
         <img
+         @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           src="@/assets/img/chapter-8/back-parallax.png"
@@ -111,7 +117,7 @@ export default {
   },
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 6,
       contentLoaded: 0,
       chapter: null,
     }

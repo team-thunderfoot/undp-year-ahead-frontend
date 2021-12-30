@@ -4,13 +4,17 @@
             <div class="b--ss-a__divider">
                 <div class="b--chapter12-a__divider">
                     <img
+                        @load="handleLoad"
+                        @error="handleLoad"
                         class="b--chapter12-a__divider__media b--chapter12-a__divider__media--left"
                         src="@/assets/img/chapter-12/11-12_tree.png"
                     />
                 </div>
             </div>
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-ft" :style="{ left: '628%' }" class="b--ss-a__ft-items__parallax" src="@/assets/img/chapter-12/front-parallax.png" alt="front" />
+                <img ref="parallax-ft" :style="{ left: '628%' }" class="b--ss-a__ft-items__parallax" 
+                    @load="handleLoad"
+                    @error="handleLoad" src="@/assets/img/chapter-12/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
@@ -39,6 +43,8 @@
             </div>
             <div class="b--ss-a__bg-items">
                 <img class="b--ss-a__bg-items__parallax"
+                @load="handleLoad"
+                @error="handleLoad"
                 alt="back-parallax"
                 ref="parallax-bg'"
                 src="@/assets/img/chapter-12/back-parallax.png"
@@ -64,7 +70,7 @@ export default {
     },
     data:()=>{
 		return{
-            totalContent: 2,
+            totalContent: 5,
 			contentLoaded : 0,
             chapter: null
 		}

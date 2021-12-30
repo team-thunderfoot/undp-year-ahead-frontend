@@ -9,6 +9,8 @@
       <div class="b--ss-a__ft-items">
         
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
           src="@/assets/img/chapter-9/middle-parallax.png"
           alt="middle"
@@ -16,6 +18,8 @@
           :style="{ left: '245%' }"
         />
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-9/front-parallax.png"
@@ -108,6 +112,8 @@
           src="@/assets/img/chapter-9/back.png"
         />
         <img
+          @load="handleLoad"
+          @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           src="@/assets/img/chapter-9/back-parallax.png"
@@ -134,7 +140,7 @@ export default {
   },
   data: () => {
     return {
-      totalContent: 2,
+      totalContent: 5,
       contentLoaded: 0,
       chapter: null,
       infoWindowStatus: true,
