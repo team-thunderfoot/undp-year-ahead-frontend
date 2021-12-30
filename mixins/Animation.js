@@ -9,7 +9,7 @@ export default {
                 ease: "none",
                 scrollTrigger: {
                     trigger: "#Scene" + sceneID,
-                    markers:true,
+                    // markers:true,
                     containerAnimation: scrollTween,
                     scrub: true,
                     onEnter: ()=>{
