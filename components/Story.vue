@@ -128,7 +128,7 @@ export default {
                 }, 3000);
                 setTimeout(() => {  
                     this.loadedNew = true;
-                }, 5000);
+                }, 6000);
             })
         },
     
@@ -186,7 +186,7 @@ export default {
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
-            if(this.isMobile()){
+            if(this.isMobile() || window.innerWidth < 1201){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }
         }
