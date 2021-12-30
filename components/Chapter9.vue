@@ -111,6 +111,7 @@
           alt="back"
           src="@/assets/img/chapter-9/back.png"
         />
+        <!-- <lottie :options="lottieOptions" v-on:animCreated="handleAnimation" /> -->
         <img
           @load="handleLoad"
           @error="handleLoad"
@@ -132,11 +133,16 @@ import InfoChapter from '@/components/infochapter/Infochapter'
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 
+import lottie from 'vue-lottie/src/lottie.vue'
+import * as animationData from "~/assets/img/chapter-9/fish.json";
+
+
 export default {
   mixins: [Parallax, Animation],
   components: {
     'v-card-f': CardF,
     'v-info-chapter': InfoChapter,
+    lottie
   },
   data: () => {
     return {
@@ -144,10 +150,17 @@ export default {
       contentLoaded: 0,
       chapter: null,
       infoWindowStatus: true,
+
+      //lottie
+      anim: null, // for saving the reference to the animation
+      lottieOptions: { animationData: animationData.default }
     }
   },
   props: ['scrollTween'],
   methods: {
+    handleAnimation: function (anim) {
+      this.anim = anim;
+    },
     handleLoad() {
       this.contentLoaded++
     },
