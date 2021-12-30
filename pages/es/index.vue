@@ -55,6 +55,12 @@ export default {
             htmlAttrs: {
                 lang: 'es'
             },
+            link: [
+                {
+                    rel: 'canonical',
+                    href: 'https://produndp2022.netlify.app' + this.$route.path
+                }
+            ]
         }
     },
 }
