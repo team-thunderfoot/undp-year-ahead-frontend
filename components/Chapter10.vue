@@ -16,6 +16,7 @@
               b--chapter10-a__divider__media--left
             "
             src="@/assets/img/chapter-10/front_rock.png"
+            alt="front_rock"
           />
         </div>
       </div>
@@ -111,6 +112,7 @@
           @error="handleLoad"
           class="b--ss-a__bg-items__media"
           src="@/assets/img/chapter-10/front.png"
+          alt="front"
         />
       </div>
     </div>

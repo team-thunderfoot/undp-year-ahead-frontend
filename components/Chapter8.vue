@@ -13,6 +13,7 @@
             @error="handleLoad"
             class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right"
             src="@/assets/img/chapter-8/front_tree.png"
+            alt="front_tree"
           />
         </div>
       </div>
@@ -87,6 +88,7 @@
           @load="handleLoad"
           @error="handleLoad"
           src="@/assets/img/chapter-8/back.png"
+          alt="back"
         />
         <img
          @load="handleLoad"

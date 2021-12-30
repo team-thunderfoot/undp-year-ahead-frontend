@@ -8,6 +8,7 @@
                         @error="handleLoad"
                         class="b--chapter12-a__divider__media b--chapter12-a__divider__media--left"
                         src="@/assets/img/chapter-12/11-12_tree.png"
+                        alt="11-12_tree"
                     />
                 </div>
             </div>
