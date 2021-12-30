@@ -26,9 +26,7 @@
                   chapter.intro_date
                 }}</span>
               </h1>
-              <h2 class="b--intro-a__wrapper__subtitle">
-                {{ chapter.intro_description }}
-              </h2>
+              <h2 class="b--intro-a__wrapper__subtitle" v-html="chapter.intro_description"></h2>
             </div>
           </div>
         </div>
