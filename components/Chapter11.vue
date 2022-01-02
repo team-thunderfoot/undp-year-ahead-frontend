@@ -58,7 +58,7 @@
                 ref="parallax-bg" 
                 @load="handleLoad"
                 @error="handleLoad"
-                :style="{ left: '170%' }"
+                :style="{ left: '420%' }"
                 src="@/assets/img/chapter-11/back-parallax.png"
                 alt="back parallax"> 
                 <img class="b--ss-a__bg-items__back" 
@@ -100,7 +100,7 @@ export default {
 
         AsambleParallaxObjs() {
             var motion = [
-                { obj: this.$refs['parallax-bg'], intensity: 21 },
+                { obj: this.$refs['parallax-bg'], intensity: 55 },
                 { obj: this.$refs['eyes1'], intensity: 8 },
                 { obj: this.$refs['eyes2'], intensity: 8 },
                 { obj: this.$refs['infoChapter'], intensity: 8 },
