@@ -22,20 +22,3 @@
   scrollbar-color: map-get($colorbg-options , i ) rgb(255, 242, 228) ;
 }
 
-@mixin make-card-a-shadow() {
-
-  &:after {
-    content: '';
-    height: calc(45px + $measure * 3);
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(#ce9184, 0) 0%,
-      rgba(#ce9184, 1) 60%
-    );
-  }
-}

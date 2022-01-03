@@ -49,8 +49,9 @@
       &--next {
           left: 60%;
           @media all and ($viewport-type: $mobile) {
-            left: 82.5%;
-            margin-right: 0px;
+            // left: 82.5%;
+            // margin-right: 0px;
+            display: none;
           }
           img {
             left: 18px;
@@ -62,18 +63,45 @@
       &--prev {
           left: 32%;
           @media all and ($viewport-type: $mobile) {
-            left: 5%;
+            //left: 5%;
+            display: none;
           }
           img {
             left: 14px;
             top: 12px;
             position: absolute;
-          }
-          
+          }  
       }
       &:hover, &:focus-visible{
         background-color:#55606E;
       }
+  }
+  // mobile scroll indicator
+  &--second {
+    display: none;
+    @media all and ($viewport-type: $mobile) {
+      display: block;
+      left: 50%;
+      bottom: 5%;
+    }
+    &__artwork {
+      margin: 0 0 $measure*3 0;
+      &:hover, &:focus-visible{
+        background-color: map-get($colorbg-options , h );
+      }
+    }
+    img {
+      position: absolute;
+      left: 13px;
+      top: 13px;
+    }
+    &__title {
+      @include make-font-j();
+      color: map-get($color-options, y);
+    }
+    &--is-hidden {
+      display: none;
+    }  
   }
 }
 
