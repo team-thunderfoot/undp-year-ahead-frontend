@@ -15,7 +15,6 @@ export default {
         resize({ 
             windowWidth
         }){
-            console.log("Sfsd");
             window.onresize = (e)=> {  
                 console.log(windowWidth);
                 if(window.innerWidth > windowWidth){
