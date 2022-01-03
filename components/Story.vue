@@ -177,7 +177,7 @@ export default {
             
             // resize funcion
             window.onresize = (e)=> {  
-                if(window.innerWidth > this.windowWidth){
+                if(!this.custom_tf.isMobile() && !this.custom_tf.isTablet()){
                     clearTimeout(this.timeOutFunctionId);
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
