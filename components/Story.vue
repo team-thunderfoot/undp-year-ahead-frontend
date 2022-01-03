@@ -182,7 +182,7 @@ export default {
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
-            if(this.custom_tf.isMobile() || window.innerWidth < this.windowWidth){
+            if(this.custom_tf.isMobile() || this.custom_tf.isTablet()){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }
         }
