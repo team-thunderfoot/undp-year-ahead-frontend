@@ -33,7 +33,7 @@ export default {
         'v-lang':Lang,
         'v-story':Story,
 	},
-    mounted(){
+    created(){
         if(process.client){
             // Event fron Story.vue
             this.$nuxt.$on('siteLoaded', () => {
