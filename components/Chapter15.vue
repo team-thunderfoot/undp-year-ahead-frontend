@@ -33,7 +33,7 @@
                     <img
                         @load="handleLoad"
                         @error="handleLoad"
-                        src="@/assets/img/chapter-3/wheel.png"
+                        src="@/assets/img/chapter-4/wheel.png"
                         alt="wheel"
                         title="wheel"
                     />
