@@ -16,6 +16,7 @@
                 <img
                 @load="handleLoad"
                 @error="handleLoad"
+                :style="{ left: '358%'}"
                 class="b--ss-a__middle-items__parallax"
                 src="@/assets/img/chapter-14/middle-parallax.png"
                 alt="middle"
@@ -25,8 +26,7 @@
             </div>
             <div class="b--ss-a__ft-items">
                 <img @load="handleLoad"
-                @error="handleLoad" 
-                class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-14/front-parallax.png" alt="front" />
+                @error="handleLoad" :style="{ left: '578%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-14/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -34,6 +34,7 @@
                 class="b--chapter14-a__content"
                 :class="'b--chapter14-a__content--' + `${this.lang}`"
                 ref="boxContent"
+                :style="{ left: '362%'}"
                 >
                     <v-card-f 
                         :title="chapter.intro_title" 
@@ -42,19 +43,19 @@
                         cardACustomClass="b--card-a--second"
                     />
                 </div> 
-                <div class="b--chapter14-a__artwork" ref="plantwater1" >
+                <div class="b--chapter14-a__artwork" ref="plantwater1" :style="{ left: '390%'}">
                     <div class="b--motion-m" :style="'background-image: url(' + require(`@/assets/img/chapter-14/plant_water.png`) + ')'">
                     </div>
                 </div>
-                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second" ref="plantwater2" >
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second" ref="plantwater2" :style="{ left: '435%'}">
                     <div class="b--motion-n"  :style="'background-image: url(' + require(`@/assets/img/chapter-14/plant_water_2.png`) + ')'">
                     </div>
                 </div>
-                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--third" ref="lines1" >
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--third" ref="lines1" :style="{ left: '448%'}">
                     <div class="b--motion-k" :style="'background-image: url(' + require(`@/assets/img/chapter-14/lines_spritesheet.png`) + ')'">
                     </div>
                 </div>  
-                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--fourth" ref="lines2" >
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--fourth" ref="lines2" :style="{ left: '390%'}">
                     <div class="b--motion-k" v-lazy:background-image="
                     require(`@/assets/img/chapter-14/lines_spritesheet.png`)
                     ">
@@ -67,6 +68,7 @@
                 @error="handleLoad"
                 alt="back-parallax"
                 ref="parallax-bg"
+                :style="{ left: '9%' }"
                 src="@/assets/img/chapter-14/back-parallax.png"
                 >  
                 <img class="b--ss-a__bg-items__back" 
