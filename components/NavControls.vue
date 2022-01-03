@@ -4,6 +4,12 @@
             <img src="@/assets/img/arrow-left.png" alt="arrow left"/>
         </a>
         <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-a__arrow b--progress-a__arrow--next" aria-label="next"> <img src="@/assets/img/arrow-right.png" alt="arrow right" /></a>
+        <div class="b--progress-a b--progress-a--second" :class="{'b--progress-a--second--is-hidden' : !scrollIsVisible}">
+            <div class="b--progress-a__arrow b--progress-a--second__artwork" aria-label="scroll">
+                <img src="@/assets/img/arrow-top.png" alt="scroll" />
+            </div>
+            <span class="b--progress-a--second__title">Scroll</span>
+        </div>
     </div>
 </template>
 <script>
@@ -13,6 +19,7 @@ export default {
            maxStories : 15,
            currentItemMenu : false,
            navIsLoaded: true,
+           scrollIsVisible: true
 		}
 	},
     props : [
@@ -131,6 +138,13 @@ export default {
                 }
             }
 		},
+        handleScroll(event) {
+            if(window.pageYOffset > 80) {
+                this.scrollIsVisible = false;
+            } else {
+                this.scrollIsVisible = true;
+            }
+        }
     },
     watch: {
         currentItem(newValue, oldValue) {
@@ -151,6 +165,11 @@ export default {
             this.currentItemMenu = newValue;
         },
         
+    },
+    created() {
+        if(process.client) {
+            window.addEventListener('scroll', this.handleScroll);
+        }
     },
     mounted(){
         if(process.client){

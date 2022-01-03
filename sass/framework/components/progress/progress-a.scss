@@ -49,8 +49,9 @@
       &--next {
           left: 60%;
           @media all and ($viewport-type: $mobile) {
-            left: 82.5%;
-            margin-right: 0px;
+            // left: 82.5%;
+            // margin-right: 0px;
+            display: none;
           }
           img {
             left: 18px;
@@ -62,18 +63,87 @@
       &--prev {
           left: 32%;
           @media all and ($viewport-type: $mobile) {
-            left: 5%;
+            //left: 5%;
+            display: none;
           }
           img {
             left: 14px;
             top: 12px;
             position: absolute;
-          }
-          
+          }  
       }
       &:hover, &:focus-visible{
         background-color:#55606E;
       }
+  }
+  // mobile scroll indicator
+  &--second {
+    display: none;
+    width: fit-content;
+    @media all and ($viewport-type: $mobile) {
+      display: block;
+      left: 50%;
+      bottom: 5%;
+    }
+    &__artwork {
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+      &:hover, &:focus-visible{
+        background-color: map-get($colorbg-options , h );
+      }
+    }
+    img {
+      position: absolute;
+      left: 13px;
+      top: 13px;
+      animation: cycle 2.5s infinite;
+      transition: none;
+      @keyframes cycle {
+        0% {
+          transform: translateY(0);
+        }
+
+        15% {
+          transform: translateY(-30px);
+        }
+
+        25% {
+          transform: translateY(34px);
+          opacity: 0;
+        }
+
+        35% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(0px);
+        }
+
+        75% {
+          transform: translateY(0px);
+        }
+
+        100% {
+          transform: translateY(0px);
+        }
+
+      }
+    }
+    &__title {
+      font-size: 14px;
+      font-family: $type-b;
+      text-transform: uppercase;
+      line-height: 19.25px;
+      text-align: center;
+      letter-spacing: 1px;
+      color: map-get($color-options, y);
+    }
+    &--is-hidden {
+      display: none;
+    }  
   }
 }
 
