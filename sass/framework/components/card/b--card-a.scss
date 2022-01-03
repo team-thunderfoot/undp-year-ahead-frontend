@@ -83,7 +83,7 @@
   }
   // overflow-auto for scroll in card-a
   &--third & {
-    @include make-card-a-shadow();
+    @include make-card-a-scrollbar();
     &__wrapper {
       @include make-card-a-wrapper-scroll();
     }
