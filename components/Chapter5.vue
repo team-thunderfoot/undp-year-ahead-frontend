@@ -13,7 +13,7 @@
           @error="handleLoad"
             class="b--chapter5-a__divider__media b--chapter5-a__divider__media--right"
             alt="front_tree"
-            src="@/assets/img/chapter-4/front_tree.png"
+            src="@/assets/img/chapter-5/front_tree.png"
           />
           <img
           id="Scene5Img"
@@ -21,7 +21,7 @@
           @error="handleLoad"
             class="b--chapter5-a__divider__media b--chapter5-a__divider__media--left"
             alt="front_electric-cable"
-            src="@/assets/img/chapter-4/front_electric-cable.png"
+            src="@/assets/img/chapter-5/front_electric-cable.png"
           />
         </div>
       </div>
@@ -33,7 +33,7 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           alt="ront-parallax"
-          src="@/assets/img/chapter-4/front-parallax.png"
+          src="@/assets/img/chapter-5/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
@@ -66,7 +66,7 @@
           @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          src="@/assets/img/chapter-4/back-parallax.png"
+          src="@/assets/img/chapter-5/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -75,7 +75,7 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-4/back.png"
+          src="@/assets/img/chapter-5/back.png"
           alt="back"
         />
       </div>

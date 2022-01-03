@@ -12,7 +12,7 @@
             @load="handleLoad"
             @error="handleLoad"
             class="b--chapter9-a__divider__media b--chapter9-a__divider__media--right"
-            src="@/assets/img/chapter-8/front_tree.png"
+            src="@/assets/img/chapter-9/front_tree.png"
             alt="front_tree"
           />
         </div>
@@ -24,7 +24,7 @@
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           alt="front-parallax"
-          src="@/assets/img/chapter-8/front-parallax.png"
+          src="@/assets/img/chapter-9/front-parallax.png"
           :style="{ left: '222%' }"
         />
         <img
@@ -33,7 +33,7 @@
           class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle"
           ref="parallax-middle"
           alt="middle-parallax"
-          src="@/assets/img/chapter-8/middle-parallax.png"
+          src="@/assets/img/chapter-9/middle-parallax.png"
           :style="{ left: '203%' }"
         />
       </div>
@@ -67,7 +67,7 @@
         >
           <div
             class="b--motion-e"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-8/plant_wind_1.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/plant_wind_1.png`) + ')'"
           ></div>
         </div>
         <!-- fishes animation -->
@@ -78,7 +78,7 @@
         >
           <div
             class="b--motion-r"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-8/fishes-spritesheet.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-9/fishes-spritesheet.png`) + ')'"
           ></div>
         </div>
       </div>
@@ -87,7 +87,7 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-8/back.png"
+          src="@/assets/img/chapter-9/back.png"
           alt="back"
         />
         <img
@@ -95,7 +95,7 @@
           @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          src="@/assets/img/chapter-8/back-parallax.png"
+          src="@/assets/img/chapter-9/back-parallax.png"
           alt="back parallax"
           :style="{ left: '1%' }"
         />

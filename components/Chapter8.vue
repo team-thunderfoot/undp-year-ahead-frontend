@@ -14,7 +14,7 @@
           ref="parallax-ft"
           class="b--ss-a__ft-items__parallax"
           alt="front-parallax"
-          src="@/assets/img/chapter-7/front-parallax.png"
+          src="@/assets/img/chapter-8/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
@@ -51,7 +51,7 @@
           :style="{ left: '2%' }"
           ref="parallax-bg"
           class="b--ss-a__bg-items__parallax"
-          src="@/assets/img/chapter-7/back-parallax.png"
+          src="@/assets/img/chapter-8/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -61,7 +61,7 @@
           @load="handleLoad"
           @error="handleLoad"
           alt="back"
-          src="@/assets/img/chapter-7/back.png"
+          src="@/assets/img/chapter-8/back.png"
         />
       </div>
     </div>

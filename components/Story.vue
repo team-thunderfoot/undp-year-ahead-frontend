@@ -37,10 +37,9 @@ import Chapter14 from '~/components/Chapter14.vue';
 import Chapter15 from '~/components/Chapter15.vue';
 
 import Progress from '~/components/NavControls.vue';
-import Resize from '@/mixins/Resize.js'
+import Resize from '@/custom/custom_tf.js'
 
 export default {
-    mixins: [Resize],
     data:()=>{
 		return{
             totalChapters: 15,
@@ -52,7 +51,8 @@ export default {
             navLoaded : false,
             allisLoaded : false,
             scrollTween: null,
-            timeOutFunctionId: null
+            timeOutFunctionId: null,
+            windowWidth : 1201
 		}
 	},
     props : [
@@ -132,24 +132,21 @@ export default {
                 }, 6000);
             })
         },
-    
-        checkURL(){
-            if(process.client){
-                var currentURL = window.location.href;
-                var pathname = currentURL.split('/');	// split url in array
-                
-                if(pathname[pathname.length-1].includes("?scene")){ // check if url contains Scene string
-                    this.urlWithParams = true; // Url with param inside
-                    var sceneNo = pathname[pathname.length-1].split('?scene=');
-                    this.sceneNumber = sceneNo[1];
-                } 
+
+        workAfterResizeIsDone(){
+            if(this.$route.query){
+                window.location  =  this.$route.path + '?scene=' + this.$route.query.scene;
+            }else{
+                window.location  =  this.$route.path;
             }
-		},
-        
+        }
     },
     mounted(){
         if(process.client){
-            this.checkURL();
+            this.custom_tf = new Resize();
+            
+            this.urlWithParams = this.custom_tf.checkURL(); // checks if url has params
+            this.sceneNumber = ( this.urlWithParams ) ? this.custom_tf.getURL() : false; // returns the param
             // event in Index.vue
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
@@ -177,10 +174,17 @@ export default {
                     this.$router.push({path: this.$route.path, query: { scene:  payload.item }})
                 }
             });
-
-            // refreshes tha page on resize and changing the orientation of mobile/tablet
-            // Mixin resize.js
-            this.resize({windowWidth : 1201}); 
+            
+            // resize funcion
+            window.onresize = (e)=> {  
+                if(window.innerWidth > this.windowWidth){
+                    clearTimeout(this.timeOutFunctionId);
+                    this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+                }
+            }
+            if(this.custom_tf.isMobile() || this.custom_tf.isTablet()){
+                window.addEventListener('orientationchange', this.workAfterResizeIsDone);
+            }
         }
     },
     

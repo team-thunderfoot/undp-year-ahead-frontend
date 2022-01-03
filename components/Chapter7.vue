@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img src="@/assets/img/chapter-6/front.png" alt="front"  @load="handleLoad"
+        <img src="@/assets/img/chapter-7/front.png" alt="front"  @load="handleLoad"
           @error="handleLoad"/>
       </div>
       <div class="b--ss-a__content">
@@ -28,7 +28,7 @@
            @load="handleLoad"
           @error="handleLoad"
             class="b--chapter7-a__content--second__media"
-            src="@/assets/img/chapter-6/wheel.png"
+            src="@/assets/img/chapter-7/wheel.png"
             alt="wheel"
             title="wheel"
           />
@@ -46,7 +46,7 @@
           @load="handleLoad"
           @error="handleLoad"
           alt="back"
-          :src="require(`@/assets/img/chapter-6/back.png`)"
+          :src="require(`@/assets/img/chapter-7/back.png`)"
         />
       </div>
     </div>

@@ -15,7 +15,7 @@
               b--chapter11-a__divider__media
               b--chapter11-a__divider__media--left
             "
-            src="@/assets/img/chapter-10/front_rock.png"
+            src="@/assets/img/chapter-11/front_rock.png"
             alt="front_rock"
           />
         </div>
@@ -28,49 +28,49 @@
           ref="parallax-ft"
           :style="{ left: '253%' }"
           alt="front-parallax"
-          src="@/assets/img/chapter-10/front-parallax.png"
+          src="@/assets/img/chapter-11/front-parallax.png"
         />
         <img
           @load="handleLoad"
           @error="handleLoad"
           class="b--ss-a__ft-items__media"
           alt="front"
-          src="@/assets/img/chapter-10/front-elements.png"
+          src="@/assets/img/chapter-11/front-elements.png"
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
       <div class="b--chapter11-a__artwork" ref="fisherman"  :style="{ left: '291%' }">
         <div
           class="b--motion-f"
-           :style="'background-image: url(' + require(`@/assets/img/chapter-10/fisherman_spritesheet.png`) + ')'"
+           :style="'background-image: url(' + require(`@/assets/img/chapter-11/fisherman_spritesheet.png`) + ')'"
         ></div>
       </div>
       <!-- animation plants wind -->
       <div class="b--chapter11-a__artwork b--chapter11-a__artwork--second">
         <div
           class="b--motion-g"
-          :style="'background-image: url(' + require(`@/assets/img/chapter-10/plant_wind_2.png`) + ')'"
+          :style="'background-image: url(' + require(`@/assets/img/chapter-11/plant_wind_2.png`) + ')'"
         ></div>
       </div>
       <!-- animation boat -->
       <div class="b--chapter11-a__artwork b--chapter11-a__artwork--third" ref="boat" :style="{ left: '271%' }">
         <div
           class="b--motion-s"
-           :style="'background-image: url(' + require(`@/assets/img/chapter-10/waves_boat.png`) + ')'"
+           :style="'background-image: url(' + require(`@/assets/img/chapter-11/waves_boat.png`) + ')'"
         ></div>
       </div>
       <!-- animation fish 3 -->
       <div class="b--chapter11-a__artwork b--chapter11-a__artwork--fourth" ref="fish1" :style="{ left: '308%' }">
         <div
           class="b--motion-t"
-           :style="'background-image: url(' + require(`@/assets/img/chapter-10/fish_3.png`) + ')'"
+           :style="'background-image: url(' + require(`@/assets/img/chapter-11/fish_3.png`) + ')'"
         ></div>
       </div>
       <!-- animation fish 4 -->
       <div class="b--chapter11-a__artwork b--chapter11-a__artwork--fifth" ref="fish2" :style="{ left: '277%' }">
         <div
           class="b--motion-u"
-          :style="'background-image: url(' + require(`@/assets/img/chapter-10/fish_4.png`) + ')'"
+          :style="'background-image: url(' + require(`@/assets/img/chapter-11/fish_4.png`) + ')'"
         ></div>
       </div>
       <div class="b--ss-a__content">
@@ -97,7 +97,7 @@
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
           :style="{ left: '14%' }"
-          src="@/assets/img/chapter-10/back-parallax.png"
+          src="@/assets/img/chapter-11/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -105,13 +105,13 @@
           @load="handleLoad"
           @error="handleLoad"
           alt="back"
-          src="@/assets/img/chapter-10/back.png"
+          src="@/assets/img/chapter-11/back.png"
         />
         <img
           @load="handleLoad"
           @error="handleLoad"
           class="b--ss-a__bg-items__media"
-          src="@/assets/img/chapter-10/front.png"
+          src="@/assets/img/chapter-11/front.png"
           alt="front"
         />
       </div>

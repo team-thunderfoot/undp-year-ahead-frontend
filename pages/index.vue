@@ -2,7 +2,6 @@
     <div>
         <div class="b--noise-a"></div>
         <v-nav v-if="isLoaded"  />
-        <v-lang v-if="isLoaded" />
         <v-story :isLoaded="isLoaded" />
         <div class="b--preloader-a" :class="{'b--preloader-a--is-hidden':isLoaded}">
             <div class="b--preloader-a__wrapper">
@@ -15,7 +14,6 @@
 <script>
 // Components
 import Nav from '@/components/Nav';
-import Lang from '@/components/Lang';
 import Story from '~/components/Story';
 
 import Vue from 'vue';
@@ -30,7 +28,6 @@ export default {
 	},
     components : {
         'v-nav':Nav,
-        'v-lang':Lang,
         'v-story':Story,
 	},
     mounted(){

@@ -14,7 +14,7 @@
           ref="parallax-ft"
           :style="{ left: '115%' }"
           alt="front-parallax"
-          src="@/assets/img/chapter-5/front-parallax.png"
+          src="@/assets/img/chapter-6/front-parallax.png"
         />
       </div>
       <div class="b--ss-a__content">
@@ -46,18 +46,18 @@
            @load="handleLoad"
           @error="handleLoad"
             class="b--media-b"
-            src="@/assets/img/chapter-5/women.svg"
+            src="@/assets/img/chapter-6/women.svg"
             alt="women"
           />
           <!-- first blink animation -->
           <div
             class="b--motion-d"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-5/blink-1A_spritesheet.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-6/blink-1A_spritesheet.png`) + ')'"
           ></div>
           <!-- second blink animation -->
           <div
             class="b--motion-p"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-5/Blink-1B_spritesheet.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-6/Blink-1B_spritesheet.png`) + ')'"
           ></div>
         </div>
       </div>
@@ -68,7 +68,7 @@
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '-4%' }"
           ref="parallax-bg"
-          src="@/assets/img/chapter-5/back-parallax.png"
+          src="@/assets/img/chapter-6/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -77,7 +77,7 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-5/back.png"
+          src="@/assets/img/chapter-6/back.png"
           alt="back"
         />
       </div>

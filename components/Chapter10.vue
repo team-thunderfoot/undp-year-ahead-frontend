@@ -12,7 +12,7 @@
           @load="handleLoad"
           @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
-          :src="require(`@/assets/img/chapter-9/middle-parallax-${this.lang}.png`)"
+          :src="require(`@/assets/img/chapter-10/middle-parallax-${this.lang}.png`)"
           alt="middle"
           ref="parallax-middle"
           :style="{ left: '245%' }"
@@ -22,7 +22,7 @@
           @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          src="@/assets/img/chapter-9/front-parallax.png"
+          src="@/assets/img/chapter-10/front-parallax.png"
           alt="front"
           :style="{ left: '129%' }"
         />
@@ -57,49 +57,49 @@
         <div class="b--chapter10-a__artwork" ref="algae1" :style="{ left: '295%' }">
           <div
             class="b--motion-v"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_1.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/algae_1.png`) + ')'"
           ></div>
         </div>
         <!-- animation algae 2 -->
         <div class="b--chapter10-a__artwork b--chapter10-a__artwork--second" ref="algae2" :style="{ left: '278%' }">
           <div
             class="b--motion-w"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/algae_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation algae 2 -->
         <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third" ref="algae3" :style="{ left: '322%' }">
           <div
             class="b--motion-w"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/algae_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 1 -->
         <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="bubble1" :style="{ left: '168%' }">
           <div
             class="b--motion-x"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_1.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_1.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 2 -->
         <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth" ref="bubble2" :style="{ left: '186%' }">
           <div
             class="b--motion-x"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_2.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 3 -->
         <div class="b--chapter10-a__artwork b--chapter10-a__artwork--sixth" ref="bubble3" :style="{ left: '205%' }">
           <div
             class="b--motion-x"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_3.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 3 -->
         <div class="b--chapter10-a__artwork b--chapter10-a__artwork--seventh" ref="bubble4" :style="{ left: '148%' }">
           <div
             class="b--motion-x"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_3.png`) + ')'"
           ></div>
         </div>
         <!-- lottie animation fishes -->
@@ -111,14 +111,14 @@
           @load="handleLoad"
           @error="handleLoad"
           alt="back"
-          src="@/assets/img/chapter-9/back.png"
+          src="@/assets/img/chapter-10/back.png"
         />
         <img
           @load="handleLoad"
           @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
           ref="parallax-bg"
-          src="@/assets/img/chapter-9/back-parallax.png"
+          src="@/assets/img/chapter-10/back-parallax.png"
           alt="back-parallax"
           :style="{ left: '30%' }"
         />
@@ -135,7 +135,7 @@ import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 
 import lottie from 'vue-lottie/src/lottie.vue'
-import * as animationData from "~/assets/img/chapter-9/fish.json";
+import * as animationData from "~/assets/img/chapter-10/fish.json";
 
 
 export default {
