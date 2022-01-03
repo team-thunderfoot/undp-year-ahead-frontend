@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter2-a"
-    id="Scene3"
-    ref="Scene3"
+    id="Scene2"
+    ref="Scene2"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -13,7 +13,7 @@
           :style="{ left: '17%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          src="@/assets/img/chapter-2/front-parallax.png"
+          src="@/assets/img/chapter-3/front-parallax.png"
           alt="front-parallax"
         />
       </div>
@@ -38,7 +38,7 @@
           <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
             <div class="b--card-g__media-wrapper">
               <video class="b--video-a" autoplay muted loop playsinline>
-                <source :src="require(`@/assets/video/chapter-2/dino2.mov`)" type="video/mp4">
+                <source :src="require(`@/assets/video/chapter-3/dino2.mov`)" type="video/mp4">
               </video>
             </div>
           </div>
@@ -51,7 +51,7 @@
           <img
             @load="handleLoad"
             @error="handleLoad"
-            src="@/assets/img/chapter-2/dino-orange.png"
+            src="@/assets/img/chapter-3/dino-orange.png"
             alt="browser"
             title="browser"
           />
@@ -64,7 +64,7 @@
           <img
             @load="handleLoad"
             @error="handleLoad"
-            src="@/assets/img/chapter-2/dino-green.png"
+            src="@/assets/img/chapter-3/dino-green.png"
             alt="browser"
             title="browser"
           />
@@ -77,7 +77,7 @@
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '-6%' }"
           ref="parallax-bg"
-          src="@/assets/img/chapter-2/back-parallax.png"
+          src="@/assets/img/chapter-3/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -85,7 +85,7 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-2/back.png"
+          src="@/assets/img/chapter-3/back.png"
           alt="back"
         />
       </div>
@@ -129,7 +129,7 @@ export default {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene3'].offsetWidth,
+          duration: this.$refs['Scene2'].offsetWidth,
           containerAnimation: this.scrollTween,
         })
       })

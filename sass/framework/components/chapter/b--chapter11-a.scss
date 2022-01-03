@@ -1,45 +1,74 @@
 .b--chapter11-a {
+  &.b--page-a__item {
+    z-index: 1;
+  }
   .b--ss-a {
-    // bigger z-index to be shown above ft items
-    &__content {
-      z-index: 10;
+    &__ft-items {
+      &__media {
+        // z-index: -1;
+      }
     }
   }
-  // cards
   &__content {
+    // title
     position: absolute;
-    bottom: 37.79%;
-    left: 1.79%;
-    width: 15.04%;
+    bottom: 34.63%;
+    left: 12.57%;
+    width: 10.9%;
     @include make-position-a();
-    @media all and ($viewport-type: $tablets) {
-      width: 100%;
-      bottom: 32.79%;
-    }
     @media all and ($viewport-type: $mobile) {
-      bottom: 28.79%;
+      bottom: 24.63%;
     }
-    .b--card-a {
-      @media all and (max-height: 485px) {
-        @include make-card-a-shadow();
-      }
-      &__wrapper {
-        @media all and (max-height: 485px) {
-          @include make-card-a-wrapper-scroll();
+    // card-f corrections
+    .b--card-f {
+      &__hd {
+        @media all and ($viewport-type: $laptop) {
+          margin: 0 auto $measure * 3;
+          max-width: 100% !important;
+        }
+        &:before,
+        &:after {
+          @media all and ($viewport-type: $laptop) {
+            height: $measure * 3;
+          }
         }
       }
-    }
-    &--es {
-      bottom: 25.59%;
-      .b--card-f {
-        &__bd {
-          &:after,
-          &:before {
-            height: 7.5vh !important;
+      &__bd {
+        &::before,
+        &::after {
+          height: 16.7vh;
+          @media all and ($viewport-type: $mobile) {
+            height: 7.1vh;
+          }
+        }
+        .b--card-a {
+          @media all and ($viewport-type: $mobile) {
+            padding: $measure * 2 5%;
+          }
+          @media all and (max-height: 480px) {
+            @include make-card-a-scrollbar();
+          }
+          &__wrapper {
+            @media all and (max-height: 480px) {
+              @include make-card-a-wrapper-scroll();
+            }
+          }
+        }
+      }
+      // spanish card f corrections
+      &--es {
+        .b--card-f {
+          &__hd {
+            max-width: 100%;
+            margin-bottom: $measure * 2;
+            &:after,
+            &:before {
+              height: $measure * 2;
+            }
           }
           .b--card-a {
             @media all and (max-height: 520px) {
-              @include make-card-a-shadow();
+              @include make-card-a-scrollbar();
             }
             &__wrapper {
               @media all and (max-height: 520px) {
@@ -49,113 +78,115 @@
           }
         }
       }
-    }
-    &--fr {
-      bottom: 22.79%;
-      .b--card-f {
-        &__bd {
-          &:after,
-          &:before {
-            height: 4.54vh !important;
+      // french card f corrections
+      &--fr {
+        .b--card-f {
+          &__hd {
+            max-width: 100%;
+            margin-bottom: $measure * 2;
+            &:after,
+            &:before {
+              height: $measure * 2;
+            }
           }
-          .b--card-a {
-            @media all and (max-height: 525px) {
-              @include make-card-a-shadow();
+          &__bd {
+            &:after,
+            &:before {
+              height: 10.72vh;
             }
-            @media all and ($viewport-type: 320px) {
-              @include make-card-a-shadow();
-            }
-            &__wrapper {
-              @media all and (max-height: 525px) {
-                @include make-card-a-wrapper-scroll();
+            @media all and ($viewport-type: $laptop) {
+              &:after,
+              &:before {
+                height: 10.3vh;
               }
-              @media all and ($viewport-type: 320px) {
-                @include make-card-a-shadow();
+              &:before {
+                left: 28%;
+              }
+              &:after {
+                right: 28%;
+              }
+            }
+            .b--card-a {
+              @media all and (max-height: 560px) {
+                @include make-card-a-scrollbar();
+              }
+              &__wrapper {
+                @media all and (max-height: 560px) {
+                  @include make-card-a-wrapper-scroll();
+                }
               }
             }
           }
         }
       }
     }
-  }
-  // boxes
-  &__media {
-    position: absolute;
-    left: 15.97%;
-    bottom: 2.5%;
-    height: 71%;
-    z-index: 10;
-  }
-  // info window
-  &__info {
-    position: absolute;
-    bottom: 61.08%;
-    left: 30.08%;
-    width: 7%;
-    @include make-position-a();
-    @media all and ($viewport-type: $mobile) {
-      bottom: 51.08%;
-      left: 83.4%;
-      width: 6.01%;
-      @include make-position-a();
+    // french content corrections
+    &--fr {
+      bottom: 28.63%;
+      @media all and (min-width: $mobile) and ($viewport-type: $laptop) {
+        width: 13.9%;
+        left: 11.17%;
+        bottom: 27.63%;
+      }
     }
   }
-  // animation
+  // fisherman animation
   &__artwork {
     position: absolute;
-    bottom: 5.736%;
-    left: 90.5%;
-    width: 7.06%;
-    // blink
+    bottom: 4.5%;
+    left: 37.5%;
+    z-index: 10;
+
+    // plant animation
     &--second {
-      bottom: 65.5%;
-      left: 23.95%;
-      width: 2.1%;
-      height: 4%;
+      bottom: -7.8%;
+      left: 77.9%;
+      @media all and ($viewport-type: $tabletl) {
+        bottom: -5%;
+      }
     }
-    // blink
+    // boat animation
     &--third {
-      bottom: 42%;
-      left: 47.45%;
-      width: 2%;
-      height: 4.4%;
+      bottom: 31.5%;
+      left: 30.5%;
+      z-index: 2;
+    }
+    // fish_3 animation
+    &--fourth {
+      bottom: 10%;
+      left: 57.5%;
+      z-index: 1;
+    }
+    // fish_4 animation
+    &--fifth {
+      bottom: 10%;
+      left: 34.5%;
+      z-index: 1;
     }
   }
-  // move card f head and bottom legs
-  .b--card-f {
-    &__hd {
-      margin: 0 auto $measure * 4;
-      &:before,
-      &:after {
-        height: $measure * 4;
+  // chapter divider
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    &__media {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: 100vh;
+      &--left {
+        left: -21%;
       }
-      @media all and ($viewport-type: $laptop) {
-        margin: 0 auto $measure * 3;
-        max-width: 100% !important;
-      }
-      &:before,
-      &:after {
-        @media all and ($viewport-type: $laptop) {
-          height: $measure * 3;
-        }
-      }
-    }
-    &__bd {
-      &:before {
-        left: 25%;
-      }
-      &:after {
-        right: 25%;
-      }
-      &:before,
-      &:after {
-        height: 19.5vh;
-        @media all and ($viewport-type: $tablets) {
-          height: 14.5vh;
-        }
-        @media all and ($viewport-type: $mobile) {
-          height: 10.5vh;
-        }
+      &--right {
+        top: auto;
+        bottom: 0;
+        height: 60.83vh;
+        right: -20.5%;
       }
     }
   }

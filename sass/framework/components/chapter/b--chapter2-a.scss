@@ -20,10 +20,10 @@
     .b--card-f {
       .b--card-a {
         @media all and (max-height: 500px) {
-          @include make-card-a-shadow();
+          @include make-card-a-scrollbar();
         }
         @media all and ($viewport-type: $mobile) {
-          @include make-card-a-shadow();
+          @include make-card-a-scrollbar();
         }
         &__wrapper {
           @media all and (max-height: 500px) {

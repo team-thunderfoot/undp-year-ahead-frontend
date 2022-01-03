@@ -3,18 +3,20 @@
         "intro_title": "New Year, New Plan",
         "intro_date": "",
         "intro_description": "Sustainable development <br> in 2022",
-        "content": "<p>As the new year opens, the world is battling a global pandemic and confronting a planetary emergency. Both COVID-19 and climate change are contributing to rising inequality, conflict and fragility around the world. These interconnected challenges require integrated solutions.</p><p>In 2022, UNDP puts its new <a href='https://strategicplan.undp.org/' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> into action, grounded in our commitment to eradicating poverty and helping countries achieve the Sustainable Development Goals.</p><p><strong>Here are some key moments to watch in the year ahead.</strong></p>",
+        "content": "<p>As the new year opens, the world is battling a global pandemic and confronting a planetary emergency. Both COVID-19 and climate change are contributing to rising inequality, conflict and fragility around the world. These interconnected challenges require integrated solutions.</p><p>In 2022, UNDP puts its new <a href='https://strategicplan.undp.org/' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> into action, grounded in our commitment to eradicating poverty and helping countries achieve the Sustainable Development Goals.</p><p><strong>Here are some key moments to watch in the year ahead.</strong></p>"
+    },
+    "ChapterTwo" :   {
         "quote_system": "Changing systems",
         "quote_content": "<p>“To make a difference to people’s lives at this scale, we have to examine the systems and structures that shape development – not just the immediate challenges.”</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
         "quote_author_description": "Director of UNDP Bureau for Policy and Programme Support"
     },
-    "ChapterTwo" :   {
+    "ChapterThree" :   {
         "intro_title": "#DontChooseExtinction",
         "intro_description": "<p>Keep an eye out for <a href='https://twitter.com/frankiethedino' target='_blank' rel='noopenner noreferrer'>Frankie the Dinosaur </a>this year as he continues to make the case for fossil fuel subsidies reform as a critical component of climate action. He might make an appearance near you!<p><p>Watch Frankie’s message to humanity: <a href='https://dontchooseextinction.com/en/' target='_blank' rel='noopenner noreferrer'>Don't choose extinction | UNDP</a></p>"
     },
-    "ChapterThree" :   {
+    "ChapterFour" :   {
         "intro_title": "Delivering on the Global Goals",
         "intro_description": "<p>Leaders and youth from 46 countries will come together to shape the next decade of action to deliver on the Sustainable Development Goals (SDGs).</p>",
         "tooltip_label": "5th UN Conference on the Least Developed Countries",
@@ -22,7 +24,7 @@
         "tooltip_date": "Doha, Qatar"
     
     },
-    "ChapterFour" :   {
+    "ChapterFive" :   {
         "intro_title": "From crisis to recovery",
         "intro_description": "<p>In March we mark the second anniversary of the COVID-19 global pandemic declaration. As technical lead for the UN’s socio-economic response, UNDP plays a critical role in the recovery.</p><p>From global risks to localized catastrophes like violent conflict and environmental disasters, UNDP helps countries confront current crises and prevent future ones.</p>",
         "quote_content": "<p>“In a world where complex and multidimensional crisis has become the norm, the status quo for crisis response is no longer an option.”</p>",
@@ -30,14 +32,14 @@
         "quote_author_link": "https://twitter.com/asakookai",
         "quote_author_description": "UNDP Crisis Bureau Director"
     },
-    "ChapterFive" :   {
+    "ChapterSix" :   {
         "intro_title": "Advancing gender equality",
         "intro_description": "<p><strong>The 66<sup>th</sup> Commission on the Status of Women will focus on achieving gender equality in the context of climate change, environmental and disaster risk.</strong></p><p>Empowering women is one of the most effective ways to reduce poverty and inequality and advance the SDGs. In 2022, UNDP will publish a series of reports to inform gender-responsive policies and programmes:</p><ul><li>UNDP Gender Strategy</li><li>Gender Social Norms Paper</li><li>Gender Indices on women’s empowerment and women’s wellbeing</li></ul>",
         "tooltip_label": "Commission on the Status of Women",
         "tooltip_link": "https://www.unwomen.org/en/csw/csw66-2022",
         "tooltip_date": "14-25 March, New York, USA "
     },
-    "ChapterSix" :   {
+    "ChapterSeven" :   {
         "intro_title": "Maximizing impact",
         "intro_description": "<p><strong>Our new <a href='https://undocs.org/Home/Mobile?FinalSymbol=DP%2F2021%2F28' target='_blank' rel='noopenner noreferrer'>Strategic Plan</a> pinpoints three key enablers to help countries scale up development progress.</strong></p><ul><li><strong>Strategic innovation</strong> to enhance performance of entire systems</li><li><strong>Digitalization</strong> to build more inclusive, ethical and sustainable societies</li><li><strong>Development finance </strong>to align capital flows with the SDGs and the Paris Agreement</li></ul>",
         "quote_content": "<p>“Digital is not just a tool, but also the context in which we operate. UNDP will continue to take a whole-of-society approach to digital transformation to ensure that the benefits of connectivity are shared by all, and work to mitigate digital’s potential risks and harms.”</p>",
@@ -45,51 +47,51 @@
         "quote_author_link": "https://twitter.com/Robert_Opp",
         "quote_author_description": "UNDP Chief Digital Officer"
     },
-    "ChapterSeven" :   {
+    "ChapterEight" :   {
         "intro_title": "Data for development",
         "intro_description": "<p>We’re expanding the evidence base for people-centred development. Flagship reports coming out this year include:</p>",
         "document_left": "<p><i><strong>Human Development Report 2022</strong></i> will focus on “Shaping our Future in a World in Transformation”.</p>",
         "document_right": "<p><strong>A <i>special report on human security</strong></i> will examine how the concept of human security </strong>can help us understand and respond to new and interlinked challenges.</p>"
     },
-    "ChapterEight" :   {
+    "ChapterNine" :   {
         "intro_title": "Towards living in harmony with nature",
         "intro_description": "<p>At the UN Biodiversity Conference (COP15), countries will adopt a new global framework to halt the extinction crisis and transform our relationship with the natural world.</p>",
         "tooltip_label": "UN Biodiversity Conference",
         "tooltip_link": "https://www.cbd.int/conferences/2021-2022",
         "tooltip_date": "Kunming, China"
     },
-    "ChapterNine" :   {
+    "ChapterTen" :   {
         "intro_title": "“Save our ocean, protect our future”",
         "intro_description": "<p>The 2022 United Nations Ocean Conference will bring leaders together to support the implementation of SDG 14 on life below water.</p>",
         "tooltip_label": "UN Ocean Conference",
         "tooltip_link": "https://www.un.org/en/conferences/ocean2022",
         "tooltip_date": "27 June - 1 July, Lisbon, Portugal"
     },
-    "ChapterTen" :   {
+    "ChapterEleven" :   {
         "intro_title": "“Small in scale, big in value”",
         "intro_description": "<p>The UN has declared 2022 the <i>International Year of Artisanal Fisheries and Aquaculture.</i></p><p>Small-scale fishing employs millions of people and nourishes billions, contributing to SDG 2 on Zero Hunger.</p>",
         "load_more_button": "More info",
         "load_more_url": "https://www.fao.org/artisanal-fisheries-aquaculture-2022/home/en/"
     },
-    "ChapterEleven" :   {
+    "ChapterTwelve" :   {
         "intro_title": "SDG status check ",
         "intro_description": "<p><strong>High-Level Political Forum 2022 will examine the impact of COVID-19 on the Sustainable Development Goals.</strong></p><p>The Forum will include an in-depth review of SDGs 4 on quality education, 5 on gender equality, 14 on life below water, 15 on life on land and 17 on partnerships for the Goals.</p>",
         "tooltip_label": "High-Level Political Forum ",
         "tooltip_link": "https://sustainabledevelopment.un.org/hlpf#hlpf2022",
         "tooltip_date": "5-7 July and 11-15 July, New York, USA"
     },
-    "ChapterTwelve" :   {
+    "ChapterThirdteen" :   {
         "intro_title": "Goal 1.5 degrees",
         "intro_description": "<p>The next UN Climate Conference (COP27) will build on the <a href='https://unfccc.int/documents/310475' target='_blank' rel='noopenner noreferrer'>Glasgow Climate Pact</a> agreed at COP26.</p>",
         "tooltip_label": "UN Climate Conference (COP27) ",
         "tooltip_link": "https://news.un.org/en/story/2021/11/1105792",
         "tooltip_date": "7-18 November, Sharm El-Sheikh, Egypt"
     },
-    "ChapterThirdteen" :   {
+    "ChapterFourteen" :   {
         "intro_title": "Your voices",
         "intro_description": "<p>UNDP will release the next phase of the <i>Peoples’ Climate Vote</i>, diving deeper into public opinion on the climate emergency and how world leaders should respond.</p><p><a href='https://www.undp.org/publications/g20-peoples-climate-vote-2021' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote</a></p>"
     },
-    "ChapterFourteen" :   {
+    "ChapterFifteen" :   {
         "intro_title": "#FutureSmartUNDP",
         "intro_description": "<p>COVID-19 has left the world a different place. In 2022 and beyond, UNDP is investing in the capabilities, programming and management to help countries recover and thrive. Equipped with our new Strategic Plan, invaluable partnerships, and insights from our work all over the world, UNDP is focused on delivering future-smart development.</p>",
         "quote_content": "<p>“This is a critical moment for the world, and for development.But this is also a moment of choice: an opportunity to learn from our experience, to do things differently, to aspire to greater shared goals.”</p>",

@@ -1,46 +1,71 @@
 <template>
-    <section class="b--page-a__item b--chapter12-a" id="Scene12" ref="Scene12" v-if="chapter">
+    <section class="b--page-a__item b--chapter12-a" id="Scene12" ref="Scene12"  v-if="chapter">
         <div class="b--ss-a"> 
-            <div class="b--ss-a__divider">
-                <div class="b--chapter12-a__divider">
-                <img
-                    class="b--chapter12-a__divider__media b--chapter12-a__divider__media--left"
-                    v-lazy="require(`@/assets/img/chapter-12/11-12_tree.png`)"
-                />
-                </div>
-            </div>
             <div class="b--ss-a__ft-items">
-                <img class="b--ss-a__ft-items__parallax" v-lazy="require(`@/assets/img/chapter-12/front-parallax.png`)" alt="front" />
+                <img 
+                @load="handleLoad"
+                @error="handleLoad"
+                ref="parallax-ft" 
+                :style="{ left: '66%', position: 'absolute' }"
+                :src="require(`@/assets/img/chapter-12/front-parallax-${this.lang}.png`)" alt="front" />
+                <img
+                    @load="handleLoad"
+                    @error="handleLoad"
+                    class="b--ss-a__ft-items__media"
+                    alt="front"
+                    src="@/assets/img/chapter-12/front-elements.png"
+                />
             </div>
             <div class="b--ss-a__content">
-                <!-- chapter title -->
+                <!-- first position element, card -->
+                <!-- move up with a modifier in the scss of the scene -->
                 <div 
-                    class="b--chapter12-a__content"
-                    :class="'b--chapter12-a__content--' + `${this.lang}`"
+                    class="b--chapter12-a__content" 
+                    :class="'b--chapter12-a__content--'+`${this.lang}`"
+                    ref="boxContent" :style="{ left: '62%'}"
                 >
                     <v-card-f 
-                        :title="chapter.intro_title"
+                        :title="chapter.intro_title" 
                         :description="chapter.intro_description"
                         :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
-                        cardACustomClass="b--card-a--second"
                     />
                 </div>
-                <!-- info chart -->
-                <div class="b--chapter12-a__content b--chapter12-a__content--second">
+                <!-- second position element, info -->
+                <div class="b--chapter12-a__info" ref="infoChapter" :style="{ left: '92%'}">
                     <v-info-chapter :info="chapter"/>
                 </div>
+                <!-- boxes -->
+                <div class="b--chapter12-a__media" :style="{ left: '77%'}" ref="boxes" >
+                    <img class="b--media-a" src="@/assets/img/chapter-12/boxes.svg" alt="boxes" 
+                        @load="handleLoad"
+                        @error="handleLoad"/>
+                    <!-- blink 2a -->
+                    <div class="b--motion-h" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_2a.png`) + ')'"></div>
+                    <!-- blink 2b -->
+                    <div class="b--motion-q" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_2b.png`) + ')'"></div>
+                </div>
+                <!-- plant animation -->
                 <div class="b--chapter12-a__artwork">
-                    <div class="b--motion-j" v-lazy:background-image="
-                    require(`@/assets/img/chapter-12/blink_3.png`)
-                    ">
+                    <div
+                        class="b--motion-i"
+                        :style="'background-image: url(' + require(`@/assets/img/chapter-12/plant_wind_3.png`) + ')'"
+                    >
                     </div>
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__parallax"
-                v-lazy="require(`@/assets/img/chapter-12/back-parallax.png`)"
-                >        
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png">        
+                <img class="b--ss-a__bg-items__parallax" 
+                ref="parallax-bg" 
+                @load="handleLoad"
+                @error="handleLoad"
+                :style="{ left: '420%' }"
+                src="@/assets/img/chapter-12/back-parallax.png"
+                alt="back parallax"> 
+                <img class="b--ss-a__bg-items__back" 
+                @load="handleLoad"  
+                @error="handleLoad" 
+                alt="back"
+                src="@/assets/img/chapter-12/back.png">          
             </div>
         </div>
     </section>
@@ -57,13 +82,14 @@ export default {
     mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
-        'v-info-chapter' : InfoChapter
-    },
+        'v-info-chapter' : InfoChapter,
+    },    
     data:()=>{
 		return{
-            totalContent: 2,
+            totalContent: 6,
 			contentLoaded : 0,
-            chapter: null
+            chapter: null,
+            infoWindowStatus: true,
 		}
 	},
     props: ['scrollTween'],
@@ -71,15 +97,26 @@ export default {
         handleLoad(){
             this.contentLoaded++;
         },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 12,
-                    scrub:0,
-                    scrollTween : this.scrollTween
+
+        AsambleParallaxObjs() {
+            var motion = [
+                { obj: this.$refs['parallax-bg'], intensity: 55 },
+                { obj: this.$refs['eyes1'], intensity: 8 },
+                { obj: this.$refs['eyes2'], intensity: 8 },
+                { obj: this.$refs['infoChapter'], intensity: 8 },
+                { obj: this.$refs['parallax-ft'], intensity: 8 },
+                { obj: this.$refs['boxes'], intensity: 8 },
+                { obj: this.$refs['boxContent'], intensity: 8 },
+            ]
+            motion.forEach((item) => {
+                this.parallaxMove({
+                el: item.obj,
+                intensity: item.intensity,
+                duration: this.$refs['Scene12'].offsetWidth,
+                containerAnimation: this.scrollTween,
                 })
             })
-        }
+        },
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -90,7 +127,14 @@ export default {
         },
         scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.animate();
+                //motion frontend and backend elements
+                this.AsambleParallaxObjs()
+                // mixin function
+                this.startAnimation({
+                    sceneID: 12,
+                    scrub: 0,
+                    scrollTween: this.scrollTween,
+                })
             } 
         }
     },

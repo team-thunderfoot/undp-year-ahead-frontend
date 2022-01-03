@@ -209,11 +209,6 @@ export default {
 				  scrub: 0,
 				  scrollTween: this.scrollTween,
         })
-        this.startAnimation({
-				  sceneID: 2,
-				  scrub: 0,
-				  scrollTween: this.scrollTween,
-				})
 			}
 		},
 	},
