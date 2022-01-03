@@ -1,6 +1,6 @@
 <template>
   <section
-    class="b--page-a__item b--chapter2-a"
+    class="b--page-a__item b--chapter3-a"
     id="Scene3"
     ref="Scene3"
     v-if="chapter"
@@ -19,8 +19,8 @@
       </div>
       <div class="b--ss-a__content">
         <div
-          class="b--chapter2-a__content"
-          :class="'b--chapter2-a__content--' + `${this.lang}`"
+          class="b--chapter3-a__content"
+          :class="'b--chapter3-a__content--' + `${this.lang}`"
           ref="boxContent"
           :style="{ left: '20%' }"
         >
@@ -31,7 +31,7 @@
           />
         </div>
         <div
-          class="b--chapter2-a__content b--chapter2-a__content--second"
+          class="b--chapter3-a__content b--chapter3-a__content--second"
           :style="{ left: '47%' }"
           ref="TVfrankie"
         >
@@ -44,7 +44,7 @@
           </div>
         </div>
         <div
-          class="b--chapter2-a__artwork"
+          class="b--chapter3-a__artwork"
           :style="{ left: '42%' }"
           ref="dino1"
         >
@@ -57,7 +57,7 @@
           />
         </div>
         <div
-          class="b--chapter2-a__artwork b--chapter2-a__artwork--second"
+          class="b--chapter3-a__artwork b--chapter3-a__artwork--second"
           :style="{ left: '72%' }"
           ref="dino2"
         >

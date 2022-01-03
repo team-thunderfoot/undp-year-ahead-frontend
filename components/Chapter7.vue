@@ -1,6 +1,6 @@
 <template>
   <section
-    class="b--page-a__item b--chapter6-a"
+    class="b--page-a__item b--chapter7-a"
     id="Scene7"
     ref="Scene7"
     v-if="chapter"
@@ -13,8 +13,8 @@
       <div class="b--ss-a__content">
         <!-- first position element, card -->
         <div 
-          class="b--chapter6-a__content"
-          :class="'b--chapter6-a__content--' + `${this.lang}`"
+          class="b--chapter7-a__content"
+          :class="'b--chapter7-a__content--' + `${this.lang}`"
           >
           <v-card-f
             :title="chapter.intro_title"
@@ -23,18 +23,18 @@
           />
         </div>
         <!-- second position element, wheel -->
-        <div class="b--chapter6-a__content b--chapter6-a__content--second">
+        <div class="b--chapter7-a__content b--chapter7-a__content--second">
           <img
            @load="handleLoad"
           @error="handleLoad"
-            class="b--chapter6-a__content--second__media"
+            class="b--chapter7-a__content--second__media"
             src="@/assets/img/chapter-6/wheel.png"
             alt="wheel"
             title="wheel"
           />
         </div>
         <!-- third position element, quote -->
-        <div class="b--chapter6-a__content b--chapter6-a__content--third">
+        <div class="b--chapter7-a__content b--chapter7-a__content--third">
           <v-quote-a :chapter="chapter" customClass="b--quote-a--second" />
         </div>
       </div>

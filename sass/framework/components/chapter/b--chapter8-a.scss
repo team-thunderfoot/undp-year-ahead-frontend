@@ -1,85 +1,37 @@
 .b--chapter8-a {
-  // z-index to the chapter to see the union elements
-  &.b--page-a__item {
-    z-index: 1;
+  .b--ss-a {
+    &__bg-items__parallax {
+      right: 13.8%;
+    }
+    &__ft-items__parallax {
+      right: 19.1%;
+    }
   }
   &__content {
     position: absolute;
-    bottom: 33.11%;
-    left: 6.44%;
-    width: 13.77%;
+    bottom: 29.1%;
+    left: 5.8%;
+    width: 14.11%;
     @include make-position-a();
-    @media all and ($viewport-type: $mobile) {
-      bottom: 26.11%;
-    }
+    // max-height: calc(60.25vh - 16.79vh - $measure * 4);
+    // card-h
     &--second {
-      bottom: 36.36%;
-      left: 23.08%;
-      width: 6.44%;
-      @include make-position-a();
-      @media all and ($viewport-type: $mobile) {
-        width: 9.4%;
-        bottom: 34.36%;
-      }
-    }
-    // mobile adjustment of card-f
-    .b--card-f {
-      &__hd {
-        @media all and ($viewport-type: $mobile) {
-          margin: 0 auto $measure * 3;
-        }
-        &:before,
-        &:after {
-          @media all and ($viewport-type: $mobile) {
-            height: $measure * 3;
-          }
-        }
-      }
-    }
-    &--fr {
-      .b--card-f {
-        .b--card-a {
-          @media all and (max-height: 430px) {
-            @include make-card-a-shadow();
-          }
-          &__wrapper {
-            @media all and (max-height: 430px) {
-              @include make-card-a-wrapper-scroll();
-            }
-          }
-        }
-      }
-    }
-  }
-  // first animation
-  &__artwork {
-    position: absolute;
-    bottom: 7%;
-    left: 36.5%;
-    // second animation
-    &--second {
-      bottom: 0;
-      left: 44%;
-    }
-  }
-  // chapter divider
-  &__divider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 4;
-    height: 100%;
-    width: 100%;
-    pointer-events: none;
-    z-index: 10;
-    &__media {
-      position: absolute;
-      top: 0;
+      top: 7.32%;
+      left: 56.12%;
       bottom: auto;
-      height: 100vh;
-      &--right {
-        left: auto;
-        right: -28.3%;
+      width: 6.38%;
+    }
+    // card-h
+    &--third {
+      top: 7.32%;
+      left: 65.32%;
+      bottom: auto;
+      width: 6.97%;
+      @media all and ($viewport-type: $tabletl) {
+        width: 9%;
+      }
+      @media all and ($viewport-type: $tablets) {
+        width: 8%;
       }
     }
   }

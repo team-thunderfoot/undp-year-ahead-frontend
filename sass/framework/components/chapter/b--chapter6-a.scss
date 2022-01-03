@@ -1,31 +1,33 @@
 .b--chapter6-a {
+  .b--ss-a__bg-items__parallax {
+    right: 11.3%;
+  }
   &__content {
-    // cards
     position: absolute;
-    bottom: 13.3%;
-    left: 4%;
-    width: 24.02%;
+    bottom: 13.79%;
+    left: 4.32%;
+    width: 21.95%;
     @include make-position-a();
-    @media all and ($viewport-type: $tabletm) {
-      width: 100%;
-      max-width: calc(100vw - 90px);
+    @media all and ($viewport-type: $tabletl) {
+      bottom: 8.69%;
     }
     @media all and ($viewport-type: $tablets) {
-      bottom: 20%;
+      bottom: 15%;
     }
+
     .b--card-f {
       .b--card-a {
-        @media all and (max-height: 520px) {
+        @media all and (max-height: 630px) {
           @include make-card-a-shadow();
         }
-        @media all and ($viewport-type: 330px) {
+        @media all and ($viewport-type: 375px) {
           @include make-card-a-shadow();
         }
         &__wrapper {
-          @media all and (max-height: 520px) {
+          @media all and (max-height: 630px) {
             @include make-card-a-wrapper-scroll();
           }
-          @media all and ($viewport-type: 330px) {
+          @media all and ($viewport-type: 375px) {
             @include make-card-a-wrapper-scroll();
           }
         }
@@ -34,54 +36,62 @@
     &--fr {
       .b--card-f {
         .b--card-a {
-          @media all and (max-height: 560px) {
+          @media all and (max-height: 900px) {
+            @include make-card-a-shadow();
+          }
+          @media all and ($viewport-type: 375px) {
             @include make-card-a-shadow();
           }
           &__wrapper {
-            @media all and (max-height: 560px) {
+            @media all and (max-height: 900px) {
+              @include make-card-a-wrapper-scroll();
+            }
+            @media all and ($viewport-type: 375px) {
               @include make-card-a-wrapper-scroll();
             }
           }
         }
       }
     }
-    // wheel
-    &--second {
-      left: 66.04%;
-      bottom: 58.55%;
-      width: 12.5vh;
-      height: 12.5vh;
-      background: map-get($colorbg-options, j);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      &__media {
-        width: 10vh;
-        height: 10vh;
-        @include make-wheel();
+    &--es {
+      .b--card-f {
+        .b--card-a {
+          @media all and (max-height: 700px) {
+            @include make-card-a-shadow();
+          }
+          @media all and ($viewport-type: 430px) {
+            @include make-card-a-shadow();
+          }
+          &__wrapper {
+            @media all and (max-height: 700px) {
+              @include make-card-a-wrapper-scroll();
+            }
+            @media all and ($viewport-type: 430px) {
+              @include make-card-a-wrapper-scroll();
+            }
+          }
+        }
       }
     }
-
-    // quote, changed because the text was too large<
-    &--third {
-      position: absolute;
-      width: 18.07%;
-      left: 78%;
-      bottom: 22.8%;
+    &--second {
+      bottom: 47.26%;
+      left: 31.45%;
+      width: 9.71%;
+      @include make-position-a();
+      @media all and ($viewport-type: $mobile) {
+        left: 28.85%;
+        width: 12.61%;
+      }
     }
-
-    // move card f head and bottom legs
+    // some adjust for mobile
     .b--card-f {
       &__hd {
-        margin: 0 auto $measure * 4;
         @media all and ($viewport-type: $mobile) {
           margin: 0 auto $measure * 3;
           max-width: 100% !important;
         }
         &:before,
         &:after {
-          height: $measure * 4;
           @media all and ($viewport-type: $mobile) {
             height: $measure * 3;
           }
@@ -89,18 +99,50 @@
       }
       &__bd {
         .b--card-a {
+          padding: $measure * 3 5%;
           @media all and ($viewport-type: $mobile) {
             padding: $measure * 3 5%;
           }
         }
       }
     }
-    .b--quote-a {
-      &__meta {
-        @media all and ($viewport-type: $mobile) {
-          width: 90% !important;
+    // french adjustments
+    &--fr {
+      width: 22.95%;
+      .b--card-f {
+        &__hd {
+          max-width: 100% !important;
+          margin: 0 auto $measure * 3;
+          &:before,
+          &:after {
+            height: $measure * 3;
+          }
         }
       }
+    }
+  }
+  // women
+  &__media {
+    position: absolute;
+    left: 46.47%;
+    bottom: -1.9%;
+    width: 43%;
+    height: 75%;
+    z-index: 2;
+  }
+  // first blink animation
+  &__artwork {
+    position: absolute;
+    bottom: 58%;
+    left: 52.1%;
+    // set blink position with the height of the screen, check left with parallax
+    // @media all and (max-height: 1366px) {
+    //   bottom: 44.1%;
+    // }
+    // second blink animation
+    &--second {
+      bottom: 57.1%;
+      left: 82.1%;
     }
   }
 }

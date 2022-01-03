@@ -1,6 +1,6 @@
 <template>
   <section
-    class="b--page-a__item b--chapter5-a"
+    class="b--page-a__item b--chapter6-a"
     id="Scene6"
     ref="Scene6"
     v-if="chapter"
@@ -20,8 +20,8 @@
       <div class="b--ss-a__content">
         <!-- chapter title -->
         <div
-          class="b--chapter5-a__content"
-          :class="'b--chapter5-a__content--' + `${this.lang}`"
+          class="b--chapter6-a__content"
+          :class="'b--chapter6-a__content--' + `${this.lang}`"
           :style="{ left: '120%' }"
           ref="boxContent"
         >
@@ -34,14 +34,14 @@
         </div>
         <!-- info chart -->
         <div
-          class="b--chapter5-a__content b--chapter5-a__content--second"
+          class="b--chapter6-a__content b--chapter6-a__content--second"
           ref="infochapter"
           :style="{ left: '155%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
         <!-- women -->
-        <div class="b--chapter5-a__media" ref="woman" :style="{ left: '167%' }">
+        <div class="b--chapter6-a__media" ref="woman" :style="{ left: '167%' }">
           <img
            @load="handleLoad"
           @error="handleLoad"

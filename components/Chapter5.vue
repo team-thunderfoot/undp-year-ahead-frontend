@@ -1,17 +1,17 @@
 <template>
   <section
-    class="b--page-a__item b--chapter4-a"
+    class="b--page-a__item b--chapter5-a"
     id="Scene5"
     ref="Scene5"
     v-if="chapter"
   >
     <div class="b--ss-a">
       <div class="b--ss-a__divider">
-        <div class="b--chapter4-a__divider">
+        <div class="b--chapter5-a__divider">
           <img
            @load="handleLoad"
           @error="handleLoad"
-            class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
+            class="b--chapter5-a__divider__media b--chapter5-a__divider__media--right"
             alt="front_tree"
             src="@/assets/img/chapter-4/front_tree.png"
           />
@@ -19,7 +19,7 @@
           id="Scene5Img"
            @load="handleLoad"
           @error="handleLoad"
-            class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
+            class="b--chapter5-a__divider__media b--chapter5-a__divider__media--left"
             alt="front_electric-cable"
             src="@/assets/img/chapter-4/front_electric-cable.png"
           />
@@ -39,10 +39,10 @@
       <div class="b--ss-a__content">
         <!-- first position element, card -->
         <div
-          class="b--chapter4-a__content"
+          class="b--chapter5-a__content"
           ref="boxContent"
           :style="{ left: '95%' }"
-          :class="'b--chapter4-a__content--' + `${this.lang}`"
+          :class="'b--chapter5-a__content--' + `${this.lang}`"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -52,7 +52,7 @@
         </div>
         <!-- second position element, quote -->
         <div
-          class="b--chapter4-a__content b--chapter4-a__content--second"
+          class="b--chapter5-a__content b--chapter5-a__content--second"
           ref="quoteContent"
           :style="{ left: '75%' }"
         >

@@ -1,19 +1,19 @@
 <template>
   <section
-    class="b--page-a__item b--chapter10-a"
+    class="b--page-a__item b--chapter11-a"
     id="Scene11"
     ref="Scene11"
     v-if="chapter"
   >
     <div class="b--ss-a">
       <div class="b--ss-a__divider">
-        <div class="b--chapter10-a__divider">
+        <div class="b--chapter11-a__divider">
           <img
           @load="handleLoad"
           @error="handleLoad"
             class="
-              b--chapter10-a__divider__media
-              b--chapter10-a__divider__media--left
+              b--chapter11-a__divider__media
+              b--chapter11-a__divider__media--left
             "
             src="@/assets/img/chapter-10/front_rock.png"
             alt="front_rock"
@@ -39,35 +39,35 @@
         />
       </div>
       <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
-      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '291%' }">
+      <div class="b--chapter11-a__artwork" ref="fisherman"  :style="{ left: '291%' }">
         <div
           class="b--motion-f"
            :style="'background-image: url(' + require(`@/assets/img/chapter-10/fisherman_spritesheet.png`) + ')'"
         ></div>
       </div>
       <!-- animation plants wind -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--second">
+      <div class="b--chapter11-a__artwork b--chapter11-a__artwork--second">
         <div
           class="b--motion-g"
           :style="'background-image: url(' + require(`@/assets/img/chapter-10/plant_wind_2.png`) + ')'"
         ></div>
       </div>
       <!-- animation boat -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third" ref="boat" :style="{ left: '271%' }">
+      <div class="b--chapter11-a__artwork b--chapter11-a__artwork--third" ref="boat" :style="{ left: '271%' }">
         <div
           class="b--motion-s"
            :style="'background-image: url(' + require(`@/assets/img/chapter-10/waves_boat.png`) + ')'"
         ></div>
       </div>
       <!-- animation fish 3 -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="fish1" :style="{ left: '308%' }">
+      <div class="b--chapter11-a__artwork b--chapter11-a__artwork--fourth" ref="fish1" :style="{ left: '308%' }">
         <div
           class="b--motion-t"
            :style="'background-image: url(' + require(`@/assets/img/chapter-10/fish_3.png`) + ')'"
         ></div>
       </div>
       <!-- animation fish 4 -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth" ref="fish2" :style="{ left: '277%' }">
+      <div class="b--chapter11-a__artwork b--chapter11-a__artwork--fifth" ref="fish2" :style="{ left: '277%' }">
         <div
           class="b--motion-u"
           :style="'background-image: url(' + require(`@/assets/img/chapter-10/fish_4.png`) + ')'"
@@ -76,8 +76,8 @@
       <div class="b--ss-a__content">
         <!-- chapter title -->
         <div
-          class="b--chapter10-a__content"
-          :class="'b--chapter10-a__content--' + `${this.lang}`"
+          class="b--chapter11-a__content"
+          :class="'b--chapter11-a__content--' + `${this.lang}`"
           ref="boxContent"  :style="{ left: '248%' }"
         >
           <v-card-f

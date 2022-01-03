@@ -1,109 +1,86 @@
 .b--chapter9-a {
-  .b--ss-a__content {
-    z-index: 10;
+  // z-index to the chapter to see the union elements
+  &.b--page-a__item {
+    z-index: 1;
   }
   &__content {
-    // cards
     position: absolute;
-    bottom: 34.99%;
-    left: 22.59%;
-    width: 13.93%;
-    max-width: calc(100vw - 60px);
-    @include make-position-a();
-    @media all and ($viewport-type: $tablets) {
-      width: 100%;
-    }
-
-    &--fr {
-      width: 15.8%;
-    }
-
-    // move card f head and bottom legs
-    .b--card-f {
-      &__hd {
-        margin: 0 auto $measure * 4;
-        &:before,
-        &:after {
-          height: $measure * 4;
-        }
-      }
-      &__bd {
-        &:before {
-          left: 25%;
-        }
-        &:after {
-          right: 25%;
-        }
-        &:before,
-        &:after {
-          height: 22.32vh;
-        }
-      }
-    }
-  }
-  // algae 1 animation
-  &__artwork {
-    position: absolute;
-    bottom: 12.4%;
-    left: 51.5%;
-    z-index: 1;
-    // algae 2 animation
-    &--second {
-      bottom: 12.4%;
-      left: 36.1%;
-    }
-    // algae 1 animation
-    &--third {
-      bottom: 12.4%;
-      left: 79.2%;
-    }
-    // buble 1 animation
-    &--fourth {
-      bottom: 55.4%;
-      left: 51.2%;
-    }
-    // buble 2 animation
-    &--fifth {
-      bottom: 40.4%;
-      left: 60.2%;
-    }
-    // buble 3 animation
-    &--sixth {
-      bottom: 64%;
-      left: 72%;
-    }
-    // buble 3 animation
-    &--seventh {
-      bottom: 38%;
-      left: 23%;
-    }
-    // lottie fishes
-    &--eight {
-      width: auto;
-      height: 100vh;
-      bottom: 0%;
-      left: 0.5%;
-    }
-  }
-
-  &__info {
-    // info window
-    position: absolute;
-    z-index: 10;
-    bottom: 45.88%;
-    left: 38.91%;
-    width: 6.51%;
+    bottom: 33.11%;
+    left: 6.44%;
+    width: 13.77%;
     @include make-position-a();
     @media all and ($viewport-type: $mobile) {
-      bottom: 51.08%;
-      left: 83.4%;
-      width: 6.01%;
-      @include make-position-a();
+      bottom: 26.11%;
     }
-
-    // extra padding top and bottom to this window scene
-    .b--info-window-a {
-      padding: $measure * 3 $measure * 2;
+    &--second {
+      bottom: 36.36%;
+      left: 23.08%;
+      width: 6.44%;
+      @include make-position-a();
+      @media all and ($viewport-type: $mobile) {
+        width: 9.4%;
+        bottom: 34.36%;
+      }
+    }
+    // mobile adjustment of card-f
+    .b--card-f {
+      &__hd {
+        @media all and ($viewport-type: $mobile) {
+          margin: 0 auto $measure * 3;
+        }
+        &:before,
+        &:after {
+          @media all and ($viewport-type: $mobile) {
+            height: $measure * 3;
+          }
+        }
+      }
+    }
+    &--fr {
+      .b--card-f {
+        .b--card-a {
+          @media all and (max-height: 430px) {
+            @include make-card-a-shadow();
+          }
+          &__wrapper {
+            @media all and (max-height: 430px) {
+              @include make-card-a-wrapper-scroll();
+            }
+          }
+        }
+      }
+    }
+  }
+  // first animation
+  &__artwork {
+    position: absolute;
+    bottom: 7%;
+    left: 36.5%;
+    // second animation
+    &--second {
+      bottom: 0;
+      left: 44%;
+    }
+  }
+  // chapter divider
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    &__media {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: 100vh;
+      &--right {
+        left: auto;
+        right: -28.3%;
+      }
     }
   }
 }

@@ -1,17 +1,17 @@
 <template>
   <section
-    class="b--page-a__item b--chapter8-a"
+    class="b--page-a__item b--chapter9-a"
     id="Scene9"
     ref="Scene9"
     v-if="chapter"
   >
     <div class="b--ss-a">
       <div class="b--ss-a__divider">
-        <div class="b--chapter8-a__divider">
+        <div class="b--chapter9-a__divider">
           <img
             @load="handleLoad"
             @error="handleLoad"
-            class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right"
+            class="b--chapter9-a__divider__media b--chapter9-a__divider__media--right"
             src="@/assets/img/chapter-8/front_tree.png"
             alt="front_tree"
           />
@@ -40,8 +40,8 @@
       <div class="b--ss-a__content">
         <!-- chapter title -->
         <div
-          class="b--chapter8-a__content"
-          :class="'b--chapter8-a__content--' + `${this.lang}`"
+          class="b--chapter9-a__content"
+          :class="'b--chapter9-a__content--' + `${this.lang}`"
           ref="boxContent"
           :style="{ left: '180%' }"
         >
@@ -53,7 +53,7 @@
         </div>
         <!-- info chart -->
         <div
-          class="b--chapter8-a__content b--chapter8-a__content--second"
+          class="b--chapter9-a__content b--chapter9-a__content--second"
           ref="infoChapter"
           :style="{ left: '198%' }"
         >
@@ -61,7 +61,7 @@
         </div>
         <!-- plant animation -->
         <div
-          class="b--chapter8-a__artwork"
+          class="b--chapter9-a__artwork"
           ref="plant"
           :style="{ left: '223%' }"
         >
@@ -72,7 +72,7 @@
         </div>
         <!-- fishes animation -->
         <div
-          class="b--chapter8-a__artwork b--chapter8-a__artwork--second"
+          class="b--chapter9-a__artwork b--chapter9-a__artwork--second"
           ref="fishes"
           :style="{ left: '229%' }"
         >

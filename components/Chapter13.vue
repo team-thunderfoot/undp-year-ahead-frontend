@@ -1,12 +1,12 @@
 <template>
-    <section class="b--page-a__item b--chapter12-a" id="Scene13" ref="Scene13" v-if="chapter">
+    <section class="b--page-a__item b--chapter13-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__divider">
-                <div class="b--chapter12-a__divider">
+                <div class="b--chapter13-a__divider">
                     <img
                         @load="handleLoad"
                         @error="handleLoad"
-                        class="b--chapter12-a__divider__media b--chapter12-a__divider__media--left"
+                        class="b--chapter13-a__divider__media b--chapter13-a__divider__media--left"
                         src="@/assets/img/chapter-12/11-12_tree.png"
                         alt="11-12_tree"
                     />
@@ -20,8 +20,8 @@
             <div class="b--ss-a__content">
                 <!-- chapter title -->
                 <div 
-                    class="b--chapter12-a__content"
-                    :class="'b--chapter12-a__content--' + `${this.lang}`"
+                    class="b--chapter13-a__content"
+                    :class="'b--chapter13-a__content--' + `${this.lang}`"
                     ref="boxContent"  :style="{ left: '645%' }"
                 >
                     <v-card-f 
@@ -32,13 +32,13 @@
                     />
                 </div>
                 <!-- info chart -->
-                <div class="b--chapter12-a__content b--chapter12-a__content--second"
+                <div class="b--chapter13-a__content b--chapter13-a__content--second"
                  ref="infoChapter"  :style="{ left: '667%' }"
                 >
                     <v-info-chapter :info="chapter"/>
                 </div>
             </div>
-            <div class="b--chapter12-a__artwork">
+            <div class="b--chapter13-a__artwork">
                 <div class="b--motion-j" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_3.png`) + ')'">
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter11-a" id="Scene12" ref="Scene12"  v-if="chapter">
+    <section class="b--page-a__item b--chapter12-a" id="Scene12" ref="Scene12"  v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img 
@@ -20,8 +20,8 @@
                 <!-- first position element, card -->
                 <!-- move up with a modifier in the scss of the scene -->
                 <div 
-                    class="b--chapter11-a__content" 
-                    :class="'b--chapter11-a__content--'+`${this.lang}`"
+                    class="b--chapter12-a__content" 
+                    :class="'b--chapter12-a__content--'+`${this.lang}`"
                     ref="boxContent" :style="{ left: '62%'}"
                 >
                     <v-card-f 
@@ -31,11 +31,11 @@
                     />
                 </div>
                 <!-- second position element, info -->
-                <div class="b--chapter11-a__info" ref="infoChapter" :style="{ left: '92%'}">
+                <div class="b--chapter12-a__info" ref="infoChapter" :style="{ left: '92%'}">
                     <v-info-chapter :info="chapter"/>
                 </div>
                 <!-- boxes -->
-                <div class="b--chapter11-a__media" :style="{ left: '77%'}" ref="boxes" >
+                <div class="b--chapter12-a__media" :style="{ left: '77%'}" ref="boxes" >
                     <img class="b--media-a" src="@/assets/img/chapter-11/boxes.svg" alt="boxes" 
                         @load="handleLoad"
                         @error="handleLoad"/>
@@ -45,7 +45,7 @@
                     <div class="b--motion-q" :style="'background-image: url(' + require(`@/assets/img/chapter-11/blink_2b.png`) + ')'"></div>
                 </div>
                 <!-- plant animation -->
-                <div class="b--chapter11-a__artwork">
+                <div class="b--chapter12-a__artwork">
                     <div
                         class="b--motion-i"
                         :style="'background-image: url(' + require(`@/assets/img/chapter-11/plant_wind_3.png`) + ')'"

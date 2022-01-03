@@ -1,6 +1,6 @@
 <template>
   <section
-    class="b--page-a__item b--chapter3-a"
+    class="b--page-a__item b--chapter4-a"
     id="Scene4"
     ref="Scene4"
     v-if="chapter"
@@ -12,7 +12,7 @@
       </div>
       <div class="b--ss-a__content">
         <!-- flags left -->
-        <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fifth">
+        <div class="b--chapter4-a__artwork b--chapter4-a__artwork--fifth">
           <div
             class="b--motion-b"
             :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-left_spritesheet.png`) + ')'"
@@ -21,8 +21,8 @@
 
         <!-- chapter title -->
         <div 
-        class="b--chapter3-a__content"
-        :class="'b--chapter3-a__content--' + `${this.lang}`"
+        class="b--chapter4-a__content"
+        :class="'b--chapter4-a__content--' + `${this.lang}`"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -33,11 +33,11 @@
         </div>
 
         <!-- info chart -->
-        <div class="b--chapter3-a__content b--chapter3-a__content--second">
+        <div class="b--chapter4-a__content b--chapter4-a__content--second">
           <v-info-chapter :info="chapter" />
         </div>
         <!-- wheel -->
-        <div class="b--chapter3-a__content b--chapter3-a__content--third">
+        <div class="b--chapter4-a__content b--chapter4-a__content--third">
           <img
             src="@/assets/img/chapter-3/wheel.png"
             alt="wheel"
@@ -47,7 +47,7 @@
           />
         </div>
         <!-- flags right -->
-        <div class="b--chapter3-a__artwork b--chapter3-a__artwork--second">
+        <div class="b--chapter4-a__artwork b--chapter4-a__artwork--second">
           <div
             class="b--motion-c"
             :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-right_spritesheet.png`) + ')'"

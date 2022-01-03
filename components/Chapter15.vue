@@ -1,5 +1,5 @@
 <template>
-    <section class="b--page-a__item b--chapter14-a" id="Scene15" ref="Scene15" v-if="chapter">
+    <section class="b--page-a__item b--chapter15-a" id="Scene15" ref="Scene15" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
                 <img :src="require(`@/assets/img/chapter-14/front-${this.lang}.png`)" alt="front" @load="handleLoad"
@@ -8,8 +8,8 @@
             <div class="b--ss-a__content">
                 <!-- first position element, chapter title -->
                 <div 
-                    class="b--chapter14-a__content"
-                    :class="'b--chapter14-a__content--' + `${this.lang}`"
+                    class="b--chapter15-a__content"
+                    :class="'b--chapter15-a__content--' + `${this.lang}`"
                 >
                     <v-card-f 
                         :title="chapter.intro_title"
@@ -18,18 +18,18 @@
                     />
                 </div>
                 <!-- second position element, quote -->
-                <div class="b--chapter14-a__content b--chapter14-a__content--second">
+                <div class="b--chapter15-a__content b--chapter15-a__content--second">
                     <v-quote-a 
                         :chapter="chapter"
                         customClass="b--quote-a--third"
                     />
                 </div>
                 <!-- arrow -->
-                <div class="b--chapter14-a__artwork">
+                <div class="b--chapter15-a__artwork">
                     <div class="b--motion-o" :style="'background-image: url(' + require(`@/assets/img/chapter-14/arrow.png`) + ')'"></div>
                 </div>
                 <!-- wheel -->
-                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second">
+                <div class="b--chapter15-a__artwork b--chapter15-a__artwork--second">
                     <img
                         @load="handleLoad"
                         @error="handleLoad"
@@ -39,7 +39,7 @@
                     />
                 </div>
                 <!-- card-i -->
-                <div class="b--chapter14-a__content b--chapter14-a__content--third">
+                <div class="b--chapter15-a__content b--chapter15-a__content--third">
                     <v-card-i
                     :customClass="'b--card-i--'+ `${this.lang}`"
                     :chapter="chapter"
@@ -47,7 +47,7 @@
                     />
                 </div>
                 <!-- social -->
-                <div class="b--chapter14-a__content b--chapter14-a__content--fourth" :class="'b--chapter14-a__content--fourth--'+ `${this.lang}`">
+                <div class="b--chapter15-a__content b--chapter15-a__content--fourth" :class="'b--chapter15-a__content--fourth--'+ `${this.lang}`">
                     <v-social-a :chapter="chapter"></v-social-a>
                 </div>
             </div>

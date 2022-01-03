@@ -1,6 +1,6 @@
 <template>
   <section
-    class="b--page-a__item b--chapter9-a"
+    class="b--page-a__item b--chapter10-a"
     id="Scene10"
     ref="Scene10"
     v-if="chapter"
@@ -31,8 +31,8 @@
         <!-- first position element, card -->
         <!-- move up from the scss -->
         <div
-          class="b--chapter9-a__content"
-          :class="'b--chapter9-a__content--' + `${this.lang}`"
+          class="b--chapter10-a__content"
+          :class="'b--chapter10-a__content--' + `${this.lang}`"
           ref="boxContent"
           :style="{ left: '152%' }"
         >
@@ -47,63 +47,63 @@
       <!-- second position element, info -->
       <div class="b--ss-a__front-content">
         <div
-          class="b--chapter9-a__info"
+          class="b--chapter10-a__info"
           ref="quoteContent"
           :style="{ left: '173%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
         <!-- animation algae 1 -->
-        <div class="b--chapter9-a__artwork" ref="algae1" :style="{ left: '295%' }">
+        <div class="b--chapter10-a__artwork" ref="algae1" :style="{ left: '295%' }">
           <div
             class="b--motion-v"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_1.png`) + ')'"
           ></div>
         </div>
         <!-- animation algae 2 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--second" ref="algae2" :style="{ left: '278%' }">
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--second" ref="algae2" :style="{ left: '278%' }">
           <div
             class="b--motion-w"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation algae 2 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--third" ref="algae3" :style="{ left: '322%' }">
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third" ref="algae3" :style="{ left: '322%' }">
           <div
             class="b--motion-w"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/algae_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 1 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fourth" ref="bubble1" :style="{ left: '168%' }">
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="bubble1" :style="{ left: '168%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_1.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 2 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--fifth" ref="bubble2" :style="{ left: '186%' }">
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth" ref="bubble2" :style="{ left: '186%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_2.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 3 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--sixth" ref="bubble3" :style="{ left: '205%' }">
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--sixth" ref="bubble3" :style="{ left: '205%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
           ></div>
         </div>
         <!-- animation buble 3 -->
-        <div class="b--chapter9-a__artwork b--chapter9-a__artwork--seventh" ref="bubble4" :style="{ left: '148%' }">
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--seventh" ref="bubble4" :style="{ left: '148%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-9/bubble_3.png`) + ')'"
           ></div>
         </div>
         <!-- lottie animation fishes -->
-        <lottie class="b--chapter9-a__artwork b--chapter9-a__artwork--eight" :options="lottieOptions" v-on:animCreated="handleAnimation" />
+        <lottie class="b--chapter10-a__artwork b--chapter10-a__artwork--eight" :options="lottieOptions" v-on:animCreated="handleAnimation" />
       </div>
       <div class="b--ss-a__bg-items">
         <img

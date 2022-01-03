@@ -1,12 +1,12 @@
 <template>
-    <section class="b--page-a__item b--chapter13-a" id="Scene14" ref="Scene14" v-if="chapter">
+    <section class="b--page-a__item b--chapter14-a" id="Scene14" ref="Scene14" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__divider">
-                <div class="b--chapter13-a__divider">
+                <div class="b--chapter14-a__divider">
                 <img
                     @load="handleLoad"
                     @error="handleLoad"
-                    class="b--chapter13-a__divider__media b--chapter13-a__divider__media--right"
+                    class="b--chapter14-a__divider__media b--chapter14-a__divider__media--right"
                     src="@/assets/img/chapter-13/13-14_tree.png"
                     alt="13-14_tree"
                 />
@@ -31,8 +31,8 @@
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
                 <div 
-                class="b--chapter13-a__content"
-                :class="'b--chapter13-a__content--' + `${this.lang}`"
+                class="b--chapter14-a__content"
+                :class="'b--chapter14-a__content--' + `${this.lang}`"
                 ref="boxContent"
                 :style="{ left: '362%'}"
                 >
@@ -43,19 +43,19 @@
                         cardACustomClass="b--card-a--second"
                     />
                 </div> 
-                <div class="b--chapter13-a__artwork" ref="plantwater1" :style="{ left: '390%'}">
+                <div class="b--chapter14-a__artwork" ref="plantwater1" :style="{ left: '390%'}">
                     <div class="b--motion-m" :style="'background-image: url(' + require(`@/assets/img/chapter-13/plant_water.png`) + ')'">
                     </div>
                 </div>
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second" ref="plantwater2" :style="{ left: '435%'}">
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second" ref="plantwater2" :style="{ left: '435%'}">
                     <div class="b--motion-n"  :style="'background-image: url(' + require(`@/assets/img/chapter-13/plant_water_2.png`) + ')'">
                     </div>
                 </div>
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--third" ref="lines1" :style="{ left: '448%'}">
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--third" ref="lines1" :style="{ left: '448%'}">
                     <div class="b--motion-k" :style="'background-image: url(' + require(`@/assets/img/chapter-13/lines_spritesheet.png`) + ')'">
                     </div>
                 </div>  
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--fourth" ref="lines2" :style="{ left: '390%'}">
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--fourth" ref="lines2" :style="{ left: '390%'}">
                     <div class="b--motion-k" v-lazy:background-image="
                     require(`@/assets/img/chapter-13/lines_spritesheet.png`)
                     ">

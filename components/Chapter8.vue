@@ -1,6 +1,6 @@
 <template>
   <section
-    class="b--page-a__item b--chapter7-a"
+    class="b--page-a__item b--chapter8-a"
     id="Scene8"
     ref="Scene8"
     v-if="chapter"
@@ -20,8 +20,8 @@
       <div class="b--ss-a__content">
         <div 
           
-          class="b--chapter7-a__content"
-          :class="'b--chapter7-a__content--' + `${this.lang}`"
+          class="b--chapter8-a__content"
+          :class="'b--chapter8-a__content--' + `${this.lang}`"
           ref="boxContent" :style="{ left: '88%' }"
         >
           <v-card-f
@@ -31,13 +31,13 @@
             cardACustomClass="b--card-a--second"
           />
         </div>
-        <div class="b--chapter7-a__content b--chapter7-a__content--second" ref="documentLeft" :style="{ left: '68%' }">
+        <div class="b--chapter8-a__content b--chapter8-a__content--second" ref="documentLeft" :style="{ left: '68%' }">
           <v-card-h 
             :content="chapter.document_left"
             :class="'b--card-h--' + `${this.lang}`" 
             />
         </div>
-        <div class="b--chapter7-a__content b--chapter7-a__content--third" ref="documentRight" :style="{ left: '80%' }">
+        <div class="b--chapter8-a__content b--chapter8-a__content--third" ref="documentRight" :style="{ left: '80%' }">
           <v-card-h 
             :content="chapter.document_right"
             :class="'b--card-h--' + `${this.lang}`"  
