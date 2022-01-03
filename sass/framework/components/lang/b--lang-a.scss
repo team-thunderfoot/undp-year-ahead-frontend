@@ -56,7 +56,7 @@
     pointer-events: none;
     transition: all $time-a ease-in-out;
     @media all and ($viewport-type: $mobile) {
-      top: -$measure/2;
+      top: -$measure * 0.5;
     }
     &__list-group {
       background-color: $color-f;
