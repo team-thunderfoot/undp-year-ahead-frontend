@@ -34,7 +34,7 @@
                 class="b--chapter14-a__content"
                 :class="'b--chapter14-a__content--' + `${this.lang}`"
                 ref="boxContent"
-                :style="{ left: '280%'}"
+                :style="{ left: '299%'}"
                 >
                     <v-card-f 
                         :title="chapter.intro_title" 
@@ -114,7 +114,7 @@ export default {
                 { obj: this.$refs['plantwater2'], intensity: 40},
                 { obj: this.$refs['lines1'], intensity: 40},
                 { obj: this.$refs['lines2'], intensity: 40},
-                { obj: this.$refs['boxContent'], intensity: 40},
+                { obj: this.$refs['boxContent'], intensity: 30},
             ]
             motion.forEach((item) => {
                 this.parallaxMove({
