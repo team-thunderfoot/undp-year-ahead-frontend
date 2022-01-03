@@ -79,13 +79,16 @@
   // mobile scroll indicator
   &--second {
     display: none;
+    width: fit-content;
     @media all and ($viewport-type: $mobile) {
       display: block;
       left: 50%;
       bottom: 5%;
     }
     &__artwork {
-      margin: 0 0 $measure*3 0;
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
       &:hover, &:focus-visible{
         background-color: map-get($colorbg-options , h );
       }
@@ -94,9 +97,48 @@
       position: absolute;
       left: 13px;
       top: 13px;
+      animation: cycle 2.5s infinite;
+      transition: none;
+      @keyframes cycle {
+        0% {
+          transform: translateY(0);
+        }
+
+        15% {
+          transform: translateY(-30px);
+        }
+
+        25% {
+          transform: translateY(34px);
+          opacity: 0;
+        }
+
+        35% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(0px);
+        }
+
+        75% {
+          transform: translateY(0px);
+        }
+
+        100% {
+          transform: translateY(0px);
+        }
+
+      }
     }
     &__title {
-      @include make-font-j();
+      font-size: 14px;
+      font-family: $type-b;
+      text-transform: uppercase;
+      line-height: 19.25px;
+      text-align: center;
+      letter-spacing: 1px;
       color: map-get($color-options, y);
     }
     &--is-hidden {
