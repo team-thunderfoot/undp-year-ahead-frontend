@@ -16,7 +16,7 @@
                 <img
                 @load="handleLoad"
                 @error="handleLoad"
-                :style="{ left: '120%'}"
+                :style="{ left: '185%'}"
                 class="b--ss-a__middle-items__parallax"
                 src="@/assets/img/chapter-14/middle-parallax.png"
                 alt="middle"
@@ -26,7 +26,7 @@
             </div>
             <div class="b--ss-a__ft-items">
                 <img @load="handleLoad"
-                @error="handleLoad" :style="{ left: '290%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-14/front-parallax.png" alt="front" />
+                @error="handleLoad" :style="{ left: '360%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-14/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- first position element, card -->
@@ -34,7 +34,7 @@
                 class="b--chapter14-a__content"
                 :class="'b--chapter14-a__content--' + `${this.lang}`"
                 ref="boxContent"
-                :style="{ left: '299%'}"
+                :style="{ left: '195%'}"
                 >
                     <v-card-f 
                         :title="chapter.intro_title" 
@@ -43,19 +43,19 @@
                         cardACustomClass="b--card-a--second"
                     />
                 </div> 
-                <div class="b--chapter14-a__artwork" ref="plantwater1" :style="{ left: '290%'}">
+                <div class="b--chapter14-a__artwork" ref="plantwater1" :style="{ left: '225%'}">
                     <div class="b--motion-m" :style="'background-image: url(' + require(`@/assets/img/chapter-14/plant_water.png`) + ')'">
                     </div>
                 </div>
-                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second" ref="plantwater2" :style="{ left: '291%'}">
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--second" ref="plantwater2" :style="{ left: '265%'}">
                     <div class="b--motion-n"  :style="'background-image: url(' + require(`@/assets/img/chapter-14/plant_water_2.png`) + ')'">
                     </div>
                 </div>
-                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--third" ref="lines1" :style="{ left: '292%'}">
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--third" ref="lines1" :style="{ left: '275%'}">
                     <div class="b--motion-k" :style="'background-image: url(' + require(`@/assets/img/chapter-14/lines_spritesheet.png`) + ')'">
                     </div>
                 </div>  
-                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--fourth" ref="lines2" :style="{ left: '293%'}">
+                <div class="b--chapter14-a__artwork b--chapter14-a__artwork--fourth" ref="lines2" :style="{ left: '223%'}">
                     <div class="b--motion-k" v-lazy:background-image="
                     require(`@/assets/img/chapter-14/lines_spritesheet.png`)
                     ">
@@ -108,13 +108,13 @@ export default {
         AsambleParallaxObjs() {
             var motion = [
                 { obj: this.$refs['parallax-bg'], intensity: 1 },
-                { obj: this.$refs['parallax-ft'], intensity: 10},
-                { obj: this.$refs['parallax-middle'], intensity: 40},
-                { obj: this.$refs['plantwater1'], intensity: 40},
-                { obj: this.$refs['plantwater2'], intensity: 40},
-                { obj: this.$refs['lines1'], intensity: 40},
-                { obj: this.$refs['lines2'], intensity: 40},
-                { obj: this.$refs['boxContent'], intensity: 30},
+                { obj: this.$refs['parallax-ft'], intensity: 40},
+                { obj: this.$refs['parallax-middle'], intensity: 21},
+                { obj: this.$refs['plantwater1'], intensity: 21},
+                { obj: this.$refs['plantwater2'], intensity: 21},
+                { obj: this.$refs['lines1'], intensity: 21},
+                { obj: this.$refs['lines2'], intensity: 21},
+                { obj: this.$refs['boxContent'], intensity: 21},
             ]
             motion.forEach((item) => {
                 this.parallaxMove({

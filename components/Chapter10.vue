@@ -34,7 +34,7 @@
           class="b--chapter10-a__content"
           :class="'b--chapter10-a__content--' + `${this.lang}`"
           ref="boxContent"
-          :style="{ left: '152%' }"
+          :style="{ left: '148%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -49,7 +49,7 @@
         <div
           class="b--chapter10-a__info"
           ref="quoteContent"
-          :style="{ left: '173%' }"
+          :style="{ left: '170%' }"
         >
           <v-info-chapter :info="chapter" />
         </div>
@@ -75,7 +75,7 @@
           ></div>
         </div>
         <!-- animation buble 1 -->
-        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="bubble1" :style="{ left: '168%' }">
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="bubble1" :style="{ left: '165%' }">
           <div
             class="b--motion-x"
             :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_1.png`) + ')'"

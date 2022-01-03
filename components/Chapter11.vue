@@ -78,7 +78,7 @@
         <div
           class="b--chapter11-a__content"
           :class="'b--chapter11-a__content--' + `${this.lang}`"
-          ref="boxContent"  :style="{ left: '248%' }"
+          ref="boxContent"  :style="{ left: '246%' }"
         >
           <v-card-f
             :title="chapter.intro_title"

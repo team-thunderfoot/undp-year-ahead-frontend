@@ -6,7 +6,7 @@
                 @load="handleLoad"
                 @error="handleLoad"
                 ref="parallax-ft" 
-                :style="{ left: '66%', position: 'absolute' }"
+                :style="{ left: '42%', position: 'absolute' }"
                 :src="require(`@/assets/img/chapter-12/front-parallax-${this.lang}.png`)" alt="front" />
                 <img
                     @load="handleLoad"
@@ -104,7 +104,7 @@ export default {
                 { obj: this.$refs['eyes1'], intensity: 8 },
                 { obj: this.$refs['eyes2'], intensity: 8 },
                 { obj: this.$refs['infoChapter'], intensity: 8 },
-                { obj: this.$refs['parallax-ft'], intensity: 8 },
+                { obj: this.$refs['parallax-ft'], intensity: 5 },
                 { obj: this.$refs['boxes'], intensity: 8 },
                 { obj: this.$refs['boxContent'], intensity: 8 },
             ]
