@@ -4,7 +4,7 @@
 </template>
 <script>
 import lottie from 'vue-lottie/src/lottie.vue'
-import * as animationData from "~/assets/img/chapter-9/fish.json";
+import * as animationData from "~/assets/img/chapter-10/fish.json";
 
 
 export default {
