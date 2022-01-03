@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img :style="{ left: '3%' }" src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" @load="handleLoad"
+        <img src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" @load="handleLoad"
           @error="handleLoad" />
       </div>
       <div class="b--ss-a__content">
