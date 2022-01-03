@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="b--ss-a__ft-items">
-                <img ref="parallax-ft" :style="{ left: '280%' }" class="b--ss-a__ft-items__parallax" 
+                <img ref="parallax-ft" :style="{ left: '220%' }" class="b--ss-a__ft-items__parallax" 
                     @load="handleLoad"
                     @error="handleLoad" src="@/assets/img/chapter-13/front-parallax.png" alt="front" />
             </div>
@@ -22,7 +22,7 @@
                 <div 
                     class="b--chapter13-a__content"
                     :class="'b--chapter13-a__content--' + `${this.lang}`"
-                    ref="boxContent" 
+                    ref="boxContent"  :style="{ left: '100%' }"
                 >
                     <v-card-f 
                         :title="chapter.intro_title"
@@ -33,7 +33,7 @@
                 </div>
                 <!-- info chart -->
                 <div class="b--chapter13-a__content b--chapter13-a__content--second"
-                 ref="infoChapter"  :style="{ left: '290%' }"
+                 ref="infoChapter"  :style="{ left: '120%' }"
                 >
                     <v-info-chapter :info="chapter"/>
                 </div>
@@ -84,9 +84,9 @@ export default {
         AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 1 },
-        { obj: this.$refs['parallax-ft'], intensity: 40 },
-        { obj: this.$refs['infoChapter'], intensity: 40 },
-        { obj: this.$refs['boxContent'], intensity: 40 },
+        { obj: this.$refs['parallax-ft'], intensity: 30 },
+        { obj: this.$refs['infoChapter'], intensity: 10 },
+        { obj: this.$refs['boxContent'], intensity: 10 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
@@ -122,7 +122,7 @@ export default {
         this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
         var chapter = this.getLanguageData({lang : this.lang});
         this.chapter =  chapter.ChapterThirdteen;
-        this.contentLoaded++
+        this.contentLoaded++;
     }
 }
 </script>
