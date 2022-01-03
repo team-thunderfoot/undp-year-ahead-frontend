@@ -3,16 +3,16 @@
   &__content {
     position: absolute;
     bottom: 16.79%;
-    left: 2.81%;
-    width: 11.91%;
+    left: 4.02%;
+    width: 22.15%;
     max-width: calc(100vw - 100px);
     max-height: calc(60.25vh - 16.79vh - $measure * 4);
 
     &--es {
-      width: 10.8%;
+      width: 22.15%;
     }
     &--en {
-      width: 10.8%;
+      width: 22.15%;
     }
     @media all and ($viewport-type: $laptop) {
       left: 2.31%;
@@ -28,8 +28,8 @@
     // intro second box card-a
     &--second {
       bottom: 17.77%;
-      left: 17.5%;
-      width: 12.09%;
+      left: 31.31%;
+      width: 22.56%;
       max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
       @media all and ($viewport-type: $laptop) {
         // left: 17%;
@@ -44,11 +44,9 @@
       .b--card-a {
         @media all and (max-height: 660px) {
           @include make-card-a-scrollbar();
-
         }
         @media all and ($viewport-type: 430px) {
           @include make-card-a-scrollbar();
-
         }
         @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
           @include make-card-a-scrollbar();
@@ -133,18 +131,18 @@
         // bottom: 34.48%;
         top: 8%;
         left: 62%;
-        width: calc(100vw - 80px + $measure*10);
+        width: calc(100vw - 80px + $measure * 10);
         max-width: none;
       }
-      .b--card-e{
+      .b--card-e {
         width: fit-content;
         position: absolute;
-        top: 3.9vh*2;
-        right: calc(100% - 3.9vh*2);
+        top: 3.9vh * 2;
+        right: calc(100% - 3.9vh * 2);
         max-width: calc(100vw - 80px);
         @media all and ($viewport-type: $tabletl) {
-          top: calc(3.9vh - $measure*2);
-          right: calc(100% - 3.9vh - $measure*2);
+          top: calc(3.9vh - $measure * 2);
+          right: calc(100% - 3.9vh - $measure * 2);
         }
         @media all and ($viewport-type: $mobile) {
           // top: -1.5vh*2;
@@ -180,8 +178,8 @@
     // Gif top left
     &--second {
       bottom: 60.25%;
-      left: 2.77%;
-      width: 4.19%;
+      left: 4.02%;
+      width: 7.83%;
       height: 28.8%;
       max-height: calc(100vh - 60.25vh - $measure * 4);
     }
@@ -189,16 +187,16 @@
     // Browser
     &--third {
       top: 8.3%;
-      left: 31.2%;
-      width: 5.61%;
+      left: 56.78%;
+      width: 10.15%;
       height: 21.48%;
     }
 
     // TV
     &--fourth {
       bottom: 27.44%;
-      left: 31.09%;
-      width: 10.2%;
+      left: 58.05%;
+      width: 19.25%;
       height: 36.5%;
       max-height: calc(100vh - 27.44vh - $measure * 4);
       z-index: -1;
