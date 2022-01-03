@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Lang from '@/components/lang'
+import Lang from '@/components/Lang'
 export default {
     components: {
         'v-lang': Lang,
