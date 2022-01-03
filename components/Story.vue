@@ -145,7 +145,8 @@ export default {
         if(process.client){
             this.custom_tf = new Resize();
             
-            this.sceneNumber =  this.custom_tf.checkURL();
+            this.urlWithParams = this.custom_tf.checkURL(); // checks if url has params
+            this.sceneNumber = ( this.urlWithParams ) ? this.custom_tf.getURL() : false; // returns the param
             // event in Index.vue
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;
@@ -173,7 +174,8 @@ export default {
                     this.$router.push({path: this.$route.path, query: { scene:  payload.item }})
                 }
             });
-
+            
+            // resize funcion
             window.onresize = (e)=> {  
                 if(window.innerWidth > this.windowWidth){
                     clearTimeout(this.timeOutFunctionId);
