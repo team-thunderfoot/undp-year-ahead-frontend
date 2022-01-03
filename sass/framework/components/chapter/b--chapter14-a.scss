@@ -30,7 +30,7 @@
     }
     .b--card-a {
       @media all and (max-height: 450px) {
-        @include make-card-a-shadow();
+        @include make-card-a-scrollbar();
       }
       &__wrapper {
         @media all and (max-height: 450px) {
@@ -41,7 +41,7 @@
     &--fr {
       .b--card-a {
         @media all and (max-height: 540px) {
-          @include make-card-a-shadow();
+          @include make-card-a-scrollbar();
         }
         &__wrapper {
           @media all and (max-height: 540px) {
@@ -53,7 +53,7 @@
     &--es {
       .b--card-a {
         @media all and (max-height: 510px) {
-          @include make-card-a-shadow();
+          @include make-card-a-scrollbar();
         }
         &__wrapper {
           @media all and (max-height: 510px) {

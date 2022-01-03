@@ -40,7 +40,7 @@
       .b--card-f {
         .b--card-a {
           @media all and (max-height: 430px) {
-            @include make-card-a-shadow();
+            @include make-card-a-scrollbar();
           }
           &__wrapper {
             @media all and (max-height: 430px) {

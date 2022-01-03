@@ -1,11 +1,29 @@
 @mixin make-card-a-wrapper-scroll() {
-  overflow: auto;
-  .b--content-a {
-    padding-bottom: $measure * 4;
+  overflow-y: scroll;
+  /* firefox */
+  scrollbar-width: thin;
+}
+
+@mixin make-card-a-scrollbar() {
+  ::-webkit-scrollbar {
+    display: block;
+    width: 4px;
   }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(255, 242, 228); 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: map-get($colorbg-options , i ); 
+  }
+
+  /* firefox */
+  scrollbar-color: map-get($colorbg-options , i ) rgb(255, 242, 228) ;
 }
 
 @mixin make-card-a-shadow() {
+
   &:after {
     content: '';
     height: calc(45px + $measure * 3);

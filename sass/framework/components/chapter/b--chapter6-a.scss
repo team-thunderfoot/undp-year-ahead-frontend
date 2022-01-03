@@ -18,10 +18,10 @@
     .b--card-f {
       .b--card-a {
         @media all and (max-height: 630px) {
-          @include make-card-a-shadow();
+          @include make-card-a-scrollbar();
         }
         @media all and ($viewport-type: 375px) {
-          @include make-card-a-shadow();
+          @include make-card-a-scrollbar();
         }
         &__wrapper {
           @media all and (max-height: 630px) {
@@ -37,10 +37,10 @@
       .b--card-f {
         .b--card-a {
           @media all and (max-height: 900px) {
-            @include make-card-a-shadow();
+            @include make-card-a-scrollbar();
           }
           @media all and ($viewport-type: 375px) {
-            @include make-card-a-shadow();
+            @include make-card-a-scrollbar();
           }
           &__wrapper {
             @media all and (max-height: 900px) {
@@ -57,10 +57,10 @@
       .b--card-f {
         .b--card-a {
           @media all and (max-height: 700px) {
-            @include make-card-a-shadow();
+            @include make-card-a-scrollbar();
           }
           @media all and ($viewport-type: 430px) {
-            @include make-card-a-shadow();
+            @include make-card-a-scrollbar();
           }
           &__wrapper {
             @media all and (max-height: 700px) {
