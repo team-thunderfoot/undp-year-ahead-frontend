@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img src="@/assets/img/chapter-3/front.png" alt="front"  @load="handleLoad"
+        <img src="@/assets/img/chapter-4/front.png" alt="front"  @load="handleLoad"
           @error="handleLoad"/>
       </div>
       <div class="b--ss-a__content">
@@ -15,7 +15,7 @@
         <div class="b--chapter4-a__artwork b--chapter4-a__artwork--fifth">
           <div
             class="b--motion-b"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-left_spritesheet.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-4/flags-left_spritesheet.png`) + ')'"
           ></div>
         </div>
 
@@ -39,7 +39,7 @@
         <!-- wheel -->
         <div class="b--chapter4-a__content b--chapter4-a__content--third">
           <img
-            src="@/assets/img/chapter-3/wheel.png"
+            src="@/assets/img/chapter-4/wheel.png"
             alt="wheel"
             title="wheel"
              @load="handleLoad"
@@ -50,7 +50,7 @@
         <div class="b--chapter4-a__artwork b--chapter4-a__artwork--second">
           <div
             class="b--motion-c"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-right_spritesheet.png`) + ')'"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-4/flags-right_spritesheet.png`) + ')'"
           ></div>
         </div>
       </div>
@@ -61,7 +61,7 @@
           class="b--ss-a__bg-items__artwork"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-3/back.png"
+          src="@/assets/img/chapter-4/back.png"
           alt="back"
         />
       </div>
