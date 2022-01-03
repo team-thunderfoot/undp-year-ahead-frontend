@@ -92,7 +92,11 @@ export default {
     methods:{
         workAfterResizeIsDone(){
             // this.scrollTween.kill();
-            window.location  =  this.$route.path;
+            if(this.$route.query.scene){
+                window.location  =  this.$route.path + '?scene=' + this.$route.query.scene;
+            }else{
+                window.location  =  this.$route.path;
+            }
         },
         getTotalWidth(){
             let width = 0;
