@@ -2,7 +2,7 @@
     <section class="b--page-a__item b--chapter15-a" id="Scene15" ref="Scene15" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__ft-items">
-                <img :src="require(`@/assets/img/chapter-14/front-${this.lang}.png`)" alt="front" @load="handleLoad"
+                <img :src="require(`@/assets/img/chapter-15/front-${this.lang}.png`)" alt="front" @load="handleLoad"
                 @error="handleLoad"/>
             </div>
             <div class="b--ss-a__content">
@@ -26,7 +26,7 @@
                 </div>
                 <!-- arrow -->
                 <div class="b--chapter15-a__artwork">
-                    <div class="b--motion-o" :style="'background-image: url(' + require(`@/assets/img/chapter-14/arrow.png`) + ')'"></div>
+                    <div class="b--motion-o" :style="'background-image: url(' + require(`@/assets/img/chapter-15/arrow.png`) + ')'"></div>
                 </div>
                 <!-- wheel -->
                 <div class="b--chapter15-a__artwork b--chapter15-a__artwork--second">
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-14/back.png" alt="back">        
+                <img class="b--ss-a__bg-items__artwork" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-15/back.png" alt="back">        
             </div>
         </div>
     </section>

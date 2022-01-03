@@ -7,13 +7,13 @@
                 @error="handleLoad"
                 ref="parallax-ft" 
                 :style="{ left: '66%', position: 'absolute' }"
-                :src="require(`@/assets/img/chapter-11/front-parallax-${this.lang}.png`)" alt="front" />
+                :src="require(`@/assets/img/chapter-12/front-parallax-${this.lang}.png`)" alt="front" />
                 <img
                     @load="handleLoad"
                     @error="handleLoad"
                     class="b--ss-a__ft-items__media"
                     alt="front"
-                    src="@/assets/img/chapter-11/front-elements.png"
+                    src="@/assets/img/chapter-12/front-elements.png"
                 />
             </div>
             <div class="b--ss-a__content">
@@ -36,19 +36,19 @@
                 </div>
                 <!-- boxes -->
                 <div class="b--chapter12-a__media" :style="{ left: '77%'}" ref="boxes" >
-                    <img class="b--media-a" src="@/assets/img/chapter-11/boxes.svg" alt="boxes" 
+                    <img class="b--media-a" src="@/assets/img/chapter-12/boxes.svg" alt="boxes" 
                         @load="handleLoad"
                         @error="handleLoad"/>
                     <!-- blink 2a -->
-                    <div class="b--motion-h" :style="'background-image: url(' + require(`@/assets/img/chapter-11/blink_2a.png`) + ')'"></div>
+                    <div class="b--motion-h" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_2a.png`) + ')'"></div>
                     <!-- blink 2b -->
-                    <div class="b--motion-q" :style="'background-image: url(' + require(`@/assets/img/chapter-11/blink_2b.png`) + ')'"></div>
+                    <div class="b--motion-q" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_2b.png`) + ')'"></div>
                 </div>
                 <!-- plant animation -->
                 <div class="b--chapter12-a__artwork">
                     <div
                         class="b--motion-i"
-                        :style="'background-image: url(' + require(`@/assets/img/chapter-11/plant_wind_3.png`) + ')'"
+                        :style="'background-image: url(' + require(`@/assets/img/chapter-12/plant_wind_3.png`) + ')'"
                     >
                     </div>
                 </div>
@@ -59,13 +59,13 @@
                 @load="handleLoad"
                 @error="handleLoad"
                 :style="{ left: '420%' }"
-                src="@/assets/img/chapter-11/back-parallax.png"
+                src="@/assets/img/chapter-12/back-parallax.png"
                 alt="back parallax"> 
                 <img class="b--ss-a__bg-items__back" 
                 @load="handleLoad"  
                 @error="handleLoad" 
                 alt="back"
-                src="@/assets/img/chapter-11/back.png">          
+                src="@/assets/img/chapter-12/back.png">          
             </div>
         </div>
     </section>

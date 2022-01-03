@@ -7,7 +7,7 @@
                         @load="handleLoad"
                         @error="handleLoad"
                         class="b--chapter13-a__divider__media b--chapter13-a__divider__media--left"
-                        src="@/assets/img/chapter-12/11-12_tree.png"
+                        src="@/assets/img/chapter-13/11-12_tree.png"
                         alt="11-12_tree"
                     />
                 </div>
@@ -15,7 +15,7 @@
             <div class="b--ss-a__ft-items">
                 <img ref="parallax-ft" :style="{ left: '628%' }" class="b--ss-a__ft-items__parallax" 
                     @load="handleLoad"
-                    @error="handleLoad" src="@/assets/img/chapter-12/front-parallax.png" alt="front" />
+                    @error="handleLoad" src="@/assets/img/chapter-13/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
                 <!-- chapter title -->
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="b--chapter13-a__artwork">
-                <div class="b--motion-j" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_3.png`) + ')'">
+                <div class="b--motion-j" :style="'background-image: url(' + require(`@/assets/img/chapter-13/blink_3.png`) + ')'">
                 </div>
             </div>
             <div class="b--ss-a__bg-items">
@@ -48,9 +48,9 @@
                 @error="handleLoad"
                 alt="back-parallax"
                 ref="parallax-bg'"
-                src="@/assets/img/chapter-12/back-parallax.png"
+                src="@/assets/img/chapter-13/back-parallax.png"
                 >        
-                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png" alt="back">        
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-13/back.png" alt="back">        
             </div>
         </div>
     </section>
