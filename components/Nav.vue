@@ -9,18 +9,7 @@
                     <a href="#" @click.prevent="goToStart()" class="b--nav-a__ft-items__bd__link">{{nav.nav_title}}</a>
                 </div>
                 <div class="b--nav-a__ft-items__ft">
-                    <a class="b--nav-a__ft-items__ft__link" :href="social.facebook" target="_blank" rel="noopener noreferrer">
-                        <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--facebook" src="@/assets/img/social/facebook-black.svg" alt="Facebook">
-                    </a>
-                    <a class="b--nav-a__ft-items__ft__link" :href="social.instagram" target="_blank" rel="noopener noreferrer">
-                        <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--instagram" src="@/assets/img/social/instagram-black.svg" alt="Instagram">
-                    </a>
-                    <a class="b--nav-a__ft-items__ft__link" :href="social.linkedin" target="_blank" rel="noopener noreferrer">
-                        <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--linkedin" src="@/assets/img/social/linkedin-black.svg" alt="Linkedin">
-                    </a>
-                    <a class="b--nav-a__ft-items__ft__link" :href="social.twitter" target="_blank" rel="noopener noreferrer">
-                        <img class="b--nav-a__ft-items__ft__link__media b--nav-a__ft-items__ft__link__media--twitter" src="@/assets/img/social/twitter-black.svg" alt="Twitter">
-                    </a>
+                    <v-lang />
                 </div>
                 <div class="b--nav-a__ft-items__artwork">
                     <div class="b--nav-a__ft-items__artwork__item" :style="{ height: this.progressValue+'%' }" ></div>
@@ -32,7 +21,11 @@
 </template>
 
 <script>
+import Lang from '@/components/lang'
 export default {
+    components: {
+        'v-lang': Lang,
+    },
     methods : {
         getContent() {
             this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
@@ -49,8 +42,7 @@ export default {
 		return{
             progressValue:0,
             nav : '',
-            lang : '',
-            social : ''
+            lang : ''
 		}
 	},
     created(){
