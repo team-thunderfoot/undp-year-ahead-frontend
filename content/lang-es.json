@@ -3,25 +3,27 @@
         "intro_title": "Año nuevo, plan nuevo",
         "intro_date": "",
         "intro_description": "Desarrollo Sostenible en 2022",
-        "content": "<p>A medida que empezamos el nuevo año, el mundo está luchando contra una pandemia y se enfrenta a una emergencia planetaria. Tanto la COVID-19 como el cambio climático contribuyen al aumento de la desigualdad, los conflictos y la fragilidad en todo el mundo. Estos desafíos interconectados requieren soluciones integradas.</p><p>En 2022, el PNUD pondrá en acción su nuevo<a href='https://strategicplan.undp.org/es/' target='_blank' rel='noopenner noreferrer'> Plan Estratégico</a>  que se basa en el compromiso de erradicar la pobreza y ayudar a los países a alcanzar los Objetivos de Desarrollo Sostenible (ODS).</p><p><strong>He aquí algunos momentos clave para tener en cuenta a lo largo de este año que empezamos.</strong></p>",
+        "content": "<p>A medida que empezamos el nuevo año, el mundo está luchando contra una pandemia y se enfrenta a una emergencia planetaria. Tanto la COVID-19 como el cambio climático contribuyen al aumento de la desigualdad, los conflictos y la fragilidad en todo el mundo. Estos desafíos interconectados requieren soluciones integradas.</p><p>En 2022, el PNUD pondrá en acción su nuevo<a href='https://strategicplan.undp.org/es/' target='_blank' rel='noopenner noreferrer'> Plan Estratégico</a>  que se basa en el compromiso de erradicar la pobreza y ayudar a los países a alcanzar los Objetivos de Desarrollo Sostenible (ODS).</p><p><strong>He aquí algunos momentos clave para tener en cuenta a lo largo de este año que empezamos.</strong></p>"
+    },
+    "ChapterTwo" :   {
         "quote_system": "Cambiar los sistemas",
         "quote_content": "<p>“Para marcar una diferencia en la vida de las personas a la escala que se necesita, tenemos que examinar los sistemas y estructuras que dan forma al desarrollo, no solo los desafíos inmediatos”</p>",
         "quote_author": "Haoliang Xu",
         "quote_author_link": "https://twitter.com/haoliangxu",
         "quote_author_description": "Director de la Oficina del UNDP de Apoyo a Políticas y Programas."
     },
-    "ChapterTwo" :   {
+    "ChapterThree" :   {
         "intro_title": "#DontChooseExtinction",
         "intro_description": "<p>Estate atento a <a href='https://twitter.com/frankiethedino' target='_blank' rel='noopenner noreferrer'>Frankie the Dinosaur</a> este año mientras continúa defendiendo la reforma de los subsidios a los combustibles fósiles como un componente esencial para implementar la acción climática. ¡Podría estar cerca de ti!<p><p>Mira el mensaje que tiene Frankie para la humanidad: <a href='https://dontchooseextinction.com/en/' target='_blank' rel='noopenner noreferrer'>Don't choose extinction [No elijan la extinción, disponible en español] | PNUD</a></p>"
     },
-    "ChapterThree" :   {
+    "ChapterFour" :   {
         "intro_title": "Cumpliendo con los ODS",
         "intro_description": "<p>Líderes y jóvenes de 46 países se reunirán para dar forma a la próxima década de acción para lograr los ODS.</p>",
         "tooltip_label": "5ª Conferencia de las Naciones Unidas sobre los Países Menos Adelantados",
         "tooltip_link": "https://www.un.org/ldc5/es",
         "tooltip_date": "Doha (Qatar)"
     },
-    "ChapterFour" :   {
+    "ChapterFive" :   {
         "intro_title": "De la crisis a la recuperación",
         "intro_description": "<p>En marzo se cumplirá el segundo aniversario de la declaración de la pandemia mundial de COVID-19. Como líder técnico de la respuesta socioeconómica de las Naciones Unidas, el PNUD desempeña un papel fundamental en la recuperación.</p><p>Desde los riesgos mundiales hasta las catástrofes localizadas, así como los conflictos violentos y los desastres ambientales, el PNUD ayuda a los países a hacer frente a las crisis actuales y a prevenir las futuras.</p>",
         "quote_content": "<p>“En un mundo donde las crisis complejas y multidimensionales se han convertido en la norma, el <i>statu quo</i> ya no es una opción para responder a estas”</p>",
@@ -29,14 +31,14 @@
         "quote_author_link": "https://twitter.com/asakookai",
         "quote_author_description": "Directora de la Oficina de Crisis del PNUD."
     },
-    "ChapterFive" :   {
+    "ChapterSix" :   {
         "intro_title": "Promover la igualdad de género",
         "intro_description": "<p><strong>La 66ª Comisión de la Condición Jurídica y Social de la Mujer se centrará en lograr la igualdad de género en el contexto del cambio climático, el riesgo ambiental y de desastres.</strong></p><p>Empoderar a las mujeres es uno de los modos más efectivos de reducir la pobreza y la desigualdad, así como de promover los ODS. En 2022, el PNUD publicará una serie de documentos que informen sobre políticas y programas con perspectiva de género:</p><ul><li>Estrategia de género del PNUD</li><li>Índice de normas sociales de género</li><li>Índices de género sobre el empoderamiento y el bienestar de las mujeres</li></ul>",
         "tooltip_label": "Comisión de la Condición Jurídica y Social de la Mujer",
         "tooltip_link": "https://www.unwomen.org/es/csw/csw66-2022",
         "tooltip_date": "14-25 de marzo, Nueva York, NY (Estados Unidos)"
     },
-    "ChapterSix" :   {
+    "ChapterSeven" :   {
         "intro_title": "Maximizar el impacto",
         "intro_description": "<p><strong>Nuestro nuevo <a href='https://undocs.org/Home/Mobile?FinalSymbol=DP/2021/28' target='_blank' rel='noopenner noreferrer'>Plan Estratégico</a> identifica tres ejes de cambio para ayudar a los países a aumentar el progreso del desarrollo:</strong></p><ul><li><strong>Innovación estratégica</strong> para mejorar el rendimiento de sistemas completos.</li><li><strong>Digitalización</strong> para construir sociedades más inclusivas, éticas y sostenibles.</li><li><strong>Financiación para el desarrollo</strong> para alinear los flujos de capital con los ODS y el Acuerdo de París.</li></ul>",
         "quote_content": "<p>“Lo digital no es solo una herramienta, sino también el contexto en el que operamos. El PNUD seguirá adoptando un enfoque de transformación digital de toda la sociedad para garantizar que todos compartan los beneficios de la conectividad y trabajará para mitigar los posibles riesgos y daños de la tecnología digital”</p>",
@@ -44,51 +46,51 @@
         "quote_author_link": "https://twitter.com/Robert_Opp",
         "quote_author_description": "Jefe de Operaciones Digitales del PNUD"
     },
-    "ChapterSeven" :   {
+    "ChapterEight" :   {
         "intro_title": "Datos para el desarrollo",
         "intro_description": "<p>Estamos ampliando la base empírica para un desarrollo centrado en las personas. Entre los informes insignia que se publicarán este año se encuentran:</p>",
         "document_left": "<p>El <i><strong>Informe sobre Desarrollo Humano 2022</strong></i>, que se versará sobre cómo “Dar forma a nuestro futuro en un mundo en transformación”</p>",
         "document_right": "<p>Un <i><strong>Informe especial sobre seguridad humana</strong></i>, que examinará cómo el concepto de seguridad humana puede ayudarnos a comprender y responder a nuevos retos interrelacionados</p>"
     },
-    "ChapterEight" :   {
+    "ChapterNine" :   {
         "intro_title": "Vivir en armonía con la naturaleza",
         "intro_description": "<p>En la Conferencia de la ONU sobre Biodiversidad (COP15), los países adoptarán un nuevo marco mundial para detener la crisis de extinción de especies y transformar la relación con el mundo natural.</p>",
         "tooltip_label": "Conferencia de las Naciones Unidas sobre la Biodiversidad",
         "tooltip_link": "https://www.cbd.int/conferences/2021-2022",
         "tooltip_date": "Kunming (China)"
     },
-    "ChapterNine" :   {
+    "ChapterTen" :   {
         "intro_title": "“Salvemos nuestros océanos, protejamos nuestro futuro”",
         "intro_description": "<p>La Conferencia de las Naciones Unidas sobre los Océanos de 2022 reunirá a los líderes para apoyar la implementación del ODS 14 sobre la vida submarina.</p>",
         "tooltip_label": "Conferencia de las Naciones Unidas sobre los Océanos ",
         "tooltip_link": "https://www.un.org/es/conferences/ocean2022",
         "tooltip_date": "27 de junio-1 de julio, Lisboa (Portugal)"
     },
-    "ChapterTen" :   {
+    "ChapterEleven" :   {
         "intro_title": "“Pequeña escala, gran valor”",
         "intro_description": "<p>La ONU ha declarado que el 2022 es el Año Internacional de la Pesca y la Acuicultura Artesanales.</p><p>La pesca a pequeña escala genera millones de puestos de trabajo y alimenta miles de millones de personas, por lo que contribuye al ODS 2: hambre cero.</p>",
         "load_more_button": "Más información",
         "load_more_url": "https://www.fao.org/artisanal-fisheries-aquaculture-2022/home/es/"
     },
-    "ChapterEleven" :   {
+    "ChapterTwelve" :   {
         "intro_title": "Observar el progreso de los ODS",
         "intro_description": "<p>El Foro Político de Alto Nivel de 2022 examinará el impacto de la COVID-19 en los ODS.</p><p>El Foro incluirá una revisión en profundidad del ODS 4 (educación de calidad), el ODS 5 (igualdad de género), el ODS 14 (vida submarina), el ODS 15 (vida de ecosistemas terrestres) y el ODS 17 (alianzas para lograr los objetivos).</p>",
         "tooltip_label": "Foro Político de Alto Nivel",
         "tooltip_link": "https://sustainabledevelopment.un.org/hlpf#hlpf2022",
         "tooltip_date": "5-7 de julio y 11-15 de julio, Nueva York, NY (Estados Unidos)"
     },
-    "ChapterTwelve" :   {
+    "ChapterThirdteen" :   {
         "intro_title": "Alcanzar el objetivo de los 1,5 ºC",
         "intro_description": "<p>La próxima Conferencia de las Naciones Unidas sobre el Clima (COP27) se basará en el <a href='https://unfccc.int/documents/310475' target='_blank' rel='noopenner noreferrer'>Pacto Climático de Glasgow acordado en la COP26.</a></p>",
         "tooltip_label": "Conferencia de las Naciones Unidas sobre el Clima (COP27)",
         "tooltip_link": "https://news.un.org/es/story/2021/11/1499972",
         "tooltip_date": "7-18 de noviembre, Sharm El-Sheikh (Egipto)"
     },
-    "ChapterThirdteen" :   {
+    "ChapterFourteen" :   {
         "intro_title": "Te escuchamos",
         "intro_description": "<p>El PNUD dará a conocer la siguiente fase del <i>Peoples' Climate Vote</i> (voto popular sobre el clima), que profundiza en la opinión pública sobre la emergencia climática y la respuesta que deberían dar los líderes mundiales.</p><p><a href='https://www.undp.org/publications/g20-peoples-climate-vote-2021' target='_blank' rel='noopenner noreferrer'>The G20 Peoples' Climate Vote</a></p>"
     },
-    "ChapterFourteen" :   {
+    "ChapterFifteen" :   {
         "intro_title": "#FutureSmartUNDP",
         "intro_description": "<p>La COVID-19 ha transformado el mundo. En 2022 y en el futuro, el PNUD invertirá en capacidades, programación y gestión para ayudar a los países a recuperarse y a prosperar. Gracias a nuestro nuevo Plan Estratégico, las inestimables alianzas y los conocimientos que nos brinda nuestro trabajo en todo el mundo, el PNUD se centra en ofrecer un desarrollo inteligente de cara al futuro.</p>",
         "quote_content": "<p>“Nos encontramos en un momento crítico para el mundo y para el desarrollo.Ahora bien, también es un momento de decisiones fundamentales: tenemos una oportunidad para aprender de nuestra experiencia, hacer las cosas de forma distinta y aspirar a objetivos comunes más ambiciosos”</p>",

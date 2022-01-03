@@ -1,82 +1,56 @@
 <template>
-    <section class="b--page-a__item b--chapter13-a" id="Scene14" ref="Scene14" v-if="chapter">
+    <section class="b--page-a__item b--chapter13-a" id="Scene13" ref="Scene13" v-if="chapter">
         <div class="b--ss-a"> 
             <div class="b--ss-a__divider">
                 <div class="b--chapter13-a__divider">
-                <img
-                    @load="handleLoad"
-                    @error="handleLoad"
-                    class="b--chapter13-a__divider__media b--chapter13-a__divider__media--right"
-                    src="@/assets/img/chapter-13/13-14_tree.png"
-                    alt="13-14_tree"
-                />
+                    <img
+                        @load="handleLoad"
+                        @error="handleLoad"
+                        class="b--chapter13-a__divider__media b--chapter13-a__divider__media--left"
+                        src="@/assets/img/chapter-12/11-12_tree.png"
+                        alt="11-12_tree"
+                    />
                 </div>
             </div>
-            <div class="b--ss-a__middle-items">
-                <img
-                @load="handleLoad"
-                @error="handleLoad"
-                :style="{ left: '358%'}"
-                class="b--ss-a__middle-items__parallax"
-                src="@/assets/img/chapter-13/middle-parallax.png"
-                alt="middle"
-                ref="parallax-middle"
-                
-                />
-            </div>
             <div class="b--ss-a__ft-items">
-                <img @load="handleLoad"
-                @error="handleLoad" :style="{ left: '578%'}" class="b--ss-a__ft-items__parallax" ref="parallax-ft" src="@/assets/img/chapter-13/front-parallax.png" alt="front" />
+                <img ref="parallax-ft" :style="{ left: '628%' }" class="b--ss-a__ft-items__parallax" 
+                    @load="handleLoad"
+                    @error="handleLoad" src="@/assets/img/chapter-12/front-parallax.png" alt="front" />
             </div>
             <div class="b--ss-a__content">
-                <!-- first position element, card -->
+                <!-- chapter title -->
                 <div 
-                class="b--chapter13-a__content"
-                :class="'b--chapter13-a__content--' + `${this.lang}`"
-                ref="boxContent"
-                :style="{ left: '362%'}"
+                    class="b--chapter13-a__content"
+                    :class="'b--chapter13-a__content--' + `${this.lang}`"
+                    ref="boxContent"  :style="{ left: '645%' }"
                 >
                     <v-card-f 
-                        :title="chapter.intro_title" 
+                        :title="chapter.intro_title"
                         :description="chapter.intro_description"
                         :customClass="'b--card-f--third b--card-f--'+ `${this.lang}`"
                         cardACustomClass="b--card-a--second"
                     />
-                </div> 
-                <div class="b--chapter13-a__artwork" ref="plantwater1" :style="{ left: '390%'}">
-                    <div class="b--motion-m" :style="'background-image: url(' + require(`@/assets/img/chapter-13/plant_water.png`) + ')'">
-                    </div>
                 </div>
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--second" ref="plantwater2" :style="{ left: '435%'}">
-                    <div class="b--motion-n"  :style="'background-image: url(' + require(`@/assets/img/chapter-13/plant_water_2.png`) + ')'">
-                    </div>
+                <!-- info chart -->
+                <div class="b--chapter13-a__content b--chapter13-a__content--second"
+                 ref="infoChapter"  :style="{ left: '667%' }"
+                >
+                    <v-info-chapter :info="chapter"/>
                 </div>
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--third" ref="lines1" :style="{ left: '448%'}">
-                    <div class="b--motion-k" :style="'background-image: url(' + require(`@/assets/img/chapter-13/lines_spritesheet.png`) + ')'">
-                    </div>
-                </div>  
-                <div class="b--chapter13-a__artwork b--chapter13-a__artwork--fourth" ref="lines2" :style="{ left: '390%'}">
-                    <div class="b--motion-k" v-lazy:background-image="
-                    require(`@/assets/img/chapter-13/lines_spritesheet.png`)
-                    ">
-                    </div>
-                </div>       
             </div>
-            
+            <div class="b--chapter13-a__artwork">
+                <div class="b--motion-j" :style="'background-image: url(' + require(`@/assets/img/chapter-12/blink_3.png`) + ')'">
+                </div>
+            </div>
             <div class="b--ss-a__bg-items">
-                <img class="b--ss-a__bg-items__parallax" @load="handleLoad"
+                <img class="b--ss-a__bg-items__parallax"
+                @load="handleLoad"
                 @error="handleLoad"
                 alt="back-parallax"
-                ref="parallax-bg"
-                :style="{ left: '9%' }"
-                src="@/assets/img/chapter-13/back-parallax.png"
-                >  
-                <img class="b--ss-a__bg-items__back" 
-                @load="handleLoad" 
-                @error="handleLoad" 
-                alt="back"
-                src="@/assets/img/chapter-13/back.png"
+                ref="parallax-bg'"
+                src="@/assets/img/chapter-12/back-parallax.png"
                 >        
+                <img class="b--ss-a__bg-items__back" @load="handleLoad"  @error="handleLoad" src="@/assets/img/chapter-12/back.png" alt="back">        
             </div>
         </div>
     </section>
@@ -84,6 +58,7 @@
 
 <script>
 import CardF from '@/components/cards/CardF';
+import InfoChapter from '@/components/infochapter/Infochapter';
 
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
@@ -92,10 +67,11 @@ export default {
     mixins: [Parallax,Animation],
     components:{
         'v-card-f':CardF,
-    }, 
+        'v-info-chapter' : InfoChapter
+    },
     data:()=>{
 		return{
-            totalContent: 6,
+            totalContent: 5,
 			contentLoaded : 0,
             chapter: null
 		}
@@ -106,25 +82,21 @@ export default {
             this.contentLoaded++;
         },
         AsambleParallaxObjs() {
-            var motion = [
-                { obj: this.$refs['parallax-bg'], intensity: 1 },
-                { obj: this.$refs['parallax-ft'], intensity: 65},
-                { obj: this.$refs['parallax-middle'], intensity: 40},
-                { obj: this.$refs['plantwater1'], intensity: 40},
-                { obj: this.$refs['plantwater2'], intensity: 40},
-                { obj: this.$refs['lines1'], intensity: 40},
-                { obj: this.$refs['lines2'], intensity: 40},
-                { obj: this.$refs['boxContent'], intensity: 40},
-            ]
-            motion.forEach((item) => {
-                this.parallaxMove({
-                el: item.obj,
-                intensity: item.intensity,
-                duration: this.$refs['Scene14'].offsetWidth,
-                containerAnimation: this.scrollTween,
-                })
-            })
-        }
+      var motion = [
+        { obj: this.$refs['parallax-bg'], intensity: 1 },
+        { obj: this.$refs['parallax-ft'], intensity: 75 },
+        { obj: this.$refs['infoChapter'], intensity: 75 },
+        { obj: this.$refs['boxContent'], intensity: 75 },
+      ]
+      motion.forEach((item) => {
+        this.parallaxMove({
+          el: item.obj,
+          intensity: item.intensity,
+          duration: this.$refs['Scene13'].offsetWidth,
+          containerAnimation: this.scrollTween,
+        })
+      })
+    },
     },
     watch: {
         contentLoaded(newValue, oldValue) {
@@ -139,9 +111,9 @@ export default {
                 this.AsambleParallaxObjs()
                 // mixin function
                 this.startAnimation({
-                    sceneID: 14,
-                    scrub: 0,
-                    scrollTween: this.scrollTween,
+                    sceneID : 13,
+                    scrub:0,
+                    scrollTween : this.scrollTween
                 })
             } 
         }

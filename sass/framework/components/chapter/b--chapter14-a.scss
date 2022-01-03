@@ -1,115 +1,138 @@
 .b--chapter14-a {
-  &__content {
-    position: absolute;
-    bottom: 33.11%;
-    left: 9.04%;
-    width: 11.17%;
-    @include make-position-a();
-    @media all and ($viewport-type: $mobile) {
-      bottom: 26.11%;
-    }
-    &--es {
-      @media all and ($viewport-type: $mobile) {
-        bottom: 22.11%;
-      }
-    }
-    &--fr {
-      @media all and ($viewport-type: $mobile) {
-        bottom: 22.11%;
-      }
-    }
-    &--second {
-      bottom: 38.36%;
-      left: 23.6%;
-      width: 10.62%;
-      @include make-position-a();
-    }
-    // card
-    &--third {
-      bottom: 8%;
-      left: 65.18%;
-      width: 10.15%;
-    }
-    // social
-    &--fourth {
-      width: fit-content;
-      bottom: 8%;
-      left: 82.6%;
-      &--fr {
-        left: 81.2%;
-      }
-      &--es {
-        left: 81.6%;
-      }
-    }
-    .b--card-f {
-      .b--card-a {
-        @media all and (max-height: 507px) {
-          @include make-card-a-shadow();
-        }
-        @media all and ($viewport-type: 320px) {
-          @include make-card-a-shadow();
-        }
-        &__wrapper {
-          @media all and (max-height: 507px) {
-            @include make-card-a-wrapper-scroll();
-          }
-          @media all and ($viewport-type: 320px) {
-            @include make-card-a-wrapper-scroll();
-          }
-        }
-      }
-    }
-    &--fr {
-      .b--card-f {
-        .b--card-a {
-          @media all and (max-height: 530px) {
-            @include make-card-a-shadow();
-          }
-          &__wrapper {
-            @media all and (max-height: 530px) {
-              @include make-card-a-wrapper-scroll();
-            }
-          }
-        }
-      }
-    }
-    &--es {
-      .b--card-f {
-        .b--card-a {
-          @media all and (max-height: 525px) {
-            @include make-card-a-shadow();
-          }
-          &__wrapper {
-            @media all and (max-height: 525px) {
-              @include make-card-a-wrapper-scroll();
-            }
-          }
-        }
-      }
-    }
-  }
-  &__artwork {
-    position: absolute;
-    left: 46.7%;
-    top: 0.73%;
-    width: 17.93%;
-    height: 52.83vh;
-    max-height: 52.83vh;
+  &.b--page-a__item {
     z-index: 1;
-    &--second {
-      left: 38.1%;
-      top: 68.65%;
-      width: 9vh;
-      height: 9vh;
-      @include make-wheel();
+  }
+  // content has bigger z-index than ft items
+  .b--ss-a {
+    &__content {
+      // z-index: 90;
+    }
+    &__artwork {
+      z-index: 1;
+    }
+    &__ft-items {
+      z-index: 10;
     }
   }
 
-  // content has more z-index than ft items
-  .b--ss-a {
-    &__content {
-      z-index: 90;
+  &__content {
+    // cards
+    position: absolute;
+    bottom: 25.99%;
+    left: 7.39%;
+    width: 23.08%;
+    max-width: calc(100vw - 100px);
+    @media all and ($viewport-type: $tabletm) {
+      width: 100%;
+    }
+    @media all and ($viewport-type: $mobile) {
+      bottom: 22%;
+    }
+    .b--card-a {
+      @media all and (max-height: 450px) {
+        @include make-card-a-shadow();
+      }
+      &__wrapper {
+        @media all and (max-height: 450px) {
+          @include make-card-a-wrapper-scroll();
+        }
+      }
+    }
+    &--fr {
+      .b--card-a {
+        @media all and (max-height: 540px) {
+          @include make-card-a-shadow();
+        }
+        &__wrapper {
+          @media all and (max-height: 540px) {
+            @include make-card-a-wrapper-scroll();
+          }
+        }
+      }
+    }
+    &--es {
+      .b--card-a {
+        @media all and (max-height: 510px) {
+          @include make-card-a-shadow();
+        }
+        &__wrapper {
+          @media all and (max-height: 510px) {
+            @include make-card-a-wrapper-scroll();
+          }
+        }
+      }
+    }
+  }
+
+  // animation
+  &__artwork {
+    position: absolute;
+    bottom: 0;
+    left: 35.2%;
+    @media all and ($viewport-type: $laptop) {
+      bottom: 4%;
+    }
+    // plant animation
+    &--second {
+      bottom: 0;
+      left: 78%;
+    }
+    // lines animation
+    &--third {
+      bottom: 63%;
+      left: 88.5%;
+      @media all and ($viewport-type: $tabletl) {
+        left: 90%;
+      }
+    }
+    // lines animation
+    &--fourth {
+      bottom: 54%;
+      left: 34.5%;
+    }
+  }
+
+  // move card f head and bottom legs
+  .b--card-f {
+    &__hd {
+      margin: 0 auto $measure * 4;
+      &:before,
+      &:after {
+        height: $measure * 4;
+      }
+      &:before {
+        left: 14%;
+      }
+      &:after {
+        right: 14%;
+      }
+    }
+    &__bd {
+      &:before {
+        left: 14%;
+      }
+      &:after {
+        right: 14%;
+      }
+    }
+  }
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+    &__media {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: 100vh;
+      &--right {
+        right: -10.5%;
+      }
     }
   }
 }

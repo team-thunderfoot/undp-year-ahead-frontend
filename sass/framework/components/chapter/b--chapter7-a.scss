@@ -1,37 +1,105 @@
 .b--chapter7-a {
-  .b--ss-a {
-    &__bg-items__parallax {
-      right: 13.8%;
-    }
-    &__ft-items__parallax {
-      right: 19.1%;
-    }
-  }
   &__content {
+    // cards
     position: absolute;
-    bottom: 29.1%;
-    left: 5.8%;
-    width: 14.11%;
+    bottom: 13.3%;
+    left: 4%;
+    width: 24.02%;
     @include make-position-a();
-    // max-height: calc(60.25vh - 16.79vh - $measure * 4);
-    // card-h
-    &--second {
-      top: 7.32%;
-      left: 56.12%;
-      bottom: auto;
-      width: 6.38%;
+    @media all and ($viewport-type: $tabletm) {
+      width: 100%;
+      max-width: calc(100vw - 90px);
     }
-    // card-h
-    &--third {
-      top: 7.32%;
-      left: 65.32%;
-      bottom: auto;
-      width: 6.97%;
-      @media all and ($viewport-type: $tabletl) {
-        width: 9%;
+    @media all and ($viewport-type: $tablets) {
+      bottom: 20%;
+    }
+    .b--card-f {
+      .b--card-a {
+        @media all and (max-height: 520px) {
+          @include make-card-a-shadow();
+        }
+        @media all and ($viewport-type: 330px) {
+          @include make-card-a-shadow();
+        }
+        &__wrapper {
+          @media all and (max-height: 520px) {
+            @include make-card-a-wrapper-scroll();
+          }
+          @media all and ($viewport-type: 330px) {
+            @include make-card-a-wrapper-scroll();
+          }
+        }
       }
-      @media all and ($viewport-type: $tablets) {
-        width: 8%;
+    }
+    &--fr {
+      .b--card-f {
+        .b--card-a {
+          @media all and (max-height: 560px) {
+            @include make-card-a-shadow();
+          }
+          &__wrapper {
+            @media all and (max-height: 560px) {
+              @include make-card-a-wrapper-scroll();
+            }
+          }
+        }
+      }
+    }
+    // wheel
+    &--second {
+      left: 66.04%;
+      bottom: 58.55%;
+      width: 12.5vh;
+      height: 12.5vh;
+      background: map-get($colorbg-options, j);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      &__media {
+        width: 10vh;
+        height: 10vh;
+        @include make-wheel();
+      }
+    }
+
+    // quote, changed because the text was too large<
+    &--third {
+      position: absolute;
+      width: 18.07%;
+      left: 78%;
+      bottom: 22.8%;
+    }
+
+    // move card f head and bottom legs
+    .b--card-f {
+      &__hd {
+        margin: 0 auto $measure * 4;
+        @media all and ($viewport-type: $mobile) {
+          margin: 0 auto $measure * 3;
+          max-width: 100% !important;
+        }
+        &:before,
+        &:after {
+          height: $measure * 4;
+          @media all and ($viewport-type: $mobile) {
+            height: $measure * 3;
+          }
+        }
+      }
+      &__bd {
+        .b--card-a {
+          @media all and ($viewport-type: $mobile) {
+            padding: $measure * 3 5%;
+          }
+        }
+      }
+    }
+    .b--quote-a {
+      &__meta {
+        @media all and ($viewport-type: $mobile) {
+          width: 90% !important;
+        }
       }
     }
   }

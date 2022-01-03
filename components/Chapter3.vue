@@ -1,67 +1,91 @@
 <template>
   <section
     class="b--page-a__item b--chapter3-a"
-    id="Scene4"
-    ref="Scene4"
+    id="Scene3"
+    ref="Scene3"
     v-if="chapter"
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img src="@/assets/img/chapter-3/front.png" alt="front"  @load="handleLoad"
-          @error="handleLoad"/>
+        <img
+          @load="handleLoad"
+          @error="handleLoad"
+          :style="{ left: '17%' }"
+          class="b--ss-a__ft-items__parallax"
+          ref="parallax-ft"
+          src="@/assets/img/chapter-2/front-parallax.png"
+          alt="front-parallax"
+        />
       </div>
       <div class="b--ss-a__content">
-        <!-- flags left -->
-        <div class="b--chapter3-a__artwork b--chapter3-a__artwork--fifth">
-          <div
-            class="b--motion-b"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-left_spritesheet.png`) + ')'"
-          ></div>
-        </div>
-
-        <!-- chapter title -->
-        <div 
-        class="b--chapter3-a__content"
-        :class="'b--chapter3-a__content--' + `${this.lang}`"
+        <div
+          class="b--chapter3-a__content"
+          :class="'b--chapter3-a__content--' + `${this.lang}`"
+          ref="boxContent"
+          :style="{ left: '20%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
             :description="chapter.intro_description"
-            cardACustomClass="b--card-a--second"
-            :customClass="'b--card-f--' + `${this.lang}`"
+            :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
           />
         </div>
-
-        <!-- info chart -->
-        <div class="b--chapter3-a__content b--chapter3-a__content--second">
-          <v-info-chapter :info="chapter" />
+        <div
+          class="b--chapter3-a__content b--chapter3-a__content--second"
+          :style="{ left: '47%' }"
+          ref="TVfrankie"
+        >
+          <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
+            <div class="b--card-g__media-wrapper">
+              <video class="b--video-a" autoplay muted loop playsinline>
+                <source :src="require(`@/assets/video/chapter-2/dino2.mov`)" type="video/mp4">
+              </video>
+            </div>
+          </div>
         </div>
-        <!-- wheel -->
-        <div class="b--chapter3-a__content b--chapter3-a__content--third">
+        <div
+          class="b--chapter3-a__artwork"
+          :style="{ left: '42%' }"
+          ref="dino1"
+        >
           <img
-            src="@/assets/img/chapter-3/wheel.png"
-            alt="wheel"
-            title="wheel"
-             @load="handleLoad"
-          @error="handleLoad"
+            @load="handleLoad"
+            @error="handleLoad"
+            src="@/assets/img/chapter-2/dino-orange.png"
+            alt="browser"
+            title="browser"
           />
         </div>
-        <!-- flags right -->
-        <div class="b--chapter3-a__artwork b--chapter3-a__artwork--second">
-          <div
-            class="b--motion-c"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-right_spritesheet.png`) + ')'"
-          ></div>
+        <div
+          class="b--chapter3-a__artwork b--chapter3-a__artwork--second"
+          :style="{ left: '72%' }"
+          ref="dino2"
+        >
+          <img
+            @load="handleLoad"
+            @error="handleLoad"
+            src="@/assets/img/chapter-2/dino-green.png"
+            alt="browser"
+            title="browser"
+          />
         </div>
       </div>
       <div class="b--ss-a__bg-items">
         <img
-
-          id="Scene4Image"
-          class="b--ss-a__bg-items__artwork"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-3/back.png"
+          class="b--ss-a__bg-items__parallax"
+          :style="{ left: '-6%' }"
+          ref="parallax-bg"
+          src="@/assets/img/chapter-2/back-parallax.png"
+          alt="back parallax"
+        />
+        <img
+         id="Scene3Image"
+          class="b--ss-a__bg-items__back"
+          @load="handleLoad"
+          @error="handleLoad"
+          src="@/assets/img/chapter-2/back.png"
           alt="back"
         />
       </div>
@@ -70,29 +94,45 @@
 </template>
 
 <script>
-import CardF from '@/components/cards/CardF'
-import InfoChapter from '@/components/infochapter/Infochapter'
+import CardF from './cards/CardF'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
 
 export default {
   mixins: [Parallax, Animation],
-  components: {
-    'v-card-f': CardF,
-    'v-info-chapter': InfoChapter,
-  },
   data: () => {
     return {
-      totalContent: 4,
+      totalContent: 6,
       contentLoaded: 0,
       chapter: null,
     }
+  },
+  components: {
+    'v-card-f': CardF,
   },
   props: ['scrollTween'],
   methods: {
     handleLoad() {
       this.contentLoaded++
+    },
+    AsambleParallaxObjs() {
+      var motion = [
+        { obj: this.$refs['parallax-bg'], intensity: 2 },
+        { obj: this.$refs['dino1'], intensity: 2 },
+        { obj: this.$refs['dino2'], intensity: 2 },
+        { obj: this.$refs['TVfrankie'], intensity: 2 },
+        { obj: this.$refs['parallax-ft'], intensity: 16 },
+        { obj: this.$refs['boxContent'], intensity: 16 },
+      ]
+      motion.forEach((item) => {
+        this.parallaxMove({
+          el: item.obj,
+          intensity: item.intensity,
+          duration: this.$refs['Scene3'].offsetWidth,
+          containerAnimation: this.scrollTween,
+        })
+      })
     },
   },
   watch: {
@@ -104,9 +144,11 @@ export default {
     },
     scrollTween(newValue, oldValue) {
       if (newValue) {
-        // mixin function
+        // motion frontend and backend elements
+        this.AsambleParallaxObjs()
+
         this.startAnimation({
-          sceneID: 4,
+          sceneID: 3,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -115,7 +157,7 @@ export default {
   },
   created() {
     // if(process.client){
-       this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
       var chapter = this.getLanguageData({lang : this.lang});
       this.chapter =  chapter.ChapterThree;
       this.contentLoaded++
@@ -123,4 +165,3 @@ export default {
   },
 }
 </script>
-

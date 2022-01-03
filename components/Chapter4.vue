@@ -1,81 +1,67 @@
 <template>
   <section
     class="b--page-a__item b--chapter4-a"
-    id="Scene5"
-    ref="Scene5"
+    id="Scene4"
+    ref="Scene4"
     v-if="chapter"
   >
     <div class="b--ss-a">
-      <div class="b--ss-a__divider">
-        <div class="b--chapter4-a__divider">
-          <img
-           @load="handleLoad"
-          @error="handleLoad"
-            class="b--chapter4-a__divider__media b--chapter4-a__divider__media--right"
-            alt="front_tree"
-            src="@/assets/img/chapter-4/front_tree.png"
-          />
-          <img
-          id="Scene5Img"
-           @load="handleLoad"
-          @error="handleLoad"
-            class="b--chapter4-a__divider__media b--chapter4-a__divider__media--left"
-            alt="front_electric-cable"
-            src="@/assets/img/chapter-4/front_electric-cable.png"
-          />
-        </div>
-      </div>
       <div class="b--ss-a__ft-items">
-        <img
-         @load="handleLoad"
-          @error="handleLoad"
-          :style="{ left: '95%' }"
-          class="b--ss-a__ft-items__parallax"
-          ref="parallax-ft"
-          alt="ront-parallax"
-          src="@/assets/img/chapter-4/front-parallax.png"
-        />
+        <img src="@/assets/img/chapter-3/front.png" alt="front"  @load="handleLoad"
+          @error="handleLoad"/>
       </div>
       <div class="b--ss-a__content">
-        <!-- first position element, card -->
-        <div
-          class="b--chapter4-a__content"
-          ref="boxContent"
-          :style="{ left: '95%' }"
-          :class="'b--chapter4-a__content--' + `${this.lang}`"
+        <!-- flags left -->
+        <div class="b--chapter4-a__artwork b--chapter4-a__artwork--fifth">
+          <div
+            class="b--motion-b"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-left_spritesheet.png`) + ')'"
+          ></div>
+        </div>
+
+        <!-- chapter title -->
+        <div 
+        class="b--chapter4-a__content"
+        :class="'b--chapter4-a__content--' + `${this.lang}`"
         >
           <v-card-f
             :title="chapter.intro_title"
             :description="chapter.intro_description"
-            :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
+            cardACustomClass="b--card-a--second"
+            :customClass="'b--card-f--' + `${this.lang}`"
           />
         </div>
-        <!-- second position element, quote -->
-        <div
-          class="b--chapter4-a__content b--chapter4-a__content--second"
-          ref="quoteContent"
-          :style="{ left: '75%' }"
-        >
-          <v-quote-a :chapter="chapter" customClass="b--quote-a--second" />
+
+        <!-- info chart -->
+        <div class="b--chapter4-a__content b--chapter4-a__content--second">
+          <v-info-chapter :info="chapter" />
+        </div>
+        <!-- wheel -->
+        <div class="b--chapter4-a__content b--chapter4-a__content--third">
+          <img
+            src="@/assets/img/chapter-3/wheel.png"
+            alt="wheel"
+            title="wheel"
+             @load="handleLoad"
+          @error="handleLoad"
+          />
+        </div>
+        <!-- flags right -->
+        <div class="b--chapter4-a__artwork b--chapter4-a__artwork--second">
+          <div
+            class="b--motion-c"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-3/flags-right_spritesheet.png`) + ')'"
+          ></div>
         </div>
       </div>
-
       <div class="b--ss-a__bg-items">
         <img
-           @load="handleLoad"
-          @error="handleLoad"
-          class="b--ss-a__bg-items__parallax"
-          ref="parallax-bg"
-          src="@/assets/img/chapter-4/back-parallax.png"
-          alt="back parallax"
-        />
-        <img
-          
-          id="Scene5Image"
-          class="b--ss-a__bg-items__back"
+
+          id="Scene4Image"
+          class="b--ss-a__bg-items__artwork"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-4/back.png"
+          src="@/assets/img/chapter-3/back.png"
           alt="back"
         />
       </div>
@@ -85,7 +71,7 @@
 
 <script>
 import CardF from '@/components/cards/CardF'
-import QuoteA from '@/components/quote/Quote'
+import InfoChapter from '@/components/infochapter/Infochapter'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -94,11 +80,11 @@ export default {
   mixins: [Parallax, Animation],
   components: {
     'v-card-f': CardF,
-    'v-quote-a': QuoteA,
+    'v-info-chapter': InfoChapter,
   },
   data: () => {
     return {
-      totalContent: 6,
+      totalContent: 4,
       contentLoaded: 0,
       chapter: null,
     }
@@ -107,22 +93,6 @@ export default {
   methods: {
     handleLoad() {
       this.contentLoaded++
-    },
-    AsambleParallaxObjs() {
-      var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 1},
-        { obj: this.$refs['quoteContent'], intensity: 1 },
-        { obj: this.$refs['parallax-ft'], intensity: 40 },
-        { obj: this.$refs['boxContent'], intensity: 40 },
-      ]
-      motion.forEach((item) => {
-        this.parallaxMove({
-          el: item.obj,
-          intensity: item.intensity,
-          duration: this.$refs['Scene5'].offsetWidth,
-          containerAnimation: this.scrollTween,
-        })
-      })
     },
   },
   watch: {
@@ -134,11 +104,9 @@ export default {
     },
     scrollTween(newValue, oldValue) {
       if (newValue) {
-        // motion frontend and backend elements
-        this.AsambleParallaxObjs()
-        //mixin function
+        // mixin function
         this.startAnimation({
-          sceneID: 5,
+          sceneID: 4,
           scrub: 0,
           scrollTween: this.scrollTween,
         })
@@ -147,12 +115,12 @@ export default {
   },
   created() {
     // if(process.client){
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+       this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
       var chapter = this.getLanguageData({lang : this.lang});
       this.chapter =  chapter.ChapterFour;
-      this.contentLoaded++;
+      this.contentLoaded++
     // }
-  }
+  },
 }
 </script>
 
