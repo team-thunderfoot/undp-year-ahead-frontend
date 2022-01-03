@@ -1,5 +1,5 @@
 <template>
-    <div class="b--lang-a" data-dropdown-languages v-if="languages">
+    <div class="b--lang-a" data-dropdown-languages v-if="languages" ref="LangA">
         <button class="b--lang-a__btn" aria-label="Languages" data-opening-action  @click.prevent="openDropdown()">
             <svg class="b--lang-a__btn__artwork" width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.849 23.938C18.0395 22.6487 18.6693 20.9395 18.6 19.186H1V1H24.13V15.718L24.125 15.724C24.125 15.771 24.125 15.818 24.125 15.866C24.155 20.528 17.456 24.738 16.425 24.738C16.171 24.738 16.254 24.49 16.849 23.938Z" stroke="#006EB5" stroke-width="1.5"/>
@@ -57,13 +57,10 @@ export default {
             }
         },
         changeLanguage(actualLanguage) {
-            // this.$router.push({
-            //     path: '/' + actualLanguage,
-            // });
             window.location  =  '/' + actualLanguage;
         },
         openDropdown() {
-            document.querySelector(".b--lang-a").classList.toggle("b--lang-a--is-active");
+            this.$refs['LangA'].classList.toggle("b--lang-a--is-active");
         }
     },
     created(){
