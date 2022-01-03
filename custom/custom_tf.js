@@ -13,11 +13,15 @@ class CustomTF {
             var pathname = currentURL.split('/');	// split url in array
             
             if(pathname[pathname.length-1].includes("?scene")){ // check if url contains Scene string
-                this.urlWithParams = true; // Url with param inside
                 var sceneNo = pathname[pathname.length-1].split('?scene=');
-                return  sceneNo[1];
+                this.sceneNumber = sceneNo[1];
+                return true;
             } 
+            return false;
         }
+    }
+    getURL(){
+        return this.sceneNumber;
     }
 
     isMobile() {
