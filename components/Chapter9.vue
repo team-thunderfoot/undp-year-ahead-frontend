@@ -170,12 +170,10 @@ export default {
     },
   },
   created() {
-    // if(process.client){
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-      var chapter = this.getLanguageData({lang : this.lang});
-      this.chapter =  chapter.ChapterNine;
-      this.contentLoaded++
-    // }
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterNine;
+    this.contentLoaded++;
   }
 }
 </script>

@@ -160,15 +160,7 @@ export default {
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
                     // SET NEW Item
-                    if(this.currentItem == 3 && payload.item == 1){ // if we are entering Scene 2 from Scene 3
-                        this.currentItem = 2;
-                    }else{
-                        if(payload.item == 2 && this.currentItem == 2){ // if we are entering Scene 1 from Scene 2
-                            this.currentItem = 1;
-                        }else{
-                            this.currentItem = payload.item;
-                        }
-                    }
+                    this.currentItem = payload.item;
                     
                     // Change URL
                     this.$router.push({path: this.$route.path, query: { scene:  payload.item }})

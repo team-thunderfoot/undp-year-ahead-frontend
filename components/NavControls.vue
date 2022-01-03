@@ -44,8 +44,6 @@ export default {
                         this.$refs.next.classList.add("disabled");
                         this.$refs.next.style.pointerEvents = "none";
                     }
-                    // this.$refs.prev.style.pointerEvents = "all";
-                    // this.$refs.next.style.pointerEvents = "all";
                 }});
 			}
             if(payload == 'prev'){
