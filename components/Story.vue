@@ -134,7 +134,7 @@ export default {
         },
 
         workAfterResizeIsDone(){
-            if(this.$route.query){
+            if(this.$route.query.scene){
                 window.location  =  this.$route.path + '?scene=' + this.$route.query.scene;
             }else{
                 window.location  =  this.$route.path;
