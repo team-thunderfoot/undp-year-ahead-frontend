@@ -32,8 +32,7 @@
         </div>
         <!-- Intro Story -->
 
-        <div class="b--chapter1-a__content b--chapter1-a__content--second"  ref="boxContent"
-          :style="{ left: '18%' }">
+        <div class="b--chapter1-a__content b--chapter1-a__content--second" ref="boxContent">
             <div class="b--card-a" ref="CardA">
               <div class="b--card-a__artwork"></div>
               <div class="b--card-a__wrapper b--content-a">
