@@ -141,7 +141,7 @@ export default {
             }
 		},
         handleScroll(event) {
-            if(window.pageYOffset > 80) {
+            if(window.pageYOffset > 240) {
                 this.scrollIsVisible = false;
             } else {
                 this.scrollIsVisible = true;
