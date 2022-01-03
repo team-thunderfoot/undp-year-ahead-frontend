@@ -14,6 +14,7 @@
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>
         <v-chapter-14  :scrollTween="scrollTween"/>
+        <v-chapter-15  :scrollTween="scrollTween"/>
         <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
@@ -33,13 +34,14 @@ import Chapter11 from '~/components/Chapter11.vue';
 import Chapter12 from '~/components/Chapter12.vue';
 import Chapter13 from '~/components/Chapter13.vue';
 import Chapter14 from '~/components/Chapter14.vue';
+import Chapter15 from '~/components/Chapter15.vue';
 
 import Progress from '~/components/NavControls.vue';
 
 export default {
     data:()=>{
 		return{
-            totalChapters: 14,
+            totalChapters: 15,
 			statusChapter : 0,
             urlWithParams :false,
             sceneNumber : false,
@@ -69,6 +71,7 @@ export default {
         'v-chapter-12':Chapter12,
         'v-chapter-13':Chapter13,
         'v-chapter-14':Chapter14,
+        'v-chapter-15':Chapter15,
 
         'v-progress' : Progress
     },
