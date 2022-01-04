@@ -1,5 +1,7 @@
 @mixin make-card-a-wrapper-scroll() {
-  overflow-y: scroll;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: calc(100% + 1px);
   /* firefox */
   scrollbar-width: thin;
 }
@@ -7,6 +9,8 @@
 @mixin make-card-a-scrollbar() {
   ::-webkit-scrollbar {
     display: block;
+    // -webkit-appearance: none;
+    -webkit-overflow-scrolling: touch;
     width: 4px;
   }
 
