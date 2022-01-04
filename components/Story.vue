@@ -129,7 +129,7 @@ export default {
                 }, 3000);
                 setTimeout(() => {  
                     this.loadedNew = true;
-                }, 6000);
+                }, 3000);
             })
         },
 
