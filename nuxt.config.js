@@ -59,8 +59,11 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     'nuxt-gsap-module',
+    '@nuxtjs/device',
   ],
-
+  device: {
+    refreshOnResize: true
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/style-resources',
