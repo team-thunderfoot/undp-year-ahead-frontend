@@ -175,9 +175,18 @@ export default {
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }else{
                 // refresh page on resize
-                window.onresize = (e)=> {  
-                    clearTimeout(this.timeOutFunctionId);
-                    this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+                if(!this.$device.isSafari){
+                    window.onresize = (e)=> {  
+                        clearTimeout(this.timeOutFunctionId);
+                        this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+                    }
+                }else{
+                    if(window.innerWidth > 1201){
+                        window.onresize = (e)=> {  
+                            clearTimeout(this.timeOutFunctionId);
+                            this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+                        }
+                    }
                 }
             }
         }
