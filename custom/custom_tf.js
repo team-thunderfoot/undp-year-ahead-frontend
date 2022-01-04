@@ -26,8 +26,11 @@ class CustomTF {
         return check;
     }
     isTablet(){
+        console.log(userAgent);
         const userAgent = navigator.userAgent.toLowerCase();
         const isTablet = /(ipad|tablet|(android(?!.*mobi))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/i.test(userAgent);
+        console.log(isTablet);
+
         return isTablet;
     }
 }
