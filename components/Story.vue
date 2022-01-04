@@ -172,7 +172,7 @@ export default {
             // refresh page on resize
             console.log(this.$device.isDesktop);
             console.log(this.$device.isTablet);
-            if(!this.$device.isMobileOrTablet){
+            if(!this.$device.isMobile && !this.$device.isTablet){
                 window.onresize = (e)=> {  
                     clearTimeout(this.timeOutFunctionId);
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
