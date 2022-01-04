@@ -64,8 +64,12 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/style-resources',
+    '@nuxtjs/gtm'
   ],
-
+  gtm: {
+    enabled: false, 
+    id: 'GTM-5ZQRJS9'
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extend (config) {
