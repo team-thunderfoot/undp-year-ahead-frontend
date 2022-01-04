@@ -167,13 +167,14 @@ export default {
                 }
             });
             
-            // resize funcion
+            // refresh paeg on resize
             window.onresize = (e)=> {  
                 if(!this.custom_tf.isMobile() && !this.custom_tf.isTablet()){
                     clearTimeout(this.timeOutFunctionId);
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
+            // refresh paeg on orientation change
             if(this.custom_tf.isMobile() || this.custom_tf.isTablet()){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }
