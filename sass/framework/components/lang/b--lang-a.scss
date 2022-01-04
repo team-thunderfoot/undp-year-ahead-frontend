@@ -1,9 +1,11 @@
 .b--lang-a {
-  position: fixed;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   z-index: 302;
-  top: $measure * 7;
-  right: $measure * 7;
-  transition: all 0.5s 0s ease;
+  // top: $measure * 7;
+  // right: $measure * 7;
+  // transition: all 0.5s 0s ease;
   &__btn {
     color: map-get($color-options, z);
     display: flex;
@@ -11,25 +13,18 @@
     transition: all $time-a ease-in-out;
     &__artwork {
       height: $measure * 3;
-      margin-right: $measure;
       path {
         stroke: map-get($color-options, z);
         transition: all $time-a ease-in-out;
       }
     }
-    &__title {
-      font-size: $measure * 1.75;
-      text-transform: uppercase;
-      padding-right: $measure;
-      @media all and ($viewport-type: $mobile) {
-        display: none;
-      }
-    }
     &__icon {
       height: $measure * 1.2;
+      margin-left: -2px;
+      transform: rotate(-90deg);
       transition: all $time-a ease-in-out;
       @media all and ($viewport-type: $mobile) {
-        height: $measure * 3;
+        display: none;
       }
       path {
         stroke: map-get($color-options, z);
@@ -54,23 +49,24 @@
   }
   &__wrapper {
     position: absolute;
-    top: calc(100% + 2px);
-    right: 0;
+    top: -$measure;
+    left: $measure * 5.8;
     height: 0;
     overflow: hidden;
     pointer-events: none;
     transition: all $time-a ease-in-out;
     @media all and ($viewport-type: $mobile) {
-      left: auto;
-      right: 0;
+      top: -$measure * 0.5;
+      left: $measure * 4.92;
     }
     &__list-group {
       background-color: $color-f;
       box-shadow: 0px 3px 6px 0px rgba(map-get($color-options, a), 0.16);
+      display: inline-flex;
       &__list-item {
         padding: $measure * 1.5 $measure * 2;
-        &:not(:last-child) {
-          border-bottom: 1px solid map-get($color-options, k);
+        @media all and ($viewport-type: $mobile) {
+          padding: $measure $measure * 1.2;
         }
         &__link {
           @include make-font-i();
@@ -85,13 +81,19 @@
             color: map-get($color-options, k);
           }
         }
+        &--is-active & {
+          &__link {
+            text-decoration: underline;
+            text-underline-position: under;
+          }
+        }
       }
     }
   }
   &--is-active & {
     &__btn {
       &__icon {
-        transform: rotate(180deg);
+        transform: rotate(90deg);
       }
       &__title {
         display: block;
@@ -105,10 +107,5 @@
         // opacity: 1;
       }
     }
-  }
-
-  &--is-hidden {
-    opacity: 0;
-    pointer-events: none;
   }
 }

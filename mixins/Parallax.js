@@ -1,3 +1,5 @@
+
+
 export default {
     methods:{
         parallaxMove({
@@ -6,9 +8,14 @@ export default {
             duration,
             containerAnimation,
         }){
+            if(this.$device.isMobileOrTablet){
+                var force = "auto";
+            } else {
+                var force = false;
+            }
             this.$gsap.to(el, {
                 x: () =>  duration * -intensity/10,
-                // force3D:false,
+                force3D: force,
                 ease: "none",
                 scrollTrigger: {
                     containerAnimation: containerAnimation,

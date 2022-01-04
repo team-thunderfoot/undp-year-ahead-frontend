@@ -1,101 +1,67 @@
 <template>
   <section
     class="b--page-a__item b--chapter8-a"
-    id="Scene9"
-    ref="Scene9"
+    id="Scene8"
+    ref="Scene8"
     v-if="chapter"
   >
     <div class="b--ss-a">
-      <div class="b--ss-a__divider">
-        <div class="b--chapter8-a__divider">
-          <img
-            @load="handleLoad"
-            @error="handleLoad"
-            class="b--chapter8-a__divider__media b--chapter8-a__divider__media--right"
-            src="@/assets/img/chapter-8/front_tree.png"
-          />
-        </div>
-      </div>
       <div class="b--ss-a__ft-items">
         <img
           @load="handleLoad"
           @error="handleLoad"
-          class="b--ss-a__ft-items__parallax"
+          :style="{ left: '68%' }"
           ref="parallax-ft"
+          class="b--ss-a__ft-items__parallax"
           alt="front-parallax"
           src="@/assets/img/chapter-8/front-parallax.png"
-          :style="{ left: '183%' }"
-        />
-        <img
-          @load="handleLoad"
-          @error="handleLoad"
-          class="b--ss-a__ft-items__parallax b--ss-a__ft-items__parallax--middle"
-          ref="parallax-middle"
-          alt="middle-parallax"
-          src="@/assets/img/chapter-8/middle-parallax.png"
-          :style="{ left: '120%' }"
         />
       </div>
       <div class="b--ss-a__content">
-        <!-- chapter title -->
-        <div
+        <div 
+          
           class="b--chapter8-a__content"
           :class="'b--chapter8-a__content--' + `${this.lang}`"
-          ref="boxContent"
-          :style="{ left: '109%' }"
+          ref="boxContent" :style="{ left: '88%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
             :description="chapter.intro_description"
             :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
+            cardACustomClass="b--card-a--second"
           />
         </div>
-        <!-- info chart -->
-        <div
-          class="b--chapter8-a__content b--chapter8-a__content--second"
-          ref="infoChapter"
-          :style="{ left: '126%' }"
-        >
-          <v-info-chapter :info="chapter" />
+        <div class="b--chapter8-a__content b--chapter8-a__content--second" ref="documentLeft" :style="{ left: '68%' }">
+          <v-card-h 
+            :content="chapter.document_left"
+            :class="'b--card-h--' + `${this.lang}`" 
+            />
         </div>
-        <!-- plant animation -->
-        <div
-          class="b--chapter8-a__artwork"
-          ref="plant"
-          :style="{ left: '143%' }"
-        >
-          <div
-            class="b--motion-e"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-8/plant_wind_1.png`) + ')'"
-          ></div>
-        </div>
-        <!-- fishes animation -->
-        <div
-          class="b--chapter8-a__artwork b--chapter8-a__artwork--second"
-          ref="fishes"
-          :style="{ left: '152%' }"
-        >
-          <div
-            class="b--motion-r"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-8/fishes-spritesheet.png`) + ')'"
-          ></div>
+        <div class="b--chapter8-a__content b--chapter8-a__content--third" ref="documentRight" :style="{ left: '80%' }">
+          <v-card-h 
+            :content="chapter.document_right"
+            :class="'b--card-h--' + `${this.lang}`"  
+          />
         </div>
       </div>
       <div class="b--ss-a__bg-items">
         <img
+          @load="handleLoad"
+          @error="handleLoad"
+          :style="{ left: '2%' }"
+          ref="parallax-bg"
+          class="b--ss-a__bg-items__parallax"
+          src="@/assets/img/chapter-8/back-parallax.png"
+          alt="back parallax"
+        />
+        <img
+
+          id="Scene8Image"
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
+          alt="back"
           src="@/assets/img/chapter-8/back.png"
-        />
-        <img
-         @load="handleLoad"
-          @error="handleLoad"
-          class="b--ss-a__bg-items__parallax"
-          ref="parallax-bg"
-          src="@/assets/img/chapter-8/back-parallax.png"
-          alt="back parallax"
-          :style="{ left: '1%' }"
         />
       </div>
     </div>
@@ -104,7 +70,7 @@
 
 <script>
 import CardF from '@/components/cards/CardF'
-import InfoChapter from '@/components/infochapter/Infochapter'
+import CardH from '@/components/cards/CardH'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -113,11 +79,11 @@ export default {
   mixins: [Parallax, Animation],
   components: {
     'v-card-f': CardF,
-    'v-info-chapter': InfoChapter,
+    'v-card-h': CardH,
   },
   data: () => {
     return {
-      totalContent: 6,
+      totalContent: 4,
       contentLoaded: 0,
       chapter: null,
     }
@@ -129,19 +95,17 @@ export default {
     },
     AsambleParallaxObjs() {
       var motion = [
-        { obj: this.$refs['parallax-bg'], intensity: 1 },
-        { obj: this.$refs['parallax-ft'], intensity: 40 },
-        { obj: this.$refs['parallax-middle'], intensity: 21 },
+        { obj: this.$refs['parallax-bg'], intensity: 4 },
+        { obj: this.$refs['documentLeft'], intensity: 4 },
+        { obj: this.$refs['documentRight'], intensity: 4 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
         { obj: this.$refs['boxContent'], intensity: 21 },
-        { obj: this.$refs['infoChapter'], intensity: 21 },
-        { obj: this.$refs['plant'], intensity: 21 },
-        { obj: this.$refs['fishes'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene9'].offsetWidth,
+          duration: this.$refs['Scene8'].offsetWidth,
           containerAnimation: this.scrollTween,
         })
       })
@@ -156,24 +120,22 @@ export default {
     },
     scrollTween(newValue, oldValue) {
       if (newValue) {
-        // motion frontend and backend elements
-        this.AsambleParallaxObjs()
-        //mixin function
+    
+        this.AsambleParallaxObjs();
+
         this.startAnimation({
-          sceneID: 9,
-          scrub: 0,
-          scrollTween: this.scrollTween,
+            sceneID: 8,
+            scrollTween: this.scrollTween,
         })
+
       }
     },
   },
   created() {
-    // if(process.client){
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-      var chapter = this.getLanguageData({lang : this.lang});
-      this.chapter =  chapter.ChapterEight;
-      this.contentLoaded++
-    // }
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterEight;
+    this.contentLoaded++;
   }
 }
 </script>

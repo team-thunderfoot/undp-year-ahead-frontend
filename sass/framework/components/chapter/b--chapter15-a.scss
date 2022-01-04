@@ -1,0 +1,116 @@
+.b--chapter15-a {
+    &__content {
+      position: absolute;
+      bottom: 33.11%;
+      left: 9.04%;
+      width: 11.17%;
+      @include make-position-a();
+      @media all and ($viewport-type: $mobile) {
+        bottom: 26.11%;
+      }
+      &--es {
+        @media all and ($viewport-type: $mobile) {
+          bottom: 22.11%;
+        }
+      }
+      &--fr {
+        @media all and ($viewport-type: $mobile) {
+          bottom: 22.11%;
+        }
+      }
+      &--second {
+        bottom: 38.36%;
+        left: 23.6%;
+        width: 10.62%;
+        @include make-position-a();
+      }
+      // card
+      &--third {
+        bottom: 8%;
+        left: 65.18%;
+        width: 10.15%;
+      }
+      // social
+      &--fourth {
+        width: fit-content;
+        bottom: 8%;
+        left: 82.6%;
+        &--fr {
+          left: 81.2%;
+        }
+        &--es {
+          left: 81.6%;
+        }
+      }
+      .b--card-f {
+        .b--card-a {
+          @media all and (max-height: 507px) {
+            @include make-card-a-scrollbar();
+          }
+          @media all and ($viewport-type: 320px) {
+            @include make-card-a-scrollbar();
+          }
+          &__wrapper {
+            @media all and (max-height: 507px) {
+              @include make-card-a-wrapper-scroll();
+            }
+            @media all and ($viewport-type: 320px) {
+              @include make-card-a-wrapper-scroll();
+            }
+          }
+        }
+      }
+      &--fr {
+        .b--card-f {
+          .b--card-a {
+            @media all and (max-height: 530px) {
+              @include make-card-a-scrollbar();
+            }
+            &__wrapper {
+              @media all and (max-height: 530px) {
+                @include make-card-a-wrapper-scroll();
+              }
+            }
+          }
+        }
+      }
+      &--es {
+        .b--card-f {
+          .b--card-a {
+            @media all and (max-height: 525px) {
+              @include make-card-a-scrollbar();
+            }
+            &__wrapper {
+              @media all and (max-height: 525px) {
+                @include make-card-a-wrapper-scroll();
+              }
+            }
+          }
+        }
+      }
+    }
+    &__artwork {
+      position: absolute;
+      left: 46.7%;
+      top: 0.73%;
+      width: 17.93%;
+      height: 52.83vh;
+      max-height: 52.83vh;
+      z-index: 1;
+      &--second {
+        left: 38.1%;
+        top: 68.65%;
+        width: 9vh;
+        height: 9vh;
+        @include make-wheel();
+      }
+    }
+  
+    // content has more z-index than ft items
+    .b--ss-a {
+      &__content {
+        z-index: 90;
+      }
+    }
+  }
+  

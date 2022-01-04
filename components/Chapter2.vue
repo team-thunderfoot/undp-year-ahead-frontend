@@ -1,8 +1,8 @@
 <template>
   <section
     class="b--page-a__item b--chapter2-a"
-    id="Scene3"
-    ref="Scene3"
+    id="Scene2"
+    ref="Scene2"
     v-if="chapter"
   >
     <div class="b--ss-a">
@@ -10,65 +10,39 @@
         <img
           @load="handleLoad"
           @error="handleLoad"
-          :style="{ left: '17%' }"
+          :style="{ left: '11%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-2/front-parallax.png"
           alt="front-parallax"
         />
       </div>
-      <div class="b--ss-a__content">
-        <div
-          class="b--chapter2-a__content"
-          :class="'b--chapter2-a__content--' + `${this.lang}`"
-          ref="boxContent"
-          :style="{ left: '20%' }"
-        >
-          <v-card-f
-            :title="chapter.intro_title"
-            :description="chapter.intro_description"
-            :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
-          />
-        </div>
-        <div
-          class="b--chapter2-a__content b--chapter2-a__content--second"
-          :style="{ left: '47%' }"
-          ref="TVfrankie"
-        >
-          <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
-            <div class="b--card-g__media-wrapper">
-              <video class="b--video-a" autoplay muted loop playsinline>
-                <source :src="require(`@/assets/video/chapter-2/dino2.mov`)" type="video/mp4">
-              </video>
+      <div class="b--ss-a__content" >
+        <!-- content-fourth position -->
+        <div class="b--chapter2-a__content" ref="boxContent" :style="{ left: '25%' }">
+          <!-- text with bg -->
+          <div class="b--card-e">
+            <h4 class="b--card-e__title">{{ chapter.quote_system }}</h4>
+          </div>
+          <div class="b--card-d">
+            <div class="b--card-d__bd">
+              <v-quote-a :chapter="chapter" />
             </div>
+            <div class="b--card-d__artwork"></div>
           </div>
         </div>
-        <div
-          class="b--chapter2-a__artwork"
-          :style="{ left: '42%' }"
-          ref="dino1"
-        >
-          <img
-            @load="handleLoad"
-            @error="handleLoad"
-            src="@/assets/img/chapter-2/dino-orange.png"
-            alt="browser"
-            title="browser"
-          />
+
+        <div class="b--chapter2-a__artwork" ref="speechBubble" :style="{ left: '48%' }" >
+          <div
+            ref="bubble"
+            class="b--motion-a"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-1/bubble-motion.png`) + ')'"
+            
+          >
+            <!-- bubble -->
+          </div>
         </div>
-        <div
-          class="b--chapter2-a__artwork b--chapter2-a__artwork--second"
-          :style="{ left: '72%' }"
-          ref="dino2"
-        >
-          <img
-            @load="handleLoad"
-            @error="handleLoad"
-            src="@/assets/img/chapter-2/dino-green.png"
-            alt="browser"
-            title="browser"
-          />
-        </div>
+
       </div>
       <div class="b--ss-a__bg-items">
         <img
@@ -94,7 +68,7 @@
 </template>
 
 <script>
-import CardF from './cards/CardF'
+import QuoteA from '@/components/quote/Quote'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -103,13 +77,13 @@ export default {
   mixins: [Parallax, Animation],
   data: () => {
     return {
-      totalContent: 6,
+      totalContent: 4,
       contentLoaded: 0,
       chapter: null,
     }
   },
   components: {
-    'v-card-f': CardF,
+    'v-quote-a': QuoteA,
   },
   props: ['scrollTween'],
   methods: {
@@ -119,17 +93,15 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 2 },
-        { obj: this.$refs['dino1'], intensity: 2 },
-        { obj: this.$refs['dino2'], intensity: 2 },
-        { obj: this.$refs['TVfrankie'], intensity: 2 },
-        { obj: this.$refs['parallax-ft'], intensity: 16 },
-        { obj: this.$refs['boxContent'], intensity: 16 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 2 },
+        { obj: this.$refs['speechBubble'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene3'].offsetWidth,
+          duration: this.$refs['Scene2'].offsetWidth,
           containerAnimation: this.scrollTween,
         })
       })
@@ -148,20 +120,17 @@ export default {
         this.AsambleParallaxObjs()
 
         this.startAnimation({
-          sceneID: 3,
-          scrub: 0,
+          sceneID: 2,
           scrollTween: this.scrollTween,
         })
       }
     },
   },
   created() {
-    // if(process.client){
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-      var chapter = this.getLanguageData({lang : this.lang});
-      this.chapter =  chapter.ChapterTwo;
-      this.contentLoaded++
-    // }
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterTwo;
+    this.contentLoaded++;
   },
 }
 </script>

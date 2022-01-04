@@ -1,104 +1,111 @@
 <template>
   <section
     class="b--page-a__item b--chapter10-a"
-    id="Scene11"
-    ref="Scene11"
+    id="Scene10"
+    ref="Scene10"
     v-if="chapter"
   >
     <div class="b--ss-a">
-      <div class="b--ss-a__divider">
-        <div class="b--chapter10-a__divider">
-          <img
+      <div class="b--ss-a__ft-items">
+        
+        <img
           @load="handleLoad"
           @error="handleLoad"
-            class="
-              b--chapter10-a__divider__media
-              b--chapter10-a__divider__media--left
-            "
-            src="@/assets/img/chapter-10/front_rock.png"
-          />
-        </div>
-      </div>
-      <div class="b--ss-a__ft-items">
+          class="b--ss-a__ft-items__parallax"
+          :src="require(`@/assets/img/chapter-10/middle-parallax-${this.lang}.png`)"
+          alt="middle"
+          ref="parallax-middle"
+          :style="{ left: '245%' }"
+        />
         <img
           @load="handleLoad"
           @error="handleLoad"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          :style="{ left: '253%' }"
-          alt="front-parallax"
           src="@/assets/img/chapter-10/front-parallax.png"
-        />
-        <img
-          @load="handleLoad"
-          @error="handleLoad"
-          class="b--ss-a__ft-items__media"
           alt="front"
-          src="@/assets/img/chapter-10/front-elements.png"
+          :style="{ left: '129%' }"
         />
-      </div>
-      <!-- animation out of content, fisherman and plant needs more z-index than ft-items and ft-items needs more z-index than content -->
-      <div class="b--chapter10-a__artwork" ref="fisherman"  :style="{ left: '291%' }">
-        <div
-          class="b--motion-f"
-           :style="'background-image: url(' + require(`@/assets/img/chapter-10/fisherman_spritesheet.png`) + ')'"
-        ></div>
-      </div>
-      <!-- animation plants wind -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--second">
-        <div
-          class="b--motion-g"
-          :style="'background-image: url(' + require(`@/assets/img/chapter-10/plant_wind_2.png`) + ')'"
-        ></div>
-      </div>
-      <!-- animation boat -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third" ref="boat" :style="{ left: '271%' }">
-        <div
-          class="b--motion-s"
-           :style="'background-image: url(' + require(`@/assets/img/chapter-10/waves_boat.png`) + ')'"
-        ></div>
-      </div>
-      <!-- animation fish 3 -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="fish1" :style="{ left: '308%' }">
-        <div
-          class="b--motion-t"
-           :style="'background-image: url(' + require(`@/assets/img/chapter-10/fish_3.png`) + ')'"
-        ></div>
-      </div>
-      <!-- animation fish 4 -->
-      <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth" ref="fish2" :style="{ left: '277%' }">
-        <div
-          class="b--motion-u"
-          :style="'background-image: url(' + require(`@/assets/img/chapter-10/fish_4.png`) + ')'"
-        ></div>
       </div>
       <div class="b--ss-a__content">
-        <!-- chapter title -->
+        <!-- first position element, card -->
+        <!-- move up from the scss -->
         <div
           class="b--chapter10-a__content"
           :class="'b--chapter10-a__content--' + `${this.lang}`"
-          ref="boxContent"  :style="{ left: '248%' }"
+          ref="boxContent"
+          :style="{ left: '148%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
             :description="chapter.intro_description"
-            :customClass="'b--card-f--fourth b--card-f--' + `${this.lang}`"
-            :loadMoreBtn="chapter.load_more_button"
-            :loadMoreURL="chapter.load_more_url"
-            :loadMore="true"
+            :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
+            cardACustomClass="b--card-a--second"
           />
         </div>
       </div>
+      <!-- second position element, info -->
+      <div class="b--ss-a__front-content">
+        <div
+          class="b--chapter10-a__info"
+          ref="quoteContent"
+          :style="{ left: '170%' }"
+        >
+          <v-info-chapter :info="chapter" />
+        </div>
+        <!-- animation algae 1 -->
+        <div class="b--chapter10-a__artwork" ref="algae1" :style="{ left: '295%' }">
+          <div
+            class="b--motion-v"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/algae_1.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation algae 2 -->
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--second" ref="algae2" :style="{ left: '278%' }">
+          <div
+            class="b--motion-w"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/algae_2.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation algae 2 -->
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--third" ref="algae3" :style="{ left: '322%' }">
+          <div
+            class="b--motion-w"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/algae_2.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation buble 1 -->
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fourth" ref="bubble1" :style="{ left: '165%' }">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_1.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation buble 2 -->
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--fifth" ref="bubble2" :style="{ left: '186%' }">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_2.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation buble 3 -->
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--sixth" ref="bubble3" :style="{ left: '205%' }">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_3.png`) + ')'"
+          ></div>
+        </div>
+        <!-- animation buble 3 -->
+        <div class="b--chapter10-a__artwork b--chapter10-a__artwork--seventh" ref="bubble4" :style="{ left: '148%' }">
+          <div
+            class="b--motion-x"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-10/bubble_3.png`) + ')'"
+          ></div>
+        </div>
+        <!-- lottie animation fishes -->
+        <lottie class="b--chapter10-a__artwork b--chapter10-a__artwork--eight" :options="lottieOptions" v-on:animCreated="handleAnimation" />
+      </div>
       <div class="b--ss-a__bg-items">
-        <img
-          @load="handleLoad"
-          @error="handleLoad"
-          class="b--ss-a__bg-items__parallax"
-          ref="parallax-bg"
-          :style="{ left: '14%' }"
-          src="@/assets/img/chapter-10/back-parallax.png"
-          alt="back parallax"
-        />
         <img
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
@@ -109,8 +116,11 @@
         <img
           @load="handleLoad"
           @error="handleLoad"
-          class="b--ss-a__bg-items__media"
-          src="@/assets/img/chapter-10/front.png"
+          class="b--ss-a__bg-items__parallax"
+          ref="parallax-bg"
+          src="@/assets/img/chapter-10/back-parallax.png"
+          alt="back-parallax"
+          :style="{ left: '30%' }"
         />
       </div>
     </div>
@@ -119,43 +129,62 @@
 
 <script>
 import CardF from '@/components/cards/CardF'
+import InfoChapter from '@/components/infochapter/Infochapter'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
+
+import lottie from 'vue-lottie/src/lottie.vue'
+import * as animationData from "~/assets/img/chapter-10/fish.json";
+
 
 export default {
   mixins: [Parallax, Animation],
   components: {
     'v-card-f': CardF,
+    'v-info-chapter': InfoChapter,
+    lottie
   },
   data: () => {
     return {
-      totalContent: 7,
+      totalContent: 5,
       contentLoaded: 0,
       chapter: null,
+      infoWindowStatus: true,
+
+      //lottie
+      anim: null, // for saving the reference to the animation
+      lottieOptions: { animationData: animationData.default }
     }
   },
   props: ['scrollTween'],
   methods: {
+    handleAnimation: function (anim) {
+      this.anim = anim;
+    },
     handleLoad() {
       this.contentLoaded++
     },
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 1 },
-        { obj: this.$refs['parallax-ft'], intensity: 35 },
-        { obj: this.$refs['parallax-ft'], intensity: 35 },
-        { obj: this.$refs['fisherman'], intensity: 35 },
-        { obj: this.$refs['boat'], intensity: 35 },
-        { obj: this.$refs['fish1'], intensity: 35 },
-        { obj: this.$refs['fish2'], intensity: 35 },
-        { obj: this.$refs['boxContent'], intensity: 35 },
+        { obj: this.$refs['parallax-middle'], intensity: 40 },
+        { obj: this.$refs['parallax-ft'], intensity: 21 },
+        { obj: this.$refs['algae1'], intensity: 40 },
+        { obj: this.$refs['algae2'], intensity: 40 },
+        { obj: this.$refs['algae3'], intensity: 40 },
+        { obj: this.$refs['bubble1'], intensity: 21 },
+        { obj: this.$refs['bubble2'], intensity: 21 },
+        { obj: this.$refs['bubble3'], intensity: 21 },
+        { obj: this.$refs['bubble4'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['quoteContent'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
           el: item.obj,
           intensity: item.intensity,
-          duration: this.$refs['Scene11'].offsetWidth,
+          duration: this.$refs['Scene10'].offsetWidth,
           containerAnimation: this.scrollTween,
         })
       })
@@ -170,25 +199,22 @@ export default {
     },
     scrollTween(newValue, oldValue) {
       if (newValue) {
-        //motion frontend and backend elements
+        // motion frontend and backend elements
         this.AsambleParallaxObjs()
-        // mixin function
+        //mixin function
         this.startAnimation({
-          sceneID: 11,
-          scrub: 0,
+          sceneID: 10,
           scrollTween: this.scrollTween,
         })
       }
     },
   },
   created() {
-    // if(process.client){
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name
-      var chapter = this.getLanguageData({ lang: this.lang })
-      this.chapter = chapter.ChapterTen
-      this.contentLoaded++
-    // }
-  },
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter =  chapter.ChapterTen;
+    this.contentLoaded++;
+  }
 }
 </script>
 

@@ -1,78 +1,61 @@
 .b--chapter2-a {
-  // content has more z-index than ft items
-  .b--ss-a {
-    &__content {
-      z-index: 90;
-    }
-  }
-
   &__content {
-    // title
     position: absolute;
-    bottom: 26.79%;
-    left: 2.81%;
-    width: 27.44%;
-    @include make-position-a();
+    bottom: 28.18%;
+    left: 30%;
+    width: 37.76%;
+    height: 85.15%;
+    max-width: calc(100vw - 140px);
+    max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
+    @media all and ($viewport-type: $tabletl) {
+      height: auto;
+      max-height: none;
+      // bottom: 34.48%;
+      bottom: auto;
+      top: 12%;
+    }
     @media all and ($viewport-type: $mobile) {
-      bottom: 20%;
-      left: 6.81%;
-    }
-    .b--card-f {
-      .b--card-a {
-        @media all and (max-height: 500px) {
-          @include make-card-a-shadow();
-        }
-        @media all and ($viewport-type: $mobile) {
-          @include make-card-a-shadow();
-        }
-        &__wrapper {
-          @media all and (max-height: 500px) {
-            @include make-card-a-wrapper-scroll();
-          }
-          @media all and ($viewport-type: $mobile) {
-            @include make-card-a-wrapper-scroll();
-          }
-        }
-      }
-    }
-    // tv
-    &--second {
-      bottom: 43%;
-      left: 54.71%;
-      width: 24.36%;
+      // bottom: 34.48%;
+      top: 3%;
+      left: 26%;
+      width: calc(100vw - 80px + $measure * 10);
       max-width: none;
+    }
+    .b--card-e {
+      width: fit-content;
+      position: absolute;
+      top: 3.9vh * 2;
+      right: calc(100% - 3.9vh * 2);
+      max-width: calc(100vw - 80px);
+      min-width: max-content;
+      @media all and ($viewport-type: $tabletl) {
+        top: calc(3.9vh - $measure * 2);
+        right: calc(100% - 3.9vh - $measure * 2);
+      }
       @media all and ($viewport-type: $mobile) {
-        left: 56.1%;
+        // top: -1.5vh*2;
+        // right: calc(100% - 1.5vh*2);
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 0 auto $measure;
       }
     }
   }
   &__artwork {
     position: absolute;
     z-index: 150;
-    bottom: 39.2%;
-    // left: 42.01%;
-    left: 47.41%;
-    height: 14.45vh;
-    img {
-      max-height: 100%;
-    }
-    &--second {
-      bottom: 39.1%;
-      // left: 72.91%;
-      left: 79.38%;
-      height: 15.03vh;
-    }
-  }
-  // mobile adjustment of card-f
-  @media all and ($viewport-type: $mobile) {
-    .b--card-f {
-      &__hd {
-        margin: 0 auto $measure * 3;
-        &:before,
-        &:after {
-          height: $measure * 3;
-        }
-      }
-    }
+    top: 51%;
+    left: 44.8%;
+    width: 2.96%;
+    height: 14.06%;
+    // @media all and ($viewport-type: $laptop) {
+    //   top: 51.8%;
+    //   left: 73.4%;
+    // }
+    // @media all and ($viewport-type: $tabletl) {
+    //   top: 51.5%;
+    //   left: 73.5%;
+    // }
   }
 }
