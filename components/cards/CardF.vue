@@ -3,7 +3,7 @@
         <div class="b--card-f__hd">
             <!-- card-e -->
             <div class="b--card-e">
-                <h4 class="b--card-e__title">{{title}}</h4>
+                <h3 class="b--card-e__title">{{title}}</h3>
             </div>
         </div>
         <div class="b--card-f__bd">

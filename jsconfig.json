@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["@nuxt/vue-app", "@nuxtjs/device"],
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"],
