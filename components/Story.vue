@@ -169,18 +169,26 @@ export default {
                 }
             });
             
-            // refresh page on resize
-            console.log(this.$device.isDesktop);
-            console.log(this.$device.isTablet);
-            if(!this.$device.isMobileOrTablet){
-                window.onresize = (e)=> {  
-                    clearTimeout(this.timeOutFunctionId);
-                    this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
-                }
-            }
             // refresh page when orientation changes
-            if(this.$device.isMobileOrTablet){
+            console.log(this.$device);
+            if(this.$device.isMobileOrTablet || this.$device.isDesktopOrTablet){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
+            }
+            if(!this.$device.isMobileOrTablet){
+                // refresh page on resize
+                if(!this.$device.isSafari){
+                    window.onresize = (e)=> {  
+                        clearTimeout(this.timeOutFunctionId);
+                        this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+                    }
+                }else{
+                    window.onresize = (e)=> {  
+                        if(!this.custom_tf.isTablet()){
+                            clearTimeout(this.timeOutFunctionId);
+                            this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+                        }
+                    }
+                }
             }
         }
     },
