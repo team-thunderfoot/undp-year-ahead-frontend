@@ -31,9 +31,7 @@ class CustomTF {
     }
     isTablet(){
         const userAgent = navigator.userAgent.toLowerCase();
-        const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
-        console.log(isTablet);
-        console.log(userAgent);
+        const isTablet = /(ipad|tablet|(android(?!.*mobi))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/i.test(userAgent);
         return isTablet;
     }
 }

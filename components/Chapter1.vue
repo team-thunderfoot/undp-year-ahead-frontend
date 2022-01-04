@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img :style="{ left: '3%' }" src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" @load="handleLoad"
+        <img src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" @load="handleLoad"
           @error="handleLoad" />
       </div>
       <div class="b--ss-a__content">
@@ -32,8 +32,7 @@
         </div>
         <!-- Intro Story -->
 
-        <div class="b--chapter1-a__content b--chapter1-a__content--second"  ref="boxContent"
-          :style="{ left: '18%' }">
+        <div class="b--chapter1-a__content b--chapter1-a__content--second" ref="boxContent">
             <div class="b--card-a" ref="CardA">
               <div class="b--card-a__artwork"></div>
               <div class="b--card-a__wrapper b--content-a">
@@ -213,12 +212,10 @@ export default {
 		},
 	},
 	created() {
-    // if(process.client){
-      this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
-      var chapter = this.getLanguageData({lang : this.lang});
-      this.chapter = chapter.ChapterOne;
-      this.contentLoaded++;
-    // }
+    this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
+    var chapter = this.getLanguageData({lang : this.lang});
+    this.chapter = chapter.ChapterOne;
+    this.contentLoaded++;
   },
 }
 </script>

@@ -74,33 +74,10 @@
       position: absolute;
       text-align: center;
       bottom: 26px;
-      left: 12px;
+      left: 8px;
       margin: 0 auto;
       @media all and ($viewport-type: $mobile) {
-        left: 12px;
-      }
-      &__link {
-        display: block;
-        margin-top: $measure * 2;
-        &__media {
-          display: block;
-          margin: 0 auto;
-          &:not(:last-child) {
-            margin-bottom: 26px;
-          }
-          &--facebook {
-            width: 25px;
-          }
-          &--instagram {
-            width: 25px;
-          }
-          &--linkedin {
-            width: 25px;
-          }
-          &--twitter {
-            width: 25px;
-          }
-        }
+        left: 10px;
       }
     }
   }

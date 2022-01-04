@@ -142,7 +142,7 @@ export default {
         this.lang = this.$route.name == 'index' ? 'en' : this.$route.name;
         var chapter = this.getLanguageData({lang : this.lang});
         this.chapter =  chapter.ChapterTwelve;
-        this.contentLoaded++
+        this.contentLoaded++;
     }
 }
 </script>

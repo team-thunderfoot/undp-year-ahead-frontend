@@ -134,7 +134,7 @@ export default {
         },
 
         workAfterResizeIsDone(){
-            if(this.$route.query){
+            if(this.$route.query.scene){
                 window.location  =  this.$route.path + '?scene=' + this.$route.query.scene;
             }else{
                 window.location  =  this.$route.path;
@@ -160,28 +160,21 @@ export default {
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
                     // SET NEW Item
-                    if(this.currentItem == 3 && payload.item == 1){ // if we are entering Scene 2 from Scene 3
-                        this.currentItem = 2;
-                    }else{
-                        if(payload.item == 2 && this.currentItem == 2){ // if we are entering Scene 1 from Scene 2
-                            this.currentItem = 1;
-                        }else{
-                            this.currentItem = payload.item;
-                        }
-                    }
+                    this.currentItem = payload.item;
                     
                     // Change URL
                     this.$router.push({path: this.$route.path, query: { scene:  payload.item }})
                 }
             });
             
-            // resize funcion
+            // refresh paeg on resize
             window.onresize = (e)=> {  
-                if(window.innerWidth > this.windowWidth){
+                if(!this.custom_tf.isMobile() && !this.custom_tf.isTablet()){
                     clearTimeout(this.timeOutFunctionId);
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
             }
+            // refresh paeg on orientation change
             if(this.custom_tf.isMobile() || this.custom_tf.isTablet()){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }

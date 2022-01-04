@@ -4,6 +4,12 @@
             <img src="@/assets/img/arrow-left.png" alt="arrow left"/>
         </a>
         <a href="#" id="next" ref="next" @click.prevent="goTo('next')" class="b--progress-a__arrow b--progress-a__arrow--next" aria-label="next"> <img src="@/assets/img/arrow-right.png" alt="arrow right" /></a>
+        <div class="b--progress-a b--progress-a--second" :class="{'b--progress-a--second--is-hidden' : !scrollIsVisible}">
+            <div class="b--progress-a__arrow b--progress-a--second__artwork" aria-label="scroll">
+                <img src="@/assets/img/arrow-top.png" alt="scroll" />
+            </div>
+            <span class="b--progress-a--second__title">Scroll</span>
+        </div>
     </div>
 </template>
 <script>
@@ -13,6 +19,7 @@ export default {
            maxStories : 15,
            currentItemMenu : false,
            navIsLoaded: true,
+           scrollIsVisible: true
 		}
 	},
     props : [
@@ -44,8 +51,6 @@ export default {
                         this.$refs.next.classList.add("disabled");
                         this.$refs.next.style.pointerEvents = "none";
                     }
-                    // this.$refs.prev.style.pointerEvents = "all";
-                    // this.$refs.next.style.pointerEvents = "all";
                 }});
 			}
             if(payload == 'prev'){
@@ -81,27 +86,28 @@ export default {
                             var pos =  sceneName.offsetLeft;
                         }
                         this.$gsap.to(window, {duration: 4, scrollTo: pos,
-                        onStart: () => {
-                            //  Emits on Update Story .vue 
-                            this.currentItemMenu = this.sceneNumber;
-                            if(this.currentItemMenu == this.maxStories){
-                                this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
-                            }
-                            // $nuxt.$emit('navIsLoaded');
-                            this.$refs.prev.style.pointerEvents = "none";
-                            this.$refs.next.style.pointerEvents = "none";
-                        },
-                        onComplete: () => {
-                            //do something after going to section
-                            this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene4 takes the number 2)
-                            this.$refs.prev.style.pointerEvents = "all";
-                            this.$refs.next.style.pointerEvents = "all";
-                            if(this.currentItemMenu == this.maxStories){
-                                this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                            onStart: () => {
+                                //  Emits on Update Story .vue 
+                                this.currentItemMenu = this.sceneNumber;
+                                if(this.currentItemMenu == this.maxStories){
+                                    this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                                }
+                                // $nuxt.$emit('navIsLoaded');
+                                this.$refs.prev.style.pointerEvents = "none";
                                 this.$refs.next.style.pointerEvents = "none";
+                            },
+                            onComplete: () => {
+                                //do something after going to section
+                                this.currentItemMenu = this.sceneNumber; // gets number of the url name (from #Scene4 takes the number 2)
+                                this.$refs.prev.style.pointerEvents = "all";
+                                this.$refs.next.style.pointerEvents = "all";
+                                if(this.currentItemMenu == this.maxStories){
+                                    this.$refs.next.classList.add("disabled"); // disabled bottoms from the beggining
+                                    this.$refs.next.style.pointerEvents = "none";
+                                }
+                            
                             }
-                        
-                        }}); 
+                        }); 
                     } else {
                         this.currentItemMenu = this.sceneNumber;
                         this.$refs.prev.classList.add("disabled"); // disabled bottoms from the beggining
@@ -132,6 +138,13 @@ export default {
                 }
             }
 		},
+        handleScroll(event) {
+            if(window.pageYOffset > 240) {
+                this.scrollIsVisible = false;
+            } else {
+                this.scrollIsVisible = true;
+            }
+        }
     },
     watch: {
         currentItem(newValue, oldValue) {
@@ -152,6 +165,11 @@ export default {
             this.currentItemMenu = newValue;
         },
         
+    },
+    created() {
+        if(process.client) {
+            window.addEventListener('scroll', this.handleScroll);
+        }
     },
     mounted(){
         if(process.client){
