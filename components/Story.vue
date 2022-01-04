@@ -170,12 +170,12 @@ export default {
             });
             
             // refresh page on resize
-            window.onresize = (e)=> {  
-                if(!this.custom_tf.isMobile() && !this.custom_tf.isTablet()){
-                    clearTimeout(this.timeOutFunctionId);
-                    this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
-                }
-            }
+            // window.onresize = (e)=> {  
+            //     if(!this.custom_tf.isMobile() && !this.custom_tf.isTablet()){
+            //         clearTimeout(this.timeOutFunctionId);
+            //         this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+            //     }
+            // }
             // refresh page when orientation changes
             if(this.custom_tf.isMobile() || this.custom_tf.isTablet()){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
