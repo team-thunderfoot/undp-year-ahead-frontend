@@ -87,15 +87,6 @@ export default {
     methods: {
         handleLoad(){
             this.contentLoaded++;
-        },
-        animate(){
-            this.$nextTick(() => {
-                this.startAnimation({
-                    sceneID : 15,
-                    scrub:0,
-                    scrollTween : this.scrollTween
-                })
-            })
         }
     },
     watch: {
@@ -107,7 +98,10 @@ export default {
         },
          scrollTween(newValue, oldValue){
             if (newValue ) {
-                this.animate();
+                this.startAnimation({
+                    sceneID : 15,
+                    scrollTween : this.scrollTween
+                })
             } 
         }
     },

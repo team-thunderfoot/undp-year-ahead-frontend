@@ -107,7 +107,6 @@ export default {
         // mixin function
         this.startAnimation({
           sceneID: 4,
-          scrub: 0,
           scrollTween: this.scrollTween,
         })
       }
