@@ -170,11 +170,12 @@ export default {
             });
             
             // refresh page when orientation changes
+            console.log(this.$device);
             if(this.$device.isMobileOrTablet){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }else{
                 // refresh page on resize
-                 window.onresize = (e)=> {  
+                window.onresize = (e)=> {  
                     clearTimeout(this.timeOutFunctionId);
                     this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                 }
