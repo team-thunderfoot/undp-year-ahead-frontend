@@ -182,8 +182,9 @@ export default {
                         this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                     }
                 }else{
-                    if(window.innerWidth > 1201){
-                        window.onresize = (e)=> {  
+                   
+                    window.onresize = (e)=> {  
+                        if(window.innerWidth > 1201){
                             clearTimeout(this.timeOutFunctionId);
                             this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                         }
