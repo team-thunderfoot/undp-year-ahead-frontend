@@ -119,8 +119,7 @@ export default {
         this.AsambleParallaxObjs()
 
         this.startAnimation({
-          sceneID: 3,
-          scrub: 0,
+          sceneID: 2,
           scrollTween: this.scrollTween,
         })
       }

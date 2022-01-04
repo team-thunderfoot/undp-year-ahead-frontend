@@ -89,7 +89,6 @@ export default {
       if (newValue) {
         this.startAnimation({
           sceneID: 7,
-          scrub: 0,
           scrollTween: this.scrollTween,
         })
       }
