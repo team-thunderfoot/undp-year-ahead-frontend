@@ -22,7 +22,7 @@
         <div class="b--chapter2-a__content" ref="boxContent" :style="{ left: '25%' }">
           <!-- text with bg -->
           <div class="b--card-e">
-            <h4 class="b--card-e__title">{{ chapter.quote_system }}</h4>
+            <h3 class="b--card-e__title">{{ chapter.quote_system }}</h3>
           </div>
           <div class="b--card-d">
             <div class="b--card-d__bd">
