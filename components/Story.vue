@@ -183,7 +183,7 @@ export default {
                     }
                 }else{
                     window.onresize = (e)=> {  
-                        if(!this.custom_tf.isTablet()){
+                        if(window.innerWidth > 1201){
                             clearTimeout(this.timeOutFunctionId);
                             this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                         }
