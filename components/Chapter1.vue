@@ -98,31 +98,6 @@
             </div>
           </div>
         </div>
-
-        <div class="b--chapter1-a__artwork b--chapter1-a__artwork--fifth">
-          <div
-            ref="bubble"
-            class="b--motion-a"
-            :style="'background-image: url(' + require(`@/assets/img/chapter-1/bubble-motion.png`) + ')'"
-            
-          >
-            <!-- bubble -->
-          </div>
-        </div>
-
-        <!-- content-fourth position -->
-        <div class="b--chapter1-a__content b--chapter1-a__content--third" id="Scene2" ref="Scene2">
-          <!-- text with bg -->
-          <div class="b--card-e">
-            <h4 class="b--card-e__title">{{ chapter.quote_system }}</h4>
-          </div>
-          <div class="b--card-d">
-            <div class="b--card-d__bd">
-              <v-quote-a :chapter="chapter" />
-            </div>
-            <div class="b--card-d__artwork"></div>
-          </div>
-        </div>
       </div>
       <div class="b--ss-a__bg-items">
         <img
@@ -149,7 +124,7 @@
 <script>
 // Data import
 import InfoChapter from '@/components/infochapter/Infochapter'
-import QuoteA from '@/components/quote/Quote'
+// import QuoteA from '@/components/quote/Quote'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -167,7 +142,7 @@ export default {
   props: ['scrollTween'],
   components: {
     'v-info-chapter': InfoChapter,
-    'v-quote-a': QuoteA,
+    // 'v-quote-a': QuoteA,
   },
   methods: {
     handleLoad() {

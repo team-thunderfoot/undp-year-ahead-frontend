@@ -15,7 +15,7 @@
       width: 22.15%;
     }
     @media all and ($viewport-type: $laptop) {
-      left: 2.31%;
+      left: 3.21%;
       bottom: 19%;
     }
     @media all and ($viewport-type: $tabletl) {
@@ -24,6 +24,9 @@
     }
     @media all and ($viewport-type: $tablets) {
       max-width: calc(100vw - 60px);
+    }
+    @media all and ($viewport-type: $mobile) {
+      bottom: 25%;
     }
     // intro second box card-a
     &--second {
@@ -112,48 +115,6 @@
         }
       }
     }
-    // card-d
-    &--third {
-      bottom: 31.48%;
-      left: 63.75%;
-      width: 17.48%;
-      height: 85.15%;
-      max-width: calc(100vw - 140px);
-      max-height: calc(100vh - 19.04vh - 17.77vh - $measure * 4);
-      @media all and ($viewport-type: $tabletl) {
-        height: auto;
-        max-height: none;
-        // bottom: 34.48%;
-        bottom: auto;
-        top: 12%;
-      }
-      @media all and ($viewport-type: $mobile) {
-        // bottom: 34.48%;
-        top: 8%;
-        left: 62%;
-        width: calc(100vw - 80px + $measure * 10);
-        max-width: none;
-      }
-      .b--card-e {
-        width: fit-content;
-        position: absolute;
-        top: 3.9vh * 2;
-        right: calc(100% - 3.9vh * 2);
-        max-width: calc(100vw - 80px);
-        @media all and ($viewport-type: $tabletl) {
-          top: calc(3.9vh - $measure * 2);
-          right: calc(100% - 3.9vh - $measure * 2);
-        }
-        @media all and ($viewport-type: $mobile) {
-          // top: -1.5vh*2;
-          // right: calc(100% - 1.5vh*2);
-          position: relative;
-          top: auto;
-          right: auto;
-          margin: 0 auto $measure;
-        }
-      }
-    }
     &--fr {
       width: 12.91%;
       @media all and ($viewport-type: $laptop) {
@@ -200,22 +161,6 @@
       height: 36.5%;
       max-height: calc(100vh - 27.44vh - $measure * 4);
       z-index: -1;
-    }
-
-    // bubble
-    &--fifth {
-      top: 51%;
-      left: 72.8%;
-      width: 2.96%;
-      height: 14.06%;
-      @media all and ($viewport-type: $laptop) {
-        top: 51.8%;
-        left: 73.4%;
-      }
-      @media all and ($viewport-type: $tabletl) {
-        top: 51.5%;
-        left: 73.5%;
-      }
     }
   }
 }
