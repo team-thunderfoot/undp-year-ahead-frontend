@@ -170,9 +170,6 @@ export default {
             });
             
             // refresh page when orientation changes
-            console.log(this.$device);
-                 console.log(window.matchMedia("(pointer: coarse)").matches);
-
             if(this.$device.isMobileOrTablet || this.$device.isDesktopOrTablet){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }
