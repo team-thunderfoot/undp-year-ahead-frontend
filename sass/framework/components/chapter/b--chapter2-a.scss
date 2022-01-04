@@ -1,7 +1,8 @@
 .b--chapter2-a {
   &__content {
-    bottom: 31.48%;
-    left: 7%;
+    position: absolute;
+    bottom: 28.18%;
+    left: 30%;
     width: 37.76%;
     height: 85.15%;
     max-width: calc(100vw - 140px);
@@ -15,8 +16,8 @@
     }
     @media all and ($viewport-type: $mobile) {
       // bottom: 34.48%;
-      top: 8%;
-      left: 62%;
+      top: 3%;
+      left: 26%;
       width: calc(100vw - 80px + $measure * 10);
       max-width: none;
     }
@@ -24,8 +25,7 @@
       width: fit-content;
       position: absolute;
       top: 3.9vh * 2;
-      left: 27vh;
-      // right: calc(100% - 3.9vh * 2);
+      right: calc(100% - 3.9vh * 2);
       max-width: calc(100vw - 80px);
       @media all and ($viewport-type: $tabletl) {
         top: calc(3.9vh - $measure * 2);
@@ -48,13 +48,13 @@
     left: 44.8%;
     width: 2.96%;
     height: 14.06%;
-    @media all and ($viewport-type: $laptop) {
-      top: 51.8%;
-      left: 73.4%;
-    }
-    @media all and ($viewport-type: $tabletl) {
-      top: 51.5%;
-      left: 73.5%;
-    }
+    // @media all and ($viewport-type: $laptop) {
+    //   top: 51.8%;
+    //   left: 73.4%;
+    // }
+    // @media all and ($viewport-type: $tabletl) {
+    //   top: 51.5%;
+    //   left: 73.5%;
+    // }
   }
 }
