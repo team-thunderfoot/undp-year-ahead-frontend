@@ -3,7 +3,7 @@
         <div class="b--card-f__hd">
             <!-- card-e -->
             <div class="b--card-e">
-                <h4 class="b--card-e__title">{{title}}</h4>
+                <h3 class="b--card-e__title">{{title}}</h3>
             </div>
         </div>
         <div class="b--card-f__bd">
@@ -12,7 +12,7 @@
                 <div class="b--card-a__artwork"></div>
                 <div class="b--card-a__wrapper">
                     <div class="b--content-a" v-html="description"></div>
-                    <a class="b--card-a__wrapper__link" v-if="loadMore" :href="loadMoreURL" target="_blank" rel="noopener noreferrer"> {{loadMoreBtn}} </a>
+                    <a class="b--card-a__wrapper__link" v-if="loadMore" :href="loadMoreURL" target="_blank" alt="artisanal-fisheries-aquaculture" rel="noopener noreferrer"> {{loadMoreBtn}} </a>
                 </div>
             </div>
         </div>
