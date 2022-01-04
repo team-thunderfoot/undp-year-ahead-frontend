@@ -171,6 +171,8 @@ export default {
             
             // refresh page when orientation changes
             console.log(this.$device);
+                 console.log(window.matchMedia("(pointer: coarse)").matches);
+
             if(this.$device.isMobileOrTablet || this.$device.isDesktopOrTablet){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }
@@ -183,7 +185,7 @@ export default {
                     }
                 }else{
                     window.onresize = (e)=> {  
-                        if(window.innerWidth > 1201){
+                        if(!window.matchMedia("(pointer: coarse)").matches){
                             clearTimeout(this.timeOutFunctionId);
                             this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                         }
