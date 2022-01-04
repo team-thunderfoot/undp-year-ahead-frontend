@@ -185,7 +185,7 @@ export default {
                     }
                 }else{
                     window.onresize = (e)=> {  
-                        if(window.matchMedia("(pointer: coarse)").matches){
+                        if(!window.matchMedia("(pointer: coarse)").matches){
                             clearTimeout(this.timeOutFunctionId);
                             this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
                         }
