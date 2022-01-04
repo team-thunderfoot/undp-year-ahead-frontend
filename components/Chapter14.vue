@@ -83,7 +83,6 @@
 </template>
 
 <script>
-import CardF from '@/components/cards/CardF';
 
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
@@ -91,7 +90,7 @@ import Animation from '@/mixins/Animation.js';
 export default {
     mixins: [Parallax,Animation],
     components:{
-        'v-card-f':CardF,
+        'v-card-f': () => import(/* webpackChunkName: "CardF" */ "@/components/cards/CardF"),
     }, 
     data:()=>{
 		return{

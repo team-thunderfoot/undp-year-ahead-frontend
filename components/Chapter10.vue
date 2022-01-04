@@ -128,8 +128,6 @@
 </template>
 
 <script>
-import CardF from '@/components/cards/CardF'
-import InfoChapter from '@/components/infochapter/Infochapter'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -141,8 +139,8 @@ import * as animationData from "~/assets/img/chapter-10/fish.json";
 export default {
   mixins: [Parallax, Animation],
   components: {
-    'v-card-f': CardF,
-    'v-info-chapter': InfoChapter,
+    'v-card-f': () => import(/* webpackChunkName: "CardF" */ "@/components/cards/CardF"),
+    'v-info-chapter': () => import(/* webpackChunkName: "InfoChapter" */ "@/components/infochapter/Infochapter"),    
     lottie
   },
   data: () => {

@@ -59,10 +59,6 @@
 </template>
 
 <script>
-import CardF from '@/components/cards/CardF';
-import CardI from '@/components/cards/CardI';
-import QuoteA from '@/components/quote/Quote';
-import SocialA from '@/components/social/Social.vue';
 
 import Parallax from '@/mixins/Parallax.js';
 import Animation from '@/mixins/Animation.js';
@@ -70,10 +66,10 @@ import Animation from '@/mixins/Animation.js';
 export default {
     mixins: [Parallax,Animation],
     components:{
-        'v-card-f':CardF,
-        'v-card-i':CardI,
-        'v-quote-a':QuoteA,
-        'v-social-a':SocialA
+        'v-card-f': () => import(/* webpackChunkName: "CardF" */ "@/components/cards/CardF"),
+        'v-card-i': () => import(/* webpackChunkName: "CardI" */ "@/components/cards/CardI"),
+        'v-quote-a': () => import(/* webpackChunkName: "QuoteA" */ "@/components/quote/Quote"),
+        'v-social-a': () => import(/* webpackChunkName: "SocialA" */ "@/components/social/Social")
     },
     data:()=>{
 		return{
