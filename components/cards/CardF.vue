@@ -12,7 +12,7 @@
                 <div class="b--card-a__artwork"></div>
                 <div class="b--card-a__wrapper">
                     <div class="b--content-a" v-html="description"></div>
-                    <a class="b--card-a__wrapper__link" v-if="loadMore" :href="loadMoreURL" target="_blank" rel="noopener noreferrer"> {{loadMoreBtn}} </a>
+                    <a class="b--card-a__wrapper__link" v-if="loadMore" :href="loadMoreURL" target="_blank" alt="artisanal-fisheries-aquaculture" rel="noopener noreferrer"> {{loadMoreBtn}} </a>
                 </div>
             </div>
         </div>
