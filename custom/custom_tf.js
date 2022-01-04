@@ -1,11 +1,7 @@
 class CustomTF {
-    constructor() {
-        
-    }
+    constructor() {}
 
-    init(){
-
-    }
+    init(){ }
 
     checkURL(){
         if(process.client){

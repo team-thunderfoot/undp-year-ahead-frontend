@@ -124,7 +124,6 @@
 <script>
 // Data import
 import InfoChapter from '@/components/infochapter/Infochapter'
-// import QuoteA from '@/components/quote/Quote'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -142,7 +141,6 @@ export default {
   props: ['scrollTween'],
   components: {
     'v-info-chapter': InfoChapter,
-    // 'v-quote-a': QuoteA,
   },
   methods: {
     handleLoad() {

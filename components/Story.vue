@@ -78,19 +78,22 @@ export default {
         'v-progress' : Progress
     },
     watch: {
+        // checks if all chapters are loaded
         statusChapter(newValue, oldValue) {
             if(newValue == this.totalChapters){
                 this.allisLoaded = true;
             }
         },
+        // checks if navbar control is loaded
         navLoaded(newValue, oldValue) {
             if(newValue){
                 this.allisLoaded = 1;
             }
         },
+        // creates the page when chapters and navbar controls are loaded
         allisLoaded(newValue, oldValue) {
             if(this.statusChapter == this.totalChapters && this.navLoaded){
-               this.asambleStory()
+               this.asambleStory();
             }
         }
     },
@@ -113,7 +116,6 @@ export default {
                         start: 0,
                         end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
                         scrub: true,
-                        // markers: "false",
                         anticipatePin: 1,
                         onUpdate: (self) => {
                             // Emits on Update Progress in Nav.vue 
