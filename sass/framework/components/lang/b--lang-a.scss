@@ -57,6 +57,7 @@
     transition: all $time-a ease-in-out;
     @media all and ($viewport-type: $mobile) {
       top: -$measure * 0.5;
+      left: $measure * 4.92;
     }
     &__list-group {
       background-color: $color-f;
