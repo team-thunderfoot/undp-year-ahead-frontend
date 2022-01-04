@@ -27,6 +27,7 @@
       top: 3.9vh * 2;
       right: calc(100% - 3.9vh * 2);
       max-width: calc(100vw - 80px);
+      min-width: max-content;
       @media all and ($viewport-type: $tabletl) {
         top: calc(3.9vh - $measure * 2);
         right: calc(100% - 3.9vh - $measure * 2);
