@@ -169,16 +169,15 @@ export default {
                 }
             });
             
-            // refresh page on resize
-            if(!this.$device.isMobile && !this.$device.isTablet){
-                window.onresize = (e)=> {  
-                    clearTimeout(this.timeOutFunctionId);
-                    this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
-                }
-            }
             // refresh page when orientation changes
             if(this.$device.isMobileOrTablet){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
+            }else{
+                // refresh page on resize
+                 window.onresize = (e)=> {  
+                    clearTimeout(this.timeOutFunctionId);
+                    this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+                }
             }
         }
     },
