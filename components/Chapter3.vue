@@ -94,7 +94,6 @@
 </template>
 
 <script>
-import CardF from './cards/CardF'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -109,7 +108,7 @@ export default {
     }
   },
   components: {
-    'v-card-f': CardF,
+    'v-card-f': () => import(/* webpackChunkName: "CardF" */ "@/components/cards/CardF")
   },
   props: ['scrollTween'],
   methods: {

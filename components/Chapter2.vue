@@ -68,7 +68,6 @@
 </template>
 
 <script>
-import QuoteA from '@/components/quote/Quote'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -83,7 +82,7 @@ export default {
     }
   },
   components: {
-    'v-quote-a': QuoteA,
+    'v-quote-a': () => import(/* webpackChunkName: "QuoteA" */ "@/components/quote/Quote")
   },
   props: ['scrollTween'],
   methods: {
