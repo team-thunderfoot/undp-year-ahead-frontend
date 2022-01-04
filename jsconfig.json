@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["@nuxt/types", "@nuxtjs/device"],
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"],
