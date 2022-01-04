@@ -171,9 +171,10 @@ export default {
             
             // refresh page when orientation changes
             console.log(this.$device);
-            if(this.$device.isMobileOrTablet){
+            if(this.$device.isMobileOrTablet || this.$device.isDesktopOrTablet){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
-            }else{
+            }
+            if(!this.$device.isMobileOrTablet){
                 // refresh page on resize
                 if(!this.$device.isSafari){
                     window.onresize = (e)=> {  
