@@ -4,12 +4,15 @@
   height: calc(100% + 1px);
   /* firefox */
   scrollbar-width: thin;
+  /* safari spacing */
+  @media not all and (min-resolution: 0.001dpcm) {
+    padding-right: 6px;
+  }
 }
 
 @mixin make-card-a-scrollbar() {
   ::-webkit-scrollbar {
     display: block;
-    // -webkit-appearance: none;
     -webkit-overflow-scrolling: touch;
     width: 4px;
   }
