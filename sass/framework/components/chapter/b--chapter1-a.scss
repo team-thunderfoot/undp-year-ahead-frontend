@@ -25,6 +25,9 @@
     @media all and ($viewport-type: $tablets) {
       max-width: calc(100vw - 60px);
     }
+    @media all and ($viewport-type: $mobile) {
+      bottom: 25%;
+    }
     // intro second box card-a
     &--second {
       bottom: 17.77%;
