@@ -54,16 +54,14 @@
 </template>
 
 <script>
-import CardF from '@/components/cards/CardF'
-import QuoteA from '@/components/quote/Quote'
 
 import Animation from '@/mixins/Animation.js'
 
 export default {
   mixins: [Animation],
   components: {
-    'v-card-f': CardF,
-    'v-quote-a': QuoteA,
+    'v-card-f': () => import(/* webpackChunkName: "CardF" */ "@/components/cards/CardF"),
+    'v-quote-a': () => import(/* webpackChunkName: "QuoteA" */ "@/components/quote/Quote"),
   },
   data: () => {
     return {
