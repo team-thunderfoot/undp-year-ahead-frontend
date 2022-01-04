@@ -37,7 +37,7 @@ import Chapter14 from '~/components/Chapter14.vue';
 import Chapter15 from '~/components/Chapter15.vue';
 
 import Progress from '~/components/NavControls.vue';
-import Resize from '@/custom/custom_tf.js'
+import CustomTF from '@/custom/custom_tf.js';
 
 export default {
     data:()=>{
@@ -78,19 +78,22 @@ export default {
         'v-progress' : Progress
     },
     watch: {
+        // checks if all chapters are loaded
         statusChapter(newValue, oldValue) {
             if(newValue == this.totalChapters){
                 this.allisLoaded = true;
             }
         },
+        // checks if navbar control is loaded
         navLoaded(newValue, oldValue) {
             if(newValue){
                 this.allisLoaded = 1;
             }
         },
+        // creates the page when chapters and navbar controls are loaded
         allisLoaded(newValue, oldValue) {
             if(this.statusChapter == this.totalChapters && this.navLoaded){
-               this.asambleStory()
+               this.asambleStory();
             }
         }
     },
@@ -113,7 +116,6 @@ export default {
                         start: 0,
                         end: () => "+=" + (document.querySelector('.b--page-a').scrollWidth - window.innerWidth),
                         scrub: true,
-                        // markers: "false",
                         anticipatePin: 1,
                         onUpdate: (self) => {
                             // Emits on Update Progress in Nav.vue 
@@ -143,7 +145,7 @@ export default {
     },
     mounted(){
         if(process.client){
-            this.custom_tf = new Resize();
+            this.custom_tf = new CustomTF();
             
             this.urlWithParams = this.custom_tf.checkURL(); // checks if url has params
             this.sceneNumber = ( this.urlWithParams ) ? this.custom_tf.getURL() : false; // returns the param
@@ -159,7 +161,7 @@ export default {
             // event in ChapterX.vue
             this.$nuxt.$on('changeCurrent', (payload) => {
                 if(this.loadedNew){
-                    // SET NEW Item
+                    // Set New Item
                     this.currentItem = payload.item;
                     
                     // Change URL
@@ -167,14 +169,14 @@ export default {
                 }
             });
             
-            // refresh paeg on resize
-            window.onresize = (e)=> {  
-                if(!this.custom_tf.isMobile() && !this.custom_tf.isTablet()){
-                    clearTimeout(this.timeOutFunctionId);
-                    this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
-                }
-            }
-            // refresh paeg on orientation change
+            // refresh page on resize
+            // window.onresize = (e)=> {  
+            //     if(!this.custom_tf.isMobile() && !this.custom_tf.isTablet()){
+            //         clearTimeout(this.timeOutFunctionId);
+            //         this.timeOutFunctionId = setTimeout(this.workAfterResizeIsDone(), 500);
+            //     }
+            // }
+            // refresh page when orientation changes
             if(this.custom_tf.isMobile() || this.custom_tf.isTablet()){
                 window.addEventListener('orientationchange', this.workAfterResizeIsDone);
             }
