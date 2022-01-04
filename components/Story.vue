@@ -170,6 +170,8 @@ export default {
             });
             
             // refresh page on resize
+            console.log(this.$device.isDesktop);
+            console.log(this.$device.isTablet);
             if(!this.$device.isMobileOrTablet){
                 window.onresize = (e)=> {  
                     clearTimeout(this.timeOutFunctionId);
