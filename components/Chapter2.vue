@@ -13,62 +13,36 @@
           :style="{ left: '17%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
-          src="@/assets/img/chapter-3/front-parallax.png"
+          src="@/assets/img/chapter-2/front-parallax.png"
           alt="front-parallax"
         />
       </div>
       <div class="b--ss-a__content">
-        <div
-          class="b--chapter2-a__content"
-          :class="'b--chapter2-a__content--' + `${this.lang}`"
-          ref="boxContent"
-          :style="{ left: '20%' }"
-        >
-          <v-card-f
-            :title="chapter.intro_title"
-            :description="chapter.intro_description"
-            :customClass="'b--card-f--second b--card-f--' + `${this.lang}`"
-          />
-        </div>
-        <div
-          class="b--chapter2-a__content b--chapter2-a__content--second"
-          :style="{ left: '47%' }"
-          ref="TVfrankie"
-        >
-          <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
-            <div class="b--card-g__media-wrapper">
-              <video class="b--video-a" autoplay muted loop playsinline>
-                <source :src="require(`@/assets/video/chapter-3/dino2.mov`)" type="video/mp4">
-              </video>
+        <!-- content-fourth position -->
+        <div class="b--chapter2-a__content">
+          <!-- text with bg -->
+          <div class="b--card-e">
+            <h4 class="b--card-e__title">{{ chapter.quote_system }}</h4>
+          </div>
+          <div class="b--card-d">
+            <div class="b--card-d__bd">
+              <v-quote-a :chapter="chapter" />
             </div>
+            <div class="b--card-d__artwork"></div>
           </div>
         </div>
-        <div
-          class="b--chapter2-a__artwork"
-          :style="{ left: '42%' }"
-          ref="dino1"
-        >
-          <img
-            @load="handleLoad"
-            @error="handleLoad"
-            src="@/assets/img/chapter-3/dino-orange.png"
-            alt="browser"
-            title="browser"
-          />
+
+        <div class="b--chapter2-a__artwork">
+          <div
+            ref="bubble"
+            class="b--motion-a"
+            :style="'background-image: url(' + require(`@/assets/img/chapter-1/bubble-motion.png`) + ')'"
+            
+          >
+            <!-- bubble -->
+          </div>
         </div>
-        <div
-          class="b--chapter2-a__artwork b--chapter2-a__artwork--second"
-          :style="{ left: '72%' }"
-          ref="dino2"
-        >
-          <img
-            @load="handleLoad"
-            @error="handleLoad"
-            src="@/assets/img/chapter-3/dino-green.png"
-            alt="browser"
-            title="browser"
-          />
-        </div>
+
       </div>
       <div class="b--ss-a__bg-items">
         <img
@@ -77,7 +51,7 @@
           class="b--ss-a__bg-items__parallax"
           :style="{ left: '-6%' }"
           ref="parallax-bg"
-          src="@/assets/img/chapter-3/back-parallax.png"
+          src="@/assets/img/chapter-2/back-parallax.png"
           alt="back parallax"
         />
         <img
@@ -85,7 +59,7 @@
           class="b--ss-a__bg-items__back"
           @load="handleLoad"
           @error="handleLoad"
-          src="@/assets/img/chapter-3/back.png"
+          src="@/assets/img/chapter-2/back.png"
           alt="back"
         />
       </div>
@@ -94,7 +68,7 @@
 </template>
 
 <script>
-import CardF from './cards/CardF'
+import QuoteA from '@/components/quote/Quote'
 
 import Parallax from '@/mixins/Parallax.js'
 import Animation from '@/mixins/Animation.js'
@@ -103,13 +77,13 @@ export default {
   mixins: [Parallax, Animation],
   data: () => {
     return {
-      totalContent: 6,
+      totalContent: 4,
       contentLoaded: 0,
       chapter: null,
     }
   },
   components: {
-    'v-card-f': CardF,
+    'v-quote-a': QuoteA,
   },
   props: ['scrollTween'],
   methods: {
@@ -119,9 +93,6 @@ export default {
     AsambleParallaxObjs() {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 2 },
-        { obj: this.$refs['dino1'], intensity: 2 },
-        { obj: this.$refs['dino2'], intensity: 2 },
-        { obj: this.$refs['TVfrankie'], intensity: 2 },
         { obj: this.$refs['parallax-ft'], intensity: 16 },
         { obj: this.$refs['boxContent'], intensity: 16 },
       ]
