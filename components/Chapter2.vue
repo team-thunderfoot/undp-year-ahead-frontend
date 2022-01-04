@@ -10,16 +10,16 @@
         <img
           @load="handleLoad"
           @error="handleLoad"
-          :style="{ left: '17%' }"
+          :style="{ left: '11%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-2/front-parallax.png"
           alt="front-parallax"
         />
       </div>
-      <div class="b--ss-a__content">
+      <div class="b--ss-a__content" >
         <!-- content-fourth position -->
-        <div class="b--chapter2-a__content">
+        <div class="b--chapter2-a__content" ref="boxContent" :style="{ left: '25%' }">
           <!-- text with bg -->
           <div class="b--card-e">
             <h4 class="b--card-e__title">{{ chapter.quote_system }}</h4>
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div class="b--chapter2-a__artwork">
+        <div class="b--chapter2-a__artwork" ref="speechBubble" :style="{ left: '48%' }" >
           <div
             ref="bubble"
             class="b--motion-a"
@@ -94,7 +94,8 @@ export default {
       var motion = [
         { obj: this.$refs['parallax-bg'], intensity: 2 },
         { obj: this.$refs['parallax-ft'], intensity: 21 },
-        { obj: this.$refs['boxContent'], intensity: 21 },
+        { obj: this.$refs['boxContent'], intensity: 2 },
+        { obj: this.$refs['speechBubble'], intensity: 21 },
       ]
       motion.forEach((item) => {
         this.parallaxMove({
