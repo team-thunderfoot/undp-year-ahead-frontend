@@ -116,10 +116,7 @@
       }
     }
     &--fr {
-      width: 12.91%;
-      @media all and ($viewport-type: $laptop) {
-        width: 15%;
-      }
+      width: 15%;
       @media all and ($viewport-type: $tabletl) {
         left: 2.81%;
         bottom: 19%;
