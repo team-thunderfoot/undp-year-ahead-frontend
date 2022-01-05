@@ -7,7 +7,7 @@
   >
     <div class="b--ss-a">
       <div class="b--ss-a__ft-items">
-        <img :style="{ left: '3%' }" src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" @load="handleLoad"
+        <img src="@/assets/img/chapter-1/front-parallax.png" alt="front" ref="parallax-ft" @load="handleLoad"
           @error="handleLoad" />
       </div>
       <div class="b--ss-a__content">
@@ -17,7 +17,7 @@
           class="b--chapter1-a__content"
           :class="'b--chapter1-a__content--' + `${this.lang}`"
         >
-          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`"  :style="{ left: '5%' }" ref="intro" > 
+          <div class="b--intro-a" :class="`b--intro-a--${this.lang}`"   ref="intro" > 
             <div class="b--intro-a__artwork"></div>
             <div class="b--intro-a__wrapper">
               <h1 class="b--intro-a__wrapper__title">
@@ -32,7 +32,7 @@
         </div>
         <!-- Intro Story -->
 
-        <div class="b--chapter1-a__content b--chapter1-a__content--second" ref="boxContent" :style="{ left: '32%' }">
+        <div class="b--chapter1-a__content b--chapter1-a__content--second" ref="boxContent" >
             <div class="b--card-a" ref="CardA">
               <div class="b--card-a__artwork"></div>
               <div class="b--card-a__wrapper b--content-a">
@@ -168,12 +168,12 @@ export default {
 		scrollTween(newValue, oldValue) {
 			if (newValue) {
         // motion frontend and backend elements
-        this.AsambleParallaxObjs()
+        // this.AsambleParallaxObjs()
 				// mixin function
-				this.startAnimation({
-				  sceneID: 1,
-				  scrollTween: this.scrollTween,
-        })
+				// this.startAnimation({
+				//   sceneID: 1,
+				//   scrollTween: this.scrollTween,
+        // })
 			}
 		},
 	},

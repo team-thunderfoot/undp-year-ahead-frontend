@@ -10,7 +10,6 @@
         <img
           @load="handleLoad"
           @error="handleLoad"
-          :style="{ left: '11%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-2/front-parallax.png"
@@ -19,7 +18,7 @@
       </div>
       <div class="b--ss-a__content" >
         <!-- content-fourth position -->
-        <div class="b--chapter2-a__content" ref="boxContent" :style="{ left: '25%' }">
+        <div class="b--chapter2-a__content" ref="boxContent" >
           <!-- text with bg -->
           <div class="b--card-e">
             <h3 class="b--card-e__title">{{ chapter.quote_system }}</h3>
@@ -32,7 +31,7 @@
           </div>
         </div>
 
-        <div class="b--chapter2-a__artwork" ref="speechBubble" :style="{ left: '48%' }" >
+        <div class="b--chapter2-a__artwork" ref="speechBubble" >
           <div
             ref="bubble"
             class="b--motion-a"
@@ -49,7 +48,6 @@
           @load="handleLoad"
           @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
-          :style="{ left: '-6%' }"
           ref="parallax-bg"
           src="@/assets/img/chapter-2/back-parallax.png"
           alt="back parallax"
@@ -116,12 +114,12 @@ export default {
     scrollTween(newValue, oldValue) {
       if (newValue) {
         // motion frontend and backend elements
-        this.AsambleParallaxObjs()
+        // this.AsambleParallaxObjs()
 
-        this.startAnimation({
-          sceneID: 2,
-          scrollTween: this.scrollTween,
-        })
+        // this.startAnimation({
+        //   sceneID: 2,
+        //   scrollTween: this.scrollTween,
+        // })
       }
     },
   },

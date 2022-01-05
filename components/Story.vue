@@ -3,7 +3,7 @@
         <v-chapter-1 :scrollTween="scrollTween"  />
         <v-chapter-2 :scrollTween="scrollTween" />
         <v-chapter-3 :scrollTween="scrollTween" />
-        <v-chapter-4  :scrollTween="scrollTween"/>
+        <!-- <v-chapter-4  :scrollTween="scrollTween"/>
         <v-chapter-5 :scrollTween="scrollTween"  />
         <v-chapter-6  :scrollTween="scrollTween"/>
         <v-chapter-7  :scrollTween="scrollTween"/>
@@ -14,7 +14,7 @@
         <v-chapter-12 :scrollTween="scrollTween" />
         <v-chapter-13  :scrollTween="scrollTween"/>
         <v-chapter-14  :scrollTween="scrollTween"/>
-        <v-chapter-15  :scrollTween="scrollTween"/>
+        <v-chapter-15  :scrollTween="scrollTween"/> -->
         <v-progress :urlWithParams="urlWithParams" :sceneNumber="sceneNumber" v-if="statusChapter == totalChapters" :currentItem="currentItem" ref="progress" />
     </div>
 </template>
@@ -42,7 +42,7 @@ import CustomTF from '@/custom/custom_tf.js';
 export default {
     data:()=>{
 		return{
-            totalChapters: 15,
+            totalChapters: 3,
 			statusChapter : 0,
             urlWithParams :false,
             sceneNumber : false,
@@ -147,8 +147,8 @@ export default {
         if(process.client){
             this.custom_tf = new CustomTF();
             
-            this.urlWithParams = this.custom_tf.checkURL(); // checks if url has params
-            this.sceneNumber = ( this.urlWithParams ) ? this.custom_tf.getURL() : false; // returns the param
+            // this.urlWithParams = this.custom_tf.checkURL(); // checks if url has params
+            // this.sceneNumber = ( this.urlWithParams ) ? this.custom_tf.getURL() : false; // returns the param
             // event in Index.vue
             this.$nuxt.$on('assetLoaded', () => {
                 this.statusChapter++;

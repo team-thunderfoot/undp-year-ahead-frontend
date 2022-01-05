@@ -10,7 +10,6 @@
         <img
           @load="handleLoad"
           @error="handleLoad"
-          :style="{ left: '17%' }"
           class="b--ss-a__ft-items__parallax"
           ref="parallax-ft"
           src="@/assets/img/chapter-3/front-parallax.png"
@@ -22,7 +21,6 @@
           class="b--chapter3-a__content"
           :class="'b--chapter3-a__content--' + `${this.lang}`"
           ref="boxContent"
-          :style="{ left: '20%' }"
         >
           <v-card-f
             :title="chapter.intro_title"
@@ -32,7 +30,6 @@
         </div>
         <div
           class="b--chapter3-a__content b--chapter3-a__content--second"
-          :style="{ left: '47%' }"
           ref="TVfrankie"
         >
           <div class="b--card-g" :class="'b--card-g--' + `${this.lang}`">
@@ -45,7 +42,6 @@
         </div>
         <div
           class="b--chapter3-a__artwork"
-          :style="{ left: '42%' }"
           ref="dino1"
         >
           <img
@@ -58,7 +54,6 @@
         </div>
         <div
           class="b--chapter3-a__artwork b--chapter3-a__artwork--second"
-          :style="{ left: '72%' }"
           ref="dino2"
         >
           <img
@@ -75,7 +70,6 @@
           @load="handleLoad"
           @error="handleLoad"
           class="b--ss-a__bg-items__parallax"
-          :style="{ left: '-6%' }"
           ref="parallax-bg"
           src="@/assets/img/chapter-3/back-parallax.png"
           alt="back parallax"
@@ -144,12 +138,12 @@ export default {
     scrollTween(newValue, oldValue) {
       if (newValue) {
         // motion frontend and backend elements
-        this.AsambleParallaxObjs()
+        // this.AsambleParallaxObjs()
 
-        this.startAnimation({
-          sceneID: 3,
-          scrollTween: this.scrollTween,
-        })
+        // this.startAnimation({
+        //   sceneID: 3,
+        //   scrollTween: this.scrollTween,
+        // })
       }
     },
   },
