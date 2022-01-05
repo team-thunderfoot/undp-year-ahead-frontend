@@ -180,6 +180,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-    @import '@/sass/framework/components/progress/progress-a.scss';
-</style>
