@@ -35,7 +35,7 @@ export default {
         },
         goToStart() {
             this.$router.push({path: this.$route.path, query: { scene:  1}})
-            window.location  =  this.$route.path + "?scene=1";
+            window.location  =  this.$router.options.base.replace(/\/$/, '') + this.$route.path + "?scene=1";
         }
     },
     data:()=>{

@@ -57,7 +57,7 @@ export default {
             }
         },
         changeLanguage(actualLanguage) {
-            window.location  =  '/' + actualLanguage;
+            window.location  =  this.$router.options.base + actualLanguage;
         },
         openDropdown() {
             this.$refs['LangA'].classList.toggle("b--lang-a--is-active");

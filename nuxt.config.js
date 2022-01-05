@@ -9,7 +9,7 @@ export default {
     ]
   },
   router: {
-    base: '/'
+    base: '/2022-year-ahead/'
   },
   head: {
     title: 'General Site Title',
