@@ -20,23 +20,6 @@
 </template>
 
 <script>
-import Chapter1 from '~/components/Chapter1.vue';
-import Chapter2 from '~/components/Chapter2.vue';
-import Chapter3 from '~/components/Chapter3.vue';
-import Chapter4 from '~/components/Chapter4.vue';
-import Chapter5 from '~/components/Chapter5.vue';
-import Chapter6 from '~/components/Chapter6.vue';
-import Chapter7 from '~/components/Chapter7.vue';
-import Chapter8 from '~/components/Chapter8.vue';
-import Chapter9 from '~/components/Chapter9.vue';
-import Chapter10 from '~/components/Chapter10.vue';
-import Chapter11 from '~/components/Chapter11.vue';
-import Chapter12 from '~/components/Chapter12.vue';
-import Chapter13 from '~/components/Chapter13.vue';
-import Chapter14 from '~/components/Chapter14.vue';
-import Chapter15 from '~/components/Chapter15.vue';
-
-import Progress from '~/components/NavControls.vue';
 import CustomTF from '@/custom/custom_tf.js';
 
 export default {
@@ -59,23 +42,23 @@ export default {
         'isLoaded'
     ],
     components:{
-        'v-chapter-1':Chapter1,
-        'v-chapter-2':Chapter2,
-        'v-chapter-3':Chapter3,
-        'v-chapter-4':Chapter4,
-        'v-chapter-5':Chapter5,
-        'v-chapter-6':Chapter6,
-        'v-chapter-7':Chapter7,
-        'v-chapter-8':Chapter8,
-        'v-chapter-9':Chapter9,
-        'v-chapter-10':Chapter10,
-        'v-chapter-11':Chapter11,
-        'v-chapter-12':Chapter12,
-        'v-chapter-13':Chapter13,
-        'v-chapter-14':Chapter14,
-        'v-chapter-15':Chapter15,
+        'v-chapter-1': () => import(/* webpackChunkName: "Chapter1" */ "~/components/Chapter1.vue"),
+        'v-chapter-2': () => import(/* webpackChunkName: "Chapter2" */ "~/components/Chapter2.vue"),
+        'v-chapter-3': () => import(/* webpackChunkName: "Chapter3" */ "~/components/Chapter3.vue"),
+        'v-chapter-4': () => import(/* webpackChunkName: "Chapter4" */ "~/components/Chapter4.vue"),
+        'v-chapter-5': () => import(/* webpackChunkName: "Chapter5" */ "~/components/Chapter5.vue"),
+        'v-chapter-6': () => import(/* webpackChunkName: "Chapter6" */ "~/components/Chapter6.vue"),
+        'v-chapter-7': () => import(/* webpackChunkName: "Chapter7" */ "~/components/Chapter7.vue"),
+        'v-chapter-8': () => import(/* webpackChunkName: "Chapter8" */ "~/components/Chapter8.vue"),
+        'v-chapter-9': () => import(/* webpackChunkName: "Chapter9" */ "~/components/Chapter9.vue"),
+        'v-chapter-10': () => import(/* webpackChunkName: "Chapter10" */ "~/components/Chapter10.vue"),
+        'v-chapter-11': () => import(/* webpackChunkName: "Chapter11" */ "~/components/Chapter11.vue"),
+        'v-chapter-12': () => import(/* webpackChunkName: "Chapter12" */ "~/components/Chapter12.vue"),
+        'v-chapter-13': () => import(/* webpackChunkName: "Chapter13" */ "~/components/Chapter13.vue"),
+        'v-chapter-14': () => import(/* webpackChunkName: "Chapter14" */ "~/components/Chapter14.vue"),
+        'v-chapter-15': () => import(/* webpackChunkName: "Chapter15" */ "~/components/Chapter15.vue"),
 
-        'v-progress' : Progress
+        'v-progress': () => import(/* webpackChunkName: "Progress" */ "~/components/NavControls.vue")
     },
     watch: {
         // checks if all chapters are loaded
